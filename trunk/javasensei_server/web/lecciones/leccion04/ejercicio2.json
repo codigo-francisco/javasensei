@@ -1,0 +1,143 @@
+{
+    "id":1,
+    "instruccionesejercicio": 
+    [
+        "Las variables...",
+        "blah blah blah"
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Â¿CuÃ¡l es la salida del siguiente cÃ³digo cuando se compila y ejecuta?",
+            "presentacion": 
+            [
+                "public class Test {",
+                "\tpublic static void main( String[ ] args ) {",
+                "\t\tint i = 0;",
+                "\t\twhile( i++ < 5 ) {",
+                "\t\t\tswitch( i % 2 ) {",
+                "\t\t\t\tdefault: System.out.print( \"default\" );break;",
+                "\t\t\t\tcase 1: System.out.print( \"1\" );break;",
+                "\t\t\t}",
+                "\t\t}",
+                "\t}",
+                "}"
+            ],
+            "opciones": 
+            [
+                {
+                    "texto": "1 default 1 default 1",
+                    "paso": 1,
+                    "tipo": "optimofinalizado",
+                    "instruccion": "La respuesta es correcta.",
+                    "presentacion": 
+                    [
+                        "Se imprime el valor: 1 default 1 default 1"
+                    ],
+                    "textoEmocional":{
+                        "compasivo":"texto compasivo",
+                        "neutral":"texto neutral",
+                        "retroalimentacion":{
+                                "positiva":"retro positiva",
+                                "neutral":"retro neutral",
+                                "negativa":"retro negativa"
+                            }
+                    },
+                    "opciones": []       
+                },
+                {
+                    "texto": "default 1 default 1 default",
+                    "paso": 2,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "public class Test {",
+                        "\tpublic static void main( String[ ] args ) {",
+                        "\t\tint i = 0;",
+                        "\t\twhile( i++ < 5 ) {",
+                        "\t\t\tswitch( i % 2 ) {",
+                        "\t\t\t\tdefault: System.out.print( \"default\" );break;",
+                        "\t\t\t\tcase 1: System.out.print( \"1\" );break;",
+                        "\t\t\t}",
+                        "\t\t}",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional":{
+                        "compasivo":"texto compasivo",
+                        "neutral":"texto neutral",
+                        "retroalimentacion":{
+                                "positiva":"retro positiva",
+                                "neutral":"retro neutral",
+                                "negativa":"retro negativa"
+                            }
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "1 1 default 1 default",
+                    "paso": 3,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "public class Test {",
+                        "\tpublic static void main( String[ ] args ) {",
+                        "\t\tint i = 0;",
+                        "\t\twhile( i++ < 5 ) {",
+                        "\t\t\tswitch( i % 2 ) {",
+                        "\t\t\t\tdefault: System.out.print( \"default\" );break;",
+                        "\t\t\t\tcase 1: System.out.print( \"1\" );break;",
+                        "\t\t\t}",
+                        "\t\t}",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional":{
+                        "compasivo":"texto compasivo",
+                        "neutral":"texto neutral",
+                        "retroalimentacion":{
+                                "positiva":"retro positiva",
+                                "neutral":"retro neutral",
+                                "negativa":"retro negativa"
+                            }
+                    },
+                    "opciones": []       
+                },                
+                {
+                    "texto": "default default 1 default",
+                    "paso": 4,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "public class Test {",
+                        "\tpublic static void main( String[ ] args ) {",
+                        "\t\tint i = 0;",
+                        "\t\twhile( i++ < 5 ) {",
+                        "\t\t\tswitch( i % 2 ) {",
+                        "\t\t\t\tdefault: System.out.print( \"default\" );break;",
+                        "\t\t\t\tcase 1: System.out.print( \"1\" );break;",
+                        "\t\t\t}",
+                        "\t\t}",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional":{
+                        "compasivo":"texto compasivo",
+                        "neutral":"texto neutral",
+                        "retroalimentacion":{
+                                "positiva":"retro positiva",
+                                "neutral":"retro neutral",
+                                "negativa":"retro negativa"
+                            }
+                    },
+                    "opciones": []       
+                }
+            ]
+        }
+    ]
+}
