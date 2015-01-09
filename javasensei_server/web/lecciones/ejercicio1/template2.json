@@ -1,0 +1,138 @@
+{
+    "id": 1,
+    "instruccionesejercicio": 
+    [
+        "TeorÃ­a bÃ¡sica para resolver el ejercicio.",
+        "blah blah blah"
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Este es el paso inicial:",
+            "presentacion": 
+            [
+                "CÃ³digo interactivo para el paso inicial, la primera pantalla"
+            ],
+            "textoEmocional": 
+            {
+                "neutral": "texto neutral",
+                "encantado": "texto",
+                "sorprendido": "texto",
+                "compasivo": "texto",
+                "exeptico": "texto",
+                "retroalimentacion": 
+                {
+                    "positiva": "texto",
+                    "neutral": "texto",
+                    "negativa": "texto"
+                }
+            },
+            "opciones": 
+            [
+                {
+                    "texto": "paso optimo",
+                    "paso": 2,
+                    "tipo": "pasooptimo",
+                    "instruccion": "Paso optimo",
+                    "presentacion": 
+                    [
+                        "Texto: paso optimo"
+                    ],
+                    "textoEmocional": 
+                    {
+                        "neutral": "texto neutral",
+                        "encantado": "texto",
+                        "sorprendido": "texto",
+                        "compasivo": "texto",
+                        "exeptico": "texto",
+                        "retroalimentacion": 
+                        {
+                            "positiva": "texto",
+                            "neutral": "texto",
+                            "negativa": "texto"
+                        }
+                    },
+                    "opciones": [
+                        {
+                            "texto": "paso erroneo",
+                            "paso": 3,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "Paso erroneo",
+                            "presentacion": 
+                            [
+                                "Texto: paso erroneo"
+                            ],
+                            "textoEmocional": 
+                            {
+                                "neutral": "texto neutral",
+                                "encantado": "texto",
+                                "sorprendido": "texto",
+                                "compasivo": "texto",
+                                "exeptico": "texto",
+                                "retroalimentacion": 
+                                {
+                                    "positiva": "texto",
+                                    "neutral": "texto",
+                                    "negativa": "texto"
+                                }
+                            },
+                            "opciones": []
+                        },
+                        {
+                            "texto": "paso final optimo",
+                            "paso": 4,
+                            "tipo": "pasofinaloptimo",
+                            "instruccion": "Paso final optimo",
+                            "presentacion": 
+                            [
+                                "Texto: paso final optimo.  Fin del ejercicio."
+                            ],
+                            "textoEmocional": 
+                            {
+                                "neutral": "texto neutral",
+                                "encantado": "texto",
+                                "sorprendido": "texto",
+                                "compasivo": "texto",
+                                "exeptico": "texto",
+                                "retroalimentacion": 
+                                {
+                                    "positiva": "texto",
+                                    "neutral": "texto",
+                                    "negativa": "texto"
+                                },
+                                "opciones": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "texto": "paso erroneo",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "Paso erroneo",
+                    "presentacion": 
+                    [
+                        "Texto: paso erroneo"
+                    ],
+                    "textoEmocional": 
+                    {
+                        "neutral": "texto neutral",
+                        "encantado": "texto",
+                        "sorprendido": "texto",
+                        "compasivo": "texto",
+                        "exeptico": "texto",
+                        "retroalimentacion": 
+                        {
+                            "positiva": "texto",
+                            "neutral": "texto",
+                            "negativa": "texto"
+                        }
+                    },
+                    "opciones": []
+                }           
+            ]
+        }
+    ]
+}
