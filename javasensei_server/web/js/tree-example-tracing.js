@@ -19,8 +19,26 @@ var tree_example_tracing = function tree_example_tracing(ejercicios) {
     tree_self = this;
 };
 tree_example_tracing.prototype = {
-    crearTablaErrores: function(){
+    obtenerCalidadRespuesta: function(){
+        var tablaErrores = tree_self.tablaErrores;
+        var cantidad = 0;
+        var total = tablaErrores.length;
         
+        for (var index in tablaErrores){
+            if (tablaErrores[index]>0)
+                cantidad++;
+        }
+        
+        return cantidad / total;
+    },
+    crearTablaErrores: function(){
+        for (var index in matriz){
+            var paso = tree_self.matriz[index];
+            
+            if (paso.tipo=="pasoerroneo"){
+                tree_self.tablaErrores[index] = 0;
+            }
+        }
     },
     construirMatriz: function (matriz, nodo, anterior) {
         if (matriz == undefined){ //Primera construccion de la matriz
@@ -31,7 +49,7 @@ tree_example_tracing.prototype = {
         }
         
         matriz[nodo.paso] = {
-            tipopaso: nodo.tipo,
+            tipo: nodo.tipo,
             anterior: [anterior],
             siguiente: []
         };
