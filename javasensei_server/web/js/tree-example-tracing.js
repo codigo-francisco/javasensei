@@ -14,40 +14,43 @@ var tree_example_tracing = function tree_example_tracing(ejercicios) {
     this.pasoactual = -1;
 
     this.matriz = {};
-    this.tablaErrores = {};
-    
+    this.tablaErrores = new buckets.Dictionary();
+
     tree_self = this;
 };
 tree_example_tracing.prototype = {
-    obtenerCalidadRespuesta: function(){
+    colocarError: function (paso) {
+        tree_self.tablaErrores.set(paso, 1);//1 Quiere decir que se activo el paso erroneo
+    },
+    obtenerCalidadRespuesta: function () {
         var tablaErrores = tree_self.tablaErrores;
         var cantidad = 0;
-        var total = tablaErrores.length;
-        
-        for (var index in tablaErrores){
-            if (tablaErrores[index]>0)
+        var total = tablaErrores.size();
+
+        tablaErrores.forEach(function (key, value) {
+            if (value > 0)
                 cantidad++;
-        }
-        
+        });
+
         return cantidad / total;
     },
-    crearTablaErrores: function(){
-        for (var index in matriz){
+    crearTablaErrores: function () {
+        for (var index in tree_self.matriz) {
             var paso = tree_self.matriz[index];
-            
-            if (paso.tipo=="pasoerroneo"){
-                tree_self.tablaErrores[index] = 0;
+
+            if (paso.tipo == "pasoerroneo") {
+                tree_self.tablaErrores.set(index, 0);
             }
         }
     },
     construirMatriz: function (matriz, nodo, anterior) {
-        if (matriz == undefined){ //Primera construccion de la matriz
+        if (matriz == undefined) { //Primera construccion de la matriz
             tree_self.construirMatriz(tree_self.matriz, tree_self.ejercicios, -1);
             //Recursividad terminada, creamos la tabla de errores
             tree_self.crearTablaErrores();
             return;
         }
-        
+
         matriz[nodo.paso] = {
             tipo: nodo.tipo,
             anterior: [anterior],
@@ -58,14 +61,15 @@ tree_example_tracing.prototype = {
         var array = Array();
 
         if (nodo.opciones.length > 0) { //Tiene pasos siguientes
-            for (var index in nodo.opciones){
+            for (var index in nodo.opciones) {
                 var nodoItem = nodo.opciones[index];
                 array[index] = nodoItem.paso;
                 tree_self.construirMatriz(matriz, nodoItem, nodo.paso);
             }
 
             matriz[nodo.paso].siguiente = array;
-        };
+        }
+        ;
     },
     obtenerId: function () {
         return tree_self.ejercicios.id;

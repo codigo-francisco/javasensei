@@ -62,6 +62,7 @@ example_tracing_sensei.prototype = {
                 notificaciones = contexto.suscriptores_inicio;
                 break;
             case "pasoerroneo":
+                contexto.tree_example_tracing.colocarError(datos.paso);
                 notificaciones = contexto.suscriptores_error;
                 break;
             case "pasooptimo":
@@ -133,12 +134,12 @@ example_tracing_sensei.prototype = {
             //Se evalua que tipo de paso es para notificar el evento correspondiente
             var datos_notificacion = {};
             var tipo = contexto.ejercicio.tipo;
+            datos_notificacion.tipo = tipo;
+            datos_notificacion.paso = contexto.ejercicio.paso;
             //Switch para la creacion de datos
             switch (tipo) {
                 case "pasoinicial":
-                    datos_notificacion = {
-                        id: contexto.tree_example_tracing.obtenerId()
-                    };
+                    datos_notificacion.id = contexto.tree_example_tracing.obtenerId();
                     break;
                     /*case "pasoerroneo":
                      contexto.notificar_evento(contexto.ejercicio.tipo);
