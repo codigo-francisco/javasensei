@@ -32,7 +32,7 @@ public abstract class CaminoFuzzyLogic {
             fis.setVariable("emocionactual", estudiante.getEmocionActual().getValue());
             fis.setVariable("emocionprevia", estudiante.getEmocionPrevia().getValue());
             fis.setVariable("habilidadglobal", estudiante.getHabilidadGlobal().getValue());
-            fis.setVariable("calidadrespuesta", estudiante.getCalidadRespuesta().getValue());
+            fis.setVariable("calidadrespuesta", estudiante.getCalidadRespuesta());
 
             fis.evaluate();
             

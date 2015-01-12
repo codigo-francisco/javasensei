@@ -38,7 +38,7 @@ public class TutorEvaluacion {
             estudiante.setToken(jsonObj.get("token").getAsString());
 
             estudiante.setCalidadRespuesta(
-                    Calidad.valueOf(jsonObj.get("calidadRespuesta").getAsString())
+                    jsonObj.get("calidadRespuesta").getAsDouble()
             );
 
             estudiante.setEmocionActual(
