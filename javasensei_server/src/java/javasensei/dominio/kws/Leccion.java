@@ -1,9 +1,6 @@
-/*
- * Leccion.java
- */
 package javasensei.dominio.kws;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -11,52 +8,42 @@ import java.util.List;
  */
 public class Leccion {
 
-    private int numLeccion;
-    private String nombreLeccion;
-    private List<Ejercicio> ejercicios;
+    private int id;
+    private String titulo;
+    private ArrayList<Ejercicio> ejercicios;
 
-    public Leccion() {
-    }
-
-    public Leccion(int numLeccion, String nombreLeccion, List ejercicios) {
-        this.numLeccion = numLeccion;
-        this.nombreLeccion = nombreLeccion;
+    public Leccion(int id, String titulo, ArrayList<Ejercicio> ejercicios) {
+        this.id = id;
+        this.titulo = titulo;
         this.ejercicios = ejercicios;
     }
 
-    public String getNombreLeccion() {
-        return nombreLeccion;
+    public int getId() {
+        return id;
     }
 
-    public void setNombreLeccion(String nombreLeccion) {
-        this.nombreLeccion = nombreLeccion;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    /**
-     *
-     * @return
-     */
-    public List getLeccion() {
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public ArrayList<Ejercicio> getEjercicios() {
         return ejercicios;
     }
 
-    public void setLeccion(List leccion) {
-        this.ejercicios = leccion;
-    }
-
-    public int getNumLeccion() {
-        return numLeccion;
-    }
-
-    public void setNumLeccion(int numLeccion) {
-        this.numLeccion = numLeccion;
-    }
-
-    public List<Ejercicio> getEjercicios() {
-        return ejercicios;
-    }
-
-    public void setEjercicios(List<Ejercicio> ejercicios) {
+    public void setEjercicios(ArrayList<Ejercicio> ejercicios) {
         this.ejercicios = ejercicios;
+    }
+
+    @Override
+    public String toString() {
+        return "Leccion{" + "id=" + id + ", titulo=" + titulo + ", ejercicios=" + ejercicios + '}';
     }
 }

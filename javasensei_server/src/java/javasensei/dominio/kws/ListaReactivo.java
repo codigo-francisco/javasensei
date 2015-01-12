@@ -20,6 +20,5 @@ public class ListaReactivo {
     public String toString() {
         return "ListaReactivo{" + "id=" + id + '}';
     }
-    
-    
+      
 }
