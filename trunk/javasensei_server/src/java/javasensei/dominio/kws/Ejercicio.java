@@ -1,6 +1,3 @@
-/*
- * Leccion.java
- */
 package javasensei.dominio.kws;
 
 /**
@@ -9,31 +6,42 @@ package javasensei.dominio.kws;
  */
 public class Ejercicio {
 
-    private int numEjercicio;
-    private String urlEjercicio;
+     private int id;
+    private String url;
+    private String titulo;
 
-    public Ejercicio() {
+    public Ejercicio(int id, String url, String titulo) {
+        this.id = id;
+        this.url = url;
+        this.titulo = titulo;
     }
 
-    public Ejercicio(int numLeccion, String tituloLeccion) {
-        this.numEjercicio = numLeccion;
-        this.urlEjercicio = tituloLeccion;
+    public int getId() {
+        return id;
     }
 
-    public int getNumEjercicio() {
-        return numEjercicio;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setNumEjercicio(int numEjercicio) {
-        this.numEjercicio = numEjercicio;
+    public String getUrl() {
+        return url;
     }
 
-    public String getUrlEjercicio() {
-        return urlEjercicio;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public void setUrlEjercicio(String urlEjercicio) {
-        this.urlEjercicio = urlEjercicio;
+    public String getTitulo() {
+        return titulo;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    @Override
+    public String toString() {
+        return "Ejercicio{" + "id=" + id + ", url=" + url + ", titulo=" + titulo + '}';
+    }
 }

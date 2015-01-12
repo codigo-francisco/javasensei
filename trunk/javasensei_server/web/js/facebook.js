@@ -11,6 +11,7 @@ var processLogin = function processLogin(response) {
 
         //Se manda un json para crear u obtener el usuario
         checarUsuario(usuario);
+        menu.actualizarMenu();
     } else {
         //En caso de que no haga login
         $("#fullscreenlogin").show();

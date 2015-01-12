@@ -1,11 +1,12 @@
 function menu_sensei(idUsuario) {
-    this.idUsuario = idUsuario;
     this.ejercicios = [];
     this.updateMenu = true;
 
     this.actualizarMenu = function actualizarMenu() {
-        this.ejercicios = obtenerEjercicios(idUsuario);
-        this.updateMenu = true;
+        obtenerEjercicios(function(ejercicios){
+            this.ejercicios = ejercicios;
+            this.updateMenu = true;
+        });
     };
 
     this.getMenu = function getMenu(menuejercicios) { //Debera ser un div el primer argumento
