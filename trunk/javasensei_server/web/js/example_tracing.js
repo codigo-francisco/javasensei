@@ -205,6 +205,9 @@ example_tracing_sensei.prototype = {
         });
 
     },
+    obtenerCalidadRespuesta:function(){
+        return contexto.tree_example_tracing.obtenerCalidadRespuesta();
+    },
     obtenerTextoEmocional: function (emocion, retroalimentacion) {
         //Obtenemos del nodo actual, los textos de retroalimentacion y motivacion
         return contexto.tree_example_tracing.obtenerTextoEmocional(emocion, retroalimentacion);

@@ -88,13 +88,14 @@ avatar_sensei.prototype = {
                 console.error("Fallo: " + textStatus);
             });
 
-        } else {
+        } /*else {
 
-        }
+        }*/
 
     },
     llamarSistemaLogicoDifuso: function (tipoPaso, emocion) {
         usuario.emocionActual = emocion.emocionObtenida;
+        usuario.calidadRespuesta = example_tracing.obtenerCalidadRespuesta();
         avatar_context.ejecutarAjax(tipoPaso);
     },
     paso_suboptimo: function () {
@@ -110,14 +111,14 @@ avatar_sensei.prototype = {
         camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminoerroneo");
     },
     paso_final_suboptimo: function () {
-        camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminofinaloptimo");
         console.log("Paso suboptimo notificado");
-
+        camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminofinaloptimo");
+        $("#controles_tracing").hide();
     },
     paso_final_optimo: function () {
-        camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminofinalsuboptimo");
         console.log("Paso final optimo notificado");
-
+        camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminofinalsuboptimo");
+        $("#controles_tracing").hide();
     },
     paso_siguiente: function () {
 

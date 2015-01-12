@@ -27,7 +27,7 @@ function checarUsuario(datos) {
         dataType: "jsonp",
         jsonpCallback: "jsonpCallback"
     }).done(function (data) {
-        console.log("%cLogin de facebook realizado: %0", "color: red", data);
+        console.log("%cLogin de facebook realizado: %O", "color: red", data);
         usuario = data;
     });
 }

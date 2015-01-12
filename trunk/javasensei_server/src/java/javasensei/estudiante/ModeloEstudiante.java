@@ -4,7 +4,6 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import javasensei.ia.recognitionemotion.Emocion;
 import javasensei.tutor.Habilidad;
-import javasensei.tutor.Calidad;
 
 /**
  *
@@ -17,7 +16,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     private Emocion emocionActual = Emocion.NEUTRAL;
     private Emocion emocionPrevia = Emocion.NEUTRAL;
     private Habilidad habilidadGlobal = Habilidad.MALA;
-    private Calidad calidadRespuesta = Calidad.MALA; //Parametros internos al crear un estudiante nuevo
+    private double calidadRespuesta = 0; //Parametros internos al crear un estudiante nuevo
 
     public String getId() {
         return id;
@@ -59,11 +58,11 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         this.habilidadGlobal = habilidadGlobal;
     }
 
-    public Calidad getCalidadRespuesta() {
+    public double getCalidadRespuesta() {
         return calidadRespuesta;
     }
 
-    public void setCalidadRespuesta(Calidad calidadRespuesta) {
+    public void setCalidadRespuesta(double calidadRespuesta) {
         this.calidadRespuesta = calidadRespuesta;
     }
 
@@ -77,7 +76,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         dbObject.put("emocionActual", getEmocionActual().toString());
         dbObject.put("emocionPrevia", getEmocionPrevia().toString());
         dbObject.put("habilidadGlobal", getHabilidadGlobal().toString());
-        dbObject.put("calidadRespuesta", getCalidadRespuesta().toString());
+        dbObject.put("calidadRespuesta", getCalidadRespuesta());
 
         return dbObject;
     }
