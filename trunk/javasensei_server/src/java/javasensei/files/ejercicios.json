@@ -1,4 +1,6 @@
-[
+{
+    "nombreCurso":"curso java",
+    "lecciones":[
         {
             "id": 3,
             "titulo": "Introducción a Java",
@@ -105,4 +107,4 @@
                 }
             ]
         }
-    ]
+]}
