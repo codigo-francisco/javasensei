@@ -74,34 +74,34 @@
                 ]
             },
             {
-                id:7,
-                titulo:'Metodos',
-                lecciones:[
+                "id":7,
+                "titulo":"Metodos",
+                "lecciones":[
                     {
-                        id:1,
-                        url: 'leccion05/ejercicio1.json',
-                        titulo: 'Ejercicio 1'
+                        "id":1,
+                        "url": "leccion05/ejercicio1.json",
+                        "titulo": "Ejercicio 1"
                     },
                     {
-                        id:2,
-                        url: 'leccion05/ejercicio2.json',
-                        titulo: 'Ejercicio 2'
+                        "id":2,
+                        "url": "leccion05/ejercicio2.json",
+                        "titulo": "Ejercicio 2"
                     }
                 ]
             },
             {
-                id:8,
-                titulo:'Arreglos',
-                lecciones:[
+                "id":8,
+                "titulo":"Arreglos",
+                "lecciones":[
                     {
-                        id:1,
-                        url: 'leccion06/ejercicio1.json',
-                        titulo: 'Ejercicio 1'
+                        "id":1,
+                        "url": "leccion06/ejercicio1.json",
+                        "titulo": "Ejercicio 1"
                     },
                     {
-                        id:2,
-                        url: 'leccion06/ejercicio2.json',
-                        titulo: 'Ejercicio 2'
+                        "id":2,
+                        "url": "leccion06/ejercicio2.json",
+                        "titulo": "Ejercicio 2"
                     }
                 ]
             }
