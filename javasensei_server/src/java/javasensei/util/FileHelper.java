@@ -3,7 +3,6 @@ package javasensei.util;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,12 +31,13 @@ public class FileHelper {
     
     public String getContentFile(String nameFile){
         String pathFile = getFile(nameFile);
-        String result="[]";
+        StringBuilder result=new StringBuilder();
         try{
-            result = Arrays.toString(Files.readAllLines(new File(pathFile).toPath()).toArray());
+            for (String line : Files.readAllLines(new File(pathFile).toPath()))
+                result.append(line);
         } catch (IOException ex) {
             Logger.getLogger(FileHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return result;
+        return result.toString();
     }
 }

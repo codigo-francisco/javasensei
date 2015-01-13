@@ -1,11 +1,13 @@
+var menu_context;
 function menu_sensei(idUsuario) {
     this.ejercicios = [];
     this.updateMenu = true;
+    menu_context = this;
 
     this.actualizarMenu = function actualizarMenu() {
         obtenerEjercicios(function(ejercicios){
-            this.ejercicios = ejercicios;
-            this.updateMenu = true;
+            menu_context.ejercicios = ejercicios;
+            menu_context.updateMenu = true;
         });
     };
 
