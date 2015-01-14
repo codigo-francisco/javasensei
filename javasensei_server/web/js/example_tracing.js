@@ -107,8 +107,8 @@ example_tracing_sensei.prototype = {
         this.controles.show();
 
         //Se enlazan los click con la funcion actual
-        this.boton_atras.click(this.mover_atras);
-        this.boton_adelante.click(this.mover_adelante);
+        this.boton_atras.unbind("click").bind("click",this.mover_atras);
+        this.boton_adelante.unbind("click").bind("click",this.mover_adelante);
 
         //Obtenemos el json del ejercicio
         $.getJSON(carpeta_ejercicios + url, function (data) {

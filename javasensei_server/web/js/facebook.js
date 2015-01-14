@@ -1,31 +1,42 @@
+var logout = function logout() {
+    FB.logout(function (response) {
+        console.warn("Se hizo logout en facebook %O", response);
+        mostrarBackground();
+    });
+};
+
 var processLogin = function processLogin(response) {
     //Construccion del usuario
-    if (response.status === 'connected') {
-        var uid = response.authResponse.userID;
-        var accessToken = response.authResponse.accessToken;
-        
-        usuario.id = uid;
-        usuario.token = accessToken;
-        
-        FB.api("/me",{fields:"name,picture"}, function(response){
-            console.log("Datos del facebook: %O", response);
-            
-            usuario.nombre = response.name;
-            usuario.foto = response.picture.data.url;
-            
-            eliminarBackground();
+    switch (response.status) {
+        case 'connected' :
+            var uid = response.authResponse.userID;
+            var accessToken = response.authResponse.accessToken;
 
-            //Se manda un json para crear u obtener el usuario
-            checarUsuario(usuario);
-            
-            $("#imagen_usuario").attr("src",usuario.foto);
-            $("#nombre_usuario").text(usuario.nombre);
-            
-            menu.actualizarMenu();
-        });
-    } else {
-        //En caso de que no haga login
-        $("#fullscreenlogin").show();
+            usuario.id = uid;
+            usuario.token = accessToken;
+
+            FB.api("/me", {fields: "name,picture"}, function (response) {
+                console.log("Datos del facebook: %O", response);
+
+                usuario.nombre = response.name;
+                usuario.foto = response.picture.data.url;
+
+                eliminarBackground();
+
+                //Se manda un json para crear u obtener el usuario
+                checarUsuario(usuario);
+
+                $("#imagen_usuario").attr("src", usuario.foto);
+                $("#nombre_usuario").text(usuario.nombre);
+
+                menu.actualizarMenu();
+            });
+            break;
+        case "not_authorized":
+            alert("Por favor autorize a la aplicacion para usar facebook");
+        default:
+            //En caso de que no haga login
+            $("#fullscreenlogin").show();
     }
 };
 

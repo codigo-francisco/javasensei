@@ -45,10 +45,13 @@
 
             function eliminarBackground() {
                 if (usuario.id !== '') {
-                    $("#fullscreenlogin").remove();
+                    $("#fullscreenlogin").hide();
                 }
+            };
+            
+            function mostrarBackground(){
+                $("#fullscreenlogin").show();
             }
-            ;
 
             function cargarEjercicio(event) {
                 example_tracing.suscribir_todos_ejercicios(avatar_sensei);
@@ -61,6 +64,10 @@
             }
 
             $(document).ready(function () {
+                $("#button_logout").click(function(){
+                    logout();
+                });
+                
                 $("#opciones_avatar").listview(); //Inicializacion de listview
 
                 hljs.configure({
@@ -82,8 +89,7 @@
                     $("#tabsrecursos").tabs("option", "active", 0);
                 });
 
-                //$("#fullscreenlogin").hide(); //Escondemos el login
-                $("#fullscreenloading").hide();
+                $("#fullscreenloading").hide(); //Escondemos el login
 
                 $(document).ajaxStart(function () {
                     $("#fullscreenloading").show();
@@ -203,7 +209,7 @@
             <img class="centerimage" src="jquerymobile/images/ajax-loader.gif" alt="Ajax Loading">
         </div>
         <div id="fullscreenpermition" class="fullscreenpermition">
-            <div style="text-align: center;margin-top: 2em;">
+            <div style="text-align: center;margin-top: 4em;">
                 Por favor acepte los permisos de utilizar la camara o use el tutor desde un dispositivo con camara
             </div>
         </div>
@@ -215,8 +221,8 @@
                 <div id="ejerciciosmenu" data-role="collapsibleset">
 
                 </div>
-                <div data-position="fixed" data-role="footer">
-                    <a href="#" data-icon="lock" >Cerrar Sesion</a>
+                <div style="display:none;" data-position="fixed" data-role="footer">
+                    <a id="button_logout" href="#" data-icon="lock" >Cerrar Sesion</a>
                 </div>
             </div>
 
