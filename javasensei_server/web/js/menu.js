@@ -19,7 +19,7 @@ function menu_sensei(idUsuario) {
 
             //Creamos el primer div colapsible
 
-            $.each(this.ejercicios, function(index, ejercicio) {
+            $.each(this.ejercicios.lecciones, function(index, ejercicio) {
                 var divEjercicio = $("<div></div>")
                         //.attr("data-role","collapsible")
                         //.attr("data-inset",false)

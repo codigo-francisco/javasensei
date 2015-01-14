@@ -93,8 +93,7 @@ avatar_sensei.prototype = {
         }*/
 
     },
-    llamarSistemaLogicoDifuso: function (tipoPaso, emocion) {
-        usuario.emocionActual = emocion.emocionObtenida;
+    llamarSistemaLogicoDifuso: function (tipoPaso) {
         usuario.calidadRespuesta = example_tracing.obtenerCalidadRespuesta();
         avatar_context.ejecutarAjax(tipoPaso);
     },
@@ -113,18 +112,22 @@ avatar_sensei.prototype = {
     paso_final_suboptimo: function () {
         console.log("Paso suboptimo notificado");
         camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminofinaloptimo");
-        $("#controles_tracing").hide();
+        avatar_context.cierreEjercicio();
     },
     paso_final_optimo: function () {
         console.log("Paso final optimo notificado");
         camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminofinalsuboptimo");
-        $("#controles_tracing").hide();
+        avatar_context.cierreEjercicio();
     },
     paso_siguiente: function () {
 
     },
     paso_atras: function () {
 
+    },
+    cierreEjercicio : function(){
+        $("#controles_tracing").hide();
+        camera_sensei.detenerFotos();
     },
     mostrarAvatar: function () {
         $(":mobile-pagecontainer").pagecontainer("change", "#tutor_sensei");

@@ -15,17 +15,6 @@ var camera = function (videoId, canvasId, ancho, largo) {
     this.funcionEmocion = function () {};
 
     this.photo_list = new buckets.LinkedList(); //Almacenamiento FIFO
-    this.photo_list.toArrayWithIndex = function () {
-        var array = Array();
-        var index = 0;
-
-        this.forEach(function (value) {
-            array[index] = value;
-            index++;
-        });
-
-        return array;
-    };
 
     camera_context = this;
 };
@@ -45,7 +34,8 @@ camera.prototype = {
     },
     setup: function () {
 
-        var videoObj = {video: {mandatory: {minWidth: camera_context.ancho, minHeight: camera_context.largo}}};
+        var videoObj = {audio:false, 
+            video: {mandatory: {minWidth: camera_context.ancho, minHeight: camera_context.largo}}};
 
         navigator.userMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
@@ -53,10 +43,13 @@ camera.prototype = {
             camera_context.video_tag.src = window.URL.createObjectURL(stream);
             camera_context.video_tag.play();
 
+            //Quitamos el fullscreen de la camara
+            eliminarBackgroundCamera();
+
             camera_context.setupCanvas(); //Ajustamos el canvas a la camara
         }, function (error) { //Error en la conexion
-            console.log(error);
-            alert("Necesita habilitar la camara o usar un navegador con HTML 5");
+            console.error(error);
+            //alert("Necesita habilitar la camara o usar un navegador con HTML 5");
         });
     },
     setupCanvas: function () {
@@ -96,10 +89,12 @@ camera.prototype = {
             },
             type: 'POST',
             jsonpCallback: "jsonpCallback"
-        }).done(function (emocion) {
+        }).done(function (datos) {
             //camera_context.funcionEmocion(camera_context.tipoCamino, emocion);
-            console.log("%c Emocion recibida:%O","color:white; background:black;",emocion);
-            camera_context.funcionEmocion(camera_context.tipoCamino, emocion);
+            console.log("%c Emocion recibida:%O","color:white; background:black;",datos);
+            usuario.emocionPrevia = usuario.emocionActual;
+            usuario.emocionActual = datos.emocion;
+            camera_context.funcionEmocion(camera_context.tipoCamino);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             console.error("Fallo: " + textStatus);
             console.error("Error: " + errorThrown);
