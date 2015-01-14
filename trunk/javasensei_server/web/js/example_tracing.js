@@ -80,6 +80,9 @@ example_tracing_sensei.prototype = {
         }
 
         if (notificaciones) {
+            //Reiniciamos la camara
+            camera_sensei.reiniciarFotos();
+            
             //Se notifica a todos los suscriptores, pasando los datos
             notificaciones.forEach(function (suscriptor) {
                 suscriptor(datos);

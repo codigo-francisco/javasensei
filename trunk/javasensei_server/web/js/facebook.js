@@ -3,15 +3,26 @@ var processLogin = function processLogin(response) {
     if (response.status === 'connected') {
         var uid = response.authResponse.userID;
         var accessToken = response.authResponse.accessToken;
-
+        
         usuario.id = uid;
         usuario.token = accessToken;
+        
+        FB.api("/me",{fields:"name,picture"}, function(response){
+            console.log("Datos del facebook: %O", response);
+            
+            usuario.nombre = response.name;
+            usuario.foto = response.picture.data.url;
+            
+            eliminarBackground();
 
-        eliminarBackground();
-
-        //Se manda un json para crear u obtener el usuario
-        checarUsuario(usuario);
-        menu.actualizarMenu();
+            //Se manda un json para crear u obtener el usuario
+            checarUsuario(usuario);
+            
+            $("#imagen_usuario").attr("src",usuario.foto);
+            $("#nombre_usuario").text(usuario.nombre);
+            
+            menu.actualizarMenu();
+        });
     } else {
         //En caso de que no haga login
         $("#fullscreenlogin").show();

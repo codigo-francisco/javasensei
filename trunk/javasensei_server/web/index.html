@@ -56,6 +56,10 @@
             }
             ;
 
+            function eliminarBackgroundCamera() {
+                $("#fullscreenpermition").hide();
+            }
+
             $(document).ready(function () {
                 $("#opciones_avatar").listview(); //Inicializacion de listview
 
@@ -89,7 +93,7 @@
                     $("#fullscreenloading").hide();
                 });
 
-                camera_sensei = new camera("#video_photo", "#canvas_image", 800, 600);
+                camera_sensei = new camera("#video_photo", "#canvas_image", 300, 300);
                 camera_sensei.setup(); //Inicializamos la camara para que otorgue permisos
 
                 $(":mobile-pagecontainer").on("pagecontainershow", function (event, ui) {
@@ -142,7 +146,18 @@
                 left: 0;
                 background-color: black;
                 opacity: 0.75;
-            }            
+            }
+            .fullscreenpermition{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 1300;
+                top:0;
+                left: 0;
+                background-color: black;
+                color:white;
+                opacity: 0.85;
+            }
             .loginScreen{
                 position: absolute;
                 top: 25%;
@@ -175,12 +190,22 @@
                 <div class="textScreen">
                     Bienvenido a Java Sensei!<br>
                     Realiza tu Login<br>
-                    <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false" onlogin="checkLoginState();"></div>
+                    <div class="fb-login-button" 
+                         data-max-rows="1" 
+                         data-size="xlarge" 
+                         data-show-faces="false" 
+                         data-auto-logout-link="false" 
+                         onlogin="checkLoginState();"></div>
                 </div>
             </div>
         </div>
         <div id="fullscreenloading" class="fullscreenloading">
             <img class="centerimage" src="jquerymobile/images/ajax-loader.gif" alt="Ajax Loading">
+        </div>
+        <div id="fullscreenpermition" class="fullscreenpermition">
+            <div style="text-align: center;margin-top: 2em;">
+                Por favor acepte los permisos de utilizar la camara o use el tutor desde un dispositivo con camara
+            </div>
         </div>
 
         <div id="principal" data-title="Java Sensei" data-role="page">
@@ -199,8 +224,9 @@
 
                 <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext"></a>
                 <div class="ui-title">
-                    Usuario: <br> <!--<input id="usuarioTexto" type="text"> -->
-                    Score:
+                    <img id="imagen_usuario">
+                    <span style="word-wrap: break-word;" id="nombre_usuario"></span> <br>
+                    <!-- Score: -->
                 </div>
                 <a id="avatar" href="#tutor_sensei" data-rel="dialog" data-icon="user" style="margin-right: 2em" class="ui-btn-right" data-iconpos="notext"></a>
                 <a id="botonrecursos" href="#paginarecursos" data-rel="dialog" data-icon="action" class="ui-btn-right" data-iconpos="notext"></a>
@@ -287,7 +313,7 @@
                 </div>
             </div>
         </div>
-        <div id="div_video" style="display: none;">
+        <div style="display:none" id="div_video">
             <!-- <input id="data_photo" type="hidden"> -->
             <video id="video_photo" style="object-fit: fill; object-position: center;width: 300px;height: 300px;" autoplay></video>
             <canvas id="canvas_image"></canvas>
