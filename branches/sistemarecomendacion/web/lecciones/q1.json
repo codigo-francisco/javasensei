@@ -1,0 +1,26 @@
+{
+    "introduction":"Este es un examen diagnÃ³stico.", 
+    "questions":
+    [
+	{
+            "question":"Â¿Toda instrucciÃ³n en el lenguaje Java termina con un?", 
+            "answers":["Salto de lÃ­nea","Comentario","Punto y coma","Dos puntos"],
+            "correct":2},
+            {"question":"Â¿CuÃ¡l es el comando del JDK que ejecuta una aplicaciÃ³n en Java?", 
+             "answers":["javac","java","run","execute"],
+             "correct":1},
+            {"question":"De las siguientes declaraciones de variables seÃ±ala la que no es correcta:", 
+             "answers":["float f = 1/3;","int x = 1/3;","float f = 1.01;","double d = 999d;"],
+             "correct":2},
+            {"question":"Â¿CuÃ¡l serÃ¡ el resultado que se obtiene al compilar el siguiente cÃ³digo? \n<pre>public class Test{\n\tpublic static void main( String args[ ] ){\n\t\tfloat f = 1/2;\n\t\tSystem.out.println( f );\n\t}\n}</pre>", 
+             "answers":["Error compilaciÃ³n","0.0","0.5","Error ejecuciÃ³n"],
+             "correct":1},
+            {"question":"Â¿QuÃ© imprime el siguiente cÃ³digo:\n<pre>public class Test {\n\tpublic static void main( String args[] ) {\n\t\tboolean flag = false;\n\t\tif( flag = true ) {\n\t\t\tSystem.out.println( \"verdadero\" );\n\t\t}\n\t\tSystem.out.println( \"falso\" );\n\t}\n}</pre>", 
+             "answers":["verdadero","falso","verdadero falso","falso verdadero"],
+             "correct":2}
+	]
+}
+
+
+
+

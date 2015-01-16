@@ -1,0 +1,161 @@
+{
+    "id": 1,
+    "instruccionesejercicio": 
+    [
+        "TeorÃ­a bÃ¡sica para resolver el ejercicio.",
+        "blah blah blah"
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Selecciona la opciÃ³n que declara una variable de punto flotante:",
+            "presentacion": 
+            [
+                "public class Test {",
+                "\tpublic static void main( String[ ] args ) {",
+                "\t\t<input type='text' readonly class='focusInput'>",
+                "\t}",
+                "}"
+            ],
+            "textoEmocional": 
+            {
+                "neutral": "texto neutral",
+                "encantado": "texto",
+                "sorprendido": "texto",
+                "compasivo": "texto",
+                "exeptico": "texto",
+                "retroalimentacion": 
+                {
+                    "positiva": "texto",
+                    "neutral": "texto",
+                    "negativa": "texto"
+                }
+            },
+            "opciones": 
+            [
+                {
+                    "texto": "int x;",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "public class Test {",
+                        "\tpublic static void main( String[ ] args ) {",
+                        "\t\t<input type='text' readonly class='focusInput'>",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": 
+                    {
+                        "neutral": "texto neutral",
+                        "encantado": "texto",
+                        "sorprendido": "texto",
+                        "compasivo": "texto",
+                        "exeptico": "texto",
+                        "retroalimentacion": 
+                        {
+                            "positiva": "texto",
+                            "neutral": "texto",
+                            "negativa": "texto"
+                        }
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "float x;",
+                    "paso": 2,
+                    "tipo": "pasooptimo",
+                    "instruccion": "Correcto.  Ahora selecciona la opciÃ³n que asigna un valor valido a la variable de punto flotante:",
+                    "presentacion": 
+                    [
+                        "public class Test {",
+                        "\tpublic static void main( String[ ] args ) {",
+                        "\t\tfloat x;",
+                        "\t\tx = <input type='text' readonly class='focusInput'>;",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": 
+                    {
+                        "neutral": "texto neutral",
+                        "encantado": "texto",
+                        "sorprendido": "texto",
+                        "compasivo": "texto",
+                        "exeptico": "texto",
+                        "retroalimentacion": 
+                        {
+                            "positiva": "texto",
+                            "neutral": "texto",
+                            "negativa": "texto"
+                        }
+                    },
+                    "opciones": [
+                        {
+                            "texto": "x = 12.0;",
+                            "paso": 3,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "presentacion": 
+                            [
+                                "public class Test {",
+                                "\tpublic static void main( String[ ] args ) {",
+                                "\t\tfloat x;",
+                                "\t\tx = <input type='text' readonly class='focusInput'>;",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": 
+                            {
+                                "neutral": "texto neutral",
+                                "encantado": "texto",
+                                "sorprendido": "texto",
+                                "compasivo": "texto",
+                                "exeptico": "texto",
+                                "retroalimentacion": 
+                                {
+                                    "positiva": "texto",
+                                    "neutral": "texto",
+                                    "negativa": "texto"
+                                }
+                            },
+                            "opciones": []
+                        },
+                        {
+                            "texto": "x = 12.0f;",
+                            "paso": 4,
+                            "tipo": "pasofinaloptimo",
+                            "instruccion": "Correcto.  Has finalizado el ejercicio con Ã©xito.",
+                            "presentacion": 
+                            [
+                                "public class Test {",
+                                "\tpublic static void main( String[ ] args ) {",
+                                "\t\tfloat x;",
+                                "\t\tx = 12.0f;",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": 
+                            {
+                                "neutral": "texto neutral",
+                                "encantado": "texto",
+                                "sorprendido": "texto",
+                                "compasivo": "texto",
+                                "exeptico": "texto",
+                                "retroalimentacion": 
+                                {
+                                    "positiva": "texto",
+                                    "neutral": "texto",
+                                    "negativa": "texto"
+                                },
+                                "opciones": []
+                            }
+                        }
+                    ]
+                }                  
+            ]
+        }
+    ]
+}

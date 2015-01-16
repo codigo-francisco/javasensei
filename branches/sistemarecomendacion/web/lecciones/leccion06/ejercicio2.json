@@ -1,0 +1,119 @@
+{
+    "id":1,
+    "instruccionesejercicio": 
+    [
+        "Las variables...",
+        "blah blah blah"
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Â¿CuÃ¡l es la salida para el siguiente fragmento de cÃ³digo?",
+            "presentacion": 
+            [
+                "int[] temp = {2 ,4, 6, 8};",
+                "temp[0] = 23;",
+                "temp[3] = temp[1];",
+                "System.out.println(temp[0] + \" \" + temp[3]);"
+            ],
+            "opciones": 
+            [
+                {
+                    "texto": "23 2",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "int[] temp = {2 ,4, 6, 8};",
+                        "temp[0] = 23;",
+                        "temp[3] = temp[1];",
+                        "System.out.println(temp[0] + \" \" + temp[3]);"
+                    ],
+                    "textoEmocional":{
+                        "compasivo":"texto compasivo",
+                        "neutral":"texto neutral",
+                        "retroalimentacion":{
+                                "positiva":"retro positiva",
+                                "neutral":"retro neutral",
+                                "negativa":"retro negativa"
+                            }
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "2 8",
+                    "paso": 2,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "int[] temp = {2 ,4, 6, 8};",
+                        "temp[0] = 23;",
+                        "temp[3] = temp[1];",
+                        "System.out.println(temp[0] + \" \" + temp[3]);"
+                    ],
+                    "textoEmocional":{
+                        "compasivo":"texto compasivo",
+                        "neutral":"texto neutral",
+                        "retroalimentacion":{
+                                "positiva":"retro positiva",
+                                "neutral":"retro neutral",
+                                "negativa":"retro negativa"
+                            }
+                    },
+                    "opciones": []       
+                },
+                {
+                    "texto": "3 1",
+                    "paso": 3,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "int[] temp = {2 ,4, 6, 8};",
+                        "temp[0] = 23;",
+                        "temp[3] = temp[1];",
+                        "System.out.println(temp[0] + \" \" + temp[3]);"
+                    ],
+                    "textoEmocional":{
+                        "compasivo":"texto compasivo",
+                        "neutral":"texto neutral",
+                        "retroalimentacion":{
+                                "positiva":"retro positiva",
+                                "neutral":"retro neutral",
+                                "negativa":"retro negativa"
+                            }
+                    },
+                    "opciones": []       
+                },
+                {
+                    "texto": "23 4",
+                    "paso": 4,
+                    "tipo": "optimofinalizado",
+                    "instruccion": "La respuesta es correcta.",
+                    "presentacion": 
+                    [
+                        "int[] temp = {2 ,4, 6, 8};",
+                        "temp[0] = 23;",
+                        "temp[3] = temp[1];",
+                        "System.out.println(temp[0] + \" \" + temp[3]);",
+                        "Se imprime: 23, 4"
+                    ],
+                    "textoEmocional":{
+                        "compasivo":"texto compasivo",
+                        "neutral":"texto neutral",
+                        "retroalimentacion":{
+                                "positiva":"retro positiva",
+                                "neutral":"retro neutral",
+                                "negativa":"retro negativa"
+                            }
+                    },
+                    "opciones": []       
+                }
+            ]
+        }
+    ]
+}

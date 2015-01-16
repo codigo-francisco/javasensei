@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Java Sensei</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="jquerymobile/jquery.mobile-1.4.4.min.css" rel="stylesheet">
+        <link href="styles/github.css" rel="stylesheet">
+        <link href="css/example_tracing.css" rel="stylesheet">
+        <link href="css/avatar.css" rel="stylesheet">
+
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
+
+        <script type="text/javascript" src="highlight.pack.js"></script>
+        <script type="text/javascript" src="js/buckets-minified.js"></script>
+        <script type="text/javascript" src="js/jspath.min.js"></script>
+
+        <script type="text/javascript" src="js/recomendaciones.js"></script>
+        <script type="text/javascript" src="js/ejercicios.js"></script>
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script type="text/javascript" src="js/recursos.js"></script>
+        <script type="text/javascript" src="js/facebook.js"></script>
+        <script type="text/javascript" src="js/tree-example-tracing.js"></script>
+        <script type="text/javascript" src="js/example_tracing.js"></script>
+        <script type="text/javascript" src="js/avatar.js"></script>
+        <script type="text/javascript" src="js/camera.js"></script>
+
+        <script>
+            var menu = new menu_sensei();
+            var recursos = new recursos_sensei();
+            var example_tracing;
+            var avatar_sensei;
+            var camera_sensei;
+            var carpeta_ejercicios = "lecciones/";
+            var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
+            //var url = "http://localhost:8080/javasensei/servicios/";
+            var url = "servicios/"; //Jquery infiere el dominio
+            var usuario = {};
+
+            var redireccion = function (url) {
+                location.href = url;
+            };
+
+            function eliminarBackground() {
+                if (usuario.id !== '') {
+                    $("#fullscreenlogin").hide();
+                }
+            };
+            
+            function mostrarBackground(){
+                $("#fullscreenlogin").show();
+            }
+
+            function cargarEjercicio(event) {
+                example_tracing.suscribir_todos_ejercicios(avatar_sensei);
+                example_tracing.construir_ejercicio(event.data.url);
+            }
+            ;
+
+            function eliminarBackgroundCamera() {
+                $("#fullscreenpermition").hide();
+            }
+
+            $(document).ready(function () {
+                $("#button_logout").click(function(){
+                    logout();
+                });
+                
+                $("#opciones_avatar").listview(); //Inicializacion de listview
+
+                hljs.configure({
+                    useBR: true,
+                    tabReplace: '    '
+                });
+
+                example_tracing = new example_tracing_sensei("#areatrabajo", "#areasolucion", "#adelante_tracing", "#atras_tracing", "#controles_tracing");
+
+                avatar_sensei = new avatar_sensei("#avatar_control");
+
+                //menu.actualizarMenu(); //Obtenemos el menu la primera vez
+
+                $("#menuboton").click(function () {
+                    menu.getMenu("#ejerciciosmenu");
+                });
+
+                $("#tabsrecursos").on("tabscreate", function () {
+                    $("#tabsrecursos").tabs("option", "active", 0);
+                });
+
+                $("#fullscreenloading").hide(); //Escondemos el login
+
+                $(document).ajaxStart(function () {
+                    $("#fullscreenloading").show();
+                });
+
+                $(document).ajaxStop(function () {
+                    $("#fullscreenloading").hide();
+                });
+
+                camera_sensei = new camera("#video_photo", "#canvas_image", 300, 300);
+                camera_sensei.setup(); //Inicializamos la camara para que otorgue permisos
+
+                $(":mobile-pagecontainer").on("pagecontainershow", function (event, ui) {
+                    switch ($(ui.toPage).attr("id")) {
+                        case "paginarecursos":
+                            recursos.obtenerVideo("#videorecursos");
+                            recursos.obtenerLibros("#listalibros");
+                            recursos.obtenerEnlaces("#listaenlaces");
+                            break;
+                            /*case "tutor_sensei": //TODO: evaluar, de aqui se mostrara el tipo de recomendacion, dependiendo
+                             //Si el tutor esta vacio o no
+                             switch (estado_gui) {
+                             case "recomendacion":
+                             avatar_sensei.recomendaciones();
+                             break;
+                             case "ejercicio":
+                             return false;
+                             break;
+                             }
+                             break;*/
+                    }
+                    //console.log(event);
+                    //console.log(ui);
+                });
+
+                $("#areatrabajo").hide();
+                $("#controles_tracing").hide();
+            });
+
+
+        </script>
+
+        <style type="text/css">
+            .fullscreen{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 1500;
+                top:0;
+                left: 0;
+                background-color: black;
+                opacity: 0.75;
+            }
+            .fullscreenloading{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 1400;
+                top:0;
+                left: 0;
+                background-color: black;
+                opacity: 0.75;
+            }
+            .fullscreenpermition{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 1300;
+                top:0;
+                left: 0;
+                background-color: black;
+                color:white;
+                opacity: 0.85;
+            }
+            .loginScreen{
+                position: absolute;
+                top: 25%;
+                left: 25%;
+                /*margin-top: -50px;
+                margin-left: -50px;*/
+                width: 50%;
+                height: 50%;
+
+                border-width: medium;
+                background-color: white;
+            }
+            .centerimage{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                /* bring your own prefixes */
+                transform: translate(-50%, -50%);
+            }
+            .textScreen{
+                padding-top: 20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Seccion del login -->
+        <div id="fullscreenlogin" class="fullscreen">
+            <div class="loginScreen">
+                <div class="textScreen">
+                    Bienvenido a Java Sensei!<br>
+                    Realiza tu Login<br>
+                    <div class="fb-login-button" 
+                         data-max-rows="1" 
+                         data-size="xlarge" 
+                         data-show-faces="false" 
+                         data-auto-logout-link="false" 
+                         onlogin="checkLoginState();"></div>
+                </div>
+            </div>
+        </div>
+        <div id="fullscreenloading" class="fullscreenloading">
+            <img class="centerimage" src="jquerymobile/images/ajax-loader.gif" alt="Ajax Loading">
+        </div>
+        <div id="fullscreenpermition" class="fullscreenpermition">
+            <div style="text-align: center;margin-top: 4em;">
+                Por favor acepte los permisos de utilizar la camara o use el tutor desde un dispositivo con camara
+            </div>
+        </div>
+
+        <div id="principal" data-title="Java Sensei" data-role="page">
+
+            <!-- Paneles -->
+            <div data-role="panel" data-display="overlay" id="panelmenu">
+                <div id="ejerciciosmenu" data-role="collapsibleset">
+
+                </div>
+                <div style="display:none;" data-position="fixed" data-role="footer">
+                    <a id="button_logout" href="#" data-icon="lock" >Cerrar Sesion</a>
+                </div>
+            </div>
+
+            <div data-role="header" data-position="fixed">
+
+                <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext"></a>
+                <div class="ui-title">
+                    <img id="imagen_usuario">
+                    <span style="word-wrap: break-word;" id="nombre_usuario"></span> <br>
+                    <!-- Score: -->
+                </div>
+                <a id="avatar" href="#tutor_sensei" data-rel="dialog" data-icon="user" style="margin-right: 2em" class="ui-btn-right" data-iconpos="notext"></a>
+                <a id="botonrecursos" href="#paginarecursos" data-rel="dialog" data-icon="action" class="ui-btn-right" data-iconpos="notext"></a>
+
+            </div>
+
+            <div role="main" class="ui-content">
+                <div id="controles_tracing" class="controles">
+                    <button id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
+                    <button id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
+                </div>
+                <div class="areatracing">
+                    <div id="areatrabajo">
+                        <div class="ui-grid-solo ui-responsive">
+                            <span class="instrucciones">Instrucciones:</span>
+                            <div id="instruccion" class="ui-block-a">
+
+                            </div>
+                        </div>
+                        <div id="interfazejercicio">
+                            <pre>
+                            <code id="codigo" class="java">
+                            </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div id="areasolucion" class="ui-grid-a ui-responsive">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="tutor_sensei" data-dialog="true" data-close-btn="right">
+            <div data-role="header" data-position="fixed">
+                <h1>Sensei</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <div id="avatar_control">
+                    <div id="divPhotoTutor">
+                        <img id="image_avatar" src="" alt="" class="photo_avatar">
+                    </div>
+                    <div id="interfaz_avatar">
+                        <div id="texto_avatar">
+
+                        </div>
+                        <div>
+                            <ul id="opciones_avatar" data-role="listview" data-inset="true">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="paginarecursos" data-close-btn="right">
+            <div data-role="header" data-position="fixed">
+                <h1>Menu de recursos</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <div data-role="tabs" id="tabsrecursos">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#primertab" data-ajax="false">Videos</a></li>
+                            <li><a href="#segundotab" data-ajax="false">Libros</a></li>
+                            <li><a href="#tercertab" data-ajax="false">Enlaces</a></li>
+                        </ul>
+                        <div id="primertab" class="ui-content">
+                            <iframe id="videorecursos" width="300" height="169" src="" frameborder="0" allowfullscreen></iframe>
+
+                        </div>
+                        <div id="segundotab" class="ui-content">
+                            <ul id="listalibros" class="tablist-content" data-role="listview" data-inset="true">
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div id="tercertab" class="ui-content">
+                            <ul id="listaenlaces" class="tablist-content" data-role="listview" data-inset="true">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display:none" id="div_video">
+            <!-- <input id="data_photo" type="hidden"> -->
+            <video id="video_photo" style="object-fit: fill; object-position: center;width: 300px;height: 300px;" autoplay></video>
+            <canvas id="canvas_image"></canvas>
+            <!-- <input id="btn_take_photo" type="button" value="Tomar Foto!"> -->
+            <!-- <img id="img" style="display:none"> -->
+        </div>
+    </body>
+</html>
