@@ -1,87 +1,56 @@
+// Clase de prueba.
 package javasensei.db.managments;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
-import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import com.mongodb.DBObject;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javasensei.db.collections.QuizCollection;
-import javasensei.dominio.kws.Quiz;
+import javasensei.dominio.kws.Ejercicio;
 
 /**
  *
  * @author chess
  */
 public class QuizManager {
-    private final QuizCollection quizCollections = new QuizCollection();    
-    
-    private Quiz quiz;
-    private final Gson gson = new Gson();
-    
-    private final String strJson = 
-        "{\"pregunta\":\"Este es un examen diagnostico.\","
-       + "\"reactivos\":\"Aqui van un conjunto de reactivos.\"}";
-    
-    
-    //Lee un archivo JSON y lo carga en memoria...marca error
-    public void readJSON(File jsonArchivo) throws IOException {  
-        
-        JsonParser parser = new JsonParser();
-        //JsonElement datos = parser.parse(newArchivo.toString());
-        //quiz = gson.fromJson(new FileReader(jsonArchivo), Quiz.class);
-        quiz = gson.fromJson(strJson, Quiz.class);
-        System.out.println(quizToJSON());
-    }
-    
-    // Pasa a un archivo de texto un archivo JSON...no graba el archivo
-    public void writeJSON(String archivo) throws IOException {
-        File newArchivo = new File(archivo);
-        FileWriter writer = new FileWriter(newArchivo.toString());
-        writer.write(quizToJSON());
-        System.out.println(quizToJSON()); 
-    } 
-   
-    public void addQuestion() {     
-        //quiz = new Quiz("Pregunta 12", "Respuesta 12");  
-        
-        BasicDBObject document = new BasicDBObject();
-        document.put("pregunta", quiz.getPregunta());
-        //document.put("respuesta", quiz.getRespuesta());
-        
-        DBCollection tabla = quizCollections.getQuizCollection();
-        tabla.insert(document);
-        System.out.println(document.toString());
-    }
-    
-    /*public void addQuestion(Reactivo reactivo) {
-        DBCollection tabla = db.getCollection("quiz");
 
-        BasicDBObject document = new BasicDBObject();
-        document.put("pregunta", reactivo.getPregunta());
-        String[] opcion = reactivo.getOpcion();
-        document.put("opcionA", opcion[0]);
-        document.put("opcionB", opcion[1]);
-        document.put("opcionC", opcion[2]);
-        document.put("opcionD", opcion[3]);
-        document.put("respuesta", reactivo.getRespuesta());
-        tabla.insert(document);
-    }*/
+    private final QuizCollection quizCollections = new QuizCollection();
+
+    //private Ejercicio ejercicio;
+    private final Gson gson = new Gson();
+
+    public boolean insert(Ejercicio ejercicio) {
+        try {
+            DBCollection collection = quizCollections.getQuizCollection();
+            DBObject dbObject = ejercicio.convertToDBObject();
+            dbObject.put("id", ejercicio.getId());
+            dbObject.put("url", ejercicio.getUrl());
+            dbObject.put("titulo", ejercicio.getTitulo());
+
+            collection.insert(dbObject);
+            //quizCollections.getMongo().close();
+            return true;
+        } catch (Exception ex) {
+            Logger.getGlobal().log(Level.SEVERE, ex.getMessage());
+        }
+        return false;
+    }
 
     public String getReactivos() {
         StringBuilder reactivo = new StringBuilder();
         DBCollection tabla = quizCollections.getQuizCollection();
         DBCursor cur = tabla.find();
-        Quiz r = new Quiz();
-        while (cur.hasNext()) {  
+
+        while (cur.hasNext()) {
             reactivo.append(cur.next());
         }
         return reactivo.toString();
     }
 
     public String quizToJSON() {
-        return gson.toJson(quiz);
+        return gson.toJson(getReactivos());
     }
+
 }

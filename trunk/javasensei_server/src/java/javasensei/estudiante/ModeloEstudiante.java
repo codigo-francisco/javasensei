@@ -1,5 +1,6 @@
 package javasensei.estudiante;
 
+import javasensei.db.collections.DBInterface;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import javasensei.ia.recognitionemotion.Emocion;
