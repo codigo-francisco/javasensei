@@ -1,4 +1,4 @@
-package javasensei.dominio.kws;
+package pruebitas;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -44,11 +44,11 @@ public class TestQuiz {
         System.out.println(quiz.reactivosToJSON());
         */
         //quiz.addQuestion("C:\\Users\\chess\\Documents\\q1.json");
-        QuizManager test = new QuizManager();
+        //QuizManager test = new QuizManager();
         //test.addQuestion();
         //System.out.println(test.getReactivos());
-        File archivo = new File("C:\\Users\\chess\\Documents\\q1.json");
-        test.readJSON(archivo);
+        //File archivo = new File("C:\\Users\\chess\\Documents\\q1.json");
+        //test.readJSON(archivo);
         //test.writeJSON("C:\\Users\\chess\\Documents\\q5.json");
     }
 }

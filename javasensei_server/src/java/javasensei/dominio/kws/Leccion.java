@@ -1,17 +1,21 @@
 package javasensei.dominio.kws;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
 import java.util.ArrayList;
+import javasensei.db.collections.DBInterface;
 
 /**
  *
  * @author chess
  */
-public class Leccion {
+public class Leccion implements java.io.Serializable, DBInterface {
 
     private int id;
     private String titulo;
     private ArrayList<Ejercicio> ejercicios;
 
+    
     public Leccion(int id, String titulo, ArrayList<Ejercicio> ejercicios) {
         this.id = id;
         this.titulo = titulo;
@@ -45,5 +49,16 @@ public class Leccion {
     @Override
     public String toString() {
         return "Leccion{" + "id=" + id + ", titulo=" + titulo + ", ejercicios=" + ejercicios + '}';
+    }
+
+    @Override
+    public DBObject convertToDBObject() {
+        DBObject dbObject = new BasicDBObject();
+        
+        dbObject.put("id", getId());
+        dbObject.put("titulo", getTitulo());
+        dbObject.put("ejercicios",getEjercicios());
+
+        return dbObject;
     }
 }

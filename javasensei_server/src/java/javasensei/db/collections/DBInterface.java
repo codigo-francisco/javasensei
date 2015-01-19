@@ -1,4 +1,4 @@
-package javasensei.estudiante;
+package javasensei.db.collections;
 
 import com.mongodb.DBObject;
 

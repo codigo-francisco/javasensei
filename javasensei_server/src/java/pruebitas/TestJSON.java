@@ -1,4 +1,6 @@
-package javasensei.dominio.kws;
+package pruebitas;
+
+import javasensei.dominio.kws.ModeloDominio;
 
 public class TestJSON {
     public static void main(String args[]) throws java.io.IOException {
