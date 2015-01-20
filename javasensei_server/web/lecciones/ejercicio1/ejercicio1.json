@@ -1,0 +1,73 @@
+{
+    "id":1,
+    "instruccionesejercicio": 
+    [
+        "Java es un lenguaje de programaciÃ³n orientado a objetos, desarrollado por",
+        "Sun Microsystems en la dÃ©cada"
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Selecciona la opciÃ³n que responda a la pregunta.",
+            "presentacion": 
+            [
+                "Â¿Java es un lenguaje de programaciÃ³n orientada a aspectos?"
+            ],
+            "opciones": 
+            [
+                {
+                    "texto": "Verdadero",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                         "Â¿Java es un lenguaje de programaciÃ³n orientada a aspectos?"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "Falso",
+                    "paso": 2,
+                    "tipo": "optimofinalizado",
+                    "instruccion": "La respuesta es correcta.",
+                    "presentacion": 
+                    [
+                        "Java es un lenguaje de programaciÃ³n orientado a objetos."
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                }
+            ]
+        }
+    ] 
+}
