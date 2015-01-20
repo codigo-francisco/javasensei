@@ -1,117 +1,80 @@
 {
-    "id":1,
-    "instruccionesejercicio": 
-    [
-        "Las variables son una de las caracterÃ­sticas fundamentales de los lenguajes de programaciÃ³n, permiten acceder a la memoria para almacenar y recuperar los datos con los que nuestros programas van a trabajar. Son por tanto el mecanismo que los lenguajes de programaciÃ³n ponen a nuestra disposiciÃ³n para acceder a la memoria.",
-        "Se trata de un mecanismo de lo mÃ¡s sencillo, sÃ³lo tenemos que dar un nombre a nuestras variables, a partir de ese momento el compilador traducirÃ¡ de forma automÃ¡tica ese nombre en un acceso a memoria. Por ejemplo:"
+    "id": 2,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+        "Las variables blah blah blah.",
+        "aquí van las instrucciones del ejercicio."
     ],
-    "opciones": 
-    [
+    "opciones": [
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Â¿CuÃ¡l es la salida para el siguiente fragmento de cÃ³digo?",
-            "presentacion": 
-            [
-                "int[] temp = {2 ,4, 6, 8};",
-                "temp[0] = 23;",
-                "temp[3] = temp[1];",
-                "System.out.println(temp[0] + \" \" + temp[3]);"
+            "instruccion": "Contesta la siguiente pregunta.",
+            "presentacion": [
+                "¿Las aplicaciones desarrolladas con el lenguaje de programación Java sólo se ejecutan en la plataforma Windows?"
             ],
-            "opciones": 
-            [
+            "textoEmocional": {
+                "neutral": "Inicia los ejercicios",
+                "encantado": "Estas muy bien, inicia con el ejercicio",
+                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "retroalimentacion": {
+                    "positiva": "No importa el error vas muy bien",
+                    "neutral": "Sigue asi, continua",
+                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                }
+            },
+            "opciones": [
                 {
-                    "texto": "23 2",
+                    "texto": "Verdadero",
                     "paso": 1,
                     "tipo": "pasoerroneo",
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                    "presentacion": 
-                    [
-                        "int[] temp = {2 ,4, 6, 8};",
-                        "temp[0] = 23;",
-                        "temp[3] = temp[1];",
-                        "System.out.println(temp[0] + \" \" + temp[3]);"
+                    "presentacion": [
+                        "¿Las aplicaciones desarrolladas con el lenguaje de programación Java sólo se ejecutan en la plataforma Windows?"
                     ],
-                    "textoEmocional":{
-                        "compasivo":"texto compasivo",
-                        "neutral":"texto neutral",
-                        "retroalimentacion":{
-                                "positiva":"retro positiva",
-                                "neutral":"retro neutral",
-                                "negativa":"retro negativa"
-                            }
+                    "textoEmocional": {
+                        "neutral": "Inicia los ejercicios",
+                        "encantado": "Estas muy bien, inicia con el ejercicio",
+                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion": {
+                            "positiva": "No importa el error vas muy bien",
+                            "neutral": "Sigue asi, continua",
+                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
                     },
-                    "opciones": []
+                    "opciones": [
+                    ]
                 },
                 {
-                    "texto": "2 8",
+                    "texto": "Falso",
                     "paso": 2,
-                    "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                    "presentacion": 
-                    [
-                        "int[] temp = {2 ,4, 6, 8};",
-                        "temp[0] = 23;",
-                        "temp[3] = temp[1];",
-                        "System.out.println(temp[0] + \" \" + temp[3]);"
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
+                    "presentacion": [
+                        "La independencia de la plataforma es la capacidad del programa de trasladarse con facilidad de un sistema computacional a otro.",
+                        "Los códigos de bytes de Java son independientes de la plataforma por lo tanto puede ejecutarse en cualquier plataforma",
+                        "que tenga soporte para la Máquina Virtual de Java. De ahí el slogan del lenguaje:", 
+                        "Escribir un programa una vez y ejecútalo donde sea (Write Once, Run Everywhere)."
                     ],
-                    "textoEmocional":{
-                        "compasivo":"texto compasivo",
-                        "neutral":"texto neutral",
-                        "retroalimentacion":{
-                                "positiva":"retro positiva",
-                                "neutral":"retro neutral",
-                                "negativa":"retro negativa"
-                            }
+                    "textoEmocional": {
+                        "neutral": "Inicia los ejercicios",
+                        "encantado": "Estas muy bien, inicia con el ejercicio",
+                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion": {
+                            "positiva": "No importa el error vas muy bien",
+                            "neutral": "Sigue asi, continua",
+                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
                     },
-                    "opciones": []       
-                },
-                {
-                    "texto": "3 1",
-                    "paso": 3,
-                    "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                    "presentacion": 
-                    [
-                        "int[] temp = {2 ,4, 6, 8};",
-                        "temp[0] = 23;",
-                        "temp[3] = temp[1];",
-                        "System.out.println(temp[0] + \" \" + temp[3]);"
-                    ],
-                    "textoEmocional":{
-                        "compasivo":"texto compasivo",
-                        "neutral":"texto neutral",
-                        "retroalimentacion":{
-                                "positiva":"retro positiva",
-                                "neutral":"retro neutral",
-                                "negativa":"retro negativa"
-                            }
-                    },
-                    "opciones": []       
-                },
-                {
-                    "texto": "23 4",
-                    "paso": 4,
-                    "tipo": "optimofinalizado",
-                    "instruccion": "La respuesta es correcta.",
-                    "presentacion": 
-                    [
-                        "int[] temp = {2 ,4, 6, 8};",
-                        "temp[0] = 23;",
-                        "temp[3] = temp[1];",
-                        "System.out.println(temp[0] + \" \" + temp[3]);",
-                        "Se imprime: 23, 4"
-                    ],
-                    "textoEmocional":{
-                        "compasivo":"texto compasivo",
-                        "neutral":"texto neutral",
-                        "retroalimentacion":{
-                                "positiva":"retro positiva",
-                                "neutral":"retro neutral",
-                                "negativa":"retro negativa"
-                            }
-                    },
-                    "opciones": []       
+                    "opciones": [
+                    ]
                 }
             ]
         }

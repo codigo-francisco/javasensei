@@ -1,20 +1,18 @@
 {
-    "id": 1,
+    "id":3,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "Las variables son una de las caracterÃ­sticas fundamentales de los lenguajes de programaciÃ³n, permiten acceder a la memoria para almacenar y recuperar los datos con los que nuestros programas van a trabajar. Son por tanto el mecanismo que los lenguajes de programaciÃ³n ponen a nuestra disposiciÃ³n para acceder a la memoria.",
-        "Se trata de un mecanismo de lo mÃ¡s sencillo, sÃ³lo tenemos que dar un nombre a nuestras variables, a partir de ese momento el compilador traducirÃ¡ de forma automÃ¡tica ese nombre en un acceso a memoria. Por ejemplo:"
+        "Las variables blah blah blah.",
+        "aquí van las instrucciones del ejercicio."
     ],
     "opciones": [
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Escoge la opcion que te dara 10 en la variable X",
+            "instruccion": "Contesta la siguiente pregunta.",
             "presentacion": [
-                "public class Main{",
-                "\tint x=<input type='text' readonly class='focusInput'>;",
-                "\tint y=<input type='text' readonly >;",
-                "\tSystem.out.println(<input type='text' readonly >);",
-                "}"
+                "¿Un programa que contiene errores de sintaxis puede compilarse y generar códigos de bytes?"
             ],
             "textoEmocional": {
                 "neutral": "Inicia los ejercicios",
@@ -30,16 +28,12 @@
             },
             "opciones": [
                 {
-                    "texto": "9+2",
+                    "texto": "Verdadero",
                     "paso": 1,
                     "tipo": "pasoerroneo",
-                    "instruccion": "La suma las constantes enteras no da 11",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": [
-                        "public class Main{",
-                        "\tint x=<input type='text' readonly value='9+2' class='errorTracing'>;",
-                        "\tint y=<input type='text' readonly >;",
-                        "\tSystem.out.println(<input type='text' readonly >)",
-                        "}"
+                        "¿Un programa que contiene errores de sintaxis puede compilarse y generar códigos de bytes?"
                     ],
                     "textoEmocional": {
                         "neutral": "Inicia los ejercicios",
@@ -57,16 +51,20 @@
                     ]
                 },
                 {
-                    "texto": "5+5",
+                    "texto": "Falso",
                     "paso": 2,
-                    "tipo": "pasooptimo",
-                    "instruccion": "Ahora selecciona la opcion que da 5 en y",
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
                     "presentacion": [
-                        "public class Main{",
-                        "\tint x=<input type='text' readonly value='5+5'>;",
-                        "\tint y=<input type='text' readonly class='focusInput'>;",
-                        "\tSystem.out.println(<input type='text' readonly>);",
-                        "}"
+                        "Todos los lenguajes, ya sea francés, inglés o español, Java inclusive, tienen ",
+                        "un conjunto de reglas: tienen una gramática. En español, por ejemplo, las oraciones",
+                        "terminan con un punto, signo de exclamación o de interrogación. En el caso de Java las",
+                        "instrucciones (oraciones) terminan con un punto y coma. Es un error común olvidar el punto",
+                        "y coma en los programas.",
+                        "Cuando usted viola una regla del lenguaje de programación Java, el compilador muestra",
+                        "mensajes de error de sintaxis en la pantalla de su monitor. Antes de que el compilador pueda",
+                        "convertir con éxito los programas fuente en código de máquina virtual, usted debe corregir todos",
+                        "los errores de sintaxis que tenga el archivo fuente."
                     ],
                     "textoEmocional": {
                         "neutral": "Inicia los ejercicios",
@@ -81,114 +79,6 @@
                         }
                     },
                     "opciones": [
-                        {
-                            "texto": "1+4",
-                            "paso": 3,
-                            "tipo": "pasooptimo",
-                            "instruccion": "Escoge el codigo que nos producira la salida 2",
-                            "presentacion": [
-                                "public class Main{",
-                                "\tint x=<input type='text' readonly value='5+5'>;",
-                                "\tint y=<input type='text' readonly value='1+4'>;",
-                                "\tSystem.out.println(<input type='text' readonly class='focusInput'>);",
-                                "}"
-                            ],
-                            "textoEmocional": {
-                                "neutral": "Inicia los ejercicios",
-                                "encantado": "Estas muy bien, inicia con el ejercicio",
-                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                "retroalimentacion": {
-                                    "positiva": "No importa el error vas muy bien",
-                                    "neutral": "Sigue asi, continua",
-                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                }
-                            },
-                            "opciones": [
-                                {
-                                    "texto": "x%y",
-                                    "paso": 4,
-                                    "tipo": "pasofinaloptimo",
-                                    "instruccion": "Muy bien, has terminado el ejercicio",
-                                    "presentacion": [
-                                        "public class Main{",
-                                        "\tint x=<input type='text' readonly value='5+5'>;",
-                                        "\tint y=<input type='text' readonly value='1+4'>;",
-                                        "\tSystem.out.println(<input type='text' readonly value='x%y'>);",
-                                        "}"
-                                    ],
-                                    "textoEmocional": {
-                                        "neutral": "Inicia los ejercicios",
-                                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                        "retroalimentacion": {
-                                            "positiva": "No importa el error vas muy bien",
-                                            "neutral": "Sigue asi, continua",
-                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                        }
-                                    },
-                                    "opciones": [
-                                    ]
-                                },
-                                {
-                                    "texto": "x-y",
-                                    "paso": 5,
-                                    "tipo": "pasoerroneo",
-                                    "instruccion": "El sumbolo '-' resta la cantidad de ambas cifras",
-                                    "presentacion": [
-                                        "public class Main{",
-                                        "\tint x=<input type='text' readonly value='5+5'>;",
-                                        "\tint y=<input type='text' readonly value='1+4'>;",
-                                        "\tSystem.out.println(<input type='text' readonly value='x-y' class='errorTracing'>);",
-                                        "}"
-                                    ],
-                                    "textoEmocional": {
-                                        "neutral": "Inicia los ejercicios",
-                                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                        "retroalimentacion": {
-                                            "positiva": "No importa el error vas muy bien",
-                                            "neutral": "Sigue asi, continua",
-                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                        }
-                                    },
-                                    "opciones": [
-                                    ]
-                                },
-                                {
-                                    "texto": "2+x-2-y",
-                                    "paso": 6,
-                                    "tipo": "pasofinalsuboptimo",
-                                    "instruccion": "El ejercicio a terminado en un camino no optimo",
-                                    "presentacion": [
-                                        "public class Main{",
-                                        "\tint x=<input type='text' readonly value='5+5'>;",
-                                        "\tint y=<input type='text' readonly value='1+4'>;",
-                                        "\tSystem.out.println(<input type='text' readonly value='2+x-2-y'>);",
-                                        "}"
-                                    ],
-                                    "textoEmocional": {
-                                        "neutral": "Inicia los ejercicios",
-                                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                        "retroalimentacion": {
-                                            "positiva": "No importa el error vas muy bien",
-                                            "neutral": "Sigue asi, continua",
-                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                        }
-                                    },
-                                    "opciones": [
-                                    ]
-                                }
-                            ]
-                        }
                     ]
                 }
             ]
