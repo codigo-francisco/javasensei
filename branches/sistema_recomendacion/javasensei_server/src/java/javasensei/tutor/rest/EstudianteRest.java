@@ -1,6 +1,7 @@
 package javasensei.tutor.rest;
 
 import javasensei.db.managments.EstudiantesManager;
+import javasensei.db.managments.RankingEjerciciosManager;
 import javasensei.estudiante.ModeloEstudiante;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -33,6 +34,9 @@ public class EstudianteRest {
         
         EstudiantesManager estudiantes = new EstudiantesManager();
         String result = estudiantes.insertOrCreateStudent(estudiante);
+        //Se pasa a colocar el ranking
+        RankingEjerciciosManager ranking = new RankingEjerciciosManager();
+        ranking.colocarRankingDefault(estudiante);
         
         return "jsonpCallback("+result+")"; //JSON de respuesta
     }
