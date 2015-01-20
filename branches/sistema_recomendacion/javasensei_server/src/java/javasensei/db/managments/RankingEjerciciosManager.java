@@ -9,20 +9,41 @@ import com.mongodb.DBCollection;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javasensei.db.collections.EjerciciosCollection;
 import javasensei.db.collections.RankingEjerciciosCollection;
 import javasensei.estudiante.ModeloEstudiante;
+import org.apache.mahout.cf.taste.model.DataModel;
 
 /**
  *
  * @author Rock
  */
-public class RankingEjerciciosManager {
+public class RankingEjerciciosManager{
 
     private RankingEjerciciosCollection rankingCollection = new RankingEjerciciosCollection();
     private EjerciciosCollection ejerciciosCollection = new EjerciciosCollection();
+    
+    protected static DataModel dataModel;
+    
+    public RankingEjerciciosManager(){
+        if (dataModel==null){
+            
+            try {
+                //Generamos el archivo CSV temporal
+                //TODO
+                File.createTempFile("datamodel", ".csv");
+                //dataModel =  new GenericJDBCDataModel(null);
+            } catch (IOException ex) {
+                Logger.getLogger(RankingEjerciciosManager.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
 
     public boolean colocarRankingDefault(ModeloEstudiante estudiante) {
         boolean result = false;
