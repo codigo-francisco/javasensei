@@ -1,76 +1,49 @@
 function recursos_sensei() {
 
+    function peticionAjaxRecursos(target, callback, control, useUser) {
+
+        var resource = url + target;
+        if (useUser){
+            resource+="/" + JSON.stringify(usuario);
+        }
+
+        $.ajax({
+            url: resource,
+            type: "GET",
+            contentType: "application/json",
+            dataType: "json"
+        })
+        .done(function(data){
+            callback(data, control);
+        })
+        .fail(function (error) {
+            console.err(error);
+        });
+    }
+
     this.obtenerEjercicios = function obtenerEjercicios(control) {
-        //TODO: Dummy, se deben obtener las recomendaciones del ejercicio
-        var ejercicios = [
-            {
-                titulo: "Ejercicio 1",
-                url: "www.google.com"
-            },
-            {
-                titulo: "Ejercicio 1",
-                url: "www.google.com"
-            }
-        ];
-        crearLista(ejercicios, control);
+        peticionAjaxRecursos("recomendacion/ejercicios",crearLista, control, true);
     };
 
     this.obtenerRecursos = function obtenerRecursos(control) {
-        //TODO: Es dummy
-        var recursos = //Aqui deberia obtenerse todos los recursos
-                [
-                    {
-                        nombre: "Lenguaje",
-                        recursos: [
-                            {
-                                titulo: "Videos basico sobre lenguajes I",
-                                url: "www.google.com"
-                            },
-                            {
-                                titulo: "Videos basico sobre lenguajes II",
-                                url: "www.google.com"
-                            },
-                            {
-                                titulo: "Videos basico sobre lenguajes III",
-                                url: "www.google.com"
-                            },
-                            {
-                                titulo: "Videos basico sobre lenguajes IV",
-                                url: "www.google.com"
-                            },
-                            {
-                                titulo: "Videos basico sobre lenguajes V",
-                                url: "www.google.com"
-                            }
-                        ]
-                    },
-                    {
-                        nombre: "Tipo de Dato",
-                        recursos: [
-                            {
-                                titulo: "Tipos de dato Integer",
-                                url: "www.google.com"
-                            },
-                            {
-                                titulo: "El complejo pero necesario mundo de las cadenas",
-                                url: "www.google.com"
-                            },
-                            {
-                                titulo: "El complejo pero necesario mundo de las cadenas",
-                                url: "www.google.com"
-                            },
-                            {
-                                titulo: "El complejo pero necesario mundo de las cadenas",
-                                url: "www.google.com"
-                            },
-                            {
-                                titulo: "El complejo pero necesario mundo de las cadenas",
-                                url: "www.google.com"
-                            }
-                        ]
-                    }
-                ];
+        peticionAjaxRecursos("recursos",crearListaRecursos, control, false);
+    };
 
+    this.obtenerIntereses = function obtenerIntereses(control) {
+        //TODO: Es dummy
+        var enlaces = [
+            {titulo: '¿Cuales son los lenguajes de programacion mas usado (2014)?',
+                url: "www.google.com"},
+            {titulo: 'Android supera en cantidad de desarrolladores a iOS',
+                url: 'www.google.com'},
+            {titulo: 'El narcicismo y Apple',
+                url: 'www.google.com'}
+        ];
+
+        crearLista(enlaces, control);
+    };
+    
+    function crearListaRecursos(recursos, control){
         //Creamos la lista
         var control = $(control);
 
@@ -91,23 +64,9 @@ function recursos_sensei() {
                 });
             });
         }
-        
+
         control.listview("refresh");
-    };
-
-    this.obtenerIntereses = function obtenerIntereses(control) {
-        //TODO: Es dummy
-        var enlaces = [
-            {titulo: '¿Cuales son los lenguajes de programacion mas usado (2014)?',
-                url: "www.google.com"},
-            {titulo: 'Android supera en cantidad de desarrolladores a iOS',
-                url: 'www.google.com'},
-            {titulo: 'El narcicismo y Apple',
-                url: 'www.google.com'}
-        ];
-
-        crearLista(enlaces, control);
-    };
+    }
 
     function crearLista(items, control) {
         var control = $(control);
