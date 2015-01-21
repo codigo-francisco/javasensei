@@ -19,6 +19,10 @@ public class Connection {
         return mongo;
     }
     
+    public static DB getDb(){
+        return new Connection().db;
+    }
+    
     public Connection(){
         try {
             mongo = new Mongo(); //Localhost, default port

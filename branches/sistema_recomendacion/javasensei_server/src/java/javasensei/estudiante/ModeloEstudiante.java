@@ -6,6 +6,7 @@ import com.mongodb.DBObject;
 import javasensei.ia.recognitionemotion.Emocion;
 import javasensei.tutor.Habilidad;
 import com.google.gson.JsonObject;
+import java.nio.charset.Charset;
 
 /**
  *
@@ -19,13 +20,14 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     private Emocion emocionPrevia = Emocion.NEUTRAL;
     private Habilidad habilidadGlobal = Habilidad.MALA;
     private double calidadRespuesta = 0; //Parametros internos al crear un estudiante nuevo
+    private static Charset utf8 = Charset.forName("UTF-8");
+    private Long idLong;
     
     public ModeloEstudiante(){
         
     }
     
     public ModeloEstudiante(String jsonEstudiante){
-
             JsonParser parser = new JsonParser();
             JsonObject jsonObj = parser.parse(jsonEstudiante).getAsJsonObject();
 
@@ -38,6 +40,13 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
             habilidadGlobal = Habilidad.valueOf(jsonObj.get("habilidadGlobal").getAsString());
     }
 
+    public Long getIdLong(){
+        if (idLong==null)
+            idLong=utf8.encode(id).getLong();
+        
+        return idLong;
+    }
+    
     public String getId() {
         return id;
     }

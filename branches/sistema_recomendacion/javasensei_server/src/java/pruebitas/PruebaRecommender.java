@@ -12,13 +12,16 @@ import javasensei.estudiante.ModeloEstudiante;
  *
  * @author Rock
  */
-public class PruebaMongo {
+public class PruebaRecommender {
     public static void main(String[] args){
         ModeloEstudiante estudiante = new ModeloEstudiante();
         
-        RankingEjerciciosManager es = new RankingEjerciciosManager(estudiante);
         estudiante.setId("123bj123kl");
         
+        RankingEjerciciosManager es = new RankingEjerciciosManager(estudiante);
+        
         es.colocarRankingDefault();
+        
+        es.getRecommenders();
     }
 }

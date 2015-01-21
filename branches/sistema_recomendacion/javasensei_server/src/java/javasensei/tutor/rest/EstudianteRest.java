@@ -35,8 +35,8 @@ public class EstudianteRest {
         EstudiantesManager estudiantes = new EstudiantesManager();
         String result = estudiantes.insertOrCreateStudent(estudiante);
         //Se pasa a colocar el ranking
-        RankingEjerciciosManager ranking = new RankingEjerciciosManager();
-        ranking.colocarRankingDefault(estudiante);
+        RankingEjerciciosManager ranking = new RankingEjerciciosManager(estudiante);
+        ranking.colocarRankingDefault();
         
         return "jsonpCallback("+result+")"; //JSON de respuesta
     }

@@ -13,7 +13,6 @@ function obtenerInstruccion(id) {
     };
 }
 function obtenerEjercicios(callback) {
-    //TODO: dummy por ahora devuelve un ejecicio de usuario por default (para definir el objeto)
     //Se hace una solicitud rest al servidor java
     var urlDominioEstudiante = url + "dominioEstudiante/getDominioEstudiante/" + usuario.id;
 
