@@ -6,7 +6,6 @@ import com.mongodb.DBObject;
 import javasensei.ia.recognitionemotion.Emocion;
 import javasensei.tutor.Habilidad;
 import com.google.gson.JsonObject;
-import java.nio.charset.Charset;
 
 /**
  *
@@ -14,14 +13,12 @@ import java.nio.charset.Charset;
  */
 public class ModeloEstudiante implements java.io.Serializable, DBInterface {
 
-    private String id;
+    private long id;
     private String token;
     private Emocion emocionActual = Emocion.NEUTRAL;
     private Emocion emocionPrevia = Emocion.NEUTRAL;
     private Habilidad habilidadGlobal = Habilidad.MALA;
     private double calidadRespuesta = 0; //Parametros internos al crear un estudiante nuevo
-    private static Charset utf8 = Charset.forName("UTF-8");
-    private Long idLong;
     
     public ModeloEstudiante(){
         
@@ -32,26 +29,19 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
             JsonObject jsonObj = parser.parse(jsonEstudiante).getAsJsonObject();
 
             //Se construye el objeto del estudiante
-            id = jsonObj.get("id").getAsString();
+            id = jsonObj.get("id").getAsLong();
             token = jsonObj.get("token").getAsString();
             calidadRespuesta = jsonObj.get("calidadRespuesta").getAsDouble();
             emocionActual = Emocion.valueOf(jsonObj.get("emocionActual").getAsString());
             emocionPrevia = Emocion.valueOf(jsonObj.get("emocionPrevia").getAsString());
             habilidadGlobal = Habilidad.valueOf(jsonObj.get("habilidadGlobal").getAsString());
     }
-
-    public Long getIdLong(){
-        if (idLong==null)
-            idLong=utf8.encode(id).getLong();
-        
-        return idLong;
-    }
     
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

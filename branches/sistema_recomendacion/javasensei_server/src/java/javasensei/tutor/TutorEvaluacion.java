@@ -33,7 +33,7 @@ public class TutorEvaluacion {
             JsonObject jsonObj = parser.parse(jsonEstudiante).getAsJsonObject();
 
             //Se construye el objeto del estudiante
-            estudiante.setId(jsonObj.get("id").getAsString());
+            estudiante.setId(jsonObj.get("id").getAsLong());
 
             estudiante.setToken(jsonObj.get("token").getAsString());
 

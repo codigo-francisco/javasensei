@@ -7,7 +7,8 @@
 
         <link href="jquerymobile/jquery.mobile-1.4.4.min.css" rel="stylesheet">
         <link href="styles/github.css" rel="stylesheet">
-        <link href="tinyscrollbar/tinyscrollbar.css" rel="stylesheet">
+        <link href="jrating/jRating.jquery.css" rel="stylesheet" media="screen">
+        
         <link href="css/example_tracing.css" rel="stylesheet">
         <link href="css/avatar.css" rel="stylesheet">
 
@@ -17,8 +18,8 @@
         <script type="text/javascript" src="highlight.pack.js"></script>
         <script type="text/javascript" src="js/buckets-minified.js"></script>
         <script type="text/javascript" src="js/jspath.min.js"></script>
-        <script type="text/javascript" src="js/jRate.min.js"></script>
-        <script type="text/javascript" src="tinyscrollbar/jquery.tinyscrollbar.min.js"></script>
+        <script type="text/javascript" src="jrating/jRating.jquery.min.js"></script>
+        
 
         <script type="text/javascript" src="js/recomendaciones.js"></script>
         <script type="text/javascript" src="js/ejercicios.js"></script>
@@ -38,7 +39,6 @@
             var camera_sensei;
             var carpeta_ejercicios = "lecciones/";
             var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
-            //var url = "http://localhost:8080/javasensei/servicios/";
             var url = "servicios/"; //Jquery infiere el dominio
             var usuario = {};
 
@@ -116,14 +116,7 @@
                     }
                 });
                 
-                //Inicializacion del rate
-                $("#calificacion_ejercicio").jRate({
-                    min:1,
-                    max:5,
-                    precision:0,
-                    startColor: "red",
-                    endColor: "green"
-                });
+                
 
                 $("#areatrabajo").hide();
                 $("#controles_tracing").hide();
@@ -296,11 +289,13 @@
                     <h1 id="titulo_recurso"></h1>
                 </div>
                 <div role="main" class="ui-content">
-                    
+                    <div id="contenido_recurso">
+                        
+                    </div>
                 </div>
                 <div data-role="footer">
                     ¿Que te ha parecido el ejercicio?<br>
-                    <div id="calificacion_ejercicio"></div>
+                    <div id="calificacion_ejercicio">Calificacion</div>
                 </div>
             </div>
         </div>
@@ -315,7 +310,7 @@
                         <ul>
                             <li><a href="#primertab" data-ajax="false">Ejercicios</a></li>
                             <li><a href="#segundotab" data-ajax="false">Recursos</a></li>
-                            <li><a href="#tercertab" data-ajax="false">Otras Cosas...</a></li>
+                            <!-- <li><a href="#tercertab" data-ajax="false">Otras Cosas...</a></li> -->
                         </ul>
                         <div id="primertab" class="ui-content">
                             <ul id="listaejercicios" class="tablist-content" data-role="listview" data-inset="true">
@@ -323,17 +318,15 @@
                             </ul>
                         </div>
                         <div id="segundotab" class="ui-content">
-                            <div id="div_recursos">
-                                <ul id="listalibros" class="tablist-content" data-inset="true" data-filter="true" data-role="listview">
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div id="tercertab" class="ui-content">
-                            <ul id="listaenlaces" class="tablist-content" data-role="listview" data-inset="true">
+                            <ul id="listalibros" class="tablist-content" data-inset="true" data-filter="true" data-role="listview">
                                 <li></li>
                             </ul>
                         </div>
+                        <!--<div id="tercertab" class="ui-content">
+                            <ul id="listaenlaces" class="tablist-content" data-role="listview" data-inset="true">
+                                <li></li>
+                            </ul>
+                        </div>-->
                     </div>
                 </div>
             </div>

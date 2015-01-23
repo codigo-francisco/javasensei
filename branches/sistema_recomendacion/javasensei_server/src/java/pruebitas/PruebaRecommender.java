@@ -16,7 +16,7 @@ public class PruebaRecommender {
     public static void main(String[] args){
         ModeloEstudiante estudiante = new ModeloEstudiante();
         
-        estudiante.setId("123bj123kl");
+        estudiante.setId(564465645);
         
         RankingEjerciciosManager es = new RankingEjerciciosManager(estudiante);
         

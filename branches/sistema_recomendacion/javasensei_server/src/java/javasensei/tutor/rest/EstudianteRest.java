@@ -29,7 +29,7 @@ public class EstudianteRest {
     public String getOrCreateEstudiante(@QueryParam("id") String id, @QueryParam("token") String token){
         
         ModeloEstudiante estudiante = new ModeloEstudiante();
-        estudiante.setId(id);
+        estudiante.setId(Long.parseLong(id));
         estudiante.setToken(token);
         
         EstudiantesManager estudiantes = new EstudiantesManager();

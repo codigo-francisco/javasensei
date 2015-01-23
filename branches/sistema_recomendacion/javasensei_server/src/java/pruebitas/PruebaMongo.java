@@ -17,7 +17,7 @@ public class PruebaMongo {
         ModeloEstudiante estudiante = new ModeloEstudiante();
         
         RankingEjerciciosManager es = new RankingEjerciciosManager(estudiante);
-        estudiante.setId("123bj123kl");
+        estudiante.setId(6464465);
         
         es.colocarRankingDefault();
     }

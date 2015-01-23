@@ -56,7 +56,7 @@ public class RankingEjerciciosManager {
         try {
             List<Long> array = new ArrayList();
 
-            recommenders = recommender.recommend(estudiante.getIdLong(), 5); //5 Recomendaciones
+            recommenders = recommender.recommend(estudiante.getId(), 5); //5 Recomendaciones
 
             //Se agrega un item aleatorio...
             if (recommenders.size() < 1) { //RandomRecommender no funciona....
@@ -104,7 +104,7 @@ public class RankingEjerciciosManager {
 
                 while (cursor.hasNext()) {
                     DBObject object = cursor.next();
-                    long idAlumno = estudiante.getIdLong();
+                    long idAlumno = estudiante.getId();
                     int idEjercicio = (int) Double.parseDouble(object.get("idEjercicio").toString());
 
                     String cadena = String.format("%s,%s,%s",
@@ -142,7 +142,7 @@ public class RankingEjerciciosManager {
             QueryBuilder query = QueryBuilder.start("id")
                     .notIn(ranking.distinct("idEjercicio",
                                     QueryBuilder.start("idAlumno").
-                                    is(estudiante.getIdLong()).get()
+                                    is(estudiante.getId()).get()
                             ));
 
             //Obtenemos los id de ejercicios que no estan rankeados por el alumno
@@ -155,7 +155,7 @@ public class RankingEjerciciosManager {
                     listObjects.add(
                             BasicDBObjectBuilder.start()
                             .add("idEjercicio", object.get("id"))
-                            .add("idAlumno", estudiante.getIdLong())
+                            .add("idAlumno", estudiante.getId())
                             .add("ranking", 2) //2 De acuerdo a la escala
                             .get()
                     );
