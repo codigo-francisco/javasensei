@@ -32,9 +32,9 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
             id = jsonObj.get("id").getAsLong();
             token = jsonObj.get("token").getAsString();
             calidadRespuesta = jsonObj.get("calidadRespuesta").getAsDouble();
-            emocionActual = Emocion.valueOf(jsonObj.get("emocionActual").getAsString());
-            emocionPrevia = Emocion.valueOf(jsonObj.get("emocionPrevia").getAsString());
-            habilidadGlobal = Habilidad.valueOf(jsonObj.get("habilidadGlobal").getAsString());
+            emocionActual = Emocion.getEmocion(jsonObj.get("emocionActual").getAsString());
+            emocionPrevia = Emocion.getEmocion(jsonObj.get("emocionPrevia").getAsString());
+            habilidadGlobal = Habilidad.getHabilidad(jsonObj.get("habilidadGlobal").getAsString());
     }
     
     public long getId() {
