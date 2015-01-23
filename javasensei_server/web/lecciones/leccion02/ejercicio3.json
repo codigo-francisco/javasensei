@@ -1,8 +1,9 @@
 {
     "id": 1,
+    "paso":-1,
     "instruccionesejercicio": 
     [
-        "TeorÃ­a bÃ¡sica para resolver el ejercicio.",
+        "blah blah blah",
         "blah blah blah"
     ],
     "opciones": 
@@ -10,7 +11,7 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Selecciona la opciÃ³n que declara una variable de punto flotante:",
+            "instruccion": "Selecciona la opción que declara una variable de punto flotante:",
             "presentacion": 
             [
                 "public class Test {",
@@ -68,7 +69,7 @@
                     "texto": "float x;",
                     "paso": 2,
                     "tipo": "pasooptimo",
-                    "instruccion": "Correcto.  Ahora selecciona la opciÃ³n que asigna un valor valido a la variable de punto flotante:",
+                    "instruccion": "Correcto.  Ahora selecciona la opción que asigna un valor valido a la variable de punto flotante:",
                     "presentacion": 
                     [
                         "public class Test {",
@@ -127,7 +128,7 @@
                             "texto": "x = 12.0f;",
                             "paso": 4,
                             "tipo": "pasofinaloptimo",
-                            "instruccion": "Correcto.  Has finalizado el ejercicio con Ã©xito.",
+                            "instruccion": "Correcto.  Has finalizado el ejercicio con éxito.",
                             "presentacion": 
                             [
                                 "public class Test {",

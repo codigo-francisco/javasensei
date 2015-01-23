@@ -56,10 +56,7 @@
                     "tipo": "pasofinaloptimo",
                     "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
                     "presentacion": [
-                        "La independencia de la plataforma es la capacidad del programa de trasladarse con facilidad de un sistema computacional a otro.",
-                        "Los códigos de bytes de Java son independientes de la plataforma por lo tanto puede ejecutarse en cualquier plataforma",
-                        "que tenga soporte para la Máquina Virtual de Java. De ahí el slogan del lenguaje:", 
-                        "Escribir un programa una vez y ejecútalo donde sea (Write Once, Run Everywhere)."
+                        "La independencia de la plataforma es la capacidad del programa de trasladarse con facilidad de un sistema computacional a otro."
                     ],
                     "textoEmocional": {
                         "neutral": "Inicia los ejercicios",

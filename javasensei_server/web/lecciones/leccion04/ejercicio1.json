@@ -1,5 +1,6 @@
 {
     "id":1,
+    "paso":-1,
     "instruccionesejercicio": 
     [
         "Las variables...",
@@ -10,10 +11,10 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Selecciona la opciÃ³n que responda a la pregunta.",
+            "instruccion": "Selecciona la opción que responda a la pregunta.",
             "presentacion": 
             [
-                "Â¿La condiciÃ³n de una instrucciÃ³n if debe ser una expresiÃ³n de tipo boolean?"
+                "¿La condición de una instrucción if debe ser una expresión de tipo boolean?"
             ],
             "opciones": 
             [
@@ -24,7 +25,7 @@
                     "instruccion": "La respuesta es correcta.",
                     "presentacion": 
                     [
-                        "La condiciÃ³n en una instrucciÃ³n if debe ser de tipo boolean."
+                        "La condición en una instrucción if debe ser de tipo boolean."
                     ],
                     "textoEmocional":
                     {
@@ -49,7 +50,7 @@
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
-                         "Â¿La condiciÃ³n de una instrucciÃ³n if debe ser una expresiÃ³n de tipo boolean?"
+                         "¿La condición de una instrucción if debe ser una expresión de tipo boolean?"
                     ],
                     "textoEmocional":
                     {

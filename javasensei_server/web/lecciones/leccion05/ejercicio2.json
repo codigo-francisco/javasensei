@@ -1,5 +1,6 @@
 {
     "id":1,
+    "paso":-1,
     "instruccionesejercicio": 
     [
         "Las variables...",
@@ -10,21 +11,21 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Selecciona la opciÃ³n que responda a la pregunta.",
+            "instruccion": "Selecciona la opción que responda a la pregunta.",
             "presentacion": 
             [
-                "Â¿La instrucciÃ³n return se utiliza para regresar un valor a la instrucciÃ³n que lo invoca?"
+                "¿La instrucción return se utiliza para regresar un valor a la instrucción que lo invoca?"
             ],
             "opciones": 
             [
                 {
                     "texto": "Verdadero",
                     "paso": 2,
-                    "tipo": "optimofinalizado",
+                    "tipo": "pasofinaloptimo",
                     "instruccion": "La respuesta es correcta.",
                     "presentacion": 
                     [
-                        "La instrucciÃ³n return se utiliza para regresar un valor a la instrucciÃ³n que lo invoca."
+                        "La instrucción return se utiliza para regresar un valor a la instrucción que lo invoca."
                     ],
                     "textoEmocional":
                     {
@@ -49,7 +50,7 @@
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
-                         "Â¿La instrucciÃ³n return se utiliza para regresar un valor a la instrucciÃ³n que lo invoca?"
+                         "¿La instrucción return se utiliza para regresar un valor a la instrucción que lo invoca?"
                     ],
                     "textoEmocional":
                     {

@@ -56,15 +56,7 @@
                     "tipo": "pasofinaloptimo",
                     "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
                     "presentacion": [
-                        "Todos los lenguajes, ya sea francés, inglés o español, Java inclusive, tienen ",
-                        "un conjunto de reglas: tienen una gramática. En español, por ejemplo, las oraciones",
-                        "terminan con un punto, signo de exclamación o de interrogación. En el caso de Java las",
-                        "instrucciones (oraciones) terminan con un punto y coma. Es un error común olvidar el punto",
-                        "y coma en los programas.",
-                        "Cuando usted viola una regla del lenguaje de programación Java, el compilador muestra",
-                        "mensajes de error de sintaxis en la pantalla de su monitor. Antes de que el compilador pueda",
-                        "convertir con éxito los programas fuente en código de máquina virtual, usted debe corregir todos",
-                        "los errores de sintaxis que tenga el archivo fuente."
+                        "La respuesta es correcta."
                     ],
                     "textoEmocional": {
                         "neutral": "Inicia los ejercicios",

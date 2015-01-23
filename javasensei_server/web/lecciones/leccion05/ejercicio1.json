@@ -1,5 +1,6 @@
 {
     "id":1,
+    "paso":-1,
     "instruccionesejercicio": 
     [
         "Las variables...",
@@ -10,17 +11,17 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Selecciona la opciÃ³n que responda a la pregunta.",
+            "instruccion": "Selecciona la opción que responda a la pregunta.",
             "presentacion": 
             [
-                "Â¿Las declaraciones de los mÃ©todos sÃ³lo pueden hacerse dentro de una clase?"
+                "¿Las declaraciones de los métodos sólo pueden hacerse dentro de una clase?"
             ],
             "opciones": 
             [
                 {
                     "texto": "Verdadero",
                     "paso": 2,
-                    "tipo": "optimofinalizado",
+                    "tipo": "pasofinaloptimo",
                     "instruccion": "La respuesta es correcta.",
                     "presentacion": 
                     [
@@ -49,7 +50,7 @@
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
-                         "Â¿Las declaraciones de los mÃ©todos sÃ³lo pueden hacerse dentro de una clase?"
+                         "¿Las declaraciones de los métodos sólo pueden hacerse dentro de una clase?"
                     ],
                     "textoEmocional":
                     {

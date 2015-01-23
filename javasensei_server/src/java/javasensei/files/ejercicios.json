@@ -2,7 +2,7 @@
     "nombreCurso":"curso java",
     "lecciones":[
         {
-            "id": 3,
+            "id": 1,
             "titulo": "Introducción a Java",
             "lecciones": [
                 {
@@ -24,6 +24,36 @@
                     "id": 4,
                     "url": "leccion01/ejercicio4.json",
                     "titulo": "Ejercicio 4"
+                },
+                {
+                    "id": 5,
+                    "url": "leccion01/ejercicio5.json",
+                    "titulo": "Ejercicio 5"
+                },
+                {
+                    "id": 6,
+                    "url": "leccion01/ejercicio6.json",
+                    "titulo": "Ejercicio 6"
+                },
+                {
+                    "id": 7,
+                    "url": "leccion01/ejercicio7.json",
+                    "titulo": "Ejercicio 7"
+                },
+                {
+                    "id": 8,
+                    "url": "leccion01/ejercicio8.json",
+                    "titulo": "Ejercicio 8"
+                },
+                {
+                    "id": 9,
+                    "url": "leccion01/ejercicio9.json",
+                    "titulo": "Ejercicio 9"
+                },
+                {
+                    "id": 10,
+                    "url": "leccion01/ejercicio10.json",
+                    "titulo": "Ejercicio 10"
                 }
             ]
         },
@@ -109,6 +139,11 @@
                     "id": 2,
                     "url": "leccion02/ejercicio2.json",
                     "titulo": "Ejercicio 2"
+                },
+                {
+                    "id": 3,
+                    "url": "leccion01/ejercicio9.json",
+                    "titulo": "Ejercicio 9"
                 }
             ]
         }

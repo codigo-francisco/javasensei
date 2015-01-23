@@ -1,5 +1,6 @@
 {
     "id": 1,
+    "paso":-1,
     "instruccionesejercicio": 
     [
         "Un mÃ©todo con valor de retorno es un mÃ³dulo de programa que puede recibir datos de entrada a travÃ©s de parÃ¡metros y que retorna un resultado al punto donde es invocado.",
@@ -10,7 +11,7 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Completa el cÃ³digo para que el mÃ©todo regrese una cadena de texto:",
+            "instruccion": "Completa el código para que el método regrese una cadena de texto:",
             "presentacion": 
             [
                 "public class Test {",
@@ -68,7 +69,7 @@
                     "texto": "String",
                     "paso": 2,
                     "tipo": "pasooptimo",
-                    "instruccion": "Â¡Muy bien!.  Ahora, selecciona la opciÃ³n que invoca al mÃ©todo saludo.",
+                    "instruccion": "¡Muy bien!.  Ahora, selecciona la opción que invoca al método saludo.",
                     "presentacion": 
                     [
                         "public class Test {",
