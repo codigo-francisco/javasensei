@@ -1,5 +1,6 @@
 {
     "id":1,
+    "paso":-1,
     "instruccionesejercicio": 
     [
         "Las variables...",
@@ -10,10 +11,10 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Selecciona la opciÃ³n que responda a la pregunta.",
+            "instruccion": "Selecciona la opción que responda a la pregunta.",
             "presentacion": 
             [
-                "Si la variable x es declarada de tipo double (double x;), selecciona la expresiÃ³n de asignaciÃ³n que es compatible."
+                "Si la variable x es declarada de tipo double (double x;), selecciona la expresión de asignación que es compatible."
             ],
             "opciones": 
             [
@@ -24,7 +25,7 @@
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
-                        "Si la variable x es declarada de tipo double (double x;), selecciona la expresiÃ³n de asignaciÃ³n que es compatible."
+                        "Si la variable x es declarada de tipo double (double x;), selecciona la expresión de asignación que es compatible."
                     ],
                     "textoEmocional":{
                         "compasivo":"texto compasivo",
@@ -39,12 +40,12 @@
                 },
                 {
                     "texto": "x = \"7\";",
-                    "paso": 2,
+                    "paso": 1,
                     "tipo": "pasoerroneo",
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
-                        "Si la variable x es declarada de tipo double (double x;), selecciona la expresiÃ³n de asignaciÃ³n que es compatible."
+                        "Si la variable x es declarada de tipo double (double x;), selecciona la expresión de asignación que es compatible."
                     ],
                     "textoEmocional":{
                         "compasivo":"texto compasivo",
@@ -59,12 +60,12 @@
                 },
                 {
                     "texto": "x = '7';",
-                    "paso": 3,
+                    "paso": 1,
                     "tipo": "pasoerroneo",
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
-                        "Si la variable x es declarada de tipo double (double x;), selecciona la expresiÃ³n de asignaciÃ³n que es compatible."
+                        "Si la variable x es declarada de tipo double (double x;), selecciona la expresión de asignación que es compatible."
                     ],
                     "textoEmocional":{
                         "compasivo":"texto compasivo",
@@ -79,8 +80,8 @@
                 },
                 {
                     "texto": "x = 7;",
-                    "paso": 4,
-                    "tipo": "optimofinalizado",
+                    "paso": 1,
+                    "tipo": "pasofinaloptimo",
                     "instruccion": "La respuesta es correcta.",
                     "presentacion": 
                     [

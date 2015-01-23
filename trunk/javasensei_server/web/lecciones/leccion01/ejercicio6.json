@@ -10,7 +10,7 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Paso 1 de 5.  Selecciona el nombre de archivo con el que debe almacenarse el código fuente que se muestra a continuación:",
+            "instruccion": "Paso 1 de 4.  Selecciona el nombre de archivo con el que debe almacenarse el código fuente que se muestra a continuación:",
             "presentacion": [
                 "public class Test {",
                 "\tpublic static void main(String[] args) {",
@@ -60,7 +60,7 @@
                 },
                 {
                     "texto": "Test.exe",
-                    "paso": 1,
+                    "paso": 2,
                     "tipo": "pasoerroneo",
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": [
@@ -86,8 +86,8 @@
                     ]
                 },
                 {
-                  "texto": "Test.class",
-                    "paso": 1,
+                    "texto": "Test.class",
+                    "paso": 3,
                     "tipo": "pasoerroneo",
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": [
@@ -114,9 +114,9 @@
                 },
                 {
                     "texto": "Test.java",
-                    "paso": 1,
+                    "paso": 4,
                     "tipo": "pasooptimo",
-                    "instruccion": "Paso 2 de 5.  ¿Cuál es el comando que se debe de utilizar para compilar la aplicación Test.java?",
+                    "instruccion": "Paso 2 de 4.  ¿Cuál es el comando que se debe de utilizar para compilar la aplicación Test.java?",
                     "presentacion": [
                         "public class Test {",
                         "\tpublic static void main(String[] args) {",
@@ -137,11 +137,11 @@
                         }
                     },
                     "opciones": [                        
-                        {
-                            "texto": "javac",
-                            "paso": 2,
+                        { 
+                            "texto": "javac",                       
+                            "paso": 5,
                             "tipo": "pasooptimo",
-                            "instruccion": "Paso 3 de 5.  ¿Cuando se compila el código fuente con el comando javac Test.java, el archivo producido por el compilador termina con la extensión?",
+                            "instruccion": "Paso 3 de 4.  ¿Cuando se compila el código fuente con el comando javac Test.java, el archivo producido por el compilador termina con la extensión?",
                             "presentacion": [
                                 "public class Test {",
                                 "\tpublic static void main(String[] args) {",
@@ -163,16 +163,16 @@
                                 }
                             },
                             "opciones": [
-                                {
-                                    "texto": "Test.java",
-                                    "paso": 3,
+                                { 
+                                    "texto": "Test.java",                       
+                                    "paso": 6,
                                     "tipo": "pasoerroneo",
                                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                                     "presentacion": [
                                         "public class Test {",
                                         "\tpublic static void main(String[] args) {",
                                         "\t\tSystem.out.println(\"Java Sensei\");",
-                                        "\t}",
+                                        "\t}",                                        
                                         "}",
                                         "javac Test.java"
                                     ],
@@ -190,18 +190,18 @@
                                     },
                                     "opciones": []
                                 },
-                                {
-                                    "texto": "Test.class",
-                                    "paso": 3,
+                                { 
+                                    "texto": "Test.class",                       
+                                    "paso": 7,
                                     "tipo": "pasooptimo",
-                                    "instruccion": "Paso 4 de 5.  En el paso anterior, el archivo producido por el compilador contiene los códigos de bytes que se ejecutan mediante la Máquina Virtual de Java.  Finalmente, para ejecutar la aplicación Java se utiliza el comando: ",
+                                    "instruccion": "Paso 4 de 4.  En el paso anterior, el archivo producido por el compilador contiene los códigos de bytes.  Finalmente, para ejecutar la aplicación Java se utiliza el comando: ",
                                     "presentacion": [
                                         "public class Test {",
                                         "\tpublic static void main(String[] args) {",
                                         "\t\tSystem.out.println(\"Java Sensei\");",
-                                        "\t}",
+                                        "\t}",                                        
                                         "}",
-                                        "javac Test.java  --> Test.class"
+                                        "javac Test.java --> Test.class"
                                     ],
                                     "textoEmocional": {
                                         "neutral": "Inicia los ejercicios",
@@ -215,19 +215,19 @@
                                             "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
                                         }
                                     },
-                                    "opciones": [
-                                        {
-                                            "texto": "javac",
-                                            "paso": 4,
+                                    "opciones": [                                        
+                                        { 
+                                            "texto": "javac",                       
+                                            "paso": 8,
                                             "tipo": "pasoerroneo",
                                             "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                                             "presentacion": [
                                                 "public class Test {",
                                                 "\tpublic static void main(String[] args) {",
                                                 "\t\tSystem.out.println(\"Java Sensei\");",
-                                                "\t}",
+                                                "\t}",                                        
                                                 "}",
-                                                "javac Test.java  --> Test.class"
+                                                "javac Test.java"
                                             ],
                                             "textoEmocional": {
                                                 "neutral": "Inicia los ejercicios",
@@ -243,46 +243,18 @@
                                             },
                                             "opciones": []
                                         },
-                                        {
-                                            "texto": "javac",
-                                            "paso": 4,
-                                            "tipo": "pasoerroneo",
-                                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                            "presentacion": [
-                                                "public class Test {",
-                                                "\tpublic static void main(String[] args) {",
-                                                "\t\tSystem.out.println(\"Java Sensei\");",
-                                                "\t}",
-                                                "}",
-                                                "javac Test.java  --> Test.class"
-                                            ],
-                                            "textoEmocional": {
-                                                "neutral": "Inicia los ejercicios",
-                                                "encantado": "Estas muy bien, inicia con el ejercicio",
-                                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                                "retroalimentacion": {
-                                                    "positiva": "No importa el error vas muy bien",
-                                                    "neutral": "Sigue asi, continua",
-                                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                                }
-                                            },
-                                            "opciones": []
-                                        },
-                                        {
-                                        
-                                            "texto": "java",
-                                            "paso": 5,
+                                        { 
+                                            "texto": "java",                       
+                                            "paso": 9,
                                             "tipo": "pasofinaloptimo",
-                                            "instruccion": "Paso 5 de 5.  La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
+                                            "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
                                             "presentacion": [
                                                 "public class Test {",
                                                 "\tpublic static void main(String[] args) {",
                                                 "\t\tSystem.out.println(\"Java Sensei\");",
-                                                "\t}",
+                                                "\t}",                                        
                                                 "}",
-                                                "javac Test.java  --> Test.class",
+                                                "javac Test.java --> Test.class",
                                                 "java Test",
                                                 "Java Sensei"
                                             ],
@@ -298,21 +270,20 @@
                                                     "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
                                                 }
                                             },
-                                            "opciones": []    
+                                            "opciones": []
                                         },
-                                        {
-                                           
-                                            "texto": "execute",
-                                            "paso": 4,
+                                        { 
+                                            "texto": "run",                       
+                                            "paso": 10,
                                             "tipo": "pasoerroneo",
                                             "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                                             "presentacion": [
                                                 "public class Test {",
                                                 "\tpublic static void main(String[] args) {",
                                                 "\t\tSystem.out.println(\"Java Sensei\");",
-                                                "\t}",
+                                                "\t}",                                        
                                                 "}",
-                                                "javac Test.java  --> Test.class"
+                                                "javac Test.java --> Test.class"
                                             ],
                                             "textoEmocional": {
                                                 "neutral": "Inicia los ejercicios",
@@ -326,20 +297,47 @@
                                                     "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
                                                 }
                                             },
-                                            "opciones": [] 
-                                        }
+                                            "opciones": []
+                                        },
+                                        { 
+                                            "texto": "execute",                       
+                                            "paso": 11,
+                                            "tipo": "pasoerroneo",
+                                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                            "presentacion": [
+                                                "public class Test {",
+                                                "\tpublic static void main(String[] args) {",
+                                                "\t\tSystem.out.println(\"Java Sensei\");",
+                                                "\t}",                                        
+                                                "}",
+                                                "javac Test.java --> Test.class"
+                                            ],
+                                            "textoEmocional": {
+                                                "neutral": "Inicia los ejercicios",
+                                                "encantado": "Estas muy bien, inicia con el ejercicio",
+                                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                                "retroalimentacion": {
+                                                    "positiva": "No importa el error vas muy bien",
+                                                    "neutral": "Sigue asi, continua",
+                                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                                }
+                                            },
+                                            "opciones": []
+                                        }                                                                                
                                     ]
                                 },
-                                {
-                                    "texto": "Test.exe",
-                                    "paso": 3,
+                                { 
+                                    "texto": "Test.exe",                       
+                                    "paso": 12,
                                     "tipo": "pasoerroneo",
                                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                                     "presentacion": [
                                         "public class Test {",
                                         "\tpublic static void main(String[] args) {",
                                         "\t\tSystem.out.println(\"Java Sensei\");",
-                                        "\t}",
+                                        "\t}",                                        
                                         "}",
                                         "javac Test.java"
                                     ],
@@ -357,16 +355,16 @@
                                     },
                                     "opciones": []
                                 },
-                                {
-                                    "texto": "Test.jar",
-                                    "paso": 3,
+                                { 
+                                    "texto": "Test.jar",                       
+                                    "paso": 13,
                                     "tipo": "pasoerroneo",
                                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                                     "presentacion": [
                                         "public class Test {",
                                         "\tpublic static void main(String[] args) {",
                                         "\t\tSystem.out.println(\"Java Sensei\");",
-                                        "\t}",
+                                        "\t}",                                        
                                         "}",
                                         "javac Test.java"
                                     ],
@@ -383,9 +381,87 @@
                                         }
                                     },
                                     "opciones": []
+                                }                                                  
+                            ]
+                        },
+                        { 
+                            "texto": "java",                       
+                            "paso": 14,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "presentacion": [
+                                "public class Test {",
+                                "\tpublic static void main(String[] args) {",
+                                "\t\tSystem.out.println(\"Java Sensei\");",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "Inicia los ejercicios",
+                                "encantado": "Estas muy bien, inicia con el ejercicio",
+                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                "retroalimentacion": {
+                                    "positiva": "No importa el error vas muy bien",
+                                    "neutral": "Sigue asi, continua",
+                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
                                 }
-                            ]                                
-                        }                        
+                            },
+                            "opciones": []
+                        } ,                       
+                        { 
+                            "texto": "run",                       
+                            "paso": 15,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "presentacion": [
+                                "public class Test {",
+                                "\tpublic static void main(String[] args) {",
+                                "\t\tSystem.out.println(\"Java Sensei\");",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "Inicia los ejercicios",
+                                "encantado": "Estas muy bien, inicia con el ejercicio",
+                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                "retroalimentacion": {
+                                    "positiva": "No importa el error vas muy bien",
+                                    "neutral": "Sigue asi, continua",
+                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                }
+                            },
+                            "opciones": []
+                        },
+                        { 
+                            "texto": "execute",                       
+                            "paso": 16,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "presentacion": [
+                                "public class Test {",
+                                "\tpublic static void main(String[] args) {",
+                                "\t\tSystem.out.println(\"Java Sensei\");",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "Inicia los ejercicios",
+                                "encantado": "Estas muy bien, inicia con el ejercicio",
+                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                "retroalimentacion": {
+                                    "positiva": "No importa el error vas muy bien",
+                                    "neutral": "Sigue asi, continua",
+                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                }
+                            },
+                            "opciones": []
+                        }                             
                     ]
                 }
             ]

@@ -1,5 +1,6 @@
 {
     "id":1,
+    "paso":-1,
     "instruccionesejercicio": 
     [
         "Las variables...",
@@ -10,7 +11,7 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Â¿CuÃ¡l es la salida del siguiente cÃ³digo cuando se compila y ejecuta?",
+            "instruccion": "¿Cuál es la salida del siguiente código cuando se compila y ejecuta?",
             "presentacion": 
             [
                 "public class Test {",

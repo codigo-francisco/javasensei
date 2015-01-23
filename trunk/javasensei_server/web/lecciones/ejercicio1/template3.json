@@ -1,8 +1,10 @@
 {
     "id": 1,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
     "instruccionesejercicio": 
     [
-        "TeorÃ­a bÃ¡sica para resolver el ejercicio.",
+        "Teoría básica para resolver el ejercicio.",
         "blah blah blah"
     ],
     "opciones": 
@@ -13,7 +15,7 @@
             "instruccion": "Este es el paso inicial:",
             "presentacion": 
             [
-                "CÃ³digo interactivo para el paso inicial, la primera pantalla"
+                "Código interactivo para el paso inicial, la primera pantalla"
             ],
             "textoEmocional": 
             {
