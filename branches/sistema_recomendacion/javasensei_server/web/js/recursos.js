@@ -50,6 +50,13 @@ function recursos_sensei() {
         }).done(function (data) {
             $("#titulo_recurso").text(datos.titulo);
             $("#contenido_recurso").html(data);
+            
+            $("#id_ejercicio").val(data.id);
+            
+            
+            
+            //Visualizamos la ventana
+            $(":mobile-pagecontainer").pagecontainer("change", "#visor_recursos");
         }).fail(function (error) {
             console.error(error);
         });
@@ -71,12 +78,16 @@ function recursos_sensei() {
                     control.append($("<li>").
                             append($("<a>")
                                     .attr("data-url", item.url)
+                                    .attr("data-id", item.id)
+                                    .attr("data-ranking", item.ranking)
                                     .text(item.titulo)
                                     .click(function () {
                                         var control = $(this);
                                         visualizarRecurso({
                                             titulo: control.text(),
-                                            url: control.attr("data-url")
+                                            url: control.attr("data-url"),
+                                            id:control.attr("data-id"),
+                                            ranking:control.attr("data-ranking")
                                         });
                                     })
                                     ));

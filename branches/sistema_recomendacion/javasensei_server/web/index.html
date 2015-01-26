@@ -111,7 +111,7 @@
                         case "paginarecursos":
                             recursos.obtenerEjercicios("#listaejercicios");
                             recursos.obtenerRecursos("#listalibros");
-                            recursos.obtenerIntereses("#listaenlaces");
+                            //recursos.obtenerIntereses("#listaenlaces");
                             break;
                     }
                 });
@@ -121,7 +121,8 @@
                 $("#areatrabajo").hide();
                 $("#controles_tracing").hide();
                 
-                //$("#div_recursos").tinyscrollbar();
+                //TODO: Eliminar despues de pruebas de la visualizacion de recursos
+                eliminarBackgroundCamera();
             });
 
 
@@ -283,7 +284,7 @@
             </div>
         </div>
         
-        <div data-role="page" id="visor_recursos" data-close-btn="right">
+        <div data-role="page" data-dialog="true" id="visor_recursos" data-close-btn="right">
             <div id="recursos_contenido">
                 <div data-role="header">
                     <h1 id="titulo_recurso"></h1>
@@ -298,6 +299,7 @@
                     <div id="calificacion_ejercicio">Calificacion</div>
                 </div>
             </div>
+            <input type="hidden" id="id_ejercicio">
         </div>
 
         <div data-role="page" id="paginarecursos" data-close-btn="right">

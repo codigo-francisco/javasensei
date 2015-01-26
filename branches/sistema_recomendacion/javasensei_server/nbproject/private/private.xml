@@ -7,6 +7,7 @@
             <file>file:/G:/java_sensei/branches/sistema_recomendacion/javasensei_server/src/java/javasensei/estudiante/ModeloEstudiante.java</file>
             <file>file:/G:/java_sensei/branches/sistema_recomendacion/javasensei_server/src/java/javasensei/tutor/rest/RecomendacionRest.java</file>
             <file>file:/G:/java_sensei/branches/sistema_recomendacion/javasensei_server/src/java/javasensei/tutor/TutorEvaluacion.java</file>
+            <file>file:/G:/java_sensei/branches/sistema_recomendacion/javasensei_server/src/java/javasensei/db/managments/RecomendacionesManager.java</file>
         </group>
     </open-files>
 </project-private>

@@ -11,6 +11,6 @@ public class RecursosPrueba {
     public static void main(String[] args){
         RecursoManager manager = new RecursoManager();
         
-        System.out.println(manager.obtenerRecursosPorCategoria());
+        //System.out.println(manager.obtenerRecursosPorCategoria());
     }
 }
