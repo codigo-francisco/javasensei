@@ -40,7 +40,7 @@
                 },
                 {
                     "texto": "x = \"7\";",
-                    "paso": 1,
+                    "paso": 2,
                     "tipo": "pasoerroneo",
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
@@ -60,7 +60,7 @@
                 },
                 {
                     "texto": "x = '7';",
-                    "paso": 1,
+                    "paso": 3,
                     "tipo": "pasoerroneo",
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
@@ -80,7 +80,7 @@
                 },
                 {
                     "texto": "x = 7;",
-                    "paso": 1,
+                    "paso": 4,
                     "tipo": "pasofinaloptimo",
                     "instruccion": "La respuesta es correcta.",
                     "presentacion": 

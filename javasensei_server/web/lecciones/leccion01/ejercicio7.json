@@ -141,7 +141,7 @@
                             "texto": "main",
                             "paso": 5,
                             "tipo": "pasooptimo",
-                            "instruccion": "Paso 3 de 4.  Selecciona el comando que se utilizar para compilar la aplicación Saludo.java en modo consola:",
+                            "instruccion": "Paso 3 de 4.  Selecciona el comando que se utiliza para compilar la aplicación Saludo.java en modo consola:",
                             "presentacion": [
                                 "public <input type='text' readonly value='class'> Saludo {",
                                 "\tpublic static void <input type='text' readonly value='main'> (String args[]) {",
@@ -161,11 +161,10 @@
                                     "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
                                 }
                             },
-                            "opciones": [
-                                
+                            "opciones": [                                
                                 {
                                     "texto": "javac Saludo.java",
-                                    "paso": 5,
+                                    "paso": 6,
                                     "tipo": "pasooptimo",
                                     "instruccion": "Paso 4 de 4.  Selecciona el comando que se utiliza para ejecutar la aplicación aplicación en Java.",
                                     "presentacion": [
@@ -187,11 +186,66 @@
                                             "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
                                         }
                                     },
-                                    "opciones": []
+                                    "opciones": [
+                                        {
+                                            "texto": "java saludo.class",
+                                            "paso": 7,
+                                            "tipo": "pasoerroneo",
+                                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                            "presentacion": [
+                                                "public <input type='text' readonly value='class'> Saludo {",
+                                                "\tpublic static void <input type='text' readonly value='main'> (String args[]) {",
+                                                "\t\tSystem.out.println( \"Aprendiendo Java\" );",
+                                                "\t}",
+                                                "}"
+                                            ],
+                                            "textoEmocional": {
+                                                "neutral": "Inicia los ejercicios",
+                                                "encantado": "Estas muy bien, inicia con el ejercicio",
+                                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                                "retroalimentacion": {
+                                                    "positiva": "No importa el error vas muy bien",
+                                                    "neutral": "Sigue asi, continua",
+                                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                                }
+                                            },
+                                            "opciones": []
+                                        }
+                                        ,
+                                        {
+                                            "texto": "java saludo",
+                                            "paso": 8,
+                                            "tipo": "pasofinaloptimo",
+                                            "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
+                                            "presentacion": [
+                                                "public <input type='text' readonly value='class'> Saludo {",
+                                                "\tpublic static void <input type='text' readonly value='main'> (String args[]) {",
+                                                "\t\tSystem.out.println( \"Aprendiendo Java\" );",
+                                                "\t}",
+                                                "}"
+                                            ],
+                                            "textoEmocional": {
+                                                "neutral": "Inicia los ejercicios",
+                                                "encantado": "Estas muy bien, inicia con el ejercicio",
+                                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                                "retroalimentacion": {
+                                                    "positiva": "No importa el error vas muy bien",
+                                                    "neutral": "Sigue asi, continua",
+                                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                                }
+                                            },
+                                            "opciones": []                                            
+                                            
+                                        }
+                                    ]
                                 },
                                 {
                                     "texto": "javac saludo.java",
-                                    "paso": 5,
+                                    "paso": 9,
                                     "tipo": "pasoerroneo",
                                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                                     "presentacion": [
@@ -215,14 +269,12 @@
                                         }
                                     },
                                     "opciones": []
-                                }
-                                
-                                
+                                }                                                                
                             ]
                         },
                         {
                             "texto": "Main",
-                            "paso": 6,
+                            "paso": 10,
                             "tipo": "pasoerroneo",
                             "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                             "presentacion": [
@@ -248,7 +300,7 @@
                         },
                         {
                             "texto": "start",
-                            "paso": 7,
+                            "paso": 11,
                             "tipo": "pasoerroneo",
                             "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                             "presentacion": [
@@ -274,7 +326,7 @@
                         },
                         {
                             "texto": "run",
-                            "paso": 8,
+                            "paso": 12,
                             "tipo": "pasoerroneo",
                             "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                             "presentacion": [
