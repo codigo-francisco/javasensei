@@ -8,7 +8,7 @@
         <link href="jquerymobile/jquery.mobile-1.4.4.min.css" rel="stylesheet">
         <link href="styles/github.css" rel="stylesheet">
         <link href="jrating/jRating.jquery.css" rel="stylesheet" media="screen">
-        
+
         <link href="css/example_tracing.css" rel="stylesheet">
         <link href="css/avatar.css" rel="stylesheet">
 
@@ -19,7 +19,7 @@
         <script type="text/javascript" src="js/buckets-minified.js"></script>
         <script type="text/javascript" src="js/jspath.min.js"></script>
         <script type="text/javascript" src="jrating/jRating.jquery.min.js"></script>
-        
+
 
         <script type="text/javascript" src="js/recomendaciones.js"></script>
         <script type="text/javascript" src="js/ejercicios.js"></script>
@@ -115,12 +115,18 @@
                             break;
                     }
                 });
-                
-                
+
+                $("#calificacion_recurso").jRating(
+                        {
+                            decimalLength:0,
+                            rateMin: 1,
+                            rateMax: 5
+                        }
+                );
 
                 $("#areatrabajo").hide();
                 $("#controles_tracing").hide();
-                
+
                 //TODO: Eliminar despues de pruebas de la visualizacion de recursos
                 eliminarBackgroundCamera();
             });
@@ -283,7 +289,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div data-role="page" data-dialog="true" id="visor_recursos" data-close-btn="right">
             <div id="recursos_contenido">
                 <div data-role="header">
@@ -291,12 +297,12 @@
                 </div>
                 <div role="main" class="ui-content">
                     <div id="contenido_recurso">
-                        
+
                     </div>
                 </div>
                 <div data-role="footer">
-                    ¿Que te ha parecido el ejercicio?<br>
-                    <div id="calificacion_ejercicio">Calificacion</div>
+                    ¿Que te ha parecido este recurso?<br>
+                    <div id="calificacion_recurso"></div>
                 </div>
             </div>
             <input type="hidden" id="id_ejercicio">

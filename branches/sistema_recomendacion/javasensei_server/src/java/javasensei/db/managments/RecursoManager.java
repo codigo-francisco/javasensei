@@ -33,7 +33,7 @@ public class RecursoManager {
                     QueryBuilder.start("idLeccion").is(object.get("id")).get()
             ).toArray();
             
-            List<DBObject> recursos2 = new ArrayList<DBObject>();
+            List<DBObject> recursos2 = new ArrayList<>();
             
             for (DBObject recurso : recursos){
                 

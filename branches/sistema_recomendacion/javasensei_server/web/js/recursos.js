@@ -15,7 +15,7 @@ function recursos_sensei() {
         }).done(function (data) {
             callback(data, control);
         }).fail(function (error) {
-            console.err(error);
+            console.error(error);
         });
     }
 
@@ -24,7 +24,7 @@ function recursos_sensei() {
     };
 
     this.obtenerRecursos = function obtenerRecursos(control) {
-        peticionAjaxRecursos("recursos", crearListaRecursos, control, false);
+        peticionAjaxRecursos("recursos", crearListaRecursos, control, true);
     };
 
     this.obtenerIntereses = function obtenerIntereses(control) {
