@@ -24,7 +24,7 @@ function recursos_sensei() {
     };
 
     this.obtenerRecursos = function obtenerRecursos(control) {
-        peticionAjaxRecursos("recursos", crearListaRecursos, control, true);
+        peticionAjaxRecursos("recursos/todos", crearListaRecursos, control, true);
     };
 
     this.obtenerIntereses = function obtenerIntereses(control) {
@@ -41,20 +41,53 @@ function recursos_sensei() {
         crearLista(enlaces, control);
     };
 
+    function configRating(id, ranking) {
+        var calificaciones = $("#calificaciones");
+        calificaciones.empty();
+        calificaciones.append(
+                $("<div>")
+                .attr("data-id", id)
+                .attr("data-average", ranking)
+                .jRating({
+                    showRateInfo: false,
+                    step: true,
+                    rateMin: 1,
+                    rateMax: 5,
+                    canRateAgain: true,
+                    nbRates: 9999999,
+                    sendRequest: false,
+                    onClick: function (element, rate) {
+                        //Se manda a guardar el ranking
+                        $.ajax({
+                            url: "servicios/recursos/setranking",
+                            data: {
+                                idRecurso: element.dataset["id"],
+                                idAlumno: usuario.id,
+                                ranking: rate
+                            },
+                            dataType: "json"
+                        }).done(function (data) {
+                            configRating(data.id, data.ranking);
+                        }).fail(function(error){
+                            console.error(error);
+                        });
+                    }
+                })
+                );
+    }
+
     function visualizarRecurso(datos) {
 
         $.ajax({
-            url: datos.url,
+            url: "recursos/" + datos.url, //Recursos es una carpeta por default
             type: "GET",
             dataType: "html"
         }).done(function (data) {
             $("#titulo_recurso").text(datos.titulo);
             $("#contenido_recurso").html(data);
-            
-            $("#id_ejercicio").val(data.id);
-            
-            
-            
+
+            configRating(datos.id, datos.ranking);
+
             //Visualizamos la ventana
             $(":mobile-pagecontainer").pagecontainer("change", "#visor_recursos");
         }).fail(function (error) {
@@ -86,8 +119,8 @@ function recursos_sensei() {
                                         visualizarRecurso({
                                             titulo: control.text(),
                                             url: control.attr("data-url"),
-                                            id:control.attr("data-id"),
-                                            ranking:control.attr("data-ranking")
+                                            id: control.attr("data-id"),
+                                            ranking: control.attr("data-ranking")
                                         });
                                     })
                                     ));

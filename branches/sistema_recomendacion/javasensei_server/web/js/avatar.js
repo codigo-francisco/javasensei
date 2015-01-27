@@ -27,28 +27,6 @@ avatar_sensei.prototype = {
             console.log("Fallo " + textStatus);
         });
     },
-    recomendaciones: function () {
-        //TODO: datos para rellenar en las recomendaciones, se debera obtener de algun servicio
-        var recomendaciones_datos = {
-            emocion: 'neutral', //TODO: El sistema de recomendaciones no deberia obtener la emocion, cambiar el json
-            texto: 'Hola [usuario], tengo estas recomendaciones para ti:',
-            opciones: [{
-                    tipo: "cambio",
-                    texto: ["Prueba este ejercicio, es sobre variables"],
-                    url: "ejercicio1/practica1.json"
-                }, {
-                    tipo: "recurso_enlace",
-                    texto: ["Esta pagina puede ayudarte"],
-                    url: "http://www.google.com/"
-                }, {
-                    tipo: "recurso_video",
-                    texto: ["Este video sobre variables puede ayudarte"],
-                    url: "http://www.google.com/"
-                }]
-        };
-
-        avatar_context.crearAvatar(recomendaciones_datos);
-    },
     solicitud_usuario: function () {
 
     },

@@ -12,18 +12,18 @@ import java.util.logging.Logger;
  * @author Rock
  */
 public class Connection {
-    protected Mongo mongo;
-    protected DB db;
+    protected static Mongo mongo;
+    protected static DB db;
     
-    public Mongo getMongo(){
+    public static Mongo getMongo(){
         return mongo;
     }
     
     public static DB getDb(){
-        return new Connection().db;
+        return Connection.db;
     }
     
-    public Connection(){
+    static {
         try {
             mongo = new Mongo(); //Localhost, default port
             mongo.setWriteConcern(WriteConcern.SAFE);
@@ -31,5 +31,5 @@ public class Connection {
         } catch (UnknownHostException ex) {
             Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    
+    }
 }
