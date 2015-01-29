@@ -1,7 +1,21 @@
-function obtenerRecomendacionesTutor(ejercicio) { //Objeto del usuario y el ejercicio actual
+function obtenerRecomendacionesTutor(idEjercicio, datos, callback) { //Objeto del usuario y el ejercicio actual
+
+    $.ajax({
+        url:"servicios/recursos/recomendaciones",
+        data:{
+            idEjercicio : idEjercicio,
+            idAlumno : usuario.id
+        },
+        dataType : "json"
+    }).done(function(data){
+        datos.opciones = data;
+        callback(datos);
+    }).error(function(data){
+        console.error("Error en la obtencion de recomendaciones: %0", data);
+    });
 
     //TODO: Dummy con las opciones
-    return [
+    /*return [
             {
                 tipo: "cambio",
                 texto: ["Prueba este ejercicio, es sobre variables"],
@@ -17,5 +31,5 @@ function obtenerRecomendacionesTutor(ejercicio) { //Objeto del usuario y el ejer
                 texto: ["Este video sobre variables puede ayudarte"],
                 url: "http://www.google.com/"
             }
-        ];
+        ];*/
 }

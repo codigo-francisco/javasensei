@@ -27,31 +27,7 @@ public class TutorEvaluacion {
 
     public TutorEvaluacion(String jsonEstudiante) {
         try {
-            estudiante = new ModeloEstudiante();
-
-            JsonParser parser = new JsonParser();
-            JsonObject jsonObj = parser.parse(jsonEstudiante).getAsJsonObject();
-
-            //Se construye el objeto del estudiante
-            estudiante.setId(jsonObj.get("id").getAsString());
-
-            estudiante.setToken(jsonObj.get("token").getAsString());
-
-            estudiante.setCalidadRespuesta(
-                    jsonObj.get("calidadRespuesta").getAsDouble()
-            );
-
-            estudiante.setEmocionActual(
-                    Emocion.valueOf(jsonObj.get("emocionActual").getAsString()));
-
-            estudiante.setEmocionPrevia(
-                    Emocion.valueOf(jsonObj.get("emocionPrevia").getAsString())
-            );
-
-            estudiante.setHabilidadGlobal(
-                    Habilidad.valueOf(jsonObj.get("habilidadGlobal").getAsString())
-            );
-
+            estudiante = new ModeloEstudiante(jsonEstudiante);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
