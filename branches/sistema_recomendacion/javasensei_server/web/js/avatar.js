@@ -21,7 +21,7 @@ avatar_sensei.prototype = {
             dataType: "json"
         }).done(function (datos) {
             //datos.intervencion = true; //TODO: Quitar esto, es de prueba, falla las reglas difusas
-            console.log("%cDatos recibidos: %O","color:blue;", datos);
+            console.log("%cDatos recibidos: %O", "color:blue;", datos);
             avatar_context.intervencion(datos);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             console.log("Fallo " + textStatus);
@@ -67,8 +67,8 @@ avatar_sensei.prototype = {
             });
 
         } /*else {
-
-        }*/
+         
+         }*/
 
     },
     llamarSistemaLogicoDifuso: function (tipoPaso) {
@@ -103,7 +103,7 @@ avatar_sensei.prototype = {
     paso_atras: function () {
 
     },
-    cierreEjercicio : function(){
+    cierreEjercicio: function () {
         $("#controles_tracing").hide();
         camera_sensei.detenerFotos();
     },
@@ -133,27 +133,17 @@ avatar_sensei.prototype = {
         if (datos.opciones.length > 0) {
             //creamos la lista
             $.each(datos.opciones, function (index, opcion) {
-                var funcion_ejecutar;
-                //Escogemos que funcion se va a ejecutar en el click
-                switch (opcion.tipo) {
-                    case "cambio":
-                        //Es un cambio de ejercicio, tenemos que obtener la url de ese ejercicio
-                        funcion_ejecutar = example_tracing.construir_ejercicio;
-                        break;
-                    case "recurso_enlace" || "recurso_video":
-                        //Esta es una redireccion
-                        funcion_ejecutar = redireccion;
-                        break;
-                }
                 //Creamosla opcion en la lista
                 var lista = $("<li>").append(
-                        $("<a>").text(opcion.texto)
+                        $("<a>")
+                        .text(opcion.texto)
                         .on("click", {
-                            funcion: funcion_ejecutar,
-                            url: opcion.url
+                            opciones: opcion
                         },
                         function (event) {
-                            event.data.funcion(event.data.url);
+                            var opciones = event.data.opciones;
+                            visualizarRecurso(opciones);
+                            //event.data.funcion(event.data.url);
                         }
                         )
                         );
@@ -164,14 +154,19 @@ avatar_sensei.prototype = {
         }
     },
     intervencion: function (datos) {
+        if (!datos.opciones) {
+            ////Hay que obtener las recomendaciones... y modificar la propiedad opciones
+            obtenerRecomendacionesTutor(avatar_context.id, datos, avatar_context.intervencion);
+            return;
+        }
+
         if (datos.intervencion) { //Se realiza una intervencion
             var datos_nuevos = {};
-            //De acuerdo a los datos se realizara un formato para el metodo crearAvatar
 
+            datos_nuevos.opciones = datos.opciones;
+            //De acuerdo a los datos se realizara un formato para el metodo crearAvatar
             //La imagen se va a obtener de acuerdo a la expresion emocional
             datos_nuevos.emocion = datos.expresion;
-            //Hay que obtener las recomendaciones...
-            datos_nuevos.opciones = obtenerRecomendacionesTutor(avatar_context.id);
             //Obtenemos los textos de retroalimentacion y motivacional
             var respuesta = example_tracing.obtenerTextoEmocional(datos.expresion, datos.retroalimentacion);
             //Ambas respuesta se dejan en un array ya que el tutor unira los textos formar el texto del tutor

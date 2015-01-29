@@ -33,6 +33,6 @@ public class RecomendacionRest {
         
         RankingEjerciciosManager manager = new RankingEjerciciosManager(estudiante);
         
-        return manager.getRecommenders();
+        return manager.getRecommendersExercises(5, true);
     }
 }

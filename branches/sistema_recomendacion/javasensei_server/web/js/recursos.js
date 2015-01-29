@@ -75,6 +75,8 @@ function recursos_sensei() {
                 })
                 );
     }
+    
+    
 
     function visualizarRecurso(datos) {
 

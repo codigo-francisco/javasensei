@@ -22,6 +22,6 @@ public class PruebaRecommender {
         
         es.colocarRankingDefault();
         
-        es.getRecommenders();
+        es.getRecommendersExercises(5, true);
     }
 }

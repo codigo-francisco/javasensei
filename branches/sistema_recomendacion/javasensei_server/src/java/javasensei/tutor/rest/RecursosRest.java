@@ -2,6 +2,7 @@ package javasensei.tutor.rest;
 
 import com.google.gson.JsonObject;
 import javasensei.db.managments.RecursoManager;
+import javasensei.db.managments.RankingEjerciciosManager;
 import javasensei.estudiante.ModeloEstudiante;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -18,6 +19,18 @@ import javax.ws.rs.core.MediaType;
 @Path("recursos")
 public class RecursosRest {
     
+    
+    @GET
+    @Path("recomendaciones")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getRecomendaciones(@QueryParam ("idEjercicio") int idEjercicio, @QueryParam("idAlumno") Long idAlumno){
+        ModeloEstudiante estudiante = new ModeloEstudiante();
+        estudiante.setId(idAlumno);
+        
+        RankingEjerciciosManager ranking = new RankingEjerciciosManager(estudiante);
+        
+        return ranking.getRecommenderResources(3, idEjercicio);
+    }
     
     @GET
     @Path("todos/{usuario}")
