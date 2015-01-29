@@ -2,7 +2,7 @@ package javasensei.tutor;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import javasensei.db.managments.EstudiantesManager;
 import javasensei.estudiante.ModeloEstudiante;
 import javasensei.ia.fuzzylogic.tutor.CaminoCarga;
 import javasensei.ia.fuzzylogic.tutor.CaminoErroneoFuzzyLogic;
@@ -11,8 +11,6 @@ import javasensei.ia.fuzzylogic.tutor.CaminoFinalSubOptimoFuzzyLogic;
 import javasensei.ia.fuzzylogic.tutor.CaminoFuzzyLogic;
 import javasensei.ia.fuzzylogic.tutor.CaminoOptimoFuzzyLogic;
 import javasensei.ia.fuzzylogic.tutor.CaminoSubOptimoFuzzyLogic;
-import javasensei.ia.recognitionemotion.Emocion;
-import javasensei.db.managments.EstudiantesManager;
 
 /**
  *
@@ -23,23 +21,16 @@ public class TutorEvaluacion {
     private ModeloEstudiante estudiante;
     //private CaminoFuzzyLogic camino;
     private Gson gson = new Gson();
-    private EstudiantesManager managerDb = new EstudiantesManager();
-
-    public TutorEvaluacion(String jsonEstudiante) {
-        try {
-            estudiante = new ModeloEstudiante(jsonEstudiante);
-        } catch (Exception ex) {
-            System.err.println(ex.getMessage());
-        }
-    }
+    private EstudiantesManager managerDb;
 
     public TutorEvaluacion(ModeloEstudiante estudiante) {
         this.estudiante = estudiante;
+        managerDb = new EstudiantesManager(this.estudiante);
     }
 
     protected String prepararRespuesta(CaminoFuzzyLogic camino) {
         //Antes de realizar la evauacion, se guardan los datos del perfil actualizados
-        managerDb.updateDataStudent(estudiante);
+        managerDb.updateDataStudent();
         
         ResultadoTutor resultado = camino.evaluarEmocion();
 

@@ -1,10 +1,11 @@
 package javasensei.estudiante;
 
-import javasensei.db.collections.DBInterface;
+import com.google.gson.JsonParser;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import javasensei.ia.recognitionemotion.Emocion;
 import javasensei.tutor.Habilidad;
+import com.google.gson.JsonObject;
 
 /**
  *
@@ -12,18 +13,35 @@ import javasensei.tutor.Habilidad;
  */
 public class ModeloEstudiante implements java.io.Serializable, DBInterface {
 
-    private String id;
+    private long id;
     private String token;
     private Emocion emocionActual = Emocion.NEUTRAL;
     private Emocion emocionPrevia = Emocion.NEUTRAL;
     private Habilidad habilidadGlobal = Habilidad.MALA;
     private double calidadRespuesta = 0; //Parametros internos al crear un estudiante nuevo
+    
+    public ModeloEstudiante(){
+        
+    }
+    
+    public ModeloEstudiante(String jsonEstudiante){
+            JsonParser parser = new JsonParser();
+            JsonObject jsonObj = parser.parse(jsonEstudiante).getAsJsonObject();
 
-    public String getId() {
+            //Se construye el objeto del estudiante
+            id = jsonObj.get("id").getAsLong();
+            token = jsonObj.get("token").getAsString();
+            calidadRespuesta = jsonObj.get("calidadRespuesta").getAsDouble();
+            emocionActual = Emocion.getEmocion(jsonObj.get("emocionActual").getAsString());
+            emocionPrevia = Emocion.getEmocion(jsonObj.get("emocionPrevia").getAsString());
+            habilidadGlobal = Habilidad.getHabilidad(jsonObj.get("habilidadGlobal").getAsString());
+    }
+    
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -32,8 +32,8 @@ public class EstudianteRest {
         estudiante.setId(Long.parseLong(id));
         estudiante.setToken(token);
         
-        EstudiantesManager estudiantes = new EstudiantesManager();
-        String result = estudiantes.insertOrCreateStudent(estudiante);
+        EstudiantesManager estudiantes = new EstudiantesManager(estudiante);
+        String result = estudiantes.insertOrCreateStudent();
         //Se pasa a colocar el ranking
         RankingEjerciciosManager ranking = new RankingEjerciciosManager(estudiante);
         ranking.colocarRankingDefault();
