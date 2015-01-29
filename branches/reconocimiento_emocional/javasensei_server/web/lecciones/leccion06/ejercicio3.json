@@ -1,0 +1,160 @@
+{
+    "id": 1,
+    "instruccionesejercicio": 
+    [
+        "En Java, un arreglo es un grupo de variables (llamadas elementos o componentes) que contienen valores, todos del mismo tipo. Para declarar un arreglo unidimensional, debemos especificar el tipo de cada elemento y el nÃºmero de elementos que se requieren para el arreglo."
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Completa el siguiente cÃ³digo para que declare un arreglo de 10 enteros.",
+            "presentacion": 
+            [
+                "public class Test {",
+                "\tpublic static void main( String[ ] args ) {",
+                "\t\t<input type='text' readonly class='focusInput'>;",
+                "\t}",
+                "}"
+            ],
+            "textoEmocional": 
+            {
+                "neutral": "texto neutral",
+                "encantado": "texto",
+                "sorprendido": "texto",
+                "compasivo": "texto",
+                "exeptico": "texto",
+                "retroalimentacion": 
+                {
+                    "positiva": "texto",
+                    "neutral": "texto",
+                    "negativa": "texto"
+                }
+            },
+            "opciones": 
+            [
+                {
+                    "texto": "int[10] miArreglo;",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "public class Test {",
+                        "\tpublic static void main( String[ ] args ) {",
+                        "\t\t<input type='text' readonly class='focusInput'>;",
+                        "\t}",
+                         "}"
+                    ],
+                    "textoEmocional": 
+                    {
+                        "neutral": "texto neutral",
+                        "encantado": "texto",
+                        "sorprendido": "texto",
+                        "compasivo": "texto",
+                        "exeptico": "texto",
+                        "retroalimentacion": 
+                        {
+                            "positiva": "texto",
+                            "neutral": "texto",
+                            "negativa": "texto"
+                        }
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "int[] miArreglo = new int[10];",
+                    "paso": 2,
+                    "tipo": "pasooptimo",
+                    "instruccion": "Â¡Muy bien!.  Ahora, asigna el valor 20 al Ãºltimo elemento del arreglo.",
+                    "presentacion": 
+                    [
+                        "public class Test {",
+                        "\tpublic static void main( String[ ] args ) {",
+                        "\t\tint[] miArreglo = new int[10];",
+                        "\t\tmiArreglo[<input type='text' readonly class='focusInput'>] = 20;",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": 
+                    {
+                        "neutral": "texto neutral",
+                        "encantado": "texto",
+                        "sorprendido": "texto",
+                        "compasivo": "texto",
+                        "exeptico": "texto",
+                        "retroalimentacion": 
+                        {
+                            "positiva": "texto",
+                            "neutral": "texto",
+                            "negativa": "texto"
+                        }
+                    },
+                    "opciones": [
+                        {
+                            "texto": "miArreglo[10] = 20;",
+                            "paso": 3,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "presentacion": 
+                            [
+                                "public class Test {",
+                                "\tpublic static void main( String[ ] args ) {",
+                                "\t\tint[] miArreglo = new int[10];",
+                                "\t\tmiArreglo[<input type='text' readonly class='focusInput'>] = 20;",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": 
+                            {
+                                "neutral": "texto neutral",
+                                "encantado": "texto",
+                                "sorprendido": "texto",
+                                "compasivo": "texto",
+                                "exeptico": "texto",
+                                "retroalimentacion": 
+                                {
+                                    "positiva": "texto",
+                                    "neutral": "texto",
+                                    "negativa": "texto"
+                                }
+                            },
+                            "opciones": []
+                        },
+                        {
+                            "texto": "miArreglo[9] = 20;",
+                            "paso": 4,
+                            "tipo": "pasofinaloptimo",
+                            "instruccion": "Â¡Felicidades, has terminado el ejercicio!",
+                            "presentacion": 
+                            [
+                                "public class Test {",
+                                "\tpublic static void main( String[ ] args ) {",
+                                "\t\tint[] miArreglo = new int[10];",
+                                "\t\tmiArreglo[9] = 20;",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": 
+                            {
+                                "neutral": "texto neutral",
+                                "encantado": "texto",
+                                "sorprendido": "texto",
+                                "compasivo": "texto",
+                                "exeptico": "texto",
+                                "retroalimentacion": 
+                                {
+                                    "positiva": "texto",
+                                    "neutral": "texto",
+                                    "negativa": "texto"
+                                },
+                                "opciones": []
+                            }
+                        }
+                    ]
+                }       
+            ]
+        }
+    ]
+}

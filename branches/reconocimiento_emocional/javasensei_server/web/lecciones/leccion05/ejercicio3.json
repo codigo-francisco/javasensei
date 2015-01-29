@@ -1,0 +1,170 @@
+{
+    "id": 1,
+    "paso":-1,
+    "instruccionesejercicio": 
+    [
+        "Un mÃ©todo con valor de retorno es un mÃ³dulo de programa que puede recibir datos de entrada a travÃ©s de parÃ¡metros y que retorna un resultado al punto donde es invocado.",
+        "Este tipo de mÃ©todo se utiliza para efectuar cualquier tipo de proceso que produzca un resultado."
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Completa el código para que el método regrese una cadena de texto:",
+            "presentacion": 
+            [
+                "public class Test {",
+                "\tpublic static <input type='text' readonly class='focusInput'> saludo() {",
+                "\t\treturn \"Hola\";",
+                "\t}",
+                "}"
+            ],
+            "textoEmocional": 
+            {
+                "neutral": "texto neutral",
+                "encantado": "texto",
+                "sorprendido": "texto",
+                "compasivo": "texto",
+                "exeptico": "texto",
+                "retroalimentacion": 
+                {
+                    "positiva": "texto",
+                    "neutral": "texto",
+                    "negativa": "texto"
+                }
+            },
+            "opciones": 
+            [
+                {
+                    "texto": "void",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "public class Test {",
+                        "\tpublic static <input type='text' readonly class='focusInput'> saludo() {",
+                        "\t\treturn \"Hola\";",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": 
+                    {
+                        "neutral": "texto neutral",
+                        "encantado": "texto",
+                        "sorprendido": "texto",
+                        "compasivo": "texto",
+                        "exeptico": "texto",
+                        "retroalimentacion": 
+                        {
+                            "positiva": "texto",
+                            "neutral": "texto",
+                            "negativa": "texto"
+                        }
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "String",
+                    "paso": 2,
+                    "tipo": "pasooptimo",
+                    "instruccion": "¡Muy bien!.  Ahora, selecciona la opción que invoca al método saludo.",
+                    "presentacion": 
+                    [
+                        "public class Test {",
+                        "\tpublic static String saludo() {",
+                        "\t\treturn \"Hola\";",
+                        "\t}",
+                        "\tpublic static void main( String[ ] args ) {",
+                        "\t\t<input type='text' readonly class='focusInput'>;",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": 
+                    {
+                        "neutral": "texto neutral",
+                        "encantado": "texto",
+                        "sorprendido": "texto",
+                        "compasivo": "texto",
+                        "exeptico": "texto",
+                        "retroalimentacion": 
+                        {
+                            "positiva": "texto",
+                            "neutral": "texto",
+                            "negativa": "texto"
+                        }
+                    },
+                    "opciones": [
+                        {
+                            "texto": "saludo();",
+                            "paso": 3,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "presentacion": 
+                            [
+                                "public class Test {",
+                                "\tpublic static String saludo() {",
+                                "\t\treturn \"Hola\";",
+                                "\t}",
+                                "\tpublic static void main( String[ ] args ) {",
+                                "\t\t<input type='text' readonly class='focusInput'>;",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": 
+                            {
+                                "neutral": "texto neutral",
+                                "encantado": "texto",
+                                "sorprendido": "texto",
+                                "compasivo": "texto",
+                                "exeptico": "texto",
+                                "retroalimentacion": 
+                                {
+                                    "positiva": "texto",
+                                    "neutral": "texto",
+                                    "negativa": "texto"
+                                }
+                            },
+                            "opciones": []
+                        },
+                        {
+                            "texto": "System.out.println(saludo());",
+                            "paso": 4,
+                            "tipo": "pasofinaloptimo",
+                            "instruccion": "Â¡Felicidades, has terminado el ejercicio!",
+                            "presentacion": 
+                            [
+                                "public class Test {",
+                                "\tpublic static String saludo() {",
+                                "\t\treturn \"Hola\";",
+                                "\t}",
+                                "\tpublic static void main( String[ ] args ) {",
+                                "\t\tSystem.out.println(saludo());",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": 
+                            {
+                                "neutral": "texto neutral",
+                                "encantado": "texto",
+                                "sorprendido": "texto",
+                                "compasivo": "texto",
+                                "exeptico": "texto",
+                                "retroalimentacion": 
+                                {
+                                    "positiva": "texto",
+                                    "neutral": "texto",
+                                    "negativa": "texto"
+                                },
+                                "opciones": []
+                            }
+                        }
+                    ]
+                }
+                        
+                        
+            ]
+        }
+    ]
+}

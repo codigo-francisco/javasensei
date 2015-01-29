@@ -1,0 +1,19 @@
+{
+  "nombreCurso":"Aprenda Java",
+  "lecciones":
+    [
+     {"numLeccion":1,
+      "nombreLeccion":"Introducción a Java",
+      "ejercicios":[{"numEjercicio":1,"urlEjercicio":"Ejercicio1"},{"numEjercicio":2,"urlEjercicio":"Ejercicio2"}]
+     },
+     {"numLeccion":2,"nombreLeccion":"Variables y cálculos",
+      "ejercicios":[{"numEjercicio":1,"urlEjercicio":"Ejercicio1"},{"numEjercicio":2,"urlEjercicio":"Ejercicio2"}]
+     },
+     {"numLeccion":3,"nombreLeccion":"Instrucciones de selección",
+       "ejercicios":[{"numEjercicio":1,"urlEjercicio":"Ejercicio1"},{"numEjercicio":2,"urlEjercicio":"Ejercicio2"}]
+     },
+     {"numLeccion":4,"nombreLeccion":"Instrucciones de repetición",
+      "ejercicios":[{"numEjercicio":1,"urlEjercicio":"Ejercicio1"},{"numEjercicio":2,"urlEjercicio":"Ejercicio2"}]
+     }
+    ]
+}
