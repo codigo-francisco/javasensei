@@ -16,8 +16,14 @@ import javasensei.estudiante.ModeloEstudiante;
 public class EstudiantesManager {
 
     private AlumnosCollection userCollections = new AlumnosCollection();
+    
+    private ModeloEstudiante estudiante;
+    
+    public EstudiantesManager(ModeloEstudiante estudiante){
+        this.estudiante = estudiante;
+    }
 
-    public String insertOrCreateStudent(ModeloEstudiante estudiante) {
+    public String insertOrCreateStudent() {
         String result = "{}";
 
         try {
@@ -43,8 +49,12 @@ public class EstudiantesManager {
 
         return result;
     }
+    
+    public String createOrUpdateDomainModel(){
+        return "";
+    }
 
-    public boolean updateDataStudent(ModeloEstudiante estudiante) {
+    public boolean updateDataStudent() {
         boolean result = false;
 
         DBCollection collection = userCollections.getAlumnosCollection();

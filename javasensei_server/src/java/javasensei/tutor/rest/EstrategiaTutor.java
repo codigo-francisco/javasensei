@@ -5,6 +5,7 @@
  */
 package javasensei.tutor.rest;
 
+import javasensei.estudiante.ModeloEstudiante;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
@@ -42,7 +43,7 @@ public class EstrategiaTutor {
     @Path("caminoerroneo/{datosestudiante}")
     public String getEstrategiaCaminoErroneo(@PathParam("datosestudiante") String datosEstudiante) {
         //datosTutor es un json que contendra datos que se necesitan del tuturo
-        TutorEvaluacion evaluacion = new TutorEvaluacion(datosEstudiante);        
+        TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
         //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
         
         return evaluacion.obtenerEvaluacionPasoErroneo();
@@ -59,7 +60,7 @@ public class EstrategiaTutor {
     @Path("caminosuboptimo/{datosestudiante}")
     public String getEstrategiaCaminoSubOptimo(@PathParam("datosestudiante") String datosEstudiante) {
         //datosTutor es un json que contendra datos que se necesitan del tuturo
-        TutorEvaluacion evaluacion = new TutorEvaluacion(datosEstudiante);        
+        TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
         //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
         
         return evaluacion.obtenerEvaluacionPasoSubOptimo();
@@ -77,7 +78,7 @@ public class EstrategiaTutor {
     public String getEstrategiaCaminoOptimo(@PathParam("datosestudiante") String datosEstudiante) {
         
         //datosTutor es un json que contendra datos que se necesitan del tuturo
-        TutorEvaluacion evaluacion = new TutorEvaluacion(datosEstudiante);        
+        TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
         //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
         
         return evaluacion.obtenerEvaluacionPasoOptimo();
@@ -95,7 +96,7 @@ public class EstrategiaTutor {
     public String getEstrategiaCaminoFinalOptimo(@PathParam("datosestudiante") String datosEstudiante) {
         
         //datosTutor es un json que contendra datos que se necesitan del tuturo
-        TutorEvaluacion evaluacion = new TutorEvaluacion(datosEstudiante);        
+        TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
         //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
         
         return evaluacion.obtenerEvaluacionPasoFinalOptimo();
@@ -113,7 +114,7 @@ public class EstrategiaTutor {
     public String getEstrategiaCaminoFinalSubOptimo(@PathParam("datosestudiante") String datosEstudiante) {
         
         //datosTutor es un json que contendra datos que se necesitan del tuturo
-        TutorEvaluacion evaluacion = new TutorEvaluacion(datosEstudiante);        
+        TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
         //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
         
         return evaluacion.obtenerEvaluacionPasoFinalSubOptimo();
@@ -132,7 +133,7 @@ public class EstrategiaTutor {
         //TODO: checar este metodo
         
         //datosTutor es un json que contendra datos que se necesitan del tuturo
-        TutorEvaluacion evaluacion = new TutorEvaluacion(datosEstudiante);        
+        TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
         //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
         
         return evaluacion.obtenerEmocionCarga();
