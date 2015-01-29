@@ -6,6 +6,6 @@ import javasensei.db.connection.Connection;
 public class QuizCollection extends Connection{
     
     public DBCollection getQuizCollection(){
-        return db.getCollection("quizzes");
+        return db.getCollection("quizzes204");
     }
 }

@@ -1,6 +1,5 @@
 {
     "id":1,
-    "paso":-1,
     "instruccionesejercicio": 
     [
         "Las variables...",
@@ -11,17 +10,17 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Selecciona la opción que responda a la pregunta.",
+            "instruccion": "Selecciona la opciÃ³n que responda a la pregunta.",
             "presentacion": 
             [
-                "¿Al tipo de dato double se le conoce como un tipo de dato de punto flotante?"
+                "Â¿Al tipo de dato double se le conoce como un tipo de dato de punto flotante?"
             ],
             "opciones": 
             [
                 {
                     "texto": "Verdadero",
-                    "paso": 1,
-                    "tipo": "pasofinaloptimo",
+                    "paso": 2,
+                    "tipo": "optimofinalizado",
                     "instruccion": "La respuesta es correcta.",
                     "presentacion": 
                     [
@@ -50,7 +49,7 @@
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
-                         "¿Al tipo de dato double se le conoce como un tipo de dato de punto flotante?"
+                         "Â¿Al tipo de dato double se le conoce como un tipo de dato de punto flotante?"
                     ],
                     "textoEmocional":
                     {

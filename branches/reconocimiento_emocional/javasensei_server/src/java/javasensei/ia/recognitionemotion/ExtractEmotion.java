@@ -69,7 +69,7 @@ public class ExtractEmotion {
 
             double resultIndex = multilayer.classifyInstance(testData.firstInstance());
 
-            emocion = Emocion.valueOf((int) resultIndex);
+            emocion = Emocion.getEmocion((int) resultIndex);
         } catch (Exception ex) {
             System.out.println("Mensaje:    " + ex.getMessage());
             System.out.println("Causa:    " + ex.getCause());

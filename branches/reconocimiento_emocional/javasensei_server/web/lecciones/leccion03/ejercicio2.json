@@ -1,6 +1,5 @@
 {
     "id":1,
-    "paso":-1,
     "instruccionesejercicio": 
     [
         "Las variables...",
@@ -11,7 +10,7 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Dado el siguiente fragmento de código.  ¿Cuál es el valor final para la variable entera x?",
+            "instruccion": "Dado el siguiente fragmento de cÃ³digo.  Â¿CuÃ¡l es el valor final para la variable entera x?",
             "presentacion": 
             [
                 "int x = 10000;",     
@@ -28,7 +27,7 @@
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
-                        "Dado el siguiente fragmento de código.  ¿Cuál es el valor final para la variable entera x?",
+                        "Dado el siguiente fragmento de cÃ³digo.  Â¿CuÃ¡l es el valor final para la variable entera x?",
                         "int x = 10000;",     
                         "if( x  >  5000 )", 
                         "\tx = 1000;",
@@ -52,7 +51,7 @@
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
-                        "Dado el siguiente fragmento de código.  ¿Cuál es el valor final para la variable entera x?",
+                        "Dado el siguiente fragmento de cÃ³digo.  Â¿CuÃ¡l es el valor final para la variable entera x?",
                         "int x = 10000;",     
                         "if( x  >  5000 )", 
                         "\tx = 1000;",
@@ -96,7 +95,7 @@
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
-                        "Dado el siguiente fragmento de código.  ¿Cuál es el valor final para la variable entera x?",
+                        "Dado el siguiente fragmento de cÃ³digo.  Â¿CuÃ¡l es el valor final para la variable entera x?",
                         "int x = 10000;",     
                         "if( x  >  5000 )", 
                         "\tx = 1000;",
