@@ -36,7 +36,7 @@ public class EstudiantesManager {
 
             result = dbObject.toString();
 
-            userCollections.getMongo().close();
+            //userCollections.getMongo().close();
         } catch (Exception ex) {
             Logger.getGlobal().log(Level.SEVERE, ex.getMessage());
         }

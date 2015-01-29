@@ -23,8 +23,21 @@ public enum Emocion {
     public double getValue(){
         return emocionValue;
     }
+    
+    public static Emocion getEmocion(String value){
+        Emocion emocion = Emocion.NEUTRAL;
+        
+        for (Emocion e : Emocion.values()){
+            if (e.name().toLowerCase().equals(value.toLowerCase())){
+                emocion = e;
+                break;
+            }
+        }
+        
+        return emocion;
+    }
 
-    public static Emocion valueOf(int emocionValue){
+    public static Emocion getEmocion(int emocionValue){
         switch(emocionValue){
             case 0:
                 return FELIZ;

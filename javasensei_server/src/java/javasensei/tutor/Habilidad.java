@@ -19,6 +19,19 @@ public enum Habilidad {
     public int getValue(){
         return value;
     }
+    
+    public static Habilidad getHabilidad(String value){
+        Habilidad habilidad = Habilidad.MALA;
+        
+        for(Habilidad h : Habilidad.values()){
+            if (h.name().toLowerCase().equals(value.toLowerCase())){
+                habilidad= h;
+                break;
+            }
+        }
+        
+        return habilidad;
+    }
 
     @Override
     public String toString() {
