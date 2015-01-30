@@ -14,7 +14,7 @@ public class Quiz {
         this.listaR = listaR;
     }
 
-    public ListaReactivo getListaR() {
+    public ListaReactivo getListaR() {        
         return listaR;
     }
 

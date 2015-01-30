@@ -75,6 +75,16 @@
                     "id": 3,
                     "url": "leccion02/ejercicio3.json",
                     "titulo": "Ejercicio 3"
+                },
+                {
+                    "id": 4,
+                    "url": "leccion02/ejercicio4.json",
+                    "titulo": "Ejercicio 4"
+                },
+                {
+                    "id": 5,
+                    "url": "leccion02/ejercicio5.json",
+                    "titulo": "Ejercicio 5"
                 }
             ]
         },
