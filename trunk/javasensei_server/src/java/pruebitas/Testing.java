@@ -15,5 +15,11 @@ public class Testing {
         operation.insert(doc2);
         BulkWriteResult result = operation.execute();
         System.out.println("Documents inserted="+result.getInsertedCount()); // prints 2*/
+         int x = 0, y = 0;
+
+        System.out.print(x++);   
+        System.out.print(++y);
+        System.out.print(y--);   
+        System.out.print(--x);
     }
 }
