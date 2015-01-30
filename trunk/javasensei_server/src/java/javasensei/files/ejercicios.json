@@ -85,6 +85,31 @@
                     "id": 5,
                     "url": "leccion02/ejercicio5.json",
                     "titulo": "Ejercicio 5"
+                },
+                {
+                    "id": 6,
+                    "url": "leccion02/ejercicio6.json",
+                    "titulo": "Ejercicio 6"
+                },
+                {
+                    "id": 7,
+                    "url": "leccion02/ejercicio7.json",
+                    "titulo": "Ejercicio 7"
+                },
+                {                    
+                    "id": 8,
+                    "url": "leccion02/ejercicio8.json",
+                    "titulo": "Ejercicio 8"                
+                },
+                {
+                    "id": 9,
+                    "url": "leccion02/ejercicio9.json",
+                    "titulo": "Ejercicio 9"
+                },
+                {
+                    "id": 10,
+                    "url": "leccion02/ejercicio10.json",
+                    "titulo": "Ejercicio 10"
                 }
             ]
         },
