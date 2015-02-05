@@ -68,10 +68,6 @@ public class EstudiantesManager {
                 .get()
         ).toArray();
 
-        /*DBObject ejerciciosObject = (DBObject)alumnosCollection.findOne(
-         QueryBuilder.start("id").is(estudiante.getId())
-         .get()
-         ).get("ejercicios");*/
         temas.replaceAll((DBObject object) -> {
             List<DBObject> ejercicios = ejerciciosCollection.find(
                     QueryBuilder.start("idTema").is(object.get("id"))
@@ -82,7 +78,6 @@ public class EstudiantesManager {
             ).toArray();
 
             //Traemos todos los id que el estudiante ya tenga realizados
-            //idEjercicios = 
             DBObject resultEjercicios = alumnosCollection.findOne(
                     QueryBuilder.start("ejercicios").
                     is(
@@ -103,21 +98,33 @@ public class EstudiantesManager {
                 BasicDBList listaEjercicios = (BasicDBList) resultEjercicios.get("ejercicios");
 
                 ejercicios = ejercicios.stream().filter(ejercicio
-                        -> listaEjercicios.stream().noneMatch(item -> ((DBObject) item).get("id").equals(ejercicio.get("id"))
+                        -> listaEjercicios.stream().noneMatch(item
+                                -> ((DBObject) item).get("id").equals(ejercicio.get("id"))
                         )
                 ).collect(Collectors.toList());
+
+                ejercicios.replaceAll(ejercicio -> {
+                    ejercicio.put("terminado", 0);
+                    return ejercicio;
+                });
+
+                //Se agregan los ejercicios al tema
+                alumnosCollection.update(
+                        QueryBuilder.start("id").is(estudiante.getId())
+                        .get(),
+                        QueryBuilder.start()
+                        .get());
             }
 
             /*ejercicios.replaceAll(ejercicio -> {
-                ejercicio.put("terminado", false);
+             ejercicio.put("terminado", false);
 
-                return ejercicio;
-            });
+             return ejercicio;
+             });
 
-            object.put("ejercicios",
-                    ejercicios
-            );*/
-
+             object.put("ejercicios",
+             ejercicios
+             );*/
             return object;
 
         });
