@@ -8,6 +8,7 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
 import com.mongodb.WriteResult;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -60,76 +61,33 @@ public class EstudiantesManager {
     }
 
     public String createOrUpdateDomainModel() {
-        //Lista de temas
-        List<DBObject> temas = temasCollection.find(QueryBuilder.start().get(),
+        //Tramos los ejercicios del alumno
+
+        DBObject alumno = alumnosCollection.findOne(QueryBuilder.start("id")
+                .is(estudiante.getId())
+                .get(),
                 QueryBuilder.start("_id").is(0)
-                .put("id").is(1)
-                .put("nombre").is(1)
+                .put("ejercicios").is(1)
                 .get()
-        ).toArray();
+        );
+        
+        if (alumno!=null){
+            BasicDBList ejercicios;
+            //List<DBObject> ejerciciosAlumno
+            
+            if (alumno.containsField("ejercicios"))
+                ejercicios = ((BasicDBList)alumno.get("ejercicios"));
+            else
+                ejercicios = new BasicDBList(); //Arreglo vacio
+            
+            
+            //El campo ejercicio se llena con los id que no tenga el usuario (de ejercicios)
+            //Ademas se pone un valor 0 para entender que no esta terminado
+            
+            
+        }
 
-        temas.replaceAll((DBObject object) -> {
-            List<DBObject> ejercicios = ejerciciosCollection.find(
-                    QueryBuilder.start("idTema").is(object.get("id"))
-                    .get(),
-                    QueryBuilder.start("_id").is(0)
-                    .put("id").is(1)
-                    .get()
-            ).toArray();
-
-            //Traemos todos los id que el estudiante ya tenga realizados
-            DBObject resultEjercicios = alumnosCollection.findOne(
-                    QueryBuilder.start("ejercicios").
-                    is(
-                            QueryBuilder.start("$elemMatch")
-                            .is(QueryBuilder.start("id")
-                                    .is(object.get("id")
-                                    )
-                                    .get()
-                            )
-                            .get()
-                    )
-                    .get(), QueryBuilder.start("_id").is(0)
-                    .put("ejercicios").is(1)
-                    .get()
-            );
-
-            if (resultEjercicios != null) {
-                BasicDBList listaEjercicios = (BasicDBList) resultEjercicios.get("ejercicios");
-
-                ejercicios = ejercicios.stream().filter(ejercicio
-                        -> listaEjercicios.stream().noneMatch(item
-                                -> ((DBObject) item).get("id").equals(ejercicio.get("id"))
-                        )
-                ).collect(Collectors.toList());
-
-                ejercicios.replaceAll(ejercicio -> {
-                    ejercicio.put("terminado", 0);
-                    return ejercicio;
-                });
-
-                //Se agregan los ejercicios al tema
-                alumnosCollection.update(
-                        QueryBuilder.start("id").is(estudiante.getId())
-                        .get(),
-                        QueryBuilder.start()
-                        .get());
-            }
-
-            /*ejercicios.replaceAll(ejercicio -> {
-             ejercicio.put("terminado", false);
-
-             return ejercicio;
-             });
-
-             object.put("ejercicios",
-             ejercicios
-             );*/
-            return object;
-
-        });
-
-        return temas.toString();
+        return "";
     }
 
     public boolean updateDataStudent() {
