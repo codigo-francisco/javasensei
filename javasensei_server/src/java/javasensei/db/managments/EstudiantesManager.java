@@ -62,6 +62,30 @@ public class EstudiantesManager {
 
         return result;
     }
+    
+    public Double getAbilityGlobal(){
+        double result = 0;
+        
+        DBObject alumno = alumnosCollection.findOne(new BasicDBObject("id", estudiante.getId()));
+        
+        if (alumno!=null){
+            //Obtenemos los ejercicios del modelo del estudiante
+            BasicDBList ejercicios = (BasicDBList)alumno.get("ejercicios");
+            Double totalEjercicios = new Integer(ejercicios.size()).doubleValue();
+            Double ejerciciosRealizados = 0D;
+            
+            for(Object ejercicio : ejercicios){
+                DBObject ejercicioObject = (DBObject)ejercicio;
+                
+                if (Double.parseDouble(ejercicioObject.get("terminado").toString()) == 1)
+                    ejerciciosRealizados++;
+            }
+            
+            result = ejerciciosRealizados / totalEjercicios;
+        }
+        
+        return result;
+    }
 
     public boolean createOrUpdateDomainModel() {
         boolean result = false;
