@@ -9,11 +9,14 @@ import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
 import com.mongodb.WriteResult;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import javasensei.db.collections.AlumnosCollection;
 import javasensei.db.collections.EjerciciosCollection;
 import javasensei.db.collections.TemasCollection;
@@ -60,9 +63,10 @@ public class EstudiantesManager {
         return result;
     }
 
-    public String createOrUpdateDomainModel() {
-        //Tramos los ejercicios del alumno
+    public boolean createOrUpdateDomainModel() {
+        boolean result = false;
 
+        //Tramos los ejercicios del alumno
         DBObject alumno = alumnosCollection.findOne(QueryBuilder.start("id")
                 .is(estudiante.getId())
                 .get(),
@@ -70,24 +74,50 @@ public class EstudiantesManager {
                 .put("ejercicios").is(1)
                 .get()
         );
-        
-        if (alumno!=null){
-            BasicDBList ejercicios;
-            //List<DBObject> ejerciciosAlumno
-            
-            if (alumno.containsField("ejercicios"))
-                ejercicios = ((BasicDBList)alumno.get("ejercicios"));
-            else
-                ejercicios = new BasicDBList(); //Arreglo vacio
-            
-            
+
+        if (alumno != null) {
+            List<Integer> ejercicios = new ArrayList<>();
+            //List<DBObject> ejerciciosAlumno = new ArrayList<>();
+
+            if (alumno.containsField("ejercicios")) {
+                BasicDBList listEjercicios = (BasicDBList) alumno.get("ejercicios");
+
+                listEjercicios.stream().map((listEjercicio) -> (DBObject) listEjercicio).forEach((ejercicio) -> {
+                    ejercicios.add(((Double)ejercicio.get("id")).intValue());
+                });
+
+            }
+
             //El campo ejercicio se llena con los id que no tenga el usuario (de ejercicios)
             //Ademas se pone un valor 0 para entender que no esta terminado
-            
-            
+            //Id de ejercicios que el alumno no tiene
+            DBCursor ejerciciosCursor = ejerciciosCollection.find(QueryBuilder.start("id")
+                    .notIn(ejercicios).get(),
+                    QueryBuilder.start("_id").is(0)
+                    .put("idLeccion").is(1)
+                    .put("idTema").is(1)
+                    .put("id").is(1)
+                    .get()
+            );
+
+            while (ejerciciosCursor.hasNext()) {
+                DBObject objectEjercicio = ejerciciosCursor.next();
+                objectEjercicio.put("terminado", 0);
+                //ejerciciosAlumno.add(objectEjercicio);
+
+                alumnosCollection.update(new BasicDBObject("id", estudiante.getId()),
+                        QueryBuilder.start("$addToSet").is(
+                                QueryBuilder.start("ejercicios")
+                                .is(objectEjercicio)
+                                .get()
+                        ).get()
+                );
+            }
+
+            result = true;
         }
 
-        return "";
+        return result;
     }
 
     public boolean updateDataStudent() {
