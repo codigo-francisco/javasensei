@@ -40,4 +40,16 @@ public class EstudianteRest {
         
         return "jsonpCallback("+result+")"; //JSON de respuesta
     }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("finalizarEjercicio")
+    public String finalizarEjercicio(@QueryParam("idAlumno") Long idAlumno, @QueryParam("idEjercicio") Integer idEjercicio){
+        ModeloEstudiante estudiante = new ModeloEstudiante();
+        estudiante.setId(idAlumno);
+        
+        EstudiantesManager manager = new EstudiantesManager(estudiante);
+        
+        return manager.finalizarEjercicio(idEjercicio);
+    }
 }

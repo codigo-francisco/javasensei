@@ -66,9 +66,7 @@ avatar_sensei.prototype = {
                 console.error("Fallo: " + textStatus);
             });
 
-        } /*else {
-         
-         }*/
+        }
 
     },
     llamarSistemaLogicoDifuso: function (tipoPaso) {
@@ -103,9 +101,25 @@ avatar_sensei.prototype = {
     paso_atras: function () {
 
     },
-    cierreEjercicio: function () {
+    cierreEjercicio: function () { //Funcion que se llama cuando se finaliza los ejercicios
         $("#controles_tracing").hide();
         camera_sensei.detenerFotos();
+        //Ajax para cambiar el estado del ejercicio
+        $.ajax({
+            url: "servicios/estudiantes/finalizarEjercicio",
+            type: "GET",
+            data:{
+                idEjercicio : avatar_context.id,
+                idAlumno : usuario.id
+            },
+            contentType: "application/json",
+            dataType: "json"
+        }).done(function(data){
+            console.log(data);
+            
+        }).error(function(error){
+           console.error(error); 
+        });
     },
     mostrarAvatar: function () {
         $(":mobile-pagecontainer").pagecontainer("change", "#tutor_sensei");
