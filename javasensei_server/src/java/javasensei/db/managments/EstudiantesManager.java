@@ -1,6 +1,5 @@
 package javasensei.db.managments;
 
-import com.google.gson.JsonObject;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
@@ -9,14 +8,9 @@ import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
 import com.mongodb.WriteResult;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import javasensei.db.collections.AlumnosCollection;
 import javasensei.db.collections.EjerciciosCollection;
 import javasensei.db.collections.TemasCollection;

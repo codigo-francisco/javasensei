@@ -1,9 +1,7 @@
 package pruebitas;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import javasensei.db.managments.QuizManager;
 
 /**
  *

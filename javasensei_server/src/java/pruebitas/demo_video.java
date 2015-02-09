@@ -2,8 +2,8 @@ package pruebitas;
 
 import com.googlecode.javacv.CanvasFrame;
 import com.googlecode.javacv.FrameGrabber;
-import com.googlecode.javacv.cpp.opencv_core.*;
 import com.googlecode.javacv.OpenCVFrameGrabber;
+import com.googlecode.javacv.cpp.opencv_core.IplImage;
 import static com.googlecode.javacv.cpp.opencv_core.cvFlip;
 
 public class demo_video {

@@ -1,6 +1,10 @@
 package javasensei.ia.recognitionemotion;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.Map;

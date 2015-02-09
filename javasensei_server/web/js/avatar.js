@@ -116,7 +116,6 @@ avatar_sensei.prototype = {
             dataType: "json"
         }).done(function(data){
             console.log(data);
-            
         }).error(function(error){
            console.error(error); 
         });

@@ -1,11 +1,10 @@
 package javasensei.estudiante;
 
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import javasensei.ia.recognitionemotion.Emocion;
-import javasensei.tutor.Habilidad;
-import com.google.gson.JsonObject;
 
 /**
  *
@@ -17,7 +16,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     private String token;
     private Emocion emocionActual = Emocion.NEUTRAL;
     private Emocion emocionPrevia = Emocion.NEUTRAL;
-    private Habilidad habilidadGlobal = Habilidad.MALA;
+    private double habilidadGlobal = 0;
     private double calidadRespuesta = 0; //Parametros internos al crear un estudiante nuevo
     
     public ModeloEstudiante(){
@@ -34,7 +33,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
             calidadRespuesta = jsonObj.get("calidadRespuesta").getAsDouble();
             emocionActual = Emocion.getEmocion(jsonObj.get("emocionActual").getAsString());
             emocionPrevia = Emocion.getEmocion(jsonObj.get("emocionPrevia").getAsString());
-            habilidadGlobal = Habilidad.getHabilidad(jsonObj.get("habilidadGlobal").getAsString());
+            habilidadGlobal = jsonObj.get("habilidadGlobal").getAsDouble();
     }
     
     public long getId() {
@@ -69,11 +68,11 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         this.emocionPrevia = emocionPrevia;
     }
 
-    public Habilidad getHabilidadGlobal() {
+    public Double getHabilidadGlobal() {
         return habilidadGlobal;
     }
 
-    public void setHabilidadGlobal(Habilidad habilidadGlobal) {
+    public void setHabilidadGlobal(Double habilidadGlobal) {
         this.habilidadGlobal = habilidadGlobal;
     }
 

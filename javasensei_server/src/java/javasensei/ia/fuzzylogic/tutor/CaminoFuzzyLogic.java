@@ -2,8 +2,8 @@ package javasensei.ia.fuzzylogic.tutor;
 
 import javasensei.estudiante.ModeloEstudiante;
 import javasensei.tutor.ResultadoTutor;
-import net.sourceforge.jFuzzyLogic.FIS;
 import javasensei.util.FileHelper;
+import net.sourceforge.jFuzzyLogic.FIS;
 /**
  *
  * @author Rock
@@ -31,22 +31,16 @@ public abstract class CaminoFuzzyLogic {
             
             fis.setVariable("emocionactual", estudiante.getEmocionActual().getValue());
             fis.setVariable("emocionprevia", estudiante.getEmocionPrevia().getValue());
-            fis.setVariable("habilidadglobal", estudiante.getHabilidadGlobal().getValue());
+            fis.setVariable("habilidadglobal", estudiante.getHabilidadGlobal());
             fis.setVariable("calidadrespuesta", estudiante.getCalidadRespuesta());
 
             fis.evaluate();
             
             double expresion = fis.getVariable("expresion").getValue();
-            double opcion1 = fis.getVariable("opcion1").getValue();
-            double opcion2 = fis.getVariable("opcion2").getValue();
-            double opcion3 = fis.getVariable("opcion3").getValue();
             double intervencion = fis.getVariable("intervencion").getValue();
             double retroalimentacion = fis.getVariable("retroalimentacion").getValue();
             
             resultado.setExpresionValue(expresion);
-            resultado.setOpcion1value(opcion1);
-            resultado.setOpcion2value(opcion2);
-            resultado.setOpcion3value(opcion3);
             resultado.setIntervencionValue(intervencion);
             resultado.setRetroalimentacionValue(retroalimentacion);
             
