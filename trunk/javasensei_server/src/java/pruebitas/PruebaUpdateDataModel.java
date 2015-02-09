@@ -14,7 +14,9 @@ public class PruebaUpdateDataModel {
         
         EstudiantesManager manager = new EstudiantesManager(estudiante);
         
-        //manager.createOrUpdateDomainModel();
+        manager.createOrUpdateDomainModel();
+        
+        manager.finalizarEjercicio(1);
         
         System.out.println("Habilidad Global: "+manager.getAbilityGlobal());
     }

@@ -38,6 +38,21 @@ public class EstudiantesManager {
         this.estudiante = estudiante;
     }
 
+    public String finalizarEjercicio(int idEjercicio) {
+        WriteResult writeResult = alumnosCollection.update(
+                QueryBuilder.start("id").is(estudiante.getId())
+                .put("ejercicios.id").is(idEjercicio)
+                .get(),
+                QueryBuilder.start("$set").is(
+                        QueryBuilder.start("ejercicios.$.terminado").is(1) //1 es que termino el ejercicio
+                        .get()
+                )
+                .get()
+        );        
+
+        return String.format("{result:%s}", writeResult.getN() > 0);
+    }
+
     public String insertOrCreateStudent() {
         String result = "{}";
 
@@ -62,28 +77,29 @@ public class EstudiantesManager {
 
         return result;
     }
-    
-    public Double getAbilityGlobal(){
+
+    public Double getAbilityGlobal() {
         double result = 0;
-        
+
         DBObject alumno = alumnosCollection.findOne(new BasicDBObject("id", estudiante.getId()));
-        
-        if (alumno!=null){
+
+        if (alumno != null) {
             //Obtenemos los ejercicios del modelo del estudiante
-            BasicDBList ejercicios = (BasicDBList)alumno.get("ejercicios");
+            BasicDBList ejercicios = (BasicDBList) alumno.get("ejercicios");
             Double totalEjercicios = new Integer(ejercicios.size()).doubleValue();
             Double ejerciciosRealizados = 0D;
-            
-            for(Object ejercicio : ejercicios){
-                DBObject ejercicioObject = (DBObject)ejercicio;
-                
-                if (Double.parseDouble(ejercicioObject.get("terminado").toString()) == 1)
+
+            for (Object ejercicio : ejercicios) {
+                DBObject ejercicioObject = (DBObject) ejercicio;
+
+                if (Double.parseDouble(ejercicioObject.get("terminado").toString()) == 1) {
                     ejerciciosRealizados++;
+                }
             }
-            
+
             result = ejerciciosRealizados / totalEjercicios;
         }
-        
+
         return result;
     }
 
@@ -107,7 +123,7 @@ public class EstudiantesManager {
                 BasicDBList listEjercicios = (BasicDBList) alumno.get("ejercicios");
 
                 listEjercicios.stream().map((listEjercicio) -> (DBObject) listEjercicio).forEach((ejercicio) -> {
-                    ejercicios.add(((Double)ejercicio.get("id")).intValue());
+                    ejercicios.add(((Double) ejercicio.get("id")).intValue());
                 });
 
             }
