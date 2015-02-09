@@ -38,9 +38,6 @@ public class TutorEvaluacion {
         json.addProperty("expresion", resultado.getExpresion());
         json.addProperty("intervencion", resultado.getIntervencion());
         json.addProperty("retroalimentacion", resultado.getRetroalimentacion());
-        json.addProperty("opcion1", resultado.getOpcion1());
-        json.addProperty("opcion2", resultado.getOpcion2());
-        json.addProperty("opcion3", resultado.getOpcion3());
 
         return gson.toJson(json);
     }
@@ -52,9 +49,6 @@ public class TutorEvaluacion {
         json.addProperty("expresion", resultado.getExpresion());
         json.addProperty("intervencion", true);
         json.addProperty("retroalimentacion", resultado.getRetroalimentacion());
-        json.addProperty("opcion1", resultado.getOpcion1());
-        json.addProperty("opcion2", resultado.getOpcion2());
-        json.addProperty("opcion3", resultado.getOpcion3());
 
         return gson.toJson(json);
 

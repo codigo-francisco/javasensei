@@ -1,10 +1,9 @@
 package javasensei.ia.recognitionemotion;
 
-import javasensei.util.FileHelper;
-import java.io.*;
-import java.lang.*;
+import java.io.File;
 import java.util.ArrayList;
-import weka.classifiers.functions.*;
+import javasensei.util.FileHelper;
+import weka.classifiers.functions.MultilayerPerceptron;
 import weka.core.Attribute;
 import weka.core.DenseInstance;
 import weka.core.Instance;

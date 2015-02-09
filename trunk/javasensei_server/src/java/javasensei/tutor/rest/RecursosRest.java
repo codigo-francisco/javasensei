@@ -1,8 +1,8 @@
 package javasensei.tutor.rest;
 
 import com.google.gson.JsonObject;
-import javasensei.db.managments.RecursoManager;
 import javasensei.db.managments.RankingEjerciciosManager;
+import javasensei.db.managments.RecursoManager;
 import javasensei.estudiante.ModeloEstudiante;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
