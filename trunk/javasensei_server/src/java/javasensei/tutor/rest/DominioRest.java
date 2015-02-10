@@ -1,5 +1,6 @@
 package javasensei.tutor.rest;
 
+import javasensei.db.managments.MenuManager;
 import javasensei.util.FileHelper;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -33,7 +34,11 @@ public class DominioRest {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("getDominioEstudiante/{dominioestudiante}")
     public String getDominioEstudiante(@PathParam("idUsuario") String dominioEstudiante) {
-        return FileHelper.getInstance().getContentFile("javasensei/files/ejercicios.json");
+        //return FileHelper.getInstance().getContentFile("javasensei/files/ejercicios.json");
+        MenuManager menu = new MenuManager();
+        
+        return menu.getCursoMenu();
+        
     }
     
    

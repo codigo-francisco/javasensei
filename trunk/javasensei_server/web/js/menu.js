@@ -1,12 +1,35 @@
 var menu_context;
-function menu_sensei(idUsuario) {
-    this.ejercicios = [];
+var cerrarMenu = function(){
+    //Cerrar el panel
+    $( "#panelmenu" ).panel( "close" );
+};
+
+function obtenerEjercicios(callback) {
+    //Se hace una solicitud rest al servidor java
+    var urlDominioEstudiante = url + "dominioEstudiante/getDominioEstudiante/" + usuario.id;
+
+    $.ajax({
+        url: urlDominioEstudiante,
+        type: "GET",
+        contentType: "application/json",
+        dataType: "json"
+    }).done(function (datos) {
+        //datos.intervencion = true; //TODO: Quitar esto, es de prueba, falla las reglas difusas
+        console.log("%cDatos recibidos: %O", "color:blue;", datos);
+        callback(datos);
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        console.log("Fallo " + textStatus);
+    });
+}
+
+function menu_sensei() {
+    this.lecciones = [];
     this.updateMenu = true;
     menu_context = this;
 
     this.actualizarMenu = function actualizarMenu() {
-        obtenerEjercicios(function(ejercicios){
-            menu_context.ejercicios = ejercicios;
+        obtenerEjercicios(function(lecciones){
+            menu_context.lecciones = lecciones;
             menu_context.updateMenu = true;
         });
     };
@@ -19,30 +42,27 @@ function menu_sensei(idUsuario) {
 
             //Creamos el primer div colapsible
 
-            $.each(this.ejercicios.lecciones, function(index, ejercicio) {
+            $.each(this.lecciones, function(index, leccion) {
                 var divEjercicio = $("<div></div>")
                         //.attr("data-role","collapsible")
                         //.attr("data-inset",false)
                         .append($("<h3></h3>")
-                                .text(ejercicio.titulo)
+                                .text(leccion.nombre)
                                 );
 
                 var listaLecciones = $(document.createElement("ul"));
 
-                //Lista de lecciones
-                $.each(ejercicio.lecciones, function(index, leccion) {
+                //Lista de ejercicios
+                $.each(leccion.ejercicios, function(index, ejercicio) {
                     listaLecciones.append(
                             $("<li>")
                                 .append($("<a href='#'>")
-                                .text(leccion.titulo)
-                                .click(function(){
-                                    //Cerrar el panel
-                                    $( "#panelmenu" ).panel( "close" );
-                                })
+                                .text(ejercicio.titulo)
+                                .click(cerrarMenu)
                                 .click(
                                     {
-                                        id: leccion.id,
-                                        url:leccion.url
+                                        id: ejercicio.id,
+                                        url:ejercicio.url
                                     },
                                     cargarEjercicio
                                 )
