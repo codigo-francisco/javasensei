@@ -14,18 +14,18 @@
             "instruccion": "Selecciona la opción que responda a la pregunta.",
             "presentacion": 
             [
-                "¿El índice de un arreglo siempre inicia en 0?"
+                "Señala los operadores que se evalúan en corto circuito (&&,||), (&,|):"
             ],
             "opciones": 
             [
                 {
-                    "texto": "Verdadero",
+                    "texto": "& , |",
                     "paso": 1,
-                    "tipo": "pasofinaloptimo",
-                    "instruccion": "La respuesta es correcta.",
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
-                        "El índice de un arreglo siempre inicia en 0."
+                         "Señala los operadores que se evalúan en corto circuito (&&,||), (&,|):"
                     ],
                     "textoEmocional":
                     {
@@ -44,13 +44,13 @@
                     "opciones": []
                 },
                 {
-                    "texto": "Falso",
+                    "texto": "&& , ||",
                     "paso": 2,
-                    "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "La respuesta es correcta.",
                     "presentacion": 
                     [
-                         "¿El índice de un arreglo siempre inicia en 0?"
+                        "&& y || se evalúan en corto circuito."
                     ],
                     "textoEmocional":
                     {
@@ -67,7 +67,7 @@
                         }
                     },
                     "opciones": []
-                }
+                }                
             ]
         }
     ] 

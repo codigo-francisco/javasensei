@@ -1,0 +1,139 @@
+{
+    "id":1,
+    "paso":-1,
+    "instruccionesejercicio": 
+    [
+        "blah blah blah",
+        "blah blah blah"
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "¿Cuál es la salida para el siguiente fragmento de código?",
+            "presentacion": 
+            [
+                "int[] temp = {2 ,4, 6, 8};",
+                "temp[0] = 23;",
+                "temp[3] = temp[1];",
+                "System.out.println(temp[0] +  \" \" + temp[3]);"
+            ],
+            "opciones": 
+            [
+                {
+                    "texto": "23, 2",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "int[] temp = {2 ,4, 6, 8};",
+                        "temp[0] = 23;",
+                        "temp[3] = temp[1];",
+                        "System.out.println(temp[0] +  \" \" + temp[3]);"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "2, 8",
+                    "paso": 2,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "int[] temp = {2 ,4, 6, 8};",
+                        "temp[0] = 23;",
+                        "temp[3] = temp[1];",
+                        "System.out.println(temp[0] +  \" \" + temp[3]);"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                },    
+                {
+                    "texto": "23, 2",
+                    "paso": 3,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "int[] temp = {2 ,4, 6, 8};",
+                        "temp[0] = 23;",
+                        "temp[3] = temp[1];",
+                        "System.out.println(temp[0] +  \" \" + temp[3]);"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                },                
+                {
+                    "texto": "23, 4",
+                    "paso": 4,
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "La respuesta es correcta.",
+                    "presentacion": 
+                    [
+                        "int[] temp = {2 ,4, 6, 8};",
+                        "temp[0] = 23;",
+                        "temp[3] = temp[1];",
+                        "System.out.println(temp[0] +  \" \" + temp[3]);"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                }
+            ]
+        }
+    ] 
+}

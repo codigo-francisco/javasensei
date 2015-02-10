@@ -3,7 +3,7 @@
     "paso":-1,
     "instruccionesejercicio": 
     [
-        "Las variables...",
+        "blah blah blah",
         "blah blah blah"
     ],
     "opciones": 
@@ -21,7 +21,7 @@
                 {
                     "texto": "Verdadero",
                     "paso": 2,
-                    "tipo": "optimofinalizado",
+                    "tipo": "pasofinaloptimo",
                     "instruccion": "La respuesta es correcta.",
                     "presentacion": 
                     [

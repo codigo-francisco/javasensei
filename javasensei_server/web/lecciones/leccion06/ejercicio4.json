@@ -14,18 +14,18 @@
             "instruccion": "Selecciona la opción que responda a la pregunta.",
             "presentacion": 
             [
-                "¿Todos los elementos en un arreglo deben ser del mismo tipo?"
+                "¿La instrucción int[] arreglo = new int[10]; inicializa automáticamente el valor de sus elementos a 1?"
             ],
             "opciones": 
             [
                 {
                     "texto": "Verdadero",
                     "paso": 1,
-                    "tipo": "pasofinaloptimo",
-                    "instruccion": "La respuesta es correcta.",
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
-                        "Todos los elementos en un arreglo deben ser del mismo tipo."
+                         "¿La instrucción int[] arreglo = new int[10]; inicializa automáticamente el valor de sus elementos a 1?"
                     ],
                     "textoEmocional":
                     {
@@ -46,11 +46,11 @@
                 {
                     "texto": "Falso",
                     "paso": 2,
-                    "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "La respuesta es correcta.",
                     "presentacion": 
                     [
-                         "¿Todos los elementos en un arreglo deben ser del mismo tipo?"
+                        "En un arreglo de tipo int inicializa automáticamente el valor de sus elementos a 0."
                     ],
                     "textoEmocional":
                     {
@@ -67,7 +67,7 @@
                         }
                     },
                     "opciones": []
-                }
+                }                
             ]
         }
     ] 
