@@ -1,0 +1,159 @@
+{
+    "id":1,
+    "paso":-1,
+    "instruccionesejercicio": 
+    [
+        "blah blah blah",
+        "blah blah blah"
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "¿Qué se imprime en la consola de salida al ejecutar el siguiente programa?",
+            "presentacion": 
+            [
+                "public class Arreglos {",
+                "\tpublic static void main( String args[] ){",
+                "\t\tboolean[] b = new boolean[2];",
+                "\t\tdouble[] d = new double[2];",
+                "\t\tSystem.out.print( b[0] );",
+                "\t\tSystem.out.println( d[1] );",
+                "\t}",
+                "}"
+            ],
+            "opciones": 
+            [
+                {
+                    "texto": "true0",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "public class Arreglos {",
+                        "\tpublic static void main( String args[] ){",
+                        "\t\tboolean[] b = new boolean[2];",
+                        "\t\tdouble[] d = new double[2];",
+                        "\t\tSystem.out.print( b[0] );",
+                        "\t\tSystem.out.println( d[1] );",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "false0",
+                    "paso": 2,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "public class Arreglos {",
+                        "\tpublic static void main( String args[] ){",
+                        "\t\tboolean[] b = new boolean[2];",
+                        "\t\tdouble[] d = new double[2];",
+                        "\t\tSystem.out.print( b[0] );",
+                        "\t\tSystem.out.println( d[1] );",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                },    
+                {
+                    "texto": "true0.0",
+                    "paso": 3,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "public class Arreglos {",
+                        "\tpublic static void main( String args[] ){",
+                        "\t\tboolean[] b = new boolean[2];",
+                        "\t\tdouble[] d = new double[2];",
+                        "\t\tSystem.out.print( b[0] );",
+                        "\t\tSystem.out.println( d[1] );",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                },                
+                {
+                    "texto": "false0.0",
+                    "paso": 4,
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "La respuesta es correcta.",
+                    "presentacion": 
+                    [
+                        "public class Arreglos {",
+                        "\tpublic static void main( String args[] ){",
+                        "\t\tboolean[] b = new boolean[2];",
+                        "\t\tdouble[] d = new double[2];",
+                        "\t\tSystem.out.print( b[0] );",
+                        "\t\tSystem.out.println( d[1] );",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                }
+            ]
+        }
+    ] 
+}

@@ -126,6 +126,46 @@
                     "id": 2,
                     "url": "leccion03/ejercicio2.json",
                     "titulo": "Ejercicio 2"
+                },
+                {
+                    "id": 3,
+                    "url": "leccion03/ejercicio3.json",
+                    "titulo": "Ejercicio 3"
+                },
+                {
+                    "id": 4,
+                    "url": "leccion03/ejercicio4.json",
+                    "titulo": "Ejercicio 4"
+                },
+                {
+                    "id": 5,
+                    "url": "leccion03/ejercicio5.json",
+                    "titulo": "Ejercicio 5"
+                },
+                {
+                    "id": 6,
+                    "url": "leccion03/ejercicio6.json",
+                    "titulo": "Ejercicio 6"
+                },
+                {
+                    "id": 7,
+                    "url": "leccion03/ejercicio7.json",
+                    "titulo": "Ejercicio 7"
+                },
+                {
+                    "id": 8,
+                    "url": "leccion03/ejercicio8.json",
+                    "titulo": "Ejercicio 8"
+                },
+                {
+                    "id": 9,
+                    "url": "leccion03/ejercicio9.json",
+                    "titulo": "Ejercicio 9"
+                },
+                {
+                    "id": 10,
+                    "url": "leccion03/ejercicio10.json",
+                    "titulo": "Ejercicio 10"
                 }
             ]
         },
@@ -142,6 +182,46 @@
                     "id": 2,
                     "url": "leccion04/ejercicio2.json",
                     "titulo": "Ejercicio 2"
+                },
+                {
+                    "id": 3,
+                    "url": "leccion04/ejercicio3.json",
+                    "titulo": "Ejercicio 3"
+                },
+                {
+                    "id": 4,
+                    "url": "leccion04/ejercicio4.json",
+                    "titulo": "Ejercicio 4"
+                },
+                {
+                    "id": 5,
+                    "url": "leccion04/ejercicio5.json",
+                    "titulo": "Ejercicio 5"
+                },
+                {
+                    "id": 6,
+                    "url": "leccion04/ejercicio6.json",
+                    "titulo": "Ejercicio 6"
+                },
+                {
+                    "id": 7,
+                    "url": "leccion04/ejercicio7.json",
+                    "titulo": "Ejercicio 7"
+                },
+                {
+                    "id": 8,
+                    "url": "leccion04/ejercicio8.json",
+                    "titulo": "Ejercicio 8"
+                },
+                {
+                    "id": 9,
+                    "url": "leccion04/ejercicio9.json",
+                    "titulo": "Ejercicio 9"
+                },
+                {
+                    "id": 10,
+                    "url": "leccion04/ejercicio10.json",
+                    "titulo": "Ejercicio 10"
                 }
             ]
         },
@@ -158,6 +238,46 @@
                     "id": 2,
                     "url": "leccion05/ejercicio2.json",
                     "titulo": "Ejercicio 2"
+                },
+                {
+                    "id": 3,
+                    "url": "leccion05/ejercicio3.json",
+                    "titulo": "Ejercicio 3"
+                },
+                {
+                    "id": 4,
+                    "url": "leccion05/ejercicio4.json",
+                    "titulo": "Ejercicio 4"
+                },
+                {
+                    "id": 5,
+                    "url": "leccion05/ejercicio5.json",
+                    "titulo": "Ejercicio 5"
+                },
+                {
+                    "id": 6,
+                    "url": "leccion05/ejercicio6.json",
+                    "titulo": "Ejercicio 6"
+                },
+                {
+                    "id": 7,
+                    "url": "leccion05/ejercicio7.json",
+                    "titulo": "Ejercicio 7"
+                },
+                {
+                    "id": 8,
+                    "url": "leccion05/ejercicio8.json",
+                    "titulo": "Ejercicio 8"
+                },
+                {
+                    "id": 9,
+                    "url": "leccion05/ejercicio9.json",
+                    "titulo": "Ejercicio 9"
+                },
+                {
+                    "id": 10,
+                    "url": "leccion05/ejercicio10.json",
+                    "titulo": "Ejercicio 10"
                 }
             ]
         },
@@ -167,18 +287,53 @@
             "lecciones": [
                 {
                     "id": 1,
-                    "url": "leccion02/ejercicio1.json",
+                    "url": "leccion06/ejercicio1.json",
                     "titulo": "Ejercicio 1"
                 },
                 {
                     "id": 2,
-                    "url": "leccion02/ejercicio2.json",
+                    "url": "leccion06/ejercicio2.json",
                     "titulo": "Ejercicio 2"
                 },
                 {
                     "id": 3,
-                    "url": "leccion01/ejercicio9.json",
+                    "url": "leccion06/ejercicio3.json",
+                    "titulo": "Ejercicio 3"
+                },
+                                {
+                    "id": 4,
+                    "url": "leccion06/ejercicio4.json",
+                    "titulo": "Ejercicio 4"
+                },
+                {
+                    "id": 5,
+                    "url": "leccion06/ejercicio5.json",
+                    "titulo": "Ejercicio 5"
+                },
+                {
+                    "id": 6,
+                    "url": "leccion06/ejercicio6.json",
+                    "titulo": "Ejercicio 6"
+                },
+                {
+                    "id": 7,
+                    "url": "leccion06/ejercicio7.json",
+                    "titulo": "Ejercicio 7"
+                },
+                {
+                    "id": 8,
+                    "url": "leccion06/ejercicio8.json",
+                    "titulo": "Ejercicio 8"
+                },
+                {
+                    "id": 9,
+                    "url": "leccion06/ejercicio9.json",
                     "titulo": "Ejercicio 9"
+                },
+                {
+                    "id": 10,
+                    "url": "leccion06/ejercicio10.json",
+                    "titulo": "Ejercicio 10"
                 }
             ]
         }

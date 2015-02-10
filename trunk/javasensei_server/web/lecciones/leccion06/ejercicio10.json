@@ -1,0 +1,124 @@
+{
+    "id":1,
+    "paso":-1,
+    "instruccionesejercicio": 
+    [
+        "blah blah blah",
+        "blah blah blah"
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Selecciona la opción que responda a la pregunta.",
+            "presentacion": 
+            [
+                "¿Cuál es el tamaño del siguiente arreglo: int[] lista = {12, 34, 9, 0, -62, 88};?"
+            ],
+            "opciones": 
+            [
+                {
+                    "texto": "1",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "¿Cuál es el tamaño del siguiente arreglo: int[] lista = {12, 34, 9, 0, -62, 88};?"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                },
+                                {
+                    "texto": "5",
+                    "paso": 2,
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "La respuesta es correcta.",
+                    "presentacion": 
+                    [
+                        "¿Cuál es el tamaño del siguiente arreglo: int[] lista = {12, 34, 9, 0, -62, 88};?"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "6",
+                    "paso": 3,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "¿Cuál es el tamaño del siguiente arreglo: int[] lista = {12, 34, 9, 0, -62, 88};?"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                },    
+                {
+                    "texto": "12",
+                    "paso": 4,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "¿Cuál es el tamaño del siguiente arreglo: int[] lista = {12, 34, 9, 0, -62, 88};?"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                }              
+            ]
+        }
+    ] 
+}
