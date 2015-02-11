@@ -1,6 +1,7 @@
 package javasensei.tutor.rest;
 
 import com.google.gson.JsonObject;
+import javasensei.db.managments.EjerciciosManager;
 import javasensei.db.managments.RankingEjerciciosManager;
 import javasensei.db.managments.RecursoManager;
 import javasensei.estudiante.ModeloEstudiante;
@@ -53,6 +54,35 @@ public class RecursosRest {
         
         JsonObject json = new JsonObject();
         json.addProperty("id", idRecurso);
+        json.addProperty("ranking", ranking);
+        json.addProperty("result", result);
+        
+        return json.toString();
+    }
+    
+    @GET
+    @Path("getrankingejercicio")
+    public String setRankingEjercicio(@QueryParam("idEjercicio") Integer idEjercicio, @QueryParam("idAlumno") Long idAlumno){
+        EjerciciosManager manager = new EjerciciosManager();
+        
+        Integer ranking = manager.getRankingEjercicio(idEjercicio, idAlumno);
+        
+        JsonObject json = new JsonObject();
+        json.addProperty("id", idEjercicio);
+        json.addProperty("ranking", ranking);
+        
+        return json.toString();
+    }
+    
+    @GET
+    @Path("setrankingejercicio")
+    public String setRankingEjercicio(@QueryParam("idEjercicio") Integer idEjercicio, @QueryParam("idAlumno") Long idAlumno, @QueryParam("ranking") Integer ranking){
+        EjerciciosManager manager = new EjerciciosManager();
+        
+        Boolean result = manager.setRankingEjercicio(idEjercicio, idAlumno, ranking);
+        
+        JsonObject json = new JsonObject();
+        json.addProperty("id", idEjercicio);
         json.addProperty("ranking", ranking);
         json.addProperty("result", result);
         

@@ -104,6 +104,9 @@ avatar_sensei.prototype = {
     cierreEjercicio: function () { //Funcion que se llama cuando se finaliza los ejercicios
         $("#controles_tracing").hide();
         camera_sensei.detenerFotos();
+        //Mostramos el rating
+        $("#controles_cierre_tracing").show();
+        
         //Ajax para cambiar el estado del ejercicio
         $.ajax({
             url: "servicios/estudiantes/finalizarEjercicio",
@@ -119,6 +122,54 @@ avatar_sensei.prototype = {
         }).error(function(error){
            console.error(error); 
         });
+    },
+    obtenerRatingEjercicio : function(idEjercicio){
+        $.ajax({
+            url:"servicios/recursos/getrankingejercicio",
+            data:{
+                idEjercicio : idEjercicio,
+                idAlumno : usuario.id
+            },
+            dataType:"json"
+        }).done(function(data){
+            avatar_context.setRatingEjercicio(data.id, data.ranking);
+        }).fail(function(error){
+            console.error(error);
+        });
+    },
+    setRatingEjercicio : function(id, ranking){
+        var calificaciones = $("#calificaciones_ejercicios");
+        calificaciones.empty();
+        calificaciones.append(
+                $("<div>")
+                .attr("data-id", id)
+                .attr("data-average", ranking)
+                .jRating({
+                    showRateInfo: false,
+                    step: true,
+                    rateMin: 1,
+                    rateMax: 5,
+                    canRateAgain: true,
+                    nbRates: 9999999,
+                    sendRequest: false,
+                    onClick: function (element, rate) {
+                        //Se manda a guardar el ranking
+                        $.ajax({
+                            url: "servicios/recursos/setrankingejercicio",
+                            data: {
+                                idEjercicio: element.dataset["id"],
+                                idAlumno: usuario.id,
+                                ranking: rate
+                            },
+                            dataType: "json"
+                        }).done(function (data) {
+                            avatar_context.setRatingEjercicio(data.id, data.ranking);
+                        }).fail(function(error){
+                            console.error(error);
+                        });
+                    }
+                })
+                );
     },
     mostrarAvatar: function () {
         $(":mobile-pagecontainer").pagecontainer("change", "#tutor_sensei");
