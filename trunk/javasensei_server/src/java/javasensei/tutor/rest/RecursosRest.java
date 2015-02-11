@@ -2,7 +2,7 @@ package javasensei.tutor.rest;
 
 import com.google.gson.JsonObject;
 import javasensei.db.managments.EjerciciosManager;
-import javasensei.db.managments.RankingEjerciciosManager;
+import javasensei.db.managments.RankingManager;
 import javasensei.db.managments.RecursoManager;
 import javasensei.estudiante.ModeloEstudiante;
 import javax.ws.rs.Consumes;
@@ -28,7 +28,7 @@ public class RecursosRest {
         ModeloEstudiante estudiante = new ModeloEstudiante();
         estudiante.setId(idAlumno);
         
-        RankingEjerciciosManager ranking = new RankingEjerciciosManager(estudiante);
+        RankingManager ranking = new RankingManager(estudiante);
         
         return ranking.getRecommenderResources(3, idEjercicio);
     }
