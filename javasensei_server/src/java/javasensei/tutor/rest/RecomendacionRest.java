@@ -1,6 +1,6 @@
 package javasensei.tutor.rest;
 
-import javasensei.db.managments.RankingEjerciciosManager;
+import javasensei.db.managments.RankingManager;
 import javasensei.estudiante.ModeloEstudiante;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -31,7 +31,7 @@ public class RecomendacionRest {
     public String ejercicios(@PathParam("usuario") String usuario){
         ModeloEstudiante estudiante = new ModeloEstudiante(usuario);
         
-        RankingEjerciciosManager manager = new RankingEjerciciosManager(estudiante);
+        RankingManager manager = new RankingManager(estudiante);
         
         return manager.getRecommendersExercises(5, true);
     }

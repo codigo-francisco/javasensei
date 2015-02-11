@@ -36,7 +36,7 @@ import org.apache.mahout.cf.taste.recommender.RecommendedItem;
  *
  * @author Rock
  */
-public class RankingEjerciciosManager {
+public class RankingManager {
 
     private DBCollection ejercicios = new EjerciciosCollection().getEjerciciosCollection();
     private DBCollection rankingEjercicios = new RankingEjerciciosCollection().getRankingEjerciciosCollection();
@@ -50,7 +50,7 @@ public class RankingEjerciciosManager {
     //protected static RandomRecommender randomRecommender; //No funciona el recommender no se porque FGH
     protected static GenericUserBasedRecommender recommenderRecursos;
 
-    public RankingEjerciciosManager(ModeloEstudiante estudiante) {
+    public RankingManager(ModeloEstudiante estudiante) {
         this.estudiante = estudiante;
         if (recommenderEjercicios == null) {
             updateDataModelEjercicios();
@@ -103,7 +103,7 @@ public class RankingEjerciciosManager {
 
             result = listaRecursos.toString();
         } catch (TasteException ex) {
-            Logger.getLogger(RankingEjerciciosManager.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return result;
@@ -152,7 +152,7 @@ public class RankingEjerciciosManager {
                     .get()
             ).toArray().toString();
         } catch (TasteException ex) {
-            Logger.getLogger(RankingEjerciciosManager.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return result;
@@ -195,7 +195,7 @@ public class RankingEjerciciosManager {
                 csv.deleteOnExit();
             }
         } catch (Exception ex) {
-            Logger.getLogger(RankingEjerciciosManager.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -235,7 +235,7 @@ public class RankingEjerciciosManager {
                 csv.deleteOnExit();
             }
         } catch (IOException | TasteException ex) {
-            Logger.getLogger(RankingEjerciciosManager.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

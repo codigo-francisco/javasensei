@@ -5,7 +5,7 @@
  */
 package pruebitas;
 
-import javasensei.db.managments.RankingEjerciciosManager;
+import javasensei.db.managments.RankingManager;
 import javasensei.estudiante.ModeloEstudiante;
 
 /**
@@ -16,7 +16,7 @@ public class PruebaMongo {
     public static void main(String[] args){
         ModeloEstudiante estudiante = new ModeloEstudiante();
         
-        RankingEjerciciosManager es = new RankingEjerciciosManager(estudiante);
+        RankingManager es = new RankingManager(estudiante);
         estudiante.setId(6464465);
         
         es.colocarRankingDefault();
