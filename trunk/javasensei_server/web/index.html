@@ -49,22 +49,21 @@
                 if (usuario.id !== '') {
                     $("#fullscreenlogin").hide();
                 }
-            }
-            ;
+            };
 
             function mostrarBackground() {
                 $("#fullscreenlogin").show();
-            }
+            };
 
             function cargarEjercicio(event) {
                 example_tracing.suscribir_todos_ejercicios(avatar_sensei);
                 example_tracing.construir_ejercicio(event.data.url);
-            }
-            ;
+                $("#controles_cierre_tracing").hide();
+            };
 
             function eliminarBackgroundCamera() {
                 $("#fullscreenpermition").hide();
-            }
+            };
 
             $(document).ready(function () {
                 $("#button_logout").click(function () {
@@ -117,7 +116,10 @@
 
                 $("#areatrabajo").hide();
                 $("#controles_tracing").hide();
-
+                $("#controles_cierre_tracing").hide();
+                
+                $("#cerrar_tracing").click(example_tracing.cerrarInterfaz);
+                
                 //TODO: Eliminar despues de pruebas de la visualizacion de recursos
                 eliminarBackgroundCamera();
             });
@@ -232,6 +234,14 @@
             </div>
 
             <div role="main" class="ui-content">
+                <div id="controles_cierre_tracing" class="controles">
+                    ¿Que te ha parecido este recurso?<br>
+                    <!-- Rating -->
+                    <div id="calificaciones_ejercicios">
+                        
+                    </div>
+                    <button id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
+                </div>
                 <div id="controles_tracing" class="controles">
                     <button id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
                     <button id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>

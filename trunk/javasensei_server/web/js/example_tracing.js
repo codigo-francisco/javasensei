@@ -102,6 +102,10 @@ example_tracing_sensei.prototype = {
 
         contexto.construir_interfaz(paso_datos, true, false);
     },
+    cerrarInterfaz : function(){
+        this.areatrabajo.hide();
+        this.controles.hide();
+    },
     construir_ejercicio: function (url) { //Construye todo el ejercicio junto con el example_tracing
         this.areatrabajo.show();
         this.controles.show();
