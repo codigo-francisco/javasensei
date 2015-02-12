@@ -6,10 +6,10 @@ var example_tracing_sensei = function (areatrabajo, areasoluciones, boton_adelan
 
     this.areatrabajo = $(areatrabajo);
     this.areasoluciones = $(areasoluciones);
+    this.cierretracing = $("#controles_cierre_tracing");
     this.boton_adelante = $(boton_adelante);
     this.boton_atras = $(boton_atras);
     this.controles = $(controles);
-    //this.instrucciones_carga = 
 
     this.tree_example_tracing = emptyFunction;
     this.letras = ["a", "b", "a", "b"];
@@ -103,8 +103,9 @@ example_tracing_sensei.prototype = {
         contexto.construir_interfaz(paso_datos, true, false);
     },
     cerrarInterfaz : function(){
-        this.areatrabajo.hide();
-        this.controles.hide();
+        contexto.areatrabajo.hide();
+        contexto.controles.hide();
+        contexto.cierretracing.hide();
     },
     construir_ejercicio: function (url) { //Construye todo el ejercicio junto con el example_tracing
         this.areatrabajo.show();

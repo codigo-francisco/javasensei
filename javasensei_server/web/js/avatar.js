@@ -107,6 +107,8 @@ avatar_sensei.prototype = {
         //Mostramos el rating
         $("#controles_cierre_tracing").show();
         
+        avatar_context.obtenerRatingEjercicio(avatar_context.id);
+        
         //Ajax para cambiar el estado del ejercicio
         $.ajax({
             url: "servicios/estudiantes/finalizarEjercicio",

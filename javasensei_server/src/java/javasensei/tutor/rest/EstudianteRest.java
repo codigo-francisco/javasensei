@@ -1,5 +1,6 @@
 package javasensei.tutor.rest;
 
+import com.google.gson.JsonObject;
 import javasensei.db.managments.EstudiantesManager;
 import javasensei.db.managments.RankingManager;
 import javasensei.db.managments.RecursoManager;
@@ -35,6 +36,9 @@ public class EstudianteRest {
         
         EstudiantesManager estudiantes = new EstudiantesManager(estudiante);
         String result = estudiantes.insertOrCreateStudent();
+        
+        estudiantes.createOrUpdateStudentModel();
+        
         //Se pasa a colocar el ranking
         RankingManager ranking = new RankingManager(estudiante);
         ranking.colocarRankingDefault();
@@ -51,6 +55,15 @@ public class EstudianteRest {
         
         EstudiantesManager manager = new EstudiantesManager(estudiante);
         
-        return manager.finalizarEjercicio(idEjercicio);
+        JsonObject json = new JsonObject();
+        
+        Double value = manager.getAbilityGlobal();
+        
+        json.addProperty("result", manager.finalizarEjercicio(idEjercicio));
+        json.addProperty("habilidadGlobal", value);
+        
+        manager.saveAbilityGlobal(value);
+        
+        return json.toString();
     }
 }
