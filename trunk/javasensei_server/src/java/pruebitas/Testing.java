@@ -15,8 +15,16 @@ public class Testing {
         operation.insert(doc2);
         BulkWriteResult result = operation.execute();
         System.out.println("Documents inserted="+result.getInsertedCount()); // prints 2*/
-          boolean[] x = new boolean[2];
-          System.out.println(x[0]);
+        for(int i = 0; i <= 4; i++) {
+            switch(i) {
+                case 0: System.out.print("A");
+                case 1: System.out.print("B");
+                case 2: System.out.print("C");
+            }
+        }
+ 
+
+
 
     }
 }
