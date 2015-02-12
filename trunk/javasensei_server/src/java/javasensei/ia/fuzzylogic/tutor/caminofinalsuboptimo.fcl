@@ -132,7 +132,7 @@ RULEBLOCK REGLAS_EXPRESION
     RULE 66 : IF emocionprevia IS enojado AND emocionactual IS sorpresa AND habilidadglobal IS mala AND calidadrespuesta IS mala THEN expresion IS compasivo;
     RULE 67 : IF emocionprevia IS enojado AND emocionactual IS sorpresa AND habilidadglobal IS mala AND calidadrespuesta IS buena THEN expresion IS compasivo;
     RULE 68 : IF emocionprevia IS enojado AND emocionactual IS sorpresa AND habilidadglobal IS buena AND calidadrespuesta IS mala THEN expresion IS compasivo;
-    RULE 69 : IF emocionprevia IS enojado AND emocionactual IS sorpresa AND habilidadglobal IS buena AND calidadrespuesta IS buena THEN opcion1 IS recurso;
+    RULE 69 : IF emocionprevia IS enojado AND emocionactual IS sorpresa AND habilidadglobal IS buena AND calidadrespuesta IS buena THEN expresion IS compasivo;
     RULE 70 : IF emocionprevia IS enojado AND emocionactual IS triste AND habilidadglobal IS mala AND calidadrespuesta IS mala THEN expresion IS compasivo;
     RULE 71 : IF emocionprevia IS enojado AND emocionactual IS triste AND habilidadglobal IS mala AND calidadrespuesta IS buena THEN expresion IS compasivo;
     RULE 72 : IF emocionprevia IS enojado AND emocionactual IS triste AND habilidadglobal IS buena AND calidadrespuesta IS mala THEN expresion IS compasivo;

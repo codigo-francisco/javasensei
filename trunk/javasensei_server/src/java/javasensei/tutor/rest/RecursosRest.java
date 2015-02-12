@@ -62,7 +62,7 @@ public class RecursosRest {
     
     @GET
     @Path("getrankingejercicio")
-    public String setRankingEjercicio(@QueryParam("idEjercicio") Integer idEjercicio, @QueryParam("idAlumno") Long idAlumno){
+    public String getRankingEjercicio(@QueryParam("idEjercicio") Integer idEjercicio, @QueryParam("idAlumno") Long idAlumno){
         EjerciciosManager manager = new EjerciciosManager();
         
         Integer ranking = manager.getRankingEjercicio(idEjercicio, idAlumno);

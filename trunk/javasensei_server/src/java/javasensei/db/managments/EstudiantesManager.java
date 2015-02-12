@@ -32,19 +32,29 @@ public class EstudiantesManager {
         this.estudiante = estudiante;
     }
 
-    public String finalizarEjercicio(int idEjercicio) {
-        WriteResult writeResult = alumnosCollection.update(
-                QueryBuilder.start("id").is(estudiante.getId())
-                .put("ejercicios.id").is(idEjercicio)
-                .get(),
-                QueryBuilder.start("$set").is(
-                        QueryBuilder.start("ejercicios.$.terminado").is(1) //1 es que termino el ejercicio
-                        .get()
-                )
-                .get()
-        );        
+    public Boolean finalizarEjercicio(int idEjercicio) {
+        boolean result = false;
 
-        return String.format("{result:%s}", writeResult.getN() > 0);
+        try {
+
+            WriteResult writeResult = alumnosCollection.update(
+                    QueryBuilder.start("id").is(estudiante.getId())
+                    .put("ejercicios.id").is(idEjercicio)
+                    .get(),
+                    QueryBuilder.start("$set").is(
+                            QueryBuilder.start("ejercicios.$.terminado").is(1) //1 es que termino el ejercicio
+                            .get()
+                    )
+                    .get()
+            );
+
+            result = writeResult.getN() > 0;
+
+        } catch (Exception ex) {
+            System.err.println(ex);
+        }
+
+        return result;
     }
 
     public String insertOrCreateStudent() {
@@ -97,7 +107,7 @@ public class EstudiantesManager {
         return result;
     }
 
-    public boolean createOrUpdateDomainModel() {
+    public boolean createOrUpdateStudentModel() {
         boolean result = false;
 
         //Tramos los ejercicios del alumno
@@ -167,5 +177,17 @@ public class EstudiantesManager {
         }
 
         return result;
+    }
+    
+    public void saveAbilityGlobal(Double value){
+        alumnosCollection.update(QueryBuilder.start("id").is(estudiante.getId()).get(),
+                QueryBuilder.start("$set").is(
+                        QueryBuilder.start("habilidadGlobal").is(value).get()
+                ).get()
+        );
+    }
+    
+    public void saveAbilityGlobal() {
+        saveAbilityGlobal(getAbilityGlobal());
     }
 }

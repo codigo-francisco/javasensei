@@ -14,7 +14,7 @@ public class PruebaUpdateDataModel {
         
         EstudiantesManager manager = new EstudiantesManager(estudiante);
         
-        manager.createOrUpdateDomainModel();
+        manager.createOrUpdateStudentModel();
         
         manager.finalizarEjercicio(1);
         
