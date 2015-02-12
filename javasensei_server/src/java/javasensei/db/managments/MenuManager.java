@@ -25,12 +25,12 @@ public class MenuManager {
         DBCursor cursor = temasCollection.find(QueryBuilder.start().get(),
                 QueryBuilder.start("nombre").is(1)
                 .put("id").is(1)
-                .put("_id").is(1)
+                .put("_id").is(0)
                 .get()
         );
 
         while (cursor.hasNext()) {
-            DBObject object = cursor.curr();
+            DBObject object = cursor.next();
             object.put("nombre", object.get("nombre"));
 
             Integer id = new Double(object.get("id").toString()).intValue();
@@ -46,6 +46,8 @@ public class MenuManager {
                             .get()
                     ).toArray()
             );
+            
+            list.add(object);
         }
 
         return list.toString();
