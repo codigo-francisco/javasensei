@@ -33,7 +33,7 @@ public class RecognitionEmotionalFace {
             try {
                 String datos = fotos.get(index).getAsString();
                 BufferedImage image = javasensei.util.ImageHelper.decodeToImage(datos);
-                //javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("E:/imagenes")));
+                //javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("G:/imagenes")));
 
                 RecognitionFace recognition = new RecognitionFace(image);
                 RecognitionResult result = recognition.processFace();

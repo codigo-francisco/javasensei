@@ -126,10 +126,9 @@ public class EstudiantesManager {
             if (alumno.containsField("ejercicios")) {
                 BasicDBList listEjercicios = (BasicDBList) alumno.get("ejercicios");
 
-                listEjercicios.stream().map((listEjercicio) -> (DBObject) listEjercicio).forEach((ejercicio) -> {
-                    ejercicios.add(((Double) ejercicio.get("id")).intValue());
-                });
-
+                for (Object objEjercicio : listEjercicios) {
+                    ejercicios.add(new Double(((DBObject) objEjercicio).get("id").toString()).intValue());
+                }
             }
 
             //El campo ejercicio se llena con los id que no tenga el usuario (de ejercicios)
@@ -178,15 +177,15 @@ public class EstudiantesManager {
 
         return result;
     }
-    
-    public void saveAbilityGlobal(Double value){
+
+    public void saveAbilityGlobal(Double value) {
         alumnosCollection.update(QueryBuilder.start("id").is(estudiante.getId()).get(),
                 QueryBuilder.start("$set").is(
                         QueryBuilder.start("habilidadGlobal").is(value).get()
                 ).get()
         );
     }
-    
+
     public void saveAbilityGlobal() {
         saveAbilityGlobal(getAbilityGlobal());
     }
