@@ -8,6 +8,24 @@ var avatar_sensei = function avatar_sensei(avatar_control) {
     this.instrucciones_ejercicio = [];
     avatar_context = this;
 };
+
+function obtenerRecomendacionesTutor(idEjercicio, datos, callback) { //Objeto del usuario y el ejercicio actual
+
+    $.ajax({
+        url:"servicios/recursos/recomendaciones",
+        data:{
+            idEjercicio : idEjercicio,
+            idAlumno : usuario.id
+        },
+        dataType : "json"
+    }).done(function(data){
+        datos.opciones = data;
+        callback(datos);
+    }).error(function(data){
+        console.error("Error en la obtencion de recomendaciones: %0", data);
+    });
+}
+
 avatar_sensei.prototype = {
     ejecutarAjax: function (tipoCamino) {
         //Se hace una solicitud rest al servidor java        
