@@ -66,14 +66,10 @@ camera.prototype = {
 
         var image = camera_context.canvas_tag.toDataURL("image/jpeg").replace("data:image/jpeg;base64,", "");
 
-        //console.log(image);
+        camera_context.photo_list.add(image);
 
-        var photo_list = camera_context.photo_list;
-
-        photo_list.add(image);
-
-        if (photo_list.size() > camera_context.limite) {
-            photo_list.removeElementAtIndex(0); //Primer item
+        if (camera_context.photo_list.size() > camera_context.limite) {
+            camera_context.photo_list.removeElementAtIndex(0); //Primer item
         }
     },
     evaluarEmociones: function (callback, datos) {
@@ -99,5 +95,7 @@ camera.prototype = {
             console.error("Fallo: " + textStatus);
             console.error("Error: " + errorThrown);
         });
+        
+        camera_context.reiniciarFotos();
     }
 };

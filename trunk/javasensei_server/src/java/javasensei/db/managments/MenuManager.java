@@ -1,14 +1,12 @@
 package javasensei.db.managments;
 
-import com.google.gson.JsonObject;
 import com.mongodb.BasicDBList;
-import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
 import javasensei.db.collections.EjerciciosCollection;
-import javasensei.db.collections.TemasCollection;
+import javasensei.db.collections.LeccionesCollection;
 
 /**
  *
@@ -16,13 +14,13 @@ import javasensei.db.collections.TemasCollection;
  */
 public class MenuManager {
 
-    private DBCollection temasCollection = new TemasCollection().getTemasCollection();
+    private DBCollection leccionesCollection = new LeccionesCollection().getLeccionesCollection();
     private DBCollection ejerciciosCollection = new EjerciciosCollection().getEjerciciosCollection();
 
     public String getCursoMenu() {
         BasicDBList list = new BasicDBList();
 
-        DBCursor cursor = temasCollection.find(QueryBuilder.start().get(),
+        DBCursor cursor = leccionesCollection.find(QueryBuilder.start().get(),
                 QueryBuilder.start("nombre").is(1)
                 .put("id").is(1)
                 .put("_id").is(0)
