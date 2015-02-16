@@ -20,26 +20,26 @@ function recursos_sensei() {
     }
 
     this.obtenerEjercicios = function obtenerEjercicios(control) {
-        peticionAjaxRecursos("recomendacion/ejercicios", crearLista, control, true);
+        peticionAjaxRecursos("recomendacion/ejercicios", crearListaEjercicios, control, true);
     };
 
     this.obtenerRecursos = function obtenerRecursos(control) {
         peticionAjaxRecursos("recursos/todos", crearListaRecursos, control, true);
     };
 
-    this.obtenerIntereses = function obtenerIntereses(control) {
-        //TODO: Es dummy
-        var enlaces = [
-            {titulo: '¿Cuales son los lenguajes de programacion mas usado (2014)?',
-                url: "www.google.com"},
-            {titulo: 'Android supera en cantidad de desarrolladores a iOS',
-                url: 'www.google.com'},
-            {titulo: 'El narcicismo y Apple',
-                url: 'www.google.com'}
-        ];
-
-        crearLista(enlaces, control);
-    };
+    /*this.obtenerIntereses = function obtenerIntereses(control) {
+     //TODO: Es dummy
+     var enlaces = [
+     {titulo: '¿Cuales son los lenguajes de programacion mas usado (2014)?',
+     url: "www.google.com"},
+     {titulo: 'Android supera en cantidad de desarrolladores a iOS',
+     url: 'www.google.com'},
+     {titulo: 'El narcicismo y Apple',
+     url: 'www.google.com'}
+     ];
+     
+     crearLista(enlaces, control);
+     };*/
 
     function configRating(id, ranking) {
         var calificaciones = $("#calificaciones");
@@ -68,15 +68,15 @@ function recursos_sensei() {
                             dataType: "json"
                         }).done(function (data) {
                             configRating(data.id, data.ranking);
-                        }).fail(function(error){
+                        }).fail(function (error) {
                             console.error(error);
                         });
                     }
                 })
                 );
     }
-    
-    
+
+
 
     function visualizarRecurso(datos) {
 
@@ -133,7 +133,7 @@ function recursos_sensei() {
         control.listview("refresh");
     }
 
-    function crearLista(items, control) {
+    function crearListaEjercicios(items, control) {
         var control = $(control);
         control.empty();
 
@@ -142,7 +142,15 @@ function recursos_sensei() {
                     append($("<a>")
                             .attr("href", item.url)
                             .text(item.titulo)
-                            ));
+                            .bind("click",
+                                    {
+                                        id: item.id,
+                                        url: item.url
+                                    },
+                                    cargarEjercicio
+                                    )
+                            )
+                    );
         });
 
         control.listview("refresh");

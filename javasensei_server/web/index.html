@@ -59,6 +59,8 @@
                 example_tracing.suscribir_todos_ejercicios(avatar_sensei);
                 example_tracing.construir_ejercicio(event.data.url);
                 $("#controles_cierre_tracing").hide();
+                
+                return false;
             };
 
             function eliminarBackgroundCamera() {
