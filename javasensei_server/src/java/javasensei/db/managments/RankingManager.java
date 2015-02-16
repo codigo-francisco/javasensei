@@ -81,9 +81,7 @@ public class RankingManager {
 
             List<DBObject> listaRecursos = recursos.find(
                     QueryBuilder.start("id").in(
-                            getRecommendersItems(recommenderRecursos, cantidad)
-                            .stream().flatMapToInt(item -> IntStream.of((int) item.getItemID()))
-                            .toArray())
+                            getRecommendersItemsIDAsArray(recommenderRecursos, cantidad))
                     .put("idLeccion").is(idLeccionPrincipal)
                     .get()
             ).toArray();
@@ -113,6 +111,16 @@ public class RankingManager {
         return getRecommenders(rankingEjercicios, recommenderEjercicios, cantidad, random);
     }
 
+    protected Integer[] getRecommendersItemsIDAsArray(AbstractRecommender recommender, int cantidad) throws TasteException{
+        List<Integer> listId = new ArrayList<>();
+        
+        for(RecommendedItem item : getRecommendersItems(recommender, cantidad)){
+            listId.add(new Long(item.getItemID()).intValue());
+        }
+        
+        return listId.toArray(new Integer[listId.size()]);
+    }
+    
     protected List<RecommendedItem> getRecommendersItems(AbstractRecommender recommender, int cantidad) throws TasteException {
         return recommender.recommend(estudiante.getId(), cantidad);
     }
