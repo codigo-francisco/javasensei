@@ -65,12 +65,12 @@ public class RankingManager {
     }
 
     private int getIdLeccion(int idEjercicio) {
-        return ((Double)ejercicios.findOne(
+        return new Double(ejercicios.findOne(
                 QueryBuilder.start("id").is(idEjercicio).get(),
                 QueryBuilder.start("_id").is(0)
                 .put("idLeccion").is(1)
                 .get()
-        ).get("idLeccion")).intValue();
+        ).get("idLeccion").toString()).intValue();
     }
 
     public String getRecommenderResources(int cantidad, int idEjercicio) {
@@ -145,11 +145,7 @@ public class RankingManager {
 
             //Se crea un json array con los id obtenidos de los ejercicios
             result = ejercicios.find(
-                    QueryBuilder.start("id").in(array).get(),
-                    QueryBuilder.start("_id").is(0)
-                    .put("titulo").is(1)
-                    .put("url").is(1)
-                    .get()
+                    QueryBuilder.start("id").in(array).get()
             ).toArray().toString();
         } catch (TasteException ex) {
             Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);
