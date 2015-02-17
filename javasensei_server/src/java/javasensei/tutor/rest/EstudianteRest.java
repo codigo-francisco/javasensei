@@ -3,7 +3,6 @@ package javasensei.tutor.rest;
 import com.google.gson.JsonObject;
 import javasensei.db.managments.EstudiantesManager;
 import javasensei.db.managments.RankingManager;
-import javasensei.db.managments.RecursoManager;
 import javasensei.estudiante.ModeloEstudiante;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
