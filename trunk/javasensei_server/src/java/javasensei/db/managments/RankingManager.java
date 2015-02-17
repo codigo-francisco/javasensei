@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.IntStream;
 import javasensei.db.collections.EjerciciosCollection;
 import javasensei.db.collections.RankingEjerciciosCollection;
 import javasensei.db.collections.RankingRecursosCollection;
@@ -175,7 +174,7 @@ public class RankingManager {
 
                 while (cursor.hasNext()) {
                     DBObject object = cursor.next();
-                    long idAlumno = estudiante.getId();
+                    long idAlumno = new Double(object.get("idAlumno").toString()).longValue();
                     int idEjercicio = (int) Double.parseDouble(object.get("idEjercicio").toString());
 
                     String cadena = String.format("%s,%s,%s",
@@ -196,7 +195,7 @@ public class RankingManager {
                 recommenderEjercicios = new GenericUserBasedRecommender(dataModel, neigh, correlation);
                 //randomRecommender = new RandomRecommender(dataModel);
 
-                csv.deleteOnExit();
+                //csv.deleteOnExit();
             }
         } catch (Exception ex) {
             Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -214,9 +213,11 @@ public class RankingManager {
 
             if (cursor.count() > 0) {
 
+                System.out.println("*****************Datos para crear el Data Model de Recursos**********************");
+                
                 while (cursor.hasNext()) {
                     DBObject object = cursor.next();
-                    long idAlumno = estudiante.getId();
+                    long idAlumno = new Double(object.get("idAlumno").toString()).longValue();
                     int idRecurso = (int) Double.parseDouble(object.get("idRecurso").toString());
 
                     String cadena = String.format("%s,%s,%s",
@@ -236,7 +237,7 @@ public class RankingManager {
                 ThresholdUserNeighborhood neigh = new ThresholdUserNeighborhood(0.1, correlation, dataModel);
                 recommenderRecursos = new GenericUserBasedRecommender(dataModel, neigh, correlation);
 
-                csv.deleteOnExit();
+                //csv.deleteOnExit();
             }
         } catch (IOException | TasteException ex) {
             Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);
