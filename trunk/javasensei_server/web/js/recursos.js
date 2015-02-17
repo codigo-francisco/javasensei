@@ -27,76 +27,6 @@ function recursos_sensei() {
         peticionAjaxRecursos("recursos/todos", crearListaRecursos, control, true);
     };
 
-    /*this.obtenerIntereses = function obtenerIntereses(control) {
-     //TODO: Es dummy
-     var enlaces = [
-     {titulo: '¿Cuales son los lenguajes de programacion mas usado (2014)?',
-     url: "www.google.com"},
-     {titulo: 'Android supera en cantidad de desarrolladores a iOS',
-     url: 'www.google.com'},
-     {titulo: 'El narcicismo y Apple',
-     url: 'www.google.com'}
-     ];
-     
-     crearLista(enlaces, control);
-     };*/
-
-    function configRating(id, ranking) {
-        var calificaciones = $("#calificaciones");
-        calificaciones.empty();
-        calificaciones.append(
-                $("<div>")
-                .attr("data-id", id)
-                .attr("data-average", ranking)
-                .jRating({
-                    showRateInfo: false,
-                    step: true,
-                    rateMin: 1,
-                    rateMax: 5,
-                    canRateAgain: true,
-                    nbRates: 9999999,
-                    sendRequest: false,
-                    onClick: function (element, rate) {
-                        //Se manda a guardar el ranking
-                        $.ajax({
-                            url: "servicios/recursos/setranking",
-                            data: {
-                                idRecurso: element.dataset["id"],
-                                idAlumno: usuario.id,
-                                ranking: rate
-                            },
-                            dataType: "json"
-                        }).done(function (data) {
-                            configRating(data.id, data.ranking);
-                        }).fail(function (error) {
-                            console.error(error);
-                        });
-                    }
-                })
-                );
-    }
-
-
-
-    function visualizarRecurso(datos) {
-
-        $.ajax({
-            url: "recursos/" + datos.url, //Recursos es una carpeta por default
-            type: "GET",
-            dataType: "html"
-        }).done(function (data) {
-            $("#titulo_recurso").text(datos.titulo);
-            $("#contenido_recurso").html(data);
-
-            configRating(datos.id, datos.ranking);
-
-            //Visualizamos la ventana
-            $(":mobile-pagecontainer").pagecontainer("change", "#visor_recursos");
-        }).fail(function (error) {
-            console.error(error);
-        });
-    }
-
     function crearListaRecursos(recursos, control) {
         //Creamos la lista
         var control = $(control);
@@ -147,7 +77,7 @@ function recursos_sensei() {
                                         id: item.id,
                                         url: item.url
                                     },
-                                    cargarEjercicio
+                            cargarEjercicio
                                     )
                             )
                     );
@@ -155,4 +85,57 @@ function recursos_sensei() {
 
         control.listview("refresh");
     }
+}
+
+function configRating(id, ranking) {
+        var calificaciones = $("#calificaciones");
+        calificaciones.empty();
+        calificaciones.append(
+                $("<div>")
+                .attr("data-id", id)
+                .attr("data-average", ranking)
+                .jRating({
+                    showRateInfo: false,
+                    step: true,
+                    rateMin: 1,
+                    rateMax: 5,
+                    canRateAgain: true,
+                    nbRates: 9999999,
+                    sendRequest: false,
+                    onClick: function (element, rate) {
+                        //Se manda a guardar el ranking
+                        $.ajax({
+                            url: "servicios/recursos/setranking",
+                            data: {
+                                idRecurso: element.dataset["id"],
+                                idAlumno: usuario.id,
+                                ranking: rate
+                            },
+                            dataType: "json"
+                        }).done(function (data) {
+                            configRating(data.id, data.ranking);
+                        }).fail(function (error) {
+                            console.error(error);
+                        });
+                    }
+                })
+                );
+    }
+
+function visualizarRecurso(datos) {
+    $.ajax({
+        url: "recursos/" + datos.url, //Recursos es una carpeta por default
+        type: "GET",
+        dataType: "html"
+    }).done(function (data) {
+        $("#titulo_recurso").text(datos.titulo);
+        $("#contenido_recurso").html(data);
+
+        configRating(datos.id, datos.ranking);
+
+        //Visualizamos la ventana
+        $(":mobile-pagecontainer").pagecontainer("change", "#visor_recursos");
+    }).fail(function (error) {
+        console.error(error);
+    });
 }
