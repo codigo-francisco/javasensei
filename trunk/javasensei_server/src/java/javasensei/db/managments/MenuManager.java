@@ -5,8 +5,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
-import javasensei.db.collections.EjerciciosCollection;
-import javasensei.db.collections.LeccionesCollection;
+import javasensei.db.connection.Connection;
 
 /**
  *
@@ -14,8 +13,8 @@ import javasensei.db.collections.LeccionesCollection;
  */
 public class MenuManager {
 
-    private DBCollection leccionesCollection = new LeccionesCollection().getLeccionesCollection();
-    private DBCollection ejerciciosCollection = new EjerciciosCollection().getEjerciciosCollection();
+    private DBCollection leccionesCollection = Connection.getDb().getCollection("lecciones");
+    private DBCollection ejerciciosCollection = Connection.getDb().getCollection("ejercicios");
 
     public String getCursoMenu() {
         BasicDBList list = new BasicDBList();

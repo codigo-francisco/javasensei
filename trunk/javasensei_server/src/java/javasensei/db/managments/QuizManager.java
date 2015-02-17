@@ -7,7 +7,7 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javasensei.db.collections.QuizCollection;
+import javasensei.db.connection.Connection;
 import javasensei.dominio.kws.Ejercicio;
 
 /**
@@ -16,21 +16,21 @@ import javasensei.dominio.kws.Ejercicio;
  */
 public class QuizManager {
 
-    private final QuizCollection quizCollections = new QuizCollection();
+    private final DBCollection quizCollections = Connection.getDb().getCollection("quiz");
 
     //private Ejercicio ejercicio;
     private final Gson gson = new Gson();
 
     public boolean insert(Ejercicio ejercicio) {
         try {
-            DBCollection collection = quizCollections.getQuizCollection();
             DBObject dbObject = ejercicio.convertToDBObject();
             dbObject.put("id", ejercicio.getId());
             dbObject.put("url", ejercicio.getUrl());
             dbObject.put("titulo", ejercicio.getTitulo());
 
-            collection.insert(dbObject);
-            //quizCollections.getMongo().close();
+            quizCollections.insert(dbObject);
+            
+           
             return true;
         } catch (Exception ex) {
             Logger.getGlobal().log(Level.SEVERE, ex.getMessage());
@@ -40,8 +40,8 @@ public class QuizManager {
 
     public String getReactivos() {
         StringBuilder reactivo = new StringBuilder();
-        DBCollection tabla = quizCollections.getQuizCollection();
-        DBCursor cur = tabla.find();
+        
+        DBCursor cur = quizCollections.find();
 
         while (cur.hasNext()) {
             reactivo.append(cur.next());

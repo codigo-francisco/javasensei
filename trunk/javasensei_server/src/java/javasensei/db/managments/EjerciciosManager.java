@@ -3,7 +3,7 @@ package javasensei.db.managments;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
-import javasensei.db.collections.RankingEjerciciosCollection;
+import javasensei.db.connection.Connection;
 
 /**
  *
@@ -11,7 +11,7 @@ import javasensei.db.collections.RankingEjerciciosCollection;
  */
 public class EjerciciosManager {
 
-    private DBCollection rankingEjerciciosCollection = new RankingEjerciciosCollection().getRankingEjerciciosCollection();
+    private DBCollection rankingEjerciciosCollection = Connection.getDb().getCollection("ranking_ejercicios");
 
     public Integer getRankingEjercicio(Integer idEjercicio, Long idAlumno) {
         Integer ranking = 2; //Default
