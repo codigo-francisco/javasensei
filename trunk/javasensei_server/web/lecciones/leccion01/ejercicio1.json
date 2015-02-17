@@ -3,8 +3,8 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "Las variables blah blah blah.",
-        "aquí van las instrucciones del ejercicio."
+        "Este ejercicio evalúa un concepto básico sobre Java.",
+        "Java fué diseñado por Sun Microsystems en la decáda de 1990. Moldeado en base a C++, el lenguaje Java se diseñó para ser pequeño, sencillo y portátil a través de plataformas y sistemas operativos."        
     ],
     "opciones": [
         {
@@ -15,15 +15,15 @@
                 "¿Java es un lenguaje de programación orientado a aspectos?"
             ],
             "textoEmocional": {
-                "neutral": "Inicia los ejercicios",
-                "encantado": "Estas muy bien, inicia con el ejercicio",
-                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "neutral": "Inicia el ejercicio para continuar aprendiendo los conceptos de Java",
+                "encantado": "Me parece que estás emocionado, intenta resolver el ejercicio.",
+                "sorprendido": "Te siento decidido con el reto de aprender Java, inicia con el ejercicio.",
+                "compasivo": "Se que has sentido que no progresas con Java, ten paciencia y mejoraras.",
+                "esceptico": "Creo que este ejercicio es muy fácil para ti, tal vez quieres un reto más interesante.",
                 "retroalimentacion": {
-                    "positiva": "No importa el error vas muy bien",
-                    "neutral": "Sigue asi, continua",
-                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                    "positiva": "Con este ejercicio vas a reforzas tus conocimientos sobre Java.",
+                    "neutral": "Intenta resolver el ejercicio.",
+                    "negativa": "Se que no te gusta la teoría, aun así te recomiendo que resuelvas el ejercicio"
                 }
             },
             "opciones": [
@@ -36,15 +36,15 @@
                         "¿Java es un lenguaje de programación orientado a aspectos?"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás emocionado con Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                            "positiva": "No importa que tu respuesta no sea la correcta.  Recuerda: Java es un lenguaje de programación orientado a objetos.",
+                            "neutral": "La respuesta no es correcta. Continua con el ejercicio.",
+                            "negativa": "Estás confundido con los conceptos.  Java no es un lenguaje de programación orientado a aspecto.  Necesitas leer un poco más."
                         }
                     },
                     "opciones": [
@@ -59,15 +59,15 @@
                         "Java es un lenguaje de programación de propósito general, concurrente, orientado a objetos."
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es correcta.",
+                        "encantado": "Te siento emocionado, ya que resolviste este ejercicio.",
+                        "sorprendido": "Siento que tu entusiasmo hace que el ejercio sea muy facil de resolver.",
+                        "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+                        "esceptico": "Se que este ejercicio es fácil para ti.  Intenta resolver otros ejercicios.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                            "positiva": "¡Muy bien!, Java es un lenguaje de programación orientado a objetos.",
+                            "neutral": "La respuesta es correcta. Java es un lenguaje de programación orientado a objetos.",
+                            "negativa": "Se que no te gusta la teoría.  Intenta resolver otros ejercicios."
                         }
                     },
                     "opciones": [
