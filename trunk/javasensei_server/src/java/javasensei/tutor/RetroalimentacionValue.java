@@ -12,7 +12,7 @@ public class RetroalimentacionValue {
     public static String getStringRetroalimentacion(double value){
         String resultado = POSITIVA;
         
-        switch((int)value){
+        switch(new Long(Math.round(value)).intValue()){
             case 0:
             case 1:
                 resultado = POSITIVA;
@@ -21,6 +21,7 @@ public class RetroalimentacionValue {
                 resultado = NEUTRAL;
                 break;
             case 3:
+            case 4:
                 resultado = NEGATIVA;
                 break;
         }
