@@ -220,14 +220,13 @@ avatar_sensei.prototype = {
                 //Creamosla opcion en la lista
                 var lista = $("<li>").append(
                         $("<a>")
-                        .text(opcion.texto)
+                        .text(opcion.titulo)
                         .on("click", {
                             opciones: opcion
                         },
                         function (event) {
                             var opciones = event.data.opciones;
                             visualizarRecurso(opciones);
-                            //event.data.funcion(event.data.url);
                         }
                         )
                         );

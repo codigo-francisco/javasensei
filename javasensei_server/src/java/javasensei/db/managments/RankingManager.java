@@ -28,8 +28,10 @@ import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.recommender.AbstractRecommender;
 import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
 import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
+import org.apache.mahout.cf.taste.impl.similarity.*;
 import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
+import org.apache.mahout.cf.taste.similarity.UserSimilarity;
 
 /**
  *
@@ -89,6 +91,8 @@ public class RankingManager {
                 object.put("ranking", rankingRecursos.findOne(
                         QueryBuilder.start("idRecurso")
                         .is(object.get("id"))
+                        .put("idAlumno")
+                        .is(estudiante.getId())
                         .get(),
                         QueryBuilder.start("_id").is(0)
                         .put("ranking").is(1)
@@ -110,16 +114,16 @@ public class RankingManager {
         return getRecommenders(rankingEjercicios, recommenderEjercicios, cantidad, random);
     }
 
-    protected Integer[] getRecommendersItemsIDAsArray(AbstractRecommender recommender, int cantidad) throws TasteException{
+    protected Integer[] getRecommendersItemsIDAsArray(AbstractRecommender recommender, int cantidad) throws TasteException {
         List<Integer> listId = new ArrayList<>();
-        
-        for(RecommendedItem item : getRecommendersItems(recommender, cantidad)){
+
+        for (RecommendedItem item : getRecommendersItems(recommender, cantidad)) {
             listId.add(new Long(item.getItemID()).intValue());
         }
-        
+
         return listId.toArray(new Integer[listId.size()]);
     }
-    
+
     protected List<RecommendedItem> getRecommendersItems(AbstractRecommender recommender, int cantidad) throws TasteException {
         return recommender.recommend(estudiante.getId(), cantidad);
     }
@@ -214,16 +218,17 @@ public class RankingManager {
             if (cursor.count() > 0) {
 
                 System.out.println("*****************Datos para crear el Data Model de Recursos**********************");
-                
+
                 while (cursor.hasNext()) {
                     DBObject object = cursor.next();
                     long idAlumno = new Double(object.get("idAlumno").toString()).longValue();
                     int idRecurso = (int) Double.parseDouble(object.get("idRecurso").toString());
+                    double ranking = new Double(object.get("ranking").toString());
 
                     String cadena = String.format("%s,%s,%s",
                             idAlumno,
                             idRecurso,
-                            object.get("ranking"));
+                            ranking);
                     writer.println(cadena);
                     System.out.println(cadena);
                 }
@@ -233,13 +238,13 @@ public class RankingManager {
                 //El archivo es pasado al dataModel
                 DataModel dataModel = new FileDataModel(csv);
                 //Creamos la correlacion de pearson
-                PearsonCorrelationSimilarity correlation = new PearsonCorrelationSimilarity(dataModel);
+                UserSimilarity correlation = new PearsonCorrelationSimilarity(dataModel);
                 ThresholdUserNeighborhood neigh = new ThresholdUserNeighborhood(0.1, correlation, dataModel);
                 recommenderRecursos = new GenericUserBasedRecommender(dataModel, neigh, correlation);
 
                 //csv.deleteOnExit();
             }
-        } catch (IOException | TasteException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

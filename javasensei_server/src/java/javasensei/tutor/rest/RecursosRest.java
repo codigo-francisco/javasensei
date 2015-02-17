@@ -46,6 +46,19 @@ public class RecursosRest {
     }
     
     @GET
+    @Path("getrankingrecursos")
+    public String getRankingRecursos(@QueryParam("idRecurso") int idRecurso, @QueryParam("idAlumno") Long idAlumno){
+        RecursoManager manager = new RecursoManager();
+        
+        Double ranking = manager.getRanking(idRecurso, idAlumno);
+        
+        JsonObject json = new JsonObject();
+        json.addProperty("ranking", ranking);
+        
+        return json.toString();
+    }
+    
+    @GET
     @Path("setranking")
     public String setRanking(@QueryParam("idRecurso") int idRecurso, @QueryParam("idAlumno") Long idAlumno, @QueryParam("ranking") int ranking){
         RecursoManager manager = new RecursoManager();

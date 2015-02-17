@@ -1,5 +1,6 @@
 package javasensei.db.managments;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
@@ -20,6 +21,14 @@ public class RecursoManager {
     DBCollection leccionesCollection = new LeccionesCollection().getLeccionesCollection();
     DBCollection rankingCollection = new RankingRecursosCollection().getRankingRecursos();
 
+    public double getRanking(int idRecurso, Long idAlumno){
+        return new Double(recursosCollection.findOne(
+                new BasicDBObject("idAlumno", idAlumno)
+                .append("idRecurso", idRecurso)
+            ).get("ranking").toString()
+        );
+    }
+    
     public Boolean setRanking(int idRecurso, Long idAlumno, int ranking) {
         boolean result = false;
 
