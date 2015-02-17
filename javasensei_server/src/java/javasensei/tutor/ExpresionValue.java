@@ -14,20 +14,23 @@ public class ExpresionValue {
     public static String getExpresionString(double value){
         String resultado =  NEUTRAL;
         switch((int)value){
-            /*case 0:
-                //Neutral
-                break;*/
+            case 0:
             case 1:
-                resultado = ENCANTADO;
+                resultado = NEUTRAL;
                 break;
             case 2:
-                resultado = SORPRENDIDO;
+                resultado = ENCANTADO;
                 break;
             case 3:
-                resultado = COMPASIVO;
+                resultado = SORPRENDIDO;
                 break;
             case 4:
+                resultado = COMPASIVO;
+                break;
+            case 5:
+            case 6:
                 resultado = ESCEPTICO;
+                break;
         }
         
         return resultado;

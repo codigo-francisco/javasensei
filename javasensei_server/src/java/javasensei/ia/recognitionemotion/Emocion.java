@@ -8,11 +8,11 @@ import javasensei.util.EnumHelper;
  * @author Rock
  */
 public enum Emocion {
-    FELIZ(0),
-    SORPRESA(1),
-    TRISTE(2),
-    ENOJADO(3),
-    NEUTRAL(4);
+    FELIZ(1),
+    SORPRESA(2),
+    TRISTE(3),
+    ENOJADO(4),
+    NEUTRAL(5);
     
     private final int emocionValue;
     
@@ -39,18 +39,18 @@ public enum Emocion {
 
     public static Emocion getEmocion(int emocionValue){
         switch(emocionValue){
-            case 0:
-                return FELIZ;
             case 1:
-                return SORPRESA;
+                return FELIZ;
             case 2:
-                return TRISTE;
+                return SORPRESA;
             case 3:
-                return ENOJADO;
+                return TRISTE;
             case 4:
+                return ENOJADO;
+            case 5:
                 return NEUTRAL;
             default:
-                return FELIZ;
+                return NEUTRAL;
         }
     }
 
