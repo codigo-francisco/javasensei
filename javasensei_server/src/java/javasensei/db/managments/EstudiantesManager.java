@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javasensei.db.collections.AlumnosCollection;
-import javasensei.db.collections.EjerciciosCollection;
-import javasensei.db.collections.TemasCollection;
+import javasensei.db.connection.Connection;
 import javasensei.estudiante.ModeloEstudiante;
 
 /**
@@ -22,9 +20,9 @@ import javasensei.estudiante.ModeloEstudiante;
  */
 public class EstudiantesManager {
 
-    private DBCollection alumnosCollection = new AlumnosCollection().getAlumnosCollection();
-    private DBCollection temasCollection = new TemasCollection().getTemasCollection();
-    private DBCollection ejerciciosCollection = new EjerciciosCollection().getEjerciciosCollection();
+    private DBCollection alumnosCollection = Connection.getDb().getCollection("alumnos");
+    private DBCollection temasCollection = Connection.getDb().getCollection("temas");
+    private DBCollection ejerciciosCollection = Connection.getDb().getCollection("ejercicios");
 
     private ModeloEstudiante estudiante;
 

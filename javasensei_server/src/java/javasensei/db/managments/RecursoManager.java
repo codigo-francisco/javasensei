@@ -7,9 +7,7 @@ import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
 import java.util.ArrayList;
 import java.util.List;
-import javasensei.db.collections.LeccionesCollection;
-import javasensei.db.collections.RankingRecursosCollection;
-import javasensei.db.collections.RecursosCollection;
+import javasensei.db.connection.Connection;
 
 /**
  *
@@ -17,9 +15,9 @@ import javasensei.db.collections.RecursosCollection;
  */
 public class RecursoManager {
 
-    DBCollection recursosCollection = new RecursosCollection().getRecursosCollection();
-    DBCollection leccionesCollection = new LeccionesCollection().getLeccionesCollection();
-    DBCollection rankingCollection = new RankingRecursosCollection().getRankingRecursos();
+    DBCollection recursosCollection = Connection.getDb().getCollection("recursos");
+    DBCollection leccionesCollection = Connection.getDb().getCollection("lecciones");
+    DBCollection rankingCollection = Connection.getDb().getCollection("ranking_recursos");
 
     public double getRanking(int idRecurso, Long idAlumno){
         return new Double(recursosCollection.findOne(

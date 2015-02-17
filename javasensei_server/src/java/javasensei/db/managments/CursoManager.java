@@ -6,7 +6,7 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javasensei.db.collections.CursoCollection;
+import javasensei.db.connection.Connection;
 import javasensei.dominio.kws.Curso;
 import javasensei.dominio.kws.Leccion;
 import javasensei.util.FileHelper;
@@ -16,15 +16,16 @@ import javasensei.util.FileHelper;
  * @author chess
  */
 public class CursoManager {
-    private final CursoCollection cursoCollection;    
+    private final DBCollection cursoCollection = Connection.getDb().getCollection("cursos");
     
     private final Curso curso;
     private final Gson gson;
    
     
     public CursoManager() {
-        cursoCollection = new CursoCollection();
         gson = new Gson();
+        
+        //TODO: Esto no deberia cargar desde un archivo
         curso = gson.fromJson(FileHelper.getInstance().getContentFile("javasensei/files/ejercicios.json"), Curso.class);
         //System.out.println(toJSON());
     }
@@ -41,13 +42,12 @@ public class CursoManager {
     
     public boolean insert(Leccion leccion) {
         try {
-            DBCollection collection = cursoCollection.getCursoCollection();
             DBObject dbObject = leccion.convertToDBObject();
             dbObject.put("id", leccion.getId());
             dbObject.put("titulo", leccion.getTitulo());
             dbObject.put("ejercicios", leccion.getEjercicios());
 
-            collection.insert(dbObject);
+            cursoCollection.insert(dbObject);
             //quizCollections.getMongo().close();
             return true;
         } catch (Exception ex) {
@@ -58,8 +58,8 @@ public class CursoManager {
 
     public String getCurso() {
         StringBuilder leccion = new StringBuilder();
-        DBCollection tabla = cursoCollection.getCursoCollection();
-        DBCursor cur = tabla.find();
+        
+        DBCursor cur = cursoCollection.find();
 
         while (cur.hasNext()) {
             leccion.append(cur.next());

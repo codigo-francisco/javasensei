@@ -11,16 +11,12 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
 import java.io.File;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javasensei.db.collections.EjerciciosCollection;
-import javasensei.db.collections.RankingEjerciciosCollection;
-import javasensei.db.collections.RankingRecursosCollection;
-import javasensei.db.collections.RecursosCollection;
+import javasensei.db.connection.Connection;
 import javasensei.estudiante.ModeloEstudiante;
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
@@ -28,7 +24,6 @@ import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.recommender.AbstractRecommender;
 import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
 import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
-import org.apache.mahout.cf.taste.impl.similarity.*;
 import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.apache.mahout.cf.taste.similarity.UserSimilarity;
@@ -39,11 +34,11 @@ import org.apache.mahout.cf.taste.similarity.UserSimilarity;
  */
 public class RankingManager {
 
-    private DBCollection ejercicios = new EjerciciosCollection().getEjerciciosCollection();
-    private DBCollection rankingEjercicios = new RankingEjerciciosCollection().getRankingEjerciciosCollection();
+    private DBCollection ejercicios = Connection.getDb().getCollection("ejercicios");
+    private DBCollection rankingEjercicios = Connection.getDb().getCollection("ranking_ejercicios");
 
-    private DBCollection recursos = new RecursosCollection().getRecursosCollection();
-    private DBCollection rankingRecursos = new RankingRecursosCollection().getRankingRecursos();
+    private DBCollection recursos = Connection.getDb().getCollection("recursos");
+    private DBCollection rankingRecursos = Connection.getDb().getCollection("ranking_recursos");
 
     private ModeloEstudiante estudiante;
 
