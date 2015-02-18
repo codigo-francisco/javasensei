@@ -3,8 +3,8 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "blah blah blah",
-        "blah blah blah"
+        "El siguiente ejercicio está relacionado con el ciclo editar-compilar-ejecutar.",
+        "Para desarrollar un programa en Java tenemos que pasar por las siguientes etapas: edición, compilación y ejecución."
     ],
     "opciones": [
         {
@@ -12,7 +12,7 @@
             "tipo": "pasoinicial",
             "instruccion": "Paso 1 de 4.  Selecciona el nombre de archivo con el que debe almacenarse el código fuente que se muestra a continuación:",
             "presentacion": [
-                "public class Test {",
+                "public class JavaSensei {",
                 "\tpublic static void main(String[] args) {",
                 "\t\tSystem.out.println(\"Java Sensei\");",
                 "\t}",
@@ -23,11 +23,11 @@
                 "encantado": "Estas muy bien, inicia con el ejercicio",
                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                 "retroalimentacion": {
-                    "positiva": "No importa el error vas muy bien",
-                    "neutral": "Sigue asi, continua",
-                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                    "positiva": "¿Ya estás listo para resolver el ejercicio?, ¡sigue estudiando con entusiasmo!",
+                    "neutral": "Resuelve el ejercicio",
+                    "negativa": "¿Ya estás listo para resolver el ejercicio?, si no estudias nunca vas a aprender a programar en Java"
                 }
             },
             "opciones": [
@@ -37,7 +37,7 @@
                     "tipo": "pasoerroneo",
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": [
-                        "public class Test {",
+                        "public class JavaSensei {",
                         "\tpublic static void main(String[] args) {",
                         "\t\tSystem.out.println(\"Java Sensei\");",
                         "\t}",
@@ -48,7 +48,7 @@
                         "encantado": "Estas muy bien, inicia con el ejercicio",
                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                         "retroalimentacion": {
                             "positiva": "No importa el error vas muy bien",
                             "neutral": "Sigue asi, continua",
@@ -64,7 +64,7 @@
                     "tipo": "pasoerroneo",
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": [
-                        "public class Test {",
+                        "public class JavaSensei {",
                         "\tpublic static void main(String[] args) {",
                         "\t\tSystem.out.println(\"Java Sensei\");",
                         "\t}",
@@ -75,7 +75,7 @@
                         "encantado": "Estas muy bien, inicia con el ejercicio",
                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                         "retroalimentacion": {
                             "positiva": "No importa el error vas muy bien",
                             "neutral": "Sigue asi, continua",
@@ -91,7 +91,7 @@
                     "tipo": "pasoerroneo",
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": [
-                        "public class Test {",
+                        "public class JavaSensei {",
                         "\tpublic static void main(String[] args) {",
                         "\t\tSystem.out.println(\"Java Sensei\");",
                         "\t}",
@@ -102,7 +102,7 @@
                         "encantado": "Estas muy bien, inicia con el ejercicio",
                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                         "retroalimentacion": {
                             "positiva": "No importa el error vas muy bien",
                             "neutral": "Sigue asi, continua",
@@ -118,7 +118,7 @@
                     "tipo": "pasooptimo",
                     "instruccion": "Paso 2 de 4.  ¿Cuál es el comando que se debe de utilizar para compilar la aplicación Test.java?",
                     "presentacion": [
-                        "public class Test {",
+                        "public class JavaSensei {",
                         "\tpublic static void main(String[] args) {",
                         "\t\tSystem.out.println(\"Java Sensei\");",
                         "\t}",
@@ -129,7 +129,7 @@
                         "encantado": "Estas muy bien, inicia con el ejercicio",
                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                         "retroalimentacion": {
                             "positiva": "No importa el error vas muy bien",
                             "neutral": "Sigue asi, continua",
@@ -143,19 +143,19 @@
                             "tipo": "pasooptimo",
                             "instruccion": "Paso 3 de 4.  ¿Cuando se compila el código fuente con el comando javac Test.java, el archivo producido por el compilador termina con la extensión?",
                             "presentacion": [
-                                "public class Test {",
+                                "public class JavaSensei {",
                                 "\tpublic static void main(String[] args) {",
                                 "\t\tSystem.out.println(\"Java Sensei\");",
                                 "\t}",
                                 "}",
-                                "javac Test.java"
+                                "javac JavaSensei.java"
                             ],
                             "textoEmocional": {
                                 "neutral": "Inicia los ejercicios",
                                 "encantado": "Estas muy bien, inicia con el ejercicio",
                                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                 "retroalimentacion": {
                                     "positiva": "No importa el error vas muy bien",
                                     "neutral": "Sigue asi, continua",
@@ -164,24 +164,24 @@
                             },
                             "opciones": [
                                 { 
-                                    "texto": "Test.java",                       
+                                    "texto": "JavaSensei.java",                       
                                     "paso": 6,
                                     "tipo": "pasoerroneo",
                                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                                     "presentacion": [
-                                        "public class Test {",
+                                        "public class JavaSensei {",
                                         "\tpublic static void main(String[] args) {",
                                         "\t\tSystem.out.println(\"Java Sensei\");",
                                         "\t}",                                        
                                         "}",
-                                        "javac Test.java"
+                                        "javac JavaSensei.java"
                                     ],
                                     "textoEmocional": {
                                         "neutral": "Inicia los ejercicios",
                                         "encantado": "Estas muy bien, inicia con el ejercicio",
                                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                         "retroalimentacion": {
                                             "positiva": "No importa el error vas muy bien",
                                             "neutral": "Sigue asi, continua",
@@ -191,24 +191,24 @@
                                     "opciones": []
                                 },
                                 { 
-                                    "texto": "Test.class",                       
+                                    "texto": "JavaSensei.class",                       
                                     "paso": 7,
                                     "tipo": "pasooptimo",
                                     "instruccion": "Paso 4 de 4.  En el paso anterior, el archivo producido por el compilador contiene los códigos de bytes.  Finalmente, para ejecutar la aplicación Java se utiliza el comando: ",
                                     "presentacion": [
-                                        "public class Test {",
+                                        "public class JavaSensei {",
                                         "\tpublic static void main(String[] args) {",
                                         "\t\tSystem.out.println(\"Java Sensei\");",
                                         "\t}",                                        
                                         "}",
-                                        "javac Test.java --> Test.class"
+                                        "javac JavaSensei.java --> JavaSensei.class"
                                     ],
                                     "textoEmocional": {
                                         "neutral": "Inicia los ejercicios",
                                         "encantado": "Estas muy bien, inicia con el ejercicio",
                                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                         "retroalimentacion": {
                                             "positiva": "No importa el error vas muy bien",
                                             "neutral": "Sigue asi, continua",
@@ -222,19 +222,19 @@
                                             "tipo": "pasoerroneo",
                                             "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                                             "presentacion": [
-                                                "public class Test {",
+                                                "public class JavaSensei {",
                                                 "\tpublic static void main(String[] args) {",
                                                 "\t\tSystem.out.println(\"Java Sensei\");",
                                                 "\t}",                                        
                                                 "}",
-                                                "javac Test.java"
+                                                "javac JavaSensei.java"
                                             ],
                                             "textoEmocional": {
                                                 "neutral": "Inicia los ejercicios",
                                                 "encantado": "Estas muy bien, inicia con el ejercicio",
                                                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                                 "retroalimentacion": {
                                                     "positiva": "No importa el error vas muy bien",
                                                     "neutral": "Sigue asi, continua",
@@ -249,21 +249,21 @@
                                             "tipo": "pasofinaloptimo",
                                             "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
                                             "presentacion": [
-                                                "public class Test {",
+                                                "public class JavaSensei {",
                                                 "\tpublic static void main(String[] args) {",
                                                 "\t\tSystem.out.println(\"Java Sensei\");",
                                                 "\t}",                                        
                                                 "}",
-                                                "javac Test.java --> Test.class",
-                                                "java Test",
-                                                "Java Sensei"
+                                                "javac JavaSensei.java --> JavaSensei.class",
+                                                "java JavaSensei",
+                                                ">>Java Sensei"
                                             ],
                                             "textoEmocional": {
                                                 "neutral": "Inicia los ejercicios",
                                                 "encantado": "Estas muy bien, inicia con el ejercicio",
                                                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                                 "retroalimentacion": {
                                                     "positiva": "No importa el error vas muy bien",
                                                     "neutral": "Sigue asi, continua",
@@ -278,19 +278,19 @@
                                             "tipo": "pasoerroneo",
                                             "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                                             "presentacion": [
-                                                "public class Test {",
+                                                "public class JavaSensei {",
                                                 "\tpublic static void main(String[] args) {",
                                                 "\t\tSystem.out.println(\"Java Sensei\");",
                                                 "\t}",                                        
                                                 "}",
-                                                "javac Test.java --> Test.class"
+                                                "javac JavaSensei.java --> JavaSensei.class"
                                             ],
                                             "textoEmocional": {
                                                 "neutral": "Inicia los ejercicios",
                                                 "encantado": "Estas muy bien, inicia con el ejercicio",
                                                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                                 "retroalimentacion": {
                                                     "positiva": "No importa el error vas muy bien",
                                                     "neutral": "Sigue asi, continua",
@@ -305,19 +305,19 @@
                                             "tipo": "pasoerroneo",
                                             "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                                             "presentacion": [
-                                                "public class Test {",
+                                                "public class JavaSensei {",
                                                 "\tpublic static void main(String[] args) {",
                                                 "\t\tSystem.out.println(\"Java Sensei\");",
                                                 "\t}",                                        
                                                 "}",
-                                                "javac Test.java --> Test.class"
+                                                "javac JavaSensei.java --> JavaSensei.class"
                                             ],
                                             "textoEmocional": {
                                                 "neutral": "Inicia los ejercicios",
                                                 "encantado": "Estas muy bien, inicia con el ejercicio",
                                                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                                 "retroalimentacion": {
                                                     "positiva": "No importa el error vas muy bien",
                                                     "neutral": "Sigue asi, continua",
@@ -329,24 +329,24 @@
                                     ]
                                 },
                                 { 
-                                    "texto": "Test.exe",                       
+                                    "texto": "JavaSensei.exe",                       
                                     "paso": 12,
                                     "tipo": "pasoerroneo",
                                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                                     "presentacion": [
-                                        "public class Test {",
+                                        "public class JavaSensei {",
                                         "\tpublic static void main(String[] args) {",
                                         "\t\tSystem.out.println(\"Java Sensei\");",
                                         "\t}",                                        
                                         "}",
-                                        "javac Test.java"
+                                        "javac JavaSensei.java"
                                     ],
                                     "textoEmocional": {
                                         "neutral": "Inicia los ejercicios",
                                         "encantado": "Estas muy bien, inicia con el ejercicio",
                                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                         "retroalimentacion": {
                                             "positiva": "No importa el error vas muy bien",
                                             "neutral": "Sigue asi, continua",
@@ -356,24 +356,24 @@
                                     "opciones": []
                                 },
                                 { 
-                                    "texto": "Test.jar",                       
+                                    "texto": "JavaSensei.jar",                       
                                     "paso": 13,
                                     "tipo": "pasoerroneo",
                                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                                     "presentacion": [
-                                        "public class Test {",
+                                        "public class JavaSensei {",
                                         "\tpublic static void main(String[] args) {",
                                         "\t\tSystem.out.println(\"Java Sensei\");",
                                         "\t}",                                        
                                         "}",
-                                        "javac Test.java"
+                                        "javac JavaSensei.java"
                                     ],
                                     "textoEmocional": {
                                         "neutral": "Inicia los ejercicios",
                                         "encantado": "Estas muy bien, inicia con el ejercicio",
                                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                         "retroalimentacion": {
                                             "positiva": "No importa el error vas muy bien",
                                             "neutral": "Sigue asi, continua",
@@ -390,7 +390,7 @@
                             "tipo": "pasoerroneo",
                             "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                             "presentacion": [
-                                "public class Test {",
+                                "public class JavaSensei {",
                                 "\tpublic static void main(String[] args) {",
                                 "\t\tSystem.out.println(\"Java Sensei\");",
                                 "\t}",
@@ -401,7 +401,7 @@
                                 "encantado": "Estas muy bien, inicia con el ejercicio",
                                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                 "retroalimentacion": {
                                     "positiva": "No importa el error vas muy bien",
                                     "neutral": "Sigue asi, continua",
@@ -416,7 +416,7 @@
                             "tipo": "pasoerroneo",
                             "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                             "presentacion": [
-                                "public class Test {",
+                                "public class JavaSensei {",
                                 "\tpublic static void main(String[] args) {",
                                 "\t\tSystem.out.println(\"Java Sensei\");",
                                 "\t}",
@@ -427,7 +427,7 @@
                                 "encantado": "Estas muy bien, inicia con el ejercicio",
                                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                 "retroalimentacion": {
                                     "positiva": "No importa el error vas muy bien",
                                     "neutral": "Sigue asi, continua",
@@ -442,7 +442,7 @@
                             "tipo": "pasoerroneo",
                             "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                             "presentacion": [
-                                "public class Test {",
+                                "public class JavaSensei {",
                                 "\tpublic static void main(String[] args) {",
                                 "\t\tSystem.out.println(\"Java Sensei\");",
                                 "\t}",
@@ -453,7 +453,7 @@
                                 "encantado": "Estas muy bien, inicia con el ejercicio",
                                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                 "retroalimentacion": {
                                     "positiva": "No importa el error vas muy bien",
                                     "neutral": "Sigue asi, continua",

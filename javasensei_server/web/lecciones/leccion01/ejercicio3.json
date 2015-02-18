@@ -3,8 +3,8 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "Las variables blah blah blah.",
-        "aquí van las instrucciones del ejercicio."
+        "Este ejercicio está relacionado con el concepto: errores de sintaxis.",
+        "Un error de sintaxis es una violación a las reglas del lenguaje."
     ],
     "opciones": [
         {
@@ -12,18 +12,18 @@
             "tipo": "pasoinicial",
             "instruccion": "Contesta la siguiente pregunta.",
             "presentacion": [
-                "¿Un programa que contiene errores de sintaxis puede compilarse y generar códigos de bytes?"
+                "¿Un programa que contiene errores de sintaxis puede compilarse y por lo tanto generar códigos de bytes?"
             ],
             "textoEmocional": {
-                "neutral": "Inicia los ejercicios",
-                "encantado": "Estas muy bien, inicia con el ejercicio",
-                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "neutral": "Intenta resolver este ejercicio",
+                "encantado": "La clave para aprender Java es la motivación: ¡sigue así!",
+                "sorprendido": "Estudiar hará que te sientas motivado por aprender más temas del lenguaje Java",
+                "compasivo": "Este ejercicio y este curso te ayudarán a mejorar tu confianza con Java",
+                "esceptico": "Me parece que este ejercicio es muy fácil, puedes intentar con otro ejercicio",
                 "retroalimentacion": {
-                    "positiva": "No importa el error vas muy bien",
-                    "neutral": "Sigue asi, continua",
-                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                    "positiva": "¿Ya estás listo para resolver el ejercicio?",
+                    "neutral": "Resuelve el ejercicio",
+                    "negativa": "Si no estudias nunca vas a aprender a programar en Java"
                 }
             },
             "opciones": [
@@ -36,15 +36,15 @@
                         "¿Un programa que contiene errores de sintaxis puede compilarse y generar códigos de bytes?"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Tu actitud para aprender es ¡Excelente!",
+                        "sorprendido": "¡Creo que te estás confiando demasiado!",
+                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
+                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
+                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                            "negativa": "¡Necesitas mayor concentración!"
                         }
                     },
                     "opciones": [
@@ -60,14 +60,14 @@
                     ],
                     "textoEmocional": {
                         "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "encantado": "¡Excelente!, la respuesta es correcta",
+                        "sorprendido": "¡Wow!, te siento motivado, continúa así",
+                        "compasivo": "¡Animo!, aunque no es fácil: el estudio es la base del triunfo",
+                        "esceptico": "Este ejercicio no es tan complicado",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                            "positiva": "¡Excelente!, la función de un compilador es convertir un programa a otro equivalente (en el caso de Java traducirlo a bytecodes) y detectar si existen errores de sintaxis",
+                            "neutral": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse",
+                            "negativa": "Necesitas dedicarle un poco más de tiempo para aprender Java"
                         }
                     },
                     "opciones": [
@@ -77,3 +77,4 @@
         }
     ]
 }
+

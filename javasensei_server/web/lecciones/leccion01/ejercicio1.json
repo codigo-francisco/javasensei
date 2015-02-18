@@ -21,9 +21,9 @@
                 "compasivo": "Se que has sentido que no progresas con Java, ten paciencia y mejoraras.",
                 "esceptico": "Creo que este ejercicio es muy fácil para ti, tal vez quieres un reto más interesante.",
                 "retroalimentacion": {
-                    "positiva": "Con este ejercicio vas a reforzas tus conocimientos sobre Java.",
-                    "neutral": "Intenta resolver el ejercicio.",
-                    "negativa": "Se que no te gusta la teoría, aun así te recomiendo que resuelvas el ejercicio"
+                    "positiva": "¿Ya estás listo para resolver el ejercicio?",
+                    "neutral": "Resuelve el ejercicio",
+                    "negativa": "Si no estudias nunca vas a aprender a programar en Java"
                 }
             },
             "opciones": [
@@ -41,10 +41,10 @@
                         "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
                         "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
-                        "retroalimentacion": {
-                            "positiva": "No importa que tu respuesta no sea la correcta.  Recuerda: Java es un lenguaje de programación orientado a objetos.",
-                            "neutral": "La respuesta no es correcta. Continua con el ejercicio.",
-                            "negativa": "Estás confundido con los conceptos.  Java no es un lenguaje de programación orientado a aspecto.  Necesitas leer un poco más."
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "La respuesta no es la correcta, ¿estás totalmente concentrado?, ¿estás confundido con los conceptos?"
                         }
                     },
                     "opciones": [
@@ -61,13 +61,13 @@
                     "textoEmocional": {
                         "neutral": "La respuesta es correcta.",
                         "encantado": "Te siento emocionado, ya que resolviste este ejercicio.",
-                        "sorprendido": "Siento que tu entusiasmo hace que el ejercio sea muy facil de resolver.",
+                        "sorprendido": "Siento que tu entusiasmo hace que el ejercio sea muy fácil de resolver.",
                         "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
                         "esceptico": "Se que este ejercicio es fácil para ti.  Intenta resolver otros ejercicios.",
-                        "retroalimentacion": {
-                            "positiva": "¡Muy bien!, Java es un lenguaje de programación orientado a objetos.",
-                            "neutral": "La respuesta es correcta. Java es un lenguaje de programación orientado a objetos.",
-                            "negativa": "Se que no te gusta la teoría.  Intenta resolver otros ejercicios."
+                        "retroalimentacion": {                            
+                            "positiva": "Muy bien!, estás en lo correcto, Java es un lenguaje de programación orientado a objetos",
+                            "neutral": "La respuesta es correcta.  Selecciona otro ejercicio",
+                            "negativa": "La respuesta es correcta"                            
                         }
                     },
                     "opciones": [
