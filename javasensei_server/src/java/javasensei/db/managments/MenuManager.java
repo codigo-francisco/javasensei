@@ -5,7 +5,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
-import javasensei.db.connection.Connection;
+import javasensei.db.Connection;
 
 /**
  *

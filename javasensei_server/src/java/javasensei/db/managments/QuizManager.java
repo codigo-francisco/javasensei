@@ -7,7 +7,7 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javasensei.db.connection.Connection;
+import javasensei.db.Connection;
 import javasensei.dominio.kws.Ejercicio;
 
 /**

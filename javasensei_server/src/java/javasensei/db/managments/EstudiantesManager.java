@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javasensei.db.connection.Connection;
+import javasensei.db.Connection;
 import javasensei.estudiante.ModeloEstudiante;
 
 /**

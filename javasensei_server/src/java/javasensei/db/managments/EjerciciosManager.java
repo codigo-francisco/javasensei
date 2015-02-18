@@ -3,7 +3,7 @@ package javasensei.db.managments;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
-import javasensei.db.connection.Connection;
+import javasensei.db.Connection;
 
 /**
  *

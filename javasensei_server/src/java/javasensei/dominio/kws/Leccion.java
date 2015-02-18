@@ -3,7 +3,7 @@ package javasensei.dominio.kws;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import java.util.ArrayList;
-import javasensei.db.collections.DBInterface;
+import javasensei.db.DBInterface;
 
 /**
  *
