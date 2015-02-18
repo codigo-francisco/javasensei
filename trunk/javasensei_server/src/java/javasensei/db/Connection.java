@@ -1,4 +1,4 @@
-package javasensei.db.connection;
+package javasensei.db;
 
 import com.mongodb.DB;
 import com.mongodb.Mongo;

@@ -46,11 +46,11 @@ function menu_sensei() {
                 var divEjercicio = $("<div></div>")
                         //.attr("data-role","collapsible")
                         //.attr("data-inset",false)
-                        .append($("<h3></h3>")
+                        .append($("<h5></h5>")
                                 .text(leccion.nombre)
                                 );
 
-                var listaLecciones = $(document.createElement("ul"));
+                var listaLecciones = $(document.createElement("ul").addClass("noWrap"));
 
                 //Lista de ejercicios
                 $.each(leccion.ejercicios, function(index, ejercicio) {

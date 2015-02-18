@@ -1,4 +1,4 @@
-package javasensei.db.collections;
+package javasensei.db;
 
 import com.mongodb.DBObject;
 

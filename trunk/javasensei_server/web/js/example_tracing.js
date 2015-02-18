@@ -182,6 +182,9 @@ example_tracing_sensei.prototype = {
         instruccion.html(this.ejercicio.instruccion);
 
         var codigo = this.areatrabajo.find("#codigo");
+        codigo.removeClass();
+        codigo.addClass("java");
+        
         codigo.empty();
 
         codigo.html(this.ejercicio.presentacion.join("<br>"));
