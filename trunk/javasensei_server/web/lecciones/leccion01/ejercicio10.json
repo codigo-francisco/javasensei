@@ -3,8 +3,8 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "blah blah blah.",
-        "blah blah blah."
+        "El siguiente ejercicio está relacionado con el ciclo editar-compilar-ejecutar.",
+        "Para desarrollar un programa en Java tenemos que pasar por las siguientes etapas: edición, compilación y ejecución."
     ],
     "opciones": [
         {
@@ -23,11 +23,11 @@
                 "encantado": "Estas muy bien, inicia con el ejercicio",
                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                 "retroalimentacion": {
-                    "positiva": "No importa el error vas muy bien",
-                    "neutral": "Sigue asi, continua",
-                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                    "positiva": "¿Ya estás listo para resolver el ejercicio?, ¡sigue estudiando con entusiasmo!",
+                    "neutral": "Resuelve el ejercicio",
+                    "negativa": "¿Ya estás listo para resolver el ejercicio?, si no estudias nunca vas a aprender a programar en Java"
                 }
             },
             "opciones": [
@@ -48,11 +48,11 @@
                         "encantado": "Estas muy bien, inicia con el ejercicio",
                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                            "positiva": "Muy bien!, la respuesta es correcta.  Continua con el ejercicio",
+                            "neutral": "La respuesta es correcta.  Continua con el ejercicio",
+                            "negativa": "La respuesta es correcta.  Continua con el ejercicio"
                         }
                     },
                     "opciones": [
@@ -73,11 +73,11 @@
                                 "encantado": "Estas muy bien, inicia con el ejercicio",
                                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                 "retroalimentacion": {
-                                    "positiva": "No importa el error vas muy bien",
-                                    "neutral": "Sigue asi, continua",
-                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                    "positiva": "La opción Main no es la correcta, ¡sigue intentandolo!",
+                                    "neutral": "La opción Main no es la correcta",
+                                    "negativa": "La opción Main no es la correcta, ¿estás confundido con el nombre del método?"
                                 }
                             },
                             "opciones": []
@@ -99,11 +99,11 @@
                                 "encantado": "Estas muy bien, inicia con el ejercicio",
                                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                 "retroalimentacion": {
-                                    "positiva": "No importa el error vas muy bien",
-                                    "neutral": "Sigue asi, continua",
-                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                    "positiva": "Excelente!, la respuesta es correcta.  Continua con el ejercicio",
+                                    "neutral": "La respuesta es correcta.  Continua con el ejercicio",
+                                    "negativa": "La respuesta es correcta.  Continua con el ejercicio"
                                 }
                             },
                             "opciones": [
@@ -124,11 +124,11 @@
                                         "encantado": "Estas muy bien, inicia con el ejercicio",
                                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                        "retroalimentacion": {
-                                            "positiva": "No importa el error vas muy bien",
-                                            "neutral": "Sigue asi, continua",
-                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                        "retroalimentacion": {                                            
+                                            "positiva": "El argumento entre comillas simples 'Java Sensei' no es la correcta, ¡sigue intentandolo!",
+                                            "neutral":  "El argumento entre comillas simples no la respuesta correcta",
+                                            "negativa": "El argumento entre comillas simples no la respuesta correcta, !estás confundido con el concepto de cadena!"
                                         }
                                     },
                                     "opciones": []
@@ -150,11 +150,11 @@
                                         "encantado": "Estas muy bien, inicia con el ejercicio",
                                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                         "retroalimentacion": {
-                                            "positiva": "No importa el error vas muy bien",
-                                            "neutral": "Sigue asi, continua",
-                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                            "positiva": "¡Sigue asi!, la respuesta es correcta.",
+                                            "neutral": "La respuesta es correcta.  Continua con el ejercicio",
+                                            "negativa": "La respuesta es correcta.  Continua con el ejercicio"
                                         }
                                     },
                                     "opciones": [
@@ -175,11 +175,11 @@
                                                 "encantado": "Estas muy bien, inicia con el ejercicio",
                                                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                                 "retroalimentacion": {
-                                                    "positiva": "No importa el error vas muy bien",
-                                                    "neutral": "Sigue asi, continua",
-                                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                                    "positiva": "¡Sigue asi!, la respuesta es correcta.",
+                                                    "neutral": "La respuesta es correcta.  Continua con el ejercicio",
+                                                    "negativa": "La respuesta es correcta.  Continua con el ejercicio"
                                                 }
                                             },
                                             "opciones": [
@@ -200,11 +200,11 @@
                                                         "encantado": "Estas muy bien, inicia con el ejercicio",
                                                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                                                         "retroalimentacion": {
-                                                            "positiva": "No importa el error vas muy bien",
-                                                            "neutral": "Sigue asi, continua",
-                                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                                            "positiva": "¡Felicidades!, has completado este ejercicio",
+                                                            "neutral": "Has finalizado con el ejercicio",
+                                                            "negativa": "Has finalizado con el ejercicio"
                                                         }
                                                     },
                                                     "opciones": []
@@ -226,11 +226,11 @@
                                                         "encantado": "Estas muy bien, inicia con el ejercicio",
                                                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                                        "retroalimentacion": {
-                                                            "positiva": "No importa el error vas muy bien",
-                                                            "neutral": "Sigue asi, continua",
-                                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                                        "retroalimentacion": {                                                            
+                                                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                                                            "neutral":  "La respuesta no es la correcta",
+                                                            "negativa": "La respuesta no es la correcta, !estás confundido con el comando java y javac!"
                                                         }
                                                     },
                                                     "opciones": []                                                    
@@ -254,11 +254,11 @@
                                                 "encantado": "Estas muy bien, inicia con el ejercicio",
                                                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                                                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                                "retroalimentacion": {
-                                                    "positiva": "No importa el error vas muy bien",
-                                                    "neutral": "Sigue asi, continua",
-                                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                                "retroalimentacion": {                                                    
+                                                    "positiva": "La respuesta java Saludo.java no es la correcta, ¡intentalo de nuevo!",
+                                                    "neutral":  "La respuesta java Saludo.java no es la correcta",
+                                                    "negativa": "La respuesta java Saludo.java, ¿estás poniendo atención en clase?"                                                    
                                                 }
                                             },
                                             "opciones": []                                            
@@ -287,7 +287,7 @@
                         "encantado": "Estas muy bien, inicia con el ejercicio",
                         "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                         "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                         "retroalimentacion": {
                             "positiva": "No importa el error vas muy bien",
                             "neutral": "Sigue asi, continua",

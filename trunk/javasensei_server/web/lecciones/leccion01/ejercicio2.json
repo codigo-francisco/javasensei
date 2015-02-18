@@ -3,8 +3,8 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "Las variables blah blah blah.",
-        "aquí van las instrucciones del ejercicio."
+        "Este ejercicio evalúa un concepto básico sobre Java.",
+        "Java es un lenguaje de programación de propósito general.  Las aplicaciones se escriben una vez y se ejecutan en cualquier dispositivo (WORA, write once, run anywhere)"
     ],
     "opciones": [
         {
@@ -15,15 +15,15 @@
                 "¿Las aplicaciones desarrolladas con Java sólo se ejecutan en la plataforma Windows?"
             ],
             "textoEmocional": {
-                "neutral": "Inicia los ejercicios",
+                "neutral": "Contesta la pregunta de este ejercicio",
                 "encantado": "Estas muy bien, inicia con el ejercicio",
                 "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                 "retroalimentacion": {
-                    "positiva": "No importa el error vas muy bien",
-                    "neutral": "Sigue asi, continua",
-                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                    "positiva": "¿Ya estás listo para resolver el ejercicio?",
+                    "neutral": "Resuelve el ejercicio",
+                    "negativa": "Si no estudias nunca vas a aprender a programar en Java"
                 }
             },
             "opciones": [
@@ -36,15 +36,15 @@
                         "¿Las aplicaciones desarrolladas con Java sólo se ejecutan en la plataforma Windows?"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "La respuesta es incorrecta, pero se que te diviertes al aprender Java.",
+                        "sorprendido": "La respuesta es incorrecta pero me sorprende tu decisión por aprender Java",
+                        "compasivo": "Aprender requiere de paciencia, vas a mejorar pronto, intenta de nuevo",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti, trata de encontrar la respuesta correcta.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                            "positiva": "No importa el error vas muy bien.  Java es un lenguaje multiplataforma.",
+                            "neutral": "La respuesta no es correcta. Continua con el ejercicio.",
+                            "negativa": "Java es un lenguaje independiende de la plataforma.  Necesitas leer un poco más, te recomiendo mirar alguna de mis recomendaciones."
                         }
                     },
                     "opciones": [
@@ -56,18 +56,18 @@
                     "tipo": "pasofinaloptimo",
                     "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
                     "presentacion": [
-                        "¿Las aplicaciones desarrolladas con Java sólo se ejecutan en la plataforma Windows?"
+                        "Java es un lenguaje independiente de la plataforma."
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es correcta.  Resuelve otro ejercicio.",
+                        "encantado": "¡Te siento comprometido contigo mismo, resuelve más ejercicios.",
+                        "sorprendido": "¡Wow!, estás inspirado, continúa con ese entusiasmo.",
+                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza otro ejercicio.",
+                        "esceptico": "Se que este ejercicio es fácil para ti.  En el menú de opciones hay otros ejercicios más interesantes.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                            "positiva": "¡Muy bien!, Java es un lenguaje independiente de la plataforma.",
+                            "neutral": "Sigue asi, continua.  Java es un lenguaje independiente de la plataforma.",
+                            "negativa": "Se que no te gusta la teoría, pero es parte importante de tu formación académica."
                         }
                     },
                     "opciones": [
