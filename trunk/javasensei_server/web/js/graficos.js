@@ -2,7 +2,7 @@ var configuracionGrafica = {
     chart: {
         polar: true,
         type: 'area',
-        spacingRight:100,
+        spacingRight:50,
         spacingLeft:50
     },
     title:{
@@ -38,7 +38,6 @@ var cargarGrafico = function cargarGrafico() {
         contentType: "application/json",
         dataType: "json"
     }).done(function (datos) {
-        //datos.intervencion = true; //TODO: Quitar esto, es de prueba, falla las reglas difusas
         console.log("Datos de graficos recibido: " + datos);
         crearGrafico(datos);
     }).fail(function (jqXHR, textStatus, errorThrown) {
@@ -57,5 +56,16 @@ var crearGrafico = function crearGrafico(data) {
         configuracionGrafica.series = [{data:data.listaEjercicios}];
     }
 
-    $("#graficaestudiante").highcharts(configuracionGrafica);
+    $("#divGraficaEstudiante").empty();
+    
+    configuracionGrafica.chart.width = $("#divGraficaEstudiante").css("width").replace("px","");
+    configuracionGrafica.chart.height = 400;
+    
+    var div = $("<div>");
+
+    div.highcharts(configuracionGrafica);
+
+    $("#divGraficaEstudiante").append(
+            div
+    );
 };
