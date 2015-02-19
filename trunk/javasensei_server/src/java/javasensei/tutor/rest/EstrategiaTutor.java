@@ -8,7 +8,9 @@ package javasensei.tutor.rest;
 import javasensei.estudiante.ModeloEstudiante;
 import javasensei.tutor.TutorEvaluacion;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -37,11 +39,10 @@ public class EstrategiaTutor {
      * @param datosEstudiante
      * @return an instance of java.lang.String
      */
-    @GET
-    @Consumes(MediaType.APPLICATION_JSON)
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("caminoerroneo/{datosestudiante}")
-    public String getEstrategiaCaminoErroneo(@PathParam("datosestudiante") String datosEstudiante) {
+    @Path("caminoerroneo")
+    public String getEstrategiaCaminoErroneo(@FormParam("datosestudiante") String datosEstudiante) {
         //datosTutor es un json que contendra datos que se necesitan del tuturo
         TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
         //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
@@ -54,11 +55,10 @@ public class EstrategiaTutor {
      * @param datosEstudiante
      * @return an instance of java.lang.String
      */
-    @GET
-    @Consumes(MediaType.APPLICATION_JSON)
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("caminosuboptimo/{datosestudiante}")
-    public String getEstrategiaCaminoSubOptimo(@PathParam("datosestudiante") String datosEstudiante) {
+    @Path("caminosuboptimo")
+    public String getEstrategiaCaminoSubOptimo(@FormParam("datosestudiante") String datosEstudiante) {
         //datosTutor es un json que contendra datos que se necesitan del tuturo
         TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
         //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
@@ -71,11 +71,10 @@ public class EstrategiaTutor {
      * @param datosEstudiante
      * @return an instance of java.lang.String
      */
-    @GET
-    @Consumes(MediaType.APPLICATION_JSON)
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("caminooptimo/{datosestudiante}")
-    public String getEstrategiaCaminoOptimo(@PathParam("datosestudiante") String datosEstudiante) {
+    @Path("caminooptimo")
+    public String getEstrategiaCaminoOptimo(@FormParam("datosestudiante") String datosEstudiante) {
         
         //datosTutor es un json que contendra datos que se necesitan del tuturo
         TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
@@ -89,11 +88,10 @@ public class EstrategiaTutor {
      * @param datosEstudiante
      * @return an instance of java.lang.String
      */
-    @GET
-    @Consumes(MediaType.APPLICATION_JSON)
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("caminofinaloptimo/{datosestudiante}")
-    public String getEstrategiaCaminoFinalOptimo(@PathParam("datosestudiante") String datosEstudiante) {
+    @Path("caminofinaloptimo")
+    public String getEstrategiaCaminoFinalOptimo(@FormParam("datosestudiante") String datosEstudiante) {
         
         //datosTutor es un json que contendra datos que se necesitan del tuturo
         TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
@@ -107,11 +105,10 @@ public class EstrategiaTutor {
      * @param datosEstudiante
      * @return an instance of java.lang.String
      */
-    @GET
-    @Consumes(MediaType.APPLICATION_JSON)
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("caminofinalsuboptimo/{datosestudiante}")
-    public String getEstrategiaCaminoFinalSubOptimo(@PathParam("datosestudiante") String datosEstudiante) {
+    @Path("caminofinalsuboptimo")
+    public String getEstrategiaCaminoFinalSubOptimo(@FormParam("datosestudiante") String datosEstudiante) {
         
         //datosTutor es un json que contendra datos que se necesitan del tuturo
         TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
@@ -125,11 +122,10 @@ public class EstrategiaTutor {
      * @param datosEstudiante
      * @return an instance of java.lang.String
      */
-    @GET
-    @Consumes(MediaType.APPLICATION_JSON)
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("emociontutor/{datosestudiante}")
-    public String getEstrategiaEmocionTutor(@PathParam("datosestudiante") String datosEstudiante) {
+    @Path("emociontutor")
+    public String getEstrategiaEmocionTutor(@FormParam("datosestudiante") String datosEstudiante) {
         //TODO: checar este metodo
         
         //datosTutor es un json que contendra datos que se necesitan del tuturo

@@ -135,9 +135,6 @@ public class EstudiantesManager {
             DBCursor ejerciciosCursor = ejerciciosCollection.find(QueryBuilder.start("id")
                     .notIn(ejercicios).get(),
                     QueryBuilder.start("_id").is(0)
-                    .put("idLeccion").is(1)
-                    .put("idTema").is(1)
-                    .put("id").is(1)
                     .get()
             );
 

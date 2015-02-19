@@ -3,7 +3,7 @@ var avatar_sensei = function avatar_sensei(avatar_control) {
     this.avatar_control = $(avatar_control);
     this.avatar_datos = {};
     this.id = 0;
-    this.url = "estrategiatutor/";
+    this.url = "servicios/estrategiatutor/";
     this.es_primera_carga = false;
     this.instrucciones_ejercicio = [];
     avatar_context = this;
@@ -29,13 +29,14 @@ function obtenerRecomendacionesTutor(idEjercicio, datos, callback) { //Objeto de
 avatar_sensei.prototype = {
     ejecutarAjax: function (tipoCamino) {
         //Se hace una solicitud rest al servidor java        
-        var urlAjax = url + avatar_context.url + tipoCamino;
-        urlAjax += "/" + JSON.stringify(usuario);
+        var urlAjax = avatar_context.url + tipoCamino;
 
         $.ajax({
             url: urlAjax,
-            type: "GET",
-            contentType: "application/json",
+            type: "POST",
+            data:{
+                datosestudiante : JSON.stringify(usuario)
+            },
             dataType: "json"
         }).done(function (datos) {
             //datos.intervencion = true; //TODO: Quitar esto, es de prueba, falla las reglas difusas
@@ -62,12 +63,14 @@ avatar_sensei.prototype = {
             //La construccion de los ejercicios en el caso de las instrucciones distinta a la de los demas, aqui solo
             //Se obtiene la informacion para mostrar al usuario
 
-            var urlEmocion = url + avatar_context.url + "emociontutor/" + JSON.stringify(usuario);
+            var urlEmocion = avatar_context.url + "emociontutor";
 
             $.ajax({
                 url: urlEmocion,
-                type: "GET",
-                contentType: "application/json",
+                type: "POST",
+                data:{
+                    datosestudiante : JSON.stringify(usuario)
+                },
                 dataType: "json"
             }).done(function (datos) {
                 var datos_avatar = {
@@ -139,6 +142,7 @@ avatar_sensei.prototype = {
             dataType: "json"
         }).done(function(data){
             console.log(data);
+            menu_context.actualizarBoton(avatar_context.id);
         }).error(function(error){
            console.error(error); 
         });

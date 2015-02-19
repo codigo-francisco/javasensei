@@ -1,7 +1,7 @@
 var menu_context;
-var cerrarMenu = function(){
+var cerrarMenu = function () {
     //Cerrar el panel
-    $( "#panelmenu" ).panel( "close" );
+    $("#panelmenu").panel("close");
 };
 
 function obtenerEjercicios(callback) {
@@ -28,10 +28,14 @@ function menu_sensei() {
     menu_context = this;
 
     this.actualizarMenu = function actualizarMenu() {
-        obtenerEjercicios(function(lecciones){
+        obtenerEjercicios(function (lecciones) {
             menu_context.lecciones = lecciones;
             menu_context.updateMenu = true;
         });
+    };
+    
+    this.actualizarBoton=function (idEjercicio){
+        $("#ejercicioMenu"+idEjercicio).css("color","green");
     };
 
     this.getMenu = function getMenu(menuejercicios) { //Debera ser un div el primer argumento
@@ -42,31 +46,36 @@ function menu_sensei() {
 
             //Creamos el primer div colapsible
 
-            $.each(this.lecciones, function(index, leccion) {
-                var divEjercicio = $("<div></div>")
-                        //.attr("data-role","collapsible")
-                        //.attr("data-inset",false)
-                        .append($("<h5></h5>")
+            $.each(this.lecciones, function (index, leccion) {
+                var divEjercicio = $("<div>")
+                        .append(
+                                $("<h5>")
                                 .text(leccion.nombre)
                                 );
 
-                var listaLecciones = $(document.createElement("ul").addClass("noWrap"));
+                var listaLecciones = $("<ul>");
 
                 //Lista de ejercicios
-                $.each(leccion.ejercicios, function(index, ejercicio) {
-                    listaLecciones.append(
-                            $("<li>")
-                                .append($("<a href='#'>")
-                                .text(ejercicio.titulo)
-                                .click(cerrarMenu)
-                                .click(
+                $.each(leccion.ejercicios, function (index, ejercicio) {
+                    var link = $("<a href='#'>")
+                            .attr("id","ejercicioMenu"+ejercicio.id)
+                            .text(ejercicio.titulo)
+                            .click(cerrarMenu)
+                            .click(
                                     {
                                         id: ejercicio.id,
-                                        url:ejercicio.url
+                                        url: ejercicio.url
                                     },
-                                    cargarEjercicio
-                                )
-                            )
+                            cargarEjercicio
+                                    );
+
+                    if (ejercicio.terminado == 1) {
+                        link.css("color", "green");
+                    }
+
+                    listaLecciones.append(
+                            $("<li>")
+                            .append(link)
                     );
                 });
 
@@ -75,6 +84,8 @@ function menu_sensei() {
                                 .listview()
                                 ).collapsible()
                         );
+
+                menu.find("a").addClass("noWrap");
             });
         }
         this.updateMenu = false;
