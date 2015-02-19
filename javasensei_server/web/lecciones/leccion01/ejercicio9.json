@@ -16,14 +16,14 @@
             ],
             "textoEmocional": {
                 "neutral": "Inicia los ejercicios",
-                "encantado": "Estas muy bien, inicia con el ejercicio",
-                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "encantado": "La motivación es una herramienta poderosa, intenta resolver este ejercicio",
+                "sorprendido": "¡Wow!, me sorprende tu desempeño con el curso, ¡continúa así!",
+                "compasivo": "Nada es demasiado difícil si se lo divide en pequeñas tareas.  Intenta ir paso a paso",
+                "esceptico": "¿Demasiado fácil?, piensa si quieres iniciar este ejercicio o algún otro",
                 "retroalimentacion": {
-                    "positiva": "¿Ya estás listo para resolver el ejercicio?, ¡sigue estudiando con entusiasmo!",
+                    "positiva": "Somos lo que hacemos día a día, ¡sigue estudiando con mucha energía!",
                     "neutral": "Resuelve el ejercicio",
-                    "negativa": "¿Ya estás listo para resolver el ejercicio?, si no estudias nunca vas a aprender a programar en Java"
+                    "negativa": "Si deseas aprender Java, lo único que tienes que hacer es ponerte a estudiar"
                 }
             },
             "opciones": [

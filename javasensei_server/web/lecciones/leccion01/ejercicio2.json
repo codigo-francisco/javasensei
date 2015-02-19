@@ -15,15 +15,15 @@
                 "¿Las aplicaciones desarrolladas con Java sólo se ejecutan en la plataforma Windows?"
             ],
             "textoEmocional": {
-                "neutral": "Contesta la pregunta de este ejercicio",
-                "encantado": "Estas muy bien, inicia con el ejercicio",
-                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "neutral": "Resuelve este ejercicio",
+                "encantado": "Somos lo que hacemos día a día. Inicia con el ejercicio",
+                "sorprendido": "Wow, me sorprende tu energía y determinación. Resuelve el ejercicio",
+                "compasivo": "Se que has sentido que no progresas.  Con esfuerzo y dedicación vas a progresar.  Realiza el ejercicio",
+                "esceptico": "Al parecer todos los ejercicios te resultan aburridos.  Piensa si quieres iniciar este ejercicio",
                 "retroalimentacion": {
-                    "positiva": "¿Ya estás listo para resolver el ejercicio?",
+                    "positiva": "¿Ya estás listo para resolver el ejercicio?, ¡éxito!",
                     "neutral": "Resuelve el ejercicio",
-                    "negativa": "Si no estudias nunca vas a aprender a programar en Java"
+                    "negativa": "Aprender a programar en Java requiere que te tomas las cosas en serio"
                 }
             },
             "opciones": [

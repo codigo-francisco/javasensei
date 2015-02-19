@@ -20,14 +20,14 @@
             ],
             "textoEmocional": {
                 "neutral": "Inicia los ejercicios",
-                "encantado": "Estas muy bien, inicia con el ejercicio",
-                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "encantado": "El primer secreto del éxito es la autoconfianza. Sigue resolviendo los ejercicios",
+                "sorprendido": "!Me sorprende tu compromiso y actitud!, inicia con el ejercicio",
+                "compasivo": "¡Sigue hacia adelante, inténtandolo, pronto vas a mejorar, realiza el ejercicio",
+                "esceptico": "Piensa si quieres iniciar este ejercicio, tal vez quieras buscar otros ejercicios",
                 "retroalimentacion": {
-                    "positiva": "¿Ya estás listo para resolver el ejercicio?, ¡sigue estudiando con entusiasmo!",
+                    "positiva": "¡Sigue estudiando y resolviendo los ejercicios con ese entusiasmo de siempre!",
                     "neutral": "Resuelve el ejercicio",
-                    "negativa": "¿Ya estás listo para resolver el ejercicio?, si no estudias nunca vas a aprender a programar en Java"
+                    "negativa": "¿Ya estás listo para resolver el ejercicio?, ¡necesitas concentrarte!"
                 }
             },
             "opciones": [

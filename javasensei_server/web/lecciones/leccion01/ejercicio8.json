@@ -15,15 +15,15 @@
                 "¿Las instrucciones en el lenguaje de programación Java deben de terminar con un punto y coma (;)?"
             ],
             "textoEmocional": {
-                "neutral": "Inicia los ejercicios",
-                "encantado": "Estas muy bien, inicia con el ejercicio",
-                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "neutral": "Inicia los ejercicios",                
+                "encantado": "Inicia con el ejercicio, la perseverancia es el secreto del exito",
+                "sorprendido": "Nada es demasiado difícil si se lo divide en pequeñas tareas.  Me sorprende tu entusiamos, asi que inicia con el ejercicio",
+                "compasivo": "Cualquiera que no esté cometiendo errores es que no está intentándolo lo suficiente, poco a poco vas a notar mejoría en tu aprendizaje",
+                "esceptico": "No creo que este ejercicio sea adecuado para ti.",
                 "retroalimentacion": {
-                    "positiva": "¿Ya estás listo para resolver el ejercicio?, ¡sigue estudiando con entusiasmo!",
+                    "positiva": "¡Sigue estudiando con entusiasmo, alegría y mucha motivación!",
                     "neutral": "Resuelve el ejercicio",
-                    "negativa": "¿Ya estás listo para resolver el ejercicio?, si no estudias nunca vas a aprender a programar en Java"
+                    "negativa": "Si no estudias es complicado que aprendas a programar en Java"
                 }
             },
             "opciones": [

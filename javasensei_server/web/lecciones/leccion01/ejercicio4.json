@@ -26,9 +26,9 @@
                 "compasivo": "La disciplina y la constancia es la fórmula para aprender Java, ¡Sigue adelante!",
                 "esceptico": "Tal vez tu estilo de aprendizaje es diferente pero intenta completar los ejercicios",
                 "retroalimentacion": {
-                    "positiva": "¿Ya estás listo para resolver el ejercicio?, ¡sigue estudiando con entusiasmo!",
-                    "neutral": "Resuelve el ejercicio",
-                    "negativa": "¿Ya estás listo para resolver el ejercicio?, si no estudias nunca vas a aprender a programar en Java"
+                    "positiva": "Resuelve el ejercicio, ¡sigue estudiando con entusiasmo!",
+                    "neutral": "Resuelve el ejercicio que se te presenta a continuación.",
+                    "negativa": "El no querer es la causa; el no poder el pretexto.  Necesitas mejorar tu actitud."
                 }
             },
             "opciones": [
