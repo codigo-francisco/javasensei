@@ -25,18 +25,18 @@ public class DominioRest {
 
     /**
      * Retrieves representation of an instance of javasensei.tutor.DominioRest
-     * @param dominioEstudiante
+     * @param idAlumno
      * @return an instance of java.lang.String
      */
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("getDominioEstudiante/{dominioestudiante}")
-    public String getDominioEstudiante(@PathParam("idUsuario") String dominioEstudiante) {
-        //return FileHelper.getInstance().getContentFile("javasensei/files/ejercicios.json");
+    @Path("getDominioEstudiante/{idAlumno}")
+    public String getDominioEstudiante(@PathParam("idAlumno") Long idAlumno) {
+        
         MenuManager menu = new MenuManager();
         
-        return menu.getCursoMenu();
+        return menu.getCursoMenu(idAlumno);
         
     }
     
