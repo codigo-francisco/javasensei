@@ -17,13 +17,13 @@
             "textoEmocional": {
                 "neutral": "Intenta resolver este ejercicio",
                 "encantado": "La clave para aprender Java es la motivación: ¡sigue así!",
-                "sorprendido": "Estudiar hará que te sientas motivado por aprender más temas del lenguaje Java",
+                "sorprendido": "Estudiar hará que te sientas motivado por aprender Java",
                 "compasivo": "Este ejercicio y este curso te ayudarán a mejorar tu confianza con Java",
-                "esceptico": "Me parece que este ejercicio es muy fácil, puedes intentar con otro ejercicio",
+                "esceptico": "Me parece que este ejercicio es muy fácil, puedes intentar con otro",
                 "retroalimentacion": {
-                    "positiva": "¿Ya estás listo para resolver el ejercicio?",
+                    "positiva": "Somos lo que hacemos día a día. ¿Ya estás listo para resolver el ejercicio?",
                     "neutral": "Resuelve el ejercicio",
-                    "negativa": "Si no estudias nunca vas a aprender a programar en Java"
+                    "negativa": "Si deseas aprender Java, ¡Despierta!, tienes que ponerte a estudiar"
                 }
             },
             "opciones": [
