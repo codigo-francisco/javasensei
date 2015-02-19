@@ -1,3 +1,8 @@
 .noWrap{
     white-space: normal !important;
 }
+
+.highcharts-container{
+    width:100% !important;
+    height:100% !important;
+}

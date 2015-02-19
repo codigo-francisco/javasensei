@@ -113,6 +113,9 @@
                             recursos.obtenerRecursos("#listalibros");
                             //recursos.obtenerIntereses("#listaenlaces");
                             break;
+                        case "paginagraficaestudiante":
+                            cargarGrafico();
+                            break;
                     }
                 });
 
@@ -121,8 +124,6 @@
                 $("#controles_cierre_tracing").hide();
                 
                 $("#cerrar_tracing").click(example_tracing.cerrarInterfaz);
-                
-                $("#botongrafica").click(cargarGrafico);
                 
                 //eliminarBackgroundCamera();
             });
@@ -317,7 +318,7 @@
                 <h1>Avance del Estudiante</h1>
             </div>
             <div id="divGraficaEstudiante" role="main" class="ui-content">
-                <div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div>
+                <!-- <div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div> -->
             </div>
         </div>
         
