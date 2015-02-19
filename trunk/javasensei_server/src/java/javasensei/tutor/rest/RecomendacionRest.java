@@ -2,7 +2,9 @@ package javasensei.tutor.rest;
 
 import javasensei.db.managments.RankingManager;
 import javasensei.estudiante.ModeloEstudiante;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -25,10 +27,10 @@ public class RecomendacionRest {
      * @param usuario
      * @return 
      */
-    @Path("ejercicios/{usuario}")
-    @GET
+    @Path("ejercicios")
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public String ejercicios(@PathParam("usuario") String usuario){
+    public String ejercicios(@FormParam("usuario") String usuario){
         ModeloEstudiante estudiante = new ModeloEstudiante(usuario);
         
         RankingManager manager = new RankingManager(estudiante);

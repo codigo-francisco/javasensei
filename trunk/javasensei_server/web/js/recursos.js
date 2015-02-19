@@ -1,16 +1,15 @@
 function recursos_sensei() {
 
-    function peticionAjaxRecursos(target, callback, control, useUser) {
+    function peticionAjaxRecursos(target, callback, control) {
 
         var resource = url + target;
-        if (useUser) {
-            resource += "/" + JSON.stringify(usuario);
-        }
 
         $.ajax({
             url: resource,
-            type: "GET",
-            contentType: "application/json",
+            type: "POST",
+            data:{
+                usuario: JSON.stringify(usuario)
+            },
             dataType: "json"
         }).done(function (data) {
             callback(data, control);
@@ -20,11 +19,11 @@ function recursos_sensei() {
     }
 
     this.obtenerEjercicios = function obtenerEjercicios(control) {
-        peticionAjaxRecursos("recomendacion/ejercicios", crearListaEjercicios, control, true);
+        peticionAjaxRecursos("recomendacion/ejercicios", crearListaEjercicios, control);
     };
 
     this.obtenerRecursos = function obtenerRecursos(control) {
-        peticionAjaxRecursos("recursos/todos", crearListaRecursos, control, true);
+        peticionAjaxRecursos("recursos/todos", crearListaRecursos, control);
     };
 
     function crearListaRecursos(recursos, control) {

@@ -6,7 +6,9 @@ import javasensei.db.managments.RankingManager;
 import javasensei.db.managments.RecursoManager;
 import javasensei.estudiante.ModeloEstudiante;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -33,11 +35,10 @@ public class RecursosRest {
         return ranking.getRecommenderResources(3, idEjercicio);
     }
     
-    @GET
-    @Path("todos/{usuario}")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @POST
+    @Path("todos")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getRecursos(@PathParam("usuario") String usuario){
+    public String getRecursos(@FormParam("usuario") String usuario){
         ModeloEstudiante estudiante = new ModeloEstudiante(usuario);
         
         RecursoManager recursos = new RecursoManager();
