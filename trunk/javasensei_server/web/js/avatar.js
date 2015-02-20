@@ -6,6 +6,7 @@ var avatar_sensei = function avatar_sensei(avatar_control) {
     this.url = "servicios/estrategiatutor/";
     this.es_primera_carga = false;
     this.instrucciones_ejercicio = [];
+    this.ultimos_datos = {};
     avatar_context = this;
 };
 
@@ -53,6 +54,16 @@ avatar_sensei.prototype = {
         camera_sensei.inicializarFotos();
         avatar_context.es_primera_carga = true;
         avatar_context.instrucciones_ejercicio = data.instruccionesejercicio;
+    },
+    mostrarInformacion : function(){
+        var datos_avatar = {
+            emocion: avatar_context.ultimos_datos.emocion,
+            texto: avatar_context.instrucciones_ejercicio,
+            opciones: [] //Sin opciones es solamente las instrucciones y la emocion
+        };
+        
+        avatar_context.crearAvatar(datos_avatar);
+        avatar_context.mostrarAvatar();
     },
     inicio_ejercicio: function (datos) {
         console.log("Paso Inicial notificado, ID: " + datos.id);
@@ -239,6 +250,8 @@ avatar_sensei.prototype = {
 
             opciones_avatar.listview("refresh");
         }
+        
+        avatar_context.ultimos_datos = datos;
     },
     intervencion: function (datos) {
         if (!datos.opciones) {
