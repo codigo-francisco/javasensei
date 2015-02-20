@@ -1,5 +1,5 @@
 {
-    "id":1,
+    "id":41,
     "paso":-1,
     "instruccionesejercicio": 
     [
@@ -33,7 +33,7 @@
                         "encantado":"Estas muy bien, inicia con el ejercicio",
                         "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                         "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "esceptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                         "retroalimentacion":
                         {
                             "positiva":"No importa el error vas muy bien",
@@ -58,7 +58,7 @@
                         "encantado":"Estas muy bien, inicia con el ejercicio",
                         "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                         "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "esceptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                         "retroalimentacion":
                         {
                             "positiva":"No importa el error vas muy bien",
