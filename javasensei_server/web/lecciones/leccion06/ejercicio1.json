@@ -1,20 +1,24 @@
 {
-    "id":1,
+    "id":51,
     "paso":-1,
     "instruccionesejercicio": 
     [
-        "blah blah blah",
-        "blah blah blah"
+        "Concepto: Crear y declarar un arreglo unidimensional.",
+        "Con este ejercicio aprenderás a crear y declarar un arreglo unidimensional.  En Java, un arreglo es un grupo de variables (llamadas elementos o componentes) que contienen valores, todos del mismo tipo.  Para declarar un arreglo unidimensional debes especificar el tipo de cada elemento y el número de elementos que se requieren par el arreglo.  Para crear un arreglo se utiliza la palabra clave new."
     ],
     "opciones": 
     [
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Selecciona la opción que responda a la pregunta.",
+            "instruccion": "Paso 1 de 3.  Selecciona la opción que declara un arreglo de tipo int.",
             "presentacion": 
             [
-                "¿Todos los elementos en un arreglo deben ser del mismo tipo?"
+                "public class JavaSensei {",
+                "\tpublic static void main( String[] args ) {",
+                "\t\t<input type='text' readonly class='focusInput'>",
+                "\t}",
+                "}"
             ],
             "opciones": 
             [
@@ -33,7 +37,7 @@
                         "encantado":"Estas muy bien, inicia con el ejercicio",
                         "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                         "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "esceptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                         "retroalimentacion":
                         {
                             "positiva":"No importa el error vas muy bien",
@@ -58,7 +62,7 @@
                         "encantado":"Estas muy bien, inicia con el ejercicio",
                         "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
                         "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "esceptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                         "retroalimentacion":
                         {
                             "positiva":"No importa el error vas muy bien",

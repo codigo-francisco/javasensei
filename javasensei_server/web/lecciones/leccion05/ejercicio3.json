@@ -1,5 +1,5 @@
 {
-    "id": 3,
+    "id": 43,
     "paso":-1,
     "instruccionesejercicio": 
     [
@@ -26,7 +26,7 @@
                 "encantado": "texto",
                 "sorprendido": "texto",
                 "compasivo": "texto",
-                "exeptico": "texto",
+                "esceptico": "texto",
                 "retroalimentacion": 
                 {
                     "positiva": "texto",
@@ -55,7 +55,7 @@
                         "encantado": "texto",
                         "sorprendido": "texto",
                         "compasivo": "texto",
-                        "exeptico": "texto",
+                        "esceptico": "texto",
                         "retroalimentacion": 
                         {
                             "positiva": "texto",
@@ -87,7 +87,7 @@
                         "encantado": "texto",
                         "sorprendido": "texto",
                         "compasivo": "texto",
-                        "exeptico": "texto",
+                        "esceptico": "texto",
                         "retroalimentacion": 
                         {
                             "positiva": "texto",
@@ -118,7 +118,7 @@
                                 "encantado": "texto",
                                 "sorprendido": "texto",
                                 "compasivo": "texto",
-                                "exeptico": "texto",
+                                "esceptico": "texto",
                                 "retroalimentacion": 
                                 {
                                     "positiva": "texto",
@@ -150,7 +150,7 @@
                                 "encantado": "texto",
                                 "sorprendido": "texto",
                                 "compasivo": "texto",
-                                "exeptico": "texto",
+                                "esceptico": "texto",
                                 "retroalimentacion": 
                                 {
                                     "positiva": "texto",
