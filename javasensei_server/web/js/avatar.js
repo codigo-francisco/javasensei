@@ -70,9 +70,6 @@ avatar_sensei.prototype = {
         avatar_context.id = datos.id; //Id del ejercicio actual
         if (avatar_context.es_primera_carga) {
             avatar_context.es_primera_carga = false;
-            //Aqui se esperaria la intervencion del tutor para explicar el ejercicio.
-            //La construccion de los ejercicios en el caso de las instrucciones distinta a la de los demas, aqui solo
-            //Se obtiene la informacion para mostrar al usuario
 
             var urlEmocion = avatar_context.url + "emociontutor";
 
@@ -92,8 +89,6 @@ avatar_sensei.prototype = {
 
                 avatar_context.crearAvatar(datos_avatar);
                 avatar_context.mostrarAvatar();
-
-                camera_sensei.inicializarFotos();
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 console.error("Fallo: " + textStatus);
             });
@@ -108,14 +103,17 @@ avatar_sensei.prototype = {
     paso_suboptimo: function () {
         console.log("Paso suboptimo notificado");
         camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminosuboptimo");
+        camera_sensei.inicializarFotos();
     },
     paso_optimo: function () {
         console.log("Paso optimo notificado");
         camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminooptimo");
+        camera_sensei.inicializarFotos();
     },
     paso_erroneo: function () {
         console.log("Paso erroneo notificado");
         camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminoerroneo");
+        camera_sensei.inicializarFotos();
     },
     paso_final_suboptimo: function () {
         console.log("Paso suboptimo notificado");
@@ -135,7 +133,7 @@ avatar_sensei.prototype = {
     },
     cierreEjercicio: function () { //Funcion que se llama cuando se finaliza los ejercicios
         $("#controles_tracing").hide();
-        camera_sensei.detenerFotos();
+        
         //Mostramos el rating
         $("#controles_cierre_tracing").show();
         

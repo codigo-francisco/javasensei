@@ -18,23 +18,22 @@ var camera = function () {
 
 camera.prototype = {
     inicializarFotos: function () {
-        camera_context.reiniciarFotos();
-
+        console.log("Se inicializo a tomar fotos");
         //Se toma una foto de acuerdo a los milisegundos marcados
         camera_context.id_interval = setInterval(camera_context.snap, camera_context.milisegundos);
     },
     reiniciarFotos: function () {
+        console.log("Se reinicio la lista");
         camera_context.photo_list.clear();
     },
     detenerFotos: function () {
-
+        console.log("Se mando a detener");
         clearInterval(camera_context.id_interval);
-        camera_context.reiniciarFotos();
     },
     snap: function () {
-
-        Webcam.snap(function (data) {
-            var image = camera_context.canvas_tag.toDataURL("image/jpeg").replace("data:image/jpeg;base64,", "");
+        Webcam.snap(function (dataUrl) {
+            console.log("Snap");
+            var image = dataUrl.replace("data:image/jpeg;base64,", "");
 
             camera_context.photo_list.add(image);
 
