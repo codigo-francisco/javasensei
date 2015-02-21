@@ -2,8 +2,8 @@ var camera_context = {};
 
 var camera = function () {
 
-    this.limite = 3; //Para modificar la cantidad de fotos a almacenar
-    this.milisegundos = 1000; //1000 milisegundos es una foto
+    this.limite = 2; //Para modificar la cantidad de fotos a almacenar
+    this.milisegundos = 1500; //1000 milisegundos es una foto
     this.id_interval = 0;
     this.url = "emocion/";
 
@@ -11,7 +11,8 @@ var camera = function () {
     this.funcionEmocion = function () {
     };
 
-    this.photo_list = new buckets.LinkedList(); //Almacenamiento FIFO
+    //this.photo_list = new Array(); //Almacenamiento FIFO
+    localStorage.setItem("photo_list",JSON.stringify([]));
 
     camera_context = this;
 };
@@ -24,7 +25,8 @@ camera.prototype = {
     },
     reiniciarFotos: function () {
         console.log("Se reinicio la lista");
-        camera_context.photo_list.clear();
+        //camera_context.photo_list = new Array();
+        localStorage.setItem("photo_list",JSON.stringify([]));
     },
     detenerFotos: function () {
         console.log("Se mando a detener");
@@ -34,19 +36,27 @@ camera.prototype = {
         Webcam.snap(function (dataUrl) {
             console.log("Snap");
             var image = dataUrl.replace("data:image/jpeg;base64,", "");
+            
+            //var photo_list = camera_context.photo_list;
+            var photo_list = JSON.parse(localStorage.getItem("photo_list"));
 
-            camera_context.photo_list.add(image);
-
-            if (camera_context.photo_list.size() > camera_context.limite) {
-                camera_context.photo_list.removeElementAtIndex(0); //Primer item
+            if (photo_list.length >= camera_context.limite){
+                //delete photo_list[0];
+                photo_list.shift(); //Remueve primer elemento
             }
+                
+            photo_list[photo_list.length] = image;
+            
+            localStorage.setItem("photo_list", JSON.stringify(photo_list));
+            
+            delete photo_list;
         });
     },
     setup: function () {
         //Configuracion de la camara
         Webcam.set({
-            dest_width: 800,
-            dest_height: 600,
+            dest_width: 400,
+            dest_height: 300,
             image_format: 'jpeg',
             jpeg_quality: 100,
             force_flash: false
@@ -65,7 +75,7 @@ camera.prototype = {
 
         $.ajax(url_emocion, {
             data: {
-                "fotos": JSON.stringify(camera_context.photo_list.toArray())
+                fotos: localStorage.getItem("photo_list")
             },
             type: 'POST',
             jsonpCallback: "jsonpCallback"
