@@ -3,8 +3,8 @@
     "paso":-1,
     "instruccionesejercicio": 
     [
-        "blah blah blah",
-        "blah blah blah"
+        "Después de que el arreglo ha sido creado, se puede utilizar la variable de acuerdo al índice, como si fuera una variable regular.",
+        "Por ejemplo: miLista[2] = miLista[0] + miLista[1];"
     ],
     "opciones": 
     [
@@ -23,6 +23,18 @@
                 "\t}",
                 "}"
             ],
+            "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
+                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                } 
+            },
             "opciones": 
             [
                 {

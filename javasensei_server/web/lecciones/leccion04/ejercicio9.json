@@ -3,8 +3,9 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "blah blah blah.",
-        "blah blah blah."
+        "El ciclo while permite ejecutar una secuencia de instrucciones mientras la condición sea verdadera.",
+        "El cuerpo del ciclo contiene las instrucciones que se van a ejecutar una o más veces dependiendo de si se cumple o no la condición del ciclo."
+
     ],
     "opciones": [
         {

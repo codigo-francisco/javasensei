@@ -3,8 +3,7 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "blah blah blah.",
-        "blah blah blah."
+        "La instrucción if nos permite comprobar una condición. En caso de que esa condición se cumple se ejecutará un determinado bloque de instrucciones, mientras que si no se cumple podemos optar por ejecutar otro bloque distinto de instrucciones o no ejecutar ninguna."        
     ],
     "opciones": [
         {

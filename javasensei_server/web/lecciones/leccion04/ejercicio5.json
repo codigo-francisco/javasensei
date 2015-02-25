@@ -3,8 +3,8 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "blah blah blah.",
-        "blah blah blah."
+        "El ciclo for es una versión simplificada del ciclo while.",
+        "El ciclo for tiene tres partes: la variable de control, la condición de continuación del ciclo y el incremento de la variable de control."
     ],
     "opciones": [
         {
