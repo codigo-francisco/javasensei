@@ -3,8 +3,8 @@
     "paso":-1,
     "instruccionesejercicio": 
     [
-        "Las variables...",
-        "blah blah blah"
+        "Una variable es un contenedor que almacena un valor.  Toda variable tiene un nombre y un tipo.  ",
+        "Java es un lenguaje fuertemente tipado y si una variable no recibe el valor especificado en su tipo marcará un error de tipo."
     ],
     "opciones": 
     [
@@ -16,6 +16,18 @@
             [
                 "Si la variable x es declarada de tipo double (double x;), selecciona la expresión de asignación que es compatible."
             ],
+            "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio.",
+                    "negativa": "Con esta actitud me parece dificil que llegues muy lejos con Java."
+                } 
+            },
             "opciones": 
             [
                 {
@@ -27,14 +39,17 @@
                     [
                         "Si la variable x es declarada de tipo double (double x;), selecciona la expresión de asignación que es compatible."
                     ],
-                    "textoEmocional":{
-                        "compasivo":"texto compasivo",
-                        "neutral":"texto neutral",
-                        "retroalimentacion":{
-                                "positiva":"retro positiva",
-                                "neutral":"retro neutral",
-                                "negativa":"retro negativa"
-                            }
+                    "textoEmocional": {
+                        "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+                        "encantado": "Nunca te des por vencido, adelante, confió en ti.",
+                        "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+                        "compasivo": "No te canses nunca de aprender, encuentra la respuesta correcta",
+                        "esceptico": "Aprender requiere de paciencia.",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+                        }
                     },
                     "opciones": []
                 },
@@ -47,14 +62,17 @@
                     [
                         "Si la variable x es declarada de tipo double (double x;), selecciona la expresión de asignación que es compatible."
                     ],
-                    "textoEmocional":{
-                        "compasivo":"texto compasivo",
-                        "neutral":"texto neutral",
-                        "retroalimentacion":{
-                                "positiva":"retro positiva",
-                                "neutral":"retro neutral",
-                                "negativa":"retro negativa"
-                            }
+                    "textoEmocional": {
+                        "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+                        "encantado": "Nunca te des por vencido, adelante, confió en ti.",
+                        "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+                        "compasivo": "No te canses nunca de aprender, encuentra la respuesta correcta",
+                        "esceptico": "Aprender requiere de paciencia.",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+                        }
                     },
                     "opciones": []       
                 },
@@ -67,14 +85,17 @@
                     [
                         "Si la variable x es declarada de tipo double (double x;), selecciona la expresión de asignación que es compatible."
                     ],
-                    "textoEmocional":{
-                        "compasivo":"texto compasivo",
-                        "neutral":"texto neutral",
-                        "retroalimentacion":{
-                                "positiva":"retro positiva",
-                                "neutral":"retro neutral",
-                                "negativa":"retro negativa"
-                            }
+                    "textoEmocional": {
+                        "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+                        "encantado": "Nunca te des por vencido, adelante, confió en ti.",
+                        "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+                        "compasivo": "No te canses nunca de aprender, encuentra la respuesta correcta",
+                        "esceptico": "Aprender requiere de paciencia.",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+                        }
                     },
                     "opciones": []       
                 },
@@ -87,14 +108,17 @@
                     [
                         "x = 7;"
                     ],
-                    "textoEmocional":{
-                        "compasivo":"texto compasivo",
-                        "neutral":"texto neutral",
-                        "retroalimentacion":{
-                                "positiva":"retro positiva",
-                                "neutral":"retro neutral",
-                                "negativa":"retro negativa"
-                            }
+                    "textoEmocional": {
+                        "neutral": "La respuesta es correcta.",
+                        "encantado": "No te canses nunca de aprender, ¡sigue así!",
+                        "sorprendido": "¡Me sorprendes!, sigue hacia adelante.",
+                        "compasivo": "Aquellas cosas que nos apasionan son aquellas que no nos cansan, ¡ánimo!.",
+                        "esceptico": "Si no te esfuerzas hasta el máximo, ¿cómo sabrás donde está tu límite?",
+                        "retroalimentacion": {                            
+                            "positiva": "Muy bien!, estás en lo correcto.",
+                            "neutral": "La respuesta es correcta.",
+                            "negativa": "Me parece que sólo estas pasando el rato."                            
+                        }
                     },
                     "opciones": []       
                 }                

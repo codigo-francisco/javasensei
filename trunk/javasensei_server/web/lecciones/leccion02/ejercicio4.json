@@ -3,8 +3,8 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "blah blah blah.",
-        "blah blah blah."
+        "Para hacer operaciones aritméticas dentro de los programas en Java se utilizan los operadores aritméticos.",
+        "A fin de tener la certeza de que las operaciones aritméticas se evalúan de una manera congruente, Java asigna una precedencia o prioridad, a cada operador."
     ],
     "opciones": [
         {
@@ -15,16 +15,16 @@
                 "La siguiente expresión en Java 3.5 + 5 / 4 da como resultado: "
             ],
             "textoEmocional": {
-                "neutral": "Inicia los ejercicios",
-                "encantado": "Estas muy bien, inicia con el ejercicio",
-                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
                 "retroalimentacion": {
-                    "positiva": "No importa el error vas muy bien",
-                    "neutral": "Sigue asi, continua",
-                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                }
+                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
+                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                } 
             },
             "opciones": [
                 {
@@ -36,15 +36,15 @@
                         "La siguiente expresión en Java 3.5 + 5 / 4 da como resultado:"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Por muy cansado que estés, nunca te des por vencido.",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "Nuestra recompensa se encuentra en el esfuerzo, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
                         }
                     },
                     "opciones": []
@@ -58,15 +58,15 @@
                         "La siguiente expresión en Java 3.5 + 5 / 4 da como resultado:"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Por muy cansado que estés, nunca te des por vencido.",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "Nuestra recompensa se encuentra en el esfuerzo, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
                         }
                     },
                     "opciones": []
@@ -80,16 +80,16 @@
                         "La siguiente expresión en Java 3.5 + 5 / 4 da como resultado: 4.5"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "Has finalizado con este ejercicio.",
+                        "encantado": "Estudiar con esfuerzo y positivismo trae consigo siempre buenas recompensas.”, ¡sigue con este entusiasmo!.",              
+                        "sorprendido": "El que persevera alcanza!, ¡sigue con este entusiasmo!.",
+                        "compasivo": "¿Todavía crees que aprender Java es complicado?.  Establece objetivos a corto plazo y pronto serás un Sensei de Java.",                
+                        "esceptico": "Al menos llegaste al final del ejercicio.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                            "positiva": "¡Felicidades!. ",
+                            "neutral": "Has finalizado con este ejercicio.",
+                            "negativa": "Tarde o temprano todo se sabe.  Por lo pronto, me parece que sólo estabas adivinando las respuestas."
+                        } 
                     },
                     "opciones": []
                 },
@@ -102,15 +102,15 @@
                         "La siguiente expresión en Java 3.5 + 5 / 4 da como resultado:"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Por muy cansado que estés, nunca te des por vencido.",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "Nuestra recompensa se encuentra en el esfuerzo, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
                         }
                     },
                     "opciones": []

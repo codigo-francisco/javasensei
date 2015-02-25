@@ -3,8 +3,8 @@
     "paso":-1,
     "instruccionesejercicio": 
     [
-        "blah blah blah",
-        "blah blah blah"
+        "Para declarar una variable se le tiene que indicar al compilador su nombre y su tipo.",
+        "El tipo de una variable indica la clase de valor que ésta puede almacenar, así como las operaciones que se puede hacer con ella."
     ],
     "opciones": 
     [
@@ -29,9 +29,9 @@
                         "esceptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                         "retroalimentacion":
                         {
-                            "positiva":"No importa el error vas muy bien",
-                            "neutral":"Sigue asi, continua",
-                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                            "positiva": "Somos lo que hacemos día a día. ¡Resuelve el ejercicio!",
+                            "neutral": "Resuelve el ejercicio que se te presenta a continuación",
+                            "negativa": "Aprender Java no se da por osmosis, ¿realmente quieres aprender?."
                         }
                     },
             "opciones": 
@@ -49,19 +49,17 @@
                         "\t}",
                         "}"
                     ],
-                    "textoEmocional": 
-                    {
-                        "neutral":"Inicia los ejercicios",
-                        "encantado":"Estas muy bien, inicia con el ejercicio",
-                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion":
-                        {
-                            "positiva":"No importa el error vas muy bien",
-                            "neutral":"Sigue asi, continua",
-                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "Nunca se ha logrado nada sin entusiasmo.  Intenta encontrar la respuesta correcta.",              
+                        "sorprendido": "El que persevera alcanza.  Intenta encontrar la respuesta correcta.",
+                        "compasivo": "Es duro fracasar en algo, pero es mucho peor no haberlo intentado.   Intenta encontrar la respuesta correcta.",                
+                        "esceptico": "Creo que tu escepticismo te esta perjudicando.",
+                        "retroalimentacion": {
+                            "positiva": "Revisa tu respuesta.  No te dejes desanimar por los fracasos. Aprende de ellos, y sigue adelante.",
+                            "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                            "negativa": "¿Te equivocaste de nuevo?.  Sigue jugando y será imposible que aprendas."
+                        } 
                     },
                     "opciones": []
                 },
@@ -79,19 +77,17 @@
                         "\t}",
                         "}"
                     ],
-                    "textoEmocional": 
-                    {
-                        "neutral":"Inicia los ejercicios",
-                        "encantado":"Estas muy bien, inicia con el ejercicio",
-                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion":
-                        {
-                            "positiva":"No importa el error vas muy bien",
-                            "neutral":"Sigue asi, continua",
-                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                    "textoEmocional": {
+                        "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                        "encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+                        "sorprendido": "Perro que ladra no muerde.  ¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+                        "compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+                        "esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+                        "retroalimentacion": {
+                            "positiva": "¡Excelente!, ¡La respuesta es correcta.",
+                            "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                            "negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+                        } 
                     },
                     "opciones": 
                     [
@@ -109,18 +105,16 @@
                                 "\t}",
                                 "}"
                             ],
-                            "textoEmocional": 
-                            {
-                                "neutral":"Inicia los ejercicios",
-                                "encantado":"Estas muy bien, inicia con el ejercicio",
-                                "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                "retroalimentacion":
-                                {
-                                    "positiva":"No importa el error vas muy bien",
-                                    "neutral":"Sigue asi, continua",
-                                    "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                            "textoEmocional": {
+                                "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+                                "encantado": "Nunca te des por vencido, adelante, confió en ti.",
+                                "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+                                "compasivo": "No te canses nunca de aprender, encuentra la respuesta correcta",
+                                "esceptico": "Aprender requiere de paciencia.",
+                                "retroalimentacion": {                           
+                                    "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                                    "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                                    "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
                                 }
                             },
                             "opciones": []
@@ -139,19 +133,17 @@
                                 "\t}",
                                 "}"
                             ],
-                            "textoEmocional": 
-                            {
-                                "neutral":"Inicia los ejercicios",
-                                "encantado":"Estas muy bien, inicia con el ejercicio",
-                                "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                "retroalimentacion":
-                                {
-                                    "positiva":"No importa el error vas muy bien",
-                                    "neutral":"Sigue asi, continua",
-                                    "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                }
+                            "textoEmocional": {
+                                "neutral": "Has finalizado con este ejercicio.",
+                                "encantado": "No se puede mejorar lo que no se puede medir.”, ¡sigue avanzando con entusiasmo!.",              
+                                "sorprendido": "Cada logro comienza con la decisión de intentarlo, ¡sigue estudiando con entudiasmo!.",
+                                "compasivo": "¿Todavía crees Java es complicado?. Continúa tu proceso de aprendizaje y pronto tendrás resultados.",                
+                                "esceptico": "Al menos llegaste al final del ejercicio.",
+                                "retroalimentacion": {
+                                    "positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+                                    "neutral": "Has finalizado con este ejercicio.",
+                                    "negativa": "A pesar de todo, has finalizado con este ejercicio."
+                                } 
                             },
                             "opciones": []
                         }
