@@ -3,8 +3,8 @@
     "paso":-1,
     "instruccionesejercicio": 
     [
-        "blah blah blah",
-        "blah blah blah"
+        "Un arreglo se utiliza para almacenar una colección de datos.  Un arreglo es una colección de variables del mismo tipo.",
+        "Por ejemplo: double[] miLista = new double[10] declara una variable de tipo arreglo con 10 elementos de tipo double."
     ],
     "opciones": 
     [
@@ -16,6 +16,18 @@
             [
                 "¿La instrucción int[] arreglo = new int[10]; declara un arreglo con 10 elementos de tipo entero?"
             ],
+            "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
+                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                } 
+            },
             "opciones": 
             [
                 {

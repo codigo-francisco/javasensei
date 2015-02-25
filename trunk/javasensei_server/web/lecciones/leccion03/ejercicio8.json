@@ -3,8 +3,8 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "blah blah blah.",
-        "blah blah blah."
+        "También existen ocasiones o programas donde se exige evaluar muchas condiciones a la vez, en estos casos, o se usan una condición compuesta muy grande o se debe intentar convertir el problema a uno que se pueda resolver usando la instrucción switch();",
+        "La instrucción switch() es una instrucción de decisión múltiple, donde el compilador prueba o busca el valor contenido en una variable contra una lista de constantes ints o chars, cuando el computador encuentra el valor de igualdad entre variable y constante, entonces ejecuta el grupo de instrucciones asociados a dicha constante, si no encuentra el valor de igualdad entre variable y constante, entonces ejecuta un grupo de instrucciones asociados a un default, aunque este ultimo es opcional."
     ],
     "opciones": [
         {

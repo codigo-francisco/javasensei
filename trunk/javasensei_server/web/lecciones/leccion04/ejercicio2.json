@@ -3,8 +3,7 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "blah blah blah.",
-        "blah blah blah."
+        "El ciclo do-while es una variación del ciclo while.  La diferencia es que primero se ejecuta el cuerpo del ciclo y luego se verifica la condición de continuación del ciclo."
     ],
     "opciones": [
         {
