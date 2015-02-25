@@ -3,8 +3,8 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "blah blah blah.",
-        "blah blah blah."
+        "Una variable es un contenedor que almacena un valor.  Toda variable tiene un nombre y un tipo.  Una vez declaradas nuestras variables, podemos colocar valores en ellas mediante la instrucción de asignación.",
+        "Al mismo tiempo que se declara una variable, también se le puede asignar un valor.  Recuerda siempre incluir el punto y coma al final de cada instrucción de asignación."
     ],
     "opciones": [
         {
@@ -25,9 +25,9 @@
                 "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
                 "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
                 "retroalimentacion": {
-                    "positiva": "No importa el error vas muy bien",
-                    "neutral": "Sigue asi, continua",
-                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                    "positiva": "¿Ya estás preparado para aprender algo nuevo?",
+                    "neutral": "Resuelve el ejercicio para continuar con el curso",
+                    "negativa": "¿Hasta cuando vas a seguir tomando esto como en broma?"
                 }
             },
             "opciones": [
@@ -45,16 +45,16 @@
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                        "encantado": "Con esfuerzo y perseverancia podrás alcanzar tus metas.  Continúa con tu compromiso de aprender Java",              
+                        "sorprendido": "Me sorprende como vas progresando.  Sigue adelante con el ejercicio.",
+                        "compasivo": "Java es complicado en ocasiones pero sigue adelante con el ejercicio.",                
+                        "esceptico": "Ya casi terminas el curso, al menos trata de terminar con todos los ejercicios.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                            "positiva": "¡Excelente!,  Sigue con el ejercicio.",
+                            "neutral": "La respuesta Continúa con el ejercicio.",
+                            "negativa": "Me parece que no te lo estás tomando en serio."
+                        } 
                     },
                     "opciones": [
                         {
@@ -71,16 +71,16 @@
                                 "}"
                             ],
                             "textoEmocional": {
-                                "neutral": "Inicia los ejercicios",
-                                "encantado": "Estas muy bien, inicia con el ejercicio",
-                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                "encantado": "La respuestaincorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                                "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                                "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                                "esceptico": "La respuesta es incorrecta.  También de las equivocaciones se puede aprender.",
                                 "retroalimentacion": {
-                                    "positiva": "No importa el error vas muy bien",
-                                    "neutral": "Sigue asi, continua",
-                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                }
+                                    "positiva": "La respuesta es incorrecta.  Revisa la sintaxis de la instrucción",
+                                    "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                                    "negativa": "¡La respuesta es incorrecta!.  ¿Estás seguro de no estar adivinando?"
+                                } 
                             },
                             "opciones": []        
                         },
@@ -99,16 +99,16 @@
                                 "}"
                             ],
                             "textoEmocional": {
-                                "neutral": "Inicia los ejercicios",
-                                "encantado": "Estas muy bien, inicia con el ejercicio",
-                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                "encantado": "La respuesta es correcta.  Continúa con esa confianza y determinación.",              
+                                "sorprendido": "La respuesta es correcta.  Me sorprende como vas progresando.",
+                                "compasivo": "La respuesta es correcta.  Sigue estudiando con confianza y determinación.",                
+                                "esceptico": "Si lo que estás haciendo no tiene nada de divertido es que estás haciendo algo mal",
                                 "retroalimentacion": {
-                                    "positiva": "No importa el error vas muy bien",
-                                    "neutral": "Sigue asi, continua",
-                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                }
+                                    "positiva": "¡Perfecto!, La respuesta es correcta, sigue con el ejercicio",
+                                    "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                    "negativa": "La respuesta es correcta, pero ¿estás seguro que no estás adivinando la respuesta?"
+                                } 
                             },
                             "opciones": [
                                 {
@@ -126,16 +126,16 @@
                                         "}"
                                     ],
                                     "textoEmocional": {
-                                        "neutral": "Inicia los ejercicios",
-                                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                        "neutral": "Has finalizado con este ejercicio.",
+                                        "encantado": "Cada logro comienza con la decisión de intentarlo.”, ¡sigue con este entusiasmo!.",              
+                                        "sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio..",
+                                        "compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio..",                
+                                        "esceptico": "Al menos llegaste al final del ejercicio.",
                                         "retroalimentacion": {
-                                            "positiva": "No importa el error vas muy bien",
-                                            "neutral": "Sigue asi, continua",
-                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                        }
+                                            "positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+                                            "neutral": "Has finalizado con este ejercicio.",
+                                            "negativa": "Has finalizado con este ejercicio."
+                                        } 
                                     },
                                     "opciones": []
                                 },
@@ -154,16 +154,16 @@
                                         "}"
                                     ],
                                     "textoEmocional": {
-                                        "neutral": "Inicia los ejercicios",
-                                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                        "encantado": "La respuestaincorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                                        "esceptico": "La respuesta es incorrecta.  También de las equivocaciones se puede aprender.",
                                         "retroalimentacion": {
-                                            "positiva": "No importa el error vas muy bien",
-                                            "neutral": "Sigue asi, continua",
-                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                        }
+                                            "positiva": "La respuesta es incorrecta.  Revisa la sintaxis de la instrucción",
+                                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                                            "negativa": "¡La respuesta es incorrecta!.  ¿Estás seguro de no estar adivinando?"
+                                        } 
                                     },
                                     "opciones": []                                    
                                 }
@@ -184,16 +184,16 @@
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "La respuestaincorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "La respuesta es incorrecta.  También de las equivocaciones se puede aprender.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                        "positiva": "La respuesta es incorrecta.  Revisa la sintaxis de la instrucción",
+                        "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                        "negativa": "¡La respuesta es incorrecta!.  ¿Estás seguro de no estar adivinando?"
+                        } 
                     },
                     "opciones": [
                     ]

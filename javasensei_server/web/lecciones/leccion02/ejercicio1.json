@@ -3,8 +3,8 @@
     "paso":-1,
     "instruccionesejercicio": 
     [
-        "Las variables...",
-        "blah blah blah"
+        "Cada tipo de datos tiene un rango de valores. El compilador asigna espacio de memoria para cada variable o constante de acuerdo a su tipo de datos. Java proporciona ocho tipos de datos primitivos.",
+        "Estos tipos de datos cubren los números enteros, flotantes, caracteres y booleanos."
     ],
     "opciones": 
     [
@@ -16,6 +16,18 @@
             [
                 "¿Al tipo de dato double se le conoce como un tipo de dato de punto flotante?"
             ],
+            "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+            },
             "opciones": 
             [
                 {
@@ -27,43 +39,39 @@
                     [
                         "El tipo de dato double es un tipo de dato de punto flotante."
                     ],
-                    "textoEmocional":
-                    {
-                        "neutral":"Inicia los ejercicios",
-                        "encantado":"Estas muy bien, inicia con el ejercicio",
-                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion":
-                        {
-                            "positiva":"No importa el error vas muy bien",
-                            "neutral":"Sigue asi, continua",
-                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                    "textoEmocional": {
+                        "neutral": "La respuesta es correcta.",
+                        "encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+                        "sorprendido": "¡Me sorprendes!, sigue hacia adelante.",
+                        "compasivo": "Aquellas cosas que nos apasionan son aquellas que no nos cansan, ¡ánimo!.",
+                        "esceptico": "No tengo talento para Java.  Deja tus excusas y trata de superarte día a día.",
+                        "retroalimentacion": {                            
+                            "positiva": "Muy bien!, estás en lo correcto.",
+                            "neutral": "La respuesta es correcta",
+                            "negativa": "¿Estás estudiando con seriedad? ¿O sólo estas pasando el rato?"                            
                         }
                     },
                     "opciones": []
                 },
                 {
                     "texto": "Falso",
-                    "paso": 1,
+                    "paso": 2,
                     "tipo": "pasoerroneo",
                     "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
                     "presentacion": 
                     [
                          "¿Al tipo de dato double se le conoce como un tipo de dato de punto flotante?"
                     ],
-                    "textoEmocional":
-                    {
-                        "neutral":"Inicia los ejercicios",
-                        "encantado":"Estas muy bien, inicia con el ejercicio",
-                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "exeptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion":
-                        {
-                            "positiva":"No importa el error vas muy bien",
-                            "neutral":"Sigue asi, continua",
-                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                    "textoEmocional": {
+                        "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+                        "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+                        "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+                        "compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
                         }
                     },
                     "opciones": []
