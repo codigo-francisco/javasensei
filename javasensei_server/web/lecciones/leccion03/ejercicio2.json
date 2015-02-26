@@ -3,8 +3,8 @@
     "paso":-1,
     "instruccionesejercicio": 
     [
-        "Las variables...",
-        "blah blah blah"
+        "Las instrucciones de selección utilizan condiciones.  Las condiciones son expresiones booleanas.",
+        "El resultado de evaluar una condición es un valor booleano true o false."
     ],
     "opciones": 
     [
