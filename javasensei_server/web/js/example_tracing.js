@@ -187,9 +187,21 @@ example_tracing_sensei.prototype = {
         
         codigo.empty();
 
-        codigo.html(this.ejercicio.presentacion.join("<br>"));
-
         hljs.highlightBlock(codigo[0]);
+
+        codigo.html(this.ejercicio.presentacion.join("<br>"));
+        
+        codigo.find("input:text").each(function(index,input){
+            input = $(input);
+            var size = input.val().length;
+            
+            if (size<10)
+                size=2;
+            else if (size > 20)
+                size-=5;
+            
+            input.attr("size",size);
+        });
     },
     construir_area_solucion: function () {
         //Construimos los botones

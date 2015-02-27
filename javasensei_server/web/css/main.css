@@ -1,3 +1,7 @@
+input, button{
+    white-space: normal !important;
+}
+
 .noWrap{
     white-space: normal !important;
 }
