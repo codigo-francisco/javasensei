@@ -228,6 +228,7 @@ avatar_sensei.prototype = {
         var opciones_avatar = control.find("#opciones_avatar");
         opciones_avatar.empty();
         if (datos.opciones.length > 0) {
+            $("#recomendaciones").show();
             //creamos la lista
             $.each(datos.opciones, function (index, opcion) {
                 //Creamosla opcion en la lista
@@ -247,6 +248,8 @@ avatar_sensei.prototype = {
             });
 
             opciones_avatar.listview("refresh");
+        }else{
+            $("#recomendaciones").hide();
         }
         
         avatar_context.ultimos_datos = datos;
