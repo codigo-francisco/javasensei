@@ -1,0 +1,30 @@
+{
+    "_comment": "Define la estructura de una lección",
+    "nombre" : "leccion",
+    "lecciones" : [
+        {
+            "id": 1,
+            "nombre": "Introducción a Java"
+        },
+        {
+            "id": 2,
+            "nombre": "Variables y cálculos"        
+        },
+        {
+            "id": 3,
+            "nombre": "Instrucciones de selección"
+        },
+        {
+            "id": 4,
+            "nombre": "Instrucciones de repetición"
+        },
+        {
+            "id": 5,
+            "nombre": "Métodos"
+        },
+        {
+            "id": 6,
+            "nombre": "Arreglos"
+        }
+    ]
+}
