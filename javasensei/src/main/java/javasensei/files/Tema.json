@@ -1,0 +1,25 @@
+{
+    "_comment": "Una lección contiene muchos temas",
+    "temas" : [
+        {
+            "idLeccion" : 1,
+            "id" : 1,
+            "nombre": "Anatomía de un programa simple"
+        },
+        {
+            "idLeccion" : 1,
+            "id" : 2,
+            "nombre": "Imprimir texto con print/println"
+        },
+        {
+            "idLeccion" : 1,
+            "id" : 3,
+            "nombre": "Secuencias de escape"
+        },
+        {
+            "idLeccion" : 1,
+            "id" : 4,
+            "nombre": "Imprimir texto con printf"
+        }
+    ]
+}

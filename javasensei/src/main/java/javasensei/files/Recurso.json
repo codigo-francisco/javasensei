@@ -1,0 +1,33 @@
+{
+    "_comment": "Una lección contiene muchos recursos",
+    "recursos" : [
+        {
+            "idLeccion" : 1,
+            "id" : 1,
+            "tipoRecurso" : "multimedia",
+            "titulo": "Tutorial Java - 1. Introducción y Primer Programa Hola Mundo",
+            "url": "https://www.youtube.com/watch?v=Z0F7sJaOQtw"
+        },
+        {
+            "idLeccion" : 1,
+            "id" : 2,
+            "tipoRecurso" : "texto",
+            "titulo": "Anatomía de un programa simple en Java",
+            "url" : "http://docs.oracle.com/javase/tutorial/getStarted/application/index.html"
+        },
+        {
+            "idLeccion" : 1,
+            "id" : 3,
+            "tipoRecurso" : "multimedia",
+            "titulo": "Imprimir texto y secuencias de escape",
+            "url" : "https://www.youtube.com/watch?v=2ZYoP4Hvojs"
+        },
+        {
+            "idLeccion" : 1,
+            "id" : 4,
+            "tipoRecurso" : "multimedia",
+            "titulo": "Imprimir texto con printf",
+            "url" : "https://www.youtube.com/watch?v=26Z_cHFA1MY"
+        }
+    ]
+}
