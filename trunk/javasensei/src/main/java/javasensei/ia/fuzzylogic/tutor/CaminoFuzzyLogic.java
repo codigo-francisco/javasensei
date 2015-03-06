@@ -10,7 +10,7 @@ import net.sourceforge.jFuzzyLogic.FIS;
  */
 public abstract class CaminoFuzzyLogic {
     protected ModeloEstudiante estudiante;
-    protected String folderIA = "javasensei/ia/fuzzylogic/tutor/";
+    protected String folderIA = "files/";
     
     public CaminoFuzzyLogic(ModeloEstudiante estudiante){
         this.estudiante = estudiante;
