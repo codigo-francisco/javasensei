@@ -13,29 +13,30 @@ import javasensei.ia.recognitionemotion.Emocion;
 public class ModeloEstudiante implements java.io.Serializable, DBInterface {
 
     private long id;
+    private String idFacebook;
     private String token;
     private Emocion emocionActual = Emocion.NEUTRAL;
     private Emocion emocionPrevia = Emocion.NEUTRAL;
     private double habilidadGlobal = 0;
     private double calidadRespuesta = 0; //Parametros internos al crear un estudiante nuevo
-    
-    public ModeloEstudiante(){
-        
-    }
-    
-    public ModeloEstudiante(String jsonEstudiante){
-            JsonParser parser = new JsonParser();
-            JsonObject jsonObj = parser.parse(jsonEstudiante).getAsJsonObject();
 
-            //Se construye el objeto del estudiante
-            id = jsonObj.get("id").getAsLong();
-            token = jsonObj.get("token").getAsString();
-            calidadRespuesta = jsonObj.get("calidadRespuesta").getAsDouble();
-            emocionActual = Emocion.getEmocion(jsonObj.get("emocionActual").getAsString());
-            emocionPrevia = Emocion.getEmocion(jsonObj.get("emocionPrevia").getAsString());
-            habilidadGlobal = jsonObj.get("habilidadGlobal").getAsDouble();
+    public ModeloEstudiante() {
+
     }
-    
+
+    public ModeloEstudiante(String jsonEstudiante) {
+        JsonParser parser = new JsonParser();
+        JsonObject jsonObj = parser.parse(jsonEstudiante).getAsJsonObject();
+
+        //Se construye el objeto del estudiante
+        id = jsonObj.get("id").getAsLong();
+        token = jsonObj.get("token").getAsString();
+        calidadRespuesta = jsonObj.get("calidadRespuesta").getAsDouble();
+        emocionActual = Emocion.getEmocion(jsonObj.get("emocionActual").getAsString());
+        emocionPrevia = Emocion.getEmocion(jsonObj.get("emocionPrevia").getAsString());
+        habilidadGlobal = jsonObj.get("habilidadGlobal").getAsDouble();
+    }
+
     public long getId() {
         return id;
     }
@@ -86,9 +87,18 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
 
     @Override
     public DBObject convertToDBObject() {
+        return convertToDBObject(false);
+    }
+    
+    public DBObject convertToDBObject(boolean save) {
         DBObject dbObject = new BasicDBObject();
-        
-        dbObject.put("id", getId());
+
+        dbObject.put("idFacebook", getIdFacebook());
+        if (save) {
+            dbObject.put("id", "ultimoIdAlumno()");
+        } else {
+            dbObject.put("id", getId());
+        }
         dbObject.put("token", getToken());
 
         dbObject.put("emocionActual", getEmocionActual().toString());
@@ -97,6 +107,14 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         dbObject.put("calidadRespuesta", getCalidadRespuesta());
 
         return dbObject;
+    }
+
+    public String getIdFacebook() {
+        return idFacebook;
+    }
+
+    public void setIdFacebook(String idFacebook) {
+        this.idFacebook = idFacebook;
     }
 
 }

@@ -2,6 +2,8 @@ package javasensei.db;
 
 import com.mongodb.DB;
 import com.mongodb.Mongo;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import com.mongodb.WriteConcern;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
@@ -25,7 +27,7 @@ public class Connection {
     
     static {
         try {
-            mongo = new Mongo(); //Localhost, default port
+            mongo = new MongoClient();
             mongo.setWriteConcern(WriteConcern.SAFE);
             db = mongo.getDB("java_sensei");
         } catch (UnknownHostException ex) {

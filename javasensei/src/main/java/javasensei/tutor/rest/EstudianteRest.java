@@ -27,10 +27,10 @@ public class EstudianteRest {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("getorcreatestudent")
-    public String getOrCreateEstudiante(@QueryParam("id") String id, @QueryParam("token") String token){
+    public String getOrCreateEstudiante(@QueryParam("idFacebook") String idFacebook, @QueryParam("token") String token){
         
         ModeloEstudiante estudiante = new ModeloEstudiante();
-        estudiante.setId(Long.parseLong(id));
+        estudiante.setIdFacebook(idFacebook);
         estudiante.setToken(token);
         
         EstudiantesManager estudiantes = new EstudiantesManager(estudiante);
@@ -42,7 +42,7 @@ public class EstudianteRest {
         RankingManager ranking = new RankingManager(estudiante);
         ranking.colocarRankingDefault();
         
-        return "jsonpCallback("+result+")"; //JSON de respuesta
+        return result; //JSON de respuesta
     }
     
     @GET
