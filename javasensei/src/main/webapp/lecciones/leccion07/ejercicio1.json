@@ -1,0 +1,332 @@
+{
+    "id":70,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+        "La herencia es el proceso de crear nuevas clases a a partir de clases existentes.  La clase que hereda atributos y métodos se conoce como clase base, clase padre o superclase.",
+        "En Java, para indicar que una clase hereda de otra se utiliza la palabra clave extends."
+    ],
+    "opciones": [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Paso 1.  ¿Cómo se le llama a la clase principal de la cual otras clases heredan?",
+            "presentacion": [
+                "class Deporte {  // <-- a esta clase se le llama: ?",
+                "}",
+                "class Futbol extends Deporte {",
+                "}"
+            ],
+            "textoEmocional": {
+                "neutral": "Intenta resolver este ejercicio",
+                "encantado": "La clave para aprender Java es la motivación: ¡sigue así!",
+                "sorprendido": "Estudiar hará que te sientas motivado por aprender Java",
+                "compasivo": "Este ejercicio y este curso te ayudarán a mejorar tu confianza con Java",
+                "esceptico": "Me parece que este ejercicio es muy fácil, puedes intentar con otro",
+                "retroalimentacion": {
+                    "positiva": "Somos lo que hacemos día a día. ¿Ya estás listo para resolver el ejercicio?",
+                    "neutral": "Resuelve el ejercicio",
+                    "negativa": "Si deseas aprender Java, ¡Despierta!, tienes que ponerte a estudiar"
+                }
+            },
+            "opciones": [
+                {
+                    "texto": "Superclase o clase padre",
+                    "paso": 1,
+                    "tipo": "pasooptimo",
+                    "instruccion": "Paso 2. ¿A la clase que hereda de una superclase se le llama?",
+                    "presentacion": [
+                        "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                        "}",
+                        "",
+                        "class Futbol extends Deporte { // <-- a esta clase se le llama: ?'>",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Tu actitud para aprender es ¡Excelente!",
+                        "sorprendido": "¡Creo que te estás confiando demasiado!",
+                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
+                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
+                        "retroalimentacion": {
+                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
+                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                            "negativa": "¡Necesitas mayor concentración!"
+                        }
+                    },
+                    "opciones": [                        
+                        {
+                            "texto": "Superclase o clase padre",
+                            "paso": 2,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
+                            "presentacion": [
+                                "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                                "}",
+                                "",
+                                "class Futbol extends Deporte { // <-- a esta clase se le llama: <input type='text' value='Superclase o clase padre' readonly class='errorTracing'>",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                "encantado": "Tu actitud para aprender es ¡Excelente!",
+                                "sorprendido": "¡Creo que te estás confiando demasiado!",
+                                "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
+                                "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
+                                "retroalimentacion": {
+                                    "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
+                                    "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                                    "negativa": "¡Necesitas mayor concentración!"
+                                }
+                            },
+                            "opciones": [ ]
+                        },
+                        {
+                            "texto": "Subclase o clase derivada",
+                            "paso": 3,
+                            "tipo": "pasooptimo",
+                            "instruccion": "Paso 3.  Verdadero o Falso.  ¿Java soporta la definición de una jerarquía de clases?",
+                            "presentacion": [
+                                "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                                "}",
+                                "",
+                                "class Futbol extends Deporte { // <-- a esta clase se le llama: Subclase o clase derivada",
+                                "}",
+                                "class FutbolPlaya extends Futbol { // <-- clase base: Futbol",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                "encantado": "Tu actitud para aprender es ¡Excelente!",
+                                "sorprendido": "¡Creo que te estás confiando demasiado!",
+                                "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
+                                "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
+                                "retroalimentacion": {
+                                    "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
+                                    "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                                    "negativa": "¡Necesitas mayor concentración!"
+                                }
+                            },
+                            "opciones": [                                 
+                                {
+                                    "texto": "Verdadero",
+                                    "paso": 4,
+                                    "tipo": "pasofinaloptimo",
+                                    "instruccion": "¡Felicidades! has terminado el ejercicio.  Selecciona otro ejercicio del menú de opciones.",
+                                    "presentacion": [
+                                        "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                                        "}",
+                                        "",
+                                        "class Futbol extends Deporte { // <-- a esta clase se le llama: Subclase o clase derivada",
+                                        "}",
+                                        "class FutbolPlaya extends Futbol { // <-- clase base: Futbol",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                        "encantado": "Tu actitud para aprender es ¡Excelente!",
+                                        "sorprendido": "¡Creo que te estás confiando demasiado!",
+                                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
+                                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
+                                        "retroalimentacion": {
+                                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
+                                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                                            "negativa": "¡Necesitas mayor concentración!"
+                                        }
+                                    },
+                                    "opciones": []
+                                },
+                                {
+                                    "texto": "Falso",
+                                    "paso": 5,
+                                    "tipo": "pasoerroneo",
+                                    "instruccion": "La respuesta es incorrecta.  En Java es posible tener una jerarquía de clases, es decir Clase Base ::> HerenciaA ::> HerenciaAa..., etc",
+                                    "presentacion": [
+                                        "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                                        "}",
+                                        "",
+                                        "class Futbol extends Deporte { // <-- a esta clase se le llama: Subclase o clase derivada",
+                                        "}",
+                                        "class FutbolPlaya extends Futbol { // <-- clase base: Futbol",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                        "encantado": "Tu actitud para aprender es ¡Excelente!",
+                                        "sorprendido": "¡Creo que te estás confiando demasiado!",
+                                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
+                                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
+                                        "retroalimentacion": {
+                                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
+                                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                                            "negativa": "¡Necesitas mayor concentración!"
+                                        }
+                                    },
+                                    "opciones": []
+                                }
+                                
+                            ]
+                        },
+                        {
+                            "texto": "Superclase o subclase",
+                            "paso": 6,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
+                            "presentacion": [
+                                "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                                "}",
+                                "",                                
+                                "class Futbol extends Deporte { // <-- a esta clase se le llama: <input type='text' value='Superclase o clase padre' readonly class='errorTracing'>",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                "encantado": "Tu actitud para aprender es ¡Excelente!",
+                                "sorprendido": "¡Creo que te estás confiando demasiado!",
+                                "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
+                                "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
+                                "retroalimentacion": {
+                                    "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
+                                    "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                                    "negativa": "¡Necesitas mayor concentración!"
+                                }
+                            },
+                            "opciones": [ ]
+                        },
+                        {
+                            "texto": "Ninguna de las anteriores",
+                            "paso": 7,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
+                            "presentacion": [
+                                "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                                "}",
+                                "",
+                                "class Futbol extends Deporte { // <-- a esta clase se le llama: <input type='text' value='Superclase o clase padre' readonly class='errorTracing'>",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                "encantado": "Tu actitud para aprender es ¡Excelente!",
+                                "sorprendido": "¡Creo que te estás confiando demasiado!",
+                                "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
+                                "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
+                                "retroalimentacion": {
+                                    "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
+                                    "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                                    "negativa": "¡Necesitas mayor concentración!"
+                                }
+                            },
+                            "opciones": [ ]
+                        }                                                
+                    ]
+                },
+                {
+                    "texto": "Subclase o clase derivada",
+                    "paso": 8,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  La clase base es aquella que se usa para definir una nueva clase.  Se le conoce como: clase base, clase padre, superclase.  Intentalo de nuevo",
+                    "presentacion": [
+                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' value='Subclase o clase derivada' readonly class='errorTracing'>",
+                        "}",
+                        "class Futbol extends Deporte {",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "Inicia los ejercicios",
+                        "encantado": "¡Excelente!, la respuesta es correcta",
+                        "sorprendido": "¡Wow!, te siento motivado, continúa así",
+                        "compasivo": "¡Animo!, aunque no es fácil: el estudio es la base del triunfo",
+                        "esceptico": "Este ejercicio no es tan complicado",
+                        "retroalimentacion": {
+                            "positiva": "¡Excelente!, la función de un compilador es convertir un programa a otro equivalente (en el caso de Java traducirlo a bytecodes) y detectar si existen errores de sintaxis",
+                            "neutral": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse",
+                            "negativa": "Necesitas dedicarle un poco más de tiempo para aprender Java"
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "Subclase o clase derivada",
+                    "paso": 9,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  La clase base es aquella que se usa para definir una nueva clase.  Se le conoce como: clase base, clase padre, superclase.  Intentalo de nuevo",
+                    "presentacion": [
+                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' value='Superclase o clase derivada' readonly class='errorTracing'>",
+                        "}",
+                        "class Futbol extends Deporte {",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "Inicia los ejercicios",
+                        "encantado": "¡Excelente!, la respuesta es correcta",
+                        "sorprendido": "¡Wow!, te siento motivado, continúa así",
+                        "compasivo": "¡Animo!, aunque no es fácil: el estudio es la base del triunfo",
+                        "esceptico": "Este ejercicio no es tan complicado",
+                        "retroalimentacion": {
+                            "positiva": "¡Excelente!, la función de un compilador es convertir un programa a otro equivalente (en el caso de Java traducirlo a bytecodes) y detectar si existen errores de sintaxis",
+                            "neutral": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse",
+                            "negativa": "Necesitas dedicarle un poco más de tiempo para aprender Java"
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "Superclase o subclase",
+                    "paso": 10,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  La clase base es aquella que se usa para definir una nueva clase.  Se le conoce como: clase base, clase padre, superclase.  Intentalo de nuevo",
+                    "presentacion": [
+                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' value='Superclase o subclase' readonly class='errorTracing'>",
+                        "}",
+                        "class Futbol extends Deporte {",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "Inicia los ejercicios",
+                        "encantado": "¡Excelente!, la respuesta es correcta",
+                        "sorprendido": "¡Wow!, te siento motivado, continúa así",
+                        "compasivo": "¡Animo!, aunque no es fácil: el estudio es la base del triunfo",
+                        "esceptico": "Este ejercicio no es tan complicado",
+                        "retroalimentacion": {
+                            "positiva": "¡Excelente!, la función de un compilador es convertir un programa a otro equivalente (en el caso de Java traducirlo a bytecodes) y detectar si existen errores de sintaxis",
+                            "neutral": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse",
+                            "negativa": "Necesitas dedicarle un poco más de tiempo para aprender Java"
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "Ninguna de las anteriores",
+                    "paso": 11,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  La clase base es aquella que se usa para definir una nueva clase.  Se le conoce como: clase base, clase padre, superclase.  Intentalo de nuevo",
+                    "presentacion": [
+                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' value='Ninguna de las anteriores' readonly class='errorTracing'>",
+                        "}",
+                        "class Futbol extends Deporte {",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "Inicia los ejercicios",
+                        "encantado": "¡Excelente!, la respuesta es correcta",
+                        "sorprendido": "¡Wow!, te siento motivado, continúa así",
+                        "compasivo": "¡Animo!, aunque no es fácil: el estudio es la base del triunfo",
+                        "esceptico": "Este ejercicio no es tan complicado",
+                        "retroalimentacion": {
+                            "positiva": "¡Excelente!, la función de un compilador es convertir un programa a otro equivalente (en el caso de Java traducirlo a bytecodes) y detectar si existen errores de sintaxis",
+                            "neutral": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse",
+                            "negativa": "Necesitas dedicarle un poco más de tiempo para aprender Java"
+                        }
+                    },
+                    "opciones": [
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
