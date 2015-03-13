@@ -59,12 +59,13 @@ public class EstudiantesManager {
         String result = "{}";
 
         try {
-            //Buscamos el id, en caso de no existir, creamos el objeto
-            DBObject dbObject = alumnosCollection.findOne(new BasicDBObject("id", estudiante.getId()));
-            if (dbObject != null) {
+            //Buscamos el id de facebook, en caso de no existir, creamos el objeto y obtenemos el nuevo id
+            DBObject dbObject = alumnosCollection.findOne(new BasicDBObject("idFacebook", estudiante.getIdFacebook()));
+            if (dbObject != null) {                    
                 dbObject.put("token", estudiante.getToken()); //Se actualiza el token de facebook
             } else { //El estudiante es nuevo
-                dbObject = estudiante.convertToDBObject();
+                dbObject = estudiante.convertToDBObject(); //True para guardar
+                dbObject.put("id", alumnosCollection.count());
             }
 
             //Se actualizan o insertan los cambios

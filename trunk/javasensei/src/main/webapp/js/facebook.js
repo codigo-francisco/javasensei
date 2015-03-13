@@ -12,7 +12,7 @@ var processLogin = function processLogin(response) {
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
 
-            usuario.id = uid;
+            usuario.idFacebook = uid;
             usuario.token = accessToken;
 
             FB.api("/me", {fields: "name,picture"}, function (response) {
@@ -42,11 +42,10 @@ function checarUsuario(datos) {
     var urlChecar = url + "estudiantes/getorcreatestudent";
     $.ajax(urlChecar, {
         data: {
-            id: datos.id,
+            idFacebook: datos.idFacebook,
             token: datos.token
         },
-        dataType: "jsonp",
-        jsonpCallback: "jsonpCallback"
+        dataType: "json"
     }).done(function (data) {
         console.log("%cLogin de facebook realizado: %O", "color: red", data);
         usuario = data;
