@@ -20,9 +20,9 @@ import javasensei.estudiante.ModeloEstudiante;
  */
 public class EstudiantesManager {
 
-    private DBCollection alumnosCollection = Connection.getDb().getCollection("alumnos");
-    private DBCollection temasCollection = Connection.getDb().getCollection("temas");
-    private DBCollection ejerciciosCollection = Connection.getDb().getCollection("ejercicios");
+    private DBCollection alumnosCollection = Connection.getCollection().get(CollectionsDB.ALUMNOS);
+    private DBCollection temasCollection = Connection.getCollection().get(CollectionsDB.TEMAS);
+    private DBCollection ejerciciosCollection = Connection.getCollection().get(CollectionsDB.EJERCICIOS);
 
     private ModeloEstudiante estudiante;
 
@@ -61,7 +61,8 @@ public class EstudiantesManager {
         try {
             //Buscamos el id de facebook, en caso de no existir, creamos el objeto y obtenemos el nuevo id
             DBObject dbObject = alumnosCollection.findOne(new BasicDBObject("idFacebook", estudiante.getIdFacebook()));
-            if (dbObject != null) {                    
+            if (dbObject != null) {
+                estudiante.setId(new Double(dbObject.get("id").toString()).longValue());
                 dbObject.put("token", estudiante.getToken()); //Se actualiza el token de facebook
             } else { //El estudiante es nuevo
                 estudiante.setId(alumnosCollection.count());

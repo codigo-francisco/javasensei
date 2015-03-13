@@ -20,9 +20,8 @@ import javasensei.db.Connection;
  */
 public class MenuManager {
 
-    private DBCollection leccionesCollection = Connection.getDb().getCollection("lecciones");
-    //private DBCollection ejerciciosCollection = Connection.getDb().getCollection("ejercicios");
-    private DBCollection alumnosCollections = Connection.getDb().getCollection("alumnos");
+    private DBCollection leccionesCollection = Connection.getCollection().get(CollectionsDB.LECCIONES);
+    private DBCollection alumnosCollections = Connection.getCollection().get(CollectionsDB.ALUMNOS);
 
     public String getDataGraphics(Long idAlumno) {        
         List<String> lecciones = new ArrayList<>();

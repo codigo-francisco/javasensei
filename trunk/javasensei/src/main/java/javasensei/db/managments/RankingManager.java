@@ -34,11 +34,11 @@ import org.apache.mahout.cf.taste.similarity.UserSimilarity;
  */
 public class RankingManager {
 
-    private DBCollection ejercicios = Connection.getDb().getCollection("ejercicios");
-    private DBCollection rankingEjercicios = Connection.getDb().getCollection("ranking_ejercicios");
+    private DBCollection ejercicios = Connection.getCollection().get(CollectionsDB.EJERCICIOS);
+    private DBCollection rankingEjercicios = Connection.getCollection().get(CollectionsDB.RANKING_EJERCICIOS);
 
-    private DBCollection recursos = Connection.getDb().getCollection("recursos");
-    private DBCollection rankingRecursos = Connection.getDb().getCollection("ranking_recursos");
+    private DBCollection recursos = Connection.getCollection().get(CollectionsDB.RECURSOS);
+    private DBCollection rankingRecursos = Connection.getCollection().get(CollectionsDB.RANKING_RECURSOS);;
 
     private ModeloEstudiante estudiante;
 

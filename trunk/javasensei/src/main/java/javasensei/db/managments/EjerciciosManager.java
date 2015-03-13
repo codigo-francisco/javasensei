@@ -11,7 +11,7 @@ import javasensei.db.Connection;
  */
 public class EjerciciosManager {
 
-    private DBCollection rankingEjerciciosCollection = Connection.getDb().getCollection("ranking_ejercicios");
+    private final DBCollection rankingEjerciciosCollection = Connection.getCollection().get(CollectionsDB.RANKING_EJERCICIOS);
 
     public Integer getRankingEjercicio(Integer idEjercicio, Long idAlumno) {
         Integer ranking = 2; //Default
