@@ -64,8 +64,8 @@ public class EstudiantesManager {
             if (dbObject != null) {                    
                 dbObject.put("token", estudiante.getToken()); //Se actualiza el token de facebook
             } else { //El estudiante es nuevo
+                estudiante.setId(alumnosCollection.count());
                 dbObject = estudiante.convertToDBObject(); //True para guardar
-                dbObject.put("id", alumnosCollection.count());
             }
 
             //Se actualizan o insertan los cambios
