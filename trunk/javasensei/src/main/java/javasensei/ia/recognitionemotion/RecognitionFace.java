@@ -122,6 +122,7 @@ public class RecognitionFace {
     // static  double ceja_izq_p2_p3 = 0;
 
     public CvHaarClassifierCascade obtenerClasificador(String file) throws Exception {
+        file = file.replace("%20", " ");
         CvHaarClassifierCascade clasificador = new CvHaarClassifierCascade(opencv_core.cvLoad(file));
         if (clasificador.isNull()) {
             throw new Exception("Error Loading Classifier File: " + file);
