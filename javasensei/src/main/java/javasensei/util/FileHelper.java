@@ -29,7 +29,7 @@ public class FileHelper {
      * @return Cadena del archivo
      */
     public String getFile(String nameFile) {
-        return getClass().getProtectionDomain().getCodeSource().getLocation().getPath().substring(1).replace("WEB-INF/classes/javasensei/util/FileHelper.class", nameFile);
+        return getClass().getProtectionDomain().getCodeSource().getLocation().getPath().substring(1).replace("WEB-INF/classes/javasensei/util/FileHelper.class", nameFile).replace("%20", " ");
     }
 
     public String getContentFile(String nameFile) {

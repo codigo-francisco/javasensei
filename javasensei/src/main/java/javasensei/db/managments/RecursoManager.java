@@ -15,9 +15,9 @@ import javasensei.db.Connection;
  */
 public class RecursoManager {
 
-    DBCollection recursosCollection = Connection.getDb().getCollection("recursos");
-    DBCollection leccionesCollection = Connection.getDb().getCollection("lecciones");
-    DBCollection rankingCollection = Connection.getDb().getCollection("ranking_recursos");
+    DBCollection recursosCollection = Connection.getCollection().get(CollectionsDB.RECURSOS);
+    DBCollection leccionesCollection = Connection.getCollection().get(CollectionsDB.LECCIONES);
+    DBCollection rankingCollection = Connection.getCollection().get(CollectionsDB.RANKING_RECURSOS);
 
     public double getRanking(int idRecurso, Long idAlumno){
         return new Double(recursosCollection.findOne(
