@@ -1,0 +1,157 @@
+{
+    "id": 34,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+        "El ciclo while permite ejecutar una secuencia de instrucciones mientras la condición sea verdadera.",
+        "El cuerpo del ciclo contiene las instrucciones que se van a ejecutar una o más veces dependiendo de si se cumple o no la condición del ciclo."
+    ],
+    "opciones": [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "¿Qué se obtiene en la consola de salida al ejecutar el siguiente fragmento de código?",
+            "presentacion": [
+                "int i = 0;",       
+                "while(i++ < 5){",
+                "\tswitch(i % 2) {",
+                "\t\tdefault: System.out.println(\"A\");break;",
+                "\t\tcase 1: System.out.println(\"1\");break;",
+                "\t}",
+                "}"
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia los ejercicios",
+                "encantado": "Estas muy bien, inicia con el ejercicio",
+                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "retroalimentacion": {
+                    "positiva": "No importa el error vas muy bien",
+                    "neutral": "Sigue asi, continua",
+                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                }
+            },
+            "opciones": [                
+                                {
+                    "texto": "1 A 1 A 1",
+                    "paso": 1,
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
+                    "presentacion": [
+                        "int i = 0;",       
+                        "while(i++ < 5){",
+                        "\tswitch(i % 2) {",
+                        "\t\tdefault: System.out.println(\"A\");break;",
+                        "\t\tcase 1: System.out.println(\"1\");break;",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "Inicia los ejercicios",
+                        "encantado": "Estas muy bien, inicia con el ejercicio",
+                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion": {
+                            "positiva": "No importa el error vas muy bien",
+                            "neutral": "Sigue asi, continua",
+                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },                
+                {
+                    "texto": "A 1 A 1 A",
+                    "paso": 2,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": [
+                        "int i = 0;",       
+                        "while(i++ < 5){",
+                        "\tswitch(i % 2) {",
+                        "\t\tdefault: System.out.println(\"A\");break;",
+                        "\t\tcase 1: System.out.println(\"1\");break;",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "Inicia los ejercicios",
+                        "encantado": "Estas muy bien, inicia con el ejercicio",
+                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion": {
+                            "positiva": "No importa el error vas muy bien",
+                            "neutral": "Sigue asi, continua",
+                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "1 1 A 1 A",
+                    "paso": 3,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": [
+                        "int i = 0;",       
+                        "while(i++ < 5){",
+                        "\tswitch(i % 2) {",
+                        "\t\tdefault: System.out.println(\"A\");break;",
+                        "\t\tcase 1: System.out.println(\"1\");break;",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "Inicia los ejercicios",
+                        "encantado": "Estas muy bien, inicia con el ejercicio",
+                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion": {
+                            "positiva": "No importa el error vas muy bien",
+                            "neutral": "Sigue asi, continua",
+                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "A A 1 A 1",
+                    "paso": 4,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": [
+                        "int i = 0;",       
+                        "while(i++ < 5){",
+                        "\tswitch(i % 2) {",
+                        "\t\tdefault: System.out.println(\"A\");break;",
+                        "\t\tcase 1: System.out.println(\"1\");break;",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "Inicia los ejercicios",
+                        "encantado": "Estas muy bien, inicia con el ejercicio",
+                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion": {
+                            "positiva": "No importa el error vas muy bien",
+                            "neutral": "Sigue asi, continua",
+                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": [
+                    ]
+                }
+
+
+            ]
+        }
+    ]
+}

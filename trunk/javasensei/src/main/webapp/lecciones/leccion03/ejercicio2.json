@@ -1,0 +1,131 @@
+{
+    "id":22,
+    "paso":-1,
+    "instruccionesejercicio": 
+    [
+        "Las instrucciones de selección utilizan condiciones.  Las condiciones son expresiones booleanas.",
+        "El resultado de evaluar una condición es un valor booleano true o false."
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Dado el siguiente fragmento de código.  ¿Cuál es el valor final para la variable entera x?",
+            "presentacion": 
+            [
+                "int x = 10000;",     
+                "if( x  >  5000 )", 
+                "\tx = 1000;",
+                "System.out.println( x );"
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
+                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                } 
+            },
+            "opciones": 
+            [
+                {
+                    "texto": "10000",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "Dado el siguiente fragmento de código.  ¿Cuál es el valor final para la variable entera x?",
+                        "int x = 10000;",     
+                        "if( x  >  5000 )", 
+                        "\tx = 1000;",
+                        "System.out.println( x );"
+                    ],
+                    "textoEmocional":{
+                        "compasivo":"texto compasivo",
+                        "neutral":"texto neutral",
+                        "retroalimentacion":{
+                                "positiva":"retro positiva",
+                                "neutral":"retro neutral",
+                                "negativa":"retro negativa"
+                            }
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "5000",
+                    "paso": 2,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "Dado el siguiente fragmento de código.  ¿Cuál es el valor final para la variable entera x?",
+                        "int x = 10000;",     
+                        "if( x  >  5000 )", 
+                        "\tx = 1000;",
+                        "System.out.println( x );"
+                    ],
+                    "textoEmocional":{
+                        "compasivo":"texto compasivo",
+                        "neutral":"texto neutral",
+                        "retroalimentacion":{
+                                "positiva":"retro positiva",
+                                "neutral":"retro neutral",
+                                "negativa":"retro negativa"
+                            }
+                    },
+                    "opciones": []       
+                },
+                {
+                    "texto": "1000",
+                    "paso": 3,
+                    "tipo": "optimofinalizado",
+                    "instruccion": "La respuesta es correcta.",
+                    "presentacion": 
+                    [
+                        "Se imprime el valor: 1000."
+                    ],
+                    "textoEmocional":{
+                        "compasivo":"texto compasivo",
+                        "neutral":"texto neutral",
+                        "retroalimentacion":{
+                                "positiva":"retro positiva",
+                                "neutral":"retro neutral",
+                                "negativa":"retro negativa"
+                            }
+                    },
+                    "opciones": []       
+                },                
+                {
+                    "texto": "500",
+                    "paso": 4,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "Dado el siguiente fragmento de código.  ¿Cuál es el valor final para la variable entera x?",
+                        "int x = 10000;",     
+                        "if( x  >  5000 )", 
+                        "\tx = 1000;",
+                        "System.out.println( x );"
+                    ],
+                    "textoEmocional":{
+                        "compasivo":"texto compasivo",
+                        "neutral":"texto neutral",
+                        "retroalimentacion":{
+                                "positiva":"retro positiva",
+                                "neutral":"retro neutral",
+                                "negativa":"retro negativa"
+                            }
+                    },
+                    "opciones": []       
+                }
+            ]
+        }
+    ]
+}
