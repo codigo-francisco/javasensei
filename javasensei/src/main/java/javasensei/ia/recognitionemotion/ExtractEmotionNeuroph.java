@@ -1,6 +1,7 @@
 package javasensei.ia.recognitionemotion;
 
 import org.neuroph.core.NeuralNetwork;
+import javasensei.utl.FileHelper;
 
 /**
  *
@@ -8,7 +9,7 @@ import org.neuroph.core.NeuralNetwork;
  */
 public class ExtractEmotionNeuroph implements INeuralNetwork {
 
-    private static NeuralNetwork neuralNetwork = NeuralNetwork.createFromFile("C:\\Users\\Rock\\Documents\\NetBeansProjects\\Proyecto Prueba\\Neural Networks\\NeuralRecognitionFace.nnet");
+    private static NeuralNetwork neuralNetwork = NeuralNetwork.createFromFile(FileHelper.getInstance().getFile("files\\NeuralRecognitionFace.nnet");
     
     @Override
     public Emocion processData(double[] coordenadas) {
