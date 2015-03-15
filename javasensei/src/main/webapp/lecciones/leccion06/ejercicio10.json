@@ -1,0 +1,130 @@
+{
+    "id":60,
+    "paso":-1,
+    "instruccionesejercicio": 
+    [
+        "Java tiene una notación corta, conocida como inicializador de arreglo, el cual combina en una sola instrucción, la declaración del arreglo, la creación del arreglo, y su inicialización.",
+        "Por ejemplo: double[] miLista = {1.9, 2.9, 3.4, 3.5}; declara e inicializa un arreglo miLista con cuatro elementos."
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Selecciona la opción que responda a la pregunta.",
+            "presentacion": 
+            [
+                "¿Cuál es el tamaño del siguiente arreglo: int[] lista = {12, 34, 9, 0, -62, 88};?"
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
+                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                } 
+            },
+            "opciones": 
+            [
+                {
+                    "texto": "1",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "¿Cuál es el tamaño del siguiente arreglo: int[] lista = {12, 34, 9, 0, -62, 88};?"
+                    ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                        }
+                    },
+                    "opciones": []
+                },
+                                {
+                    "texto": "5",
+                    "paso": 2,
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "La respuesta es correcta.",
+                    "presentacion": 
+                    [
+                        "¿Cuál es el tamaño del siguiente arreglo: int[] lista = {12, 34, 9, 0, -62, 88};?"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es correcta.",
+                        "encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+                        "sorprendido": "¡Me sorprendes!, continúa así.",
+                        "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+                        "esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "Muy bien!, estás en lo correcto.  Continúa con el ejercicio.",
+                            "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                            "negativa": "La respuesta es correcta, pero, ¿te lo estas tomando en serio?"                            
+                        }
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "6",
+                    "paso": 3,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "¿Cuál es el tamaño del siguiente arreglo: int[] lista = {12, 34, 9, 0, -62, 88};?"
+                    ],
+                    "textoEmocional":
+                    {
+                        "neutral":"Inicia los ejercicios",
+                        "encantado":"Estas muy bien, inicia con el ejercicio",
+                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                        "esceptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "retroalimentacion":
+                        {
+                            "positiva":"No importa el error vas muy bien",
+                            "neutral":"Sigue asi, continua",
+                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        }
+                    },
+                    "opciones": []
+                },    
+                {
+                    "texto": "12",
+                    "paso": 4,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                        "¿Cuál es el tamaño del siguiente arreglo: int[] lista = {12, 34, 9, 0, -62, 88};?"
+                    ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                        }
+                    },
+                    "opciones": []
+                }              
+            ]
+        }
+    ] 
+}
