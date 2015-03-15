@@ -60,7 +60,9 @@ public class EstudiantesManager {
 
         try {
             //Buscamos el id de facebook, en caso de no existir, creamos el objeto y obtenemos el nuevo id
-            DBObject dbObject = alumnosCollection.findOne(new BasicDBObject("idFacebook", estudiante.getIdFacebook()));
+            DBObject dbObject = alumnosCollection.findOne(
+                    new BasicDBObject("idFacebook", estudiante.getIdFacebook())
+            );
             if (dbObject != null) {
                 estudiante.setId(new Double(dbObject.get("id").toString()).longValue());
                 dbObject.put("token", estudiante.getToken()); //Se actualiza el token de facebook
@@ -72,6 +74,8 @@ public class EstudiantesManager {
             //Se actualizan o insertan los cambios
             WriteResult write = alumnosCollection.save(dbObject);
 
+            dbObject.removeField("ejercicios");
+            
             result = dbObject.toString();
 
             //userCollections.getMongo().close();

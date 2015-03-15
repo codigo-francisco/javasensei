@@ -19,6 +19,7 @@ import com.googlecode.javacv.cpp.opencv_imgproc;
 import com.googlecode.javacv.cpp.opencv_objdetect;
 import com.googlecode.javacv.cpp.opencv_objdetect.CvHaarClassifierCascade;
 import java.awt.image.BufferedImage;
+import javasensei.exceptions.JavaException;
 import javasensei.util.FileHelper;
 
 /**
@@ -121,8 +122,7 @@ public class RecognitionFace {
     // static  double ceja_izq_p1_p3 = 0;
     // static  double ceja_izq_p2_p3 = 0;
 
-    public CvHaarClassifierCascade obtenerClasificador(String file) throws Exception {
-        file = file.replace("%20", " ");
+    public static CvHaarClassifierCascade obtenerClasificador(String file) throws Exception {
         CvHaarClassifierCascade clasificador = new CvHaarClassifierCascade(opencv_core.cvLoad(file));
         if (clasificador.isNull()) {
             throw new Exception("Error Loading Classifier File: " + file);
@@ -147,28 +147,32 @@ public class RecognitionFace {
         frame = IplImage.createFrom(image);
     }
 
-    static{
+    static {
         Loader.load(opencv_objdetect.class);
-    }
-    
-    /**
-     *
-     * @return @throws Exception
-     */
-    public RecognitionResult processFace() throws Exception {
+
         FileHelper helper = FileHelper.getInstance();
 
         // Archivos de cascada de caracteristicas para ...
         String file1 = helper.getFile("files/haarcascade_frontalface_alt2.xml"); // Deteccion de Rostros
         String file2 = helper.getFile("files/haarcascade_mcs_lefteye.xml"); // Deteteccion de Ojo derecho
         String file3 = helper.getFile("files/haarcascade_mcs_mouth.xml"); // Deteteccion de boca
-        String file4 = helper.getFile("files/haarcascade_mcs_righteye.xml"); //para detectar ojo izquierdo        
+        String file4 = helper.getFile("files/haarcascade_mcs_righteye.xml"); //para detectar ojo izquierdo
 
-        cascade_f = obtenerClasificador(file1);
-        cascade_e_right = obtenerClasificador(file2);
-        cascade_m = obtenerClasificador(file3);
-        cascade_e2 = obtenerClasificador(file4);
+        try {
+            cascade_f = obtenerClasificador(file1);
+            cascade_e_right = obtenerClasificador(file2);
+            cascade_m = obtenerClasificador(file3);
+            cascade_e2 = obtenerClasificador(file4);
+        } catch (Exception ex) {
+            JavaException.printMessage(ex, System.err);
+        }
+    }
 
+    /**
+     *
+     * @return @throws Exception
+     */
+    public RecognitionResult processFace() throws Exception {
         storage_cara = CvMemStorage.create();
         storage_boca = CvMemStorage.create();
         storage_ojo_der = CvMemStorage.create();
@@ -211,7 +215,7 @@ public class RecognitionFace {
                 values[7] = boca_p2_p3;
                 values[8] = ceja_der_p1_p3;
                 values[9] = ceja_izq_p1_p2;
-                
+
                 result.setCoordenadas(values);
             }
 

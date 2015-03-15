@@ -2,10 +2,11 @@ package javasensei.ia.recognitionemotion;
 
 import java.io.File;
 import java.util.ArrayList;
+import javasensei.exceptions.JavaException;
 import javasensei.util.FileHelper;
 import weka.classifiers.functions.MultilayerPerceptron;
 import weka.core.Attribute;
-import weka.core.DenseInstance;
+import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader;
@@ -15,7 +16,7 @@ import weka.core.converters.ArffLoader;
  * Estrada, Raul Oramas Bustillos Email Contacto:
  * franciscogonzalez_hernandez@hotmail.com
  */
-public class ExtractEmotion {
+public class ExtractEmotion implements INeuralNetwork {
 
     private static MultilayerPerceptron multilayer;
 
@@ -31,7 +32,7 @@ public class ExtractEmotion {
     public final void loadFiles() {
         //Obtenemos los datos de entrenamiento
         try {
-            File inputFile = new File(FileHelper.getInstance().getFile("javasensei/files/datosemociones.arff"));
+            File inputFile = new File(FileHelper.getInstance().getFile("files/datosemociones.arff"));
             ArffLoader arffLoader = new ArffLoader();
             arffLoader.setSource(inputFile);
             Instances trainData = arffLoader.getDataSet();
@@ -59,49 +60,48 @@ public class ExtractEmotion {
         }
     }
 
-    public Emocion redNeuronal(double[] values) {
-        Emocion emocion = Emocion.FELIZ;
+    public Emocion processData(double[] coordenadas) {
+        Emocion emocion = Emocion.NEUTRAL;
 
         try {
             //Creamos los datos de prueba
-            Instances testData = createData(values);
+            Instances testData = createData(coordenadas);
 
             double resultIndex = multilayer.classifyInstance(testData.firstInstance());
 
             emocion = Emocion.getEmocion((int) resultIndex);
         } catch (Exception ex) {
-            System.out.println("Mensaje:    " + ex.getMessage());
-            System.out.println("Causa:    " + ex.getCause());
+            JavaException.printMessage(ex, System.err);
         }
 
         return emocion;
     }
 
     private static Instances createData(double[] values) {
-        ArrayList<Attribute> atributos = new ArrayList<>();
-        atributos.add(new Attribute("1"));
-        atributos.add(new Attribute("2"));
-        atributos.add(new Attribute("3"));
-        atributos.add(new Attribute("4"));
-        atributos.add(new Attribute("5"));
-        atributos.add(new Attribute("6"));
-        atributos.add(new Attribute("7"));
-        atributos.add(new Attribute("8"));
-        atributos.add(new Attribute("9"));
-        atributos.add(new Attribute("10"));
-        ArrayList<String> valoresAtributo = new ArrayList<>();
-        valoresAtributo.add(Emocion.FELIZ.toString());
-        valoresAtributo.add(Emocion.SORPRESA.toString());
-        valoresAtributo.add(Emocion.TRISTE.toString());
-        valoresAtributo.add(Emocion.ENOJADO.toString());
-        valoresAtributo.add(Emocion.NEUTRAL.toString());
-        atributos.add(new Attribute("emocion", valoresAtributo));
+        FastVector atributos = new FastVector();
+        atributos.addElement(new Attribute("1"));
+        atributos.addElement(new Attribute("2"));
+        atributos.addElement(new Attribute("3"));
+        atributos.addElement(new Attribute("4"));
+        atributos.addElement(new Attribute("5"));
+        atributos.addElement(new Attribute("6"));
+        atributos.addElement(new Attribute("7"));
+        atributos.addElement(new Attribute("8"));
+        atributos.addElement(new Attribute("9"));
+        atributos.addElement(new Attribute("10"));
+        FastVector valoresAtributo = new FastVector();
+        valoresAtributo.addElement(Emocion.FELIZ.toString());
+        valoresAtributo.addElement(Emocion.SORPRESA.toString());
+        valoresAtributo.addElement(Emocion.TRISTE.toString());
+        valoresAtributo.addElement(Emocion.ENOJADO.toString());
+        valoresAtributo.addElement(Emocion.NEUTRAL.toString());
+        atributos.addElement(new Attribute("emocion", valoresAtributo));
 
         Instances data = new Instances("emocionesdatos", atributos, 0);
         data.setClassIndex(data.numAttributes() - 1);
 
         //Ahora insertamos los datos
-        Instance instance = new DenseInstance(11);
+        Instance instance = new Instance(11); //DenseInstance(11);
         instance.setDataset(data);
 
         instance.setValue(0, values[0]);
@@ -114,7 +114,7 @@ public class ExtractEmotion {
         instance.setValue(7, values[7]);
         instance.setValue(8, values[8]);
         instance.setValue(9, values[9]);
-        instance.setClassValue(Emocion.FELIZ.toString());
+        instance.setClassValue(Emocion.NEUTRAL.toString());
 
         data.add(instance);
 

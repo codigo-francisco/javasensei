@@ -20,6 +20,8 @@ import com.googlecode.javacv.cpp.opencv_objdetect;
 import com.googlecode.javacv.cpp.opencv_objdetect.CvHaarClassifierCascade;
 import java.awt.image.BufferedImage;
 import static itc.util.FileHelper.getFile;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -121,7 +123,7 @@ public class RecognitionFace {
  // static  double ceja_izq_p1_p3 = 0;
     // static  double ceja_izq_p2_p3 = 0;
 
-    public CvHaarClassifierCascade obtenerClasificador(String file) throws Exception {
+    public static CvHaarClassifierCascade obtenerClasificador(String file) throws Exception {
         CvHaarClassifierCascade clasificador = new CvHaarClassifierCascade(opencv_core.cvLoad(file));
         if (clasificador.isNull()) {
             throw new Exception("Error Loading Classifier File: " + file);
@@ -131,8 +133,23 @@ public class RecognitionFace {
     }
 
     static {
-        // Preload the opencv_objdetect module to work around a known bug.
-        Loader.load(opencv_objdetect.class);
+        try {
+            // Preload the opencv_objdetect module to work around a known bug.
+            Loader.load(opencv_objdetect.class);
+            
+            // Archivos de cascada de caracteristicas para ...
+            String file1 = getFile("com/files/haarcascade_frontalface_alt2.xml"); // Deteccion de Rostros
+            String file2 = getFile("com/files/haarcascade_mcs_lefteye.xml"); // Deteteccion de Ojo derecho
+            String file3 = getFile("com/files/haarcascade_mcs_mouth.xml"); // Deteteccion de boca
+            String file4 = getFile("com/files/haarcascade_mcs_righteye.xml"); //para detectar ojo izquierdo
+            
+            cascade_f = obtenerClasificador(file1);
+            cascade_e_right = obtenerClasificador(file2);
+            cascade_m = obtenerClasificador(file3);
+            cascade_e2 = obtenerClasificador(file4);
+        } catch (Exception ex) {
+            Logger.getLogger(RecognitionFace.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private IplImage frame;
@@ -145,23 +162,22 @@ public class RecognitionFace {
     public RecognitionFace(BufferedImage image) {
         frame = IplImage.createFrom(image);
     }
+    
+    public RecognitionFace(){
+        
+    }
 
+    public double[] processFace(BufferedImage image) throws Exception{
+        frame = IplImage.createFrom(image);
+        
+        return processFace();
+    }
+    
     /**
      *
      * @return @throws Exception
      */
     public double[] processFace() throws Exception {
-        // Archivos de cascada de caracteristicas para ...
-        String file1 = getFile("com/files/haarcascade_frontalface_alt2.xml"); // Deteccion de Rostros
-        String file2 = getFile("com/files/haarcascade_mcs_lefteye.xml"); // Deteteccion de Ojo derecho
-        String file3 = getFile("com/files/haarcascade_mcs_mouth.xml"); // Deteteccion de boca
-        String file4 = getFile("com/files/haarcascade_mcs_righteye.xml"); //para detectar ojo izquierdo        
-
-        cascade_f = obtenerClasificador(file1);
-        cascade_e_right = obtenerClasificador(file2);
-        cascade_m = obtenerClasificador(file3);
-        cascade_e2 = obtenerClasificador(file4);
-
         storage_cara = CvMemStorage.create();
         storage_boca = CvMemStorage.create();
         storage_ojo_der = CvMemStorage.create();
