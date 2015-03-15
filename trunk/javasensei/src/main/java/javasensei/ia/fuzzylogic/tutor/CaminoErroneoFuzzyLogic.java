@@ -1,6 +1,7 @@
 package javasensei.ia.fuzzylogic.tutor;
 
 import javasensei.estudiante.ModeloEstudiante;
+import net.sourceforge.jFuzzyLogic.FIS;
 
 /**
  *
@@ -9,6 +10,15 @@ import javasensei.estudiante.ModeloEstudiante;
 public class CaminoErroneoFuzzyLogic extends CaminoFuzzyLogic{    
     public CaminoErroneoFuzzyLogic(ModeloEstudiante estudiante){
         super(estudiante);
+        if (fuzzySystem==null)
+            fuzzySystem = FIS.load(getFile());
+    }
+    
+    protected static FIS fuzzySystem;
+    
+    @Override
+    protected FIS getFuzzySystem(){
+        return fuzzySystem;
     }
 
     @Override

@@ -39,14 +39,14 @@ public enum Emocion {
 
     public static Emocion getEmocion(int emocionValue){
         switch(emocionValue){
+            case 0:
+                return ENOJADO;
             case 1:
                 return FELIZ;
-            case 2:
-                return SORPRESA;
             case 3:
-                return TRISTE;
+                return SORPRESA;
             case 4:
-                return ENOJADO;
+                return TRISTE;
             case 5:
                 return NEUTRAL;
             default:

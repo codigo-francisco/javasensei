@@ -1,6 +1,7 @@
 package javasensei.ia.fuzzylogic.tutor;
 
 import javasensei.estudiante.ModeloEstudiante;
+import javasensei.exceptions.JavaException;
 import javasensei.tutor.ResultadoTutor;
 import javasensei.util.FileHelper;
 import net.sourceforge.jFuzzyLogic.FIS;
@@ -22,12 +23,13 @@ public abstract class CaminoFuzzyLogic {
         return FileHelper.getInstance().getFile(folderIA.concat(name));
     }
     
+    protected abstract FIS getFuzzySystem();
+    
     public final ResultadoTutor evaluarEmocion(){
         ResultadoTutor resultado = new ResultadoTutor();
         
         try {
-            //String fileName = Thread.currentThread().getContextClassLoader().getResource("E:\\Java Sensei\\java-sensei\\javasensei_server\\src\\java\\javasensei\\ia\\fuzzylogic\\tutor").getFile();
-            FIS fis = FIS.load(getFile());
+            FIS fis = getFuzzySystem();
             
             fis.setVariable("emocionactual", estudiante.getEmocionActual().getValue());
             fis.setVariable("emocionprevia", estudiante.getEmocionPrevia().getValue());
@@ -45,7 +47,7 @@ public abstract class CaminoFuzzyLogic {
             resultado.setRetroalimentacionValue(retroalimentacion);
             
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
+            JavaException.printMessage(ex, System.err);
         }
         
         return resultado;

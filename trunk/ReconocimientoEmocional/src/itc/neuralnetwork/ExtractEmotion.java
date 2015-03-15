@@ -53,7 +53,7 @@ public class ExtractEmotion {
              o: para clases
              t: para atributos+clases
              */
-            multilayer.setOptions(opciones);
+            //multilayer.setOptions(opciones);
             multilayer.buildClassifier(trainData);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());

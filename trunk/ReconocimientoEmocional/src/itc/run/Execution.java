@@ -6,10 +6,11 @@ package itc.run;
  */
 
 import itc.neuralnetwork.Emocion;
-import itc.neuralnetwork.ExtractEmotion;
+import itc.neuralnetwork.ph.ExtractEmotion;
 import itc.recognition.RecognitionFace;
 import itc.util.ImageHelper;
 import java.awt.image.BufferedImage;
+import java.util.Arrays;
 
 public class Execution {
 
@@ -19,21 +20,24 @@ public class Execution {
     public static void main(String[] args) throws Exception {
         String fileImage = "com/files/rostro.jpg";
         BufferedImage image = ImageHelper.transformFileImage(fileImage);
+        
         RecognitionFace recognition = new RecognitionFace(image);
         double[] coordenadas  = recognition.processFace();
+        System.out.println(Arrays.toString(coordenadas));
+        
         ExtractEmotion extract = new ExtractEmotion();
-        Emocion emocion = extract.redNeuronal(coordenadas);
+        Emocion emocion = extract.processData(coordenadas);
         
         System.out.println("\nEmocion Detectada: "+emocion);
         System.out.println();
     }
     
-    public Emocion getEmocion(BufferedImage image) throws Exception{
+    /*public Emocion getEmocion(BufferedImage image) throws Exception{
         RecognitionFace recognition = new RecognitionFace(image);
         double[] coordenadas  = recognition.processFace();
         ExtractEmotion extract = new ExtractEmotion();
         Emocion emocion = extract.redNeuronal(coordenadas);
         
         return emocion;        
-    }    
+    }*/
 }

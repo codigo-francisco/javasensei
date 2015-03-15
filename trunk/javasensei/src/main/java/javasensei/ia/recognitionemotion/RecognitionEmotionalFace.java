@@ -39,8 +39,8 @@ public class RecognitionEmotionalFace {
                 RecognitionResult result = recognition.processFace();
                 
                 if (result.isHayEmocion()){ //Si hay una emocion se ejecuta la red neuronal, en caso contrario se desecha
-                    ExtractEmotion extract = new ExtractEmotion();
-                    Emocion emocion = extract.redNeuronal(result.getCoordenadas());
+                    INeuralNetwork extract = new ExtractEmotionNeuroph();
+                    Emocion emocion = extract.processData(result.getCoordenadas());
 
                     //Contador
                     if (emociones.containsKey(emocion)) {

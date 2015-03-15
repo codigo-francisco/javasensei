@@ -30,6 +30,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
 
         //Se construye el objeto del estudiante
         id = jsonObj.get("id").getAsLong();
+        idFacebook = jsonObj.get("idFacebook").toString().replace("\"", "");
         token = jsonObj.get("token").getAsString();
         calidadRespuesta = jsonObj.get("calidadRespuesta").getAsDouble();
         emocionActual = Emocion.getEmocion(jsonObj.get("emocionActual").getAsString());
