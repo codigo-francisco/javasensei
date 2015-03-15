@@ -229,7 +229,7 @@
             <div class="divContenidoCamara">
                 <div><strong>Posicione su rostro al centro de la camara</strong></div>
                 <div id="camera" class="camera"></div>
-                <button class="ui-btn" id="cerrarEjemplo">Ok, Lo tengo</button>
+                <button class="ui-btn ui-btn-corner-all ui-btn-active" id="cerrarEjemplo">Ok, Lo tengo</button>
             </div>
         </div>
         <div id="fullscreenloading" class="fullscreenloading">
@@ -269,8 +269,11 @@
 
             <div role="main" class="ui-content">
                 <div id="controles_cierre_tracing" class="controles">
-                    <div>¿Que te ha parecido este ejercicio?
-                        <div id="calificaciones_ejercicios"></div>
+                    <div style="float: right;">
+                        <span>¿Que te ha parecido este ejercicio?</span>
+                        <div>
+                            <div id="calificaciones_ejercicios"></div>
+                        </div>
                     </div>
                     <button id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
                 </div>

@@ -7,6 +7,8 @@ var avatar_sensei = function avatar_sensei(avatar_control) {
     this.es_primera_carga = false;
     this.instrucciones_ejercicio = [];
     this.ultimos_datos = {};
+    this.sePuedeIntervencion = true;
+    this.idTimeout = 0;
     avatar_context = this;
 };
 
@@ -53,6 +55,7 @@ avatar_sensei.prototype = {
     primera_carga: function (data) { //Notificacion de que se esta cargando el ejercicio (diferente al paso inicial)
         camera_sensei.inicializarFotos();
         avatar_context.es_primera_carga = true;
+        avatar_context.sePuedeIntervencion = true;
         avatar_context.instrucciones_ejercicio = data.instruccionesejercicio;
     },
     mostrarInformacion : function(){
@@ -132,6 +135,8 @@ avatar_sensei.prototype = {
 
     },
     cierreEjercicio: function () { //Funcion que se llama cuando se finaliza los ejercicios
+        clearTimeout(avatar_context.idTimeout);
+
         $("#controles_tracing").hide();
         
         //Mostramos el rating
@@ -255,13 +260,13 @@ avatar_sensei.prototype = {
         avatar_context.ultimos_datos = datos;
     },
     intervencion: function (datos) {
-        if (!datos.opciones) {
+        if (avatar_context.sePuedeIntervencion && datos.intervencion && !datos.opciones) {
             ////Hay que obtener las recomendaciones... y modificar la propiedad opciones
             obtenerRecomendacionesTutor(avatar_context.id, datos, avatar_context.intervencion);
             return;
         }
 
-        if (datos.intervencion) { //Se realiza una intervencion
+        if (avatar_context.sePuedeIntervencion && datos.intervencion) { //Se realiza una intervencion
             var datos_nuevos = {};
 
             datos_nuevos.opciones = datos.opciones;
@@ -279,6 +284,11 @@ avatar_sensei.prototype = {
             //Se envia todo al tutor para que forme el avatar
             avatar_context.crearAvatar(datos_nuevos);
             avatar_context.mostrarAvatar();
+            
+            avatar_context.sePuedeIntervencion = false;
+            avatar_context.idTimeout = setTimeout(function(){
+                avatar_context.sePuedeIntervencion = true;
+            },35000);
         }
     }
 };
