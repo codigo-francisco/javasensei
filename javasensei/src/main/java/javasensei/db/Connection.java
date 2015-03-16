@@ -5,9 +5,14 @@ import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
 import com.mongodb.WriteConcern;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,16 +23,8 @@ import javasensei.db.managments.CollectionsDB;
  * @author Rock
  */
 public class Connection {
-    protected static Mongo mongo;
+    protected static MongoClient mongo;
     protected static DB db;
-    
-    /*public static Mongo getMongo(){
-        return mongo;
-    }
-    
-    public static DB getDb(){
-        return Connection.db;
-    }*/
     
     private static Map<CollectionsDB,DBCollection> collections;
     
@@ -37,7 +34,9 @@ public class Connection {
     
     static {
         try {
-            mongo = new MongoClient();
+            List<MongoCredential> credentials=new ArrayList<>();
+            credentials.add(MongoCredential.createCredential("root", "java_sensei", "root2560".toCharArray()));
+            mongo = new MongoClient(new ServerAddress(), credentials);
             mongo.setWriteConcern(WriteConcern.SAFE);
             db = mongo.getDB("java_sensei");
             
