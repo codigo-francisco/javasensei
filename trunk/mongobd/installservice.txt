@@ -1,0 +1,1 @@
+sc.exe create MongoDB binPath= "\"C:\mongodb\mongod.exe\" --service --auth --config=\"D:\java-sensei\mongobd\mongodb.cfg\"" DisplayName= "MongoDB" start= "auto"
