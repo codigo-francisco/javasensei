@@ -53,6 +53,7 @@ avatar_sensei.prototype = {
 
     },
     primera_carga: function (data) { //Notificacion de que se esta cargando el ejercicio (diferente al paso inicial)
+        camera_sensei.detenerFotos();
         camera_sensei.inicializarFotos();
         avatar_context.es_primera_carga = true;
         avatar_context.sePuedeIntervencion = true;
@@ -135,6 +136,7 @@ avatar_sensei.prototype = {
 
     },
     cierreEjercicio: function () { //Funcion que se llama cuando se finaliza los ejercicios
+        camera_sensei.detenerFotos();
         clearTimeout(avatar_context.idTimeout);
 
         $("#controles_tracing").hide();
