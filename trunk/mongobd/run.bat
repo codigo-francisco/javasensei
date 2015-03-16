@@ -1,3 +1,3 @@
 C:\
 cd C:\Program Files\MongoDB 2.6 Standard\bin
-mongod --dbpath "E:\Java Sensei\trunk\mongobd" --auth --config "mongodb.conf"
+mongod --dbpath "D:\java-sensei\trunk\mongobd" --auth --config "mongodb.conf"
