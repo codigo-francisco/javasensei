@@ -10,7 +10,7 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Paso 1 de 3.  Declara una variable entera de nombre n con un valor inicial de 6.",
+            "instruccion": "Paso 1 de 3.  Declara una variable entera de nombre n con un valor inicial de 2.",
             "presentacion": [
                 "public class Test {",
                 "\tpublic static void main(String[] args) {",
@@ -61,7 +61,7 @@
                             "texto": "5.0 * n;",
                             "paso": 2,
                             "tipo": "pasoerroneo",
-                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "instruccion": "Recuerda, 5.0 es un valor de punto flotante(float) y la variable m es de tipo entera(int)<br>Esto quiere decir que no admite decimales",
                             "presentacion": [
                                 "public class Test {",
                                 "\tpublic static void main(String[] args) {",
