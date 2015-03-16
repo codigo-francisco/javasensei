@@ -1,0 +1,49 @@
+Pre:
+Se crea un archivo mongodb.conf
+
+1.- Se ejecuta mongod con un archivo de configuracion, internamente tendra el siguiente contenido:
+
+(todo tendreo del mongod.conf)
+
+2.- Se accede a la base de datos desde la maquina local con
+mongod --dbpath "ruta" --config mongodb.conf
+
+3.- Se ejecuta el siguiente comando para crear un usuario que pueda crear super usuario...
+
+use admin
+db.createUser(
+  {
+    user: "admin",
+    pwd: "contra2560",
+    roles: [ 
+		{ role: "userAdminAnyDatabase", db: "admin" }
+		,{role:"backup", db:"admin"}
+		,{role:"restore",db:"admin"}
+	]
+  }
+)
+
+4.- Se cierra la bd y se reinicia ya no se tendra acceso sin autenticacion
+
+mongod --dbpath "ruta" --auth --config /etc/mongodb/mongodb.conf
+
+* Se accede a mongo con este comando
+
+mongo -u admin -p contra2560 --authenticationDatabase admin
+
+use java_sensei
+db.createUser(
+  {
+    user: "root",
+    pwd: "root2560",
+    roles: [ { role: "dbOwner", db: "java_sensei" } ]
+  }
+)
+
+* Se realiza la autentificacion con el usuario
+db.auth("root","root2560")
+
+6.- Se realizan las pruebas
+
+Con esto se crea el usuario root y con este se accede a mongo, con este comando
+mongo -u root -p root2560 --authenticationDatabase java_sensei
