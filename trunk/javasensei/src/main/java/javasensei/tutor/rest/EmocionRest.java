@@ -11,7 +11,6 @@ import javax.ws.rs.core.UriInfo;
 
 /**
  *
- * @deprecated La clase se encuentra obsoleta ya que no se puede usar OpenCV con ella (el restful no carga la clase, solucion pendiente, parchado con servlet)
  * @see javasensei.tutor.rest.EmocionRest
  * @author Rock
  */
@@ -26,6 +25,6 @@ public class EmocionRest {
     @Path("obteneremocion")
     public String obtenerEmocion(@FormParam("fotos") String fotos){
         RecognitionEmotionalFace recognition = new RecognitionEmotionalFace(fotos);
-        return recognition.getEmocion();
+        return recognition.getEmocionString();
     }
 }

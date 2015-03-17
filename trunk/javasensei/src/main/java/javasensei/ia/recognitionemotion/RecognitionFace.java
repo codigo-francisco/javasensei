@@ -131,22 +131,6 @@ public class RecognitionFace {
         return clasificador;
     }
 
-    /*static {
-     // Preload the opencv_objdetect module to work around a known bug.
-     Loader.load(opencv_objdetect.class);
-     }*/
-    private IplImage frame;
-    private RecognitionResult result = new RecognitionResult();
-
-    /**
-     * Este constructor recibe un bufferedimage que representa la fotografia
-     *
-     * @param image
-     */
-    public RecognitionFace(BufferedImage image) {
-        frame = IplImage.createFrom(image);
-    }
-
     static {
         Loader.load(opencv_objdetect.class);
 
@@ -166,62 +150,59 @@ public class RecognitionFace {
         } catch (Exception ex) {
             JavaException.printMessage(ex, System.err);
         }
+
+        storage_cara = CvMemStorage.create();
+        storage_boca = CvMemStorage.create();
+        storage_ojo_der = CvMemStorage.create();
+        storage_ojo_izq = CvMemStorage.create();
     }
 
     /**
      *
      * @return @throws Exception
      */
-    public RecognitionResult processFace() throws Exception {
-        storage_cara = CvMemStorage.create();
-        storage_boca = CvMemStorage.create();
-        storage_ojo_der = CvMemStorage.create();
-        storage_ojo_izq = CvMemStorage.create();
+    public static RecognitionResult processFace(BufferedImage image) throws Exception {
+        IplImage frame = IplImage.createFrom(image);
+        
+        RecognitionResult result = new RecognitionResult();
+        
+        result.setHayEmocion(detectEyes(frame));
 
-        // ----------------FIN DE Creamos las ventanas-------------------------
-        // Iniciamos el Dispositivo de Captura de Video
-        //IplImage frame = opencv_core.cvLoadImage("C:\\Users\\Francisco\\Documents\\NetBeansProjects\\Test1\\src\\test1\\jl.jpg");
-        //IplImage frame = IplImage.createFrom(Util.decodeToImage(imageBuffer));
-        // Ciclo Infinito para poder Obtener Imagenes
-        {
-            result.setHayEmocion(detectEyes(frame));
+        if (result.isHayEmocion()) {            
 
-            if (result.isHayEmocion()) {
+            ojoDer_p1_p4 = distanciaPuntos(ojoDer_p1_X, ojoDer_p1_Y, ojoDer_p4_X, ojoDer_p4_Y);
 
-                ojoDer_p1_p4 = distanciaPuntos(ojoDer_p1_X, ojoDer_p1_Y, ojoDer_p4_X, ojoDer_p4_Y);
+            ojoIzq_p1_p4 = distanciaPuntos(ojoIzq_p1_X, ojoIzq_p1_Y, ojoIzq_p4_X, ojoIzq_p4_Y);
 
-                ojoIzq_p1_p4 = distanciaPuntos(ojoIzq_p1_X, ojoIzq_p1_Y, ojoIzq_p4_X, ojoIzq_p4_Y);
+            boca_p1_p2 = distanciaPuntos(boca_p1_X, boca_p1_Y, boca_p2_X, boca_p2_Y);
+            boca_p1_p3 = distanciaPuntos(boca_p1_X, boca_p1_Y, boca_p3_X, boca_p3_Y);
+            boca_p2_p4 = distanciaPuntos(boca_p2_X, boca_p2_Y, boca_p4_X, boca_p4_Y);
+            boca_p3_p4 = distanciaPuntos(boca_p3_X, boca_p3_Y, boca_p4_X, boca_p4_Y);
+            boca_p1_p4 = distanciaPuntos(boca_p1_X, boca_p1_Y, boca_p4_X, boca_p4_Y);
+            boca_p2_p3 = distanciaPuntos(boca_p2_X, boca_p2_Y, boca_p3_X, boca_p3_Y);
 
-                boca_p1_p2 = distanciaPuntos(boca_p1_X, boca_p1_Y, boca_p2_X, boca_p2_Y);
-                boca_p1_p3 = distanciaPuntos(boca_p1_X, boca_p1_Y, boca_p3_X, boca_p3_Y);
-                boca_p2_p4 = distanciaPuntos(boca_p2_X, boca_p2_Y, boca_p4_X, boca_p4_Y);
-                boca_p3_p4 = distanciaPuntos(boca_p3_X, boca_p3_Y, boca_p4_X, boca_p4_Y);
-                boca_p1_p4 = distanciaPuntos(boca_p1_X, boca_p1_Y, boca_p4_X, boca_p4_Y);
-                boca_p2_p3 = distanciaPuntos(boca_p2_X, boca_p2_Y, boca_p3_X, boca_p3_Y);
+            ceja_der_p1_p3 = distanciaPuntos(ceja_der_p1_X, ceja_der_p1_Y, ceja_der_p3_X, ceja_der_p3_Y);
 
-                ceja_der_p1_p3 = distanciaPuntos(ceja_der_p1_X, ceja_der_p1_Y, ceja_der_p3_X, ceja_der_p3_Y);
+            ceja_izq_p1_p2 = distanciaPuntos(ceja_izq_p1_X, ceja_izq_p1_Y, ceja_izq_p2_X, ceja_izq_p2_Y);
 
-                ceja_izq_p1_p2 = distanciaPuntos(ceja_izq_p1_X, ceja_izq_p1_Y, ceja_izq_p2_X, ceja_izq_p2_Y);
+            double[] values = new double[10];
 
-                double[] values = new double[10];
+            values[0] = ojoDer_p1_p4;
+            values[1] = ojoIzq_p1_p4;
+            values[2] = boca_p1_p2;
+            values[3] = boca_p1_p3;
+            values[4] = boca_p2_p4;
+            values[5] = boca_p3_p4;
+            values[6] = boca_p1_p4;
+            values[7] = boca_p2_p3;
+            values[8] = ceja_der_p1_p3;
+            values[9] = ceja_izq_p1_p2;
 
-                values[0] = ojoDer_p1_p4;
-                values[1] = ojoIzq_p1_p4;
-                values[2] = boca_p1_p2;
-                values[3] = boca_p1_p3;
-                values[4] = boca_p2_p4;
-                values[5] = boca_p3_p4;
-                values[6] = boca_p1_p4;
-                values[7] = boca_p2_p3;
-                values[8] = ceja_der_p1_p3;
-                values[9] = ceja_izq_p1_p2;
-
-                result.setCoordenadas(values);
-            }
-
-            //10 Coordenadas del rostro
-            return result;
+            result.setCoordenadas(values);
         }
+
+        //10 Coordenadas del rostro
+        return result;
     }
 
     static boolean detectEyes(IplImage img) {

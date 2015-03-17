@@ -30,25 +30,6 @@ function obtenerRecomendacionesTutor(idEjercicio, datos, callback) { //Objeto de
 }
 
 avatar_sensei.prototype = {
-    ejecutarAjax: function (tipoCamino) {
-        //Se hace una solicitud rest al servidor java        
-        var urlAjax = avatar_context.url + tipoCamino;
-
-        $.ajax({
-            url: urlAjax,
-            type: "POST",
-            data:{
-                datosestudiante : JSON.stringify(usuario)
-            },
-            dataType: "json"
-        }).done(function (datos) {
-            //datos.intervencion = true; //TODO: Quitar esto, es de prueba, falla las reglas difusas
-            console.log("%cDatos recibidos: %O", "color:blue;", datos);
-            avatar_context.intervencion(datos);
-        }).fail(function (jqXHR, textStatus, errorThrown) {
-            console.log("Fallo " + textStatus);
-        });
-    },
     solicitud_usuario: function () {
 
     },
@@ -100,33 +81,54 @@ avatar_sensei.prototype = {
         }
 
     },
-    llamarSistemaLogicoDifuso: function (tipoPaso) {
+    ejecutarAjax: function (tipoCamino, fotografias) {
+        //Se hace una solicitud rest al servidor java        
+        var urlAjax = avatar_context.url + tipoCamino;
+
+        $.ajax({
+            url: urlAjax,
+            type: "POST",
+            data:{
+                datosestudiante : JSON.stringify(usuario),
+                fotos : fotografias
+            },
+            dataType: "json"
+        }).done(function (datos) {
+            console.log("%cDatos recibidos: %O", "color:blue;", datos);
+            avatar_context.intervencion(datos);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            console.log("Fallo " + textStatus);
+        });
+    },
+    llamarSistemaLogicoDifuso: function (tipoCamino) {
         usuario.calidadRespuesta = example_tracing.obtenerCalidadRespuesta();
-        avatar_context.ejecutarAjax(tipoPaso);
+        var fotografias = camera_sensei.getFotografias();
+        camera_sensei.reiniciarFotos();
+        avatar_context.ejecutarAjax(tipoCamino, fotografias);
     },
     paso_suboptimo: function () {
         console.log("Paso suboptimo notificado");
-        camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminosuboptimo");
+        avatar_context.llamarSistemaLogicoDifuso("caminosuboptimo");
         camera_sensei.inicializarFotos();
     },
     paso_optimo: function () {
         console.log("Paso optimo notificado");
-        camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminooptimo");
+        avatar_context.llamarSistemaLogicoDifuso("caminooptimo");
         camera_sensei.inicializarFotos();
     },
     paso_erroneo: function () {
         console.log("Paso erroneo notificado");
-        camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminoerroneo");
+        avatar_context.llamarSistemaLogicoDifuso("caminoerroneo");
         camera_sensei.inicializarFotos();
     },
     paso_final_suboptimo: function () {
         console.log("Paso suboptimo notificado");
-        camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminofinaloptimo");
+        avatar_context.llamarSistemaLogicoDifuso("caminofinaloptimo");
         avatar_context.cierreEjercicio();
     },
     paso_final_optimo: function () {
         console.log("Paso final optimo notificado");
-        camera_sensei.evaluarEmociones(avatar_context.llamarSistemaLogicoDifuso, "caminofinalsuboptimo");
+        avatar_context.llamarSistemaLogicoDifuso("caminofinalsuboptimo");
         avatar_context.cierreEjercicio();
     },
     paso_siguiente: function () {
@@ -290,7 +292,7 @@ avatar_sensei.prototype = {
             avatar_context.sePuedeIntervencion = false;
             avatar_context.idTimeout = setTimeout(function(){
                 avatar_context.sePuedeIntervencion = true;
-            },35000);
+            },55000);
         }
     }
 };

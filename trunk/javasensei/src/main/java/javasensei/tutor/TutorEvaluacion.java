@@ -28,10 +28,7 @@ public class TutorEvaluacion {
         managerDb = new EstudiantesManager(this.estudiante);
     }
 
-    protected String prepararRespuesta(CaminoFuzzyLogic camino) {
-        //Antes de realizar la evauacion, se guardan los datos del perfil actualizados
-        managerDb.updateDataStudent();
-        
+    protected String prepararRespuesta(CaminoFuzzyLogic camino) {        
         ResultadoTutor resultado = camino.evaluarEmocion();
 
         JsonObject json = new JsonObject();
@@ -90,6 +87,7 @@ public class TutorEvaluacion {
      * @return Cadena Json que se enviara al tutor del lado del cliente.
      */
     public String obtenerEvaluacionPasoFinalSubOptimo() {
+        managerDb.updateDataStudent();
         return prepararRespuesta(new CaminoFinalSubOptimoFuzzyLogic(estudiante));
     }
 
@@ -100,6 +98,7 @@ public class TutorEvaluacion {
      * @return Cadena Json que se enviara al tutor del lado del cliente.
      */
     public String obtenerEvaluacionPasoFinalOptimo() {
+        managerDb.updateDataStudent();
         return prepararRespuesta(new CaminoFinalOptimoFuzzyLogic(estudiante));
     }
 
