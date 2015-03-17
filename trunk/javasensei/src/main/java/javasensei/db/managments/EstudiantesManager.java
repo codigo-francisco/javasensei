@@ -6,6 +6,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
+import com.mongodb.ReadPreference;
 import com.mongodb.WriteResult;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,30 +56,31 @@ public class EstudiantesManager {
         return result;
     }
 
-    public String insertOrCreateStudent() {
+    public synchronized String insertOrCreateStudent() {
         String result = "{}";
 
         try {
-            //Buscamos el id de facebook, en caso de no existir, creamos el objeto y obtenemos el nuevo id
-            DBObject dbObject = alumnosCollection.findOne(
-                    new BasicDBObject("idFacebook", estudiante.getIdFacebook())
-            );
-            if (dbObject != null) {
-                estudiante.setId(new Double(dbObject.get("id").toString()).longValue());
-                dbObject.put("token", estudiante.getToken()); //Se actualiza el token de facebook
-            } else { //El estudiante es nuevo
-                estudiante.setId(alumnosCollection.count());
-                dbObject = estudiante.convertToDBObject(); //True para guardar
+            synchronized (alumnosCollection) {
+                //Buscamos el id de facebook, en caso de no existir, creamos el objeto y obtenemos el nuevo id
+                DBObject dbObject = alumnosCollection.findOne(
+                        new BasicDBObject("idFacebook", estudiante.getIdFacebook())
+                );
+                if (dbObject != null) {
+                    estudiante.setId(new Double(dbObject.get("id").toString()).longValue());
+                    dbObject.put("token", estudiante.getToken()); //Se actualiza el token de facebook
+                } else { //El estudiante es nuevo
+                    estudiante.setId(alumnosCollection.count());
+                    dbObject = estudiante.convertToDBObject(); //True para guardar
+                }
+
+                //Se actualizan o insertan los cambios
+                WriteResult write = alumnosCollection.save(dbObject);
+
+                dbObject.removeField("ejercicios");
+
+                result = dbObject.toString();
+
             }
-
-            //Se actualizan o insertan los cambios
-            WriteResult write = alumnosCollection.save(dbObject);
-
-            dbObject.removeField("ejercicios");
-            
-            result = dbObject.toString();
-
-            //userCollections.getMongo().close();
         } catch (Exception ex) {
             Logger.getGlobal().log(Level.SEVERE, ex.getMessage());
         }
