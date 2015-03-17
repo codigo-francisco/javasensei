@@ -2,8 +2,8 @@ var camera_context = {};
 
 var camera = function () {
 
-    this.limite = 2; //Para modificar la cantidad de fotos a almacenar
-    this.milisegundos = 1500; //1000 milisegundos es una foto
+    this.limite = 1; //Para modificar la cantidad de fotos a almacenar
+    this.milisegundos = 1000; //1000 milisegundos es una foto cada segundo
     this.id_interval = 0;
     this.url = "emocion/";
 
@@ -58,7 +58,7 @@ camera.prototype = {
             dest_width: 610,
             dest_height: 400,
             image_format: 'jpeg',
-            jpeg_quality: 100,
+            jpeg_quality: 75,
             force_flash: false
         });
 
@@ -66,8 +66,13 @@ camera.prototype = {
 
         Webcam.attach('#camera');
     },
+    getFotografias : function(){
+        camera_context.detenerFotos();
+
+        return localStorage.getItem("photo_list");
+    },
     evaluarEmociones: function (callback, datos) {
-        var url_emocion = url + camera_context.url + "obteneremocion";
+        /*var url_emocion = url + camera_context.url + "obteneremocion";
 
         camera_context.tipoCamino = datos;
         camera_context.funcionEmocion = callback;
@@ -90,6 +95,6 @@ camera.prototype = {
             console.error("Error: " + errorThrown);
         });
 
-        camera_context.reiniciarFotos();
+        camera_context.reiniciarFotos();*/
     }
 };

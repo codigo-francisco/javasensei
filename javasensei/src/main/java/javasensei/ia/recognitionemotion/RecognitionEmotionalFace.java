@@ -25,8 +25,8 @@ public class RecognitionEmotionalFace {
         JsonElement element = new JsonParser().parse(fotosJson);
         fotos = element.getAsJsonArray();
     }
-
-    public String getEmocion() {
+    
+    public Emocion getEmocion(){
         Map<Emocion, Integer> emociones = new HashMap<>();
 
         for (int index = 0; index < fotos.size(); index++) {
@@ -35,12 +35,10 @@ public class RecognitionEmotionalFace {
                 BufferedImage image = javasensei.util.ImageHelper.decodeToImage(datos);
                 //javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("G:/imagenes")));
 
-                RecognitionFace recognition = new RecognitionFace(image);
-                RecognitionResult result = recognition.processFace();
+                RecognitionResult result = RecognitionFace.processFace(image);
                 
                 if (result.isHayEmocion()){ //Si hay una emocion se ejecuta la red neuronal, en caso contrario se desecha
-                    INeuralNetwork extract = new ExtractEmotionNeuroph();
-                    Emocion emocion = extract.processData(result.getCoordenadas());
+                    Emocion emocion = new ExtractEmotionNeuroph().processData(result.getCoordenadas());
 
                     //Contador
                     if (emociones.containsKey(emocion)) {
@@ -55,8 +53,12 @@ public class RecognitionEmotionalFace {
             }
         }
 
+        return findEmotion(emociones);
+    }
+
+    public String getEmocionString() {
         JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("emocion", findEmotion(emociones).toString());
+        jsonObject.addProperty("emocion", getEmocion().toString());
 
         return gson.toJson(jsonObject);
     }

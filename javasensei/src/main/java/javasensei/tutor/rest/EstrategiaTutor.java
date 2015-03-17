@@ -6,6 +6,7 @@
 package javasensei.tutor.rest;
 
 import javasensei.estudiante.ModeloEstudiante;
+import javasensei.ia.recognitionemotion.RecognitionEmotionalFace;
 import javasensei.tutor.TutorEvaluacion;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
@@ -31,6 +32,18 @@ public class EstrategiaTutor {
     public EstrategiaTutor() {
     }
 
+    private static TutorEvaluacion getEvaluationAndProcessEmotion(String datosEstudiante, String fotos){
+        //datosTutor es un json que contendra datos que se necesitan del tutor
+        ModeloEstudiante modeloEstudiante = new ModeloEstudiante(datosEstudiante);
+        RecognitionEmotionalFace recognition = new RecognitionEmotionalFace(fotos);
+        
+        //Cambio de emocion
+        modeloEstudiante.setEmocionPrevia(modeloEstudiante.getEmocionActual());
+        modeloEstudiante.setEmocionActual(recognition.getEmocion());
+        
+        return new TutorEvaluacion(modeloEstudiante);
+    }
+    
     /**
      * Retrieves representation of an instance of javasensei.tutor.EstrategiaTutor
      * @param datosEstudiante
@@ -39,12 +52,9 @@ public class EstrategiaTutor {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("caminoerroneo")
-    public String getEstrategiaCaminoErroneo(@FormParam("datosestudiante") String datosEstudiante) {
-        //datosTutor es un json que contendra datos que se necesitan del tuturo
-        TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
-        //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
+    public String getEstrategiaCaminoErroneo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos) {
         
-        return evaluacion.obtenerEvaluacionPasoErroneo();
+        return getEvaluationAndProcessEmotion(datosEstudiante, fotos).obtenerEvaluacionPasoErroneo();
     }
     
     /**
@@ -55,12 +65,8 @@ public class EstrategiaTutor {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("caminosuboptimo")
-    public String getEstrategiaCaminoSubOptimo(@FormParam("datosestudiante") String datosEstudiante) {
-        //datosTutor es un json que contendra datos que se necesitan del tuturo
-        TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
-        //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
-        
-        return evaluacion.obtenerEvaluacionPasoSubOptimo();
+    public String getEstrategiaCaminoSubOptimo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos) {
+        return getEvaluationAndProcessEmotion(datosEstudiante, fotos).obtenerEvaluacionPasoSubOptimo();
     }
     
     /**
@@ -71,13 +77,8 @@ public class EstrategiaTutor {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("caminooptimo")
-    public String getEstrategiaCaminoOptimo(@FormParam("datosestudiante") String datosEstudiante) {
-        
-        //datosTutor es un json que contendra datos que se necesitan del tuturo
-        TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
-        //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
-        
-        return evaluacion.obtenerEvaluacionPasoOptimo();
+    public String getEstrategiaCaminoOptimo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos) {
+        return getEvaluationAndProcessEmotion(datosEstudiante, fotos).obtenerEvaluacionPasoOptimo();
     }
     
     /**
@@ -88,13 +89,8 @@ public class EstrategiaTutor {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("caminofinaloptimo")
-    public String getEstrategiaCaminoFinalOptimo(@FormParam("datosestudiante") String datosEstudiante) {
-        
-        //datosTutor es un json que contendra datos que se necesitan del tuturo
-        TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
-        //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
-        
-        return evaluacion.obtenerEvaluacionPasoFinalOptimo();
+    public String getEstrategiaCaminoFinalOptimo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos) {
+        return getEvaluationAndProcessEmotion(datosEstudiante, fotos).obtenerEvaluacionPasoFinalOptimo();
     }
     
     /**
@@ -105,13 +101,8 @@ public class EstrategiaTutor {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("caminofinalsuboptimo")
-    public String getEstrategiaCaminoFinalSubOptimo(@FormParam("datosestudiante") String datosEstudiante) {
-        
-        //datosTutor es un json que contendra datos que se necesitan del tuturo
-        TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
-        //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
-        
-        return evaluacion.obtenerEvaluacionPasoFinalSubOptimo();
+    public String getEstrategiaCaminoFinalSubOptimo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos) {
+       return getEvaluationAndProcessEmotion(datosEstudiante, fotos).obtenerEvaluacionPasoFinalSubOptimo();
     }
     
     /**
@@ -122,12 +113,9 @@ public class EstrategiaTutor {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("emociontutor")
-    public String getEstrategiaEmocionTutor(@FormParam("datosestudiante") String datosEstudiante) {
-        //TODO: checar este metodo
-        
+    public String getEstrategiaEmocionTutor(@FormParam("datosestudiante") String datosEstudiante) {        
         //datosTutor es un json que contendra datos que se necesitan del tuturo
         TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
-        //String resultado = evaluacion.obtenerEvaluacionPasoErroneo();
         
         return evaluacion.obtenerEmocionCarga();
     }
