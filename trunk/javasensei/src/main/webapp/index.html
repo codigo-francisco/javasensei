@@ -9,6 +9,7 @@
         <link href="jquerymobile/icon-pack-custom.css" rel="stylesheet">
         <link href="styles/github.css" rel="stylesheet">
         <link href="jquery/jRating.jquery.css" rel="stylesheet" media="screen">
+        <link href="css/tooltipster.css" rel="stylesheet">
 
         <link href="css/example_tracing.css" rel="stylesheet">
         <link href="css/avatar.css" rel="stylesheet">
@@ -17,6 +18,7 @@
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
 
+        <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
         <script type="text/javascript" src="js/highcharts-custom.js"></script>
         <script type="text/javascript" src="jquery/jRating.jquery.min.js"></script>
         <script type="text/javascript" src="highlight.pack.js"></script>
@@ -127,15 +129,15 @@
                 $("#areatrabajo").hide();
                 $("#controles_tracing").hide();
                 $("#controles_cierre_tracing").hide();
-
+                
                 $("#cerrar_tracing").click(example_tracing.cerrarInterfaz);
 
                 $("#informacion_tracing").click(avatar_sensei.mostrarInformacion);
-                
-                $("#botoncamara").click(function(){
+
+                $("#botoncamara").click(function () {
                     $("#dialog_video").show();
                 });
-                
+
                 $("#cerrarEjemplo").click(function () {
                     $("#dialog_video").hide();
                 });
@@ -254,7 +256,7 @@
             </div>
 
             <div data-role="header" data-position="fixed">
-                <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext"></a>
+                <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext" title="Este es el menu de ejercicios"></a>
 
                 <div class="ui-title">
                     <img id="imagen_usuario"><br>
@@ -262,9 +264,9 @@
                     <!-- Score: -->
                 </div>
 
-                <a id="botoncamara" href="#" style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" data-iconpos="notext"></a>
-                <a id="botongrafica" href="#paginagraficaestudiante" style="margin-right: 2em;" data-rel="dialog" data-icon="exclamation-circle" class="ui-btn-right" data-iconpos="notext"></a>
-                <a id="botonrecursos" href="#paginarecursos" data-rel="dialog" data-icon="ellipsis-v" class="ui-btn-right" data-iconpos="notext"></a>
+                <a id="botoncamara" title="Colocate bien ante la camara" href="#" style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" data-iconpos="notext"></a>
+                <a id="botongrafica" title="Grafica del avance como estudiante" href="#paginagraficaestudiante" style="margin-right: 2em;" data-rel="dialog" data-icon="exclamation-circle" class="ui-btn-right" data-iconpos="notext"></a>
+                <a id="botonrecursos" title="Menu de ejercicios y recursos" href="#paginarecursos" data-rel="dialog" data-icon="ellipsis-v" class="ui-btn-right" data-iconpos="notext"></a>
             </div>
 
             <div role="main" class="ui-content">
