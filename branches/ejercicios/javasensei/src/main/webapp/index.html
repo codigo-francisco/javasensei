@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Java Sensei</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="jquerymobile/jquery.mobile-1.4.4.min.css" rel="stylesheet">
+        <link href="jquerymobile/icon-pack-custom.css" rel="stylesheet">
+        <link href="styles/github.css" rel="stylesheet">
+        <link href="jquery/jRating.jquery.css" rel="stylesheet" media="screen">
+
+        <link href="css/example_tracing.css" rel="stylesheet">
+        <link href="css/avatar.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
+
+        <script type="text/javascript" src="js/highcharts-custom.js"></script>
+        <script type="text/javascript" src="jquery/jRating.jquery.min.js"></script>
+        <script type="text/javascript" src="highlight.pack.js"></script>
+        <script type="text/javascript" src="js/buckets-minified.js"></script>
+        <script type="text/javascript" src="js/webcam.min.js"></script>
+
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script type="text/javascript" src="js/recursos.js"></script>
+        <script type="text/javascript" src="js/facebook.js"></script>
+        <script type="text/javascript" src="js/tree-example-tracing.js"></script>
+        <script type="text/javascript" src="js/example_tracing.js"></script>
+        <script type="text/javascript" src="js/avatar.js"></script>
+        <script type="text/javascript" src="js/camera.js"></script>
+        <script type="text/javascript" src="js/graficos.js"></script>
+
+        <script>
+            var menu = new menu_sensei();
+            var recursos = new recursos_sensei();
+            var example_tracing;
+            var avatar_sensei;
+            var camera_sensei = new camera();
+            var carpeta_ejercicios = "lecciones/";
+            var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
+            var url = "servicios/"; //Jquery infiere el dominio
+            var usuario = {};
+
+            var redireccion = function (url) {
+                location.href = url;
+            };
+
+            function eliminarBackground() {
+                if (usuario.id !== '') {
+                    $("#fullscreenlogin").hide();
+                }
+            }
+            ;
+
+            function mostrarBackground() {
+                $("#fullscreenlogin").show();
+            }
+            ;
+
+            function cargarEjercicio(event) {
+                example_tracing.suscribir_todos_ejercicios(avatar_sensei);
+                example_tracing.construir_ejercicio(event.data.url);
+                $("#controles_cierre_tracing").hide();
+
+                return false;
+            }
+            ;
+
+            function eliminarBackgroundCamera() {
+                $("#fullscreenpermition").hide();
+            }
+            ;
+
+            $(document).ready(function () {
+                $("#button_logout").click(function () {
+                    logout();
+                });
+
+                $("#opciones_avatar").listview(); //Inicializacion de listview
+
+                hljs.configure({
+                    useBR: true,
+                    tabReplace: '    '
+                });
+
+                example_tracing = new example_tracing_sensei("#areatrabajo", "#areasolucion", "#adelante_tracing", "#atras_tracing", "#controles_tracing");
+
+                avatar_sensei = new avatar_sensei("#avatar_control");
+
+                //menu.actualizarMenu(); //Obtenemos el menu la primera vez
+
+                $("#menuboton").click(function () {
+                    menu.getMenu("#ejerciciosmenu");
+                });
+
+                $("#tabsrecursos").on("tabscreate", function () {
+                    $("#tabsrecursos").tabs("option", "active", 0);
+                });
+
+                $("#fullscreenloading").hide(); //Escondemos el login
+
+                $(document).ajaxStart(function () {
+                    $("#fullscreenloading").show();
+                });
+
+                $(document).ajaxStop(function () {
+                    $("#fullscreenloading").hide();
+                });
+
+                camera_sensei.setup();
+
+                $(":mobile-pagecontainer").on("pagecontainershow", function (event, ui) {
+                    switch ($(ui.toPage).attr("id")) {
+                        case "paginarecursos":
+                            recursos.obtenerEjercicios("#listaejercicios");
+                            recursos.obtenerRecursos("#listalibros");
+                            //recursos.obtenerIntereses("#listaenlaces");
+                            break;
+                        case "paginagraficaestudiante":
+                            cargarGrafico();
+                            break;
+                    }
+                });
+
+                $("#areatrabajo").hide();
+                $("#controles_tracing").hide();
+                $("#controles_cierre_tracing").hide();
+
+                $("#cerrar_tracing").click(example_tracing.cerrarInterfaz);
+
+                $("#informacion_tracing").click(avatar_sensei.mostrarInformacion);
+                
+                $("#botoncamara").click(function(){
+                    $("#dialog_video").show();
+                });
+                
+                $("#cerrarEjemplo").click(function () {
+                    $("#dialog_video").hide();
+                });
+
+                //eliminarBackgroundCamera();
+            });
+
+
+        </script>
+
+        <style type="text/css">
+            .fullscreen{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 1500;
+                top:0;
+                left: 0;
+                background-color: black;
+                opacity: 0.75;
+            }
+            .fullscreenloading{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 1400;
+                top:0;
+                left: 0;
+                background-color: transparent;
+                opacity: 0.75;
+            }
+            .fullscreenpermition{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 1300;
+                top:0;
+                left: 0;
+                background-color: black;
+                color:white;
+                opacity: 0.85;
+            }
+            .fullscreencamera{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 1200;
+                top:0;
+                left: 0;
+                background-color:white;
+            }
+            .loginScreen{
+                position: absolute;
+                top: 25%;
+                left: 25%;
+                width: 50%;
+                height: 50%;
+                color:white;
+                border-width: medium;
+            }
+            .centerimage{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                /* bring your own prefixes */
+                transform: translate(-50%, -50%);
+            }
+            .textScreen{
+                padding-top: 20px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Seccion del login -->
+        <div id="fullscreenlogin" class="fullscreen">
+            <div class="loginScreen">
+                <div class="textScreen">
+                    Bienvenido a Java Sensei<br>
+                    Realiza tu Login<br>
+                    <div class="fb-login-button" 
+                         data-max-rows="1" 
+                         data-size="xlarge" 
+                         data-show-faces="false" 
+                         data-auto-logout-link="false" 
+                         onlogin="checkLoginState();"></div>
+                </div>
+            </div>
+        </div>
+        <div id="dialog_video" class="fullscreencamera">
+            <div class="divContenidoCamara">
+                <div><strong>Posicione su rostro al centro de la camara</strong></div>
+                <button class="ui-btn ui-btn-corner-all ui-btn-active" id="cerrarEjemplo">Ok, Lo tengo</button>
+                <div id="camera" class="camera"></div>
+            </div>
+        </div>
+        <div id="fullscreenloading" class="fullscreenloading">
+            <img class="centerimage" src="jquerymobile/images/ajax-loader.gif" alt="Ajax Loading">
+        </div>
+        <div id="fullscreenpermition" class="fullscreenpermition">
+            <div style="text-align: center;margin-top: 4em;">
+                Por favor acepte los permisos de utilizar la camara o use el tutor desde un dispositivo con camara
+            </div>
+        </div>
+
+        <div id="principal" data-title="Java Sensei" data-role="page">
+
+            <!-- Paneles -->
+            <div data-role="panel" data-display="overlay" id="panelmenu">
+                <div id="ejerciciosmenu" style="white-space: normal !important;" data-role="collapsibleset">
+
+                </div>
+                <div style="display:none;" data-position="fixed" data-role="footer">
+                    <a id="button_logout" href="#" data-icon="lock" >Cerrar Sesion</a>
+                </div>
+            </div>
+
+            <div data-role="header" data-position="fixed">
+                <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext"></a>
+
+                <div class="ui-title">
+                    <img id="imagen_usuario"><br>
+                    <span style="white-space: normal !important;" id="nombre_usuario"></span>
+                    <!-- Score: -->
+                </div>
+
+                <a id="botoncamara" href="#" style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" data-iconpos="notext"></a>
+                <a id="botongrafica" href="#paginagraficaestudiante" style="margin-right: 2em;" data-rel="dialog" data-icon="exclamation-circle" class="ui-btn-right" data-iconpos="notext"></a>
+                <a id="botonrecursos" href="#paginarecursos" data-rel="dialog" data-icon="ellipsis-v" class="ui-btn-right" data-iconpos="notext"></a>
+            </div>
+
+            <div role="main" class="ui-content">
+                <div id="controles_cierre_tracing" class="controles">
+                    <div style="float: right;">
+                        <span>¿Que te ha parecido este ejercicio?</span>
+                        <div>
+                            <div id="calificaciones_ejercicios"></div>
+                        </div>
+                    </div>
+                    <button id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
+                </div>
+                <div id="controles_tracing" class="controles">
+                    <button id="informacion_tracing" data-inline="true" data-mini="true">Informacion</button>
+                    <button id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
+                    <button id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
+                </div>
+                <div class="areatracing">
+                    <div id="areatrabajo">
+                        <div class="ui-grid-solo ui-responsive">
+                            <span class="instrucciones">Instrucciones:</span>
+                            <div id="instruccion" class="ui-block-a">
+
+                            </div>
+                        </div>
+                        <div id="interfazejercicio">
+                            <pre>
+                            <code id="codigo" style="overflow-y: scroll;" class="java">
+                            </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div id="areasolucion" class="ui-grid-a ui-responsive">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="tutor_sensei" data-dialog="true" data-close-btn="right">
+            <div data-role="header" data-position="fixed">
+                <h1>Sensei</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <div id="avatar_control">
+                    <div id="divPhotoTutor">
+                        <img id="image_avatar" src="" alt="" class="photo_avatar">
+                    </div>
+                    <div id="interfaz_avatar">
+                        <div id="texto_avatar">
+
+                        </div>
+                        <div>
+                            <h5 id="recomendaciones">Recomendaciones:</h5>
+                            <ul id="opciones_avatar" data-role="listview" data-inset="true">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" data-dialog="true" id="visor_recursos" data-close-btn="right">
+            <div id="recursos_contenido">
+                <div data-role="header">
+                    <h1 id="titulo_recurso"></h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <div id="contenido_recurso">
+
+                    </div>
+                </div>
+                <div data-role="footer">
+                    ¿Que te ha parecido este recurso?<br>
+                    <div id="calificaciones">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="paginagraficaestudiante" data-close-btn="right">
+            <div data-role="header">
+                <h1>Avance del Estudiante</h1>
+            </div>
+            <div id="divGraficaEstudiante" role="main" class="ui-content">
+                <!-- <div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div> -->
+            </div>
+        </div>
+
+        <div data-role="page" id="paginarecursos" data-close-btn="right">
+            <div data-role="header" data-position="fixed">
+                <h1>Menu de recursos</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <div data-role="tabs" id="tabsrecursos">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#primertab" data-ajax="false">Ejercicios</a></li>
+                            <li><a href="#segundotab" data-ajax="false">Recursos</a></li>
+                            <!-- <li><a href="#tercertab" data-ajax="false">Otras Cosas...</a></li> -->
+                        </ul>
+                        <div id="primertab" class="ui-content">
+                            <ul id="listaejercicios" class="tablist-content" data-role="listview" data-inset="true">
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div id="segundotab" class="ui-content">
+                            <ul id="listalibros" class="tablist-content" data-inset="true" data-filter="true" data-role="listview">
+                                <li></li>
+                            </ul>
+                        </div>
+                        <!--<div id="tercertab" class="ui-content">
+                            <ul id="listaenlaces" class="tablist-content" data-role="listview" data-inset="true">
+                                <li></li>
+                            </ul>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

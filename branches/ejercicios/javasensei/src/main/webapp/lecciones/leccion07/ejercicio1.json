@@ -1,0 +1,300 @@
+{
+    "id": 71,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+        "La herencia es el proceso de crear nuevas clases a a partir de clases existentes.  La clase que hereda atributos y métodos se conoce como clase base, clase padre o superclase.",
+        "En Java, para indicar que una clase hereda de otra se utiliza la palabra clave extends."
+    ],
+    "opciones": [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Paso 1 de 4.  Considera el siguiente código para contestar a la pregunta.  ¿Cómo se le llama a la clase principal de la cual otras clases heredan?",
+            "presentacion": [
+                "class Deporte {  // <-- a esta clase se le llama: ?",
+                "}",
+                "class Futbol extends Deporte {",
+                "}"
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Para mover una montaña necesitas comenzar por pequeñas piedras.  ¡Inicia con el ejercicio!",
+                "sorprendido": "No permitas que nadie te diga que no puedes conseguir aquello que quieres. ¡Inicia con el ejercicio!",
+                "compasivo": "No importa que hoy te equivoques, tienes el resto de tu vida para solucionarlo.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "Por muy poco que puedas hacer, siempre es más que quedarse de brazos cruzados.  Empieza el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "Nadie dijo que la vida fuera fácil ¿pero vas a rendirte ante la primera dificultad?.",
+                    "neutral": "La motivación es el mejor método para hacer las cosas.",
+                    "negativa": "Rendirse no es la solución, es la escapatorio más fácil."
+                }
+
+            },
+            "opciones": [
+                {
+                    "texto": "Superclase o clase padre",
+                    "paso": 1,
+                    "tipo": "pasooptimo",
+                    "instruccion": "Paso 2 de 4.  Considera el siguiente código para contestar a la pregunta. ¿A la clase que hereda de una superclase se le llama?",
+                    "presentacion": [
+                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o clase padre' class='focusInput'>",
+                        "}",
+                        "class Futbol extends Deporte { //<-- a esta clase se le llama: ?",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "...",
+                        "encantado": "...",
+                        "sorprendido": "...",
+                        "compasivo": "...",
+                        "esceptico": "...",
+                        "retroalimentacion": {
+                            "positiva": "...",
+                            "neutral": "...",
+                            "negativa": "..."
+                        }
+                    },
+                    "opciones": [                        
+                        {
+                            "texto": "Superclase o clase padre",
+                            "paso": 2,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
+                            "presentacion": [
+                                "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o clase padre' class='focusInput'>",
+                                "}",
+                                "class Futbol extends Deporte { //<-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o clase padre' class='errorTracing'>",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "...",
+                                "encantado": "...",
+                                "sorprendido": "...",
+                                "compasivo": "...",
+                                "esceptico": "...",
+                                "retroalimentacion": {
+                                    "positiva": "...",
+                                    "neutral": "...",
+                                    "negativa": "..."
+                                }
+                            },
+                            "opciones": [                                                                                            
+                            ]
+                        },
+                        {
+                            "texto": "Subclase o clase derivada",
+                            "paso": 3,
+                            "tipo": "pasooptimo",
+                            "instruccion": "Paso 3 de 4.  Considera el siguiente código para contestar a la pregunta con verdadero o falso.  ¿Las relaciones de herencia simple forman estructuras jerárquicas tipo árbol?",
+                            "presentacion": [
+                                "class Deporte {  // <-- superclase de Futbol",
+                                "}",
+                                "class Futbol extends Deporte { //<-- subclase Deporte y superclase de FutbolPlaya",
+                                "}",
+                                "class FutbolPlaya extends Futbol { // <-- clase derivada de Futbol",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "...",
+                                "encantado": "...",
+                                "sorprendido": "...",
+                                "compasivo": "...",
+                                "esceptico": "...",
+                                "retroalimentacion": {
+                                    "positiva": "...",
+                                    "neutral": "...",
+                                    "negativa": "..."
+                                }
+                            },
+                            "opciones": [                                 
+                                {
+                                    "texto": "Verdadero",
+                                    "paso": 4,
+                                    "tipo": "pasofinaloptimo",
+                                    "instruccion": "Paso 4 de 4.  Fin del ejercicio.  ¡Bien hecho!.  Selecciona otro ejercicio del menú.",
+                                    "presentacion": [
+                                        "class Deporte {  // <-- superclase de Futbol",
+                                        "}",
+                                        "class Futbol extends Deporte { //<-- subclase Deporte y superclase de FutbolPlaya",
+                                        "}",
+                                        "class FutbolPlaya extends Futbol { // <-- clase derivada de Futbol",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "...",
+                                        "encantado": "...",
+                                        "sorprendido": "...",
+                                        "compasivo": "...",
+                                        "esceptico": "...",
+                                        "retroalimentacion": {
+                                            "positiva": "...",
+                                            "neutral": "...",
+                                            "negativa": "..."
+                                        }
+                                    },
+                                    "opciones": [ ]
+                                },
+                                {
+                                    "texto": "Falso",
+                                    "paso": 5,
+                                    "tipo": "pasoerroneo",
+                                    "instruccion": "La respuesta es incorrecta.  Las relaciones de herencia simple forman estructuras jerárquicas tipo árbol: una superclase existe en una relación jerárquica con sus subclases.  Intentalo de nuevo.",
+                                    "presentacion": [
+                                        "class Deporte {  // <-- superclase de Futbol",
+                                        "}",
+                                        "class Futbol extends Deporte { //<-- subclase Deporte y superclase de FutbolPlaya",
+                                        "}",
+                                        "class FutbolPlaya extends Futbol { // <-- clase derivada de Futbol",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "...",
+                                        "encantado": "...",
+                                        "sorprendido": "...",
+                                        "compasivo": "...",
+                                        "esceptico": "...",
+                                        "retroalimentacion": {
+                                            "positiva": "...",
+                                            "neutral": "...",
+                                            "negativa": "..."
+                                        }
+                                    },
+                                    "opciones": [ ]
+                                }                                                                
+                            ]
+                        },
+                        {
+                            "texto": "Superclase o subclase",
+                            "paso": 6,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
+                            "presentacion": [
+                                "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o clase padre' class='focusInput'>",
+                                "}",
+                                "class Futbol extends Deporte { //<-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o subclase' class='errorTracing'>",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "...",
+                                "encantado": "...",
+                                "sorprendido": "...",
+                                "compasivo": "...",
+                                "esceptico": "...",
+                                "retroalimentacion": {
+                                    "positiva": "...",
+                                    "neutral": "...",
+                                    "negativa": "..."
+                                }
+                            },
+                            "opciones": []
+                        },
+                        {
+                            "texto": "Ninguna de las anteriores",
+                            "paso": 7,
+                            "tipo": "paserroneo",
+                            "instruccion": "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
+                            "presentacion": [
+                                "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o clase padre' class='focusInput'>",
+                                "}",
+                                "class Futbol extends Deporte { //<-- a esta clase se le llama: <input type='text' readonly value= 'Ninguna de las anteriores' class='errorTracing'>",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "...",
+                                "encantado": "...",
+                                "sorprendido": "...",
+                                "compasivo": "...",
+                                "esceptico": "...",
+                                "retroalimentacion": {
+                                    "positiva": "...",
+                                    "neutral": "...",
+                                    "negativa": "..."
+                                }
+                            },
+                            "opciones": []
+                        }
+                        
+                    ]
+                },
+                {
+                    "texto": "Subclase o clase derivada",
+                    "paso": 8,
+                    "tipo": "pasoerroneo",
+                    "instruccion":  "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
+                    "presentacion": [
+                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Subclase o clase derivada' class='errorTracing'>",
+                        "}",
+                        "class Futbol extends Deporte {",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "...",
+                        "encantado": "...",
+                        "sorprendido": "...",
+                        "compasivo": "...",
+                        "esceptico": "...",
+                        "retroalimentacion": {
+                            "positiva": "...",
+                            "neutral": "...",
+                            "negativa": "..."
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "Superclase o subclase",
+                    "paso": 9,
+                    "tipo": "pasoerroneo",
+                    "instruccion":  "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
+                    "presentacion": [
+                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o subclase' class='errorTracing'>",
+                        "}",
+                        "class Futbol extends Deporte {",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "...",
+                        "encantado": "...",
+                        "sorprendido": "...",
+                        "compasivo": "...",
+                        "esceptico": "...",
+                        "retroalimentacion": {
+                            "positiva": "...",
+                            "neutral": "...",
+                            "negativa": "..."
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "Ninguna de las anteriores",
+                    "paso": 10,
+                    "tipo": "pasoerroneo",
+                    "instruccion":  "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
+                    "presentacion": [
+                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Ninguna de las anteriores' class='errorTracing'>",
+                        "}",
+                        "class Futbol extends Deporte {",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "...",
+                        "encantado": "...",
+                        "sorprendido": "...",
+                        "compasivo": "...",
+                        "esceptico": "...",
+                        "retroalimentacion": {
+                            "positiva": "...",
+                            "neutral": "...",
+                            "negativa": "..."
+                        }
+                    },
+                    "opciones": [
+                    ]
+                }
+            ]
+        }
+    ]
+}
