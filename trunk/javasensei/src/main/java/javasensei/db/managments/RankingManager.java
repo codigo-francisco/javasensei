@@ -14,6 +14,8 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javasensei.db.Connection;
@@ -38,13 +40,30 @@ public class RankingManager {
     private DBCollection rankingEjercicios = Connection.getCollection().get(CollectionsDB.RANKING_EJERCICIOS);
 
     private DBCollection recursos = Connection.getCollection().get(CollectionsDB.RECURSOS);
-    private DBCollection rankingRecursos = Connection.getCollection().get(CollectionsDB.RANKING_RECURSOS);;
+    private DBCollection rankingRecursos = Connection.getCollection().get(CollectionsDB.RANKING_RECURSOS);
+    ;
 
     private ModeloEstudiante estudiante;
 
     protected static GenericUserBasedRecommender recommenderEjercicios;
     //protected static RandomRecommender randomRecommender; //No funciona el recommender no se porque FGH
     protected static GenericUserBasedRecommender recommenderRecursos;
+
+    protected static boolean updateModelExcercises = true;
+    protected static boolean updateModelResources = true;
+
+    private static Timer timer = new Timer();
+
+    static {
+        timer.scheduleAtFixedRate(new TimerTask() {
+
+            @Override
+            public void run() {
+                updateModelExcercises = true;
+                updateModelResources = true;
+            }
+        }, 0, 1800000);
+    }
 
     public RankingManager(ModeloEstudiante estudiante) {
         this.estudiante = estudiante;
@@ -162,39 +181,42 @@ public class RankingManager {
 
     public void updateDataModelEjercicios() {
         try {
-            //Creamos el archivo csv sobre el que vamos a escribir
-            File csv = File.createTempFile("dataset", ".csv");
-            PrintWriter writer = new PrintWriter(csv);
+            if (updateModelExcercises) {
+                //Creamos el archivo csv sobre el que vamos a escribir
+                File csv = File.createTempFile("dataset", ".csv");
+                PrintWriter writer = new PrintWriter(csv);
 
-            //Obtenemos todos los ranking actuales y los almacenamos en el archivo csv
-            DBCursor cursor = rankingEjercicios.find();
+                //Obtenemos todos los ranking actuales y los almacenamos en el archivo csv
+                DBCursor cursor = rankingEjercicios.find();
 
-            if (cursor.count() > 0) {
+                if (cursor.count() > 0) {
 
-                while (cursor.hasNext()) {
-                    DBObject object = cursor.next();
-                    long idAlumno = new Double(object.get("idAlumno").toString()).longValue();
-                    int idEjercicio = (int) Double.parseDouble(object.get("idEjercicio").toString());
+                    while (cursor.hasNext()) {
+                        DBObject object = cursor.next();
+                        long idAlumno = new Double(object.get("idAlumno").toString()).longValue();
+                        int idEjercicio = (int) Double.parseDouble(object.get("idEjercicio").toString());
 
-                    String cadena = String.format("%s,%s,%s",
-                            idAlumno,
-                            idEjercicio,
-                            object.get("ranking"));
-                    writer.println(cadena);
-                    System.out.println(cadena);
-                }
+                        String cadena = String.format("%s,%s,%s",
+                                idAlumno,
+                                idEjercicio,
+                                object.get("ranking"));
+                        writer.println(cadena);
+                        System.out.println(cadena);
+                    }
 
-                writer.close();
+                    writer.close();
 
-                //El archivo es pasado al dataModel
-                DataModel dataModel = new FileDataModel(csv);
-                //Creamos la correlacion de pearson
-                PearsonCorrelationSimilarity correlation = new PearsonCorrelationSimilarity(dataModel);
-                ThresholdUserNeighborhood neigh = new ThresholdUserNeighborhood(0.1, correlation, dataModel);
-                recommenderEjercicios = new GenericUserBasedRecommender(dataModel, neigh, correlation);
+                    //El archivo es pasado al dataModel
+                    DataModel dataModel = new FileDataModel(csv);
+                    //Creamos la correlacion de pearson
+                    PearsonCorrelationSimilarity correlation = new PearsonCorrelationSimilarity(dataModel);
+                    ThresholdUserNeighborhood neigh = new ThresholdUserNeighborhood(0.1, correlation, dataModel);
+                    recommenderEjercicios = new GenericUserBasedRecommender(dataModel, neigh, correlation);
                 //randomRecommender = new RandomRecommender(dataModel);
 
-                //csv.deleteOnExit();
+                    //csv.deleteOnExit();
+                    updateModelExcercises = false;
+                }
             }
         } catch (Exception ex) {
             Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -203,41 +225,44 @@ public class RankingManager {
 
     private void updateDataModelRecursos() {
         try {
-            //Creamos el archivo csv sobre el que vamos a escribir
-            File csv = File.createTempFile("dataset", ".csv");
-            PrintWriter writer = new PrintWriter(csv);
+            if (updateModelResources) {
+                //Creamos el archivo csv sobre el que vamos a escribir
+                File csv = File.createTempFile("dataset", ".csv");
+                PrintWriter writer = new PrintWriter(csv);
 
-            //Obtenemos todos los ranking actuales y los almacenamos en el archivo csv
-            DBCursor cursor = rankingRecursos.find();
+                //Obtenemos todos los ranking actuales y los almacenamos en el archivo csv
+                DBCursor cursor = rankingRecursos.find();
 
-            if (cursor.count() > 0) {
+                if (cursor.count() > 0) {
 
-                System.out.println("*****************Datos para crear el Data Model de Recursos**********************");
+                    System.out.println("*****************Datos para crear el Data Model de Recursos**********************");
 
-                while (cursor.hasNext()) {
-                    DBObject object = cursor.next();
-                    long idAlumno = new Double(object.get("idAlumno").toString()).longValue();
-                    int idRecurso = (int) Double.parseDouble(object.get("idRecurso").toString());
-                    double ranking = new Double(object.get("ranking").toString());
+                    while (cursor.hasNext()) {
+                        DBObject object = cursor.next();
+                        long idAlumno = new Double(object.get("idAlumno").toString()).longValue();
+                        int idRecurso = (int) Double.parseDouble(object.get("idRecurso").toString());
+                        double ranking = new Double(object.get("ranking").toString());
 
-                    String cadena = String.format("%s,%s,%s",
-                            idAlumno,
-                            idRecurso,
-                            ranking);
-                    writer.println(cadena);
-                    System.out.println(cadena);
+                        String cadena = String.format("%s,%s,%s",
+                                idAlumno,
+                                idRecurso,
+                                ranking);
+                        writer.println(cadena);
+                        System.out.println(cadena);
+                    }
+
+                    writer.close();
+
+                    //El archivo es pasado al dataModel
+                    DataModel dataModel = new FileDataModel(csv);
+                    //Creamos la correlacion de pearson
+                    UserSimilarity correlation = new PearsonCorrelationSimilarity(dataModel);
+                    ThresholdUserNeighborhood neigh = new ThresholdUserNeighborhood(0.1, correlation, dataModel);
+                    recommenderRecursos = new GenericUserBasedRecommender(dataModel, neigh, correlation);
+
+                    //csv.deleteOnExit();
+                    updateModelResources = false;
                 }
-
-                writer.close();
-
-                //El archivo es pasado al dataModel
-                DataModel dataModel = new FileDataModel(csv);
-                //Creamos la correlacion de pearson
-                UserSimilarity correlation = new PearsonCorrelationSimilarity(dataModel);
-                ThresholdUserNeighborhood neigh = new ThresholdUserNeighborhood(0.1, correlation, dataModel);
-                recommenderRecursos = new GenericUserBasedRecommender(dataModel, neigh, correlation);
-
-                //csv.deleteOnExit();
             }
         } catch (Exception ex) {
             Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);

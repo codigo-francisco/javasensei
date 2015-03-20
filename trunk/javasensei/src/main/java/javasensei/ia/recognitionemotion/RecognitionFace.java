@@ -28,99 +28,99 @@ import javasensei.util.FileHelper;
  */
 public class RecognitionFace {
 
-    static CvHaarClassifierCascade cascade_f;
-    static CvHaarClassifierCascade cascade_e_right;
-    static CvHaarClassifierCascade cascade_e2;
-    static CvHaarClassifierCascade cascade_m;
+    CvHaarClassifierCascade cascade_f;
+    CvHaarClassifierCascade cascade_e_right;
+    CvHaarClassifierCascade cascade_e2;
+    CvHaarClassifierCascade cascade_m;
 
-    static CvMemStorage storage_cara;
-    static CvMemStorage storage_boca;
-    static CvMemStorage storage_ojo_der;
-    static CvMemStorage storage_ojo_izq;
+    CvMemStorage storage_cara;
+    CvMemStorage storage_boca;
+    CvMemStorage storage_ojo_der;
+    CvMemStorage storage_ojo_izq;
 
-    static IplImage src;
-    static IplImage gray;
-    static IplImage grayThresh_hist_equa;
-    static IplImage gray_hist_equa;
-    static IplImage edges;
+    IplImage src;
+    IplImage gray;
+    IplImage grayThresh_hist_equa;
+    IplImage gray_hist_equa;
+    IplImage edges;
 
-    static int threshold_ojos = 80;
-    static int threshold_boca = 60;
-    static int threshold_ceja = 70;
-    static int maxValue = 255;
-    static int thresholdType = opencv_imgproc.CV_THRESH_BINARY;
+    int threshold_ojos = 80;
+    int threshold_boca = 60;
+    int threshold_ceja = 70;
+    int maxValue = 255;
+    int thresholdType = opencv_imgproc.CV_THRESH_BINARY;
 
-    static CvFont font;
+    CvFont font;
 
-    static int lineaEnBlanco_contador = 0;
-    static int lineaEnBlanco_bandera = 0;
-    static int ojoDer_p1_flag = 0;
-    static int ojoDer_p4_flag = 0;
-    static int ojoIzq_p1_flag = 0;
-    static int ojoIzq_p4_flag = 0;
-    static int boca_p1_flag = 0;
-    static int boca_p2_flag = 0;
-    static int boca_p3_flag = 0;
-    static int boca_p4_flag = 0;
-    static int ceja_der_p1_flag = 0;
-    static int ceja_der_p3_flag = 0;
-    static int ceja_izq_p1_flag = 0;
-    static int ceja_izq_p2_flag = 0;
-    static int ojoDer_p1_X = 0;
-    static int ojoDer_p1_Y = 0;
-    static int ojoDer_p4_X = 0;
-    static int ojoDer_p4_Y = 0;
-    static int ojoIzq_p1_X = 0;
-    static int ojoIzq_p1_Y = 0;
-    static int ojoIzq_p4_X = 0;
-    static int ojoIzq_p4_Y = 0;
-    static int boca_p1_X = 0;
-    static int boca_p1_Y = 0;
-    static int boca_p2_X = 0;
-    static int boca_p2_Y = 0;
-    static int boca_p3_X = 0;
-    static int boca_p3_Y = 0;
-    static int boca_p4_X = 0;
-    static int boca_p4_Y = 0;
-    static int ceja_der_p1_X = 0;
-    static int ceja_der_p1_Y = 0;
-    static int ceja_der_p3_X = 0;
-    static int ceja_der_p3_Y = 0;
-    static int ceja_izq_p1_X = 0;
-    static int ceja_izq_p1_Y = 0;
-    static int ceja_izq_p2_X = 0;
-    static int ceja_izq_p2_Y = 0;
+    int lineaEnBlanco_contador = 0;
+    int lineaEnBlanco_bandera = 0;
+    int ojoDer_p1_flag = 0;
+    int ojoDer_p4_flag = 0;
+    int ojoIzq_p1_flag = 0;
+    int ojoIzq_p4_flag = 0;
+    int boca_p1_flag = 0;
+    int boca_p2_flag = 0;
+    int boca_p3_flag = 0;
+    int boca_p4_flag = 0;
+    int ceja_der_p1_flag = 0;
+    int ceja_der_p3_flag = 0;
+    int ceja_izq_p1_flag = 0;
+    int ceja_izq_p2_flag = 0;
+    int ojoDer_p1_X = 0;
+    int ojoDer_p1_Y = 0;
+    int ojoDer_p4_X = 0;
+    int ojoDer_p4_Y = 0;
+    int ojoIzq_p1_X = 0;
+    int ojoIzq_p1_Y = 0;
+    int ojoIzq_p4_X = 0;
+    int ojoIzq_p4_Y = 0;
+    int boca_p1_X = 0;
+    int boca_p1_Y = 0;
+    int boca_p2_X = 0;
+    int boca_p2_Y = 0;
+    int boca_p3_X = 0;
+    int boca_p3_Y = 0;
+    int boca_p4_X = 0;
+    int boca_p4_Y = 0;
+    int ceja_der_p1_X = 0;
+    int ceja_der_p1_Y = 0;
+    int ceja_der_p3_X = 0;
+    int ceja_der_p3_Y = 0;
+    int ceja_izq_p1_X = 0;
+    int ceja_izq_p1_Y = 0;
+    int ceja_izq_p2_X = 0;
+    int ceja_izq_p2_Y = 0;
     //-------termina puntos X y Y
     // ----inicia distancias
 
-    static double ancho_cara = 0;
+    double ancho_cara = 0;
 
-    // static  double ojoDer_p1_p2 = 0;
-    // static double ojoDer_p1_p3 = 0;
-    // static double ojoDer_p2_p4 = 0;
-    // static  double ojoDer_p3_p4 = 0;
-    static double ojoDer_p1_p4 = 0;
+    //   double ojoDer_p1_p2 = 0;
+    //  double ojoDer_p1_p3 = 0;
+    //  double ojoDer_p2_p4 = 0;
+    //   double ojoDer_p3_p4 = 0;
+    double ojoDer_p1_p4 = 0;
 
-//  static  double ojoIzq_p1_p2 = 0;
-    // static  double ojoIzq_p1_p3 = 0;
-    // static  double ojoIzq_p2_p4 = 0;
-    //static  double ojoIzq_p3_p4 =0;
-    static double ojoIzq_p1_p4 = 0;
+//    double ojoIzq_p1_p2 = 0;
+    //   double ojoIzq_p1_p3 = 0;
+    //   double ojoIzq_p2_p4 = 0;
+    //  double ojoIzq_p3_p4 =0;
+    double ojoIzq_p1_p4 = 0;
 
-    static double boca_p1_p2 = 0;
-    static double boca_p1_p3 = 0;
-    static double boca_p2_p4 = 0;
-    static double boca_p3_p4 = 0;
-    static double boca_p1_p4 = 0;
-    static double boca_p2_p3 = 0;
+    double boca_p1_p2 = 0;
+    double boca_p1_p3 = 0;
+    double boca_p2_p4 = 0;
+    double boca_p3_p4 = 0;
+    double boca_p1_p4 = 0;
+    double boca_p2_p3 = 0;
 
-    // static  double ceja_der_p1_p2 = 0;
-    static double ceja_der_p1_p3 = 0;
-    // static  double ceja_der_p2_p3 = 0;
+    //   double ceja_der_p1_p2 = 0;
+    double ceja_der_p1_p3 = 0;
+    //   double ceja_der_p2_p3 = 0;
 
-    static double ceja_izq_p1_p2 = 0;
-    // static  double ceja_izq_p1_p3 = 0;
-    // static  double ceja_izq_p2_p3 = 0;
+    double ceja_izq_p1_p2 = 0;
+    //   double ceja_izq_p1_p3 = 0;
+    //   double ceja_izq_p2_p3 = 0;
 
     public static CvHaarClassifierCascade obtenerClasificador(String file) throws Exception {
         CvHaarClassifierCascade clasificador = new CvHaarClassifierCascade(opencv_core.cvLoad(file));
@@ -133,7 +133,13 @@ public class RecognitionFace {
 
     static {
         Loader.load(opencv_objdetect.class);
+    }
 
+    /**
+     *
+     * @return @throws Exception
+     */
+    public RecognitionResult processFace(BufferedImage image) throws Exception {
         FileHelper helper = FileHelper.getInstance();
 
         // Archivos de cascada de caracteristicas para ...
@@ -142,33 +148,23 @@ public class RecognitionFace {
         String file3 = helper.getFile("files/haarcascade_mcs_mouth.xml"); // Deteteccion de boca
         String file4 = helper.getFile("files/haarcascade_mcs_righteye.xml"); //para detectar ojo izquierdo
 
-        try {
-            cascade_f = obtenerClasificador(file1);
-            cascade_e_right = obtenerClasificador(file2);
-            cascade_m = obtenerClasificador(file3);
-            cascade_e2 = obtenerClasificador(file4);
-        } catch (Exception ex) {
-            JavaException.printMessage(ex, System.err);
-        }
+        cascade_f = obtenerClasificador(file1);
+        cascade_e_right = obtenerClasificador(file2);
+        cascade_m = obtenerClasificador(file3);
+        cascade_e2 = obtenerClasificador(file4);
 
         storage_cara = CvMemStorage.create();
         storage_boca = CvMemStorage.create();
         storage_ojo_der = CvMemStorage.create();
         storage_ojo_izq = CvMemStorage.create();
-    }
 
-    /**
-     *
-     * @return @throws Exception
-     */
-    public static RecognitionResult processFace(BufferedImage image) throws Exception {
         IplImage frame = IplImage.createFrom(image);
-        
+
         RecognitionResult result = new RecognitionResult();
-        
+
         result.setHayEmocion(detectEyes(frame));
 
-        if (result.isHayEmocion()) {            
+        if (result.isHayEmocion()) {
 
             ojoDer_p1_p4 = distanciaPuntos(ojoDer_p1_X, ojoDer_p1_Y, ojoDer_p4_X, ojoDer_p4_Y);
 
@@ -205,7 +201,7 @@ public class RecognitionFace {
         return result;
     }
 
-    static boolean detectEyes(IplImage img) {
+    boolean detectEyes(IplImage img) {
         boolean result = false;
 
         boca_p1_flag = 0;
@@ -1138,7 +1134,7 @@ public class RecognitionFace {
 //-------fin ceja izquierda---------
     }
 
-    static double distanciaPuntos(int p1X, int p1Y, int p2X, int p2Y) {
+    double distanciaPuntos(int p1X, int p1Y, int p2X, int p2Y) {
         double valorRetorno;
         double Tempo;
 

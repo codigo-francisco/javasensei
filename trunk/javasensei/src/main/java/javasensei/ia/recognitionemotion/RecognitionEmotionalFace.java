@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javasensei.util.ImageHelper;
 
 /**
  *
@@ -25,28 +26,30 @@ public class RecognitionEmotionalFace {
         JsonElement element = new JsonParser().parse(fotosJson);
         fotos = element.getAsJsonArray();
     }
-    
-    public Emocion getEmocion(){
+
+    public Emocion getEmocion() {
+        System.out.println("Procesando Emociones...");
         Map<Emocion, Integer> emociones = new HashMap<>();
 
         for (int index = 0; index < fotos.size(); index++) {
             try {
+                Emocion emocion = Emocion.NEUTRAL;
                 String datos = fotos.get(index).getAsString();
-                BufferedImage image = javasensei.util.ImageHelper.decodeToImage(datos);
+                BufferedImage image = ImageHelper.decodeToImage(datos);
                 //javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("G:/imagenes")));
 
-                RecognitionResult result = RecognitionFace.processFace(image);
-                
-                if (result.isHayEmocion()){ //Si hay una emocion se ejecuta la red neuronal, en caso contrario se desecha
-                    Emocion emocion = new ExtractEmotionNeuroph().processData(result.getCoordenadas());
-
-                    //Contador
-                    if (emociones.containsKey(emocion)) {
-                        emociones.put(emocion, emociones.get(emocion) + 1);
-                    } else {
-                        emociones.put(emocion, 1);
+                if (image != null) {
+                    RecognitionResult result = new RecognitionFace().processFace(image);
+                    if (result.isHayEmocion()) { //Si hay una emocion se ejecuta la red neuronal, en caso contrario se desecha
+                        emocion = new ExtractEmotionNeuroph().processData(result.getCoordenadas());
                     }
-                }//else continue;
+                }
+
+                if (emociones.containsKey(emocion)) {
+                    emociones.put(emocion, emociones.get(emocion) + 1);
+                } else {
+                    emociones.put(emocion, 1);
+                }
 
             } catch (Exception ex) {
                 Logger.getLogger(RecognitionEmotionalFace.class.getName()).log(Level.SEVERE, null, ex);
@@ -80,7 +83,7 @@ public class RecognitionEmotionalFace {
                 }
 
             }
-            
+
             emocion = entry.getKey();
         }
 
