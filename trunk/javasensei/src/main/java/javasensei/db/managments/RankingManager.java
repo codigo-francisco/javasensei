@@ -20,6 +20,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javasensei.db.Connection;
 import javasensei.estudiante.ModeloEstudiante;
+import javasensei.exceptions.JavaException;
+import org.apache.mahout.cf.taste.common.NoSuchUserException;
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
 import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
@@ -145,12 +147,15 @@ public class RankingManager {
     protected String getRecommenders(DBCollection collection, AbstractRecommender recommender, int cantidad, boolean random) {
         String result = "{}";
 
-        List<RecommendedItem> recommenders;
+        List<RecommendedItem> recommenders = new ArrayList<>();
         try {
             List<Long> array = new ArrayList();
 
-            recommenders = getRecommendersItems(recommender, cantidad);//recommenderEjercicios.recommend(estudiante.getId(), cantidad); //5 Recomendaciones
-
+            try{
+                recommenders = getRecommendersItems(recommender, cantidad);//recommenderEjercicios.recommend(estudiante.getId(), cantidad); //5 Recomendaciones
+            }catch(Exception ex){
+                System.out.println("El usuario no existe aun en el modelo de datos: "+estudiante.getId());
+            }
             //Se agrega un item aleatorio...
             if (random && recommenders.size() < 1) { //RandomRecommender no funciona....
 
@@ -172,8 +177,8 @@ public class RankingManager {
             result = ejercicios.find(
                     QueryBuilder.start("id").in(array).get()
             ).toArray().toString();
-        } catch (TasteException ex) {
-            Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            JavaException.printMessage(ex, System.out);
         }
 
         return result;
