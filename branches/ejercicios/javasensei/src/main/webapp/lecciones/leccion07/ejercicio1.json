@@ -43,15 +43,15 @@
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "...",
-                        "encantado": "...",
-                        "sorprendido": "...",
-                        "compasivo": "...",
-                        "esceptico": "...",
-                        "retroalimentacion": {
-                            "positiva": "...",
-                            "neutral": "...",
-                            "negativa": "..."
+                        "neutral": "La respuesta es correcta.  Sigue con el ejercicio",
+                        "encantado": "Continua con este entusiasmo.  Ya casi terminas el ejercicio",
+                        "sorprendido": "¡Me sorprendes!, noto que cada día eres mejor, continúa con el ejercicio.",
+                        "compasivo": "Yo se que tu puedes, ¡sigue adelante!.",
+                        "esceptico": "Me parece que tienes una actitud indiferente.  Al menos trata de terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "¡Perfecto!.  Sigue con el ejercicio.",
+                            "neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+                            "negativa": "¿Estás seguro que se trata de una respuesta razonada?.  Sigue con el ejercicio."                            
                         }
                     },
                     "opciones": [                        
@@ -67,16 +67,17 @@
                                 "}"
                             ],
                             "textoEmocional": {
-                                "neutral": "...",
-                                "encantado": "...",
-                                "sorprendido": "...",
-                                "compasivo": "...",
-                                "esceptico": "...",
-                                "retroalimentacion": {
-                                    "positiva": "...",
-                                    "neutral": "...",
-                                    "negativa": "..."
-                                }
+                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                                "retroalimentacion": {                           
+                                    "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                                    "neutral": "La respuesta no es la correcta",
+                                    "negativa": "¿Estás seguro de querer estudiar este curso?."
+                        }
+
                             },
                             "opciones": [                                                                                            
                             ]
@@ -95,15 +96,15 @@
                                 "}"
                             ],
                             "textoEmocional": {
-                                "neutral": "...",
-                                "encantado": "...",
-                                "sorprendido": "...",
-                                "compasivo": "...",
-                                "esceptico": "...",
-                                "retroalimentacion": {
-                                    "positiva": "...",
-                                    "neutral": "...",
-                                    "negativa": "..."
+                                "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                "encantado": "Tú entusiasmo hace que aprender sea más fácil.",
+                                "sorprendido": "¡Me sorprende tu actitud positiva!, continúa así.",
+                                "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+                                "esceptico": "Tal vez este ejercicio es fácil para ti pero almenos intenta terminar el ejercicio.",
+                                "retroalimentacion": {                            
+                                    "positiva": "Perfecto!, el nombre del archivo es HolaMundo.java, continúa con el ejercicio.",
+                                    "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                    "negativa": "La respuesta es correcta, pero, ¿te lo estas tomando en serio?"                            
                                 }
                             },
                             "opciones": [                                 
@@ -121,16 +122,16 @@
                                         "}"
                                     ],
                                     "textoEmocional": {
-                                        "neutral": "...",
-                                        "encantado": "...",
-                                        "sorprendido": "...",
-                                        "compasivo": "...",
-                                        "esceptico": "...",
-                                        "retroalimentacion": {
-                                            "positiva": "...",
-                                            "neutral": "...",
-                                            "negativa": "..."
-                                        }
+                                        "neutral": "Has finalizado con este ejercicio.",
+					"encantado": "En la vida no hay que esperar a que pase la tormenta, hay que aprender a bailar bajo la lluvia, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+					"compasivo": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede.  ¡continua así!.",                
+					"esceptico": "Lo que con mucho trabajo se adquiere, más se ama.  Sigue aprendiendo Java.",
+					"retroalimentacion": {
+                                            "positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+                                            "neutral": "Has finalizado con este ejercicio.",
+                                            "negativa": "No se puede cambiar lo que te niegas a afrontar.  Al menos llegaste al final del ejercicio."
+					}	
                                     },
                                     "opciones": [ ]
                                 },
@@ -148,15 +149,15 @@
                                         "}"
                                     ],
                                     "textoEmocional": {
-                                        "neutral": "...",
-                                        "encantado": "...",
-                                        "sorprendido": "...",
-                                        "compasivo": "...",
-                                        "esceptico": "...",
-                                        "retroalimentacion": {
-                                            "positiva": "...",
-                                            "neutral": "...",
-                                            "negativa": "..."
+                                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                        "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                                        "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                                        "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                                        "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                                        "retroalimentacion": {                           
+                                            "positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+                                            "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                                            "negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño"
                                         }
                                     },
                                     "opciones": [ ]
@@ -175,15 +176,15 @@
                                 "}"
                             ],
                             "textoEmocional": {
-                                "neutral": "...",
-                                "encantado": "...",
-                                "sorprendido": "...",
-                                "compasivo": "...",
-                                "esceptico": "...",
-                                "retroalimentacion": {
-                                    "positiva": "...",
-                                    "neutral": "...",
-                                    "negativa": "..."
+                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                                "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                                "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                                "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                                "retroalimentacion": {                           
+                                    "positiva": "La respuesta Console.WriteLine no es la correcta, ¡Intentalo de nuevo!",
+                                    "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                                    "negativa": "La respuesta es incorrecta.  Necesitas mejorar."
                                 }
                             },
                             "opciones": []
@@ -200,15 +201,15 @@
                                 "}"
                             ],
                             "textoEmocional": {
-                                "neutral": "...",
-                                "encantado": "...",
-                                "sorprendido": "...",
-                                "compasivo": "...",
-                                "esceptico": "...",
-                                "retroalimentacion": {
-                                    "positiva": "...",
-                                    "neutral": "...",
-                                    "negativa": "..."
+                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                                "retroalimentacion": {                           
+                                    "positiva": "¡Intentalo una vez más!",
+                                    "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                    "negativa": "Creo que no has estudiado lo suficiente."
                                 }
                             },
                             "opciones": []
@@ -228,15 +229,15 @@
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "...",
-                        "encantado": "...",
-                        "sorprendido": "...",
-                        "compasivo": "...",
-                        "esceptico": "...",
-                        "retroalimentacion": {
-                            "positiva": "...",
-                            "neutral": "...",
-                            "negativa": "..."
+                         "neutral": "La respuesta es incorrecta.  Sigue con el ejercicio",
+                        "encantado": "Continua con este entusiasmo y veras que todos tus sueños mañana se harán realidad.",
+                        "sorprendido": "¡Me sorprendes!, noto que cada día eres mejor, continúa así.",
+                        "compasivo": "Yo se que eres buen estudiante, ¡sigue adelante!.",
+                        "esceptico": "Una persona que estudia jamás será un fracasado.  Trata de terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "¡Lo has hecho muy bien!.  Sigue con el ejercicio.",
+                            "neutral": "La respuesta es incorrecta.  Sigue con el ejercicio.",
+                            "negativa": "¿Estás seguro que se trata de una respuesta razonada?"  
                         }
                     },
                     "opciones": [
@@ -254,15 +255,15 @@
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "...",
-                        "encantado": "...",
-                        "sorprendido": "...",
-                        "compasivo": "...",
-                        "esceptico": "...",
-                        "retroalimentacion": {
-                            "positiva": "...",
-                            "neutral": "...",
-                            "negativa": "..."
+                        "neutral": "La respuesta es incorrecta.  Sigue con el ejercicio",
+                        "encantado": "Para estudiar hay que tener perseverancia, paciencia y motivación.  ¡Sigue así!",
+                        "sorprendido": "¡Me sorprendes!, la respuesta no es correcta pero no pierdas esa actitud por aprender.",
+                        "compasivo": "Estudiar Java demanda tiempo y esfuerzo pero al final siempre hay resultados positivos, ¡ánimo!.",
+                        "esceptico": "Una persona que estudia jamás será un fracasado.  Trata de terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "¡Casi casi!.  La respuesta es incorrecta.  Continúa con el ejercicio.",
+                            "neutral": "La respuesta es incorrecta.  Sigue con el ejercicio.",
+                            "negativa": "La respuesta es incorrecta, sin embargo, ¿estás seguro que se trata de una respuesta razonada?"                            
                         }
                     },
                     "opciones": [
@@ -280,15 +281,15 @@
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "...",
-                        "encantado": "...",
-                        "sorprendido": "...",
-                        "compasivo": "...",
-                        "esceptico": "...",
-                        "retroalimentacion": {
-                            "positiva": "...",
-                            "neutral": "...",
-                            "negativa": "..."
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Todos tenemos una habilidad distinta y cada día aprendemos un poquito más, tú eres una persona triunfadora.",
+                        "esceptico": "No desperdicies tu talento sin hacer nada productivo, estudia y sácale provecho a tus habilidades.",
+                        "retroalimentacion": {                           
+                            "positiva": "Casi, casi, ¡Intentalo de nuevo!",
+                            "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "negativa": "Creo que no has estudiado lo suficiente."
                         }
                     },
                     "opciones": [

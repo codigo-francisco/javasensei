@@ -1,0 +1,278 @@
+{
+    "id": 73,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+        "La herencia es el acto de derivar una nueva clase de una ya existente.  La clase derivada hereda a todos los miembros definidos en la clase base y puede usar directamente todos aquellos miembros que tienen acceso public o protected.",
+        "Los miembros private sólo son accesibles dentro de la declaración de esa superclase.."
+    ],
+    "opciones": [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Paso 1 de 4.  Verdadero o falso.  Si la clase Persona tiene como atributo el nombre con un modificador de acceso private, ¿la clase derivada Alumno tendrá acceso de forma directa a ese atributo?",
+            "presentacion": [
+                "class Persona {",
+                "\tprivate String nombre;",
+                "}",
+                "class Alumno extends Persona {",
+                "\tprivate String matricula = \"12345678\";",                
+                "\tpublic String toString() {",
+                "\t\treturn nombre + \",\" + matricula;",
+                "\t}",
+                "}"
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Para completar una gran carrera tan sólo necesitas dar el primer paso, tu fuerza y tu valentía harán el resto.  ¡Inicia con el ejercicio!",
+                "sorprendido": "Si tienes una motivación encontrarás el camino, tu sacrificio y esfuerzo serán los que te ayuden a recorrerlo. ¡Inicia con el ejercicio!",
+                "compasivo": "Aprender sin reflexionar es malgastar la energía.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "Si no sabes lo que quieres en la vida, como pretendes conseguirlo.  Empieza el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "Si lo puedes intentar es que no es imposible.  !Sigue así!.",
+                    "neutral": "Transforma el No Puedo por Si Quiero y conseguirás todo lo que te propongas.",
+                    "negativa": "No esperes grandes resultados sin grandes esfuerzos por tu parte. ."
+                }
+
+            },
+            "opciones": [
+                {
+                    "texto": "Verdadero",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  La clase Alumno aunque hereda los atributos nombre, no puede acceder a ellos de forma directa ya que son privados a la clase Persona.  Estos atributos se acceden a través de los métodos heredados de la clase base.  Intentalo de nuevo.",
+                    "presentacion": [
+                        "class Persona {",
+                        "\t<input type='text' readonly value= 'private' class='errorTracing'> String <input type='text' readonly value= 'nombre' class='errorTracing'>;",
+                        "}",
+                        "class Alumno extends Persona {",
+                        "\tprivate String matricula = \"12345678\";",                
+                        "\tpublic String toString() {",
+                        "\t\treturn <input type='text' readonly value= 'nombre' class='errorTracing'> + \",\" + matricula;",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "...",
+                        "encantado": "...",
+                        "sorprendido": "...",
+                        "compasivo": "...",
+                        "esceptico": "...",
+                        "retroalimentacion": {
+                            "positiva": "...",
+                            "neutral": "...",
+                            "negativa": "..."
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "Falso",
+                    "paso": 2,
+                    "tipo": "pasooptimo",
+                    "instruccion": "Paso 2 de 4.  Verdadero o falso.  Si la clase Alumno puede utilizar los componentes public y protected de la clase Persona como si fueran propios, ¿el siguiente código se puede compilar?",
+                    "presentacion": [
+                        "class Persona {",
+                        "\tprotected String nombre;",
+                        "\tpublic String getNombre() {",
+                        "\t\treturn nombre;",
+                        "\t}",
+                        "}",
+                        "class Alumno extends Persona {",
+                        "\tprivate String matricula = \"12345678\";",                
+                        "\tpublic String toString() {",
+                        "\t\treturn getNombre() + \",\" + matricula;",
+                        "\t}",
+                        "}",
+                        "public class JavaSensei {",
+                        "\tpublic static void main( String[] args ) {",
+                        "\t\tAlumno a = new Alumno();",
+                        "\t\ta.nombre = \"Master Sensei de Java\";",
+                        "\t\tSystem.out.println( a.toString() );",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "...",
+                        "encantado": "...",
+                        "sorprendido": "...",
+                        "compasivo": "...",
+                        "esceptico": "...",
+                        "retroalimentacion": {
+                            "positiva": "...",
+                            "neutral": "...",
+                            "negativa": "..."
+                        }
+                    },
+                    "opciones": [                        
+                        {
+                            "texto": "Verdadero",
+                            "paso": 3,
+                            "tipo": "pasooptimo",
+                            "instruccion": "Paso 3 de 4.  Verdadero o Falso.  ¿Es posible compilar y ejecutar el siguiente código?",
+                            "presentacion": [
+                                "class Persona {",
+                                "\tprivate String nombre;",
+                                "\tpublic String getNombre() {",
+                                "\t\treturn nombre;",
+                                "\t}",
+                                "}",
+                                "class Alumno extends Persona {",
+                                "\tprivate String matricula = \"12345678\";",                
+                                "\tpublic String toString() {",
+                                "\t\treturn getNombre() + \",\" + matricula;",
+                                "\t}",
+                                "}",
+                                "public class JavaSensei {",
+                                "\tpublic static void main( String[] args ) {",
+                                "\t\tAlumno a = new Alumno();",
+                                "\t\ta.nombre = \"Master Sensei de Java\";",
+                                "\t\tSystem.out.println( a.toString() );",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "...",
+                                "encantado": "...",
+                                "sorprendido": "...",
+                                "compasivo": "...",
+                                "esceptico": "...",
+                                "retroalimentacion": {
+                                    "positiva": "...",
+                                    "neutral": "...",
+                                    "negativa": "..."
+                                }
+                            },
+                            "opciones": [                                                                
+                                {
+                                    "texto": "Verdadero",
+                                    "paso": 4,
+                                    "tipo": "pasoerroneo",
+                                    "instruccion": "La respuesta es incorrecta.  Los miembros privados de la superclase no se pueden acceder directamente desde las subclases.  Intentalo de nuevo.",
+                                    "presentacion": [
+                                        "class Persona {",
+                                        "\tprivate String nombre;",
+                                        "\tpublic String getNombre() {",
+                                        "\t\treturn nombre;",
+                                        "\t}",
+                                        "}",
+                                        "class Alumno extends Persona {",
+                                        "\tprivate String matricula = \"12345678\";",                
+                                        "\tpublic String toString() {",
+                                        "\t\treturn getNombre() + \",\" + matricula;",
+                                        "\t}",
+                                        "}",
+                                        "public class JavaSensei {",
+                                        "\tpublic static void main( String[] args ) {",
+                                        "\t\tAlumno a = new Alumno();",
+                                        "\t\ta.nombre = \"Master Sensei de Java\";",
+                                        "\t\tSystem.out.println( a.toString() );",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "...",
+                                        "encantado": "...",
+                                        "sorprendido": "...",
+                                        "compasivo": "...",
+                                        "esceptico": "...",
+                                        "retroalimentacion": {
+                                            "positiva": "...",
+                                            "neutral": "...",
+                                            "negativa": "..."
+                                        }
+                                    },
+                                    "opciones": [                                
+                                    ]
+                                },
+                                {
+                                    "texto": "Falso",
+                                    "paso": 5,
+                                    "tipo": "pasofinaloptimo",
+                                    "instruccion": "Paso 4 de 4.  Fin del ejercicio.  ¡Perfecto!.  Selecciona otro ejercicio del menú.",
+                                    "presentacion": [
+                                        "class Persona {",
+                                        "\tprivate String nombre;",
+                                        "\tpublic String getNombre() {",
+                                        "\t\treturn nombre;",
+                                        "\t}",
+                                        "}",
+                                        "class Alumno extends Persona {",
+                                        "\tprivate String matricula = \"12345678\";",                
+                                        "\tpublic String toString() {",
+                                        "\t\treturn getNombre() + \",\" + matricula;",
+                                        "\t}",
+                                        "}",
+                                        "public class JavaSensei {",
+                                        "\tpublic static void main( String[] args ) {",
+                                        "\t\tAlumno a = new Alumno();",
+                                        "\t\ta.nombre = \"Master Sensei de Java\";",
+                                        "\t\tSystem.out.println( a.toString() );",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "Has finalizado con este ejercicio.",
+					"encantado": "Por muy alta que sea una colina siempre hay un sendero hacia su cima, ¡sigue así!.",              
+					"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+					"compasivo": "El éxito nunca llega solo; hay que trabajar arduamente para conseguirlo.",                
+					"esceptico": "Lo que con mucho trabajo se adquiere, más se ama.  Sigue aprendiendo Java.",
+					"retroalimentacion": {
+                                            "positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+                                            "neutral": "Has finalizado con este ejercicio.",
+                                            "negativa": "El éxito es como un tren, todos los días pasa pero si no te subes tú se subirá otro."
+					}
+                                    },
+                                    "opciones": [                                
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "texto": "Falso",
+                            "paso": 6,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  La clase derivada puede acceder a los miembros públicos y protegidos de la clase base como si fuesen miembros propios.  Intentalo de nuevo.",
+                            "presentacion": [
+                                "class Persona {",
+                                "\tprotected String nombre;",
+                                "\tpublic String getNombre() {",
+                                "\t\treturn nombre;",
+                                "\t}",
+                                "}",
+                                "class Alumno extends Persona {",
+                                "\tprivate String matricula = \"12345678\";",                
+                                "\tpublic String toString() {",
+                                "\t\treturn getNombre() + \",\" + matricula;",
+                                "\t}",
+                                "}",
+                                "public class JavaSensei {",
+                                "\tpublic static void main( String[] args ) {",
+                                "\t\tAlumno a = new Alumno();",
+                                "\t\ta.nombre = \"Master Sensei de Java\";",
+                                "\t\tSystem.out.println( a.toString() );",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                                "compasivo": "Todos tenemos una habilidad distinta y cada día aprendemos un poquito más, tú eres una persona triunfadora.",
+                                "esceptico": "No desperdicies tu talento sin hacer nada productivo, estudia y sácale provecho a tus habilidades..",
+                                "retroalimentacion": {                           
+                                    "positiva": "Casi, casi, ¡Intentalo de nuevo!",
+                                    "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                    "negativa": "Creo que no has estudiado lo suficiente."
+                                }
+                            },
+                            "opciones": [
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
