@@ -28,7 +28,6 @@ public class RecognitionEmotionalFace {
     }
 
     public Emocion getEmocion() {
-        System.out.println("Procesando Emociones...");
         Map<Emocion, Integer> emociones = new HashMap<>();
 
         for (int index = 0; index < fotos.size(); index++) {
@@ -37,11 +36,14 @@ public class RecognitionEmotionalFace {
                 String datos = fotos.get(index).getAsString();
                 BufferedImage image = ImageHelper.decodeToImage(datos);
                 //javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("G:/imagenes")));
-
+                
                 if (image != null) {
+                    System.out.println("Se decodifico la imagen");
                     RecognitionResult result = new RecognitionFace().processFace(image);
                     if (result.isHayEmocion()) { //Si hay una emocion se ejecuta la red neuronal, en caso contrario se desecha
+                        System.out.println("Se encontro un rostro");
                         emocion = new ExtractEmotionNeuroph().processData(result.getCoordenadas());
+                        System.out.println("Emocion procesada");
                     }
                 }
 

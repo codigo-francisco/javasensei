@@ -5,8 +5,9 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.util.Base64;
 import javax.imageio.ImageIO;
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
 
 /**
  *
@@ -27,8 +28,6 @@ public class ImageHelper {
         return image;
     }
     
-    private static final Base64.Decoder decoder = Base64.getDecoder();
-    
     /**
      * Decode string to image
      * @param imageString The string to decode
@@ -39,7 +38,8 @@ public class ImageHelper {
         BufferedImage image = null;
         byte[] imageByte;
         try {
-            imageByte = decoder.decode(imageString);
+            BASE64Decoder decoder = new BASE64Decoder();
+            imageByte = decoder.decodeBuffer(imageString);
             ByteArrayInputStream bis = new ByteArrayInputStream(imageByte);
             image = ImageIO.read(bis);
             bis.close();
@@ -49,8 +49,6 @@ public class ImageHelper {
         return image;
     }
 
-    private static final Base64.Encoder encoder = Base64.getEncoder();
-    
     /**
      * Encode image to string
      * @param image The image to encode
@@ -65,7 +63,8 @@ public class ImageHelper {
             ImageIO.write(image, type, bos);
             byte[] imageBytes = bos.toByteArray();
 
-            imageString = encoder.encodeToString(imageBytes);
+            BASE64Encoder encoder = new BASE64Encoder();
+            imageString = encoder.encode(imageBytes);
 
             bos.close();
         } catch (IOException e) {
