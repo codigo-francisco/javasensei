@@ -31,6 +31,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonObject;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
+import org.apache.commons.lang3.concurrent.BasicThreadFactory;
+import org.junit.After;
 
 /**
  *
@@ -44,6 +48,8 @@ public class StresfulTest {
     private static String executeRequest(String url) {
         return executeRequest(url, "GET", null);
     }
+    
+    static int fallas = 0;
 
     private static String executeRequest(String url, String method, String params) {
         String response = EMPTY;
@@ -72,27 +78,25 @@ public class StresfulTest {
             connection.disconnect();
 
         } catch (IOException ex) {
+            fallas++;
             System.out.println(ex.getMessage());
         }
 
         return response;
     }
 
-    static int index = 0;
-
     @Test
     public void fullTestSystemRemote() {
-        int quantityUsers = 100; //Cantidad de usuarios
+        int quantityUsers = 500; //Cantidad de usuarios
 
         try {
             ExecutorService executors = Executors.newFixedThreadPool(quantityUsers);
+            executors.awaitTermination(20, TimeUnit.SECONDS);
 
             List<Callable<String>> metodos = new ArrayList<>();
 
             for (int position = 1; position <= quantityUsers; position++) {
                 metodos.add((Callable<String>) () -> {
-                    index++;
-
                     //Creacion de usuarios
                     String idFacebook = Integer.toString(new Random().nextInt());
                     String token = "qjh123hj21jh23hj1jh2jh13h2132132j13h21j3h"; //Token aleatorio, no importa
@@ -162,6 +166,11 @@ public class StresfulTest {
         } catch (InterruptedException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+    
+    @After
+    public void reportFallas(){
+        System.out.printf("%s Fallas %s", fallas, System.lineSeparator());
     }
 
     //@Test
