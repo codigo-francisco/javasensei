@@ -93,7 +93,7 @@ public class MenuManager {
             object.put("id", id);
 
             object.put("ejercicios", ejercicios.stream().filter((ejercicio)
-                    -> Integer.parseInt(ejercicio.get("idLeccion").toString()) == id
+                    -> new Double(ejercicio.get("idLeccion").toString()).intValue() == id
             ).collect(Collectors.toList()));
 
             list.add(object);
