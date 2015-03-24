@@ -51,13 +51,13 @@
                     ],
                     "textoEmocional": {
                         "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
-                        "encantado": "La respuestaincorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
-                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "encantado": "Me parece que puedes hacerlo mejor, sigue intentándolo.",              
+                        "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
                         "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
                         "esceptico": "La respuesta es incorrecta.  También de las equivocaciones se puede aprender.",
                         "retroalimentacion": {
-                            "positiva": "La respuesta es incorrecta.  Revisa la sintaxis de la instrucción",
-                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                            "positiva": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                            "neutral": "Para estudiar hay que tener perseverancia, paciencia y motivación.  ¡Sigue así!",
                             "negativa": "¡La respuesta es incorrecta!.  ¿Estás seguro de no estar adivinando?"
                         } 
                     },
@@ -81,14 +81,14 @@
                     ],
                     "textoEmocional": {
                         "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
-                        "encantado": "La respuestaincorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
-                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",              
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
                         "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
                         "esceptico": "La respuesta es incorrecta.  También de las equivocaciones se puede aprender.",
                         "retroalimentacion": {
-                            "positiva": "La respuesta es incorrecta.  Revisa la sintaxis de la instrucción",
-                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
-                            "negativa": "¡La respuesta es incorrecta!.  ¿Estás seguro de no estar adivinando?"
+                            "positiva": "¡Intentalo una vez más!",
+                            "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "negativa": "Creo que no has estudiado lo suficiente."
                         } 
                     },
                     "opciones": [                                                   
@@ -113,11 +113,11 @@
                         "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
                         "encantado": "La respuesta es incorrecta.  Intenta encontrar la respuesta correcta.",              
                         "sorprendido": "La respuesta es incorrecta.  Intenta encontrar la respuesta correcta.",
-                        "compasivo": "La respuesta es correcta.  La forma más segura de tener éxito es intentarlo una vez más.",                
-                        "esceptico": "¿Te equivocaste de nuevo?, con un cambio en tu actitud vas a encontrar la respuesta correcta.",
+                        "compasivo": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",                
+                        "esceptico": "La respuesta es incorrecta.  Revisa tu respuesta.  Con un cambio en tu actitud vas a encontrar la respuesta correcta.",
                         "retroalimentacion": {
-                            "positiva": "La respuesta es incorrecta.  Revisa tu respuesta.",
-                            "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                            "positiva": "Estudiar Java demanda tiempo y esfuerzo pero al final siempre hay resultados positivos, ¡ánimo!.",
+                            "neutral": "La forma más segura de tener éxito es intentarlo una vez más.",
                             "negativa": "Me parece que necesitas cambiar tu actitud."
                         } 
                     },

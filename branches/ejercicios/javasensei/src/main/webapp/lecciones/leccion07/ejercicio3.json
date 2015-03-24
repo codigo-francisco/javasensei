@@ -31,7 +31,7 @@
                 "retroalimentacion": {
                     "positiva": "Si lo puedes intentar es que no es imposible.  !Sigue así!.",
                     "neutral": "Transforma el No Puedo por Si Quiero y conseguirás todo lo que te propongas.",
-                    "negativa": "No esperes grandes resultados sin grandes esfuerzos por tu parte. ."
+                    "negativa": "No esperes grandes resultados sin grandes esfuerzos por tu parte."
                 }
 
             },
@@ -53,16 +53,16 @@
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "...",
-                        "encantado": "...",
-                        "sorprendido": "...",
-                        "compasivo": "...",
-                        "esceptico": "...",
+                        "neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+                        "encantado": "La diferencia entre ordinario y extraordinario es un pequeño extra.  Continúa con el ejercicio.",              
+                        "sorprendido": "La vida es un proceso de aprendizaje.  Continúa con el ejercicio.",
+                        "compasivo": "El experto en algo fue una vez un novato.  Sigue con el ejercicio.",                
+                        "esceptico": "¿Todavía no crees en el poder de los arreglos?, ¡te sorprenderá todo lo que puedes hacer!.",
                         "retroalimentacion": {
-                            "positiva": "...",
-                            "neutral": "...",
-                            "negativa": "..."
-                        }
+                            "positiva": "No hay ascensor al éxito, tienes que tomar las escaleras.  Continúa con el ejercicio",
+                            "neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+                            "negativa": "¿Estas adivinando las respuestas?"
+                        } 
                     },
                     "opciones": [
                     ]
@@ -94,16 +94,16 @@
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "...",
-                        "encantado": "...",
-                        "sorprendido": "...",
-                        "compasivo": "...",
-                        "esceptico": "...",
+                        "neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+                        "encantado": "La diferencia entre ordinario y extraordinario es un pequeño extra.  Continúa con el ejercicio.",              
+                        "sorprendido": "La vida es un proceso de aprendizaje.  Continúa con el ejercicio.",
+                        "compasivo": "El experto en algo fue una vez un novato.  Sigue con el ejercicio.",                
+                        "esceptico": "¿Todavía no crees en el poder de los arreglos?, ¡te sorprenderá todo lo que puedes hacer!.",
                         "retroalimentacion": {
-                            "positiva": "...",
-                            "neutral": "...",
-                            "negativa": "..."
-                        }
+                            "positiva": "No hay ascensor al éxito, tienes que tomar las escaleras.  Continúa con el ejercicio",
+                            "neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+                            "negativa": "¿Estas adivinando las respuestas?"
+                        } 
                     },
                     "opciones": [                        
                         {
@@ -133,15 +133,15 @@
                                 "}"
                             ],
                             "textoEmocional": {
-                                "neutral": "...",
-                                "encantado": "...",
-                                "sorprendido": "...",
-                                "compasivo": "...",
-                                "esceptico": "...",
+                                "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                "encantado": "Los estudios son el camino al éxito, piensa en positivo siempre.",
+                                "sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+                                "compasivo": "Hay etapas en los estudios que sentimos que no entendemos nada, haz un esfuerzo por averiguar y entender a Java.",
+                                "esceptico": "De ti depende el futuro de tu vida.  Al menos trata de terminar el ejercicio.",
                                 "retroalimentacion": {
-                                    "positiva": "...",
-                                    "neutral": "...",
-                                    "negativa": "..."
+                                    "positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con el ejercicio.",
+                                    "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                    "negativa": "Al parecer no te hacer nada en serio.  Necesitas replantearte tus prioridades en esta vida ."
                                 }
                             },
                             "opciones": [                                                                
@@ -172,15 +172,15 @@
                                         "}"
                                     ],
                                     "textoEmocional": {
-                                        "neutral": "...",
-                                        "encantado": "...",
-                                        "sorprendido": "...",
-                                        "compasivo": "...",
-                                        "esceptico": "...",
+                                        "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                        "encantado": "Los estudios son el camino al éxito, piensa en positivo siempre.",
+                                        "sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+                                        "compasivo": "Hay etapas en los estudios que sentimos que no entendemos nada, haz un esfuerzo por averiguar y entender a Java.",
+                                        "esceptico": "De ti depende el futuro de tu vida.  Al menos trata de terminar el ejercicio.",
                                         "retroalimentacion": {
-                                            "positiva": "...",
-                                            "neutral": "...",
-                                            "negativa": "..."
+                                            "positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con el ejercicio.",
+                                            "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                            "negativa": "Al parecer no te hacer nada en serio.  Necesitas replantearte tus prioridades en esta vida ."
                                         }
                                     },
                                     "opciones": [                                

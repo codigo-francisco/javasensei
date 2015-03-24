@@ -50,7 +50,7 @@
                         "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
                         "esceptico": "Tal vez este ejercicio es fácil para ti pero almenos intenta terminar el ejercicio.",
                         "retroalimentacion": {                            
-                            "positiva": "Perfecto!, el nombre del archivo es HolaMundo.java, continúa con el ejercicio.",
+                            "positiva": "Un viaje de mil kilómetros comienza con un simple paso.”, ¡sigue así!.",
                             "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
                             "negativa": "La respuesta es correcta, pero, ¿te lo estas tomando en serio?"                            
                         }
@@ -75,7 +75,7 @@
                                 "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
                                 "esceptico": "Tal vez este ejercicio es fácil para ti pero almenos intenta terminar el ejercicio.",
                                 "retroalimentacion": {                            
-                                    "positiva": "Perfecto!, el nombre del archivo es HolaMundo.java, continúa con el ejercicio.",
+                                    "positiva": "Nunca te rindas y nunca te rindas.  Pronto serás un Sensei de Java.  Continúa con el ejercicio.",
                                     "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
                                     "negativa": "La respuesta es correcta, pero, ¿te lo estas tomando en serio?"                            
                                 }

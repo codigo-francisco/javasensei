@@ -169,16 +169,16 @@
                                 "}"
                             ],
                             "textoEmocional": {
-                                "neutral": "...",
-                                "encantado": "...",
-                                "sorprendido": "...",
-                                "compasivo": "...",
-                                "esceptico": "...",
+                                "neutral": "!Correcto!.  Continúa con el ejercicio.",
+                                "encantado": "Cada logro comienza con la decisión de intentarlo, ¡sigue así!.",              
+                                "sorprendido": "¡Cosechas lo que siembras!, sigue adelante con el ejercicio.",
+                                "compasivo": "No hay ascensor al éxito, tienes que tomar las escaleras.  Sigue adelante con el ejercicio.",                
+                                "esceptico": "¿Todavía no crees que aprender Java sea importante?, al menos intenta terminar el ejercicio.",
                                 "retroalimentacion": {
-                                    "positiva": "...",
-                                    "neutral": "...",
-                                    "negativa": "..."
-                                }
+                                    "positiva": "¡Correcto!.  El que persevera alcanza!.",
+                                    "neutral": "El éxito consiste en ir de fracaso en fracaso sin pérdida de entusiasmo.",
+                                    "negativa": "¿Ya te aburriste de encontrar las respuestas en forma aleatoria?"
+                } 
                             },
                             "opciones": [                                
                                 {

@@ -102,7 +102,7 @@
                                 "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
                                 "esceptico": "Tal vez este ejercicio es fácil para ti pero almenos intenta terminar el ejercicio.",
                                 "retroalimentacion": {                            
-                                    "positiva": "Perfecto!, el nombre del archivo es HolaMundo.java, continúa con el ejercicio.",
+                                    "positiva": "Por cada esfuerzo, hay una recompensa.  Nunca te rindas. Sigue adelante con el ejercicio.",
                                     "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
                                     "negativa": "La respuesta es correcta, pero, ¿te lo estas tomando en serio?"                            
                                 }
@@ -182,7 +182,7 @@
                                 "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
                                 "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
                                 "retroalimentacion": {                           
-                                    "positiva": "La respuesta Console.WriteLine no es la correcta, ¡Intentalo de nuevo!",
+                                    "positiva": "Por cada esfuerzo, hay una recompensa.  Nunca te rindas. Sigue adelante con el ejercicio.",
                                     "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
                                     "negativa": "La respuesta es incorrecta.  Necesitas mejorar."
                                 }

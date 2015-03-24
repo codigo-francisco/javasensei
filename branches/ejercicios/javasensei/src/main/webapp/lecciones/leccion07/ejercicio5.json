@@ -73,9 +73,9 @@
                         "compasivo": "Aprender requiere de paciencia, intentalo de nuevo",
                         "esceptico": "Trata de encontrar la respuesta correcta.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error.  Sigue con el ejercicio.",
-                            "neutral": "La respuesta no es correcta. Continua con el ejercicio.",
-                            "negativa": "Te recomiendo mirar alguna de mis recomendaciones."
+                            "positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
                         }
                     },
                     "opciones": [
@@ -111,9 +111,9 @@
                         "compasivo": "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más.",                
                         "esceptico": "Con un poco de motivación vas a encontrar la respuesta correcta.",
                         "retroalimentacion": {
-                            "positiva": "La respuesta es incorrecta.",
-                            "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
-                            "negativa": "¿Te equivocaste de nuevo?.  Me parece que estás jugando contigo mismo."
+                            "positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
                         } 
                     },
                     "opciones": []                        
@@ -185,9 +185,9 @@
                         "compasivo": "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más.",                
                         "esceptico": "Con un poco de motivación vas a encontrar la respuesta correcta.",
                         "retroalimentacion": {
-                            "positiva": "La respuesta es incorrecta.",
-                            "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
-                            "negativa": "¿Te equivocaste de nuevo?.  Me parece que estás jugando contigo mismo."
+                            "positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
                         } 
                     },
                     "opciones": []                        

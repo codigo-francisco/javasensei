@@ -99,14 +99,14 @@
                             ],
                             "textoEmocional": {
                                 "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
-                                "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
-                                "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                                "encantado": "Aprender requiere de paciencia, intentalo de nuevo.",              
+                                "sorprendido": "Con esfuerzo y perseverancia podrás alcanzar tus metas.  Intentalo de nuevo.",
                                 "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
                                 "esceptico": "Se que estos ejercicios no son un reto para ti, pero cubren conceptos básicos que se necesitan en los cursos avanzados.",
                                 "retroalimentacion": {
-                                    "positiva": "¡La respuesta  es incorrecta!.  Continúa con el ejercicio.",
-                                    "neutral": "¡La respuesta  es incorrecta!.  Continúa con el ejercicio.",
-                                    "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                                    "positiva": "No importa el error.  Continúa con el ejercicio.",
+                                    "neutral": "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más.  Sigue adelante",
+                                    "negativa": "Me parece que no te estás tomando en serio el ejercicio."
                                 } 
                             },
                             "opciones": [                                                                                                
@@ -218,11 +218,11 @@
                                         "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
                                         "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
                                         "compasivo": "La respuestaes incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
-                                        "esceptico": "Se que estos ejercicios no son un reto para ti, pero cubren conceptos básicos que se necesitan en los cursos avanzados.",
+                                        "esceptico": "Necesitas dedicarle un poco más de tiempo para aprender Java.",
                                         "retroalimentacion": {
-                                            "positiva": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
-                                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
-                                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                                            "positiva": "Nada es demasiado difícil si se lo divide en pequeñas tareas.  Intenta ir paso a paso con el ejercicio.",
+                                            "neutral": "Tal vez necesites investigar un poco más.  Continúa con el ejercicio.",
+                                            "negativa": "¡Necesitas mayor concentración!"
                                         } 
                                     },
                                     "opciones": [                                        
@@ -298,9 +298,9 @@
                                                 "compasivo": "La respuestaes incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
                                                 "esceptico": "Se que estos ejercicios no son un reto para ti, pero cubren conceptos básicos que se necesitan en los cursos avanzados.",
                                                 "retroalimentacion": {
-                                                    "positiva": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                                                    "positiva": "con un poco de esfuerzo encontrarás la respuesta correcta.  Continúa con el ejercicio.",
                                                     "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
-                                                    "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                                                    "negativa": "Me parece que no te estás tomando en serio el ejercicio."
                                                 } 
                                             },
                                             "opciones": [
@@ -380,9 +380,9 @@
                                         "compasivo": "La respuestaes incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
                                         "esceptico": "Se que estos ejercicios no son un reto para ti, pero cubren conceptos básicos que se necesitan en los cursos avanzados.",
                                         "retroalimentacion": {
-                                            "positiva": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                                            "positiva": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.  Sigue con el ejercicio.  Continúa con el ejercicio.",
                                             "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
-                                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                                            "negativa": "¿Ya te aburriste de encontrar las respuestas en forma aleatoria?."
                                         } 
                                     },
                                     "opciones": [
@@ -419,9 +419,9 @@
                         "compasivo": "La respuestaes incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
                         "esceptico": "Se que estos ejercicios no son un reto para ti, pero cubren conceptos básicos que se necesitan en los cursos avanzados.",
                         "retroalimentacion": {
-                            "positiva": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
-                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
-                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                            "positiva": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.  Sigue con el ejercicio.  Continúa con el ejercicio.",
+                            "neutral": "Estudiar con esfuerzo y positivismo trae consigo siempre buenas recompensas..  Continúa con el ejercicio.",
+                            "negativa": "Si estos ejercicios son aburridos para ti, ¿porqué no lograr acertar con la respuesta?."
                         } 
                     },
                     "opciones": [
@@ -454,8 +454,8 @@
                         "compasivo": "Una meta es un sueño con fecha de entrega.  Intenta encontrar la respuesta correcta.",                
                         "esceptico": "Tu victoria esta a la vuelta de la esquina. Sigue aprendiendo Java.",
                         "retroalimentacion": {
-                            "positiva": "La respuesta es incorrecta.",
-                            "neutral": "La respuesta es incorrecta.",
+                            "positiva": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.  Sigue con el ejercicio.  Continúa con el ejercicio.",
+                            "neutral": "Estudiar con esfuerzo y positivismo trae consigo siempre buenas recompensas..  Continúa con el ejercicio.",
                             "negativa": "Encontraste la respuesta incorrecta sin saber el por qué"
                         } 
                     },

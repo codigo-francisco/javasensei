@@ -53,9 +53,9 @@
                         "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {                           
-                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-                            "neutral": "La respuesta no es la correcta",
-                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                            "positiva": "Casi, casi, ¡Intentalo de nuevo!",
+                            "neutral": "Te felicito por tu excelente rendimiento y comportamiento.",
+                            "negativa": "Creo que no has estudiado lo suficiente."
                         }
                     },
                     "opciones": [
@@ -81,9 +81,9 @@
                         "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {                           
-                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-                            "neutral": "La respuesta no es la correcta",
-                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                            "positiva": "Yo se que eres capaz, ¡Intentalo de nuevo!",
+                            "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "negativa": "Creo que tratando de adivinar la respuesta."
                         }
                     },
                     "opciones": [
@@ -104,13 +104,13 @@
                     ],
                     "textoEmocional": {
                         "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
-                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "encantado": "Continua con este entusiasmo y veras que todos tus sueños mañana se harán realidad.",
                         "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
                         "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
-                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "esceptico": "No desperdicies tu talento sin hacer nada productivo, estudia y sácale provecho a tus habilidades.",
                         "retroalimentacion": {                           
-                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-                            "neutral": "La respuesta no es la correcta",
+                            "positiva": "Casi, casi, ¡Intentalo de nuevo!",
+                            "neutral": "Todos tenemos una habilidad distinta y cada día aprendemos un poquito más, tú eres una persona triunfadora.",
                             "negativa": "¿Estás seguro de querer estudiar este curso?."
                         }
                     },
