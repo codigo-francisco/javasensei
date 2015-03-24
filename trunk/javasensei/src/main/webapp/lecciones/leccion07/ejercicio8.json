@@ -126,7 +126,7 @@
                 },
                 {
                     "texto": "public void comer() {...}",
-                    "paso": 3,
+                    "paso": 4,
                     "tipo": "pasofinaloptimo",
                     "instruccion": "Paso 2 de 2.  Fin del ejercicio.  ¡Fantástico!.  Selecciona otro ejercicio del menú.",
                     "presentacion": [
