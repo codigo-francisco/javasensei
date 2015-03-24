@@ -1,0 +1,204 @@
+{
+    "id": 79,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+        "Cuando se crea un objeto de una clase derivada se ejecutan los constructores en este orden: primero se ejecuta el constructor de la clase base y después se ejecuta el constructor de la clase derivada."
+    ],
+    "opciones": [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Paso 1 de 2.  Dado el siguiente código fuente, ¿Qué se obtiene en la consola de salida cuando se compila y ejecuta?",
+            "presentacion": [
+                "class Padre {",
+                "\tPadre( String s ) {",
+                "\t\tSystem.out.println( s );",
+                "\t}",
+                "}",                
+                "public class Hija extends Padre {",
+                "\tHija(String s) {",
+                "\t\tSystem.out.println( s );",
+                "\t}",
+                "\tHija() {",
+                "\t\tsuper( s );",
+                "\t\tthis( s );",
+                "\t}",                
+                "\tpublic static void main(String[] args) {",
+                "\t\tHija hija = new Hija();",
+                "\t}",
+                "}"
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "!Estoy orgulloso de ti!.  ¡Empieza el ejercicio!",
+                "sorprendido": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede. ¡Inicia con el ejercicio!",
+                "compasivo": "Nunca consideres el estudio como una obligación, sino como una oportunidad para penetrar en el bello y maravilloso mundo del saber.  ¡Se que tu puedes!.",
+                "esceptico": "Hay ciertas cosas que para hacerlas bien no basta haberlas aprendido.  Inicia con el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "Con esfuerzo y perseverancia podrás alcanzar tus metas.",
+                    "neutral": "Lo maravilloso de aprender algo, es que nadie puede arrebatárnoslo.",
+                    "negativa": "El verdadero modo de no saber nada es aprenderlo todo a la vez."
+                }
+            },
+            "opciones": [
+                {
+                    "texto": "A",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  La palabra super se utiliza para invocar al constructor de la clase Padre.  La palabra clave this para llamar al constructor sobrecargado en la misma clase.  Intentalo de nuevo.",
+                    "presentacion": [
+                        "class Padre {",
+                        "\tPadre( String s ) {",
+                        "\t\tSystem.out.print( s );",
+                        "\t}",
+                        "}",
+                        "public class Hija extends Padre {",
+                        "\tHija(String s) {",
+                        "\t\tsuper( \"A\" );",
+                        "\t\tSystem.out.print( s );",
+                        "}",
+                        "\tHija() {",        
+                        "\t\tthis( \"B\" );",
+                        "\t}",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tHija hija = new Hija();",
+                        "\t}",
+                        "}"                        
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "¿Sigues sin cambiar tu actitud?.  No aprende el que no quiere",
+                        "retroalimentacion": {
+                            "positiva": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java",
+                            "neutral": "¿Tienes dificultad con el ejercicio? ten paciencia.  Continúa con el ejercicio.",
+                            "negativa": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti."
+                        } 
+                    },
+                    "opciones": [                                                   
+                    ]
+                },
+                {
+                    "texto": "B",
+                    "paso": 2,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  La palabra super se utiliza para invocar al constructor de la clase Padre.  La palabra clave this para llamar al constructor sobrecargado en la misma clase.  Intentalo de nuevo.",
+                    "presentacion": [
+                        "class Padre {",
+                        "\tPadre( String s ) {",
+                        "\t\tSystem.out.print( s );",
+                        "\t}",
+                        "}",
+                        "public class Hija extends Padre {",
+                        "\tHija(String s) {",
+                        "\t\tsuper( \"A\" );",
+                        "\t\tSystem.out.print( s );",
+                        "}",
+                        "\tHija() {",        
+                        "\t\tthis( \"B\" );",
+                        "\t}",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tHija hija = new Hija();",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "Preguntando se llega a Roma, ¡intenta encontrar la respuesta correcta!.",              
+                        "sorprendido": "El que persevera alcanza!.   ¡intenta encontrar la respuesta correcta!.",
+                        "compasivo": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.   ¡intenta encontrar la respuesta correcta!.",                
+                        "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio..",
+                        "retroalimentacion": {
+                            "positiva": "¡La respuesta es incorrecta!.  Me parece que puedes hacerlo mejor, sigue intentándolo. ",
+                            "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                            "negativa": "Me parece que sólo estás adivinando.  ¿Estás seguro de estar haciendo lo correcto?"
+                        } 
+                    },
+                    "opciones": [                                                   
+                    ]
+                },
+                {
+                    "texto": "BA",
+                    "paso": 3,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  La palabra super se utiliza para invocar al constructor de la clase Padre.  La palabra clave this para llamar al constructor sobrecargado en la misma clase.  Intentalo de nuevo.",
+                    "presentacion": [
+                        "class Padre {",
+                        "\tPadre( String s ) {",
+                        "\t\tSystem.out.print( s );",
+                        "\t}",
+                        "}",
+                        "public class Hija extends Padre {",
+                        "\tHija(String s) {",
+                        "\t\tsuper( \"A\" );",
+                        "\t\tSystem.out.print( s );",
+                        "}",
+                        "\tHija() {",        
+                        "\t\tthis( \"B\" );",
+                        "\t}",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tHija hija = new Hija();",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "Preguntando se llega a Roma, ¡intenta encontrar la respuesta correcta!.",              
+                        "sorprendido": "El que persevera alcanza!.   ¡intenta encontrar la respuesta correcta!.",
+                        "compasivo": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.   ¡intenta encontrar la respuesta correcta!.",                
+                        "esceptico": "Si estos ejercicios son faciles, ¿porqué no lograr acertar con la respuesta?.",
+                        "retroalimentacion": {
+                            "positiva": "¡La respuesta es incorrecta!.  Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+                            "neutral": "Aprender Java parece complicado, pero tienes que intentarlo.",
+                            "negativa": "Me parece que sólo estás adivinando.  ¿Estás seguro de estar haciendo lo correcto?"
+                        } 
+                    },
+                    "opciones": [                                                   
+                    ]
+                },
+                {
+                    "texto": "AB",
+                    "paso": 3,
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "Paso 2 de 2.  Fin del ejercicio.  ¡Fantástico!.  Selecciona otro ejercicio del menú.",
+                    "presentacion": [
+                        "class Padre {",
+                        "\tPadre( String s ) {",
+                        "\t\tSystem.out.print( s );",
+                        "\t}",
+                        "}",
+                        "public class Hija extends Padre {",
+                        "\tHija(String s) {",
+                        "\t\tsuper( \"A\" );",
+                        "\t\tSystem.out.print( s );",
+                        "}",
+                        "\tHija() {",        
+                        "\t\tthis( \"B\" );",
+                        "\t}",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tHija hija = new Hija();",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "Has finalizado con este ejercicio.",
+                        "encantado": "Siempre intenta aprender todo lo que puedas, pues el conocimiento es una llave que abre muchas puertas.",              
+                        "sorprendido": "El que persevera alcanza!, ¡sigue con este entusiasmo!.",
+                        "compasivo": "Para alcanzar el éxito se requiere de tres cosas: voluntad, valor y decisión.",                
+                        "esceptico": "Al menos llegaste al final del ejercicio.",
+                        "retroalimentacion": {
+                            "positiva": "La confianza en sí mismo, la actitud positiva y la perseverancia son los argumentos claves para triunfar.",
+                            "neutral": "El éxito nunca llega solo; hay que trabajar arduamente para conseguirlo.",
+                            "negativa": "No te preocupes de las cosas, ocúpate de ellas.  Has finalizado con este ejercicio."
+                        } 
+                    },
+                    "opciones": [                                                   
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -20,16 +20,17 @@
                 "System.out.println(temp[0] +  \" \" + temp[3]);"
             ],
             "textoEmocional": {
-                "neutral": "Inicia el ejercicio.",
-                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
-                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
-                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
-                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "neutral": "Inicia el ejercicio para continuar con el curso.",
+                "encantado": "Si crees que puedes, puedes.  Comienza con el ejercicio.",              
+                "sorprendido": "El éxito tiene una simple fórmula: da lo mejor de ti.  Comienza con el ejercicio.",
+                "compasivo": "No puedes rendirte nunca. Los ganadores nunca se rinden y los que se rinden nunca ganan.  Comienza el ejercicio.",                
+                "esceptico": "Antes que nada, la preparación es la llave del éxito.  Comienza con el ejercicio.",
                 "retroalimentacion": {
-                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
-                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "positiva": "El fracaso es éxito si aprendemos de el.",
+                    "neutral": "El éxito depende del esfuerzo.",
+                    "negativa": "El hombre necesita dificultades porque son necesarias para disfrutar el éxito."
                 } 
+ 
             },
             "opciones": 
             [

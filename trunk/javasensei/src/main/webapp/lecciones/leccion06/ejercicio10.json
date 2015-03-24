@@ -17,15 +17,15 @@
                 "¿Cuál es el tamaño del siguiente arreglo: int[] lista = {12, 34, 9, 0, -62, 88};?"
             ],
             "textoEmocional": {
-                "neutral": "Inicia el ejercicio.",
-                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
-                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
-                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
-                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "neutral": "Inicia el ejercicio para continuar con el curso.",
+                "encantado": "Si crees que puedes, puedes.  Inicia con el ejercicio.",              
+                "sorprendido": "Me sorprende lo bien que te estás tomando esto de Aprender Java.  Inicia con el ejercicio.",
+                "compasivo": "No puedes rendirte nunca. Los ganadores nunca se rinden y los que se rinden nunca ganan.  Intenta resolver el ejercicio.",                
+                "esceptico": "Si el mundo te parece frío, enciende fuego para calentarlo.  Inicia con el ejercicio.",
                 "retroalimentacion": {
-                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
-                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "positiva": "El camino hacia el éxito siempre esta en construcción. ¿Ya estás preparado para aprender algo nuevo?",
+                    "neutral": "Lo que haces hoy puede mejorar todos tus mañanas.",
+                    "negativa": "Si no te gustan las cosas, cámbialas! No eres un árbol."
                 } 
             },
             "opciones": 

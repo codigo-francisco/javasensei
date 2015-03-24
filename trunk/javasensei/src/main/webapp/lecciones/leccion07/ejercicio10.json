@@ -1,0 +1,240 @@
+{
+    "id": 80,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+        "Siempre que tengamos una clase que hereda un método de una superclase, tendremos la posibilidad de sobreescribir dicho método.",
+        "Salvo que tal método sea final o static.  El número y el tipo de los argumentos deben ser iguales."
+    ],
+    "opciones": [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Paso 1.  Considera el siguiente código para contestar a la pregunta.  Verdadero o Falso.  Cuando una subclase redefine al método de una superclase utilizando la misma firma, se dice que la subclase sobrecarga a ese método de la superclase.",
+            "presentacion": [
+                "public class Mascota {",
+                "\tpublic void comer() {  //<--método de la superclase",
+                "\t\tSystem.out.println( Mascota::comer() );",
+                "\t}",
+                "}",
+                "\n",
+                "public class Gato extends Mascota {",
+                "\tpublic void comer() {  //<--¿es un método overload?",
+                "\t\tSystem.out.println( Gato::comer() );",
+                "\t}",
+                "}"
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Con esfuerzo y perseverancia podrás alcanzar tus metas.  ¡Inicia con el ejercicio!",
+                "sorprendido": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede. ¡Inicia con el ejercicio!",
+                "compasivo": "Aprender sin reflexionar es malgastar la energía.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "¡Estudia! No para saber una cosa más, sino para saberla mejor.  Empieza el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "!Estoy orgulloso de ti!.",
+                    "neutral": "Lo maravilloso de aprender algo, es que nadie puede arrebatárnoslo.",
+                    "negativa": "Enseñar a quien no quiere aprender es como sembrar un campo sin ararlo."
+                }
+            },
+            "opciones": [
+                {
+                    "texto": "Verdadero",
+                    "paso": 1,
+                    "tipo": "pasooptimo",
+                    "instruccion": "Paso 2.  Verdadero o falso.  ¿Es posible sobreescribir (override) el método comer de la clase Mascota si este tiene el modificador static?",
+                    "presentacion": [
+                        "public class Mascota {",
+                        "\tpublic static void comer() {   //<--método de la superclase",
+                        "\t\tSystem.out.println( Mascota::comer() );",
+                        "\t}",
+                        "}",
+                        "\n",
+                        "public class Gato extends Mascota {",
+                        "\tpublic void comer() {  //<-- ¿es un método override?",
+                        "\t\tSystem.out.println( Gato::comer() );",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                         "neutral": "La respuesta es correcta.  Sigue con el ejercicio",
+                        "encantado": "Continua con este entusiasmo.  Ya casi terminas el ejercicio",
+                        "sorprendido": "¡Me sorprendes!, noto que cada día eres mejor, continúa con el ejercicio.",
+                        "compasivo": "Yo se que tu puedes, ¡sigue adelante!.",
+                        "esceptico": "Me parece que tienes una actitud indiferente.  Al menos trata de terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "¡Noto que cada día eres mejor!.  Sigue con el ejercicio.",
+                            "neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+                            "negativa": "¿Te lo estás tomando con seriedad?"                            
+                        }
+                    },
+                    "opciones": [
+                        
+                        {
+                            "texto": "Verdadero",
+                            "paso": 2,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  No se puede sobreescribir un método static o final.  Intentalo de nuevo.",
+                            "presentacion": [
+                                "public class Mascota {",
+                                "\tpublic static void comer() {   //<--método de la superclase",
+                                "\t\tSystem.out.println( Mascota::comer() );",
+                                "\t}",
+                                "}",
+                                "\n",
+                                "public class Gato extends Mascota {",
+                                "\tpublic void comer() {  //<-- ¿es un método override?",
+                                "\t\tSystem.out.println( Gato::comer() );",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                                "compasivo": "Todos tenemos una habilidad distinta y cada día aprendemos un poquito más, tú eres una persona triunfadora.",
+                                "esceptico": "No desperdicies tu talento sin hacer nada productivo, estudia y sácale provecho a tus habilidades..",
+                                "retroalimentacion": {                           
+                                    "positiva": "¡Intentalo otra vez!",
+                                    "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                    "negativa": "Creo que necesitas estudiar un poco más."
+                                }
+                            },
+                            "opciones": []
+                        },
+                        {
+                            "texto": "Falso",
+                            "paso": 3,
+                            "tipo": "pasooptimo",
+                            "instruccion": "Paso 3.  Verdadero o falso.  ¿Es posible sobreescribir (override) el método comer de la clase Mascota si este tiene el modificador final?",
+                            "presentacion": [
+                                "public class Mascota {",
+                                "\tpublic final void comer() {   //<--método de la superclase",
+                                "\t\tSystem.out.println( Mascota::comer() );",
+                                "\t}",
+                                "}",
+                                "\n",
+                                "public class Gato extends Mascota {",
+                                "\tpublic void comer() {  //<-- ¿es un método override?",
+                                "\t\tSystem.out.println( Gato::comer() );",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es correcta.",
+                                "encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+                                "sorprendido": "¡Me sorprendes!, continúa así.",
+                                "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+                                "esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+                                "retroalimentacion": {                            
+                                    "positiva": "Muy bien!, estás en lo correcto.  Continúa con el ejercicio.",
+                                    "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                    "negativa": "La respuesta es correcta, pero, ¿te lo estas tomando en serio?"                            
+                                }
+                            },
+                            "opciones": [
+                                
+                                 {
+                                    "texto": "Verdadero",
+                                    "paso": 4,
+                                    "tipo": "pasoerroneo",
+                                    "instruccion": "La respuesta es incorrecta.  No se puede sobreescribir un método static o final.  Intentalo de nuevo.",
+                                    "presentacion": [
+                                        "public class Mascota {",
+                                        "\tpublic final void comer() {   //<--método de la superclase",
+                                        "\t\tSystem.out.println( Mascota::comer() );",
+                                        "\t}",
+                                        "}",
+                                        "\n",
+                                        "public class Gato extends Mascota {",
+                                        "\tpublic void comer() {  //<-- ¿es un método override?",
+                                        "\t\tSystem.out.println( Gato::comer() );",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es incorrecta.  Intentalo de nuevo.",
+                                        "encantado": "¿Te haz dado cuenta que cuando conoces bien un tema, te gusta?.  Sigue con el ejercicio",
+                                        "sorprendido": "Me sorprende tu deseo por aprender Java.  Sigue con el ejercicio.",
+                                        "compasivo": "Aprender requiere de paciencia, intentalo de nuevo",
+                                        "esceptico": "Trata de encontrar la respuesta correcta.",
+                                        "retroalimentacion": {
+                                            "positiva": "No importa el error.  Sigue con el ejercicio.",
+                                            "neutral": "La respuesta no es correcta. Continua con el ejercicio.",
+                                            "negativa": "Te recomiendo mirar alguna de mis recomendaciones."
+                                        }           
+                                    },
+                                    "opciones": []
+                                } ,
+                                {
+                                    "texto": "Falso",
+                                    "paso": 5,
+                                    "tipo": "pasofinaloptimo",
+                                    "instruccion": "Paso 5.  La respuesta es correcta.  ¡Has finalizado el ejercicio!.  Selecciona otro ejercicio del menú.",
+                                    "presentacion": [
+                                        "public class Mascota {",
+                                        "\tpublic final void comer() {   //<--método de la superclase",
+                                        "\t\tSystem.out.println( Mascota::comer() );",
+                                        "\t}",
+                                        "}",
+                                        "\n",
+                                        "public class Gato extends Mascota {",
+                                        "\tpublic void comer() {  //<-- ¿es un método override?",
+                                        "\t\tSystem.out.println( Gato::comer() );",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "Has finalizado con este ejercicio.",
+					"encantado": "En la vida no hay que esperar a que pase la tormenta, hay que aprender a bailar bajo la lluvia, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Si sigues haciendo lo que estás haciendo, seguirás consiguiendo lo que estás consiguiendo. Has finalizado con este ejercicio.",
+					"compasivo": "Para ser el mejor y alcanzar tus metas solo hay un camino, estudiar y prepararte para los retos de la vida.",                
+					"esceptico": "El tiempo pasa rápido y no debes desaprovecharlo, estudia ahora y mañana será una persona exitosa.",
+					"retroalimentacion": {
+                                            "positiva": "Aprovecha tu juventud e inteligencia para convertirte en un buen estudiante. Los años se pasan rápido así que no los desperdicies.",
+                                            "neutral": "La vida es un 10% lo que te pasa y el 90% cómo reaccionas ante lo que te pasa.",
+                                            "negativa": "No se puede cambiar lo que te niegas a afrontar.  Al menos llegaste al final del ejercicio."
+					}
+                                    },
+                                    "opciones": []
+                                } 
+                            ]
+                        }   
+                    ]
+                },
+                {
+                    "texto": "Falso",
+                    "paso": 6,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Esto se conoce como sobreescritura (override), no sobrecarga (overload); un método sobrecargado tiene el mismo nombre, pero una firma distinta.  Intentalo de nuevo.",
+                    "presentacion": [
+                        "public class Mascota {",
+                        "\tpublic void comer() {",
+                        "\t\tSystem.out.println( Mascota::comer() );  //<--método de la superclase",
+                        "\t}",
+                        "}",
+                        "\n",
+                        "public class Gato extends Mascota {",
+                        "\tpublic void comer() {  //<--¿es un método override ó método overload?",
+                        "\t\tSystem.out.println( Gato::comer() );",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "El éxito empieza cuando tú quieres, ¡sigue con este entusiasmo!.",              
+                        "sorprendido": "El que persevera alcanza!.  Nunca te rindas.  Sigue adelante con el ejercicio.",
+                        "compasivo": "Una meta es un sueño con fecha de entrega.  Intenta encontrar la respuesta correcta.",                
+                        "esceptico": "Tu victoria esta a la vuelta de la esquina. Sigue aprendiendo Java.",
+                        "retroalimentacion": {
+                            "positiva": "La respuesta es incorrecta.",
+                            "neutral": "La respuesta es incorrecta.",
+                            "negativa": "Encontraste la respuesta incorrecta sin saber el por qué"
+                        } 
+                    },
+                    "opciones": [
+                    ]
+                }
+            ]
+        }
+    ]
+}

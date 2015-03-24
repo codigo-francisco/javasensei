@@ -25,16 +25,16 @@
                 "\ty = x * x * x;"
             ],
             "textoEmocional": {
-                "neutral": "Inicia los ejercicios",
-                "encantado": "Estas muy bien, inicia con el ejercicio",
-                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                 "neutral": "Inicia con el ejercicio para continuar con el tema: instrucción if.",
+                "encantado": "Serás del tamaño de tus pensamientos, piensa en grande.  Inicia con el ejercicio para continuar con el tema: instrucción if.",              
+                "sorprendido": "La constancia es la virtud por la cual todas las otras virtudes dan fruto.   Inicia con el ejercicio para continuar con el tema: instrucción if.",
+                "compasivo": "Quien tiene la voluntad tiene la fuerza.  Intenta resolver el ejercicio (instrucción if).",                
+                "esceptico": "No esperes por el éxito si eso es lo que quieres; haz lo que realmente amas y cree en ello y el éxito vendrá naturalmente.  Inicia con el ejercicio (instrucción if).",
                 "retroalimentacion": {
-                    "positiva": "No importa el error vas muy bien",
-                    "neutral": "Sigue asi, continua",
-                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                }
+                    "positiva": "Noto que cada día eres mejor.  ¿Ya estás preparado para aprender algo nuevo?",
+                    "neutral": "Resuelve el ejercicio para continuar con el tema: instrucción if",
+                    "negativa": "Sabes que quiero para ti lo mejor.  ¡Cambia tu actitud!"
+                } 
             },
             "opciones": [
                 {
@@ -57,16 +57,16 @@
                         "\ty = x * x * x;"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "La respuesta es incorrecta. Continúa con el ejercicio.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                            "positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                        } 
                     },
                     "opciones": []
                 },
@@ -90,16 +90,16 @@
                         "\ty = x * x * x;"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "La respuesta es incorrecta. Continúa con el ejercicio.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                            "positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                        } 
                     },
                     "opciones": []
                 },
@@ -123,16 +123,16 @@
                         "\ty = x * x * x;"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "La respuesta es incorrecta. Continúa con el ejercicio.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                            "positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                        } 
                     },
                     "opciones": []
                     
@@ -157,15 +157,15 @@
                         "\ty = x * x * x;"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        "neutral": "Has finalizado con este ejercicio.",
+                         "encantado": "Cuando un hombre sabe para donde va, el mundo entero se aparta para darle paso, ¡sigue con este entusiasmo!.",              
+                         "sorprendido": "Al parecer, el éxito es una cuestión de perseverar cuando los demás ya han renunciado.",
+                         "compasivo": "Nada es demasiado difícil si se lo divide en pequeñas tareas.",                
+                         "esceptico": "A quien no sabe a que puerto encaminarse, ningún viento le es propicio.  Al menos llegaste al final del ejercicio.",
+                         "retroalimentacion": {
+                               "positiva": "¡Felicidades!.  No sucede nada bueno que no haya sido alguna vez un sueño.",
+                               "neutral": "Has finalizado con este ejercicio.",
+                               "negativa": "En vez de lamentarte por las oportunidades perdidas, dedícate a crear nuevas oportunidades.  ¡Deja de jugar y ponte a estudiar!."
                         }
                     },
                     "opciones": []

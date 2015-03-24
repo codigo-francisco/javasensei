@@ -1,0 +1,503 @@
+{
+    "id": 76,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+        "Se puede asignar de forma implícita una referencia a un objeto de una clase derivada a una referencia de la clase base.  Son tipos compatibles.",
+        "También se llaman conversiones ascendentes o upcasting.  Se puede asignar una referencia de la clase base a una referencia de la clase derivada, siempre que la referencia de la clase base sea un objeto de la misma clase derivada a la que se va a asignar o de una clase derivada de ésta.",
+        "También se llaman conversiones descendentes o downcasting."
+    ],
+    "opciones": [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Paso 1 de 5.  ¿Qué se obtiene en la consola de salida al compilar y ejecutar el siguiente código?",
+            "presentacion": [
+                "class Mascota {",
+                "\tpublic Mascota() {",
+                "\t\tSystem.out.println(\"A\");",
+                "\t}",
+                "}",
+                "public class Gato extends Mascota {",
+                "\tpublic Gato() {",
+                "\t\tSystem.out.println(\"B\");",
+                "\t}",
+                "\tpublic static void main(String[] args) {",
+                "\t\tMascota miMascota = new Gato();",
+                "\t}",
+                "}"
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "El estudio requiere de mucho esfuerzo y dedicación, ayúdate averiguando, reúnete con tus compañeros, intercambia opiniones y piensa que si se puede.  ¡Inicia con el ejercicio!",
+                "sorprendido": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede. ¡Inicia con el ejercicio!",
+                "compasivo": "Sé que te encuentras abrumado con los estudios y estas indeciso a seguir, pero todo sueño requiere un esfuerzo sigue adelante y mañana veras que valió la pena.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "No desperdicies tu talento sin hacer nada productivo, estudia y sácale provecho a tus habilidades.  Comienza con el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "El día a día nos va enseñando cosas, la vida es una escuela diaria siempre hay algo nuevo que aprender, estudiando lo lograras.",
+                    "neutral": "Para empezar un gran proyecto, hace falta valentía. Para terminar un gran proyecto, hace falta perseverancia.",
+                    "negativa": "Si no te esfuerzas hasta el máximo, ¿cómo sabrás donde está tu límite? "
+                }
+
+            },
+            "opciones": [
+                {
+                    "texto": "AB",
+                    "paso": 1,
+                    "tipo": "pasooptimo",
+                    "instruccion": "Paso 2 de 5. ¿Qué se obtiene en la consola de salida al compilar y ejecutar el siguiente código?",
+                    "presentacion": [
+                        "class Mascota {",
+                        "\tpublic void comer() {",
+                        "\t\tSystem.out.println(\"Mascota::comer\");",
+                        "\t}",
+                        "}",
+                        "public class Gato extends Mascota {",
+                        "\tpublic void comer() {",
+                        "\t\tSystem.out.println(\"Gato::comer\");",
+                        "\t}",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tMascota miMascota = new Gato();",
+                        "\t\tmiMascota.comer();",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es la correcta.  Sigue con el ejercicio.",
+                        "encantado": "Adelante, confió en ti.  Sigue con el ejercicio",
+                        "sorprendido": "¡Adelante!, sigue con el ejercicio.",
+                        "compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                            "neutral": "La respuesta es la correcta.  Termina el ejercicio.",
+                            "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+                        }
+                    },
+                    "opciones": [   
+                        
+                         {
+                            "texto": "Mascota::comer",
+                            "paso": 2,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  Cuando manejamos un objeto a través de una referencia a una superclase (directa o indirecta) y se invoca a un método que está redefinido en las subclases se ejecuta el método de la clase a la que pertenece el objeto no el de la referencia.",
+                            "presentacion": [
+                                "class Mascota {",
+                                "\tpublic void comer() {",
+                                "\t\tSystem.out.println(\"Mascota::comer\");",
+                                "\t}",
+                                "}",
+                                "public class Gato extends Mascota {",
+                                "\tpublic void comer() {",
+                                "\t\tSystem.out.println(\"Gato::comer\");",
+                                "\t}",
+                                "\tpublic static void main(String[] args) {",
+                                "\t\tMascota miMascota = new Gato();",
+                                "\t\tmiMascota.comer();",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                "encantado": "Aprender requiere de paciencia, intentalo de nuevo.",              
+                                "sorprendido": "Con esfuerzo y perseverancia podrás alcanzar tus metas.  Intentalo de nuevo.",
+                                "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                                "esceptico": "Se que estos ejercicios no son un reto para ti, pero cubren conceptos básicos que se necesitan en los cursos avanzados.",
+                                "retroalimentacion": {
+                                    "positiva": "No importa el error.  Continúa con el ejercicio.",
+                                    "neutral": "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más.  Sigue adelante",
+                                    "negativa": "Me parece que no te estás tomando en serio el ejercicio."
+                                } 
+                            },
+                            "opciones": [                                                                                                
+                            ]
+                        },
+                        {
+                            "texto": "Gato::comer",
+                            "paso": 3,
+                            "tipo": "pasooptimo",
+                            "instruccion": "Paso 3 de 5.  ¿Qué se obtiene en la consola de salida al compilar y ejecutar el siguiente código?",
+                            "presentacion": [
+                                "class Mascota {",
+                                "\tpublic void comer() {",
+                                "\t\tSystem.out.println(\"Mascota::comer\");",
+                                "\t}",
+                                "}",
+                                "public class Gato extends Mascota {",
+                                "\tpublic void comer() {",
+                                "\t\tSystem.out.println(\"Gato::comer\");",
+                                "\t}",
+                                "\tpublic void dormir() {",
+                                "\t\tSystem.out.println(\"Gato::dormir\");",
+                                "\t}",
+                                "\tpublic static void main(String[] args) {",
+                                "\t\tMascota miMascota = new Gato();",
+                                "\t\tmiMascota.dormir();",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                "encantado": "Los estudios son el camino al éxito, piensa en positivo siempre.",
+                                "sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+                                "compasivo": "Hay etapas en los estudios que sentimos que no entendemos nada, haz un esfuerzo por averiguar y entender a Java.",
+                                "esceptico": "De ti depende el futuro de tu vida.  Al menos trata de terminar el ejercicio.",
+                                "retroalimentacion": {
+                                    "positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con el ejercicio.",
+                                    "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                    "negativa": "Al parecer no te hacer nada en serio.  Necesitas replantearte tus prioridades en esta vida ."
+                                }
+                            },
+                                "opciones": [
+                                
+                                 {
+                                    "texto": "Mascota::dormir",
+                                    "paso": 4,
+                                    "tipo": "pasoerroneo",
+                                    "instruccion": "La respuesta es incorrecta.  Cuando manejamos un objeto a través de una referencia a una superclase (directa o indirecta) solo se pueden ejecutar métodos disponibles en la superclase.  Intentalo de nuevo.",
+                                    "presentacion": [
+                                        "class Mascota {",
+                                        "\tpublic void comer() {",
+                                        "\t\tSystem.out.println(\"Mascota::comer\");",
+                                        "\t}",
+                                        "}",
+                                        "public class Gato extends Mascota {",
+                                        "\tpublic void comer() {",
+                                        "\t\tSystem.out.println(\"Gato::comer\");",
+                                        "\t}",
+                                        "\tpublic void dormir() {",
+                                        "\t\tSystem.out.println(\"Gato::dormir\");",
+                                        "\t}",
+                                        "\tpublic static void main(String[] args) {",
+                                        "\t\tMascota miMascota = new Gato();",
+                                        "\t\tmiMascota.dormir();",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es incorrecta.  Intentalo de nuevo.",
+                                        "encantado": "¿Te haz dado cuenta que cuando conoces bien un tema, te gusta?.  Sigue con el ejercicio",
+                                        "sorprendido": "Me sorprende tu deseo por aprender Java.  Sigue con el ejercicio.",
+                                        "compasivo": "Aprender requiere de paciencia, intentalo de nuevo",
+                                        "esceptico": "Trata de encontrar la respuesta correcta.",
+                                        "retroalimentacion": {
+                                            "positiva": "No importa el error.  Sigue con el ejercicio.",
+                                            "neutral": "La respuesta no es correcta. Continua con el ejercicio.",
+                                            "negativa": "Te recomiendo mirar alguna de mis recomendaciones."
+                                        }
+                                    },
+                                    "opciones": [
+                                    ]
+                                },
+                                {
+                                    "texto": "Gato::dormir",
+                                    "paso": 5,
+                                    "tipo": "pasoerroneo",
+                                    "instruccion": "La respuesta es incorrecta.  Cuando manejamos un objeto a través de una referencia a una superclase (directa o indirecta) solo se pueden ejecutar métodos disponibles en la superclase.  Intentalo de nuevo.",
+                                    "presentacion": [
+                                        "class Mascota {",
+                                        "\tpublic void comer() {",
+                                        "\t\tSystem.out.println(\"Mascota::comer\");",
+                                        "\t}",
+                                        "}",
+                                        "public class Gato extends Mascota {",
+                                        "\tpublic void comer() {",
+                                        "\t\tSystem.out.println(\"Gato::comer\");",
+                                        "\t}",
+                                        "\tpublic void dormir() {",
+                                        "\t\tSystem.out.println(\"Gato::dormir\");",
+                                        "\t}",
+                                        "\tpublic static void main(String[] args) {",
+                                        "\t\tMascota miMascota = new Gato();",
+                                        "\t\tmiMascota.dormir();",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                                        "compasivo": "La respuestaes incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                                        "esceptico": "Necesitas dedicarle un poco más de tiempo para aprender Java.",
+                                        "retroalimentacion": {
+                                            "positiva": "Nada es demasiado difícil si se lo divide en pequeñas tareas.  Intenta ir paso a paso con el ejercicio.",
+                                            "neutral": "Tal vez necesites investigar un poco más.  Continúa con el ejercicio.",
+                                            "negativa": "¡Necesitas mayor concentración!"
+                                        } 
+                                    },
+                                    "opciones": [                                        
+                                    ]
+                                },
+                                {
+                                    "texto": "Error: compilación",
+                                    "paso": 6,
+                                    "tipo": "pasooptimo",
+                                    "instruccion": "Paso 4 de 5. ¿Qué se obtiene en la consola de salida al compilar y ejecutar el siguiente código?",
+                                    "presentacion": [
+                                        "class Mascota {",
+                                        "\tpublic void comer() {",
+                                        "\t\tSystem.out.println(\"Mascota::comer\");",
+                                        "\t}",
+                                        "}",
+                                        "public class Gato extends Mascota {",
+                                        "\tpublic void comer() {",
+                                        "\t\tSystem.out.println(\"Gato::comer\");",
+                                        "\t}",
+                                        "\tpublic void dormir() {",
+                                        "\t\tSystem.out.println(\"Gato::dormir\");",
+                                        "\t}",
+                                        "\tpublic static void main(String[] args) {",
+                                        "\t\tMascota miMascota = new Gato();",
+                                        "\t\tGato g = (Gato)miMascota;",
+                                        "\t\tg.dormir();",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+                                        "encantado": "El éxito empieza cuando tú quieres, ¡continúa así!.",              
+                                        "sorprendido": "Por cada esfuerzo, hay una recompensa.  Nunca te rindas. Sigue adelante con el ejercicio.",
+                                        "compasivo": "Aprender Java es una oportunidad, no una obligación.  Sigue con el ejercicio.",                
+                                        "esceptico": "Ama lo que haces, haz lo que amas.  Sigue aprendiendo Java",
+                                        "retroalimentacion": {
+                                            "positiva": "¡Muy bien!, la respuesta correcta.  Sigue con el ejercicio",
+                                            "neutral": " La respuesta es correcta.  Continúa con el ejercicio",
+                                            "negativa": "Encontraste la respuesta correcta sin saber el por qué."
+                                        } 
+                                    },
+                                    "opciones": [     
+                                       {
+                                            "texto": "Mascota::dormir",
+                                            "paso": 7,
+                                            "tipo": "pasoerroneo",
+                                            "instruccion": "La respuesta es incorrecta.  Se puede asignar una referencia de la clase base a una referencia de la clase derivada, siempre que la referencia de la clase base sea a un objeto de la misma clase derivada a la que se va a asignar o de una clase derivada de ésta.  Intentalo de nuevo.",
+                                            "presentacion": [
+                                                "class Mascota {",
+                                                "\tpublic void comer() {",
+                                                "\t\tSystem.out.println(\"Mascota::comer\");",
+                                                "\t}",
+                                                "}",
+                                                "public class Gato extends Mascota {",
+                                                "\tpublic void comer() {",
+                                                "\t\tSystem.out.println(\"Gato::comer\");",
+                                                "\t}",
+                                                "\tpublic void dormir() {",
+                                                "\t\tSystem.out.println(\"Gato::dormir\");",
+                                                "\t}",
+                                                "\tpublic static void main(String[] args) {",
+                                                "\t\tMascota miMascota = new Gato();",
+                                                "\t\tGato g = (Gato)miMascota;",
+                                                "\t\tg.dormir();",
+                                                "\t}",
+                                                "}"
+                                            ],
+                                            "textoEmocional": {
+                                                "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                                "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                                                "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                                                "compasivo": "La respuestaes incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                                                "esceptico": "Se que estos ejercicios no son un reto para ti, pero cubren conceptos básicos que se necesitan en los cursos avanzados.",
+                                                "retroalimentacion": {
+                                                    "positiva": "con un poco de esfuerzo encontrarás la respuesta correcta.  Continúa con el ejercicio.",
+                                                    "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                                                    "negativa": "Me parece que no te estás tomando en serio el ejercicio."
+                                                } 
+                                            },
+                                            "opciones": [
+                                            ]
+                                        },
+                                        {
+                                            "texto": "Gato::dormir",
+                                            "paso": 8,
+                                            "tipo": "pasofinaloptimo",
+                                            "instruccion": "Paso 5 de 5.  Fin del ejercicio.  ¡Lo has hecho muy bien!.  Selecciona otro ejercicio del menu.",
+                                            "presentacion": [
+                                                "class Mascota {",
+                                                "\tpublic void comer() {",
+                                                "\t\tSystem.out.println(\"Mascota::comer\");",
+                                                "\t}",
+                                                "}",
+                                                "public class Gato extends Mascota {",
+                                                "\tpublic void comer() {",
+                                                "\t\tSystem.out.println(\"Gato::comer\");",
+                                                "\t}",
+                                                "\tpublic void dormir() {",
+                                                "\t\tSystem.out.println(\"Gato::dormir\");",
+                                                "\t}",
+                                                "\tpublic static void main(String[] args) {",
+                                                "\t\tMascota miMascota = new Gato();",
+                                                "\t\tGato g = (Gato)miMascota;",
+                                                "\t\tg.dormir();",
+                                                "\t}",
+                                                "}"
+                                            ],
+                                            "textoEmocional": {
+                                                "neutral": "Has finalizado con este ejercicio.",
+                                                "encantado": "El arte de vencer se aprende en las derrotas, ¡sigue con este entusiasmo!.",              
+                                                "sorprendido": "No te preocupes por los fracasos, preocúpate por las oportunidades que pierdes cuando ni siquiera lo intentas.",
+                                                "compasivo": "No te des por vencido, ni aún vencido.  Establece objetivos a corto plazo y pronto serás un Sensei de Java.",                
+                                                "esceptico": "Es absurdo continuar haciendo siempre lo mismo y esperar resultados diferentes.  Al menos llegaste al final del ejercicio.",
+                                                "retroalimentacion": {
+                                                    "positiva": "¡Felicidades!.  Las oportunidades solamente las aprovechan las mentes preparadas.",
+                                                    "neutral": "Cada logro comienza con la decisión de intentarlo.  Has finalizado con este ejercicio.",
+                                                    "negativa": "Nuestra mayor debilidad reside en rendirnos.  ¡Deja de jugar y ponte a estudiar!."
+                                                } 
+                                            },
+                                            "opciones": [
+                                            ]
+                                        }
+                                        
+                                    ]  
+                                },
+                                {
+                                    "texto": "Error: ejecución",
+                                    "paso": 9,
+                                    "tipo": "pasoerroneo",
+                                    "instruccion": "La respuesta es incorrecta.  Cuando manejamos un objeto a través de una referencia a una superclase (directa o indirecta) solo se pueden ejecutar métodos disponibles en la superclase.  Intentalo de nuevo.",
+                                    "presentacion": [
+                                        "class Mascota {",
+                                        "\tpublic void comer() {",
+                                        "\t\tSystem.out.println(\"Mascota::comer\");",
+                                        "\t}",
+                                        "}",
+                                        "public class Gato extends Mascota {",
+                                        "\tpublic void comer() {",
+                                        "\t\tSystem.out.println(\"Gato::comer\");",
+                                        "\t}",
+                                        "\tpublic void dormir() {",
+                                        "\t\tSystem.out.println(\"Gato::dormir\");",
+                                        "\t}",
+                                        "\tpublic static void main(String[] args) {",
+                                        "\t\tMascota miMascota = new Gato();",
+                                        "\t\tmiMascota.dormir();",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                                        "compasivo": "La respuestaes incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                                        "esceptico": "Se que estos ejercicios no son un reto para ti, pero cubren conceptos básicos que se necesitan en los cursos avanzados.",
+                                        "retroalimentacion": {
+                                            "positiva": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.  Sigue con el ejercicio.  Continúa con el ejercicio.",
+                                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                                            "negativa": "¿Ya te aburriste de encontrar las respuestas en forma aleatoria?."
+                                        } 
+                                    },
+                                    "opciones": [
+                                    ]
+                                }                                                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "texto": "BA",
+                    "paso": 10,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  La variable miMascota del tipo Mascota puede contener la referencia de un objeto Gato ya que son tipos compatibles (Un gato es una mascota).  Intentalo de nuevo.",
+                    "presentacion": [
+                        "class Mascota {",
+                        "\tpublic Mascota() {",
+                        "\t\tSystem.out.println(\"A\");",
+                        "\t}",
+                        "}",
+                        "public class Gato extends Mascota {",
+                        "\tpublic Gato() {",
+                        "\t\tSystem.out.println(\"B\");",
+                        "\t}",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tMascota miMascota = new Gato();",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuestaes incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "Se que estos ejercicios no son un reto para ti, pero cubren conceptos básicos que se necesitan en los cursos avanzados.",
+                        "retroalimentacion": {
+                            "positiva": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.  Sigue con el ejercicio.  Continúa con el ejercicio.",
+                            "neutral": "Estudiar con esfuerzo y positivismo trae consigo siempre buenas recompensas..  Continúa con el ejercicio.",
+                            "negativa": "Si estos ejercicios son aburridos para ti, ¿porqué no lograr acertar con la respuesta?."
+                        } 
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "Error: compilación",
+                    "paso": 11,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  La variable miMascota del tipo Mascota puede contener la referencia de un objeto Gato ya que son tipos compatibles (Un gato es una mascota).  Intentalo de nuevo.",
+                    "presentacion": [
+                        "class Mascota {",
+                        "\tpublic Mascota() {",
+                        "\t\tSystem.out.println(\"A\");",
+                        "\t}",
+                        "}",
+                        "public class Gato extends Mascota {",
+                        "\tpublic Gato() {",
+                        "\t\tSystem.out.println(\"B\");",
+                        "\t}",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tMascota miMascota = new Gato();",                        
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "El éxito empieza cuando tú quieres, ¡sigue con este entusiasmo!.",              
+                        "sorprendido": "El que persevera alcanza!.  Nunca te rindas.  Sigue adelante con el ejercicio.",
+                        "compasivo": "Una meta es un sueño con fecha de entrega.  Intenta encontrar la respuesta correcta.",                
+                        "esceptico": "Tu victoria esta a la vuelta de la esquina. Sigue aprendiendo Java.",
+                        "retroalimentacion": {
+                            "positiva": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.  Sigue con el ejercicio.  Continúa con el ejercicio.",
+                            "neutral": "Estudiar con esfuerzo y positivismo trae consigo siempre buenas recompensas..  Continúa con el ejercicio.",
+                            "negativa": "Encontraste la respuesta incorrecta sin saber el por qué"
+                        } 
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "Error: ejecución",
+                    "paso": 12,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  La variable miMascota del tipo Mascota puede contener la referencia de un objeto Gato ya que son tipos compatibles (Un gato es una mascota).  Intentalo de nuevo.",
+                    "presentacion": [
+                        "class Mascota {",
+                        "\tpublic Mascota() {",
+                        "\t\tSystem.out.println(\"A\");",
+                        "\t}",
+                        "}",
+                        "public class Gato extends Mascota {",
+                        "\tpublic Gato() {",
+                        "\t\tSystem.out.println(\"B\");",
+                        "\t}",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tMascota miMascota = new Gato();",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "El éxito empieza cuando tú quieres, ¡sigue con este entusiasmo!.",              
+                        "sorprendido": "El que persevera alcanza!.  Nunca te rindas.  Sigue adelante con el ejercicio.",
+                        "compasivo": "Una meta es un sueño con fecha de entrega.  Intenta encontrar la respuesta correcta.",                
+                        "esceptico": "Tu victoria esta a la vuelta de la esquina. Sigue aprendiendo Java.",
+                        "retroalimentacion": {
+                            "positiva": "La respuesta es incorrecta.",
+                            "neutral": "La respuesta es incorrecta.",
+                            "negativa": "Encontraste la respuesta incorrecta sin saber el por qué"
+                        } 
+                    },
+                    "opciones": [
+                    ]
+                }
+            ]
+        }
+    ]
+}

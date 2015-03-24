@@ -17,15 +17,15 @@
                 "¿El tamaño de un arreglo puede cambiar durante la ejecución del programa?"
             ],
             "textoEmocional": {
-                "neutral": "Inicia el ejercicio.",
-                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
-                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
-                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
-                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "neutral": "Inicia el ejercicio para continuar con el curso.",
+                "encantado": "El poder de la imaginación nos hace infinitos.  Comienza con el ejercicio.",              
+                "sorprendido": "Me sorprende lo bien que te estás tomando esto de Aprender Java.  Resuelve el ejercicio.",
+                "compasivo": "Una meta es un sueño con fecha límite.  Comienza resolver el ejercicio.",                
+                "esceptico": "Si el mundo te parece frío, enciende fuego para calentarlo.  Resuelve el ejercicio.",
                 "retroalimentacion": {
-                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
-                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "positiva": "Cuando tienes un sueño tienes que agarrarlo y nunca dejarlo ir.",
+                    "neutral": "La determinación es el punto inicial de todo logro.",
+                    "negativa": "Si no te gustan las cosas, cámbialas! No eres un árbol."
                 } 
             },
             "opciones": 

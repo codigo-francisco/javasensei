@@ -24,17 +24,17 @@
                 "}"
             ],
             "textoEmocional": {
-                "neutral": "Inicia el ejercicio.",
-                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
-                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
-                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
-                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "neutral": "Inicia el ejercicio para continuar con el curso.",
+                "encantado": "Da siempre lo mejor que tienes. Lo que plantes ahora, lo cosecharás más tarde.  Comienza con el ejercicio.",              
+                "sorprendido": "La determinación es el punto inicial de todo logro.  Inicia con el ejercicio.",
+                "compasivo": "La derrota no es el peor de los fracasos. No intentarlo es el verdadero fracaso.  Intenta resolver el ejercicio.",                
+                "esceptico": "Si el mundo te parece frío, enciende fuego para calentarlo.  Inicia con el ejercicio.",
                 "retroalimentacion": {
-                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
-                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "positiva": "La única forma de hacer un gran trabajo es amar lo que haces.",
+                    "neutral": "La disciplina es el puente entre metas y logros.",
+                    "negativa": "La fortuna favorece al valiente."
                 } 
-            },
+           },
             "opciones": 
             [
                 {

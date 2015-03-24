@@ -16,15 +16,15 @@
                 "Señala los operadores que se evalúan en corto circuito (&&,||), (&,|):"
             ],
             "textoEmocional": {
-                "neutral": "Inicia el ejercicio.",
-                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
-                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
-                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
-                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                 "neutral": "Inicia con el ejercicio para continuar con el tema: instrucción if.",
+                "encantado": "Me gusta tu actitud.  Inicia con el ejercicio para continuar con el tema: instrucción if.",              
+                "sorprendido": "¡Me sorprendes!.   Inicia con el ejercicio para continuar con el tema: instrucción if.",
+                "compasivo": "No esperes que pase la tormenta, aprende a bailar bajo la lluvia.  Intenta resolver el ejercicio (instrucción if).",                
+                "esceptico": "Deberías considerar modificar tu escepticismo.  Inicia con el ejercicio (instrucción if).",
                 "retroalimentacion": {
-                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
-                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "positiva": "Haz lo necesario para lograr tu más ardiente deseo, y acabarás lográndolo",
+                    "neutral": "Resuelve el ejercicio para continuar con el tema: instrucción if",
+                    "negativa": "Se alcanza el éxito convirtiendo cada paso en una meta y cada meta en un paso.  ¡Cambia tu actitud!"
                 } 
             },
             "opciones": 
@@ -40,17 +40,16 @@
                     ],
                     "textoEmocional":
                     {
-                        "neutral":"Inicia los ejercicios",
-                        "encantado":"Estas muy bien, inicia con el ejercicio",
-                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion":
-                        {
-                            "positiva":"No importa el error vas muy bien",
-                            "neutral":"Sigue asi, continua",
-                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "La respuesta es incorrecta. Continúa con el ejercicio.",
+                        "retroalimentacion": {
+                            "positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                        } 
                     },
                     "opciones": []
                 },
@@ -63,19 +62,17 @@
                     [
                         "&& y || se evalúan en corto circuito."
                     ],
-                    "textoEmocional":
-                    {
-                        "neutral":"Inicia los ejercicios",
-                        "encantado":"Estas muy bien, inicia con el ejercicio",
-                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion":
-                        {
-                            "positiva":"No importa el error vas muy bien",
-                            "neutral":"Sigue asi, continua",
-                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                    "textoEmocional": {
+                         "neutral": "Has finalizado con este ejercicio.",
+                         "encantado": "Estudiar con esfuerzo y positivismo trae consigo siempre buenas recompensas.”, ¡sigue con este entusiasmo!.",              
+                         "sorprendido": "El que persevera alcanza!, ¡sigue con este entusiasmo!.",
+                         "compasivo": "¿Todavía crees que aprender Java es complicado?.  Establece objetivos a corto plazo y pronto serás un Sensei de Java.",                
+                         "esceptico": "Al menos llegaste al final del ejercicio.",
+                         "retroalimentacion": {
+                               "positiva": "¡Felicidades!.",
+                               "neutral": "Has finalizado con este ejercicio.",
+                               "negativa": "Me parece que sólo estabas adivinando las respuestas."
+                        } 
                     },
                     "opciones": []
                 }                
