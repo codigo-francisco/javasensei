@@ -1,0 +1,248 @@
+{
+    "id": 72,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+        "La herencia es el acto de derivar una nueva clase de una ya existente.  La clase derivada hereda a todos los miembros definidos en la clase base y puede usar directamente todos aquellos miembros que tienen acceso public o protected.",
+        "Los constructores no son miembros, por lo tanto no se heredan."
+    ],
+    "opciones": [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Paso 1 de 4.  Selecciona la palabra clave que indica que la clase Alumno hereda de Persona",
+            "presentacion": [
+                "class Persona {",
+                "}",
+                "class Alumno <input type='text' readonly class='focusInput'> Persona {",
+                "}"
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Cuando te arriesgas sacrificas todo lo que puedes perder, por lo mucho que puedes ganar.  ¡Inicia con el ejercicio!",
+                "sorprendido": "Tus límites los conoces tú, no permitas que nadie levante muros ante tus objetivos. ¡Inicia con el ejercicio!",
+                "compasivo": "Una voluntad fuerte es la mejor ayuda para alcanzar tus metas.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "¡Estudia! No para saber una cosa más, sino para saberla mejor.  Empieza el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "!Estoy orgulloso de ti!.",
+                    "neutral": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede.",
+                    "negativa": "Si sabes lo que quieres pero no te molestas en luchar por ello, no te lamentes por no conseguirlo."
+                }
+
+            },
+            "opciones": [
+                {
+                    "texto": "extends",
+                    "paso": 1,
+                    "tipo": "pasooptimo",
+                    "instruccion": "Paso 2 de 4. Verdadero o Falso.  Si la clase Persona tiene como atributo el nombre con un modificador de acceso public, ¿la clase derivada Alumno tendrá acceso a este atributo?",
+                    "presentacion": [
+                        "class Persona {",
+                        "\tpublic String nombre;",
+                        "}",
+                        "class Alumno <input type='text' readonly value= 'extends' class='focusInput'> Persona {",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                         "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                        "encantado": "Tú entusiasmo hace que aprender sea más fácil.",
+                        "sorprendido": "¡Me sorprende tu actitud positiva!, continúa así.",
+                        "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+                        "esceptico": "Tal vez este ejercicio es fácil para ti pero almenos intenta terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "Un viaje de mil kilómetros comienza con un simple paso.”, ¡sigue así!.",
+                            "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                            "negativa": "La respuesta es correcta, pero, ¿te lo estas tomando en serio?"                            
+                        }
+                    },
+                    "opciones": [                        
+                        {
+                            "texto": "Verdadero",
+                            "paso": 2,
+                            "tipo": "pasooptimo",
+                            "instruccion": "Paso 3 de 4. Verdadero o Falso.  Si la clase Persona tiene como atributo el nombre con un modificador de acceso private, ¿la clase derivada Alumno tendrá acceso a este atributo?",
+                            "presentacion": [
+                                "class Persona {",
+                                "\tprivate String nombre;",
+                                "}",
+                                "class Alumno extends Persona {",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                "encantado": "Tú entusiasmo hace que aprender sea más fácil.",
+                                "sorprendido": "¡Me sorprende tu actitud positiva!, continúa así.",
+                                "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+                                "esceptico": "Tal vez este ejercicio es fácil para ti pero almenos intenta terminar el ejercicio.",
+                                "retroalimentacion": {                            
+                                    "positiva": "Nunca te rindas y nunca te rindas.  Pronto serás un Sensei de Java.  Continúa con el ejercicio.",
+                                    "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                    "negativa": "La respuesta es correcta, pero, ¿te lo estas tomando en serio?"                            
+                                }
+                            },
+                            "opciones": [                                
+                                {
+                                    "texto": "Verdadero",
+                                    "paso": 3,
+                                    "tipo": "pasoerroneo",
+                                    "instruccion": "La respuesta es incorrecta.  Los miembros private de una superclase son accesibles sólo dentro de la declaración de esa superclase.  Intentalo de nuevo.",
+                                    "presentacion": [
+                                        "class Persona {",
+                                        "\tprivate String nombre;   //<--sólo es accesible en la clase Persona",
+                                        "}",
+                                        "class Alumno extends Persona {",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                        "encantado": "¡Estoy feliz por tu decisión de aprender Java!.  Intentalo de nuevo",
+                                        "sorprendido": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java",
+                                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                                        "retroalimentacion": {                           
+                                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                                            "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                                        }
+                                    },
+                                    "opciones": [
+                                    ]
+                                },
+                                {
+                                    "texto": "Falso",
+                                    "paso": 4,
+                                    "tipo": "pasofinaloptimo",
+                                    "instruccion": "Paso 4 de 4. Fin del ejercicio.  ¡Buen trabajo!.  Selecciona otro ejercicio del menú.",
+                                    "presentacion": [
+                                        "class Persona {",
+                                        "\tprivate String nombre;   //<--sólo es accesible en la clase Persona",
+                                        "}",
+                                        "class Alumno extends Persona {",
+                                        "}"
+                                    ],
+                                    "neutral": "Has finalizado con este ejercicio.",
+					"encantado": "En la vida no hay que esperar a que pase la tormenta, hay que aprender a bailar bajo la lluvia, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Si sigues haciendo lo que estás haciendo, seguirás consiguiendo lo que estás consiguiendo. Has finalizado con este ejercicio.",
+					"compasivo": "Para ser el mejor y alcanzar tus metas solo hay un camino, estudiar y prepararte para los retos de la vida.",                
+					"esceptico": "Por la ignorancia nos equivocamos, y por las equivocaciones aprendemos.",
+					"retroalimentacion": {
+                                            "positiva": "Lo maravilloso de aprender algo, es que nadie puede arrebatárnoslo.",
+                                            "neutral": "La educación es un proceso que no termina nunca.",
+                                            "negativa": "No se puede cambiar lo que te niegas a afrontar.  Al menos llegaste al final del ejercicio."
+					},
+                                    "opciones": [
+                                    ]
+                                }                                
+                            ]
+                        },
+                        {
+                            "texto": "Falso",
+                            "paso": 5,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  La clase derivada puede acceder a los miembros públicos y protegidos de la clase base como si fuesen miembros propios.  Intentalo de nuevo.",
+                            "presentacion": [
+                                "class Persona {",
+                                "\tpublic String nombre;    //<--las subclases tienen acceso a este atributo public",
+                                "}",
+                                "class Alumno extends Persona {",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                                "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                                "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                                "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                                "retroalimentacion": {                           
+                                    "positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+                                    "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                                    "negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño"
+                                }
+                            },
+                            "opciones": []
+                        }
+                        
+                    ]
+                },
+                {
+                    "texto": "implements",
+                    "paso": 6,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Para definir una clase que va a heredar de otra clase, se utiliza la palabra clave extends seguida del nombre de la superclase en la cabecera de la declaración.  Intenta de nuevo.",
+                    "presentacion": [
+                        "class Persona {",
+                        "}",
+                        "class Alumno <input type='text' readonly value= 'implements' class='errorTracing'> Persona {",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                        "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                        "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                        "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                        "retroalimentacion": {                           
+                            "positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                            "negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño"
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "abstract",
+                    "paso": 7,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Para definir una clase que va a heredar de otra clase, se utiliza la palabra clave extends seguida del nombre de la superclase en la cabecera de la declaración.  Intenta de nuevo.",
+                    "presentacion": [
+                        "class Persona {",
+                        "}",
+                        "class Alumno <input type='text' readonly value= 'abstract' class='errorTracing'> Persona {",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                        "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                        "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                        "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡Intentalo de nuevo!",
+                            "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                            "negativa": "La respuesta es incorrecta.  Necesitas mejorar."
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "public",
+                    "paso": 8,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Para definir una clase que va a heredar de otra clase, se utiliza la palabra clave extends seguida del nombre de la superclase en la cabecera de la declaración.  Intenta de nuevo.",
+                    "presentacion": [
+                        "class Persona {",
+                        "}",
+                        "class Alumno <input type='text' readonly value= 'public' class='errorTracing'> Persona {",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                        "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                        "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                        "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡Intentalo de nuevo!",
+                            "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                            "negativa": "La respuesta es incorrecta.  Necesitas mejorar."
+                        }
+                    },
+                    "opciones": [
+                    ]
+                }
+            ]
+        }
+    ]
+}

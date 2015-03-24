@@ -1,0 +1,479 @@
+{
+    "id": 74,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+         "Los constructores no se heredan.  Cada clase derivada tendrá sus propios constructores.  La clase base es la encargada de inicializar sus atributos y la clase derivada se encarga de inicializar los suyos.",
+         "Cuando se crea un objeto de una clase derivada se ejecutan los constructores en este orden: primero se ejecuta el constructor de la clase base y después se ejecuta el constructor de la clase derivada."
+    ],
+    "opciones": [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Paso 1 de 4.  ¿Qué se obtiene al compilar y ejecutar el siguiente código?",
+            "presentacion": [
+                "class Persona {",
+                "\tpublic Persona() {",
+                "\t\tSystem.out.println(\"A\");",
+                "}",
+                "class Alumno extends Persona {",
+                "\tpublic Alumno() {",                
+                "\t\tSystem.out.println(\"B\");",
+                "\t}",
+                "}",
+                "public class JavaSensei {",
+                "\tpublic static void main( String[] args ) {",
+                "\t\tAlumno a = new Alumno();",
+                "\t}",
+                "}"
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Con esfuerzo y perseverancia podrás alcanzar tus metas.  ¡Inicia con el ejercicio!",
+                "sorprendido": "No digas que no eres capaz de lograrlo, si nunca lo has intentado. ¡Inicia con el ejercicio!",
+                "compasivo": "Todos tus intentos son un exito.  Unas veces ganas y otras aprendes.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "¿Por qué confías más en la suerte que en tu propio trabajo? La suerte nunca va a depender de ti.  Empieza el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "!Estoy orgulloso de ti!.",
+                    "neutral": "No vas a conseguir siempre lo que deseas, pero si aquello por lo que te esfuerces.",
+                    "negativa": "Tu actitud y no tu aptitud será la que defina tus metas."
+                }
+
+            },
+            "opciones": [
+                {
+                    "texto": "AB",
+                    "paso": 1,
+                    "tipo": "pasooptimo",
+                    "instruccion": "Paso 2 de 4. ¿Qué se obtiene al compilar y ejecutar el siguiente código?",
+                    "presentacion": [
+                        "class Persona {",
+                        "\tpublic Persona( String n ) {",
+                        "\t\tSystem.out.println( n );",
+                        "}",
+                        "class Alumno extends Persona {",
+                        "\tpublic Alumno() {",                
+                        "\t\tSystem.out.println(\"B\");",
+                        "\t}",
+                        "}",
+                        "public class JavaSensei {",
+                        "\tpublic static void main( String[] args ) {",
+                        "\t\tAlumno a = new Alumno();",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                        "encantado": "Mas vale paso que dure y no trote que canse.  Sigue con el ejercicio.",              
+                        "sorprendido": "No hay ascensor al éxito, tienes que tomar las escaleras.  Sigue con el ejercicio.",
+                        "compasivo": "Cree y actúa como si fuese imposible fracasar.   Sigue con el ejercicio.",                
+                        "esceptico": "Tus aspiraciones son tus posibilidades.  Creo que tu escepticismo no te deja progresar.  Sigue con el ejercicio.",
+                        "retroalimentacion": {
+                            "positiva": "Revisa tu respuesta.  ¡También de los errores se aprende!",
+                            "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                            "negativa": "Me parece que sólo estás perdiendo el tiempo.  Sigue con el ejercicio."
+                        } 
+                    },
+                    "opciones": [                        
+                        {
+                            "texto": "AB",
+                            "paso": 2,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  El constructor por defecto de la clase derivada llama al constructor por defecto de la clase base.  Al no existir ese constructor por defecto en la clase Persona el compilador marcará un error en tiempo de compilación.  Intentalo de nuevo.",
+                            "presentacion": [
+                                "class Persona {",
+                                "\tpublic Persona( String n ) {",
+                                "\t\tSystem.out.println( n );",
+                                "}",
+                                "class Alumno extends Persona {",
+                                "\tpublic Alumno() {",                
+                                "\t\tSystem.out.println(\"B\");",
+                                "\t}",
+                                "}",
+                                "public class JavaSensei {",
+                                "\tpublic static void main( String[] args ) {",
+                                "\t\tAlumno a = new Alumno();",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                "encantado": "Cada logro comienza con la decisión de intentarlo.  Continúa con el ejercicio.",              
+                                "sorprendido": "No hay sustituto del trabajo duro.  Sigue estudiando como hasta ahora.",
+                                "compasivo": "El experto en algo fue una vez un novato.  Sigue con el ejercicio.",                
+                                "esceptico": "No te preocupes por los fracasos, preocúpate por las oportunidades que pierdes cuando ni siquiera lo intentas.",
+                                "retroalimentacion": {
+                                    "positiva": "¡Casi casi! pero la respuesta no es la correcta, ¡sigue intentándolo!",
+                                    "neutral": "La respuesta no es la correcta.",
+                                    "negativa": "¿Te acuerdas para que estás estudiando?.  Trata de no perder tu tiempo."
+                                } 
+                            },
+                            "opciones": [                                                                                                
+                            ]
+                        },
+                        {
+                            "texto": "BA",
+                            "paso": 3,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  El constructor por defecto de la clase derivada llama al constructor por defecto de la clase base.  Al no existir ese constructor por defecto en la clase Persona el compilador marcará un error en tiempo de compilación.  Intentalo de nuevo.",
+                            "presentacion": [
+                                "class Persona {",
+                                "\tpublic Persona( String n ) {",
+                                "\t\tSystem.out.println( n );",
+                                "}",
+                                "class Alumno extends Persona {",
+                                "\tpublic Alumno() {",                
+                                "\t\tSystem.out.println(\"B\");",
+                                "\t}",
+                                "}",
+                                "public class JavaSensei {",
+                                "\tpublic static void main( String[] args ) {",
+                                "\t\tAlumno a = new Alumno();",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                "encantado": "Cada logro comienza con la decisión de intentarlo.  Continúa con el ejercicio.",              
+                                "sorprendido": "No hay sustituto del trabajo duro.  Sigue estudiando como hasta ahora.",
+                                "compasivo": "El experto en algo fue una vez un novato.  Sigue con el ejercicio.",                
+                                "esceptico": "Busca aplicaciones prácticas para los ciclos, ¡te sorprenderá todo lo que puedes hacer!.",
+                                "retroalimentacion": {
+                                    "positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+                                    "neutral": "La respuesta no es la correcta.",
+                                    "negativa": "¿Ya estudiaste lo suficiente como para acertar la pregunta?."
+                                }
+                            },
+                            "opciones": []
+                        },
+                        {
+                            "texto": "Error: compilación",
+                            "paso": 4,
+                            "tipo": "pasooptimo",
+                            "instruccion": "Paso 3 de 4.  ¿Qué se obtiene al compilar y ejecutar el siguiente código?",
+                            "presentacion": [
+                                "class Persona {",
+                                "\tpublic Persona( String n ) {",
+                                "\t\tSystem.out.println( n );",
+                                "}",
+                                "class Alumno extends Persona {",
+                                "\tpublic Alumno() {", 
+                                "\t\tsuper( \"A\" );",
+                                "\t\tSystem.out.println(\"B\");",
+                                "\t}",
+                                "}",
+                                "public class JavaSensei {",
+                                "\tpublic static void main( String[] args ) {",
+                                "\t\tAlumno a = new Alumno();",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "!Correcto!.  Continúa con el ejercicio.",
+                                "encantado": "Cada logro comienza con la decisión de intentarlo, ¡sigue así!.",              
+                                "sorprendido": "¡Cosechas lo que siembras!, sigue adelante con el ejercicio.",
+                                "compasivo": "No hay ascensor al éxito, tienes que tomar las escaleras.  Sigue adelante con el ejercicio.",                
+                                "esceptico": "¿Todavía no crees que aprender Java sea importante?, al menos intenta terminar el ejercicio.",
+                                "retroalimentacion": {
+                                    "positiva": "¡Correcto!.  El que persevera alcanza!.",
+                                    "neutral": "El éxito consiste en ir de fracaso en fracaso sin pérdida de entusiasmo.",
+                                    "negativa": "¿Ya te aburriste de encontrar las respuestas en forma aleatoria?"
+                } 
+                            },
+                            "opciones": [                                
+                                {
+                                    "texto": "AB",
+                                    "paso": 5,
+                                    "tipo": "pasofinaloptimo",
+                                    "instruccion": "Paso 4 de 4.  Fin del ejercicio.  ¡Excelente!.  Selecciona otro ejercicio del menú.",
+                                    "presentacion": [
+                                        "class Persona {",
+                                        "\tpublic Persona( String n ) {",
+                                        "\t\tSystem.out.println( n );",
+                                        "}",
+                                        "class Alumno extends Persona {",
+                                        "\tpublic Alumno() {", 
+                                        "\t\tsuper( \"A\" );",
+                                        "\t\tSystem.out.println(\"B\");",
+                                        "\t}",
+                                        "}",
+                                        "public class JavaSensei {",
+                                        "\tpublic static void main( String[] args ) {",
+                                        "\t\tAlumno a = new Alumno();",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "Has finalizado con este ejercicio.",
+					"encantado": "En la vida no hay que esperar a que pase la tormenta, hay que aprender a bailar bajo la lluvia, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Si sigues haciendo lo que estás haciendo, seguirás consiguiendo lo que estás consiguiendo. Has finalizado con este ejercicio.",
+					"compasivo": "Para ser el mejor y alcanzar tus metas solo hay un camino, estudiar y prepararte para los retos de la vida.",                
+					"esceptico": "El éxito de la vida no está en vencer siempre, sino en no desanimarse nunca.",
+					"retroalimentacion": {
+                                            "positiva": "Nunca te rindas ante dificultades, siempre sigue adelante que el éxito tarda pero llega.",
+                                            "neutral": "El nueve no es sino un seis que se superó a sí mismo.",
+                                            "negativa": "Aquel que no ha fracasado es porque nunca ha intentado algo nuevo."
+					}
+                                    },
+                                    "opciones": []
+                                },
+                                {
+                                    "texto": "BA",
+                                    "paso": 6,
+                                    "tipo": "pasoerroneo",
+                                    "instruccion": "La respuesta es incorrecta.  La instrucción para invocar al constructor de la clase base es: super(argumentos).  Entonces primero se ejecuta el constructor de la superclase y luego el de la subclase.  Intentalo de nuevo.",
+                                    "presentacion": [
+                                        "class Persona {",
+                                        "\tpublic Persona( String n ) {",
+                                        "\t\tSystem.out.println( n );",
+                                        "}",
+                                        "class Alumno extends Persona {",
+                                        "\tpublic Alumno() {", 
+                                        "\t\tsuper( \"A\" );",
+                                        "\t\tSystem.out.println(\"B\");",
+                                        "\t}",
+                                        "}",
+                                        "public class JavaSensei {",
+                                        "\tpublic static void main( String[] args ) {",
+                                        "\t\tAlumno a = new Alumno();",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                        "encantado": "La respuesta es incorrecta.  ¡Animo!, Intenta encontrar la respuesta correcta.",              
+                                        "sorprendido": "La respuesta es incorrecta.  ¡Concentrate! e Intenta encontrar la respuesta correcta.",
+                                        "compasivo": "Nuestra mayor debilidad reside en rendirnos.   Intenta encontrar la respuesta correcta",                
+                                        "esceptico": "¿Te equivocaste de nuevo?, sigue con el ejercicio.",
+                                        "retroalimentacion": {
+                                            "positiva": "La respuesta es incorrecta.  Revisa tu respuesta.",
+                                            "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                            "negativa": "¿Te equivocaste de nuevo?.  Me parece que nada mas estás jugando."
+                                        } 
+                                    },
+                                    "opciones": []
+                                },
+                                {
+                                    "texto": "Error: compilación",
+                                    "paso": 7,
+                                    "tipo": "pasoerroneo",
+                                    "instruccion": "La respuesta es incorrecta.  La instrucción para invocar al constructor de la clase base es: super(argumentos).  Entonces primero se ejecuta el constructor de la superclase y luego el de la subclase.  Intentalo de nuevo.",
+                                    "presentacion": [
+                                        "class Persona {",
+                                        "\tpublic Persona( String n ) {",
+                                        "\t\tSystem.out.println( n );",
+                                        "}",
+                                        "class Alumno extends Persona {",
+                                        "\tpublic Alumno() {", 
+                                        "\t\tsuper( \"A\" );",
+                                        "\t\tSystem.out.println(\"B\");",
+                                        "\t}",
+                                        "}",
+                                        "public class JavaSensei {",
+                                        "\tpublic static void main( String[] args ) {",
+                                        "\t\tAlumno a = new Alumno();",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                                        "esceptico": "Se que estos ejercicios no son un reto para ti, pero ya casi terminas de resolver este ejercicio.",
+                                        "retroalimentacion": {
+                                            "positiva": "La respuesta es incorrecta. Tal vez necesites investigar un poco más.  Continúa con el ejercicio.",
+                                            "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                                        } 
+                                    },
+                                    "opciones": []
+                                },
+                                {
+                                    "texto": "Error: ejecución",
+                                    "paso": 8,
+                                    "tipo": "pasoerroneo",
+                                    "instruccion": "La respuesta es incorrecta.  La instrucción para invocar al constructor de la clase base es: super(argumentos).  Entonces primero se ejecuta el constructor de la superclase y luego el de la subclase.  Intentalo de nuevo.",
+                                    "presentacion": [
+                                        "class Persona {",
+                                        "\tpublic Persona( String n ) {",
+                                        "\t\tSystem.out.println( n );",
+                                        "}",
+                                        "class Alumno extends Persona {",
+                                        "\tpublic Alumno() {", 
+                                        "\t\tsuper( \"A\" );",
+                                        "\t\tSystem.out.println(\"B\");",
+                                        "\t}",
+                                        "}",
+                                        "public class JavaSensei {",
+                                        "\tpublic static void main( String[] args ) {",
+                                        "\t\tAlumno a = new Alumno();",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                                        "esceptico": "Se que estos ejercicios no son un reto para ti, pero ya casi terminas de resolver este ejercicio.",
+                                        "retroalimentacion": {
+                                            "positiva": "La respuesta es incorrecta. Tal vez necesites investigar un poco más.  Continúa con el ejercicio.",
+                                            "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                                        } 
+                                    },
+                                    "opciones": []
+                                }                                
+                            ]
+                        },
+                        {
+                            "texto": "Error: ejecución",
+                            "paso": 9,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta.  El constructor por defecto de la clase derivada llama al constructor por defecto de la clase base.  Al no existir ese constructor por defecto en la clase Persona el compilador marcará un error en tiempo de compilación.  Intentalo de nuevo.",
+                            "presentacion": [
+                                "class Persona {",
+                                "\tpublic Persona( String n ) {",
+                                "\t\tSystem.out.println( n );",
+                                "}",
+                                "class Alumno extends Persona {",
+                                "\tpublic Alumno() {",                
+                                "\t\tSystem.out.println(\"B\");",
+                                "\t}",
+                                "}",
+                                "public class JavaSensei {",
+                                "\tpublic static void main( String[] args ) {",
+                                "\t\tAlumno a = new Alumno();",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                                "encantado": "Preguntando se llega a Roma, ¡sigue con este entusiasmo!.",              
+                                "sorprendido": "El que persevera alcanza!.  Sigue adelante con el ejercicio.",
+                                "compasivo": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.  Sigue con el ejercicio.",                
+                                "esceptico": "Si estos ejercicios son aburridos para ti, ¿porqué no lograr acertar con la respuesta?.",
+                                "retroalimentacion": {
+                                "positiva": "¡La respuesta es incorrecta!.  ",
+                                "neutral": "La respuesta es incorrecta.  Intenta encontrar la respuesta correcta.",
+                                "negativa": "Me parece que sólo estás adivinando.  ¿Estás seguro de querer aprender Java?"
+                            }
+                            },
+                            "opciones": []
+                        }
+                        
+                    ]
+                },
+                {
+                    "texto": "BA",
+                    "paso": 10,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Cuando se invoca al constructor de la clase Alumno se invoca automáticamente al constructor de la clase Persona y después continúa la ejecución del constructor de la clase Alumno.  Intenta de nuevo.",
+                    "presentacion": [
+                        "class Persona {",
+                        "\tpublic Persona() {",
+                        "\t\tSystem.out.println(\"A\");",
+                        "}",
+                        "class Alumno extends Persona {",
+                        "\tpublic Alumno() {",                
+                        "\t\tSystem.out.println(\"B\");",
+                        "\t}",
+                        "}",
+                        "public class JavaSensei {",
+                        "\tpublic static void main( String[] args ) {",
+                        "\t\tAlumno a = new Alumno();",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "Preguntando se llega a Roma, ¡sigue con este entusiasmo!.",              
+                        "sorprendido": "El que persevera alcanza!.  Sigue adelante con el ejercicio.",
+                        "compasivo": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.  Sigue con el ejercicio.",                
+                        "esceptico": "Si estos ejercicios son aburridos para ti, ¿porqué no lograr acertar con la respuesta?.",
+                        "retroalimentacion": {
+                           "positiva": "¡La respuesta es incorrecta!.  ",
+                           "neutral": "La respuesta es incorrecta.  Intenta encontrar la respuesta correcta.",
+                           "negativa": "Me parece que sólo estás adivinando.  ¿Estás seguro de querer aprender Java?"
+                        } 
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "A",
+                    "paso": 11,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Cuando se invoca al constructor de la clase Alumno se invoca automáticamente al constructor de la clase Persona y después continúa la ejecución del constructor de la clase Alumno.  Intenta de nuevo.",
+                    "presentacion": [
+                        "class Persona {",
+                        "\tpublic Persona() {",
+                        "\t\tSystem.out.println(\"A\");",
+                        "}",
+                        "class Alumno extends Persona {",
+                        "\tpublic Alumno() {",                
+                        "\t\tSystem.out.println(\"B\");",
+                        "\t}",
+                        "}",
+                        "public class JavaSensei {",
+                        "\tpublic static void main( String[] args ) {",
+                        "\t\tAlumno a = new Alumno();",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                         "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Todos tenemos una habilidad distinta y cada día aprendemos un poquito más, tú eres una persona triunfadora.",
+                        "esceptico": "No desperdicies tu talento sin hacer nada productivo, estudia y sácale provecho a tus habilidades..",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Intentalo otra vez!",
+                            "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "negativa": "Creo que necesitas estudiar un poco más."
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "B",
+                    "paso": 12,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Cuando se invoca al constructor de la clase Alumno se invoca automáticamente al constructor de la clase Persona y después continúa la ejecución del constructor de la clase Alumno.  Intenta de nuevo.",
+                    "presentacion": [
+                        "class Persona {",
+                        "\tpublic Persona() {",
+                        "\t\tSystem.out.println(\"A\");",
+                        "}",
+                        "class Alumno extends Persona {",
+                        "\tpublic Alumno() {",                
+                        "\t\tSystem.out.println(\"B\");",
+                        "\t}",
+                        "}",
+                        "public class JavaSensei {",
+                        "\tpublic static void main( String[] args ) {",
+                        "\t\tAlumno a = new Alumno();",
+                        "\t}",
+                        "}"
+                    ],
+                    "textoEmocional": {
+                         "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Todos tenemos una habilidad distinta y cada día aprendemos un poquito más, tú eres una persona triunfadora.",
+                        "esceptico": "No desperdicies tu talento sin hacer nada productivo, estudia y sácale provecho a tus habilidades..",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Intentalo otra vez!",
+                            "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "negativa": "Creo que necesitas estudiar un poco más."
+                        }
+                    },
+                    "opciones": [
+                    ]
+                }
+            ]
+        }
+    ]
+}

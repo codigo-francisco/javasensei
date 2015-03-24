@@ -18,16 +18,16 @@
                 "} while( x < 20 );"
             ],
             "textoEmocional": {
-                "neutral": "Inicia los ejercicios",
-                "encantado": "Estas muy bien, inicia con el ejercicio",
-                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "neutral": "Inicia con el ejercicio para continuar con el curso",
+                "encantado": "Una sensación de continuo desarrollo es una maravillosa fuente de motivación y confianza para ti..  Inicia con el ejercicio.",              
+                "sorprendido": "Debes ser un eterno estudiante.  Mientras más aprendas, más ganarás y más confianza tendrás en ti mismo.   Inicia con el ejercicio.",
+                "compasivo": "La perseverancia es fallar 19 veces y tener éxito la vigésima.  Intenta resolver el ejercicio.",                
+                "esceptico": "Si asciende tu curva de aprendizaje.  Muy pronto tendrás más respuestas de las que necesitas.  Inicia el ejercicio.",
                 "retroalimentacion": {
-                    "positiva": "No importa el error vas muy bien",
-                    "neutral": "Sigue asi, continua",
-                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                }
+                    "positiva": "Aprende algo nuevo.  Trata algo diferente.  Convencete de que no tienes límites, porque en realidad, no los tiene.",
+                    "neutral": "Un fracaso dura lo que tardas el olvidarlo, eres tú el que decides hacerlo permanente o no.",
+                    "negativa": "El temor nos mueve en dirección opuesta a nuestros deseos."
+                } 
             },
             "opciones": [                
                 {
@@ -43,15 +43,15 @@
                         "} while( x < 20 );"                    
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
                         }
                     },
                     "opciones": [
@@ -70,15 +70,15 @@
                         "} while( x < 20 );"                    
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es correcta.  Resuelve otro ejercicio.",
+                        "encantado": "¡Te siento comprometido contigo mismo, resuelve más ejercicios.",
+                        "sorprendido": "¡Wow!, estás inspirado, continúa con ese entusiasmo.",
+                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza otro ejercicio.",
+                        "esceptico": "Se que este ejercicio es fácil para ti.  En el menú de opciones hay otros ejercicios más interesantes.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                            "positiva": "¡Muy bien!, Java es un lenguaje independiente de la plataforma.",
+                            "neutral": "Sigue asi, continua.  Java es un lenguaje independiente de la plataforma.",
+                            "negativa": "Se que no te gusta la teoría, pero es parte importante de tu formación académica."
                         }
                     },
                     "opciones": [

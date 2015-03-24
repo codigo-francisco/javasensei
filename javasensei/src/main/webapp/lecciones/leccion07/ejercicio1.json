@@ -1,5 +1,5 @@
 {
-    "id":70,
+    "id": 71,
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
@@ -10,7 +10,7 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Paso 1.  ¿Cómo se le llama a la clase principal de la cual otras clases heredan?",
+            "instruccion": "Paso 1 de 4.  Considera el siguiente código para contestar a la pregunta.  ¿Cómo se le llama a la clase principal de la cual otras clases heredan?",
             "presentacion": [
                 "class Deporte {  // <-- a esta clase se le llama: ?",
                 "}",
@@ -18,40 +18,40 @@
                 "}"
             ],
             "textoEmocional": {
-                "neutral": "Intenta resolver este ejercicio",
-                "encantado": "La clave para aprender Java es la motivación: ¡sigue así!",
-                "sorprendido": "Estudiar hará que te sientas motivado por aprender Java",
-                "compasivo": "Este ejercicio y este curso te ayudarán a mejorar tu confianza con Java",
-                "esceptico": "Me parece que este ejercicio es muy fácil, puedes intentar con otro",
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Para mover una montaña necesitas comenzar por pequeñas piedras.  ¡Inicia con el ejercicio!",
+                "sorprendido": "No permitas que nadie te diga que no puedes conseguir aquello que quieres. ¡Inicia con el ejercicio!",
+                "compasivo": "No importa que hoy te equivoques, tienes el resto de tu vida para solucionarlo.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "Por muy poco que puedas hacer, siempre es más que quedarse de brazos cruzados.  Empieza el ejercicio.",
                 "retroalimentacion": {
-                    "positiva": "Somos lo que hacemos día a día. ¿Ya estás listo para resolver el ejercicio?",
-                    "neutral": "Resuelve el ejercicio",
-                    "negativa": "Si deseas aprender Java, ¡Despierta!, tienes que ponerte a estudiar"
+                    "positiva": "Nadie dijo que la vida fuera fácil ¿pero vas a rendirte ante la primera dificultad?.",
+                    "neutral": "La motivación es el mejor método para hacer las cosas.",
+                    "negativa": "Rendirse no es la solución, es la escapatorio más fácil."
                 }
+
             },
             "opciones": [
                 {
                     "texto": "Superclase o clase padre",
                     "paso": 1,
                     "tipo": "pasooptimo",
-                    "instruccion": "Paso 2. ¿A la clase que hereda de una superclase se le llama?",
+                    "instruccion": "Paso 2 de 4.  Considera el siguiente código para contestar a la pregunta. ¿A la clase que hereda de una superclase se le llama?",
                     "presentacion": [
-                        "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o clase padre' class='focusInput'>",
                         "}",
-                        "",
-                        "class Futbol extends Deporte { // <-- a esta clase se le llama: ?'>",
+                        "class Futbol extends Deporte { //<-- a esta clase se le llama: ?",
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
-                        "encantado": "Tu actitud para aprender es ¡Excelente!",
-                        "sorprendido": "¡Creo que te estás confiando demasiado!",
-                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
-                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
-                        "retroalimentacion": {
-                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
-                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
-                            "negativa": "¡Necesitas mayor concentración!"
+                        "neutral": "La respuesta es correcta.  Sigue con el ejercicio",
+                        "encantado": "Continua con este entusiasmo.  Ya casi terminas el ejercicio",
+                        "sorprendido": "¡Me sorprendes!, noto que cada día eres mejor, continúa con el ejercicio.",
+                        "compasivo": "Yo se que tu puedes, ¡sigue adelante!.",
+                        "esceptico": "Me parece que tienes una actitud indiferente.  Al menos trata de terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "¡Perfecto!.  Sigue con el ejercicio.",
+                            "neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+                            "negativa": "¿Estás seguro que se trata de una respuesta razonada?.  Sigue con el ejercicio."                            
                         }
                     },
                     "opciones": [                        
@@ -61,50 +61,50 @@
                             "tipo": "pasoerroneo",
                             "instruccion": "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
                             "presentacion": [
-                                "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                                "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o clase padre' class='focusInput'>",
                                 "}",
-                                "",
-                                "class Futbol extends Deporte { // <-- a esta clase se le llama: <input type='text' value='Superclase o clase padre' readonly class='errorTracing'>",
+                                "class Futbol extends Deporte { //<-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o clase padre' class='errorTracing'>",
                                 "}"
                             ],
                             "textoEmocional": {
                                 "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                "encantado": "Tu actitud para aprender es ¡Excelente!",
-                                "sorprendido": "¡Creo que te estás confiando demasiado!",
-                                "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
-                                "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
-                                "retroalimentacion": {
-                                    "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
-                                    "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
-                                    "negativa": "¡Necesitas mayor concentración!"
-                                }
+                                "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                                "retroalimentacion": {                           
+                                    "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                                    "neutral": "La respuesta no es la correcta",
+                                    "negativa": "¿Estás seguro de querer estudiar este curso?."
+                        }
+
                             },
-                            "opciones": [ ]
+                            "opciones": [                                                                                            
+                            ]
                         },
                         {
                             "texto": "Subclase o clase derivada",
                             "paso": 3,
                             "tipo": "pasooptimo",
-                            "instruccion": "Paso 3.  Verdadero o Falso.  ¿Java soporta la definición de una jerarquía de clases?",
+                            "instruccion": "Paso 3 de 4.  Considera el siguiente código para contestar a la pregunta con verdadero o falso.  ¿Las relaciones de herencia simple forman estructuras jerárquicas tipo árbol?",
                             "presentacion": [
-                                "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                                "class Deporte {  // <-- superclase de Futbol",
                                 "}",
-                                "",
-                                "class Futbol extends Deporte { // <-- a esta clase se le llama: Subclase o clase derivada",
+                                "class Futbol extends Deporte { //<-- subclase Deporte y superclase de FutbolPlaya",
                                 "}",
-                                "class FutbolPlaya extends Futbol { // <-- clase base: Futbol",
+                                "class FutbolPlaya extends Futbol { // <-- clase derivada de Futbol",
                                 "}"
                             ],
                             "textoEmocional": {
-                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                "encantado": "Tu actitud para aprender es ¡Excelente!",
-                                "sorprendido": "¡Creo que te estás confiando demasiado!",
-                                "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
-                                "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
-                                "retroalimentacion": {
-                                    "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
-                                    "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
-                                    "negativa": "¡Necesitas mayor concentración!"
+                                "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                "encantado": "Tú entusiasmo hace que aprender sea más fácil.",
+                                "sorprendido": "¡Me sorprende tu actitud positiva!, continúa así.",
+                                "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+                                "esceptico": "Tal vez este ejercicio es fácil para ti pero almenos intenta terminar el ejercicio.",
+                                "retroalimentacion": {                            
+                                    "positiva": "Por cada esfuerzo, hay una recompensa.  Nunca te rindas. Sigue adelante con el ejercicio.",
+                                    "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                    "negativa": "La respuesta es correcta, pero, ¿te lo estas tomando en serio?"                            
                                 }
                             },
                             "opciones": [                                 
@@ -112,59 +112,56 @@
                                     "texto": "Verdadero",
                                     "paso": 4,
                                     "tipo": "pasofinaloptimo",
-                                    "instruccion": "¡Felicidades! has terminado el ejercicio.  Selecciona otro ejercicio del menú de opciones.",
+                                    "instruccion": "Paso 4 de 4.  Fin del ejercicio.  ¡Bien hecho!.  Selecciona otro ejercicio del menú.",
                                     "presentacion": [
-                                        "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                                        "class Deporte {  // <-- superclase de Futbol",
                                         "}",
-                                        "",
-                                        "class Futbol extends Deporte { // <-- a esta clase se le llama: Subclase o clase derivada",
+                                        "class Futbol extends Deporte { //<-- subclase Deporte y superclase de FutbolPlaya",
                                         "}",
-                                        "class FutbolPlaya extends Futbol { // <-- clase base: Futbol",
+                                        "class FutbolPlaya extends Futbol { // <-- clase derivada de Futbol",
                                         "}"
                                     ],
                                     "textoEmocional": {
-                                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                        "encantado": "Tu actitud para aprender es ¡Excelente!",
-                                        "sorprendido": "¡Creo que te estás confiando demasiado!",
-                                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
-                                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
-                                        "retroalimentacion": {
-                                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
-                                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
-                                            "negativa": "¡Necesitas mayor concentración!"
-                                        }
+                                        "neutral": "Has finalizado con este ejercicio.",
+					"encantado": "En la vida no hay que esperar a que pase la tormenta, hay que aprender a bailar bajo la lluvia, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+					"compasivo": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede.  ¡continua así!.",                
+					"esceptico": "Lo que con mucho trabajo se adquiere, más se ama.  Sigue aprendiendo Java.",
+					"retroalimentacion": {
+                                            "positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+                                            "neutral": "Has finalizado con este ejercicio.",
+                                            "negativa": "No se puede cambiar lo que te niegas a afrontar.  Al menos llegaste al final del ejercicio."
+					}	
                                     },
-                                    "opciones": []
+                                    "opciones": [ ]
                                 },
                                 {
                                     "texto": "Falso",
                                     "paso": 5,
                                     "tipo": "pasoerroneo",
-                                    "instruccion": "La respuesta es incorrecta.  En Java es posible tener una jerarquía de clases, es decir Clase Base ::> HerenciaA ::> HerenciaAa..., etc",
+                                    "instruccion": "La respuesta es incorrecta.  Las relaciones de herencia simple forman estructuras jerárquicas tipo árbol: una superclase existe en una relación jerárquica con sus subclases.  Intentalo de nuevo.",
                                     "presentacion": [
-                                        "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                                        "class Deporte {  // <-- superclase de Futbol",
                                         "}",
-                                        "",
-                                        "class Futbol extends Deporte { // <-- a esta clase se le llama: Subclase o clase derivada",
+                                        "class Futbol extends Deporte { //<-- subclase Deporte y superclase de FutbolPlaya",
                                         "}",
-                                        "class FutbolPlaya extends Futbol { // <-- clase base: Futbol",
+                                        "class FutbolPlaya extends Futbol { // <-- clase derivada de Futbol",
                                         "}"
                                     ],
                                     "textoEmocional": {
                                         "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                        "encantado": "Tu actitud para aprender es ¡Excelente!",
-                                        "sorprendido": "¡Creo que te estás confiando demasiado!",
-                                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
-                                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
-                                        "retroalimentacion": {
-                                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
-                                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
-                                            "negativa": "¡Necesitas mayor concentración!"
+                                        "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                                        "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                                        "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                                        "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                                        "retroalimentacion": {                           
+                                            "positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+                                            "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                                            "negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño"
                                         }
                                     },
-                                    "opciones": []
-                                }
-                                
+                                    "opciones": [ ]
+                                }                                                                
                             ]
                         },
                         {
@@ -173,101 +170,74 @@
                             "tipo": "pasoerroneo",
                             "instruccion": "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
                             "presentacion": [
-                                "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                                "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o clase padre' class='focusInput'>",
                                 "}",
-                                "",                                
-                                "class Futbol extends Deporte { // <-- a esta clase se le llama: <input type='text' value='Superclase o clase padre' readonly class='errorTracing'>",
+                                "class Futbol extends Deporte { //<-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o subclase' class='errorTracing'>",
                                 "}"
                             ],
                             "textoEmocional": {
                                 "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                "encantado": "Tu actitud para aprender es ¡Excelente!",
-                                "sorprendido": "¡Creo que te estás confiando demasiado!",
-                                "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
-                                "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
-                                "retroalimentacion": {
-                                    "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
-                                    "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
-                                    "negativa": "¡Necesitas mayor concentración!"
+                                "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                                "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                                "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                                "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                                "retroalimentacion": {                           
+                                    "positiva": "Por cada esfuerzo, hay una recompensa.  Nunca te rindas. Sigue adelante con el ejercicio.",
+                                    "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                                    "negativa": "La respuesta es incorrecta.  Necesitas mejorar."
                                 }
                             },
-                            "opciones": [ ]
+                            "opciones": []
                         },
                         {
                             "texto": "Ninguna de las anteriores",
                             "paso": 7,
-                            "tipo": "pasoerroneo",
+                            "tipo": "paserroneo",
                             "instruccion": "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
                             "presentacion": [
-                                "class Deporte {  // <-- a esta clase se le llama: Superclase o clase padre",
+                                "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o clase padre' class='focusInput'>",
                                 "}",
-                                "",
-                                "class Futbol extends Deporte { // <-- a esta clase se le llama: <input type='text' value='Superclase o clase padre' readonly class='errorTracing'>",
+                                "class Futbol extends Deporte { //<-- a esta clase se le llama: <input type='text' readonly value= 'Ninguna de las anteriores' class='errorTracing'>",
                                 "}"
                             ],
                             "textoEmocional": {
                                 "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                "encantado": "Tu actitud para aprender es ¡Excelente!",
-                                "sorprendido": "¡Creo que te estás confiando demasiado!",
-                                "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
-                                "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
-                                "retroalimentacion": {
-                                    "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
-                                    "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
-                                    "negativa": "¡Necesitas mayor concentración!"
+                                "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                                "retroalimentacion": {                           
+                                    "positiva": "¡Intentalo una vez más!",
+                                    "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                    "negativa": "Creo que no has estudiado lo suficiente."
                                 }
                             },
-                            "opciones": [ ]
-                        }                                                
+                            "opciones": []
+                        }
+                        
                     ]
                 },
                 {
                     "texto": "Subclase o clase derivada",
                     "paso": 8,
                     "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta.  La clase base es aquella que se usa para definir una nueva clase.  Se le conoce como: clase base, clase padre, superclase.  Intentalo de nuevo",
+                    "instruccion":  "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
                     "presentacion": [
-                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' value='Subclase o clase derivada' readonly class='errorTracing'>",
+                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Subclase o clase derivada' class='errorTracing'>",
                         "}",
                         "class Futbol extends Deporte {",
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "¡Excelente!, la respuesta es correcta",
-                        "sorprendido": "¡Wow!, te siento motivado, continúa así",
-                        "compasivo": "¡Animo!, aunque no es fácil: el estudio es la base del triunfo",
-                        "esceptico": "Este ejercicio no es tan complicado",
-                        "retroalimentacion": {
-                            "positiva": "¡Excelente!, la función de un compilador es convertir un programa a otro equivalente (en el caso de Java traducirlo a bytecodes) y detectar si existen errores de sintaxis",
-                            "neutral": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse",
-                            "negativa": "Necesitas dedicarle un poco más de tiempo para aprender Java"
-                        }
-                    },
-                    "opciones": [
-                    ]
-                },
-                {
-                    "texto": "Subclase o clase derivada",
-                    "paso": 9,
-                    "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta.  La clase base es aquella que se usa para definir una nueva clase.  Se le conoce como: clase base, clase padre, superclase.  Intentalo de nuevo",
-                    "presentacion": [
-                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' value='Superclase o clase derivada' readonly class='errorTracing'>",
-                        "}",
-                        "class Futbol extends Deporte {",
-                        "}"
-                    ],
-                    "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "¡Excelente!, la respuesta es correcta",
-                        "sorprendido": "¡Wow!, te siento motivado, continúa así",
-                        "compasivo": "¡Animo!, aunque no es fácil: el estudio es la base del triunfo",
-                        "esceptico": "Este ejercicio no es tan complicado",
-                        "retroalimentacion": {
-                            "positiva": "¡Excelente!, la función de un compilador es convertir un programa a otro equivalente (en el caso de Java traducirlo a bytecodes) y detectar si existen errores de sintaxis",
-                            "neutral": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse",
-                            "negativa": "Necesitas dedicarle un poco más de tiempo para aprender Java"
+                         "neutral": "La respuesta es incorrecta.  Sigue con el ejercicio",
+                        "encantado": "Continua con este entusiasmo y veras que todos tus sueños mañana se harán realidad.",
+                        "sorprendido": "¡Me sorprendes!, noto que cada día eres mejor, continúa así.",
+                        "compasivo": "Yo se que eres buen estudiante, ¡sigue adelante!.",
+                        "esceptico": "Una persona que estudia jamás será un fracasado.  Trata de terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "¡Lo has hecho muy bien!.  Sigue con el ejercicio.",
+                            "neutral": "La respuesta es incorrecta.  Sigue con el ejercicio.",
+                            "negativa": "¿Estás seguro que se trata de una respuesta razonada?"  
                         }
                     },
                     "opciones": [
@@ -275,25 +245,25 @@
                 },
                 {
                     "texto": "Superclase o subclase",
-                    "paso": 10,
+                    "paso": 9,
                     "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta.  La clase base es aquella que se usa para definir una nueva clase.  Se le conoce como: clase base, clase padre, superclase.  Intentalo de nuevo",
+                    "instruccion":  "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
                     "presentacion": [
-                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' value='Superclase o subclase' readonly class='errorTracing'>",
+                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Superclase o subclase' class='errorTracing'>",
                         "}",
                         "class Futbol extends Deporte {",
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "¡Excelente!, la respuesta es correcta",
-                        "sorprendido": "¡Wow!, te siento motivado, continúa así",
-                        "compasivo": "¡Animo!, aunque no es fácil: el estudio es la base del triunfo",
-                        "esceptico": "Este ejercicio no es tan complicado",
-                        "retroalimentacion": {
-                            "positiva": "¡Excelente!, la función de un compilador es convertir un programa a otro equivalente (en el caso de Java traducirlo a bytecodes) y detectar si existen errores de sintaxis",
-                            "neutral": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse",
-                            "negativa": "Necesitas dedicarle un poco más de tiempo para aprender Java"
+                        "neutral": "La respuesta es incorrecta.  Sigue con el ejercicio",
+                        "encantado": "Para estudiar hay que tener perseverancia, paciencia y motivación.  ¡Sigue así!",
+                        "sorprendido": "¡Me sorprendes!, la respuesta no es correcta pero no pierdas esa actitud por aprender.",
+                        "compasivo": "Estudiar Java demanda tiempo y esfuerzo pero al final siempre hay resultados positivos, ¡ánimo!.",
+                        "esceptico": "Una persona que estudia jamás será un fracasado.  Trata de terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "¡Casi casi!.  La respuesta es incorrecta.  Continúa con el ejercicio.",
+                            "neutral": "La respuesta es incorrecta.  Sigue con el ejercicio.",
+                            "negativa": "La respuesta es incorrecta, sin embargo, ¿estás seguro que se trata de una respuesta razonada?"                            
                         }
                     },
                     "opciones": [
@@ -301,25 +271,25 @@
                 },
                 {
                     "texto": "Ninguna de las anteriores",
-                    "paso": 11,
+                    "paso": 10,
                     "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta.  La clase base es aquella que se usa para definir una nueva clase.  Se le conoce como: clase base, clase padre, superclase.  Intentalo de nuevo",
+                    "instruccion":  "La respuesta es incorrecta.  La clase derivada (clase hija, subclase) es la clase que agrega y/o especializa el comportamiento a una clase base.  Intenta de nuevo.",
                     "presentacion": [
-                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' value='Ninguna de las anteriores' readonly class='errorTracing'>",
+                        "class Deporte {  // <-- a esta clase se le llama: <input type='text' readonly value= 'Ninguna de las anteriores' class='errorTracing'>",
                         "}",
                         "class Futbol extends Deporte {",
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "¡Excelente!, la respuesta es correcta",
-                        "sorprendido": "¡Wow!, te siento motivado, continúa así",
-                        "compasivo": "¡Animo!, aunque no es fácil: el estudio es la base del triunfo",
-                        "esceptico": "Este ejercicio no es tan complicado",
-                        "retroalimentacion": {
-                            "positiva": "¡Excelente!, la función de un compilador es convertir un programa a otro equivalente (en el caso de Java traducirlo a bytecodes) y detectar si existen errores de sintaxis",
-                            "neutral": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse",
-                            "negativa": "Necesitas dedicarle un poco más de tiempo para aprender Java"
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Todos tenemos una habilidad distinta y cada día aprendemos un poquito más, tú eres una persona triunfadora.",
+                        "esceptico": "No desperdicies tu talento sin hacer nada productivo, estudia y sácale provecho a tus habilidades.",
+                        "retroalimentacion": {                           
+                            "positiva": "Casi, casi, ¡Intentalo de nuevo!",
+                            "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "negativa": "Creo que no has estudiado lo suficiente."
                         }
                     },
                     "opciones": [
@@ -329,4 +299,3 @@
         }
     ]
 }
-

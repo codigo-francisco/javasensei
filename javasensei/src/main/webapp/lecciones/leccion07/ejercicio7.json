@@ -1,0 +1,151 @@
+{
+    "id":77,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+        "Los métodos heredados de la clase base se pueden redefinir (modificar o sobreescribir) en las clases derivadas.",
+        "El método en la clase derivada se debe escribir con el mismo nombre, el mismo número y tipo de parámetros y el mismo tipo de retorno que en la clase base.",
+        "Si no fuera así estaríamos sobrecargando el método, no redefiniéndolo."
+    ],
+    "opciones": [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Paso 1 de 2. ¿Cuál de los siguientes métodos se puede agregar en la clase Test2 para cumplir con la redefinición del método aMethod de la clase Test1?",
+            "presentacion": [
+                "class Test1 {",
+                "\tpublic float aMethod(float a, float b) {}",                
+                "}",
+                "public class Test2 extends Test1 {",
+                "\t//el método a sobreescribir va aquí",                
+                "}"
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Se quiere más aquello que se ha conseguido con muchas fatigas.  ¡Comienza con el ejercicio!",
+                "sorprendido": "Sigue adelante!, vas por buen camino. ¡Inicia el ejercicio!",
+                "compasivo": "Lo que con mucho trabajo se adquiere, más se ama.  ¡Adelante!,  comienza el ejercicio.",
+                "esceptico": "Puedes llegar a donde tú quieras.  Inicia con el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "!Adelante confió en ti.!",
+                    "neutral": "Te felicito por tu excelente rendimiento y comportamiento.",
+                    "negativa": "Enseñar a quien no quiere aprender es como sembrar un campo sin ararlo."
+                }
+            },
+            "opciones": [
+                {
+                    "texto": "float aMethod(float a, float b) {}",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  El método en la clase derivada se debe escribir con el mismo nombre, el mismo número y tipo de parámetros y el mismo tipo de retorno que en la clase base.  Intenta de nuevo.",
+                    "presentacion": [
+                        "class Test1 {",
+                        "\tpublic float aMethod(float a, float b) {}",                
+                        "}",
+                        "public class Test2 extends Test1 {",
+                        "\tfloat aMethod(float a, float b) {}",                
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "Casi, casi, ¡Intentalo de nuevo!",
+                            "neutral": "Te felicito por tu excelente rendimiento y comportamiento.",
+                            "negativa": "Creo que no has estudiado lo suficiente."
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },                
+                {
+                    "texto": "public int aMethod(float a, float b) {}",
+                    "paso": 2,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  El método en la clase derivada se debe escribir con el mismo nombre, el mismo número y tipo de parámetros y el mismo tipo de retorno que en la clase base.  Intenta de nuevo.",
+                    "presentacion": [
+                        "class Test1 {",
+                        "\tpublic float aMethod(float a, float b) {}",                
+                        "}",
+                        "public class Test2 extends Test1 {",
+                        "\tpublic int aMethod(float a, float b) {}",                
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "Yo se que eres capaz, ¡Intentalo de nuevo!",
+                            "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "negativa": "Creo que tratando de adivinar la respuesta."
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },
+                {
+                    "texto": "public float aMethod(float a, float b) {}",
+                    "paso": 3,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  El método en la clase derivada se debe escribir con el mismo nombre, el mismo número y tipo de parámetros y el mismo tipo de retorno que en la clase base.  Intenta de nuevo.",
+                    "presentacion": [
+                        "class Test1 {",
+                        "\tpublic float aMethod(float a, float b) {}",                
+                        "}",
+                        "public class Test2 extends Test1 {",
+                        "\tpublic int aMethod(float a, float b) {}",                
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Continua con este entusiasmo y veras que todos tus sueños mañana se harán realidad.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "No desperdicies tu talento sin hacer nada productivo, estudia y sácale provecho a tus habilidades.",
+                        "retroalimentacion": {                           
+                            "positiva": "Casi, casi, ¡Intentalo de nuevo!",
+                            "neutral": "Todos tenemos una habilidad distinta y cada día aprendemos un poquito más, tú eres una persona triunfadora.",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                        }
+                    },
+                    "opciones": [
+                    ]
+                },                
+                {
+                    "texto": "public float aMethod(float p, float q) {}",
+                    "paso": 4,
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "Paso 2 de 2.  Fin del ejercicio.  ¡Buen trabajo!, selecciona otro ejercicio del menú.",
+                    "presentacion": [
+                        "class Test1 {",
+                        "\tpublic float aMethod(float a, float b) {}",                
+                        "}",
+                        "public class Test2 extends Test1 {",
+                        "\tpublic float aMethod(float p, float q) {}",                
+                        "}"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "Has finalizado con este ejercicio.",
+                        "encantado": "El arte de vencer se aprende en las derrotas, ¡sigue con este entusiasmo!.",              
+                        "sorprendido": "Somos lo que hacemos día a día. De modo que la excelencia no es un acto, sino un hábito.",
+                        "compasivo": "No te des por vencido, ni aún vencido.  Establece objetivos a corto plazo y pronto serás un Sensei de Java.",                
+                        "esceptico": "Es absurdo continuar haciendo siempre lo mismo y esperar resultados diferentes.  Al menos llegaste al final del ejercicio.",
+                        "retroalimentacion": {
+                            "positiva": "¡Felicidades!.  Las oportunidades solamente las aprovechan las mentes preparadas.",
+                            "neutral": "Has finalizado con este ejercicio.",
+                            "negativa": "Las oportunidades no ocurren, las creas tú.  ¡Deja de jugar y ponte a estudiar!."
+                        } 
+                    },
+                    "opciones": [
+                    ]
+                }
+            ]
+        }
+    ]
+}

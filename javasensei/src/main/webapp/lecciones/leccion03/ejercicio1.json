@@ -17,15 +17,15 @@
                 "¿La condición de una instrucción if debe ser una expresión de tipo boolean?"
             ],
             "textoEmocional": {
-                "neutral": "Inicia el ejercicio.",
-                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
-                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
-                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
-                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                 "neutral": "Inicia con el ejercicio para continuar con el tema: instrucción if.",
+                "encantado": "No es lo que tu tienes, sino como usas lo que tienes lo que marca la diferencia.  Inicia con el ejercicio para continuar con el tema: instrucción if.",              
+                "sorprendido": "¡Me sorprendes!.   Inicia con el ejercicio para continuar con el tema: instrucción if.",
+                "compasivo": "La perseverancia es fallar 19 veces y tener éxito la vigésima.  Intenta resolver el ejercicio (instrucción if).",                
+                "esceptico": "Deberías considerar modificar tu escepticismo.  Inicia con el ejercicio (instrucción if).",
                 "retroalimentacion": {
-                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
-                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "positiva": "Noto que cada día eres mejor.  ¿Ya estás preparado para aprender algo nuevo?",
+                    "neutral": "Resuelve el ejercicio para continuar con el tema: instrucción if",
+                    "negativa": "Aquellos que dicen que algo no puede hacerse, suelen ser interrumpidos por otros que lo están haciendo."
                 } 
             },
             "opciones": 
@@ -33,26 +33,24 @@
                 {
                     "texto": "Verdadero",
                     "paso": 1,
-                    "tipo": "optimofinalizado",
+                    "tipo": "pasofinaloptimo",
                     "instruccion": "La respuesta es correcta.",
                     "presentacion": 
                     [
                         "La condición en una instrucción if debe ser de tipo boolean."
                     ],
-                    "textoEmocional":
-                    {
-                        "neutral":"Inicia los ejercicios",
-                        "encantado":"Estas muy bien, inicia con el ejercicio",
-                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion":
-                        {
-                            "positiva":"No importa el error vas muy bien",
-                            "neutral":"Sigue asi, continua",
-                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
-                    },
+                    "textoEmocional": {
+						"neutral": "Has finalizado con este ejercicio.",
+						"encantado": "Cada logro comienza con la decisión de intentarlo.”, ¡sigue con este entusiasmo!.",              
+						"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+						"compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio.",                
+						"esceptico": "Al menos llegaste al final del ejercicio.  Sigue aprendiendo Java.",
+						"retroalimentacion": {
+							"positiva": "Con esfuerzo y perseverancia podrás alcanzar tus metas.  ¡Sigue así!",
+							"neutral": "Has finalizado con este ejercicio.",
+							"negativa": "Aprender sin reflexionar es malgastar la energía.  ¡Necesitas mejorar!"
+						}		 
+					},
                     "opciones": []
                 },
                 {
@@ -66,17 +64,16 @@
                     ],
                     "textoEmocional":
                     {
-                        "neutral":"Inicia los ejercicios",
-                        "encantado":"Estas muy bien, inicia con el ejercicio",
-                        "sorprendido":"Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo":"Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico":"No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion":
-                        {
-                            "positiva":"No importa el error vas muy bien",
-                            "neutral":"Sigue asi, continua",
-                            "negativa":"Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "La respuesta es incorrecta. Continúa con el ejercicio.",
+                        "retroalimentacion": {
+                            "positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                        } 
                     },
                     "opciones": []
                 }

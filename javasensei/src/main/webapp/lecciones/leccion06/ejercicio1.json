@@ -21,16 +21,16 @@
                 "}"
             ],
             "textoEmocional": {
-                "neutral": "Inicia el ejercicio.",
-                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
-                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
-                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
-                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "neutral": "Inicia el ejercicio para continuar con el curso.",
+                "encantado": "Sólo si te permites el lujo de soñar, tus sueños podrán convertirse algún día en una realidad.  Comienza con el ejercicio.",              
+                "sorprendido": "Intenta y falla, pero nunca falles en intentarlo.  Comienza con el ejercicio.",
+                "compasivo": "Si quieres que las cosas cambien no tengas siempre la misma respuesta para los mismos problemas.  Comienza con el ejercicio.",                
+                "esceptico": "Siempre recuerda que tu enfoque es el que determina tu realidad. Comienza con el ejercicio.",
                 "retroalimentacion": {
-                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
-                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
-                } 
+                    "positiva": "Tus acciones positivas combinadas con pensamientos positivos resultan en el éxito",
+                    "neutral": "Concentra tus esfuerzos en el presente, olvídate del pasado y no pierdas el tiempo en el futuro.",
+                    "negativa": "Las personas apáticas no se mueven, solo se sientan y esperan a que las cosas mejoren."
+                }  
             },
             "opciones": 
             [

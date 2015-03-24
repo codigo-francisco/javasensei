@@ -24,16 +24,16 @@
                 "}"
             ],
             "textoEmocional": {
-                "neutral": "Inicia los ejercicios",
-                "encantado": "Estas muy bien, inicia con el ejercicio",
-                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "neutral": "Inicia con el ejercicio para continuar con el tema: instrucción if/else.",
+                "encantado": "Solo aquellos que se atreven a tener grandes fracasos terminan consiguiendo grandes éxitos.  Inicia con el ejercicio para continuar con el tema: instrucción if/else.",              
+                "sorprendido": "Tanto si crees que puedes hacerlo, como si no, en los dos casos tienes razón.   Inicia con el ejercicio para continuar con el tema: instrucción if/else.",
+                "compasivo": "El éxito es la habilidad de ir de fracaso a fracaso sin perder el entusiasmo.  Intenta resolver el ejercicio (instrucción if/else).",                
+                "esceptico": "Hasta que no te valores a ti mismo no valoraras tu tiempo. Y hasta que no valores tu tiempo no harás nada con él.  Inicia con el ejercicio (instrucción if/else).",
                 "retroalimentacion": {
-                    "positiva": "No importa el error vas muy bien",
-                    "neutral": "Sigue asi, continua",
-                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                }
+                    "positiva": "El éxito no es el resultado de una combustión espontánea. Tú tienes que encenderte primero.",
+                    "neutral": "Resuelve el ejercicio para continuar con el tema: instrucción if/else",
+                    "negativa": "Te convertirás en alguien tan pequeño como el deseo que te controle, y en algo tan grande como sea tu aspiración dominante."
+                }  
             },
             "opciones": [
                 {
@@ -55,16 +55,16 @@
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "La respuesta es incorrecta. Continúa con el ejercicio.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                            "positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                        } 
                     },
                     "opciones": []
                 },
@@ -87,16 +87,16 @@
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                         "neutral": "Has finalizado con este ejercicio.",
+                         "encantado": "El arte de vencer se aprende en las derrotas, ¡sigue con este entusiasmo!.",              
+                         "sorprendido": "Somos lo que hacemos día a día. De modo que la excelencia no es un acto, sino un hábito.",
+                         "compasivo": "No te des por vencido, ni aún vencido.  Cuando hay un problema, no hay nada que hacer; hay algo que saber.",                
+                         "esceptico": "A quien no sabe a que puerto encaminarse, ningún viento le es propicio.  Al menos llegaste al final del ejercicio.",
+                         "retroalimentacion": {
+                               "positiva": "¡Felicidades!.  Las oportunidades solamente las aprovechan las mentes preparadas.",
+                               "neutral": "Has finalizado con este ejercicio.",
+                               "negativa": "Estás usando el 2% de tu cerebro.  ¡Deja de jugar y ponte a estudiar!."
+                        } 
                     },
                     "opciones": []
                 },                                
@@ -119,16 +119,16 @@
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "La respuesta es incorrecta. Continúa con el ejercicio.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                            "positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                        } 
                     },
                     "opciones": []
                 },
@@ -151,16 +151,16 @@
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "La respuesta es incorrecta. Continúa con el ejercicio.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                            "positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+                            "neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+                            "negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+                        } 
                     },
                     "opciones": []                    
                 }

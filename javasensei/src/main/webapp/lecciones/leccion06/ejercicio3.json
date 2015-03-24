@@ -17,15 +17,15 @@
                 "¿La instrucción int[] arreglo = new int[10]; declara un arreglo con 10 elementos de tipo entero?"
             ],
             "textoEmocional": {
-                "neutral": "Inicia el ejercicio.",
-                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
-                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
-                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
-                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "neutral": "Inicia el ejercicio para continuar con el curso.",
+                "encantado": "Si crees que puedes, puedes.  Comienza con el ejercicio.",              
+                "sorprendido": "El éxito tiene una simple fórmula: da lo mejor de ti.  Comienza con el ejercicio.",
+                "compasivo": "No importa que te caigas siete veces, pero levántate ocho.  Comienza el ejercicio.",                
+                "esceptico": "La vida es lo que ocurre a tu lado mientras haces otros planes.  Comienza con el ejercicio.",
                 "retroalimentacion": {
-                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
-                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "positiva": "Haz todo lo que puedas, estés donde estés, con lo que tienes.",
+                    "neutral": "Antes que nada, la preparación es la llave del éxito.",
+                    "negativa": "Nunca vas a poder cruzar el océano hasta que tengas el coraje de dejar de ver la costa."
                 } 
             },
             "opciones": 
