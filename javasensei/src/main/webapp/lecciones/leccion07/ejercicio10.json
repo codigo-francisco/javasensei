@@ -169,7 +169,7 @@
                                     "texto": "Falso",
                                     "paso": 5,
                                     "tipo": "pasofinaloptimo",
-                                    "instruccion": "Paso 5.  La respuesta es correcta.  ¡Has finalizado el ejercicio!.  Selecciona otro ejercicio del menú.",
+                                    "instruccion": "Paso 4.  La respuesta es correcta.  ¡Has finalizado el ejercicio!.  Selecciona otro ejercicio del menú.",
                                     "presentacion": [
                                         "public class Mascota {",
                                         "\tpublic final void comer() {   //<--método de la superclase",
