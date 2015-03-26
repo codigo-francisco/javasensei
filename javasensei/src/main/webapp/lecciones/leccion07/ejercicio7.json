@@ -90,7 +90,7 @@
                     ]
                 },
                 {
-                    "texto": "public float aMethod(float a, float b) {}",
+                    "texto": "private float aMethod(double a, float b) {}",
                     "paso": 3,
                     "tipo": "pasoerroneo",
                     "instruccion": "La respuesta es incorrecta.  El método en la clase derivada se debe escribir con el mismo nombre, el mismo número y tipo de parámetros y el mismo tipo de retorno que en la clase base.  Intenta de nuevo.",
