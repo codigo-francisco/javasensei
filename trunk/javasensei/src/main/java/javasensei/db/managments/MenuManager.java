@@ -48,7 +48,7 @@ public class MenuManager {
             Integer id = new Double(object.get("id").toString()).intValue();
 
             List<DBObject> ejerciciosLeccion = ejercicios.stream().filter((ejercicio)
-                    -> Integer.parseInt(ejercicio.get("idLeccion").toString()) == id
+                    -> new Double(ejercicio.get("idLeccion").toString()).intValue() == id
             ).collect(Collectors.toList());
             
             long cantidadTotalEjercicios = ejerciciosLeccion.stream().count();
