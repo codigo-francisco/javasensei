@@ -10,7 +10,12 @@ import java.time.ZonedDateTime;
 import javasensei.db.DBInterface;
 import com.google.gson.JsonParser;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.mongodb.BasicDBList;
+import com.mongodb.BasicDBObject;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 /**
  *
  * @author PosgradoMCC
@@ -25,11 +30,10 @@ public class BitacoraEjerciciosDBO implements DBInterface {
     private double promedioAciertos;
     private int ejercicioId;
     private int pasoId;
-    private ZonedDateTime fecha;
+    private int totalErrores, totalAciertos;
+    private Date fecha;
     
-    public BitacoraEjerciciosDBO(String json){
-        JsonParser parser = new JsonParser();
-        JsonObject object = parser.parse(json).getAsJsonObject();
+    public BitacoraEjerciciosDBO(JsonObject object){
         idAlumno = object.get("idAlumno").getAsInt();
         emocion = object.get("emocion").getAsString();
         aciertos = object.get("errores").getAsInt();
@@ -38,13 +42,18 @@ public class BitacoraEjerciciosDBO implements DBInterface {
         promedioAciertos = object.get("promedioAciertos").getAsInt();
         ejercicioId = object.get("ejercicioId").getAsInt();
         pasoId = object.get("pasoId").getAsInt();
-        
-        fecha = ZonedDateTime.now();
+        totalErrores = object.get("totalErrores").getAsInt();
+        totalAciertos = object.get("totalAciertos").getAsInt();
+        fecha = Date.from(ZonedDateTime.parse(object.get("tiempo").getAsString()).toInstant());
     }
     
     @Override
     public DBObject convertToDBObject() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        DBObject object = new BasicDBObject();
+        
+        object.put("idAlumno", idAlumno);
+        
+        return object;
     }
     
 }
