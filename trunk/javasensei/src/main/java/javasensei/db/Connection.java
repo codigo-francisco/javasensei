@@ -48,6 +48,7 @@ public class Connection {
             collections.put(CollectionsDB.RANKING_RECURSOS, db.getCollection("ranking_recursos"));
             collections.put(CollectionsDB.RECURSOS, db.getCollection("recursos"));
             collections.put(CollectionsDB.TEMAS, db.getCollection("temas"));
+            collections.put(CollectionsDB.BITACORA_EJERCICIOS, db.getCollection("bitacora_ejercicios"));
         } catch (UnknownHostException ex) {
             Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }

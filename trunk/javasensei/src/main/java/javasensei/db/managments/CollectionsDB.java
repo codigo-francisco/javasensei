@@ -12,5 +12,6 @@ public enum CollectionsDB {
     RANKING_EJERCICIOS,
     RANKING_RECURSOS,
     RECURSOS,
-    TEMAS
+    TEMAS,
+    BITACORA_EJERCICIOS
 }
