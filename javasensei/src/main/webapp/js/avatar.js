@@ -1,3 +1,5 @@
+/* global menu_context, usuario, camera_sensei, example_tracing, tree_self, contexto */
+
 var avatar_context;
 var avatar_sensei = function avatar_sensei(avatar_control) {
     this.avatar_control = $(avatar_control);
@@ -9,22 +11,24 @@ var avatar_sensei = function avatar_sensei(avatar_control) {
     this.ultimos_datos = {};
     this.sePuedeIntervencion = true;
     this.idTimeout = 0;
+    this.bitacoras = new Array();
+
     avatar_context = this;
 };
 
 function obtenerRecomendacionesTutor(idEjercicio, datos, callback) { //Objeto del usuario y el ejercicio actual
 
     $.ajax({
-        url:"servicios/recursos/recomendaciones",
-        data:{
-            idEjercicio : idEjercicio,
-            idAlumno : usuario.id
+        url: "servicios/recursos/recomendaciones",
+        data: {
+            idEjercicio: idEjercicio,
+            idAlumno: usuario.id
         },
-        dataType : "json"
-    }).done(function(data){
+        dataType: "json"
+    }).done(function (data) {
         datos.opciones = data;
         callback(datos);
-    }).error(function(data){
+    }).error(function (data) {
         console.error("Error en la obtencion de recomendaciones: %0", data);
     });
 }
@@ -36,17 +40,18 @@ avatar_sensei.prototype = {
     primera_carga: function (data) { //Notificacion de que se esta cargando el ejercicio (diferente al paso inicial)
         camera_sensei.detenerFotos();
         camera_sensei.inicializarFotos();
+        avatar_context.bitacoras = new Array();
         avatar_context.es_primera_carga = true;
         avatar_context.sePuedeIntervencion = true;
         avatar_context.instrucciones_ejercicio = data.instruccionesejercicio;
     },
-    mostrarInformacion : function(){
+    mostrarInformacion: function () {
         var datos_avatar = {
             emocion: avatar_context.ultimos_datos.emocion,
             texto: avatar_context.instrucciones_ejercicio,
             opciones: [] //Sin opciones es solamente las instrucciones y la emocion
         };
-        
+
         avatar_context.crearAvatar(datos_avatar);
         avatar_context.mostrarAvatar();
     },
@@ -61,8 +66,8 @@ avatar_sensei.prototype = {
             $.ajax({
                 url: urlEmocion,
                 type: "POST",
-                data:{
-                    datosestudiante : JSON.stringify(usuario)
+                data: {
+                    datosestudiante: JSON.stringify(usuario)
                 },
                 dataType: "json"
             }).done(function (datos) {
@@ -88,14 +93,30 @@ avatar_sensei.prototype = {
         $.ajax({
             url: urlAjax,
             type: "POST",
-            data:{
-                datosestudiante : JSON.stringify(usuario),
-                fotos : fotografias
+            data: {
+                datosestudiante: JSON.stringify(usuario),
+                fotos: fotografias
             },
             dataType: "json"
         }).done(function (datos) {
             console.log("%cDatos recibidos: %O", "color:blue;", datos);
             avatar_context.intervencion(datos);
+            //Agregamos un nuevo objeto a la bitacora
+            avatar_context.bitacoras.push({
+                idAlumno: usuario.id,
+                emocion: datos.emocion,
+                aciertos: tree_self.obtenerTotalAciertos(),
+                errores: tree_self.obtenerTotalErrores(),
+                promedioErrores: tree_self.obtenerCalidadRespuesta(),
+                promedioAciertos: tree_self.obtenerCalidadAcierto(),
+                totalErrores: tree_self.obtenerTotalPasosErrores(),
+                totalAciertos: tree_self.obtenerTotalPasosAciertos(),
+                ejercicioId: avatar_context.id,
+                pasoId: tree_self.obtenerId(),
+                fecha: new Date().toISOString(),
+                tipoPaso: contexto.tipoPaso,
+                fotografias : JSON.parse(camera_sensei.getUltimasFotografias())
+            });
         }).fail(function (jqXHR, textStatus, errorThrown) {
             console.log("Fallo " + textStatus);
         });
@@ -142,44 +163,57 @@ avatar_sensei.prototype = {
         clearTimeout(avatar_context.idTimeout);
 
         $("#controles_tracing").hide();
-        
+
         //Mostramos el rating
         $("#controles_cierre_tracing").show();
-        
+
         avatar_context.obtenerRatingEjercicio(avatar_context.id);
-        
+
         //Ajax para cambiar el estado del ejercicio
         $.ajax({
             url: "servicios/estudiantes/finalizarEjercicio",
             type: "GET",
-            data:{
-                idEjercicio : avatar_context.id,
-                idAlumno : usuario.id
+            data: {
+                idEjercicio: avatar_context.id,
+                idAlumno: usuario.id
             },
             contentType: "application/json",
             dataType: "json"
-        }).done(function(data){
+        }).done(function (data) {
             console.log(data);
             menu_context.actualizarBoton(avatar_context.id);
-        }).error(function(error){
-           console.error(error); 
+        }).error(function (error) {
+            console.error(error);
         });
-    },
-    obtenerRatingEjercicio : function(idEjercicio){
+        
+        //Guardado de la bitacora
         $.ajax({
-            url:"servicios/recursos/getrankingejercicio",
-            data:{
-                idEjercicio : idEjercicio,
-                idAlumno : usuario.id
-            },
-            dataType:"json"
-        }).done(function(data){
-            avatar_context.setRatingEjercicio(data.id, data.ranking);
-        }).fail(function(error){
+            url: "servicios/bitacora/guardarbitacoras",
+            type: "POST",
+            data: {
+                logBitacoras : JSON.stringify(avatar_context.bitacoras)
+            }
+        }).done(function (data) {
+            console.log("Bitacora guardada:" + data);
+        }).error(function (error) {
             console.error(error);
         });
     },
-    setRatingEjercicio : function(id, ranking){
+    obtenerRatingEjercicio: function (idEjercicio) {
+        $.ajax({
+            url: "servicios/recursos/getrankingejercicio",
+            data: {
+                idEjercicio: idEjercicio,
+                idAlumno: usuario.id
+            },
+            dataType: "json"
+        }).done(function (data) {
+            avatar_context.setRatingEjercicio(data.id, data.ranking);
+        }).fail(function (error) {
+            console.error(error);
+        });
+    },
+    setRatingEjercicio: function (id, ranking) {
         var calificaciones = $("#calificaciones_ejercicios");
         calificaciones.empty();
         calificaciones.append(
@@ -206,7 +240,7 @@ avatar_sensei.prototype = {
                             dataType: "json"
                         }).done(function (data) {
                             avatar_context.setRatingEjercicio(data.id, data.ranking);
-                        }).fail(function(error){
+                        }).fail(function (error) {
                             console.error(error);
                         });
                     }
@@ -246,21 +280,20 @@ avatar_sensei.prototype = {
                         .text(opcion.titulo)
                         .on("click", {
                             opciones: opcion
-                        },
-                        function (event) {
+                        }, function (event) {
                             var opciones = event.data.opciones;
                             visualizarRecurso(opciones);
                         }
                         )
-                        );
+                );
                 opciones_avatar.append(lista);
             });
 
             opciones_avatar.listview("refresh");
-        }else{
+        } else {
             $("#recomendaciones").hide();
         }
-        
+
         avatar_context.ultimos_datos = datos;
     },
     intervencion: function (datos) {
@@ -288,11 +321,11 @@ avatar_sensei.prototype = {
             //Se envia todo al tutor para que forme el avatar
             avatar_context.crearAvatar(datos_nuevos);
             avatar_context.mostrarAvatar();
-            
+
             avatar_context.sePuedeIntervencion = false;
-            avatar_context.idTimeout = setTimeout(function(){
+            avatar_context.idTimeout = setTimeout(function () {
                 avatar_context.sePuedeIntervencion = true;
-            },55000);
+            }, 55000);
         }
     }
 };

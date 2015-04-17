@@ -29,6 +29,7 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(javasensei.tutor.rest.BitacoraRest.class);
         resources.add(javasensei.tutor.rest.DominioRest.class);
         resources.add(javasensei.tutor.rest.EmocionRest.class);
         resources.add(javasensei.tutor.rest.EstrategiaTutor.class);

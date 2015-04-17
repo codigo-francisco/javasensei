@@ -35,6 +35,7 @@ public class TutorEvaluacion {
         json.addProperty("expresion", resultado.getExpresion());
         json.addProperty("intervencion", resultado.getIntervencion());
         json.addProperty("retroalimentacion", resultado.getRetroalimentacion());
+        json.addProperty("emocion", estudiante.getEmocionActual().toString());
 
         return gson.toJson(json);
     }
