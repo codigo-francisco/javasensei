@@ -37,7 +37,6 @@ public class BitacoraRest {
      */
     @Path("guardarbitacoras")
     @POST
-    @Produces("application/json")
     public String guardarBitacoras(@FormParam("logBitacoras") String logBitacoras) {
         BitacoraEjerciciosManager manager = new BitacoraEjerciciosManager();
         
