@@ -42,7 +42,7 @@ public class BitacoraEjerciciosManager {
                     .get()).limit(1);
             
             if (cursor != null && cursor.hasNext()){
-                sesionId = new Long(cursor.next().get("sesionId").toString());
+                sesionId = new Long(cursor.next().get("sesionId").toString()) + 1;
             }
 
             for (JsonElement object : array) {

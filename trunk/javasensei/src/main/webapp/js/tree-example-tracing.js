@@ -51,9 +51,10 @@ tree_example_tracing.prototype = {
         
         var resultado = cantidad;
         
+        if (total==0) //Bug menor
+            total=1;
+            
         if (calidad)
-            if (total == 0)
-                total = 1;
             resultado = cantidad / total;
         
         return resultado;
@@ -72,7 +73,7 @@ tree_example_tracing.prototype = {
                 case "pasoerroneo":
                     tree_self.tablaErrores.set(index, 0);
                     break;
-                case "pasooptimo" || "pasosuboptimo" || "pasosuboptimofinal" || "pasooptimofinal":
+                case "pasooptimo" || "pasosuboptimo" || "pasofinaloptimo" || "pasofinalsuboptimo":
                     tree_self.tablaAciertos.set(index, 0);
                     break;
             }

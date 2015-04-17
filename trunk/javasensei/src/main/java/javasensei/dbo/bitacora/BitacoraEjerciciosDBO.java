@@ -11,6 +11,7 @@ import javasensei.db.DBInterface;
 import com.google.gson.JsonParser;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
@@ -18,12 +19,15 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Base64;
 /**
  *
  * @author PosgradoMCC
  */
 public class BitacoraEjerciciosDBO implements DBInterface {
 
+    private static final Base64.Decoder decoder = Base64.getDecoder();
+            
     private int idAlumno;
     private String emocion;
     private int errores;
@@ -35,7 +39,7 @@ public class BitacoraEjerciciosDBO implements DBInterface {
     private int totalErrores, totalAciertos;
     private Date fecha;
     private String tipoPaso;
-    private List fotografias;
+    private List<byte[]> fotografias = new ArrayList<>();
     private long sesionId;
     
     public void setSesionId(long sesionId){
@@ -55,7 +59,10 @@ public class BitacoraEjerciciosDBO implements DBInterface {
         totalAciertos = object.get("totalAciertos").getAsInt();
         fecha = Date.from(ZonedDateTime.parse(object.get("fecha").getAsString()).toInstant());
         tipoPaso = object.get("tipoPaso").getAsString();
-        fotografias = new Gson().fromJson(object.get("fotografias").getAsJsonArray(), ArrayList.class);
+        for (JsonElement element : object.get("fotografias").getAsJsonArray()){
+            fotografias.add(decoder.decode(element.getAsString()));
+        }
+        //fotografias = new Gson().fromJson(object.get("fotografias").getAsJsonArray(), ArrayList.class);
         this.sesionId = sesionId;
     }
     
