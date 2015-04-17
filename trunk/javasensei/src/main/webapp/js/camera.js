@@ -11,7 +11,8 @@ var camera = function () {
     this.funcionEmocion = function () {
     };
 
-    //this.photo_list = new Array(); //Almacenamiento FIFO
+    localStorage.setItem("last_photo",JSON.stringify([]));
+    
     localStorage.setItem("photo_list",JSON.stringify([]));
 
     camera_context = this;
@@ -25,7 +26,7 @@ camera.prototype = {
     },
     reiniciarFotos: function () {
         console.log("Se reinicio la lista");
-        //camera_context.photo_list = new Array();
+        localStorage.setItem("last_photo", localStorage.getItem("photo_list"));
         localStorage.setItem("photo_list",JSON.stringify([]));
     },
     detenerFotos: function () {
@@ -66,35 +67,12 @@ camera.prototype = {
 
         Webcam.attach('#camera');
     },
+    getUltimasFotografias : function(){
+        return localStorage.getItem("last_photo");
+    },
     getFotografias : function(){
         camera_context.detenerFotos();
 
         return localStorage.getItem("photo_list");
-    },
-    evaluarEmociones: function (callback, datos) {
-        /*var url_emocion = url + camera_context.url + "obteneremocion";
-
-        camera_context.tipoCamino = datos;
-        camera_context.funcionEmocion = callback;
-        camera_context.detenerFotos();
-
-        $.ajax(url_emocion, {
-            data: {
-                fotos: localStorage.getItem("photo_list")
-            },
-            type: 'POST',
-            jsonpCallback: "jsonpCallback"
-        }).done(function (datos) {
-            //camera_context.funcionEmocion(camera_context.tipoCamino, emocion);
-            console.log("%c Emocion recibida:%O", "color:white; background:black;", datos);
-            usuario.emocionPrevia = usuario.emocionActual;
-            usuario.emocionActual = datos.emocion;
-            camera_context.funcionEmocion(camera_context.tipoCamino);
-        }).fail(function (jqXHR, textStatus, errorThrown) {
-            console.error("Fallo: " + textStatus);
-            console.error("Error: " + errorThrown);
-        });
-
-        camera_context.reiniciarFotos();*/
     }
 };

@@ -1,3 +1,5 @@
+/* global buckets */
+
 var tree_self = {};
 
 var tree_example_tracing = function tree_example_tracing(ejercicios) {
@@ -15,39 +17,72 @@ var tree_example_tracing = function tree_example_tracing(ejercicios) {
 
     this.matriz = {};
     this.tablaErrores = new buckets.Dictionary();
-
+    this.tablaAciertos = new buckets.Dictionary();
+    
     tree_self = this;
 };
 tree_example_tracing.prototype = {
     colocarError: function (paso) {
         tree_self.tablaErrores.set(paso, 1);//1 Quiere decir que se activo el paso erroneo
     },
-    obtenerCalidadRespuesta: function () {
-        var tablaErrores = tree_self.tablaErrores;
+    colocarAcierto: function(paso){
+        tree_self.tablaAciertos.set(paso, 1);
+    },
+    obtenerTotalPasosAciertos : function(){
+        return tree_self.tablaAciertos.size();
+    },
+    obtenerTotalPasosErrores : function(){
+        return tree_self.tablaErrores.size();
+    },
+    obtenerTotalAciertos: function(){
+        return tree_self.obtenerCalculo(tree_self.tablaAciertos, false);
+    },
+    obtenerTotalErrores : function(){
+        return tree_self.obtenerCalculo(tree_self.tablaErrores, false);
+    },
+    obtenerCalculo: function(tabla, calidad){
         var cantidad = 0;
-        var total = tablaErrores.size();
+        var total = tabla.size();
 
-        tablaErrores.forEach(function (key, value) {
+        tabla.forEach(function (key, value) {
             if (value > 0)
                 cantidad++;
         });
-
-        return cantidad / total;
+        
+        var resultado = cantidad;
+        
+        if (calidad)
+            if (total == 0)
+                total = 1;
+            resultado = cantidad / total;
+        
+        return resultado;
     },
-    crearTablaErrores: function () {
+    obtenerCalidadAcierto: function(){
+        return tree_self.obtenerCalculo(tree_self.tablaAciertos, true);
+    },
+    obtenerCalidadRespuesta: function () {
+        return tree_self.obtenerCalculo(tree_self.tablaErrores, true);
+    },
+    crearTablas: function () {
         for (var index in tree_self.matriz) {
             var paso = tree_self.matriz[index];
 
-            if (paso.tipo == "pasoerroneo") {
-                tree_self.tablaErrores.set(index, 0);
+            switch(paso.tipo){
+                case "pasoerroneo":
+                    tree_self.tablaErrores.set(index, 0);
+                    break;
+                case "pasooptimo" || "pasosuboptimo" || "pasosuboptimofinal" || "pasooptimofinal":
+                    tree_self.tablaAciertos.set(index, 0);
+                    break;
             }
         }
     },
     construirMatriz: function (matriz, nodo, anterior) {
         if (matriz == undefined) { //Primera construccion de la matriz
             tree_self.construirMatriz(tree_self.matriz, tree_self.ejercicios, -1);
-            //Recursividad terminada, creamos la tabla de errores
-            tree_self.crearTablaErrores();
+            //Recursividad terminada, creamos la tabla de errores y aciertos
+            tree_self.crearTablas();
             return;
         }
 
@@ -69,7 +104,6 @@ tree_example_tracing.prototype = {
 
             matriz[nodo.paso].siguiente = array;
         }
-        ;
     },
     obtenerId: function () {
         return tree_self.ejercicios.id;

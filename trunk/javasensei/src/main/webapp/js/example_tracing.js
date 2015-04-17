@@ -13,6 +13,8 @@ var example_tracing_sensei = function (areatrabajo, areasoluciones, boton_adelan
 
     this.tree_example_tracing = emptyFunction;
     this.letras = ["a", "b", "a", "b"];
+    
+    this.tipoPaso = "";
 
     this.suscriptores_carga = new buckets.Set();
     this.suscriptores_inicio = new buckets.Set(); //Conjunto con los suscriptores
@@ -66,19 +68,25 @@ example_tracing_sensei.prototype = {
                 notificaciones = contexto.suscriptores_error;
                 break;
             case "pasooptimo":
+                contexto.tree_example_tracing.colocarAcierto(datos.paso);
                 notificaciones = contexto.suscriptores_optimo;
                 break;
             case "pasosuboptimo":
+                contexto.tree_example_tracing.colocarAcierto(datos.paso);
                 notificaciones = contexto.suscriptores_suboptimo;
                 break;
             case "pasofinalsuboptimo":
+                contexto.tree_example_tracing.colocarAcierto(datos.paso);
                 notificaciones = contexto.suscriptores_final_suboptimo;
                 break;
             case "pasofinaloptimo":
+                contexto.tree_example_tracing.colocarAcierto(datos.paso);
                 notificaciones = contexto.suscriptores_final_optimo;
                 break;
         }
-
+        
+        contexto.tipoPaso = tipo;
+        
         if (notificaciones) {
             //Se notifica a todos los suscriptores, pasando los datos
             notificaciones.forEach(function (suscriptor) {
@@ -91,7 +99,6 @@ example_tracing_sensei.prototype = {
         var paso_datos = contexto.tree_example_tracing.atras();
 
         contexto.construir_interfaz(paso_datos, true, false);
-
     },
     mover_adelante: function () {
         //Llamamos al mover atras del tree_example, este nos devuelve el paso que necesitamos redenrizar
@@ -164,7 +171,7 @@ example_tracing_sensei.prototype = {
             contexto.boton_atras.addClass("ui-disabled"); //Sedhabilitado
         }
 
-        //Se evalua si se debe habilitar el boton atras
+        //Se evalua si se debe habilitar el boton adelante
         if (contexto.tree_example_tracing.tieneAdelante()) {
             contexto.boton_adelante.removeClass("ui-disabled"); //Habilitarlo
         } else {
