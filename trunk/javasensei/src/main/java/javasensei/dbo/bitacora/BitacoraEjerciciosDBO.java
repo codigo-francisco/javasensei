@@ -77,6 +77,7 @@ public class BitacoraEjerciciosDBO implements DBInterface {
         object.put("idAlumno", idAlumno);
         object.put("emocion", emocion);
         object.put("aciertos", aciertos);
+        object.put("errores", errores);
         object.put("promedioErrores", promedioErrores);
         object.put("promedioAciertos", promedioAciertos);
         object.put("ejercicioId",ejercicioId);
