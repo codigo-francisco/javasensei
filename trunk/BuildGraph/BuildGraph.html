@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<link href="https://code.jquery.com/ui/1.11.4/themes/black-tie/jquery-ui.css" rel="stylesheet">	
+		<link href="node_modules/touch-splitter-jquery/src/touchsplitter.css" rel="stylesheet">	
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.7.0/vis.min.css" rel="stylesheet">
+		
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+		
+		<script src="node_modules/touch-splitter-jquery/src/jquery.touchsplitter.js"></script>		
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.7.0/vis.min.js"></script>
+		
+		<script src="plantillas.js"></script>
+		
+		<style>
+			.splitter-bar {
+				background: black;
+				width: 5px !important;
+			}
+		</style>
+		<script>
+			var tree={};
+			var graphData = {};
+			var graphEdges = {};
+			
+			$(document).ready(function(){
+				$('.split-me').touchSplit({leftMin:100,dock:"left"});
+				
+				graphData = new vis.DataSet([
+					{ id:0, label:"Paso 0", data:{texto:"adsf"} }
+				]);
+				
+				graphEdges = new vis.DataSet();
+				
+				tree = new vis.Network(
+					document.getElementById("graphExampleTracing"),
+					{ //Data
+						nodes: graphData,
+						edges : graphEdges
+					},
+					{
+						interaction:{
+							dragNodes:false
+						}
+					}//Options
+				);
+				tree.on("selectNode",function(n){
+					console.log(n);
+				});
+			});
+			
+		</script>
+	</head>
+	<body>
+		<div class="split-me-container">
+			<div class="split-me">
+				<div>
+					<div id="graphExampleTracing">
+					</div>
+				</div>
+				<div>
+					<label>Id</label>
+					<input type="number" id="id" value="0"><br>
+					<label>Paso</label>
+					<input type="number" id="paso" value="0"><br>
+					<label>Tipo</label>
+					<input type="text" id="tipopaso" value=""><br>
+					<label>Instrucciones del Ejercicio</label>
+					<textarea id="instruccionesejercicio"></textarea><br>
+					<label>Nodos</label>
+					Lista de nodos<br>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
