@@ -1,10 +1,10 @@
 //Plantilla inicial
 var plantillaInicial = {
-	id:"numero",
-	paso:"numero",
-	tipo:"enumeradorpaso",
-	instruccionesejercicio:"texto",
-	opciones:"arreglo"
+	id:"0",
+	paso:"-1",
+	tipo:"instruccionesejercicio",
+	instruccionesejercicio:" ",
+	opciones:[]
 };
 
 var plantillaPasos={

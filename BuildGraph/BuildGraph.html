@@ -11,6 +11,8 @@
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.7.0/vis.min.js"></script>
 		
+		<script src="http://tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+		
 		<script src="plantillas.js"></script>
 		
 		<style>
@@ -18,18 +20,50 @@
 				background: black;
 				width: 5px !important;
 			}
+			#instruccionesejercicio{
+				width:100%;
+				height:75%;
+			}
 		</style>
 		<script>
 			var tree={};
 			var graphData = {};
 			var graphEdges = {};
+			var paso = -1;
+			
+			function setViewLayoutInformacion (view){
+				if (view) $("#layoutInformacion").show(); else $("#layoutInformacion").hide();
+			};
+			
+			function loadDataLayoutInformacion (datos){
+				//$("#id").val(
+			}
+			
+			function setViewLayoutPaso(view){
+				if (view) $("#layoutPaso").show(); else $("#layoutPaso").hide();
+			}
+			
+			function limpiarControles(){
+				$("#informacion input[type='text']").val("");
+				$("#informacion input[type='number']").val("0");
+				$("#informacion select").prop("selectedIndex",0);
+				tinyMCE.get("presentacion").setContent("");
+			};
+			
+			function desactivarBotones(activar){
+				$("#btnAgregar").prop("disabled",activar);
+				$("#btnEliminar").prop("disabled",activar);
+			}
 			
 			$(document).ready(function(){
 				$('.split-me').touchSplit({leftMin:100,dock:"left"});
 				
-				graphData = new vis.DataSet([
-					{ id:0, label:"Paso 0", data:{texto:"adsf"} }
-				]);
+				tinymce.init({selector:"#presentacion"});
+				
+				setViewLayoutInformacion(true);
+				setViewLayoutPaso(false);
+				
+				graphData = new vis.DataSet();
 				
 				graphEdges = new vis.DataSet();
 				
@@ -45,8 +79,41 @@
 						}
 					}//Options
 				);
+				
 				tree.on("selectNode",function(n){
-					console.log(n);
+					desactivarBotones(false);
+				});
+				
+				tree.on("deselectNode",function(n){
+					desactivarBotones(true);
+				});
+				
+				tree.on("doubleClick",function(event){
+					//Obtener Paso
+					var paso = event.nodes[0].id;
+					
+					if (paso==-1){
+						setViewLayoutInformacion(true);
+					}
+				});
+				
+				//tinyMCE.get("presentacion").getContent()
+				
+				$("#btnGuardar").click(function(){
+					//Guardar en dataset
+					if (graphData.length < 1 || paso==-1){
+						graphData.add({
+							id:-1,
+							label:"Paso: -1",
+							datos:{
+								id:$("#id").val(),
+								paso:"-1",
+								tipo:"instruccionesejercicio",
+								instruccionesejercicio:$("#instruccionesejercicio").val(),
+							}
+						});
+						setViewLayoutInformacion(false);
+					}
 				});
 			});
 			
@@ -60,16 +127,60 @@
 					</div>
 				</div>
 				<div>
-					<label>Id</label>
-					<input type="number" id="id" value="0"><br>
-					<label>Paso</label>
-					<input type="number" id="paso" value="0"><br>
-					<label>Tipo</label>
-					<input type="text" id="tipopaso" value=""><br>
-					<label>Instrucciones del Ejercicio</label>
-					<textarea id="instruccionesejercicio"></textarea><br>
-					<label>Nodos</label>
-					Lista de nodos<br>
+					<div>
+						<button id="btnAgregar" disabled >Agregar</button>
+						<button id="btnEliminar" disabled >Eliminar</button>
+						<button id="btnCargar" >Cargar</button>
+						<button id="btnObtenerJSON">Obtener JSON</button>
+					</div>
+					<hr>
+					<div id="informacion">
+						<div id="layoutInformacion">
+							<label>Id</label>
+							<input type="number" id="id" value="0">
+							<button disabled>Obtener Id</button><br>
+							<label>Instrucciones del Ejercicio</label><br>
+							<textarea id="instruccionesejercicio"></textarea><br>
+						</div>
+						<div id="layoutPaso">
+							<label>Paso</label>
+							<input type="number" id="paso" value="0"><br>
+							<label>Tipo</label>
+							<select>
+								<option value="pasoinicial">Paso Inicial</option>
+								<option value="pasooptimo">Paso Optimo</option>
+								<option value="pasosuboptimo">Paso SubOptimo</option>
+								<option value="pasoerroneo">Paso Erroneo</option>
+								<option value="pasofinalsuboptimo">Paso Final SubOptimo</option>
+								<option value="pasofinaloptimo">Paso Final Optimo</option>
+							</select><br>
+							<label>Presentacion</label><br>
+							<textarea id="presentacion"></textarea>
+							<div id="informacionEmocional">
+								Texto Emocional<br>
+								<label>Neutral</label>
+								<input id="txtNeutral" type="text"><br>
+								<label>Encantado</label>
+								<input id="txtEncantado" type="text"><br>
+								<label>Sorprendido</label>
+								<input id="txtSorprendido" type="text"><br>
+								<label>Compasivo</label>
+								<input id="txtEsceptico" type="text"><br>
+								<label>Esceptico</label>
+								<input id="txtEsceptico" type="text"><br>
+								<div>
+									Retroalimentacion<br>
+									<label>Positiva</label>
+									<input id="txtPositiva" type="text"><br>
+									<label>Neutral</label>
+									<input id="txtNeutral" type="text"><br>
+									<label>Negativa</label>
+									<input id="txtNegativa" type="text"><br>
+								</div>
+							</div>
+						</div>
+						<button id="btnGuardar">Guardar</button>
+					</div>
 				</div>
 			</div>
 		</div>
