@@ -31,22 +31,26 @@
 			var graphEdges = {};
 			var paso = -1;
 			
-			function setViewLayoutInformacion (view){
-				if (view) $("#layoutInformacion").show(); else $("#layoutInformacion").hide();
-			};
-			
-			function loadDataLayoutInformacion (datos){
-				//$("#id").val(
+			function setViewLayout(control, view){
+				if (view){
+					control.show();
+					$("#btnGuardar").show();
+				}else{
+					control.hide();
+					$("#btnGuardar").hide();
+				}
 			}
 			
-			function setViewLayoutPaso(view){
-				if (view) $("#layoutPaso").show(); else $("#layoutPaso").hide();
+			function loadDataLayoutInformacion (datos){
+				$("#id").val(datos.id);
+				$("#instruccionesejercicio").val(datos.instruccionesejercicio);
 			}
 			
 			function limpiarControles(){
 				$("#informacion input[type='text']").val("");
 				$("#informacion input[type='number']").val("0");
 				$("#informacion select").prop("selectedIndex",0);
+				$("#informacion textarea").val("");
 				tinyMCE.get("presentacion").setContent("");
 			};
 			
@@ -60,8 +64,8 @@
 				
 				tinymce.init({selector:"#presentacion"});
 				
-				setViewLayoutInformacion(true);
-				setViewLayoutPaso(false);
+				setViewLayout($("#layoutPaso"),false);
+				setViewLayout($("#layoutInformacion"),true);
 				
 				graphData = new vis.DataSet();
 				
@@ -89,11 +93,15 @@
 				});
 				
 				tree.on("doubleClick",function(event){
-					//Obtener Paso
-					var paso = event.nodes[0].id;
-					
-					if (paso==-1){
-						setViewLayoutInformacion(true);
+					//Obtener nodo
+					if (event.nodes.length > 0){
+						var nodo = graphData.get(event.nodes[0]);
+						paso = nodo.id;
+						
+						if (paso==-1){
+							setViewLayout($("#layoutInformacion"),true);
+							loadDataLayoutInformacion(nodo.datos);
+						}
 					}
 				});
 				
@@ -102,19 +110,29 @@
 				$("#btnGuardar").click(function(){
 					//Guardar en dataset
 					if (graphData.length < 1 || paso==-1){
-						graphData.add({
-							id:-1,
-							label:"Paso: -1",
-							datos:{
-								id:$("#id").val(),
-								paso:"-1",
-								tipo:"instruccionesejercicio",
-								instruccionesejercicio:$("#instruccionesejercicio").val(),
-							}
-						});
-						setViewLayoutInformacion(false);
+						if (graphData.get(-1)){
+							nodo = graphData.get(-1);
+							nodo.datos.id = $("#id").val();
+							nodo.datos.instruccionesejercicio = $("#instruccionesejercicio").val();
+							graphData.update(nodo);
+						}else{
+							graphData.add({
+								id:-1,
+								label:"Paso: -1",
+								datos:{
+									id:$("#id").val(),
+									paso:"-1",
+									tipo:"instruccionesejercicio",
+									instruccionesejercicio:$("#instruccionesejercicio").val(),
+								}
+							});
+						}
+						setViewLayout($("#layoutInformacion"),false);
+						limpiarControles();
 					}
 				});
+				
+				$("#btnAgregar").click(function())
 			});
 			
 		</script>
