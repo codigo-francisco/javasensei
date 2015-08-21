@@ -30,6 +30,8 @@
 			var graphData = {};
 			var graphEdges = {};
 			var paso = -1;
+			var padre = -1;
+			var idEdge=0;
 			
 			function setViewLayout(control, view){
 				if (view){
@@ -46,9 +48,24 @@
 				$("#instruccionesejercicio").val(datos.instruccionesejercicio);
 			}
 			
+			function loadDataLayoutPaso (datos){
+				$("#paso").val(datos.paso);
+				$("#tipopaso").val(datos.tipo);
+				$("#instruccion").val(datos.instruccion);
+				tinyMCE.get("presentacion").setContent(datos.presentacion);
+				$("#neutral").val(datos.textoEmocional.neutral);
+				$("#encantado").val(datos.textoEmocional.encantado);
+				$("#sorprendido").val(datos.textoEmocional.sorprendido);
+				$("#compasivo").val(datos.textoEmocional.compasivo);
+				$("#esceptico").val(datos.textoEmocional.esceptico);
+				$("#positiva").val(datos.textoEmocional.retroalimentacion.positiva);
+				$("#retroalimentacionNeutral").val(datos.textoEmocional.retroalimentacion.neutral);
+				$("#negativa").val(datos.textoEmocional.retroalimentacion.negativa);
+			}
+			
 			function limpiarControles(){
 				$("#informacion input[type='text']").val("");
-				$("#informacion input[type='number']").val("0");
+				$("#informacion input[type='number']").val("-1");
 				$("#informacion select").prop("selectedIndex",0);
 				$("#informacion textarea").val("");
 				tinyMCE.get("presentacion").setContent("");
@@ -80,6 +97,12 @@
 					{
 						interaction:{
 							dragNodes:false
+						},
+						layout:{
+							hierarchical:{
+								enabled: true,
+								sortMethod:"directed"
+							}
 						}
 					}//Options
 				);
@@ -101,38 +124,72 @@
 						if (paso==-1){
 							setViewLayout($("#layoutInformacion"),true);
 							loadDataLayoutInformacion(nodo.datos);
+						}else{
+							addEdge = false;
+							setViewLayout($("#layoutPaso"),true);
 						}
 					}
 				});
-				
-				//tinyMCE.get("presentacion").getContent()
 				
 				$("#btnGuardar").click(function(){
+					if ($("#paso").val()!="-1"){
+						paso = $("#paso").val();
+					}
 					//Guardar en dataset
-					if (graphData.length < 1 || paso==-1){
-						if (graphData.get(-1)){
-							nodo = graphData.get(-1);
-							nodo.datos.id = $("#id").val();
-							nodo.datos.instruccionesejercicio = $("#instruccionesejercicio").val();
-							graphData.update(nodo);
-						}else{
-							graphData.add({
-								id:-1,
-								label:"Paso: -1",
-								datos:{
-									id:$("#id").val(),
-									paso:"-1",
-									tipo:"instruccionesejercicio",
-									instruccionesejercicio:$("#instruccionesejercicio").val(),
+					if (paso==-1){
+						graphData.update({
+							id:-1,
+							label:"Paso: -1",
+							datos:{
+								id:$("#id").val(),
+								paso:"-1",
+								tipo:"instruccionesejercicio",
+								instruccionesejercicio:$("#instruccionesejercicio").val(),
+							}
+						});
+						setViewLayout($("#layoutInformacion"),false);
+					} else{
+						//Crear o actualizar nodo
+						graphData.update({
+							id: paso,
+							label: "Paso "+paso,
+							datos:{
+								paso:paso,
+								tipo: $("#tipopaso").val(),
+								instruccion: $("#instruccion").val(),
+								presentacion: tinyMCE.get("presentacion").getContent(),
+								textoEmocional: {
+									neutral: $("#neutral").val(),
+									encantado: $("#encantado").val(),
+									sorprendido: $("#sorprendido").val(),
+									compasivo: $("#compasivo").val(),
+									esceptico: $("#esceptico").val(),
+									retroalimentacion: {
+										positiva: $("#positiva").val(),
+										neutral: $("#retroalimentacionNeutral").val(),
+										negativa: $("#negativa").val()
+									} 
 								}
+							}
+						});
+						if (addEdge){
+							//Crear enlace
+							graphEdges.update({
+								id: ++idEdge,
+								from: padre,
+								to: paso
 							});
 						}
-						setViewLayout($("#layoutInformacion"),false);
-						limpiarControles();
+						setViewLayout($("#layoutPaso"),false);
 					}
+					limpiarControles();
 				});
 				
-				$("#btnAgregar").click(function())
+				$("#btnAgregar").click(function(){
+					setViewLayout($("#layoutPaso"), true);
+					padre = tree.getSelectedNodes()[0];
+					addEdge = true;
+				});
 			});
 			
 		</script>
@@ -162,9 +219,9 @@
 						</div>
 						<div id="layoutPaso">
 							<label>Paso</label>
-							<input type="number" id="paso" value="0"><br>
+							<input type="number" id="paso" value="-1"><br>
 							<label>Tipo</label>
-							<select>
+							<select id="tipopaso">
 								<option value="pasoinicial">Paso Inicial</option>
 								<option value="pasooptimo">Paso Optimo</option>
 								<option value="pasosuboptimo">Paso SubOptimo</option>
@@ -172,28 +229,30 @@
 								<option value="pasofinalsuboptimo">Paso Final SubOptimo</option>
 								<option value="pasofinaloptimo">Paso Final Optimo</option>
 							</select><br>
+							<label>Instruccion</label>
+							<textarea id="instruccion"></textarea>
 							<label>Presentacion</label><br>
 							<textarea id="presentacion"></textarea>
 							<div id="informacionEmocional">
 								Texto Emocional<br>
 								<label>Neutral</label>
-								<input id="txtNeutral" type="text"><br>
+								<input id="neutral" type="text"><br>
 								<label>Encantado</label>
-								<input id="txtEncantado" type="text"><br>
+								<input id="encantado" type="text"><br>
 								<label>Sorprendido</label>
-								<input id="txtSorprendido" type="text"><br>
+								<input id="sorprendido" type="text"><br>
 								<label>Compasivo</label>
-								<input id="txtEsceptico" type="text"><br>
+								<input id="compasivo" type="text"><br>
 								<label>Esceptico</label>
-								<input id="txtEsceptico" type="text"><br>
+								<input id="esceptico" type="text"><br>
 								<div>
 									Retroalimentacion<br>
 									<label>Positiva</label>
-									<input id="txtPositiva" type="text"><br>
+									<input id="positiva" type="text"><br>
 									<label>Neutral</label>
-									<input id="txtNeutral" type="text"><br>
+									<input id="retroalimentacionNeutral" type="text"><br>
 									<label>Negativa</label>
-									<input id="txtNegativa" type="text"><br>
+									<input id="negativa" type="text"><br>
 								</div>
 							</div>
 						</div>
