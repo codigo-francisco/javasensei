@@ -1,10 +1,12 @@
 package javasensei.util;
 
-import com.googlecode.javacv.CanvasFrame;
-import com.googlecode.javacv.FrameGrabber;
-import com.googlecode.javacv.OpenCVFrameGrabber;
-import com.googlecode.javacv.cpp.opencv_core.IplImage;
-import static com.googlecode.javacv.cpp.opencv_core.cvFlip;
+import org.bytedeco.javacpp.opencv_core;
+import org.bytedeco.javacv.CanvasFrame;
+import org.bytedeco.javacv.FrameGrabber;
+import org.bytedeco.javacv.OpenCVFrameGrabber;
+import org.bytedeco.javacpp.opencv_core.IplImage;
+import org.bytedeco.javacv.Frame;
+//import static com.googlecode.javacv.cpp.opencv_core.cvFlip;
 
 public class demo_video {
 
@@ -24,19 +26,19 @@ public class demo_video {
             grabber.start();
 
             //Declare img as IplImage
-            IplImage img;
+            Frame img;
             
             while (true) {
 
                 //inser grabed video fram to IplImage img
-                img = grabber.grab();
+                img = grabber.grabFrame();
 
                 //Set canvas size as per dimentions of video frame.
                 canvas.setCanvasSize(grabber.getImageWidth(), grabber.getImageHeight());
                 
                 if (img != null) {
                     //Flip image horizontally
-                    cvFlip(img, img, 1);
+                    //opencv_core.cvFlip(img, img, 1);
                     //Show video frame in canvas
                     canvas.showImage(img);                    
                 }
