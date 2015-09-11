@@ -1,1 +1,1 @@
-mongod --dbpath "E:\Java Sensei\javasensei\mongobd"
+mongod --dbpath .
