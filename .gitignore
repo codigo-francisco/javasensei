@@ -1,4 +1,4 @@
 *.log
 *.class
 *.lock
-javasensei\target\
+javasensei/target/*
