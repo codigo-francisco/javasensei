@@ -16,40 +16,35 @@
     
     <dependencies>
         <dependency>
+            <groupId>jFuzzyLogic_core</groupId>
+            <artifactId>jFuzzyLogic_core</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco.javacpp-presets</groupId>
+            <artifactId>opencv</artifactId>
+            <version>2.4.11-0.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacpp</artifactId>
+            <version>0.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacv</artifactId>
+            <version>0.11</version>
+        </dependency>
+        <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.3.1</version>
-        </dependency>
-        <dependency>
-            <groupId>jfuzzylogic</groupId>
-            <artifactId>jfuzzylogic</artifactId>
-            <version>3.2</version>
-        </dependency>
-        <dependency>
-            <groupId>javacpp</groupId>
-            <artifactId>javacpp</artifactId>
-            <version>1</version>
-        </dependency>
-        <dependency>
-            <groupId>javacv</groupId>
-            <artifactId>javacv-windows</artifactId>
-            <version>1</version>
-        </dependency>
-        <dependency>
-            <groupId>javacv</groupId>
-            <artifactId>javacv-windowsx64</artifactId>
-            <version>1</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.10</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>javacv</groupId>
-            <artifactId>javacv</artifactId>
-            <version>1</version>
         </dependency>
         <dependency>
             <groupId>nz.ac.waikato.cms.weka</groupId>

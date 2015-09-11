@@ -6,18 +6,18 @@ package javasensei.ia.recognitionemotion;
  * Estrada, Raul Oramas Bustillos Email Contacto:
  * franciscogonzalez_hernandez@hotmail.com
  */
-import com.googlecode.javacpp.Loader;
-import com.googlecode.javacv.cpp.opencv_core;
-import com.googlecode.javacv.cpp.opencv_core.CvFont;
-import com.googlecode.javacv.cpp.opencv_core.CvMat;
-import com.googlecode.javacv.cpp.opencv_core.CvMemStorage;
-import com.googlecode.javacv.cpp.opencv_core.CvRect;
-import com.googlecode.javacv.cpp.opencv_core.CvScalar;
-import com.googlecode.javacv.cpp.opencv_core.CvSeq;
-import com.googlecode.javacv.cpp.opencv_core.IplImage;
-import com.googlecode.javacv.cpp.opencv_imgproc;
-import com.googlecode.javacv.cpp.opencv_objdetect;
-import com.googlecode.javacv.cpp.opencv_objdetect.CvHaarClassifierCascade;
+import org.bytedeco.javacpp.Loader;
+import org.bytedeco.javacpp.opencv_core;
+import org.bytedeco.javacpp.opencv_core.CvFont;
+import org.bytedeco.javacpp.opencv_core.CvMat;
+import org.bytedeco.javacpp.opencv_core.CvMemStorage;
+import org.bytedeco.javacpp.opencv_core.CvRect;
+import org.bytedeco.javacpp.opencv_core.CvScalar;
+import org.bytedeco.javacpp.opencv_core.CvSeq;
+import org.bytedeco.javacpp.opencv_core.IplImage;
+import org.bytedeco.javacpp.opencv_imgproc;
+import org.bytedeco.javacpp.opencv_objdetect;
+import org.bytedeco.javacpp.opencv_objdetect.CvHaarClassifierCascade;
 import java.awt.image.BufferedImage;
 import javasensei.exceptions.JavaException;
 import javasensei.util.FileHelper;

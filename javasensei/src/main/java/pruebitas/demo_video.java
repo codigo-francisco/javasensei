@@ -1,10 +1,11 @@
 package pruebitas;
 
-import com.googlecode.javacv.CanvasFrame;
-import com.googlecode.javacv.FrameGrabber;
-import com.googlecode.javacv.OpenCVFrameGrabber;
-import com.googlecode.javacv.cpp.opencv_core.IplImage;
-import static com.googlecode.javacv.cpp.opencv_core.cvFlip;
+import org.bytedeco.javacpp.helper.opencv_core.CvArr;
+import org.bytedeco.javacv.CanvasFrame;
+import org.bytedeco.javacv.FrameGrabber;
+import org.bytedeco.javacv.OpenCVFrameGrabber;
+import static org.bytedeco.javacpp.opencv_core.cvFlip;
+import org.bytedeco.javacv.Frame;
 
 public class demo_video {
 
@@ -24,7 +25,7 @@ public class demo_video {
             grabber.start();
 
             //Declare img as IplImage
-            IplImage img;
+            Frame img;
             
             while (true) {
 
@@ -36,7 +37,7 @@ public class demo_video {
                 
                 if (img != null) {
                     //Flip image horizontally
-                    cvFlip(img, img, 1);
+                    //cvFlip(img.image, img.image, 1);
                     //Show video frame in canvas
                     canvas.showImage(img);                    
                 }
