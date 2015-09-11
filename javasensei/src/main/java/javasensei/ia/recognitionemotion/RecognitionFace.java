@@ -19,10 +19,8 @@ import org.bytedeco.javacpp.opencv_imgproc;
 import org.bytedeco.javacpp.opencv_objdetect;
 import org.bytedeco.javacpp.opencv_objdetect.CvHaarClassifierCascade;
 import java.awt.image.BufferedImage;
-import javasensei.exceptions.JavaException;
 import javasensei.util.FileHelper;
 import static org.bytedeco.javacpp.opencv_core.*;
-import org.bytedeco.javacv.Frame;
 import org.bytedeco.javacv.Java2DFrameConverter;
 import org.bytedeco.javacv.OpenCVFrameConverter;
 
