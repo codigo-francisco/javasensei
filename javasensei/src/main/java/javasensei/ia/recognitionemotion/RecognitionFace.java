@@ -21,6 +21,10 @@ import org.bytedeco.javacpp.opencv_objdetect.CvHaarClassifierCascade;
 import java.awt.image.BufferedImage;
 import javasensei.exceptions.JavaException;
 import javasensei.util.FileHelper;
+import static org.bytedeco.javacpp.opencv_core.*;
+import org.bytedeco.javacv.Frame;
+import org.bytedeco.javacv.Java2DFrameConverter;
+import org.bytedeco.javacv.OpenCVFrameConverter;
 
 /**
  *
@@ -158,8 +162,9 @@ public class RecognitionFace {
         storage_ojo_der = CvMemStorage.create();
         storage_ojo_izq = CvMemStorage.create();
 
-        IplImage frame = IplImage.createFrom(image);
-
+        //IplImage.createFrom(image);
+        IplImage frame =  new OpenCVFrameConverter.ToIplImage().convert(new Java2DFrameConverter().convert(image));
+        
         RecognitionResult result = new RecognitionResult();
 
         result.setHayEmocion(detectEyes(frame));
@@ -314,7 +319,7 @@ public class RecognitionFace {
             opencv_imgproc.cvPyrDown(gray_hist_equa, temp1, opencv_imgproc.CV_GAUSSIAN_5x5);
             opencv_imgproc.cvPyrUp(temp1, edges, opencv_imgproc.CV_GAUSSIAN_5x5);
 
-            opencv_imgproc.cvSmooth(edges, edges, opencv_imgproc.CV_GAUSSIAN, 11);
+            opencv_imgproc.cvSmooth(edges, edges);
 
             opencv_imgproc.cvCanny(edges, edges, 30, 200, 3);
 
@@ -863,7 +868,7 @@ public class RecognitionFace {
         opencv_imgproc.cvPyrDown(gray_hist_equa, temp1, opencv_imgproc.CV_GAUSSIAN_5x5);
         opencv_imgproc.cvPyrUp(temp1, edges, opencv_imgproc.CV_GAUSSIAN_5x5);
 
-        opencv_imgproc.cvSmooth(edges, edges, opencv_imgproc.CV_GAUSSIAN, 11);
+        opencv_imgproc.cvSmooth(edges, edges);
         //canvas_CA_Ceja_Der_1.showImage(edges);
         //canvas_CA_Ceja_Der_1.move(0, 200);
 
@@ -1011,7 +1016,7 @@ public class RecognitionFace {
         opencv_imgproc.cvPyrDown(gray_hist_equa, temp1, opencv_imgproc.CV_GAUSSIAN_5x5);
         opencv_imgproc.cvPyrUp(temp1, edges, opencv_imgproc.CV_GAUSSIAN_5x5);
 
-        opencv_imgproc.cvSmooth(edges, edges, opencv_imgproc.CV_GAUSSIAN, 11);
+        opencv_imgproc.cvSmooth(edges, edges);
         //canvas_CA_Ceja_Izq_1.showImage(edges);
         //canvas_CA_Ceja_Izq_1.move(640, 200);
 
