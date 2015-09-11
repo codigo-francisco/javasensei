@@ -1,3 +1,5 @@
 /javasensei/target/
 *.log
 *.lock
+mongobd/mongod.lock
+*.lock
