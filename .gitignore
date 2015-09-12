@@ -2,3 +2,5 @@
 *.class
 *.lock
 javasensei/target/*
+*log*
+*dataset*
