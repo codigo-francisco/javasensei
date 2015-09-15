@@ -17,6 +17,9 @@
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
         <script type="text/javascript" src="js/highcharts-custom.js"></script>
         <script type="text/javascript" src="jquery/jRating.jquery.min.js"></script>
@@ -142,6 +145,10 @@
                 });
 
                 //eliminarBackgroundCamera();
+                $("#progressbar").progressbar({
+                    value: 70
+                });
+
             });
 
 
@@ -207,6 +214,13 @@
             .textScreen{
                 padding-top: 20px;
                 text-align: center;
+            }
+            #progressbar{
+                height: 1em;
+                width: 50%;
+            }
+            #progressbar > div{
+                background: #3C3;
             }
         </style>
     </head>
@@ -279,6 +293,7 @@
                     <button id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
                 </div>
                 <div id="controles_tracing" class="controles">
+                    <div id="progressbar"></div>
                     <button id="informacion_tracing" data-inline="true" data-mini="true">Informacion</button>
                     <button id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
                     <button id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
