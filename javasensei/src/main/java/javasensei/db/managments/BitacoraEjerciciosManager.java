@@ -45,16 +45,18 @@ public class BitacoraEjerciciosManager {
                 sesionId = new Long(cursor.next().get("sesionId").toString()) + 1;
             }
 
-            for (JsonElement object : array) {
-                bitacoras.add(
-                        BitacoraEjerciciosDBO.createDbObject(
-                                object.getAsJsonObject(),
-                                sesionId
-                            )
-                );
+            if (array.size()>0){
+                for (JsonElement object : array) {
+                    bitacoras.add(
+                            BitacoraEjerciciosDBO.createDbObject(
+                                    object.getAsJsonObject(),
+                                    sesionId
+                                )
+                    );
+                }
+
+                bitacoraEjercicios.insert(bitacoras);
             }
-            
-            bitacoraEjercicios.insert(bitacoras);
             
             return bitacoras.toString();
         }
