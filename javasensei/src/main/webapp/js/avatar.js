@@ -98,7 +98,7 @@ avatar_sensei.prototype = {
                 fotos: fotografias
             },
             dataType: "json"
-        }).done(function (datos) {
+        }).always(function (datos) {
             console.log("%cDatos recibidos: %O", "color:blue;", datos);
             avatar_context.intervencion(datos);
             //Agregamos un nuevo objeto a la bitacora
@@ -117,8 +117,8 @@ avatar_sensei.prototype = {
                 tipoPaso: contexto.tipoPaso,
                 fotografias : JSON.parse(camera_sensei.getUltimasFotografias())
             });
-        }).fail(function (jqXHR, textStatus, errorThrown) {
-            console.log("Fallo " + textStatus);
+            if (tipoCamino=="caminofinaloptimo" || tipoCamino=="caminofinalsuboptimo")
+                avatar_context.cierreEjercicio();
         });
     },
     llamarSistemaLogicoDifuso: function (tipoCamino) {

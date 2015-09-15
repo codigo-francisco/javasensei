@@ -8,7 +8,7 @@ package javasensei.ia.recognitionemotion;
  */
 import org.bytedeco.javacpp.Loader;
 import org.bytedeco.javacpp.opencv_core;
-import org.bytedeco.javacpp.opencv_core.CvFont;
+import org.bytedeco.javacpp.opencv_imgproc.CvFont;
 import org.bytedeco.javacpp.opencv_core.CvMat;
 import org.bytedeco.javacpp.opencv_core.CvMemStorage;
 import org.bytedeco.javacpp.opencv_core.CvRect;
@@ -139,6 +139,7 @@ public class RecognitionFace {
 
     /**
      *
+     * @param image
      * @return @throws Exception
      */
     public RecognitionResult processFace(BufferedImage image) throws Exception {
@@ -248,7 +249,7 @@ public class RecognitionFace {
 
         ancho_cara = rWidth; // le damos el ancho de la cara
 
-        opencv_core.cvRectangle(img,
+        opencv_imgproc.cvRectangle(img,
                 opencv_core.cvPoint(rX, rY),
                 opencv_core.cvPoint(rX + rWidth, rY + rHeight),
                 opencv_core.CV_RGB(255, 0, 0), 1, 8, 0
@@ -284,7 +285,7 @@ public class RecognitionFace {
             r2Width = r2.width();
             r2Height = r2.height();
 
-            opencv_core.cvRectangle(img,
+            opencv_imgproc.cvRectangle(img,
                     opencv_core.cvPoint(r2X, r2Y),
                     opencv_core.cvPoint(r2X + r2Width, r2Y + r2Height),
                     opencv_core.CV_RGB(255, 255, 255), 1, 8, 0);
@@ -350,8 +351,8 @@ public class RecognitionFace {
                 }
             }
 
-            opencv_core.cvCircle(edges, opencv_core.cvPoint(boca_p1_X, boca_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
-            opencv_core.cvCircle(img, opencv_core.cvPoint(boca_p1_X, boca_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
+            opencv_imgproc.cvCircle(edges, opencv_core.cvPoint(boca_p1_X, boca_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
+            opencv_imgproc.cvCircle(img, opencv_core.cvPoint(boca_p1_X, boca_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
 
             //---------- TERMINA para boca P1
             //----------para boca P2
@@ -379,8 +380,8 @@ public class RecognitionFace {
                     break;
                 }
             }
-            opencv_core.cvCircle(edges, opencv_core.cvPoint(boca_p2_X, boca_p2_Y), 1, CvScalar.RED, 2, 8, 0);
-            opencv_core.cvCircle(img, opencv_core.cvPoint(boca_p2_X, boca_p2_Y), 1, CvScalar.RED, 2, 8, 0);
+            opencv_imgproc.cvCircle(edges, opencv_core.cvPoint(boca_p2_X, boca_p2_Y), 1, CvScalar.RED, 2, 8, 0);
+            opencv_imgproc.cvCircle(img, opencv_core.cvPoint(boca_p2_X, boca_p2_Y), 1, CvScalar.RED, 2, 8, 0);
 
             //---------- TERMINA para boca P2
             //----------para boca P3
@@ -408,8 +409,8 @@ public class RecognitionFace {
                 }
             }
 
-            opencv_core.cvCircle(edges, opencv_core.cvPoint(boca_p3_X, boca_p3_Y), 1, CvScalar.RED, 2, 8, 0);
-            opencv_core.cvCircle(img, opencv_core.cvPoint(boca_p3_X, boca_p3_Y), 1, CvScalar.RED, 2, 8, 0);
+            opencv_imgproc.cvCircle(edges, opencv_core.cvPoint(boca_p3_X, boca_p3_Y), 1, CvScalar.RED, 2, 8, 0);
+            opencv_imgproc.cvCircle(img, opencv_core.cvPoint(boca_p3_X, boca_p3_Y), 1, CvScalar.RED, 2, 8, 0);
 
             //---------- TERMINA para boca P3
             //----------para boca P4
@@ -439,29 +440,29 @@ public class RecognitionFace {
                 }
             }
 
-            opencv_core.cvCircle(edges, opencv_core.cvPoint(boca_p4_X, boca_p4_Y), 1, CvScalar.YELLOW, 2, 8, 0);
-            opencv_core.cvCircle(img, opencv_core.cvPoint(boca_p4_X, boca_p4_Y), 1, CvScalar.YELLOW, 2, 8, 0);
+            opencv_imgproc.cvCircle(edges, opencv_core.cvPoint(boca_p4_X, boca_p4_Y), 1, CvScalar.YELLOW, 2, 8, 0);
+            opencv_imgproc.cvCircle(img, opencv_core.cvPoint(boca_p4_X, boca_p4_Y), 1, CvScalar.YELLOW, 2, 8, 0);
 
             //---------- TERMINA boca P4
             //canvas_2Boca_grayThresh.showImage(edges);
             //canvas_2Boca_grayThresh.move(300, 300);
             if (boca_p1_flag == 1 && boca_p2_flag == 1) {
-                opencv_core.cvLine(img, opencv_core.cvPoint(boca_p1_X, boca_p1_Y), opencv_core.cvPoint(boca_p2_X, boca_p2_Y), CvScalar.YELLOW, 1, 8, 0);
+                opencv_imgproc.cvLine(img, opencv_core.cvPoint(boca_p1_X, boca_p1_Y), opencv_core.cvPoint(boca_p2_X, boca_p2_Y), CvScalar.YELLOW, 1, 8, 0);
             }
             if (boca_p1_flag == 1 && boca_p3_flag == 1) {
-                opencv_core.cvLine(img, opencv_core.cvPoint(boca_p1_X, boca_p1_Y), opencv_core.cvPoint(boca_p3_X, boca_p3_Y), CvScalar.YELLOW, 1, 8, 0);
+                opencv_imgproc.cvLine(img, opencv_core.cvPoint(boca_p1_X, boca_p1_Y), opencv_core.cvPoint(boca_p3_X, boca_p3_Y), CvScalar.YELLOW, 1, 8, 0);
             }
             if (boca_p1_flag == 1 && boca_p4_flag == 1) {
-                opencv_core.cvLine(img, opencv_core.cvPoint(boca_p1_X, boca_p1_Y), opencv_core.cvPoint(boca_p4_X, boca_p4_Y), CvScalar.YELLOW, 1, 8, 0);
+                opencv_imgproc.cvLine(img, opencv_core.cvPoint(boca_p1_X, boca_p1_Y), opencv_core.cvPoint(boca_p4_X, boca_p4_Y), CvScalar.YELLOW, 1, 8, 0);
             }
             if (boca_p2_flag == 1 && boca_p3_flag == 1) {
-                opencv_core.cvLine(img, opencv_core.cvPoint(boca_p2_X, boca_p2_Y), opencv_core.cvPoint(boca_p3_X, boca_p3_Y), CvScalar.YELLOW, 1, 8, 0);
+                opencv_imgproc.cvLine(img, opencv_core.cvPoint(boca_p2_X, boca_p2_Y), opencv_core.cvPoint(boca_p3_X, boca_p3_Y), CvScalar.YELLOW, 1, 8, 0);
             }
             if (boca_p2_flag == 1 && boca_p4_flag == 1) {
-                opencv_core.cvLine(img, opencv_core.cvPoint(boca_p2_X, boca_p2_Y), opencv_core.cvPoint(boca_p4_X, boca_p4_Y), CvScalar.YELLOW, 1, 8, 0);
+                opencv_imgproc.cvLine(img, opencv_core.cvPoint(boca_p2_X, boca_p2_Y), opencv_core.cvPoint(boca_p4_X, boca_p4_Y), CvScalar.YELLOW, 1, 8, 0);
             }
             if (boca_p3_flag == 1 && boca_p4_flag == 1) {
-                opencv_core.cvLine(img, opencv_core.cvPoint(boca_p3_X, boca_p3_Y), opencv_core.cvPoint(boca_p4_X, boca_p4_Y), CvScalar.YELLOW, 1, 8, 0);
+                opencv_imgproc.cvLine(img, opencv_core.cvPoint(boca_p3_X, boca_p3_Y), opencv_core.cvPoint(boca_p4_X, boca_p4_Y), CvScalar.YELLOW, 1, 8, 0);
             }
 
         }
@@ -498,7 +499,7 @@ public class RecognitionFace {
             r3Width = r3.width();
             r3Height = r3.height();
 
-            opencv_core.cvRectangle(img,
+            opencv_imgproc.cvRectangle(img,
                     opencv_core.cvPoint(r3X, r3Y),
                     opencv_core.cvPoint(r3X + r3Width, r3Y + r3Height),
                     opencv_core.CV_RGB(0, 0, 255), 1, 8, 0);
@@ -556,8 +557,8 @@ public class RecognitionFace {
                 }
             }
 
-            opencv_core.cvCircle(grayThresh_hist_equa, opencv_core.cvPoint(ojoDer_p1_X, ojoDer_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
-            opencv_core.cvCircle(img, opencv_core.cvPoint(ojoDer_p1_X, ojoDer_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
+            opencv_imgproc.cvCircle(grayThresh_hist_equa, opencv_core.cvPoint(ojoDer_p1_X, ojoDer_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
+            opencv_imgproc.cvCircle(img, opencv_core.cvPoint(ojoDer_p1_X, ojoDer_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
             // a continuacion reseteamos las variables ya usadas.
             lineaEnBlanco_bandera = 0;
             lineaEnBlanco_contador = 0;
@@ -593,14 +594,14 @@ public class RecognitionFace {
                     break;
                 }
             }
-            opencv_core.cvCircle(grayThresh_hist_equa, opencv_core.cvPoint(ojoDer_p4_X, ojoDer_p4_Y), 1, CvScalar.YELLOW, 2, 8, 0);
-            opencv_core.cvCircle(img, opencv_core.cvPoint(ojoDer_p4_X, ojoDer_p4_Y), 1, CvScalar.YELLOW, 2, 8, 0);
+            opencv_imgproc.cvCircle(grayThresh_hist_equa, opencv_core.cvPoint(ojoDer_p4_X, ojoDer_p4_Y), 1, CvScalar.YELLOW, 2, 8, 0);
+            opencv_imgproc.cvCircle(img, opencv_core.cvPoint(ojoDer_p4_X, ojoDer_p4_Y), 1, CvScalar.YELLOW, 2, 8, 0);
 
             //---------- TERMINA para ojo derecho P4
             //canvas_2OJO_grayThresh.showImage(grayThresh_hist_equa);
             //canvas_2OJO_grayThresh.move(150, 300);
             if (ojoDer_p1_flag == 1 && ojoDer_p4_flag == 1) {
-                opencv_core.cvLine(img, opencv_core.cvPoint(ojoDer_p1_X, ojoDer_p1_Y), opencv_core.cvPoint(ojoDer_p4_X, ojoDer_p4_Y), CvScalar.YELLOW, 1, 8, 0);
+                opencv_imgproc.cvLine(img, opencv_core.cvPoint(ojoDer_p1_X, ojoDer_p1_Y), opencv_core.cvPoint(ojoDer_p4_X, ojoDer_p4_Y), CvScalar.YELLOW, 1, 8, 0);
             }
 
         } // termina el if (eyes->total > 0)
@@ -639,7 +640,7 @@ public class RecognitionFace {
             r32Width = r32.width();
             r32Height = r32.height();
 
-            opencv_core.cvRectangle(img,
+            opencv_imgproc.cvRectangle(img,
                     opencv_core.cvPoint(r32X, r32Y),
                     opencv_core.cvPoint(r32X + r32Width, r32Y + r32Height),
                     opencv_core.CV_RGB(0, 0, 255), 1, 8, 0);
@@ -709,8 +710,8 @@ public class RecognitionFace {
                 }
             }
 
-            opencv_core.cvCircle(grayThresh_hist_equa, opencv_core.cvPoint(ojoIzq_p1_X, ojoIzq_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
-            opencv_core.cvCircle(img, opencv_core.cvPoint(ojoIzq_p1_X, ojoIzq_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
+            opencv_imgproc.cvCircle(grayThresh_hist_equa, opencv_core.cvPoint(ojoIzq_p1_X, ojoIzq_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
+            opencv_imgproc.cvCircle(img, opencv_core.cvPoint(ojoIzq_p1_X, ojoIzq_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
 
             lineaEnBlanco_bandera = 0;
             lineaEnBlanco_contador = 0;
@@ -747,7 +748,7 @@ public class RecognitionFace {
              }
              }
 
-             opencv_core.cvCircle(grayThresh_hist_equa, cvPoint(ojoIzq_p2_X,ojoIzq_p2_Y), 1, CvScalar.RED, 2,8,0);
+             opencv_imgproc.cvCircle(grayThresh_hist_equa, cvPoint(ojoIzq_p2_X,ojoIzq_p2_Y), 1, CvScalar.RED, 2,8,0);
              cvCircle(img, cvPoint(ojoIzq_p2_X,ojoIzq_p2_Y), 1, CvScalar.RED, 2,8,0);
 
              //---------- TERMINA para ojo izquierdo P2
@@ -817,14 +818,14 @@ public class RecognitionFace {
                 }
             }
 
-            opencv_core.cvCircle(grayThresh_hist_equa, opencv_core.cvPoint(ojoIzq_p4_X, ojoIzq_p4_Y), 1, CvScalar.YELLOW, 2, 8, 0);
-            opencv_core.cvCircle(img, opencv_core.cvPoint(ojoIzq_p4_X, ojoIzq_p4_Y), 1, CvScalar.YELLOW, 2, 8, 0);
+            opencv_imgproc.cvCircle(grayThresh_hist_equa, opencv_core.cvPoint(ojoIzq_p4_X, ojoIzq_p4_Y), 1, CvScalar.YELLOW, 2, 8, 0);
+            opencv_imgproc.cvCircle(img, opencv_core.cvPoint(ojoIzq_p4_X, ojoIzq_p4_Y), 1, CvScalar.YELLOW, 2, 8, 0);
 
             //---------- TERMINA para ojo derecho P4
             //canvas_2OJO_grayThresh2.showImage(grayThresh_hist_equa);
             //canvas_2OJO_grayThresh2.move(480, 300);
             if (ojoIzq_p1_flag == 1 && ojoIzq_p4_flag == 1) {
-                opencv_core.cvLine(img, opencv_core.cvPoint(ojoIzq_p1_X, ojoIzq_p1_Y), opencv_core.cvPoint(ojoIzq_p4_X, ojoIzq_p4_Y), CvScalar.YELLOW, 1, 8, 0);
+                opencv_imgproc.cvLine(img, opencv_core.cvPoint(ojoIzq_p1_X, ojoIzq_p1_Y), opencv_core.cvPoint(ojoIzq_p4_X, ojoIzq_p4_Y), CvScalar.YELLOW, 1, 8, 0);
             }
         } // termina el if (eyes->total > 0)
 
@@ -904,8 +905,8 @@ public class RecognitionFace {
                 break;
             }
         }
-        opencv_core.cvCircle(edges, opencv_core.cvPoint(ceja_der_p1_X, ceja_der_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
-        opencv_core.cvCircle(img, opencv_core.cvPoint(ceja_der_p1_X, ceja_der_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
+        opencv_imgproc.cvCircle(edges, opencv_core.cvPoint(ceja_der_p1_X, ceja_der_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
+        opencv_imgproc.cvCircle(img, opencv_core.cvPoint(ceja_der_p1_X, ceja_der_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
 
 	 //---------- TERMINA ceja der P1
 /*	 //----------para ceja der P2
@@ -970,14 +971,14 @@ public class RecognitionFace {
                 break;
             }
         }
-        opencv_core.cvCircle(edges, opencv_core.cvPoint(ceja_der_p3_X, ceja_der_p3_Y), 1, CvScalar.RED, 2, 8, 0);
-        opencv_core.cvCircle(img, opencv_core.cvPoint(ceja_der_p3_X, ceja_der_p3_Y), 1, CvScalar.RED, 2, 8, 0);
+        opencv_imgproc.cvCircle(edges, opencv_core.cvPoint(ceja_der_p3_X, ceja_der_p3_Y), 1, CvScalar.RED, 2, 8, 0);
+        opencv_imgproc.cvCircle(img, opencv_core.cvPoint(ceja_der_p3_X, ceja_der_p3_Y), 1, CvScalar.RED, 2, 8, 0);
 
         //---------- TERMINA ceja der P3
         //canvas_2ROI_ceja_der_grayThresh.showImage(edges);
         //canvas_2ROI_ceja_der_grayThresh.move(0, 300);
         if (ceja_der_p1_flag == 1 && ceja_der_p3_flag == 1) {
-            opencv_core.cvLine(img, opencv_core.cvPoint(ceja_der_p1_X, ceja_der_p1_Y), opencv_core.cvPoint(ceja_der_p3_X, ceja_der_p3_Y), CvScalar.YELLOW, 1, 8, 0);
+            opencv_imgproc.cvLine(img, opencv_core.cvPoint(ceja_der_p1_X, ceja_der_p1_Y), opencv_core.cvPoint(ceja_der_p3_X, ceja_der_p3_Y), CvScalar.YELLOW, 1, 8, 0);
         }
 
         opencv_core.cvResetImageROI(img);
@@ -1051,8 +1052,8 @@ public class RecognitionFace {
                 break;
             }
         }
-        opencv_core.cvCircle(edges, opencv_core.cvPoint(ceja_izq_p1_X, ceja_izq_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
-        opencv_core.cvCircle(img, opencv_core.cvPoint(ceja_izq_p1_X, ceja_izq_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
+        opencv_imgproc.cvCircle(edges, opencv_core.cvPoint(ceja_izq_p1_X, ceja_izq_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
+        opencv_imgproc.cvCircle(img, opencv_core.cvPoint(ceja_izq_p1_X, ceja_izq_p1_Y), 1, CvScalar.GREEN, 2, 8, 0);
 
         //---------- TERMINA ceja izq P1
         //----------para ceja izq P2
@@ -1082,8 +1083,8 @@ public class RecognitionFace {
             }
         }
 
-        opencv_core.cvCircle(edges, opencv_core.cvPoint(ceja_izq_p2_X, ceja_izq_p2_Y), 1, CvScalar.RED, 2, 8, 0);
-        opencv_core.cvCircle(img, opencv_core.cvPoint(ceja_izq_p2_X, ceja_izq_p2_Y), 1, CvScalar.RED, 2, 8, 0);
+        opencv_imgproc.cvCircle(edges, opencv_core.cvPoint(ceja_izq_p2_X, ceja_izq_p2_Y), 1, CvScalar.RED, 2, 8, 0);
+        opencv_imgproc.cvCircle(img, opencv_core.cvPoint(ceja_izq_p2_X, ceja_izq_p2_Y), 1, CvScalar.RED, 2, 8, 0);
 
         //---------- TERMINA para ceja izq P2
 				/*		  //----------para ceja izq P3
@@ -1128,7 +1129,7 @@ public class RecognitionFace {
         //canvas_2ROI_ceja_izq_grayThresh.showImage(edges);
         //canvas_2ROI_ceja_izq_grayThresh.move(640, 300);
         if (ceja_izq_p1_flag == 1 && ceja_izq_p2_flag == 1) {
-            opencv_core.cvLine(img, opencv_core.cvPoint(ceja_izq_p1_X, ceja_izq_p1_Y), opencv_core.cvPoint(ceja_izq_p2_X, ceja_izq_p2_Y), CvScalar.YELLOW, 1, 8, 0);
+            opencv_imgproc.cvLine(img, opencv_core.cvPoint(ceja_izq_p1_X, ceja_izq_p1_Y), opencv_core.cvPoint(ceja_izq_p2_X, ceja_izq_p2_Y), CvScalar.YELLOW, 1, 8, 0);
         }
 
         opencv_core.cvResetImageROI(img);
