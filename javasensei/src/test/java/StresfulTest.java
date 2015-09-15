@@ -76,6 +76,8 @@ public class StresfulTest {
             response = br.lines().parallel().collect(Collectors.joining("\n"));
 
             connection.disconnect();
+            
+            System.out.println("Peticion exitosa!");
 
         } catch (IOException ex) {
             fallas++;
@@ -84,10 +86,14 @@ public class StresfulTest {
 
         return response;
     }
-
+    
+    public static void main(String[] args){
+        new StresfulTest().fullTestSystemRemote();
+    }
+    
     //@Test
     public void fullTestSystemRemote() {
-        int quantityUsers = 500; //Cantidad de usuarios
+        int quantityUsers = 10; //Cantidad de usuarios
 
         try {
             ExecutorService executors = Executors.newFixedThreadPool(quantityUsers);
