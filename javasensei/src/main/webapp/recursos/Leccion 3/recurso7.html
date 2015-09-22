@@ -1,0 +1,33 @@
+<!--Lección 3-->
+<h1>La instrucción switch.</h1>
+<p>   
+La instrucción switch es otra manera de implementar muchas instrucciones if. El programa
+siguiente, FabricanteDVD.java, utiliza la instrucción switch para determinar la categoría de
+un determinado fabricante.
+</p>
+<code>
+//Programa que lee un código y determina el fabricante.
+public class  FabricanteDVD {
+  public static void  main(String[] args) {
+    int  codigo = 2;
+
+    switch (codigo) {
+      case 1:
+        System. out.println("3M Corporation");
+        break;
+      case 2:
+        System. out.println("Maxwell Corporation");
+        break;
+      case 3:
+        System. out.println("Sony Corporation");
+        break;
+      case 4:
+        System. out.println("Verbatim Corporation");
+        break;
+      default :
+        System. out.println("Código incorrecto");
+    }
+  }
+} 
+</code>    
+    
