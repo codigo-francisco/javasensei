@@ -1,8 +1,21 @@
-<!--Lección 3-->
-<h1>Operadores relacionales y de igualdad.</h1>
+<!--Lección 4-->
+<h1>La instrucción if/else.</h1>
 <p>   
-Los operadores relacionales y de igualdad nos permiten determinar si un valor 
-es igual a, mayor que o menor que otro valor. Cuando los programas utilizan 
-operadores relacionales y de igualdad para comparar valores, el resultado 
-de la comparación es verdadero (true) o falso (false). 
-</p>
+Utilizamos una instrucción if/else cuando queremos hacer una u otra cosa dependiendo de
+una condición (expresión booleana). En otras palabras: ejecutar instrucciones cuando la
+evaluación de la condición es verdadera o falsa. Veamos como funciona una instrucción
+if/else. El programa siguiente, ParImpar.java, utiliza la instrucción if/else para
+determinar si un número es par o impar.</p>
+<code>
+//Instrucción if/else.
+public class  ParImpar {
+  public static void  main(String[] args) {
+    int  numero = 10;
+
+    if (numero % 2 == 0)
+      System. out.println("es par.");
+    else
+      System. out.println("es impar.");
+  } 
+} 
+</code>    

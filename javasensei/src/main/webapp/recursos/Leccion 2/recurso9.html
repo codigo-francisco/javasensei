@@ -1,23 +1,17 @@
 <!--Lección 2-->
-<h1>Operadores abreviados y de incremento/decremento.</h1>
+<h1>Conversión de tipo (type casting).</h1>
 <p>   
-Java proporciona los operadores de incremento, decremento y asignación compuesta
-que permiten escribir una expresión aritmética en una forma compacta. Veamos un par de
-ejemplos. El programa siguiente, OpAbreviado.java que utiliza los operadores abreviados.
+Cuando una expresión aritmética está formada por variables y constantes del mismo tipo,
+el resultado se expresa en ese mismo tipo de dato.
+
+Cuando los tipos de datos de las variables y constantes en una expresión aritmética son
+distintos, es necesario llevar a cabo una conversión. Una conversión de tipo es un proceso
+que convierte el valor de un tipo de datos a otro tipo de datos. Hay dos conversiones
+posibles en Java: implícitas y explícitas. Una conversión implícita, denominada
+promoción numérica, se aplica a todos los operandos de un operador aritmético. Esta
+conversión se denomina promoción porque el operando se convierte de menor a mayor
+precisión.
+
+Las conversiones explícitas se aplican a un operador de conversión de tipo y la mayoría de
+las veces implica perder precisión.
 </p>
-<code>
-//Muestra los operadores abreviados.
-public class  OpAbreviado {
-  public static void  main(String[] args) {
-    int  x = 2;
-    x += 3; // x = x + 3;
-    System. out.println("x = " + x);
-    x -= 3; // x = x – 3;
-    System. out.println("x = " + x);
-    x *= 2; // x = x * 2
-    System. out.println("x = " + x);
-    x /= 2; // x = x / 2
-    System. out.println("x = " + x);
-  }
-} 
-</code>    
