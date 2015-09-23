@@ -1,9 +1,23 @@
 <!--Lección 2-->
-<h1>La evaluación de expresiones en Java.</h1>
+<h1>Operadores abreviados y de incremento/decremento.</h1>
 <p>   
-Cuando una expresión aritmética tiene más de un operador aritmético, el orden de
-aplicación de los operadores sigue un orden preciso determinado por las reglas 
-jerarquía de los operadores aritméticos. Por ejemplo, las operaciones entre 
-paréntesis se realizan primero en una expresión, y le siguen de izquierda a 
-derecha la multiplicación o división y finalmente la suma y la resta. 
-</p>    
+Java proporciona los operadores de incremento, decremento y asignación compuesta
+que permiten escribir una expresión aritmética en una forma compacta. Veamos un par de
+ejemplos. El programa siguiente, OpAbreviado.java que utiliza los operadores abreviados.
+</p>
+<code>
+//Muestra los operadores abreviados.
+public class  OpAbreviado {
+  public static void  main(String[] args) {
+    int  x = 2;
+    x += 3; // x = x + 3;
+    System. out.println("x = " + x);
+    x -= 3; // x = x – 3;
+    System. out.println("x = " + x);
+    x *= 2; // x = x * 2
+    System. out.println("x = " + x);
+    x /= 2; // x = x / 2
+    System. out.println("x = " + x);
+  }
+} 
+</code>    
