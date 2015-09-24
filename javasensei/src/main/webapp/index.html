@@ -47,6 +47,9 @@
             var url = "servicios/"; //Jquery infiere el dominio
             var usuario = {};
 
+            
+            
+
             var redireccion = function (url) {
                 location.href = url;
             };
@@ -143,14 +146,15 @@
                 $("#cerrarEjemplo").click(function () {
                     $("#dialog_video").hide();
                 });
-
-                //eliminarBackgroundCamera();
+                
+                
                 $("#progressbar").progressbar({
-                    value: 70
+                    value: progreso
                 });
-
+                
+                //eliminarBackgroundCamera();
             });
-
+            
 
         </script>
 
@@ -218,6 +222,7 @@
             #progressbar{
                 height: 1em;
                 width: 50%;
+                background: #FFF;
             }
             #progressbar > div{
                 background: #3C3;
