@@ -208,6 +208,15 @@
                 padding-top: 20px;
                 text-align: center;
             }
+            
+            .ui-dialog-contain {
+                width: 92.5%;
+                max-width: 500px;
+                margin: 3% auto 15px auto;
+                padding: 0;
+                position: relative;
+                top: -15px;
+            }
         </style>
     </head>
     <body>
@@ -279,7 +288,6 @@
                     <button id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
                 </div>
                 <div id="controles_tracing" class="controles">
-                    <button id="recursos_tracing" data-inline="true" data-mini="true">Recursos</button>
                     <button id="informacion_tracing" data-inline="true" data-mini="true">Informacion</button>
                     <button id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
                     <button id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
@@ -338,7 +346,7 @@
                 </div>
                 <div role="main" class="ui-content">
                     <div id="contenido_recurso">
-
+                        
                     </div>
                 </div>
                 <div data-role="footer">
@@ -350,7 +358,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div data-role="page" id="paginagraficaestudiante" data-close-btn="right">
             <div data-role="header">
                 <h1>Avance del Estudiante</h1>

@@ -2,11 +2,6 @@
 }
 
 @media (min-width:901px){
-    .ui-dialog-contain{
-        min-width: 50%;
-        height: 100%;
-        top: -8em;
-    }
     .photo_avatar{
         width: 25%;
         height: 25%;

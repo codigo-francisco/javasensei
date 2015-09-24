@@ -133,7 +133,7 @@ function visualizarRecurso(datos) {
         configRating(datos.id, datos.ranking);
 
         //Visualizamos la ventana
-        $(":mobile-pagecontainer").pagecontainer("change", "#visor_recursos");
+        $(":mobile-pagecontainer").pagecontainer("change", "#visor_recursos",{ transition: "flip" });
     }).fail(function (error) {
         console.error(error);
     });
