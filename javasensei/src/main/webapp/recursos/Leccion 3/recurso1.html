@@ -7,15 +7,18 @@ definidas en un bloque. En caso que la condición sea falsa, se continúa con la
 instrucción del programa. El programa siguiente, Edad.java, demuestra el uso de un if
 simple.
 </p>
-<code>
+
+
+<pre class = "prettyprint lang-java linenums">
 //Demuestra el uso de la instrucción if simple.
-public class  Edad {
-  public static void  main(String[] args) {
-    final int  MENOR_EDAD = 18; 
-    int edad = 20;
-    if (edad < MENOR_EDAD)
-      System. out.println("Todavía no eres un adulto.");
-    System. out.println("La edad es un estado mental.");
-  }
+public class Edad {
+    public static void main(String []args){
+        final int  MENOR_EDAD = 18; 
+        int edad = 20;
+        if (edad < MENOR_EDAD){
+            System. out.println("Todavía no eres un adulto.");
+        }    
+        System. out.println("La edad es un estado mental.");
+    }
 } 
-</code>    
+</pre>    
