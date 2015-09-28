@@ -10,14 +10,16 @@
         <link href="jquerymobile/icon-pack-custom.css" rel="stylesheet">
         <link href="styles/github.css" rel="stylesheet">
         <link href="jquery/jRating.jquery.css" rel="stylesheet" media="screen">
-
+        <link href="Prettyprint/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+            
         <link href="css/example_tracing.css" rel="stylesheet">
         <link href="css/avatar.css" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet">
-
+        
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
-
+        <script type="text/javascript" src="Prettyprint/google-code-prettify/prettify.js"></script>
+                
         <script type="text/javascript" src="js/highcharts-custom.js"></script>
         <script type="text/javascript" src="jquery/jRating.jquery.min.js"></script>
         <script type="text/javascript" src="highlight.pack.js"></script>
@@ -34,6 +36,7 @@
         <script type="text/javascript" src="js/graficos.js"></script>
 
         <script>
+           
             var menu = new menu_sensei();
             var recursos = new recursos_sensei();
             var example_tracing;
@@ -124,7 +127,7 @@
                             break;
                     }
                 });
-
+                prettyPrint();
                 $("#areatrabajo").hide();
                 $("#controles_tracing").hide();
                 $("#controles_cierre_tracing").hide();
@@ -140,6 +143,9 @@
                 $("#cerrarEjemplo").click(function () {
                     $("#dialog_video").hide();
                 });
+                
+                //Método para renderizar el codigo de java que se va a mostrar en la página
+                
 
                 //eliminarBackgroundCamera();
             });
@@ -217,6 +223,15 @@
                 position: relative;
                 top: -15px;
             }
+            
+            /*Esto es para mostrar las lineas 
+            de codigo que se muestra en el documento.*/
+            li.L0, li.L1, li.L2, li.L3,
+		li.L5, li.L6, li.L7, li.L8
+		{ list-style-type: decimal !important }
+		pre.prettyprint{
+			background: #eee;
+		}
         </style>
     </head>
     <body>

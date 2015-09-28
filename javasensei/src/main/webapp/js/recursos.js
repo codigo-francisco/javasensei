@@ -129,9 +129,8 @@ function visualizarRecurso(datos) {
     }).done(function (data) {
         $("#titulo_recurso").text(datos.titulo);
         $("#contenido_recurso").html(data);
-
+        prettyPrint();
         configRating(datos.id, datos.ranking);
-
         //Visualizamos la ventana
         $(":mobile-pagecontainer").pagecontainer("change", "#visor_recursos",{ transition: "flip" });
     }).fail(function (error) {
