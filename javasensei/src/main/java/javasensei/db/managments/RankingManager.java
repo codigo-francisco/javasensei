@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
@@ -23,12 +24,20 @@ import javasensei.estudiante.ModeloEstudiante;
 import javasensei.exceptions.JavaException;
 import org.apache.mahout.cf.taste.common.NoSuchUserException;
 import org.apache.mahout.cf.taste.common.TasteException;
+import org.apache.mahout.cf.taste.impl.common.FastByIDMap;
+import org.apache.mahout.cf.taste.impl.model.GenericDataModel;
+import org.apache.mahout.cf.taste.impl.model.GenericPreference;
+import org.apache.mahout.cf.taste.impl.model.GenericUserPreferenceArray;
 import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
+import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.recommender.AbstractRecommender;
 import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
 import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
 import org.apache.mahout.cf.taste.model.DataModel;
+import org.apache.mahout.cf.taste.model.Preference;
+import org.apache.mahout.cf.taste.model.PreferenceArray;
+import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.apache.mahout.cf.taste.similarity.UserSimilarity;
 
@@ -68,11 +77,15 @@ public class RankingManager {
     }
 
     public RankingManager(ModeloEstudiante estudiante) {
+        this(estudiante, true, true);
+    }
+
+    public RankingManager(ModeloEstudiante estudiante, boolean updateExercises, boolean updateResources) {
         this.estudiante = estudiante;
-        if (recommenderEjercicios == null) {
+        if (recommenderEjercicios == null && updateExercises) {
             updateDataModelEjercicios();
         }
-        if (recommenderRecursos == null) {
+        if (recommenderRecursos == null && updateResources) {
             updateDataModelRecursos();
         }
     }
@@ -126,6 +139,15 @@ public class RankingManager {
         return result;
     }
 
+    /**
+     * Metodo que obtiene recomendaciones de los ejercicios
+     *
+     * @param cantidad Cantidad de recomendaciones (No necesariamente devuelva
+     * la cantidad pedida)
+     * @param random Verdadero si necesita que genere un item aleatoriamente en
+     * caso de no encontrar alguna recomendacion
+     * @return JSON de los ejercicios
+     */
     public String getRecommendersExercises(int cantidad, boolean random) {
         return getRecommenders(rankingEjercicios, recommenderEjercicios, cantidad, random);
     }
@@ -151,10 +173,10 @@ public class RankingManager {
         try {
             List<Long> array = new ArrayList();
 
-            try{
+            try {
                 recommenders = getRecommendersItems(recommender, cantidad);//recommenderEjercicios.recommend(estudiante.getId(), cantidad); //5 Recomendaciones
-            }catch(Exception ex){
-                System.out.println("El usuario no existe aun en el modelo de datos: "+estudiante.getId());
+            } catch (Exception ex) {
+                System.out.println("El usuario no existe aun en el modelo de datos: " + estudiante.getId());
             }
             //Se agrega un item aleatorio...
             if (random && recommenders.size() < 1) { //RandomRecommender no funciona....
@@ -184,44 +206,56 @@ public class RankingManager {
         return result;
     }
 
-    public void updateDataModelEjercicios() {
+    public FastByIDMap buildDataModel(DBCollection rankings, String fieldNameUserId, String fieldNameItemId, String fieldNameValue) {
+        //Obtenemos todos los ranking actuales y los almacenamos en el archivo csv
+        DBCursor cursor = rankings.find();
+        FastByIDMap<PreferenceArray> userData = new FastByIDMap<>();
+
+        if (cursor.count() > 0) {
+
+            List<Preference> preferences = new ArrayList<>();
+            Long idLastUser = null;
+
+            while (cursor.hasNext()) {
+                DBObject object = cursor.next();
+                Long idItem = new Double(object.get(fieldNameItemId).toString()).longValue();
+                Long idCurrentUser = new Double(object.get(fieldNameUserId).toString()).longValue();
+                Float value = new Float(object.get(fieldNameValue).toString());
+
+                if (idLastUser == null || !idCurrentUser.equals(idLastUser)) {
+                    if (preferences.size() > 0) {
+                        userData.put(idLastUser, new GenericUserPreferenceArray(preferences));
+                        preferences.clear();
+                    }
+                    idLastUser = idCurrentUser;
+                }
+
+                preferences.add(new GenericPreference(idLastUser, idItem, value)
+                );
+
+                if (!cursor.hasNext()) {
+                    userData.put(idLastUser, new GenericUserPreferenceArray(preferences));
+                }
+            }
+
+            System.out.println(userData);
+        }
+
+        return userData;
+    }
+
+    private void updateDataModelEjercicios() {
         try {
             if (updateModelExcercises) {
-                //Creamos el archivo csv sobre el que vamos a escribir
-                File csv = File.createTempFile("dataset", ".csv");
-                PrintWriter writer = new PrintWriter(csv);
-
-                //Obtenemos todos los ranking actuales y los almacenamos en el archivo csv
-                DBCursor cursor = rankingEjercicios.find();
-
-                if (cursor.count() > 0) {
-
-                    while (cursor.hasNext()) {
-                        DBObject object = cursor.next();
-                        long idAlumno = new Double(object.get("idAlumno").toString()).longValue();
-                        int idEjercicio = (int) Double.parseDouble(object.get("idEjercicio").toString());
-
-                        String cadena = String.format("%s,%s,%s",
-                                idAlumno,
-                                idEjercicio,
-                                object.get("ranking"));
-                        writer.println(cadena);
-                        System.out.println(cadena);
-                    }
-
-                    writer.close();
-
-                    //El archivo es pasado al dataModel
-                    DataModel dataModel = new FileDataModel(csv);
-                    //Creamos la correlacion de pearson
-                    PearsonCorrelationSimilarity correlation = new PearsonCorrelationSimilarity(dataModel);
-                    ThresholdUserNeighborhood neigh = new ThresholdUserNeighborhood(0.1, correlation, dataModel);
-                    recommenderEjercicios = new GenericUserBasedRecommender(dataModel, neigh, correlation);
+                //El archivo es pasado al dataModel
+                DataModel dataModel = new GenericDataModel(buildDataModel(rankingEjercicios, "idAlumno", "idEjercicio", "ranking"));
+                //Creamos la correlacion de pearson
+                PearsonCorrelationSimilarity correlation = new PearsonCorrelationSimilarity(dataModel);
+                UserNeighborhood neigh = new NearestNUserNeighborhood(5, correlation, dataModel);
+                recommenderEjercicios = new GenericUserBasedRecommender(dataModel, neigh, correlation);
                 //randomRecommender = new RandomRecommender(dataModel);
 
-                    //csv.deleteOnExit();
-                    updateModelExcercises = false;
-                }
+                updateModelExcercises = false;
             }
         } catch (Exception ex) {
             Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -231,43 +265,15 @@ public class RankingManager {
     private void updateDataModelRecursos() {
         try {
             if (updateModelResources) {
-                //Creamos el archivo csv sobre el que vamos a escribir
-                File csv = File.createTempFile("dataset", ".csv");
-                PrintWriter writer = new PrintWriter(csv);
+                //El archivo es pasado al dataModel
+                DataModel dataModel = new GenericDataModel(buildDataModel(rankingRecursos, "idAlumno", "idRecurso", "ranking"));
+                //Creamos la correlacion de pearson
+                UserSimilarity correlation = new PearsonCorrelationSimilarity(dataModel);
+                UserNeighborhood neigh = new NearestNUserNeighborhood(5, correlation, dataModel); //new ThresholdUserNeighborhood(0.1, correlation, dataModel);
+                recommenderRecursos = new GenericUserBasedRecommender(dataModel, neigh, correlation);
 
-                //Obtenemos todos los ranking actuales y los almacenamos en el archivo csv
-                DBCursor cursor = rankingRecursos.find();
-
-                if (cursor.count() > 0) {
-
-                    System.out.println("*****************Datos para crear el Data Model de Recursos**********************");
-
-                    while (cursor.hasNext()) {
-                        DBObject object = cursor.next();
-                        long idAlumno = new Double(object.get("idAlumno").toString()).longValue();
-                        int idRecurso = (int) Double.parseDouble(object.get("idRecurso").toString());
-                        double ranking = new Double(object.get("ranking").toString());
-
-                        String cadena = String.format("%s,%s,%s",
-                                idAlumno,
-                                idRecurso,
-                                ranking);
-                        writer.println(cadena);
-                        System.out.println(cadena);
-                    }
-
-                    writer.close();
-
-                    //El archivo es pasado al dataModel
-                    DataModel dataModel = new FileDataModel(csv);
-                    //Creamos la correlacion de pearson
-                    UserSimilarity correlation = new PearsonCorrelationSimilarity(dataModel);
-                    ThresholdUserNeighborhood neigh = new ThresholdUserNeighborhood(0.1, correlation, dataModel);
-                    recommenderRecursos = new GenericUserBasedRecommender(dataModel, neigh, correlation);
-
-                    //csv.deleteOnExit();
-                    updateModelResources = false;
-                }
+                //csv.deleteOnExit();
+                updateModelResources = false;
             }
         } catch (Exception ex) {
             Logger.getLogger(RankingManager.class.getName()).log(Level.SEVERE, null, ex);

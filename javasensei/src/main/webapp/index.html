@@ -46,9 +46,6 @@
             var url = "servicios/"; //Jquery infiere el dominio
             var usuario = {};
 
-            
-            
-
             var redireccion = function (url) {
                 location.href = url;
             };
@@ -57,13 +54,11 @@
                 if (usuario.id !== '') {
                     $("#fullscreenlogin").hide();
                 }
-            }
-            ;
+            };
 
             function mostrarBackground() {
                 $("#fullscreenlogin").show();
-            }
-            ;
+            };
 
             function cargarEjercicio(event) {
                 example_tracing.suscribir_todos_ejercicios(avatar_sensei);
@@ -71,13 +66,11 @@
                 $("#controles_cierre_tracing").hide();
 
                 return false;
-            }
-            ;
+            };
 
             function eliminarBackgroundCamera() {
                 $("#fullscreenpermition").hide();
-            }
-            ;
+            };
 
             $(document).ready(function () {
                 $("#button_logout").click(function () {
