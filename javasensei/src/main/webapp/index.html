@@ -14,6 +14,7 @@
         <link href="css/example_tracing.css" rel="stylesheet">
         <link href="css/avatar.css" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet">
+        <link href="css/tabla.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
@@ -32,6 +33,7 @@
         <script type="text/javascript" src="js/avatar.js"></script>
         <script type="text/javascript" src="js/camera.js"></script>
         <script type="text/javascript" src="js/graficos.js"></script>
+        <script type="text/javascript" src="js/matriz.js"></script>
 
         <script>
             var menu = new menu_sensei();
@@ -266,6 +268,8 @@
                 <a id="botoncamara" title="Colocate bien ante la camara" href="#" style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" data-iconpos="notext"></a>
                 <a id="botongrafica" title="Grafica del avance como estudiante" href="#paginagraficaestudiante" style="margin-right: 2em;" data-rel="dialog" data-icon="exclamation-circle" class="ui-btn-right" data-iconpos="notext"></a>
                 <a id="botonrecursos" title="Menu de ejercicios y recursos" href="#paginarecursos" data-rel="dialog" data-icon="ellipsis-v" class="ui-btn-right" data-iconpos="notext"></a>
+            
+            
             </div>
 
             <div role="main" class="ui-content">
@@ -302,6 +306,17 @@
 
                     </div>
                 </div>
+                
+                <div id="divMatrizEjercicios" role="main" class="ui-content">
+                    <br>
+                    <p>Aqui la matriz</p>
+                    <table class="table table-striped" id="tablaEjercicios">
+                        //display matriz ejercicios
+                        <tr><th>1</th></tr>
+                        <tr><td>1</td></tr>
+                     </table>
+                </div>
+                
             </div>
         </div>
 
