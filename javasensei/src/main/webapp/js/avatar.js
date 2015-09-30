@@ -117,8 +117,11 @@ avatar_sensei.prototype = {
                 tipoPaso: contexto.tipoPaso,
                 fotografias : JSON.parse(camera_sensei.getUltimasFotografias())
             });
-            if (tipoCamino=="caminofinaloptimo" || tipoCamino=="caminofinalsuboptimo")
-                avatar_context.cierreEjercicio();
+            if (tipoCamino=="caminofinaloptimo" ){ 
+                avatar_context.cierreEjercicio(1);
+            }else if (tipoCamino == "caminofinalsuboptimo"){
+                avatar_context.cierreEjercicio(0.7);
+            }
         });
     },
     llamarSistemaLogicoDifuso: function (tipoCamino) {
@@ -144,13 +147,11 @@ avatar_sensei.prototype = {
     },
     paso_final_suboptimo: function () {
         console.log("Paso suboptimo notificado");
-        avatar_context.llamarSistemaLogicoDifuso("caminofinaloptimo");
-        avatar_context.cierreEjercicio();
+        avatar_context.llamarSistemaLogicoDifuso("caminofinalsuboptimo");
     },
     paso_final_optimo: function () {
         console.log("Paso final optimo notificado");
-        avatar_context.llamarSistemaLogicoDifuso("caminofinalsuboptimo");
-        avatar_context.cierreEjercicio();
+        avatar_context.llamarSistemaLogicoDifuso("caminofinaloptimo");
     },
     paso_siguiente: function () {
 
@@ -158,7 +159,7 @@ avatar_sensei.prototype = {
     paso_atras: function () {
 
     },
-    cierreEjercicio: function () { //Funcion que se llama cuando se finaliza los ejercicios
+    cierreEjercicio: function (valor_paso) { //Funcion que se llama cuando se finaliza los ejercicios
         camera_sensei.detenerFotos();
         clearTimeout(avatar_context.idTimeout);
 
@@ -175,7 +176,9 @@ avatar_sensei.prototype = {
             type: "GET",
             data: {
                 idEjercicio: avatar_context.id,
-                idAlumno: usuario.id
+                idAlumno: usuario.id,
+                valor: valor_paso
+                
             },
             contentType: "application/json",
             dataType: "json"
