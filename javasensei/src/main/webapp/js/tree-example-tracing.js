@@ -79,9 +79,9 @@ tree_example_tracing.prototype = {
             }
         }
     },
-    construirMatriz: function (matriz, nodo, anterior) {
+    construirMatriz: function (matriz, nodo, anterior, nivel) {
         if (matriz == undefined) { //Primera construccion de la matriz
-            tree_self.construirMatriz(tree_self.matriz, tree_self.ejercicios, -1);
+            tree_self.construirMatriz(tree_self.matriz, tree_self.ejercicios, -1, 0);
             //Recursividad terminada, creamos la tabla de errores y aciertos
             tree_self.crearTablas();
             return;
@@ -90,6 +90,7 @@ tree_example_tracing.prototype = {
         matriz[nodo.paso] = {
             tipo: nodo.tipo,
             anterior: [anterior],
+            nivel: nivel,
             siguiente: []
         };
 
@@ -97,10 +98,11 @@ tree_example_tracing.prototype = {
         var array = Array();
 
         if (nodo.opciones.length > 0) { //Tiene pasos siguientes
+            nivel++;
             for (var index in nodo.opciones) {
                 var nodoItem = nodo.opciones[index];
                 array[index] = nodoItem.paso;
-                tree_self.construirMatriz(matriz, nodoItem, nodo.paso);
+                tree_self.construirMatriz(matriz, nodoItem, nodo.paso, nivel);
             }
 
             matriz[nodo.paso].siguiente = array;

@@ -5,6 +5,15 @@ var logout = function logout() {
     });
 };
 
+var processLoginJhonDoe = function(){
+    usuario.idFacebook="12345789123456789";
+    usuario.token="asdfd67as76dfas8";
+    usuario.nombre = "Jhon Doe";
+    usuario.foto = "";
+    eliminarBackground();
+    checarUsuario(usuario);
+};
+
 var processLogin = function processLogin(response) {
     //Construccion del usuario
     switch (response.status) {

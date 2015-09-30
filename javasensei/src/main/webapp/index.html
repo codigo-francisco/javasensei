@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="img/logo.jpg">
 
+        <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
         <link href="jquerymobile/jquery.mobile-1.4.4.min.css" rel="stylesheet">
         <link href="jquerymobile/icon-pack-custom.css" rel="stylesheet">
         <link href="styles/github.css" rel="stylesheet">
@@ -17,6 +18,7 @@
         <link href="css/tabla.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
         <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
 
         <script type="text/javascript" src="js/highcharts-custom.js"></script>
@@ -54,13 +56,11 @@
                 if (usuario.id !== '') {
                     $("#fullscreenlogin").hide();
                 }
-            }
-            ;
+            };
 
             function mostrarBackground() {
                 $("#fullscreenlogin").show();
-            }
-            ;
+            };
 
             function cargarEjercicio(event) {
                 example_tracing.suscribir_todos_ejercicios(avatar_sensei);
@@ -68,13 +68,11 @@
                 $("#controles_cierre_tracing").hide();
 
                 return false;
-            }
-            ;
+            };
 
             function eliminarBackgroundCamera() {
                 $("#fullscreenpermition").hide();
-            }
-            ;
+            };
 
             $(document).ready(function () {
                 $("#button_logout").click(function () {
@@ -142,10 +140,15 @@
                 $("#cerrarEjemplo").click(function () {
                     $("#dialog_video").hide();
                 });
-
+                
+                
+                $("#progressbar").progressbar({
+                    value: progreso
+                });
+                
                 //eliminarBackgroundCamera();
             });
-
+            
 
         </script>
 
@@ -210,6 +213,16 @@
                 padding-top: 20px;
                 text-align: center;
             }
+            #progressbar{
+                height: 1em;
+                width: 50%;
+                background: #FFF;
+                margin: 0em -1.9em -1.9em 0em;
+                border-radius: 1em;
+            }
+            #progressbar > div{
+                background: #3C3;
+            }
         </style>
     </head>
     <body>
@@ -225,6 +238,7 @@
                          data-show-faces="false" 
                          data-auto-logout-link="false" 
                          onlogin="checkLoginState();"></div>
+                    <button style="display: none" onclick="processLoginJhonDoe();">Login Jhon Doe</button>
                 </div>
             </div>
         </div>
@@ -283,6 +297,7 @@
                     <button id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
                 </div>
                 <div id="controles_tracing" class="controles">
+                    <div id="progressbar"></div>
                     <button id="informacion_tracing" data-inline="true" data-mini="true">Informacion</button>
                     <button id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
                     <button id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
