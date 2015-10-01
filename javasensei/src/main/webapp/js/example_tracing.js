@@ -1,6 +1,8 @@
 //informacion global
 var contexto = {};
-
+var progreso = 0;
+var nivelMax;
+var matrizEjercicios = [];
 var example_tracing_sensei = function (areatrabajo, areasoluciones, boton_adelante, boton_atras, controles) { //Recibe el ejercicio que se va a cargar
     contexto = this; //Guardamos el contexto, una referencia a este owner
 
@@ -23,6 +25,8 @@ var example_tracing_sensei = function (areatrabajo, areasoluciones, boton_adelan
     this.suscriptores_optimo = new buckets.Set();
     this.suscriptores_final_optimo = new buckets.Set();
     this.suscriptores_final_suboptimo = new buckets.Set();
+    this.suscriptores_paso_atras = new buckets.Set();
+    this.suscriptores_paso_siguiente = new buckets.Set();
 };
 
 var createInput = function createInput() {
@@ -49,6 +53,8 @@ example_tracing_sensei.prototype = {
         contexto.suscriptores_optimo.add(obj_callbacks.paso_optimo);
         contexto.suscriptores_final_optimo.add(obj_callbacks.paso_final_optimo);
         contexto.suscriptores_final_suboptimo.add(obj_callbacks.paso_final_suboptimo);
+        contexto.suscriptores_paso_atras.add(obj_callbacks.paso_atras);
+        contexto.suscriptores_paso_siguiente.add(obj_callbacks.paso_siguiente);
     },
     suscribirse_inicio_ejercicio: function (callback_inicio) {
         contexto.suscriptores_inicio.add(callback_inicio);
@@ -83,6 +89,12 @@ example_tracing_sensei.prototype = {
                 contexto.tree_example_tracing.colocarAcierto(datos.paso);
                 notificaciones = contexto.suscriptores_final_optimo;
                 break;
+            case "pasoatras":
+                notificaciones = contexto.suscriptores_paso_atras;
+                break;
+            case "pasosiguiente":
+                notificaciones = contexto.suscriptores_paso_siguiente;
+                break;
         }
         
         contexto.tipoPaso = tipo;
@@ -97,14 +109,16 @@ example_tracing_sensei.prototype = {
     mover_atras: function () {
         //Llamamos al mover atras del tree_example, este nos devuelve el paso que necesitamos redenrizar
         var paso_datos = contexto.tree_example_tracing.atras();
-
         contexto.construir_interfaz(paso_datos, true, false);
+        
+        contexto.notificar_evento("pasoatras");
     },
     mover_adelante: function () {
         //Llamamos al mover atras del tree_example, este nos devuelve el paso que necesitamos redenrizar
         var paso_datos = contexto.tree_example_tracing.adelante();
-
         contexto.construir_interfaz(paso_datos, true, false);
+        
+        contexto.notificar_evento("pasosiguiente");
     },
     cerrarInterfaz : function(){
         contexto.areatrabajo.hide();
@@ -163,7 +177,21 @@ example_tracing_sensei.prototype = {
             }
             contexto.notificar_evento(tipo, datos_notificacion);
         }
-
+        
+        //
+        //
+        if ($("#controles_tracing").is(":visible") === true)
+            $("#progressbar").detach().prependTo("#controles_tracing");
+        
+        nivelMax = 0;
+        matrizEjercicios = $.map(contexto.tree_example_tracing.matriz,function(el){
+            return el;
+        });
+        for (var i=0;i<matrizEjercicios.length;i++){
+            if (matrizEjercicios[i].nivel > nivelMax)
+                nivelMax = matrizEjercicios[i].nivel;
+        }
+        
         //Se evalua si se debe habilitar el boton atras
         if (contexto.tree_example_tracing.tieneAtras()) {
             contexto.boton_atras.removeClass("ui-disabled"); //Habilitarlo
@@ -209,6 +237,21 @@ example_tracing_sensei.prototype = {
             
             input.attr("size",size);
         });
+
+        pasoActual = contexto.tree_example_tracing.pasoactual;
+        nivelActual = matrizEjercicios[pasoActual].nivel-1;
+        progreso = Math.round((nivelActual/(nivelMax-1))*100);
+        $("#progressbar")
+                .progressbar("value",progreso)
+                .children("#progressbar > div")
+                .html(progreso + '%')
+                .css({
+                    "display":"block",
+                    //"position":"absolute",
+                    "font-size":"1em",
+                    "line-height":"1em",
+                    "text-align": "center"
+                });
     },
     construir_area_solucion: function () {
         //Construimos los botones
