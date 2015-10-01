@@ -59,13 +59,11 @@
                 if (usuario.id !== '') {
                     $("#fullscreenlogin").hide();
                 }
-            }
-            ;
+            };
 
             function mostrarBackground() {
                 $("#fullscreenlogin").show();
-            }
-            ;
+            };
 
             function cargarEjercicio(event) {
                 example_tracing.suscribir_todos_ejercicios(avatar_sensei);
@@ -73,13 +71,11 @@
                 $("#controles_cierre_tracing").hide();
 
                 return false;
-            }
-            ;
+            };
 
             function eliminarBackgroundCamera() {
                 $("#fullscreenpermition").hide();
-            }
-            ;
+            };
 
             $(document).ready(function () {
                 $("#button_logout").click(function () {
@@ -146,12 +142,17 @@
 
                 $("#cerrarEjemplo").click(function () {
                     $("#dialog_video").hide();
-                });
-                
+                })
                 
                                
             });
           
+                $("#progressbar").progressbar({
+                    value: progreso
+                });
+                
+                //eliminarBackgroundCamera();
+            });
             
         </script>
 
@@ -217,6 +218,7 @@
                 text-align: center;
             }
             
+            
             .ui-dialog-contain {
                 width: 92.5%;
                 max-width: 500px;
@@ -234,6 +236,7 @@
 		pre.prettyprint{
 			background: #eee;
 		}
+                
             #progressbar{
                 height: 1em;
                 width: 50%;

@@ -30,10 +30,14 @@ public class EstudiantesManager {
     public EstudiantesManager(ModeloEstudiante estudiante) {
         this.estudiante = estudiante;
     }
-
+    
     public Boolean finalizarEjercicio(int idEjercicio) {
-        boolean result = false;
+        return finalizarEjercicio(idEjercicio, 1);
+    }
 
+    public Boolean finalizarEjercicio(int idEjercicio, double valor) {
+        boolean result = false;
+        System.out.println("valor para terminado: "+valor);
         try {
 
             WriteResult writeResult = alumnosCollection.update(
@@ -41,7 +45,7 @@ public class EstudiantesManager {
                     .put("ejercicios.id").is(idEjercicio)
                     .get(),
                     QueryBuilder.start("$set").is(
-                            QueryBuilder.start("ejercicios.$.terminado").is(1) //1 es que termino el ejercicio
+                            QueryBuilder.start("ejercicios.$.terminado").is(valor) //valor depende de como se respondio(suboptimo(.7) ó optimo(1))
                             .get()
                     )
                     .get()
