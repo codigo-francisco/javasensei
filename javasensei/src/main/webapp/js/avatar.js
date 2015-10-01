@@ -136,16 +136,19 @@ avatar_sensei.prototype = {
         console.log("Paso optimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminooptimo");
         camera_sensei.inicializarFotos();
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_erroneo: function () {
         console.log("Paso erroneo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminoerroneo");
         camera_sensei.inicializarFotos();
+        $("#progressbar > div").css({"background":"#FA0"});
     },
     paso_final_suboptimo: function () {
         console.log("Paso suboptimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminofinaloptimo");
         avatar_context.cierreEjercicio();
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_final_optimo: function () {
         console.log("Paso final optimo notificado");
@@ -153,10 +156,17 @@ avatar_sensei.prototype = {
         avatar_context.cierreEjercicio();
     },
     paso_siguiente: function () {
-
+        console.log("paso adelante llamado");
+        matrizEjercicios = $.map(contexto.tree_example_tracing.matriz,function(el){
+            return el;
+        });
+        pasoActual = contexto.tree_example_tracing.pasoactual;;
+        if (matrizEjercicios[pasoActual].tipo === "pasoerroneo")
+            $("#progressbar > div").css({"background":"#FA0"});
     },
     paso_atras: function () {
-
+        console.log("paso atras llamado");
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     cierreEjercicio: function () { //Funcion que se llama cuando se finaliza los ejercicios
         camera_sensei.detenerFotos();
@@ -165,6 +175,7 @@ avatar_sensei.prototype = {
         $("#controles_tracing").hide();
 
         //Mostramos el rating
+        $("#progressbar").detach().prependTo("#controles_cierre_tracing");
         $("#controles_cierre_tracing").show();
 
         avatar_context.obtenerRatingEjercicio(avatar_context.id);

@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="img/logo.jpg">
 
+        <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
         <link href="jquerymobile/jquery.mobile-1.4.4.min.css" rel="stylesheet">
         <link href="jquerymobile/icon-pack-custom.css" rel="stylesheet">
         <link href="styles/github.css" rel="stylesheet">
@@ -17,8 +18,11 @@
         <link href="css/main.css" rel="stylesheet">
         
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
         <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
         <script type="text/javascript" src="Prettyprint/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="FlowType/flowtype.js"></script>
+        
                 
         <script type="text/javascript" src="js/highcharts-custom.js"></script>
         <script type="text/javascript" src="jquery/jRating.jquery.min.js"></script>
@@ -46,7 +50,7 @@
             var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
             var url = "servicios/"; //Jquery infiere el dominio
             var usuario = {};
-
+            
             var redireccion = function (url) {
                 location.href = url;
             };
@@ -144,13 +148,11 @@
                     $("#dialog_video").hide();
                 });
                 
-                //Método para renderizar el codigo de java que se va a mostrar en la página
                 
-
-                //eliminarBackgroundCamera();
+                               
             });
-
-
+          
+            
         </script>
 
         <style type="text/css">
@@ -232,6 +234,16 @@
 		pre.prettyprint{
 			background: #eee;
 		}
+            #progressbar{
+                height: 1em;
+                width: 50%;
+                background: #FFF;
+                margin: 0em -1.9em -1.9em 0em;
+                border-radius: 1em;
+            }
+            #progressbar > div{
+                background: #3C3;
+            }
         </style>
     </head>
     <body>
@@ -247,6 +259,7 @@
                          data-show-faces="false" 
                          data-auto-logout-link="false" 
                          onlogin="checkLoginState();"></div>
+                    <button style="display: none" onclick="processLoginJhonDoe();">Login Jhon Doe</button>
                 </div>
             </div>
         </div>
@@ -303,6 +316,7 @@
                     <button id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
                 </div>
                 <div id="controles_tracing" class="controles">
+                    <div id="progressbar"></div>
                     <button id="informacion_tracing" data-inline="true" data-mini="true">Informacion</button>
                     <button id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
                     <button id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
