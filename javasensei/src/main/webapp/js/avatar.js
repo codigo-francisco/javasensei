@@ -175,7 +175,6 @@ avatar_sensei.prototype = {
         $("#controles_tracing").hide();
 
         //Mostramos el rating
-        $("#progressbar").detach().prependTo("#controles_cierre_tracing");
         $("#controles_cierre_tracing").show();
 
         avatar_context.obtenerRatingEjercicio(avatar_context.id);
