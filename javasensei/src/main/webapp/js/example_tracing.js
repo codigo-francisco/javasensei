@@ -3,12 +3,12 @@ var contexto = {};
 var progreso = 0;
 var nivelMax;
 var matrizEjercicios = [];
-var example_tracing_sensei = function (areatrabajo, areasoluciones, post_controles, boton_adelante, boton_atras, controles) { //Recibe el ejercicio que se va a cargar
+var example_tracing_sensei = function (areatrabajo, areasoluciones, boton_adelante, boton_atras, controles, post_controles) { //Recibe el ejercicio que se va a cargar
     contexto = this; //Guardamos el contexto, una referencia a este owner
 
     this.areatrabajo = $(areatrabajo);
     this.areasoluciones = $(areasoluciones);
-    this.post_controles = $("#post_controles");
+    this.post_controles = $(post_controles);
     this.cierretracing = $("#controles_cierre_tracing");
     this.boton_adelante = $(boton_adelante);
     this.boton_atras = $(boton_atras);
