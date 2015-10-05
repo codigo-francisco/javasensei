@@ -1,0 +1,19 @@
+#prome{
+    text-align: right;
+    font-size: 10px;
+}
+#tablaEjercicios{
+    margin: 0 auto;
+    //border: 1px solid black;
+    border-collapse: collapse;
+    
+}
+#tablaEjercicios td{
+    text-align: center;
+    width: 20px;
+    border: 1px solid black;
+}
+.lec{
+    border: 1px solid black;
+    text-align: left;
+}
