@@ -34,6 +34,7 @@
         <script type="text/javascript" src="js/avatar.js"></script>
         <script type="text/javascript" src="js/camera.js"></script>
         <script type="text/javascript" src="js/graficos.js"></script>
+        <script type="text/javascript" src="js/matriz.js"></script>
 
         <script>
             var menu = new menu_sensei();
@@ -280,6 +281,8 @@
                 <a id="botoncamara" title="Colocate bien ante la camara" href="#" style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" data-iconpos="notext"></a>
                 <a id="botongrafica" title="Grafica del avance como estudiante" href="#paginagraficaestudiante" style="margin-right: 2em;" data-rel="dialog" data-icon="exclamation-circle" class="ui-btn-right" data-iconpos="notext"></a>
                 <a id="botonrecursos" title="Menu de ejercicios y recursos" href="#paginarecursos" data-rel="dialog" data-icon="ellipsis-v" class="ui-btn-right" data-iconpos="notext"></a>
+            
+            
             </div>
 
             <div role="main" class="ui-content">
@@ -317,6 +320,17 @@
 
                     </div>
                 </div>
+                
+                <div id="divMatrizEjercicios" role="main" class="ui-content">
+                    <br>
+                    <p>Aqui la matriz</p>
+                    <table id="tablaEjercicios">
+                        //display matriz ejercicios
+                        <tr><th>1</th></tr>
+                        <tr><td>1</td></tr>
+                     </table>
+                </div>
+                
             </div>
         </div>
 
@@ -368,7 +382,20 @@
                 <h1>Avance del Estudiante</h1>
             </div>
             <div id="divGraficaEstudiante" role="main" class="ui-content">
-                <!-- <div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div> -->
+                 <!--<div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div> -->
+                <div data-role="tabs" id="tabsgraficos">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#primertabg" data-ajax="false">Grafica</a></li>
+                            <li><a href="#segundotabg" data-ajax="false">Tabla</a></li>
+                        </ul>
+                        <div id="primertabg" class="ui-content">
+                            <!--<div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div>-->
+                        </div>
+                        <div id="segundotabg" class="ui-content">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
