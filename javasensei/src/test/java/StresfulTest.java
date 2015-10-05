@@ -1,7 +1,6 @@
 
-import com.google.common.base.Charsets;
+import java.nio.charset.Charset;
 import com.google.gson.JsonParser;
-import com.sun.jersey.api.uri.UriBuilderImpl;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,7 +32,6 @@ import com.google.gson.JsonParser;
 import com.google.gson.JsonObject;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
-import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 import org.junit.After;
 
 /**
@@ -66,7 +64,7 @@ public class StresfulTest {
                 connection.setDoOutput(true);
                 if (params != null) {
                     OutputStream output = connection.getOutputStream();
-                    output.write(params.getBytes(Charsets.UTF_8));
+                    output.write(params.getBytes(Charset.forName("UTF-8")));
                     output.flush();
                 }
             }
@@ -217,7 +215,7 @@ public class StresfulTest {
                 String params = String.format("datosestudiante=%s&fotos=%s", json, fotos);
 
                 OutputStream output = connection.getOutputStream();
-                output.write(params.getBytes(Charsets.UTF_8));
+                output.write(params.getBytes(Charset.forName("UTF-8")));
                 output.flush();
 
                 BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));

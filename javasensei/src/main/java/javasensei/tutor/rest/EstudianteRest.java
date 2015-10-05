@@ -48,7 +48,7 @@ public class EstudianteRest {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("finalizarEjercicio")
-    public String finalizarEjercicio(@QueryParam("idAlumno") Long idAlumno, @QueryParam("idEjercicio") Integer idEjercicio){
+    public String finalizarEjercicio(@QueryParam("idAlumno") Long idAlumno, @QueryParam("idEjercicio") Integer idEjercicio, @QueryParam ("valor") double valor){
         ModeloEstudiante estudiante = new ModeloEstudiante();
         estudiante.setId(idAlumno);
         
@@ -58,8 +58,9 @@ public class EstudianteRest {
         
         Double value = manager.getAbilityGlobal();
         
-        json.addProperty("result", manager.finalizarEjercicio(idEjercicio));
+        json.addProperty("result", manager.finalizarEjercicio(idEjercicio,valor));
         json.addProperty("habilidadGlobal", value);
+        
         
         manager.saveAbilityGlobal(value);
         
