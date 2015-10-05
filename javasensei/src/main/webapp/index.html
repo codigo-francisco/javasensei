@@ -126,7 +126,7 @@
                 $("#areatrabajo").hide();
                 $("#controles_tracing").hide();
                 $("#controles_cierre_tracing").hide();
-                
+                $("#post_controles").hide();
                 $("#cerrar_tracing").click(example_tracing.cerrarInterfaz);
 
                 $("#informacion_tracing").click(avatar_sensei.mostrarInformacion);
@@ -293,10 +293,14 @@
                     <button id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
                 </div>
                 <div id="controles_tracing" class="controles">
-                    <div id="progressbar"></div>
+                    
                     <button id="informacion_tracing" data-inline="true" data-mini="true">Informacion</button>
                     <button id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
                     <button id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
+                </div>
+                <div id="post_controles">
+                    <div id="progressbar"></div>
+                    <br><br>
                 </div>
                 <div class="areatracing">
                     <div id="areatrabajo">
