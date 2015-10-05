@@ -125,6 +125,7 @@
                             break;
                         case "paginagraficaestudiante":
                             cargarGrafico();
+                            obtenerEjercicios(llenarTabla);
                             break;
                     }
                 });
@@ -367,8 +368,6 @@
                 <a id="botoncamara" title="Colocate bien ante la camara" href="#" style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" data-iconpos="notext"></a>
                 <a id="botongrafica" title="Grafica del avance como estudiante" href="#paginagraficaestudiante" style="margin-right: 2em;" data-rel="dialog" data-icon="exclamation-circle" class="ui-btn-right" data-iconpos="notext"></a>
                 <a id="botonrecursos" title="Menu de ejercicios y recursos" href="#paginarecursos" data-rel="dialog" data-icon="ellipsis-v" class="ui-btn-right" data-iconpos="notext"></a>
-            
-            
             </div>
 
             <div role="main" class="ui-content">
@@ -410,15 +409,6 @@
 
                     </div>
                 </div>
-                
-                <div id="divMatrizEjercicios" role="main" class="ui-content">
-                    <br>
-                    <p>Matriz de Ejercicios</p>
-                    <table id="tablaEjercicios">
-                    
-                     </table>
-                </div>
-                
             </div>
         </div>
 
@@ -470,7 +460,7 @@
                 <h1>Avance del Estudiante</h1>
             </div>
             <div id="divGraficaEstudiante" role="main" class="ui-content">
-                <!-- <div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div> -->
+                 <!--<div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div> -->
                 <div data-role="tabs" id="tabsgraficos">
                     <div data-role="navbar">
                         <ul>
@@ -481,6 +471,10 @@
                             <!--<div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div>-->
                         </div>
                         <div id="segundotabg" class="ui-content">
+                            <div>
+                                <table id="tablaEjercicios">
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
