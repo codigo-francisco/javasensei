@@ -129,6 +129,7 @@ avatar_sensei.prototype = {
         var fotografias = camera_sensei.getFotografias();
         camera_sensei.reiniciarFotos();
         avatar_context.ejecutarAjax(tipoCamino, fotografias);
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_suboptimo: function () {
         console.log("Paso suboptimo notificado");
@@ -144,20 +145,29 @@ avatar_sensei.prototype = {
         console.log("Paso erroneo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminoerroneo");
         camera_sensei.inicializarFotos();
+        $("#progressbar > div").css({"background":"#FA0"});
     },
     paso_final_suboptimo: function () {
         console.log("Paso suboptimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminofinalsuboptimo");
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_final_optimo: function () {
         console.log("Paso final optimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminofinaloptimo");
     },
     paso_siguiente: function () {
-
+        console.log("paso adelante llamado");
+        matrizEjercicios = $.map(contexto.tree_example_tracing.matriz,function(el){
+            return el;
+        });
+        pasoActual = contexto.tree_example_tracing.pasoactual;;
+        if (matrizEjercicios[pasoActual].tipo === "pasoerroneo")
+            $("#progressbar > div").css({"background":"#FA0"});
     },
     paso_atras: function () {
-
+        console.log("paso atras llamado");
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     cierreEjercicio: function (valor_paso) { //Funcion que se llama cuando se finaliza los ejercicios
         camera_sensei.detenerFotos();

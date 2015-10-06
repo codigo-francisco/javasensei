@@ -66,7 +66,7 @@ var crearGrafico = function crearGrafico(data) {
         
     }
 
-    $("#divGraficaEstudiante").empty();
+    $("#primertabg").empty();
     
     configuracionGrafica.chart.width = $("#divGraficaEstudiante").css("width").replace("px","");
     configuracionGrafica.chart.height = 400;
@@ -75,7 +75,7 @@ var crearGrafico = function crearGrafico(data) {
 
     div.highcharts(configuracionGrafica);
 
-    $("#divGraficaEstudiante").append(
-            div
+    $("#primertabg").append(
+             div
     );
 };
