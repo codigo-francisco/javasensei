@@ -324,9 +324,11 @@
                 
                 <div id="divMatrizEjercicios" role="main" class="ui-content">
                     <br>
-                    <p>Matriz de Ejercicios</p>
+                    <p>Aqui la matriz</p>
                     <table id="tablaEjercicios">
-                    
+                        //display matriz ejercicios
+                        <tr><th>1</th></tr>
+                        <tr><td>1</td></tr>
                      </table>
                 </div>
                 
@@ -381,7 +383,28 @@
                 <h1>Avance del Estudiante</h1>
             </div>
             <div id="divGraficaEstudiante" role="main" class="ui-content">
-                <!-- <div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div> -->
+                 <!--<div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div> -->
+                <div data-role="tabs" id="tabsgraficos">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#primertabg" data-ajax="false">Grafica</a></li>
+                            <li><a href="#segundotabg" data-ajax="false">Tabla</a></li>
+                        </ul>
+                        <div id="primertabg" class="ui-content">
+                            <!--<div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div>-->
+                        </div>
+                        <div id="segundotabg" class="ui-content">
+
+                            <div id="divMatrizEjercicios" role="main" class="ui-content">
+                                <br>
+                                <p>Matriz de Ejercicios</p>
+                                <table id="tablaEjercicios">
+                                
+                                 </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

@@ -26,10 +26,10 @@ function llenarTabla(datos){
     var matriz=$("#tablaEjercicios");
     matriz.empty();
     var suma=0;
+    var sumaTot=0;
     matriz.append($("<tr>").append($("<th id=\"prome\" colspan=\"12\">").text("PROM")));
     for (var index = 0; index < datos.length; index++) {
 	var dato = datos[index];
-        
 	var tr = $("<tr>").append($("<th class=\"lec\">").text(dato.nombre));
 
 	var arreglo = dato.ejercicios;
@@ -55,12 +55,20 @@ function llenarTabla(datos){
             }
             
         }
-        var prom=suma/arreglo.length;
-        tr.append($("<td style=\"background: LightGray;\">").text((prom*100)+"%"));
+        var prom=(suma/arreglo.length)*100;
+        sumaTot+=prom;
+        console.log("Suma total: "+sumaTot);
+        tr.append($("<td style=\"background: LightGray;\">").text((prom)+"%"));
         matriz.append(tr);
         suma=0;
 
     };
+    var promTot=(sumaTot/datos.length);
+    console.log(sumaTot);
+    tr = $("<tr>").append($("<th>"));
+    tr.append($("<th id=\"promTot\" colspan=\"10\">").text("TOTAL"));
+    tr.append($("<th id=\"promTot\" style=\"background: LightGray;\">").text((+Math.round(promTot))+"%"));
+    matriz.append(tr);
 
 }
 function menu_sensei() {
