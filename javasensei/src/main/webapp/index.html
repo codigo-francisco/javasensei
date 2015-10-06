@@ -11,15 +11,19 @@
         <link href="jquerymobile/icon-pack-custom.css" rel="stylesheet">
         <link href="styles/github.css" rel="stylesheet">
         <link href="jquery/jRating.jquery.css" rel="stylesheet" media="screen">
-
+        <link href="Prettyprint/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+            
         <link href="css/example_tracing.css" rel="stylesheet">
         <link href="css/avatar.css" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet">
-
+        
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
         <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
-
+        <script type="text/javascript" src="Prettyprint/google-code-prettify/prettify.js"></script>
+        
+        
+                
         <script type="text/javascript" src="js/highcharts-custom.js"></script>
         <script type="text/javascript" src="jquery/jRating.jquery.min.js"></script>
         <script type="text/javascript" src="highlight.pack.js"></script>
@@ -36,6 +40,7 @@
         <script type="text/javascript" src="js/graficos.js"></script>
 
         <script>
+           
             var menu = new menu_sensei();
             var recursos = new recursos_sensei();
             var example_tracing;
@@ -45,7 +50,7 @@
             var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
             var url = "servicios/"; //Jquery infiere el dominio
             var usuario = {};
-
+            
             var redireccion = function (url) {
                 location.href = url;
             };
@@ -122,7 +127,7 @@
                             break;
                     }
                 });
-
+                
                 $("#areatrabajo").hide();
                 $("#controles_tracing").hide();
                 $("#controles_cierre_tracing").hide();
@@ -139,17 +144,14 @@
                     $("#dialog_video").hide();
                 });
                 
-                
                 $("#progressbar").progressbar({
                     value: progreso
                 });
-                
-                //eliminarBackgroundCamera();
+                               
             });
-            
 
         </script>
-
+        
         <style type="text/css">
             .fullscreen{
                 width: 100%;
@@ -211,6 +213,26 @@
                 padding-top: 20px;
                 text-align: center;
             }
+            
+            
+            .ui-dialog-contain {
+                width: 92.5%;
+                max-width: 700px;
+                margin: 3% auto 15px auto;
+                padding: 0;
+                position: relative;
+                top: -15px;
+            }
+            
+            
+            /*Esto es para mostrar las lineas 
+            de codigo que se muestra en el documento.*/
+            li.L0, li.L1, li.L2, li.L3,
+		li.L5, li.L6, li.L7, li.L8
+		{ list-style-type: decimal !important }
+		
+            
+            
             #progressbar{
                 height: 1em;
                 width: 50%;
@@ -221,6 +243,73 @@
             #progressbar > div{
                 background: #3C3;
             }
+            
+            /*Estilos del código*/
+            pre.prettyprint{
+                border:1px solid #d6d6d6;
+                background: #eee;
+                font-size: 1.2em;
+                overflow: auto;
+                line-height: 1.6;
+                margin: 0em;
+                padding-top: 0.5em;
+            }
+            /*Estilo de los titulos de los recursos*/
+            #titulo_recurso{
+                font-size: 1.5em;
+                margin: auto;
+            }
+            
+            /*Estilo de los parrafos de los recursos*/
+            p{
+                font-size: 1em;
+                line-height: 1.7;
+                text-align: justify;
+            }
+            
+            /*Resposive text*/
+            @media only screen and (max-width: 768px){
+                
+                pre.prettyprint{
+                    font-size: 1em;
+                }    
+                /*Estilo de los titulos de los recursos*/
+                #titulo_recurso{
+                    font-size: 1em;
+                    
+                }
+                p{
+                    font-size: 0.7em;
+                }
+            }    
+            
+            /*Estilo para los videos*/
+            .js-video {
+                height: 0;
+                padding-top: 25px;
+                padding-bottom: 67.5%;
+                margin-bottom: 10px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .js-video.widescreen {
+              padding-bottom: 56.34%;
+            }
+
+            .js-video.vimeo {
+              padding-top: 0;
+}
+            .js-video embed, .js-video iframe, .js-video object, .js-video video {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+            
+
+                
         </style>
     </head>
     <body>
@@ -297,6 +386,7 @@
                     <button id="informacion_tracing" data-inline="true" data-mini="true">Informacion</button>
                     <button id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
                     <button id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
+                    
                 </div>
                 <div id="post_controles">
                     <div id="progressbar"></div>
@@ -355,18 +445,19 @@
                 </div>
                 <div role="main" class="ui-content">
                     <div id="contenido_recurso">
-
+                        
                     </div>
                 </div>
                 <div data-role="footer">
                     ¿Que te ha parecido este recurso?<br>
                     <div id="calificaciones">
 
+         
                     </div>
                 </div>
             </div>
         </div>
-
+        
         <div data-role="page" id="paginagraficaestudiante" data-close-btn="right">
             <div data-role="header">
                 <h1>Avance del Estudiante</h1>

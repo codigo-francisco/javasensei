@@ -140,6 +140,7 @@ avatar_sensei.prototype = {
         console.log("Paso optimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminooptimo");
         camera_sensei.inicializarFotos();
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_erroneo: function () {
         console.log("Paso erroneo notificado");
@@ -149,6 +150,10 @@ avatar_sensei.prototype = {
     },
     paso_final_suboptimo: function () {
         console.log("Paso suboptimo notificado");
+        avatar_context.llamarSistemaLogicoDifuso("caminofinaloptimo");
+        avatar_context.cierreEjercicio();
+        $("#progressbar > div").css({"background":"#3C3"});
+
         avatar_context.llamarSistemaLogicoDifuso("caminofinalsuboptimo");
         $("#progressbar > div").css({"background":"#3C3"});
     },
@@ -176,6 +181,7 @@ avatar_sensei.prototype = {
         $("#controles_tracing").hide();
 
         //Mostramos el rating
+        $("#progressbar").detach().prependTo("#controles_cierre_tracing");
         $("#controles_cierre_tracing").show();
 
         avatar_context.obtenerRatingEjercicio(avatar_context.id);

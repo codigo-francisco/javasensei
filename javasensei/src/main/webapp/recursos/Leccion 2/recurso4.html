@@ -1,0 +1,27 @@
+<!--Lección 2-->
+<h1>Constantes con nombre.</h1>
+<p>   
+    Si queremos que un valor permanezca fijo, entonces debemos de utilizar una 
+    <strong>constante</strong>.  Una constante se declara en forma similar a 
+    una variable, pero añadiendo la <strong>palabra clave final</strong>. 
+    
+    En una constante solamente se deben usar letras mayúsculas y subrayado. 
+    La palabra clave final es un modificador y le indica a la computadora que 
+    genere un error si el programa intenta cambiar el valor de la variable 
+    final en un momento posterior. Las constantes con nombre hace más fácil 
+    la documentación del código.
+    
+    El programa siguiente, AreaCirculo.java, define una constante con nombre para
+    calcular el área de un círculo.
+</p>
+<pre class = "prettyprint lang-java linenums">
+//Calcula el área de un círculo.
+public class  AreaCirculo {
+  public static void  main(String[] args) {
+    final double PI = 3.14159;
+    double radio = 4;
+    double area = radio * radio * PI;
+    System. out.printf("El área: " + area);
+  } 
+} 
+</pre>    
