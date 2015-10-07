@@ -70,7 +70,9 @@ function menu_sensei() {
                                     );
 
                     if (ejercicio.terminado == 1) {
-                        link.css("color", "green");
+                        link.css("color", "#21610B");
+                    }else if(ejercicio.terminado== .7){
+                        link.css("color","#00FF40");
                     }
 
                     listaLecciones.append(
