@@ -129,11 +129,13 @@ avatar_sensei.prototype = {
         var fotografias = camera_sensei.getFotografias();
         camera_sensei.reiniciarFotos();
         avatar_context.ejecutarAjax(tipoCamino, fotografias);
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_suboptimo: function () {
         console.log("Paso suboptimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminosuboptimo");
         camera_sensei.inicializarFotos();
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_optimo: function () {
         console.log("Paso optimo notificado");
@@ -150,7 +152,6 @@ avatar_sensei.prototype = {
     paso_final_suboptimo: function () {
         console.log("Paso suboptimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminofinaloptimo");
-        avatar_context.cierreEjercicio();
         $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_final_optimo: function () {
