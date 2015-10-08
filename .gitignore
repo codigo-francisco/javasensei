@@ -4,6 +4,4 @@
 javasensei/target/*
 *log*
 *dataset*
-apache-tomee-plus-1.7.1/*.dll
-apache-tomee-plus-1.7.1/temp/*
-apache-tomee-plus-1.7.1/work/*
+/GenerarDataset/nbproject/private/

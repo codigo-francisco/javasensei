@@ -38,5 +38,5 @@
   <role rolename="tomee-admin" />
   <user username="tomee" password="tomee" roles="tomee-admin,manager-gui" />
   -->
-    <user username="admin" password="admin2560" roles="manager-script,admin,admin-gui,manager-gui"/>
+    <user password="password" roles="manager-script,admin,admin-gui,manager-gui" username="admin"/>
 </tomcat-users>

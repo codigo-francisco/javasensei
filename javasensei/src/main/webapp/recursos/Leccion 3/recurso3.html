@@ -1,0 +1,37 @@
+<!--Lección 4-->
+<h1>La instrucción if/else/if.</h1>
+<p>   
+Cuando en una condición existen diversas posibilidades, nos vemos obligados a programar
+usando if anidados, lo que complica la realización y depuración del código. Para facilitar la
+programación en estas situaciones se proporciona la instrucción if/else/if. El programa
+siguiente, DiaSemana.java, lee un número del 1 al 7 y determina el día de la semana
+utilizando esta técnica.
+</p>
+
+
+<pre class = "prettyprint lang-java linenums">
+/*Programa que dado un número del 
+1 al 7 determina el día de la semana.*/
+public class  DiaSemana {
+  public static void  main(String[] args) {
+    int  dia = 3;
+    // procesa dependiendo del día
+    if (dia == 1)
+      System.out.println("El día es: Lunes.");
+    else if (dia == 2)
+      System.out.println("El día es: Martes.");
+    else if (dia == 3)
+      System.out.println("El día es: Miércoles.");
+    else if (dia == 4)
+      System.out.println("El día es: Jueves.");
+    else if (dia == 5)
+      System.out.println("El día es: Viernes.");
+    else if (dia == 6)
+      System.out.println("El día es: Sábado.");
+    else if (dia == 7)
+      System.out.println("El día es: Domingo.");
+    else
+      System.out.println("Número de día incorrecto.");
+  } 
+} 
+</pre>    

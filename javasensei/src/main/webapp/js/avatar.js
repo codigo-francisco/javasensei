@@ -129,35 +129,47 @@ avatar_sensei.prototype = {
         var fotografias = camera_sensei.getFotografias();
         camera_sensei.reiniciarFotos();
         avatar_context.ejecutarAjax(tipoCamino, fotografias);
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_suboptimo: function () {
         console.log("Paso suboptimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminosuboptimo");
         camera_sensei.inicializarFotos();
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_optimo: function () {
         console.log("Paso optimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminooptimo");
         camera_sensei.inicializarFotos();
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_erroneo: function () {
         console.log("Paso erroneo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminoerroneo");
         camera_sensei.inicializarFotos();
+        $("#progressbar > div").css({"background":"#FA0"});
     },
     paso_final_suboptimo: function () {
         console.log("Paso suboptimo notificado");
-        avatar_context.llamarSistemaLogicoDifuso("caminofinalsuboptimo");
+        avatar_context.llamarSistemaLogicoDifuso("caminofinaloptimo");
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_final_optimo: function () {
         console.log("Paso final optimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminofinaloptimo");
     },
     paso_siguiente: function () {
-
+        console.log("paso adelante llamado");
+        matrizEjercicios = $.map(contexto.tree_example_tracing.matriz,function(el){
+            return el;
+        });
+        pasoActual = contexto.tree_example_tracing.pasoactual;;
+        if (matrizEjercicios[pasoActual].tipo === "pasoerroneo")
+            $("#progressbar > div").css({"background":"#FA0"});
     },
     paso_atras: function () {
-
+        console.log("paso atras llamado");
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     cierreEjercicio: function (valor_paso) { //Funcion que se llama cuando se finaliza los ejercicios
         camera_sensei.detenerFotos();
@@ -166,6 +178,7 @@ avatar_sensei.prototype = {
         $("#controles_tracing").hide();
 
         //Mostramos el rating
+        $("#progressbar").detach().prependTo("#controles_cierre_tracing");
         $("#controles_cierre_tracing").show();
 
         avatar_context.obtenerRatingEjercicio(avatar_context.id);
@@ -184,7 +197,7 @@ avatar_sensei.prototype = {
             dataType: "json"
         }).done(function (data) {
             console.log(data);
-            menu_context.actualizarBoton(avatar_context.id);
+            menu_context.actualizarBoton(avatar_context.id, valor_paso);
         }).error(function (error) {
             console.error(error);
         });

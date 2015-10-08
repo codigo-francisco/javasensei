@@ -25,22 +25,26 @@ function recursos_sensei() {
     this.obtenerRecursos = function obtenerRecursos(control) {
         peticionAjaxRecursos("recursos/todos", crearListaRecursos, control);
     };
-
-    function crearListaRecursos(recursos, control) {
-        //Creamos la lista
+    
+    function crearListaRecursos(recursos, control) { //Debera ser un div el primer argumento
+        
+        //Creacion dinamica de la lista de recursos
         var control = $(control);
-
         if (recursos.length > 0) {
             control.empty();
-
+            
+            //Creamos el primer div colapsible
             $.each(recursos, function (index, item) {
-                control.append($("<li>").
-                        attr("data-role", "list-divider").
-                        text(item.nombre));
-
+                var divRecursos = $("<div>")
+                        .append(
+                                $("<h3>")
+                                . text(item.nombre)
+                                );
+                
+                var listaRecursos = $("<ul>");
+                //Lista de recursos
                 $.each(item.recursos, function (index, item) {
-                    control.append($("<li>").
-                            append($("<a>")
+                    var link = $("<a href='#'>")
                                     .attr("data-url", item.url)
                                     .attr("data-id", item.id)
                                     .attr("data-ranking", item.ranking)
@@ -53,13 +57,19 @@ function recursos_sensei() {
                                             id: control.attr("data-id"),
                                             ranking: control.attr("data-ranking")
                                         });
-                                    })
-                                    ));
+                                    });
+                        listaRecursos.append(
+                            $("<li>")
+                            .append(link)
+                        );
                 });
+                control.append(divRecursos
+                        .append(listaRecursos
+                                .listview()
+                                ).collapsible()
+                        );
             });
         }
-
-        control.listview("refresh");
     }
 
     function crearListaEjercicios(items, control) {
@@ -129,11 +139,10 @@ function visualizarRecurso(datos) {
     }).done(function (data) {
         $("#titulo_recurso").text(datos.titulo);
         $("#contenido_recurso").html(data);
-
+        prettyPrint();
         configRating(datos.id, datos.ranking);
-
         //Visualizamos la ventana
-        $(":mobile-pagecontainer").pagecontainer("change", "#visor_recursos");
+        $(":mobile-pagecontainer").pagecontainer("change", "#visor_recursos",{ transition: "flip" });
     }).fail(function (error) {
         console.error(error);
     });
