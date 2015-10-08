@@ -1,4 +1,7 @@
 var configuracionGrafica = {
+    data: {
+        
+    },
     chart: {
         polar: true,
         type: 'area',
@@ -14,17 +17,21 @@ var configuracionGrafica = {
         }
     },
     xAxis: {
+        
     },
     yAxis: {
         gridLineInterpolation: "circle",
         tickInterval: 1,
-        min: 0
-                //max: 10
+        min: 0,     //max: 10*/
+        title: {
+            text: 'Ejercicios Resueltos'
+        }
     },
     legend: {
         enabled: false
     },
     series: [
+        
     ]
 };
 
@@ -54,18 +61,21 @@ var crearGrafico = function crearGrafico(data) {
         configuracionGrafica.yAxis.max = data.maximo;
 
         configuracionGrafica.series = [{data:data.listaEjercicios}];
+        
+        configuracionGrafica.data = [{table: 'datatable'}];
+        
     }
 
-    $("#divGraficaEstudiante").empty();
+    $("#primertabg").empty();
     
-    configuracionGrafica.chart.width = $("#divGraficaEstudiante").css("width").replace("px","");
+    configuracionGrafica.chart.width = $("#primertabg").css("width").replace("px","");
     configuracionGrafica.chart.height = 400;
     
     var div = $("<div>");
 
     div.highcharts(configuracionGrafica);
 
-    $("#divGraficaEstudiante").append(
+    $("#primertabg").append(
             div
     );
 };

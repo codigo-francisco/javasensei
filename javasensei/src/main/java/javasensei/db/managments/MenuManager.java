@@ -56,7 +56,7 @@ public class MenuManager {
                 maximo = cantidadTotalEjercicios;
             
             long cantidadEjercicios = ejerciciosLeccion.stream().filter(ejercicio->
-                    Integer.parseInt(ejercicio.get("terminado").toString()) == 1
+                    Double.parseDouble(ejercicio.get("terminado").toString()) > 0
             ).count();
             
             listaEjercicios.add(cantidadEjercicios);

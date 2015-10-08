@@ -34,8 +34,16 @@ function menu_sensei() {
         });
     };
     
-    this.actualizarBoton=function (idEjercicio){
-        $("#ejercicioMenu"+idEjercicio).css("color","green");
+    this.getColorFont=function(link, valorTerminado){
+        if (valorTerminado == 1) {
+            link.css("color", "#21610B");
+        }else if(valorTerminado == .7){
+            link.css("color","#00FF40");
+        }
+    }
+    
+    this.actualizarBoton=function (idEjercicio, valorPaso){
+        menu_context.getColorFont($("#ejercicioMenu"+idEjercicio),valorPaso);
     };
 
     this.getMenu = function getMenu(menuejercicios) { //Debera ser un div el primer argumento
@@ -68,11 +76,9 @@ function menu_sensei() {
                                     },
                             cargarEjercicio
                                     );
-
-                    if (ejercicio.terminado == 1) {
-                        link.css("color", "green");
-                    }
-
+                    
+                    menu_context.getColorFont(link,ejercicio.terminado);
+                    
                     listaLecciones.append(
                             $("<li>")
                             .append(link)
