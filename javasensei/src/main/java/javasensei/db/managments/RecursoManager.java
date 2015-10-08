@@ -8,6 +8,9 @@ import com.mongodb.QueryBuilder;
 import java.util.ArrayList;
 import java.util.List;
 import javasensei.db.Connection;
+import com.mongodb.WriteResult;
+import com.mongodb.util.JSON;
+import com.mongodb.BasicDBList;
 
 /**
  *
@@ -18,7 +21,9 @@ public class RecursoManager {
     DBCollection recursosCollection = Connection.getCollection().get(CollectionsDB.RECURSOS);
     DBCollection leccionesCollection = Connection.getCollection().get(CollectionsDB.LECCIONES);
     DBCollection rankingCollection = Connection.getCollection().get(CollectionsDB.RANKING_RECURSOS);
-
+    DBCollection temasCollection = Connection.getCollection().get(CollectionsDB.TEMAS);
+    DBCollection ejerciciosCollection = Connection.getCollection().get(CollectionsDB.EJERCICIOS);
+    
     public double getRanking(int idRecurso, Long idAlumno){
         return new Double(recursosCollection.findOne(
                 new BasicDBObject("idAlumno", idAlumno)
@@ -85,5 +90,84 @@ public class RecursoManager {
         System.out.println(lista.toString());
 
         return lista.toString();
+    }
+    public String getJSONList(int col){
+        List<DBObject> jsons = null;
+        switch(col){
+            case 1: jsons = leccionesCollection.find(new BasicDBObject(), new BasicDBObject().append("_id", 0)).toArray(); break;
+            case 2: jsons = temasCollection.find(new BasicDBObject(), new BasicDBObject().append("_id", 0)).toArray(); break;
+            case 3: jsons = ejerciciosCollection.find(new BasicDBObject(), new BasicDBObject().append("_id", 0)).toArray(); break;
+        }
+        BasicDBList listDB = new BasicDBList();
+        for(DBObject o: jsons)
+            listDB.add(o);
+        return listDB.toString();
+    }
+    public String guardar(int coleccion, String json, String oldJson){
+        BasicDBObject jsonResult = new BasicDBObject();
+        DBObject old = oldJson.isEmpty()?null:(DBObject)JSON.parse(oldJson);
+        //Eliminar
+        if(json.trim().equalsIgnoreCase("delete") && old!=null){
+            switch(coleccion){
+                case 1: leccionesCollection.remove(old); break;
+                case 2: temasCollection.remove(old); break;
+                case 3: ejerciciosCollection.remove(old); break;
+            }
+            jsonResult.append("result", true);
+            jsonResult.append("More", "Operación de eliminacion realizada correctamente.");
+            return jsonResult.toString();
+        }
+        DBObject update; 
+        try{
+            update = (DBObject)JSON.parse(json);
+        }catch(Exception exc){
+            jsonResult.append("result",false);
+            jsonResult.append("More", "No es posible realizar la operación, la cadena no es de tipo JSON.");
+            return jsonResult.toString();
+        }
+        //Valida que no exista el ID
+        if(old==null || (int)update.get("id") != (int)old.get("id"))
+            if(validarId(coleccion, (int)update.get("id"))){
+                jsonResult.append("result",false);
+                jsonResult.append("More", "No es posible realizar la operación, el ID ya existe.");
+                return jsonResult.toString();
+            }
+        WriteResult result = null;
+        //GuardarNuevo
+        if(old==null){
+            switch(coleccion){
+                case 1: result=leccionesCollection.insert(update); break;
+                case 2: result=temasCollection.insert(update); break;
+                case 3: result=ejerciciosCollection.insert(update); break;
+            }
+        } 
+        //Actualizar
+        else{
+            switch(coleccion){
+                case 1: result=leccionesCollection.update(old, update); break;
+                case 2: result=temasCollection.update(old, update); break;
+                case 3: result=ejerciciosCollection.update(old, update); break;
+            }
+        }
+        //genN() regresa si se hizo algun cambio (Francisco), pero en el Insert aunque si inserte regresa 0
+        if(result.getN()<=0 && old!=null){
+            jsonResult.append("result",false);
+            jsonResult.append("More", "Error en el servidor, no hizo cambios.");
+            return jsonResult.toString();
+        }    
+        jsonResult.append("result", true);
+        jsonResult.append("More", "Operación realizada correctamente.");
+        return jsonResult.toString();
+    }
+    public Boolean validarId(int coleccion, int id){
+        DBObject query = QueryBuilder.start("id").is(id).get();
+        DBObject json = null;
+        switch(coleccion){
+            case 1: json=leccionesCollection.findOne(query); break;
+            case 2: json=temasCollection.findOne(query); break;
+            case 3: json=ejerciciosCollection.findOne(query); break;
+        }
+        return json!=null?true:false;
+        //regresa true si ya existe ese ID
     }
 }

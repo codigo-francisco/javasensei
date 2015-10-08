@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Manejador de Ejercicios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/excManage.css">
+        <script type="text/javascript" src="js/excManage.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Manejador de Ejercicios</h1>
+        </header>
+        <main>
+            <section>
+                <article>
+                    <h2>Archivo JSON</h2>
+                    Colección:
+                    <select name ="collection" id="collectionBox" onchange= "cargarSelectJSON(this.value)">
+                        <option value=0 selected>Seleccione</option>
+                        <option value=1>Lecciones</option>
+                        <option value=2>Temas</option>
+                        <option value=3>Ejercicios</option>
+                    </select> <br><br>
+                    JSON: 
+                    <select name ="json" id="jsonBox" disabled onchange="obtenerJSON()">
+                        <option value=0 selected>Seleccione</option>
+                    </select> 
+                    <input type="button" value="Nuevo" id="btnNuevo" onclick="nuevo()">
+                    <br><br>
+                </article>
+                <br>
+                <article>
+                        Archivo: <br>
+                        <textarea id="jsonArea"></textarea>
+                </article>
+                <br>
+                <article>
+                    <input type="button" value="Guardar" id="btnGuardar" onclick="guardar()" disabled>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>

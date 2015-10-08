@@ -101,5 +101,17 @@ public class RecursosRest {
         json.addProperty("result", result);
         
         return json.toString();
+    }  
+    @GET
+    @Path("getJSONList")
+    public String getJSONList(@QueryParam("coleccion") int coleccion){
+        RecursoManager manager = new RecursoManager();
+        return manager.getJSONList(coleccion);
+    }
+    @GET
+    @Path("guardar")
+    public String guardar(@QueryParam("coleccion") int coleccion, @QueryParam("json") String json, @QueryParam("oldJson") String oldJson){
+        RecursoManager manager = new RecursoManager(); 
+        return manager.guardar(coleccion, json, oldJson);
     }
 }
