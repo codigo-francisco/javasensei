@@ -196,7 +196,7 @@ avatar_sensei.prototype = {
             dataType: "json"
         }).done(function (data) {
             console.log(data);
-            menu_context.actualizarBoton(avatar_context.id);
+            menu_context.actualizarBoton(avatar_context.id, valor_paso);
         }).error(function (error) {
             console.error(error);
         });
