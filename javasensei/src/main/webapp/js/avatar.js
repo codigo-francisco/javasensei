@@ -135,11 +135,13 @@ avatar_sensei.prototype = {
         console.log("Paso suboptimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminosuboptimo");
         camera_sensei.inicializarFotos();
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_optimo: function () {
         console.log("Paso optimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminooptimo");
         camera_sensei.inicializarFotos();
+        $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_erroneo: function () {
         console.log("Paso erroneo notificado");
@@ -149,7 +151,7 @@ avatar_sensei.prototype = {
     },
     paso_final_suboptimo: function () {
         console.log("Paso suboptimo notificado");
-        avatar_context.llamarSistemaLogicoDifuso("caminofinalsuboptimo");
+        avatar_context.llamarSistemaLogicoDifuso("caminofinaloptimo");
         $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_final_optimo: function () {
@@ -176,6 +178,7 @@ avatar_sensei.prototype = {
         $("#controles_tracing").hide();
 
         //Mostramos el rating
+        $("#progressbar").detach().prependTo("#controles_cierre_tracing");
         $("#controles_cierre_tracing").show();
 
         avatar_context.obtenerRatingEjercicio(avatar_context.id);
@@ -194,7 +197,7 @@ avatar_sensei.prototype = {
             dataType: "json"
         }).done(function (data) {
             console.log(data);
-            menu_context.actualizarBoton(avatar_context.id);
+            menu_context.actualizarBoton(avatar_context.id, valor_paso);
         }).error(function (error) {
             console.error(error);
         });

@@ -210,9 +210,6 @@ example_tracing_sensei.prototype = {
             contexto.notificar_evento(tipo, datos_notificacion);
         }
         
-        //
-        //        
-
         nivelMax = 0;
         matrizEjercicios = $.map(contexto.tree_example_tracing.matriz,function(el){
             return el;
