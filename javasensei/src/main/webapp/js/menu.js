@@ -22,47 +22,7 @@ function obtenerEjercicios(callback) {
         console.log("Fallo " + textStatus);
     });
 }
-function llenarTabla(datos){
-    var matriz=$("#tablaEjercicios");
-    matriz.empty();
-    var suma=0;
-    matriz.append($("<tr>").append($("<th id=\"prome\" colspan=\"12\">").text("PROM")));
-    for (var index = 0; index < datos.length; index++) {
-	var dato = datos[index];
-        
-	var tr = $("<tr>").append($("<th class=\"lec\">").text(dato.nombre));
 
-	var arreglo = dato.ejercicios;
-	for(var indexDato = 0; indexDato < arreglo.length; indexDato++ ){
-            var tmp=arreglo[indexDato].terminado;
-            suma+=tmp;
-            switch(tmp){
-                //Ejercicio sin responder
-                case 0:tr.append(
-                    $("<td>")/*.
-                    text("")*/
-                    );break;
-                //Ejercicio terminado de manera óptima
-                case 1:tr.append(
-                    $("<td style=\"background: green;\">")/*.
-                    text("")*/
-                    );break;
-                //Ejercicio terminado de manera subóptima
-                case 0.7: tr.append(
-                    $("<td style=\"background: palegreen;\">")/*.
-                    text("")*/
-                    );break;
-            }
-            
-        }
-        var prom=suma/arreglo.length;
-        tr.append($("<td style=\"background: LightGray;\">").text((prom*100)+"%"));
-        matriz.append(tr);
-        suma=0;
-
-    };
-
-}
 function menu_sensei() {
     this.lecciones = [];
     this.updateMenu = true;
