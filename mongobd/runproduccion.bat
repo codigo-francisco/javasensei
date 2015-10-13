@@ -1,0 +1,1 @@
+mongod --dbpath . --auth --config "mongodb.conf"

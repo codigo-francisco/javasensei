@@ -36,8 +36,8 @@ function llenarTabla(datos){
             
         }
         
-        var longitud = arreglo.legth;
-        var prom=(longitud>0)?(suma/arreglo.length)*100:0; //Posible error de lecciones con 0 ejercicios
+        var longitud = arreglo.length;
+        var prom=(longitud>0)?(suma/longitud)*100:0; //Posible error de lecciones con 0 ejercicios
         sumaTot+=prom;
         tr.append($("<td style=\"background: ThreeDHighlight;\">").text(Math.round((prom))+"%"));
         matriz.append(tr);
