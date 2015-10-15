@@ -1,5 +1,7 @@
 package javasensei.db.managments;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.BasicDBObjectBuilder;
@@ -83,7 +85,7 @@ public class MenuManager {
                 .put("_id").is(0)
                 .get()
         );
-
+        
         while (cursor.hasNext()) {
             DBObject object = cursor.next();
             object.put("nombre", object.get("nombre"));
@@ -91,12 +93,19 @@ public class MenuManager {
             Integer id = new Double(object.get("id").toString()).intValue();
 
             object.put("id", id);
-
-            object.put("ejercicios", ejercicios.stream().filter((ejercicio)
+            List<Object> o = ejercicios.stream().filter((ejercicio)
                     -> new Double(ejercicio.get("idLeccion").toString()).intValue() == id
-            ).collect(Collectors.toList()));
-
-            list.add(object);
+            ).collect(Collectors.toList());
+            
+            if(!o.isEmpty()){
+                object.put("ejercicios", o);
+                list.add(object);
+            }
+            
+            
+            
+            
+            
         }
 
         return list.toString();
