@@ -55,16 +55,16 @@ public class RecursoManager {
 
             BasicDBObjectBuilder build = BasicDBObjectBuilder.start();
 
-            build.add("nombre", object.get("nombre"));
-
             List<DBObject> recursos = recursosCollection.find(
                     QueryBuilder.start("idLeccion").is(object.get("id")).get()
             ).toArray();
-
+            
+            if(!recursos.isEmpty())
+                build.add("nombre", object.get("nombre"));
+            
+                
             List<DBObject> recursos2 = new ArrayList<>();
-
             for (DBObject recurso : recursos) {
-
                 DBObject ranking = rankingCollection.findOne(
                         QueryBuilder.start("idRecurso").is(recurso.get("id"))
                         .put("idAlumno").is(idUsuario)
@@ -76,12 +76,14 @@ public class RecursoManager {
                 recursos2.add(recurso);
 
             }
-
-            build.add("recursos", recursos2);
-
-            lista.add(build.get());
+            
+            if(!recursos2.isEmpty()){
+                build.add("recursos", recursos2);
+                lista.add(build.get());   
+            }
+                     
         }
-
+        
         System.out.println(lista.toString());
 
         return lista.toString();
