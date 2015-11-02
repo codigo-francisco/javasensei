@@ -3,465 +3,320 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "El siguiente ejercicio está relacionado con el ciclo editar-compilar-ejecutar.",
-        "Para desarrollar un programa en Java tenemos que pasar por las siguientes etapas: edición, compilación y ejecución."
+        "El siguiente ejercicio está relacionado con la sintaxis del lenguaje Java",
+        "Las reglas de sintaxis son similares a las reglas gramaticales de un lenguaje natural que especifican la estructura de sus oraciones.",
+        "Los errores de sintaxis se conocen también como errores del compilador, errores en tiempo de compilación o errores de compilación, ya que el compilador los detecta durante la fase de compilación.",
+        "Como respuesta, el compilador emite un mensaje de error y evita que su programa se compile."       
     ],
     "opciones": [
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Paso 1 de 4.  Selecciona el nombre de archivo con el que debe almacenarse el código fuente que se muestra a continuación:",
+            "instruccion": "Paso 1 de 5.  Dado el siguiente código, completa las partes faltantes para que el código se pueda traducir a código de bytes",
             "presentacion": [
-                "public class Test {",
-                "\tpublic static void main(String[] args) {",
-                "\t\tSystem.out.println(\"Java Sensei\");",
+                "//Bienvenido.java",
+                "<input type='text' readonly> Bienvenido{",
+                "\tpublic static void main( String [] args) {",
+                "\t\tSystem.out.println( \"JavaSensei\");",
                 "\t}",
                 "}"
             ],
             "textoEmocional": {
-                "neutral": "Intenta resolver este ejercicio",
-                "encantado": "El entusiasmo es un elemento vital para el éxito.  Inicia con el ejercicio",
-                "sorprendido": "¡Wow!, me sorprende tu actitud y determinación. Inicia con el ejercicio",
-                "compasivo": "Todo viaje, por largo que sea, empieza por un solo paso.  Intenta ese primer paso resolviendo el ejercicio",
-                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
                 "retroalimentacion": {
-                    "positiva": "Un experto en cualquier cosa alguna vez fue un principiante. Inicia con el ejercicio",
-                    "neutral": "Resuelve el ejercicio",
-                    "negativa": "Necesitas esforzarte un poco si lo que deseas es aprender a programar en Java"
-                }
+                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
+                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                } 
             },
             "opciones": [
                 {
-                    "texto": "Test.txt",
+                    "texto": "class public",
                     "paso": 1,
                     "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "instruccion": "La respuesta es incorrecta. La palabra clave class introduce una declaración de clase, la cual debe ir seguida por el nombre de la clase..",
                     "presentacion": [
-                        "public class Test {",
-                        "\tpublic static void main(String[] args) {",
-                        "\t\tSystem.out.println(\"Java Sensei\");",
+                        "//Bienvenido.java",
+                        "<input type='text' readonly value='class public' class='errorTracing'> Bienvenido{",
+                        "\tpublic static void main( String [] args) {",
+                        "\t\tSystem.out.println( \"JavaSensei\");",
                         "\t}",
                         "}"
                     ],
                     "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
                         }
                     },
                     "opciones": [
                     ]
                 },
                 {
-                    "texto": "Test.exe",
+                    "texto": "public class",
                     "paso": 2,
-                    "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                    "presentacion": [
-                        "public class Test {",
-                        "\tpublic static void main(String[] args) {",
-                        "\t\tSystem.out.println(\"Java Sensei\");",
-                        "\t}",
-                        "}"
-                    ],
-                    "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
-                    },
-                    "opciones": [
-                    ]
-                },
-                {
-                    "texto": "Test.class",
-                    "paso": 3,
-                    "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                    "presentacion": [
-                        "public class Test {",
-                        "\tpublic static void main(String[] args) {",
-                        "\t\tSystem.out.println(\"Java Sensei\");",
-                        "\t}",
-                        "}"
-                    ],
-                    "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                        "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
-                    },
-                    "opciones": [
-                    ]  
-                },
-                {
-                    "texto": "Test.java",
-                    "paso": 4,
                     "tipo": "pasooptimo",
-                    "instruccion": "Paso 2 de 4.  ¿Cuál es el comando que se debe de utilizar para compilar la aplicación Test.java?",
+                    "instruccion": "Paso 2 de 5. Dado el siguiente código, completa las partes faltantes para que el código se pueda traducir a código de bytes",
                     "presentacion": [
-                        "public class Test {",
-                        "\tpublic static void main(String[] args) {",
-                        "\t\tSystem.out.println(\"Java Sensei\");",
+                        "//Bienvenido.java",
+                        "<input type='text' readonly value='public class' class='focusInput'> Bienvenido{",
+                        "\t<input type='text' readonly> void main( String [] args) {",
+                        "\t\tSystem.out.println( \"JavaSensei\");",
                         "\t}",
                         "}"
-                    ],
-                    "textoEmocional": {
-                        "neutral": "Inicia los ejercicios",
-                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                    ],                   
+                        "textoEmocional": {
+                        "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                        "encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+                        "sorprendido": "Perro que ladra no muerde.  ¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+                        "compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+                        "esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
                         "retroalimentacion": {
-                            "positiva": "No importa el error vas muy bien",
-                            "neutral": "Sigue asi, continua",
-                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                        }
+                            "positiva": "¡Excelente!, ¡La respuesta es correcta.",
+                            "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                            "negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+                        }    
                     },
-                    "opciones": [                        
-                        { 
-                            "texto": "javac",                       
-                            "paso": 5,
+                    "opciones": [      
+                         						{
+                            "texto": "public static",
+                            "paso": 3,
                             "tipo": "pasooptimo",
-                            "instruccion": "Paso 3 de 4.  ¿Cuando se compila el código fuente con el comando javac Test.java, el archivo producido por el compilador termina con la extensión?",
+                            "instruccion": "Paso 3 de 5. Dado el siguiente código, completa las partes faltantes para que el código se pueda traducir a código de bytes.",
                             "presentacion": [
-                                "public class Test {",
-                                "\tpublic static void main(String[] args) {",
-                                "\t\tSystem.out.println(\"Java Sensei\");",
+                                "//Bienvenido.java",
+                                "<input type='text' readonly value='public class' class='focusInput'> Bienvenido{",
+                                "\t<input type='text' readonly value='public static' class='focusInput'> void main( String [] args) {",
+                                "\t\t<input type='text' readonly>.println( \"JavaSensei\");",
                                 "\t}",
-                                "}",
-                                "javac Test.java"
+                                "}"
                             ],
                             "textoEmocional": {
-                                "neutral": "Inicia los ejercicios",
-                                "encantado": "Estas muy bien, inicia con el ejercicio",
-                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                "retroalimentacion": {
-                                    "positiva": "No importa el error vas muy bien",
-                                    "neutral": "Sigue asi, continua",
-                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
+                                "neutral": "La respuesta es correcta.",
+                                "encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+                                "sorprendido": "¡Me sorprendes!, continúa así.",
+                                "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+                                "esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+                                "retroalimentacion": {                            
+                                    "positiva": "¡Excelente!, la respuesta es correcta.  Continúa con el ejercicio.",
+                                    "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                    "negativa": "La respuesta es correcta, pero aprender Java requiere que te tomes las cosas en serio."                            
+                                }
+                            },
+                            "opciones": [  
+                                	{
+                                    "texto": "System.out",
+                                    "paso": 4,
+                                    "tipo": "pasooptimo",
+                                    "instruccion": "Paso 4 de 5. Verdadero o Falso.  Las palabras: public, class, static, void del siguiente código se denominan palabras clave o reservadas.",
+                                    "presentacion": [
+                                        "//Bienvenido.java",
+                                        "<input type='text' readonly value='public class' class='focusInput'> Bienvenido{",
+                                        "\t<input type='text' readonly value='public static' class='focusInput'> void main( String [] args) {",
+                                        "\t\t<input type='text' readonly value='System.out' class='focusInput'>.println( \"JavaSensei\");",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es correcta. Selecciona otro ejercicio",
+                                        "encantado": "¡Te siento comprometido contigo mismo, continúa con el ejercicio.",
+                                        "sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+                                        "compasivo": "Se que Java aveces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
+                                        "esceptico": "Se que Java te es indiferente.  Al menos trata de terminar el ejercicio.",
+                                        "retroalimentacion": {
+                                            "positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con el ejercicio.",
+                                            "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                            "negativa": "Al parecer no te gusta estudiar, pero es parte importante de tu formación académica."
+                                        }                                    
+                                    },
+                                    "opciones": [
+                                        {
+                                            "texto": "Verdadero",
+                                            "paso": 5,
+                                            "tipo": "pasooptimo",
+                                            "instruccion": "Paso 5 de 5. .  Verdadero o Falso.  Las palabras clave o reservadas tal como: public, class, static, void si se escriben en letras mayúsculas o minúsculas no tiene importancia para el compilador de Java.",
+                                            "presentacion": [
+                                                "//Bienvenido.java",
+                                                "<input type='text' readonly value='public class' class='focusInput'> Bienvenido{",
+                                                "\t<input type='text' readonly value='public static' class='focusInput'> void main( String [] args) {",
+                                                "\t\t<input type='text' readonly value='System.out' class='focusInput'>.println( \"JavaSensei\");",
+                                                "\t}",
+                                                "}"
+                                            ],
+                                            "textoEmocional": {
+                                                "neutral": "La respuesta es correcta. Selecciona otro ejercicio",
+                                                "encantado": "¡Te siento comprometido contigo mismo, continúa con el ejercicio.",
+                                                "sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+                                                "compasivo": "Se que Java aveces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
+                                                "esceptico": "Se que Java te es indiferente.  Al menos trata de terminar el ejercicio.",
+                                                "retroalimentacion": {
+                                                    "positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con el ejercicio.",
+                                                    "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                                    "negativa": "Al parecer no te gusta estudiar, pero es parte importante de tu formación académica."
+                                                }                                    
+                                            },
+                                            "opciones": [
+                                                 {
+													"texto": "Verdadero",
+													"paso": 6,
+													"tipo": "pasoerroneo",
+													"instruccion": "La respuesta es incorrecta. Java hace distinción entre minúsculas y mayúsculas. ",
+													"presentacion": [
+														"//Bienvenido.java",
+														"<input type='text' readonly value='public class' class='focusInput'> Bienvenido{",
+														"\t<input type='text' readonly value='public static' class='focusInput'> void main( String [] args) {",
+														"\t\t<input type='text' readonly value='System.out' class='focusInput'>.println( \"JavaSensei\");",
+														"\t}",
+														"}"
+													],
+													"textoEmocional": {
+														"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+														"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+														"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+														"retroalimentacion": {                           
+															"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+															"neutral": "La respuesta no es la correcta.",
+															"negativa": "¿Estás seguro de querer estudiar este curso?."
+														}
+													},
+													"opciones": [
+
+													]
+												},
+												{
+													"texto": "Falso",
+													"paso": 7,
+													"tipo": "pasofinaloptimo",
+													"instruccion": "La respuesta es correcta. Haz finalizado este ejercicio, selecciona otro ejercicio y continúa aprendiendo.",
+													"presentacion": [
+														"//Bienvenido.java",
+														"<input type='text' readonly value='public class' class='focusInput'> Bienvenido{",
+														"\t<input type='text' readonly value='public static' class='focusInput'> void main( String [] args) {",
+														"\t\t<input type='text' readonly value='System.out' class='focusInput'>.println( \"JavaSensei\");",
+														"\t}",
+														"}"
+													],
+													"textoEmocional": {
+														"neutral": "La respuesta es correcta. Selecciona otro ejercicio",
+														"encantado": "¡Te siento comprometido contigo mismo, continúa con el ejercicio.",
+														"sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+														"compasivo": "Se que Java aveces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
+														"esceptico": "Se que Java te es indiferente.  Al menos trata de terminar el ejercicio.",
+														"retroalimentacion": {
+															"positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con el ejercicio.",
+															"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+															"negativa": "Al parecer no te gusta estudiar, pero es parte importante de tu formación académica."
+														}                                    
+													},
+													"opciones": [
+
+
+													]
+												}                                                                                  
+                                            ]
+                                        },
+                                        {
+                                            "texto": "Falso",
+                                            "paso": 8,
+                                            "tipo": "pasoerroneo",
+                                            "instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
+                                            "presentacion": [
+                                                "//Bienvenido.java",
+                                                "<input type='text' readonly value='public class' class='focusInput'> Bienvenido{",
+                                                "\t<input type='text' readonly value='public static' class='focusInput'> void main( String [] args) {",
+                                                "\t\t<input type='text' readonly value='System.out' class='focusInput'>.println( \"JavaSensei\");",
+                                                "\t}",
+                                                "}"
+                                            ],
+                                            "textoEmocional": {
+                                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                                "encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+                                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+                                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                                "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                                                "retroalimentacion": {                           
+                                                    "positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+                                                    "neutral": "La respuesta no es la correcta.",
+                                                    "negativa": "¿Estás seguro de querer estudiar este curso?."
+                                                }
+                                            },
+                                            "opciones": [
+                                                                                                                                
+                                            ]
+                                        }                                                                      
+                                    ]
+                                },                             
+                                {
+                                    "texto": "System.in",
+                                    "paso": 9,
+                                    "tipo": "pasoerroneo",
+                                    "instruccion": "La respuesta es incorrecta.  Se necesita completar con la instrucción que imprime una línea de texto en la consola de salida",
+                                    "presentacion": [
+                                        "//Bienvenido.java",
+                                        "<input type='text' readonly value='public class' class='focusInput'> Bienvenido{",
+                                        "\t<input type='text' readonly value='public static' class='focusInput'> void main( String [] args) {",
+                                        "\t\t<input type='text' readonly value='System.in   ' class='errorTracing'>.println( \"JavaSensei\");",
+                                        "\t}",
+                                        "}"
+                                    ],
+                                    "textoEmocional": {
+                                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                        "encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+                                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+                                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                                        "retroalimentacion": {                           
+                                            "positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+                                            "neutral": "La respuesta no es la correcta.",
+                                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                                        }
+                                    },
+                                    "opciones": [
+                                                                                                                        
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "texto": "private static",
+                            "paso": 10,
+                            "tipo": "pasoerroneo",
+                            "instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
+                            "presentacion": [
+                                 "//Bienvenido.java",
+                                "<input type='text' readonly value='public class' class='focusInput'> Bienvenido{",
+                                "\t<input type='text' readonly value='private static' class='errorTracing'> void main( String [] args) {",
+                                "\t\tSystem.out.println( \"JavaSensei\");",
+                                "\t}",
+                                "}"
+                            ],
+                            "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                "encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                                "retroalimentacion": {                           
+                                    "positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+                                    "neutral": "La respuesta no es la correcta.",
+                                    "negativa": "¿Estás seguro de querer estudiar este curso?."
                                 }
                             },
                             "opciones": [
-                                { 
-                                    "texto": "Test.java",                       
-                                    "paso": 6,
-                                    "tipo": "pasoerroneo",
-                                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                    "presentacion": [
-                                        "public class Test {",
-                                        "\tpublic static void main(String[] args) {",
-                                        "\t\tSystem.out.println(\"Java Sensei\");",
-                                        "\t}",                                        
-                                        "}",
-                                        "javac Test.java"
-                                    ],
-                                    "textoEmocional": {
-                                        "neutral": "Inicia los ejercicios",
-                                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                        "retroalimentacion": {
-                                            "positiva": "No importa el error vas muy bien",
-                                            "neutral": "Sigue asi, continua",
-                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                        }
-                                    },
-                                    "opciones": []
-                                },
-                                { 
-                                    "texto": "Test.class",                       
-                                    "paso": 7,
-                                    "tipo": "pasooptimo",
-                                    "instruccion": "Paso 4 de 4.  En el paso anterior, el archivo producido por el compilador contiene los códigos de bytes.  Finalmente, para ejecutar la aplicación Java se utiliza el comando: ",
-                                    "presentacion": [
-                                        "public class Test {",
-                                        "\tpublic static void main(String[] args) {",
-                                        "\t\tSystem.out.println(\"Java Sensei\");",
-                                        "\t}",                                        
-                                        "}",
-                                        "javac Test.java --> Test.class"
-                                    ],
-                                    "textoEmocional": {
-                                        "neutral": "Inicia los ejercicios",
-                                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                        "retroalimentacion": {
-                                            "positiva": "No importa el error vas muy bien",
-                                            "neutral": "Sigue asi, continua",
-                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                        }
-                                    },
-                                    "opciones": [                                        
-                                        { 
-                                            "texto": "javac",                       
-                                            "paso": 8,
-                                            "tipo": "pasoerroneo",
-                                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                            "presentacion": [
-                                                "public class Test {",
-                                                "\tpublic static void main(String[] args) {",
-                                                "\t\tSystem.out.println(\"Java Sensei\");",
-                                                "\t}",                                        
-                                                "}",
-                                                "javac Test.java"
-                                            ],
-                                            "textoEmocional": {
-                                                "neutral": "Inicia los ejercicios",
-                                                "encantado": "Estas muy bien, inicia con el ejercicio",
-                                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                                "retroalimentacion": {
-                                                    "positiva": "No importa el error vas muy bien",
-                                                    "neutral": "Sigue asi, continua",
-                                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                                }
-                                            },
-                                            "opciones": []
-                                        },
-                                        { 
-                                            "texto": "java",                       
-                                            "paso": 9,
-                                            "tipo": "pasofinaloptimo",
-                                            "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
-                                            "presentacion": [
-                                                "public class Test {",
-                                                "\tpublic static void main(String[] args) {",
-                                                "\t\tSystem.out.println(\"Java Sensei\");",
-                                                "\t}",                                        
-                                                "}",
-                                                "javac Test.java --> Test.class",
-                                                "java Test",
-                                                ">>Java Sensei"
-                                            ],
-                                            "textoEmocional": {
-                                                "neutral": "Inicia los ejercicios",
-                                                "encantado": "Estas muy bien, inicia con el ejercicio",
-                                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                                "retroalimentacion": {
-                                                    "positiva": "No importa el error vas muy bien",
-                                                    "neutral": "Sigue asi, continua",
-                                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                                }
-                                            },
-                                            "opciones": []
-                                        },
-                                        { 
-                                            "texto": "run",                       
-                                            "paso": 10,
-                                            "tipo": "pasoerroneo",
-                                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                            "presentacion": [
-                                                "public class Test {",
-                                                "\tpublic static void main(String[] args) {",
-                                                "\t\tSystem.out.println(\"Java Sensei\");",
-                                                "\t}",                                        
-                                                "}",
-                                                "javac Test.java --> Test.class"
-                                            ],
-                                            "textoEmocional": {
-                                                "neutral": "Inicia los ejercicios",
-                                                "encantado": "Estas muy bien, inicia con el ejercicio",
-                                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                                "retroalimentacion": {
-                                                    "positiva": "No importa el error vas muy bien",
-                                                    "neutral": "Sigue asi, continua",
-                                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                                }
-                                            },
-                                            "opciones": []
-                                        },
-                                        { 
-                                            "texto": "execute",                       
-                                            "paso": 11,
-                                            "tipo": "pasoerroneo",
-                                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                            "presentacion": [
-                                                "public class Test {",
-                                                "\tpublic static void main(String[] args) {",
-                                                "\t\tSystem.out.println(\"Java Sensei\");",
-                                                "\t}",                                        
-                                                "}",
-                                                "javac Test.java --> Test.class"
-                                            ],
-                                            "textoEmocional": {
-                                                "neutral": "Inicia los ejercicios",
-                                                "encantado": "Estas muy bien, inicia con el ejercicio",
-                                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                                "retroalimentacion": {
-                                                    "positiva": "No importa el error vas muy bien",
-                                                    "neutral": "Sigue asi, continua",
-                                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                                }
-                                            },
-                                            "opciones": []
-                                        }                                                                                
-                                    ]
-                                },
-                                { 
-                                    "texto": "Test.exe",                       
-                                    "paso": 12,
-                                    "tipo": "pasoerroneo",
-                                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                    "presentacion": [
-                                        "public class Test {",
-                                        "\tpublic static void main(String[] args) {",
-                                        "\t\tSystem.out.println(\"Java Sensei\");",
-                                        "\t}",                                        
-                                        "}",
-                                        "javac Test.java"
-                                    ],
-                                    "textoEmocional": {
-                                        "neutral": "Inicia los ejercicios",
-                                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                        "retroalimentacion": {
-                                            "positiva": "No importa el error vas muy bien",
-                                            "neutral": "Sigue asi, continua",
-                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                        }
-                                    },
-                                    "opciones": []
-                                },
-                                { 
-                                    "texto": "Test.jar",                       
-                                    "paso": 13,
-                                    "tipo": "pasoerroneo",
-                                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                                    "presentacion": [
-                                        "public class Test {",
-                                        "\tpublic static void main(String[] args) {",
-                                        "\t\tSystem.out.println(\"Java Sensei\");",
-                                        "\t}",                                        
-                                        "}",
-                                        "javac Test.java"
-                                    ],
-                                    "textoEmocional": {
-                                        "neutral": "Inicia los ejercicios",
-                                        "encantado": "Estas muy bien, inicia con el ejercicio",
-                                        "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                        "retroalimentacion": {
-                                            "positiva": "No importa el error vas muy bien",
-                                            "neutral": "Sigue asi, continua",
-                                            "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                        }
-                                    },
-                                    "opciones": []
-                                }                                                  
                             ]
-                        },
-                        { 
-                            "texto": "java",                       
-                            "paso": 14,
-                            "tipo": "pasoerroneo",
-                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                            "presentacion": [
-                                "public class Test {",
-                                "\tpublic static void main(String[] args) {",
-                                "\t\tSystem.out.println(\"Java Sensei\");",
-                                "\t}",
-                                "}"
-                            ],
-                            "textoEmocional": {
-                                "neutral": "Inicia los ejercicios",
-                                "encantado": "Estas muy bien, inicia con el ejercicio",
-                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                "retroalimentacion": {
-                                    "positiva": "No importa el error vas muy bien",
-                                    "neutral": "Sigue asi, continua",
-                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                }
-                            },
-                            "opciones": []
-                        } ,                       
-                        { 
-                            "texto": "run",                       
-                            "paso": 15,
-                            "tipo": "pasoerroneo",
-                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                            "presentacion": [
-                                "public class Test {",
-                                "\tpublic static void main(String[] args) {",
-                                "\t\tSystem.out.println(\"Java Sensei\");",
-                                "\t}",
-                                "}"
-                            ],
-                            "textoEmocional": {
-                                "neutral": "Inicia los ejercicios",
-                                "encantado": "Estas muy bien, inicia con el ejercicio",
-                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                "retroalimentacion": {
-                                    "positiva": "No importa el error vas muy bien",
-                                    "neutral": "Sigue asi, continua",
-                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                }
-                            },
-                            "opciones": []
-                        },
-                        { 
-                            "texto": "execute",                       
-                            "paso": 16,
-                            "tipo": "pasoerroneo",
-                            "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
-                            "presentacion": [
-                                "public class Test {",
-                                "\tpublic static void main(String[] args) {",
-                                "\t\tSystem.out.println(\"Java Sensei\");",
-                                "\t}",
-                                "}"
-                            ],
-                            "textoEmocional": {
-                                "neutral": "Inicia los ejercicios",
-                                "encantado": "Estas muy bien, inicia con el ejercicio",
-                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
-                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
-                                "retroalimentacion": {
-                                    "positiva": "No importa el error vas muy bien",
-                                    "neutral": "Sigue asi, continua",
-                                    "negativa": "Creo que no lo tienes claro aun, deberias considerar mirar alguna de mis recomendaciones"
-                                }
-                            },
-                            "opciones": []
-                        }                             
+                        }                                               
                     ]
                 }
             ]

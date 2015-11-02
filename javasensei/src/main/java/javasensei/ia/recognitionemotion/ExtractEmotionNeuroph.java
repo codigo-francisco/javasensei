@@ -23,6 +23,10 @@ public class ExtractEmotionNeuroph implements INeuralNetwork {
         int posicion = 0;
         
         for (double output : neuralNetwork.getOutput()){
+            if (output < 0){
+                System.out.println("Valor negativo encontrado en resultado de la red: "+output);
+            }
+            output = Math.pow(output, 2);
             if (output>valorMasAlto){
                 valorMasAlto = output;
                 posicionMasAlta = posicion;
