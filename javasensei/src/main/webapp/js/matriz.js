@@ -21,37 +21,23 @@ function llenarTabla(datos){
             switch(tmp){
                 //Ejercicio sin responder
                 case 0:
-                    
-                 //   tr.append(
-                   // $("<td>")/*.
-                   // text("")*/
-                   // );break;
                     tr.append($("<td><span class=\"white\">"+(indexDato+1)+"</span>"));
                     break;
                 //Ejercicio terminado de manera óptima
                 case 1:
-                    /*
-                    tr.append(
-                    $("<td bgcolor:\"#\">").
-                    text("")
-                    );break;
-                    */
                     tr.append($("<td><span class=\"optimo\">"+(indexDato+1)+"</span>"));
             
                     break;
                 //Ejercicio terminado de manera subóptima
                 case 0.7: 
-                    
-                    //tr.append(
-                    //$("<td bgcolor:\"#\">")/*.
-                    //text("")*/
-                   // );break;
                     tr.append($("<td><span class=\"sub\">"+(indexDato+1)+"</span>"));
                     break;
             }
             
         }
-        var prom=(suma/arreglo.length)*100;
+        
+        var longitud = arreglo.length;
+        var prom=(longitud>0)?(suma/longitud)*100:0; //Posible error de lecciones con 0 ejercicios
         sumaTot+=prom;
         tr.append($("<td style=\"background: ThreeDHighlight;\">").text(Math.round((prom))+"%"));
         matriz.append(tr);

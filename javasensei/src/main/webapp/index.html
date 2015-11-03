@@ -44,6 +44,7 @@
         <script>
             var menu = new menu_sensei();
             var recursos = new recursos_sensei();
+            var graficos = new graficos_sensei();
             var example_tracing;
             var avatar_sensei;
             var camera_sensei = new camera();
@@ -124,7 +125,7 @@
                             //recursos.obtenerIntereses("#listaenlaces");
                             break;
                         case "paginagraficaestudiante":
-                            cargarGrafico();
+                            graficos.cargarGrafico("#graficaAvance");
                             obtenerEjercicios(llenarTabla);
                             break;
                     }
@@ -460,15 +461,14 @@
                 <h1>Avance del Estudiante</h1>
             </div>
             <div id="divGraficaEstudiante" role="main" class="ui-content">
-                 <!--<div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div> -->
                 <div data-role="tabs" id="tabsgraficos">
                     <div data-role="navbar">
                         <ul>
-                            <li><a href="#primertabg" data-ajax="false">Grafica</a></li>
+                            <li><a href="#primertabg" data-ajax="false">Gráfica</a></li>
                             <li><a href="#segundotabg" data-ajax="false">Tabla</a></li>
                         </ul>
                         <div id="primertabg" class="ui-content">
-                            <!--<div id="graficaestudiante" style="width: 100%; height: 400px; margin: 0 auto"></div>-->
+                            <div id="graficaAvance" style="height: 400px"></div>
                         </div>
                         <div id="segundotabg" class="ui-content">
                             <div>
