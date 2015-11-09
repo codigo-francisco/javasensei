@@ -235,10 +235,10 @@ example_tracing_sensei.prototype = {
 
         contexto.construir_area_trabajo();
         contexto.construir_area_solucion();
+        acomodaProgressbar();
     },
     construir_area_trabajo: function () {
         //Obtenemos el nodo del ejercicio
-        acomodaProgressbar();
         var instruccion = this.areatrabajo.find("#instruccion");
 
         instruccion.html(this.ejercicio.instruccion);

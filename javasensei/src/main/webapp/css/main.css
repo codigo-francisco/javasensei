@@ -25,3 +25,12 @@ input, button{
     margin-left: auto ;
     margin-right: auto ;
 }
+
+#nombre_usuario{
+        display: none;
+    }
+@media (min-width: 601 px){
+    #nombre_usuario{
+        display: block;
+    }
+}
