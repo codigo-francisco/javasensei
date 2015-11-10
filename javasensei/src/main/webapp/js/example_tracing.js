@@ -3,16 +3,18 @@ var contexto = {};
 var progreso = 0;
 var nivelMax;
 var matrizEjercicios = [];
-var example_tracing_sensei = function (areatrabajo, areasoluciones, boton_adelante, boton_atras, controles, post_controles) { //Recibe el ejercicio que se va a cargar
+var example_tracing_sensei = function () { //Recibe el ejercicio que se va a cargar
     contexto = this; //Guardamos el contexto, una referencia a este owner
 
-    this.areatrabajo = $(areatrabajo);
-    this.areasoluciones = $(areasoluciones);
-    this.post_controles = $(post_controles);
+    this.areatrabajo = $("#areatrabajo");
+    this.areasoluciones = $("#areasolucion");
+    
     this.cierretracing = $("#controles_cierre_tracing");
-    this.boton_adelante = $(boton_adelante);
-    this.boton_atras = $(boton_atras);
-    this.controles = $(controles);
+    this.controles = $(".controles_tracing");
+    this.progressbar = $("#progressbar");
+    
+    this.boton_adelante = $("#adelante_tracing");
+    this.boton_atras = $("#atras_tracing");
 
     this.tree_example_tracing = emptyFunction;
     this.letras = ["a", "b", "a", "b"];
@@ -32,36 +34,6 @@ var example_tracing_sensei = function (areatrabajo, areasoluciones, boton_adelan
 
 var createInput = function createInput() {
     return $("<input type='text' readonly='readonly'>")[0].outerHTML;
-};
-
-window.onresize = mueve_progressbar;
-var acomodaProgressbar = mueve_progressbar;
-function mueve_progressbar(event) {
-    var controles_visible = $("#controles_tracing").is(":visible");
-    var cierre_visible = $("#controles_cierre_tracing").is(":visible");
-    if (controles_visible || cierre_visible) {
-        if (controles_visible) {
-            if (window.innerWidth < 580) {
-                $("#progressbar").detach().prependTo(contexto.post_controles);
-                $("#progressbar").css({"width":"100%"});
-                contexto.post_controles.show();
-            } else {
-                $("#progressbar").detach().prependTo("#controles_tracing");
-                $("#progressbar").css({"width":"50%"});
-                contexto.post_controles.hide();
-            }
-        } else {
-            if (window.innerWidth < 695) {
-                $("#progressbar").detach().prependTo(contexto.post_controles);
-                $("#progressbar").css({"width":"100%"});
-                contexto.post_controles.show();
-            } else {
-                $("#progressbar").detach().prependTo("#controles_cierre_tracing");
-                $("#progressbar").css({"width":"50%"});
-                contexto.post_controles.hide();
-            }
-        }
-    }
 };
 
 var createFocusInput = function createFocusInput() {
@@ -156,10 +128,12 @@ example_tracing_sensei.prototype = {
         contexto.controles.hide();
         contexto.cierretracing.hide();
         contexto.post_controles.hide();
+        contexto.progressbar.hide();
     },
     construir_ejercicio: function (url) { //Construye todo el ejercicio junto con el example_tracing
         this.areatrabajo.show();
         this.controles.show();
+        this.progressbar.show();
 
         //Se enlazan los click con la funcion actual
         this.boton_atras.unbind("click").bind("click",this.mover_atras);
@@ -235,7 +209,6 @@ example_tracing_sensei.prototype = {
 
         contexto.construir_area_trabajo();
         contexto.construir_area_solucion();
-        acomodaProgressbar();
     },
     construir_area_trabajo: function () {
         //Obtenemos el nodo del ejercicio

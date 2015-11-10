@@ -91,7 +91,7 @@
                     tabReplace: '    '
                 });
 
-                example_tracing = new example_tracing_sensei("#areatrabajo", "#areasolucion", "#adelante_tracing", "#atras_tracing", "#controles_tracing", "#post_controles");
+                example_tracing = new example_tracing_sensei();
 
                 avatar_sensei = new avatar_sensei("#avatar_control");
 
@@ -132,9 +132,10 @@
                 });
 
                 $("#areatrabajo").hide();
-                $("#controles_tracing").hide();
-                $("#controles_cierre_tracing").hide();
-                $("#post_controles").hide();
+                $(".controles_tracing").hide();
+                $(".controles_cierre_tracing").hide();
+                $("#progressbar").hide();
+                
                 $("#cerrar_tracing").click(example_tracing.cerrarInterfaz);
 
                 $("#informacion_tracing").click(avatar_sensei.mostrarInformacion);
@@ -148,9 +149,7 @@
                 });
                 
                 
-                $("#progressbar").progressbar({
-                    value: progreso
-                });
+                $("#progressbar").progressbar();
                 
                 //eliminarBackgroundCamera();
             });
@@ -238,13 +237,8 @@
 		
             #progressbar{
                 height: 1em;
-                width: 50%;
                 background: #FFF;
-                margin: 0em -1.9em -1.9em 0em;
                 border-radius: 1em;
-            }
-            #progressbar > div{
-                background: #3C3;
             }
             
             /*Estilos del código*/
@@ -372,24 +366,20 @@
             </div>
 
             <div role="main" class="ui-content">
-                <div id="controles_cierre_tracing" class="controles">
-                    <div style="float: right;">
+                <div class="controles">
+                    <div id="progressbar"></div>
+                    
+                    <button class="controles_tracing" id="informacion_tracing" data-inline="true" data-mini="true">Informacion</button>
+                    <button class="controles_tracing" id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
+                    <button class="controles_tracing" id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
+                    
+                    <div class="controles_cierre_tracing" style="float: right;">
                         <span>¿Que te ha parecido este ejercicio?</span>
                         <div>
                             <div id="calificaciones_ejercicios"></div>
                         </div>
                     </div>
-                    <button id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
-                </div>
-                <div id="controles_tracing" class="controles">
-                    
-                    <button id="informacion_tracing" data-inline="true" data-mini="true">Informacion</button>
-                    <button id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
-                    <button id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
-                </div>
-                <div id="post_controles">
-                    <div id="progressbar"></div>
-                    <br><br>
+                    <button class="controles_cierre_tracing" id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
                 </div>
                 <div class="areatracing">
                     <div id="areatrabajo">

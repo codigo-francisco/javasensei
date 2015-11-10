@@ -175,11 +175,10 @@ avatar_sensei.prototype = {
         camera_sensei.detenerFotos();
         clearTimeout(avatar_context.idTimeout);
 
-        $("#controles_tracing").hide();
+        $(".controles_tracing").hide();
 
         //Mostramos el rating
-        $("#progressbar").detach().prependTo("#controles_cierre_tracing");
-        $("#controles_cierre_tracing").show();
+        $(".controles_cierre_tracing").show();
 
         avatar_context.obtenerRatingEjercicio(avatar_context.id);
 
@@ -198,7 +197,6 @@ avatar_sensei.prototype = {
         }).done(function (data) {
             console.log(data);
             menu_context.actualizarBoton(avatar_context.id, valor_paso);
-            acomodaProgressbar();
         }).error(function (error) {
             console.error(error);
         });
