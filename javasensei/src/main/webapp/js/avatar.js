@@ -33,12 +33,28 @@ function obtenerRecomendacionesTutor(idEjercicio, datos, callback) { //Objeto de
     });
 }
 
+var segundos = 0;
+var segundero;
+function iniciarSegundero(){
+    if (segundero)
+        detenerSegundero();
+    segundos = 0;
+    segundero = setInterval(function(){
+        segundos++;
+    },1000);
+}
+
+function detenerSegundero(){
+    clearInterval(segundero);
+}
+
 avatar_sensei.prototype = {
     solicitud_usuario: function () {
 
     },
     primera_carga: function (data) { //Notificacion de que se esta cargando el ejercicio (diferente al paso inicial)
         camera_sensei.detenerFotos();
+        iniciarSegundero();
         camera_sensei.inicializarFotos();
         avatar_context.bitacoras = new Array();
         avatar_context.es_primera_carga = true;
@@ -112,9 +128,10 @@ avatar_sensei.prototype = {
                 totalErrores: tree_self.obtenerTotalPasosErrores(),
                 totalAciertos: tree_self.obtenerTotalPasosAciertos(),
                 ejercicioId: avatar_context.id,
-                pasoId: tree_self.obtenerId(),
+                pasoId: tree_self.pasoactual,
                 fecha: new Date().toISOString(),
                 tipoPaso: contexto.tipoPaso,
+                segundos: segundos,
                 fotografias : JSON.parse(camera_sensei.getUltimasFotografias())
             });
             if (tipoCamino=="caminofinaloptimo" ){ 
@@ -172,14 +189,17 @@ avatar_sensei.prototype = {
         $("#progressbar > div").css({"background":"#3C3"});
     },
     cierreEjercicio: function (valor_paso) { //Funcion que se llama cuando se finaliza los ejercicios
+        //Logica de timers
         camera_sensei.detenerFotos();
         clearTimeout(avatar_context.idTimeout);
+        detenerSegundero();
 
-        $(".controles_tracing").hide();
-
+        //Logica de controles
+        contexto.controles.hide();
+        contexto.progressbar.hide();
+        contexto.cierretracing.show();
+        
         //Mostramos el rating
-        $(".controles_cierre_tracing").show();
-
         avatar_context.obtenerRatingEjercicio(avatar_context.id);
 
         //Ajax para cambiar el estado del ejercicio
@@ -209,7 +229,7 @@ avatar_sensei.prototype = {
                 logBitacoras : JSON.stringify(avatar_context.bitacoras)
             }
         }).done(function (data) {
-            console.log("Bitacora guardada:" + data);
+            console.log("Bitacora guardada:%O", data);
         }).error(function (error) {
             console.error(error);
         });

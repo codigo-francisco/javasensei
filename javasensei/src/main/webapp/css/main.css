@@ -26,11 +26,8 @@ input, button{
     margin-right: auto ;
 }
 
-#nombre_usuario{
-        display: none;
-    }
-@media (min-width: 601 px){
+@media (max-width: 591px){
     #nombre_usuario{
-        display: block;
+        display: none;
     }
 }

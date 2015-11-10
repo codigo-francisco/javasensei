@@ -9,7 +9,7 @@ var example_tracing_sensei = function () { //Recibe el ejercicio que se va a car
     this.areatrabajo = $("#areatrabajo");
     this.areasoluciones = $("#areasolucion");
     
-    this.cierretracing = $("#controles_cierre_tracing");
+    this.cierretracing = $(".controles_cierre_tracing");
     this.controles = $(".controles_tracing");
     this.progressbar = $("#progressbar");
     
@@ -127,13 +127,13 @@ example_tracing_sensei.prototype = {
         contexto.areatrabajo.hide();
         contexto.controles.hide();
         contexto.cierretracing.hide();
-        contexto.post_controles.hide();
         contexto.progressbar.hide();
     },
     construir_ejercicio: function (url) { //Construye todo el ejercicio junto con el example_tracing
         this.areatrabajo.show();
         this.controles.show();
         this.progressbar.show();
+        this.cierretracing.hide();
 
         //Se enlazan los click con la funcion actual
         this.boton_atras.unbind("click").bind("click",this.mover_atras);

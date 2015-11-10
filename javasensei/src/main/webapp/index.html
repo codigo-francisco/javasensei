@@ -12,20 +12,20 @@
         <link href="styles/github.css" rel="stylesheet">
         <link href="jquery/jRating.jquery.css" rel="stylesheet" media="screen">
         <link href="Prettyprint/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
-            
+
         <link href="css/example_tracing.css" rel="stylesheet">
         <link href="css/avatar.css" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/matriz.css"/>
+        <link href="css/matriz.css" rel="stylesheet"/>
+        <link href="css/recursos.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
         <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
         <script type="text/javascript" src="Prettyprint/google-code-prettify/prettify.js"></script>
-        
-        
-                
-        <script type="text/javascript" src="js/highcharts-custom.js"></script>
+
+        <script type="text/javascript" src="js/highcharts.js"></script>
+        <script type="text/javascript" src="js/highcharts-more.js"></script>
         <script type="text/javascript" src="jquery/jRating.jquery.min.js"></script>
         <script type="text/javascript" src="highlight.pack.js"></script>
         <script type="text/javascript" src="js/buckets-minified.js"></script>
@@ -40,6 +40,7 @@
         <script type="text/javascript" src="js/camera.js"></script>
         <script type="text/javascript" src="js/graficos.js"></script>
         <script type="text/javascript" src="js/matriz.js"></script>
+        <script type="text/javascript" src="js/graficaEmociones.js"></script>
 
         <script>
             var menu = new menu_sensei();
@@ -48,6 +49,8 @@
             var example_tracing;
             var avatar_sensei;
             var camera_sensei = new camera();
+            var graficaComportamiento = new graficosEmocionesSensei();
+            
             var carpeta_ejercicios = "lecciones/";
             var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
             var url = "servicios/"; //Jquery infiere el dominio
@@ -61,11 +64,13 @@
                 if (usuario.id !== '') {
                     $("#fullscreenlogin").hide();
                 }
-            };
+            }
+            ;
 
             function mostrarBackground() {
                 $("#fullscreenlogin").show();
-            };
+            }
+            ;
 
             function cargarEjercicio(event) {
                 example_tracing.suscribir_todos_ejercicios(avatar_sensei);
@@ -73,11 +78,13 @@
                 $("#controles_cierre_tracing").hide();
 
                 return false;
-            };
+            }
+            ;
 
             function eliminarBackgroundCamera() {
                 $("#fullscreenpermition").hide();
-            };
+            }
+            ;
 
             $(document).ready(function () {
                 $("#button_logout").click(function () {
@@ -122,11 +129,13 @@
                         case "paginarecursos":
                             recursos.obtenerEjercicios("#listaejercicios");
                             recursos.obtenerRecursos("#listarecursos");
-                            //recursos.obtenerIntereses("#listaenlaces");
                             break;
                         case "paginagraficaestudiante":
                             graficos.cargarGrafico("#graficaAvance");
                             obtenerEjercicios(llenarTabla);
+                            break;
+                        case "paginaGraficaComportamiento":
+                            graficaComportamiento.cargarGrafico();
                             break;
                     }
                 });
@@ -135,7 +144,7 @@
                 $(".controles_tracing").hide();
                 $(".controles_cierre_tracing").hide();
                 $("#progressbar").hide();
-                
+
                 $("#cerrar_tracing").click(example_tracing.cerrarInterfaz);
 
                 $("#informacion_tracing").click(avatar_sensei.mostrarInformacion);
@@ -147,14 +156,12 @@
                 $("#cerrarEjemplo").click(function () {
                     $("#dialog_video").hide();
                 });
-                
-                
+
                 $("#progressbar").progressbar();
-                
+
                 //eliminarBackgroundCamera();
             });
             
-
         </script>
 
         <style type="text/css">
@@ -218,7 +225,7 @@
                 padding-top: 20px;
                 text-align: center;
             }            
-            
+
             .ui-dialog-contain {
                 width: 92.5%;
                 max-width: 700px;
@@ -228,82 +235,12 @@
                 top: -15px;
             }
             
-            
             /*Esto es para mostrar las lineas 
             de codigo que se muestra en el documento.*/
             li.L0, li.L1, li.L2, li.L3,
-		li.L5, li.L6, li.L7, li.L8
-		{ list-style-type: decimal !important }
-		
-            #progressbar{
-                height: 1em;
-                background: #FFF;
-                border-radius: 1em;
-            }
-            
-            /*Estilos del código*/
-            pre.prettyprint{
-                border:1px solid #d6d6d6;
-                background: #eee;
-                font-size: 1.2em;
-                overflow: auto;
-                line-height: 1.6;
-                margin: 0em;
-                padding-top: 0.5em;
-            }
-            /*Estilo de los titulos de los recursos*/
-            #titulo_recurso{
-                font-size: 1.5em;
-                margin: auto;
-            }
-            
-            /*Estilo de los parrafos de los recursos*/
-            p{
-                font-size: 1em;
-                line-height: 1.7;
-                text-align: justify;
-            }
-            
-            /*Resposive text*/
-            @media only screen and (max-width: 768px){
-                
-                pre.prettyprint{
-                    font-size: 1em;
-                }    
-                /*Estilo de los titulos de los recursos*/
-                #titulo_recurso{
-                    font-size: 1em;
-                    
-                }
-                p{
-                    font-size: 0.7em;
-                }
-            }
-            
-            /*Estilo para los videos*/
-            .js-video {
-                height: 0;
-                padding-top: 25px;
-                padding-bottom: 67.5%;
-                margin-bottom: 10px;
-                position: relative;
-                overflow: hidden;
-            }
+            li.L5, li.L6, li.L7, li.L8
+            { list-style-type: decimal !important }
 
-            .js-video.widescreen {
-              padding-bottom: 56.34%;
-            }
-
-            .js-video.vimeo {
-              padding-top: 0;
-}
-            .js-video embed, .js-video iframe, .js-video object, .js-video video {
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                position: absolute;
-            }
         </style>
     </head>
     <body>
@@ -367,19 +304,23 @@
 
             <div role="main" class="ui-content">
                 <div class="controles">
-                    <div id="progressbar"></div>
-                    
-                    <button class="controles_tracing" id="informacion_tracing" data-inline="true" data-mini="true">Informacion</button>
-                    <button class="controles_tracing" id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
-                    <button class="controles_tracing" id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
-                    
-                    <div class="controles_cierre_tracing" style="float: right;">
-                        <span>¿Que te ha parecido este ejercicio?</span>
-                        <div>
-                            <div id="calificaciones_ejercicios"></div>
-                        </div>
+                    <div id="divProgressbar">
+                        <div id="progressbar"></div>
                     </div>
-                    <button class="controles_cierre_tracing" id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
+                    <div>
+                        <button class="controles_tracing" id="informacion_tracing" data-inline="true" data-mini="true">Informacion</button>
+                        <button class="controles_tracing" id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
+                        <button class="controles_tracing" id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
+
+                        <div class="controles_cierre_tracing" style="float: right;">
+                            <span>¿Que te ha parecido este ejercicio?</span>
+                            <div>
+                                <div id="calificaciones_ejercicios"></div>
+                            </div>
+                        </div>
+                        <button class="controles_cierre_tracing" id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
+                        <a href="#paginaGraficaComportamiento" class="controles_cierre_tracing ui-btn ui-btn-inline ui-btn-corner-all ui-mini" id="comportamiento_tracing" data-rel="dialog" data-inline="true" data-mini="true">Comportamiento</a>
+                    </div>
                 </div>
                 <div class="areatracing">
                     <div id="areatrabajo">
@@ -471,6 +412,17 @@
             </div>
         </div>
 
+        <div data-role="page" id="paginaGraficaComportamiento" data-close-btn="right">
+            <div data-role="header">
+                <h2>Gráfica de Comportamiento</h2>
+            </div>
+            <div role="main" class="ui-content">
+                <div id="graficaComportamiento">
+
+                </div>
+            </div>
+        </div>
+
         <div data-role="page" id="paginarecursos" data-close-btn="right">
             <div data-role="header" data-position="fixed">
                 <h1>Menu de recursos</h1>
@@ -502,5 +454,6 @@
                 </div>
             </div>
         </div>
+
     </body>
 </html>
