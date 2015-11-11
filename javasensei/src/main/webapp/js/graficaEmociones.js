@@ -6,18 +6,20 @@ var graficosEmocionesSensei=function(){
             zoomType: 'xy'
         },
         title: {
-            text: 'Grafico de Comportamiento'
+            text: null
         },
         subtitle: {
             text: null
         },
         xAxis: {
+            tickInterval:1,
             title: {
                 enabled: true,
                 text: 'Numero de Paso'
             }
         },
         yAxis: {
+            tickInterval:1,
             title: {
                 text: 'Tiempo (s)'
             }
