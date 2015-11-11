@@ -75,7 +75,6 @@
             function cargarEjercicio(event) {
                 example_tracing.suscribir_todos_ejercicios(avatar_sensei);
                 example_tracing.construir_ejercicio(event.data.url);
-                $("#controles_cierre_tracing").hide();
 
                 return false;
             }
@@ -92,6 +91,12 @@
                 });
 
                 $("#opciones_avatar").listview(); //Inicializacion de listview
+                
+                $("*").keyup(function(eventData){
+                    if (eventData.keyCode == 27){
+                        //$("#menuboton").panel().panel("open");
+                    }
+                });
 
                 hljs.configure({
                     useBR: true,
@@ -129,6 +134,10 @@
                         case "paginarecursos":
                             recursos.obtenerEjercicios("#listaejercicios");
                             recursos.obtenerRecursos("#listarecursos");
+                            //Deshabilitar en caso de que se este realizando un ejercicio
+                            $("#activarEmociones").prop("checked",usuario.activarEmociones);
+                            $("#activarEmociones").flipswitch("refresh");
+                            $("#activarEmociones").flipswitch("option","disabled",avatar_context.id!=0);
                             break;
                         case "paginagraficaestudiante":
                             graficos.cargarGrafico("#graficaAvance");
@@ -138,6 +147,21 @@
                             graficaComportamiento.cargarGrafico();
                             break;
                     }
+                });
+                
+                $("#activarEmociones").on("change",function(){
+                    usuario.activarEmociones = $("#activarEmociones").prop("checked");
+                    //Guardado en base de datos
+                    $.ajax(url+"estudiantes/activarEmociones",{
+                        data:{
+                            idAlumno: usuario.id,
+                            activarEmociones: usuario.activarEmociones
+                        }
+                    }).done(function(data){
+                        console.log(data);
+                    }).fail(function(d,error){
+                        console.log(error);
+                    })
                 });
 
                 $("#areatrabajo").hide();
@@ -443,7 +467,7 @@
                         <ul>
                             <li><a href="#primertab" data-ajax="false">Ejercicios</a></li>
                             <li><a href="#segundotab" data-ajax="false">Recursos</a></li>
-                            <!-- <li><a href="#tercertab" data-ajax="false">Otras Cosas...</a></li> -->
+                            <li><a href="#tercertab" data-ajax="false">Configuracion</a></li>
                         </ul>
                         <div id="primertab" class="ui-content">
                             <ul id="listaejercicios" class="tablist-content" data-role="listview" data-inset="true">
@@ -455,11 +479,10 @@
 
                             </div>
                         </div>
-                        <!--<div id="tercertab" class="ui-content">
-                            <ul id="listaenlaces" class="tablist-content" data-role="listview" data-inset="true">
-                                <li></li>
-                            </ul>
-                        </div>-->
+                        <div id="tercertab" class="ui-content">
+                            <label for="activarEmociones">Activar Detector de Emociones</label>
+                            <input id="activarEmociones" checked="checked" data-role="flipswitch" name="activarEmociones" type="checkbox">
+                        </div>
                     </div>
                 </div>
             </div>

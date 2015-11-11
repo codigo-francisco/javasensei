@@ -59,9 +59,6 @@ example_tracing_sensei.prototype = {
         contexto.suscriptores_paso_atras.add(obj_callbacks.paso_atras);
         contexto.suscriptores_paso_siguiente.add(obj_callbacks.paso_siguiente);
     },
-    suscribirse_inicio_ejercicio: function (callback_inicio) {
-        contexto.suscriptores_inicio.add(callback_inicio);
-    },
     notificar_evento: function (tipo, datos) {
         var notificaciones;
 

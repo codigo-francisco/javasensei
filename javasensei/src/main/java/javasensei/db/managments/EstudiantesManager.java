@@ -222,4 +222,18 @@ public class EstudiantesManager {
     public void saveAbilityGlobal() {
         saveAbilityGlobal(getAbilityGlobal());
     }
+    
+    public Boolean saveActivarEmociones(){
+        boolean result=false;
+        
+        alumnosCollection.update(
+                new BasicDBObject("id", estudiante.getId()), 
+                new BasicDBObject("$set", 
+                        new BasicDBObject("activarEmociones",
+                                estudiante.getActivarEmociones())
+                )
+        );
+        
+        return result;
+    }
 }
