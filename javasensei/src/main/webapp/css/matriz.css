@@ -1,31 +1,3 @@
-#prome{
-    font-size: 10px;
-    text-align: right;
-}
-
-#tablaEjercicios{
-    font-size: 12px;
-    margin: 0 auto;
-    border-collapse: collapse;
-    width: 100%;
-}
-#tablaEjercicios td{
-    text-align: center;
-    //width: 20px;
-  //  border: 1px solid black;
-  border-bottom: 1px solid black;
-}
-#tdtot{
-    border-bottom: 1px solid black;
-    text-align: center;
-    font-weight: bold;
-}
-.lec{
-  //  border: 1px solid black;
-  border-bottom: 1px solid black;
-    text-align: left;
-    margin-right: 20px;
-}
 span.optimo {
   background: #21610b;
   border-radius: 0.8em;
@@ -35,7 +7,8 @@ span.optimo {
   display: inline-block;
   line-height: 1.6em;
   text-align: center;
-  width: 1.6em; 
+  width: 1.6em;
+  border: #21610b solid 0.1em;
 }
  
 span.sub {
@@ -47,16 +20,21 @@ span.sub {
   display: inline-block;
   line-height: 1.6em;
   text-align: center;
-  width: 1.6em; 
+  width: 1.6em;
+  border: #00ff40 solid 0.1em;
 }
 span.white {
   background: #ffffff;
-  border-radius: 0.8em;
   -moz-border-radius: 0.8em;
   -webkit-border-radius: 0.8em;
   color: #000000;
   display: inline-block;
   line-height: 1.6em;
   text-align: center;
-  width: 1.6em; 
+  width: 1.6em;
+  border-radius: 0.8em;
+  border: black solid 0.1em;
+}
+.ui-table{
+    font-size:0.8em;
 }

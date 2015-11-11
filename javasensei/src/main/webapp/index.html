@@ -319,7 +319,7 @@
                             </div>
                         </div>
                         <button class="controles_cierre_tracing" id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
-                        <a href="#paginaGraficaComportamiento" class="controles_cierre_tracing ui-btn ui-btn-inline ui-btn-corner-all ui-mini" id="comportamiento_tracing" data-rel="dialog" data-inline="true" data-mini="true">Comportamiento</a>
+                        <a href="#paginaGraficaComportamiento" class="controles_cierre_tracing ui-btn ui-btn-inline ui-btn-corner-all ui-mini ui-shadow" id="comportamiento_tracing" data-rel="dialog" data-inline="true" data-mini="true">Comportamiento</a>
                     </div>
                 </div>
                 <div class="areatracing">
@@ -346,7 +346,7 @@
 
         <div data-role="page" id="tutor_sensei" data-dialog="true" data-close-btn="right">
             <div data-role="header"> 
-                <h1>Sensei</h1>
+                <h2>Sensei</h2>
             </div>
             <div role="main" class="ui-content">
                 <div id="avatar_control">
@@ -371,7 +371,7 @@
         <div data-role="page" data-dialog="true" id="visor_recursos" data-close-btn="right">
             <div id="recursos_contenido">
                 <div data-role="header">
-                    <h1 id="titulo_recurso"></h1>
+                    <h2 id="titulo_recurso"></h2>
                 </div>
                 <div role="main" class="ui-content">
                     <div id="contenido_recurso">
@@ -389,7 +389,7 @@
 
         <div data-role="page" id="paginagraficaestudiante" data-close-btn="right">
             <div data-role="header">
-                <h1>Avance del Estudiante</h1>
+                <h2>Avance del Estudiante</h2>
             </div>
             <div id="divGraficaEstudiante" role="main" class="ui-content">
                 <div data-role="tabs" id="tabsgraficos">
@@ -403,7 +403,17 @@
                         </div>
                         <div id="segundotabg" class="ui-content">
                             <div>
-                                <table id="tablaEjercicios">
+                                <table class="ui-responsive" data-role="table" data-mode="reflow">
+                                    <thead>
+                                        <tr>
+                                            <th data-priority="persist">Lecciones</th>
+                                            <th>Ejercicios</th>
+                                            <th data-priority="1">Porcentaje</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="datosTabla">
+                                        
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -425,7 +435,7 @@
 
         <div data-role="page" id="paginarecursos" data-close-btn="right">
             <div data-role="header" data-position="fixed">
-                <h1>Menu de recursos</h1>
+                <h2>Menu de recursos</h2>
             </div>
             <div role="main" class="ui-content">
                 <div data-role="tabs" id="tabsrecursos">
