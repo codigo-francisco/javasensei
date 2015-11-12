@@ -126,7 +126,7 @@ example_tracing_sensei.prototype = {
         contexto.cierretracing.hide();
         contexto.progressbar.hide();
     },
-    construir_ejercicio: function (url) { //Construye todo el ejercicio junto con el example_tracing
+    construir_ejercicio: function (data) { //Construye todo el ejercicio junto con el example_tracing
         this.areatrabajo.show();
         this.controles.show();
         this.progressbar.show();
@@ -136,8 +136,11 @@ example_tracing_sensei.prototype = {
         this.boton_atras.unbind("click").bind("click",this.mover_atras);
         this.boton_adelante.unbind("click").bind("click",this.mover_adelante);
 
+        //Titulo del ejercicio
+        $("#tituloEjercicio").text(data.titulo)
+
         //Obtenemos el json del ejercicio
-        $.getJSON(carpeta_ejercicios + url, function (data) {
+        $.getJSON(carpeta_ejercicios + data.url, function (data) {
             contexto.notificar_evento("carga",{
                 instruccionesejercicio: data.instruccionesejercicio
              });
