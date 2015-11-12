@@ -16,10 +16,10 @@
     
     <dependencies>
         <dependency>
-           <groupId>org.bytedeco</groupId>
-           <artifactId>javacv</artifactId>
-           <version>1.0</version>
-         </dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacv</artifactId>
+            <version>1.0</version>
+        </dependency>
         <dependency>
             <groupId>jFuzzyLogic_core</groupId>
             <artifactId>jFuzzyLogic_core</artifactId>
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
-            <version>2.13.0</version>
+            <version>3.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.mahout</groupId>

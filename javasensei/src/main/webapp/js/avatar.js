@@ -33,27 +33,43 @@ function obtenerRecomendacionesTutor(idEjercicio, datos, callback) { //Objeto de
     });
 }
 
-avatar_sensei.prototype = {
-    solicitud_usuario: function () {
+var segundos = 0;
+var segundero;
+function iniciarSegundero(){
+    if (segundero)
+        detenerSegundero();
+    segundos = 0;
+    segundero = setInterval(function(){
+        segundos++;
+    },1000);
+}
 
-    },
-    primera_carga: function (data) { //Notificacion de que se esta cargando el ejercicio (diferente al paso inicial)
-        camera_sensei.detenerFotos();
-        camera_sensei.inicializarFotos();
-        avatar_context.bitacoras = new Array();
-        avatar_context.es_primera_carga = true;
-        avatar_context.sePuedeIntervencion = true;
-        avatar_context.instrucciones_ejercicio = data.instruccionesejercicio;
-    },
-    mostrarInformacion: function () {
+function detenerSegundero(){
+    clearInterval(segundero);
+}
+
+avatar_sensei.prototype = {
+    llamarInformacion: function(expresion){
         var datos_avatar = {
-            emocion: avatar_context.ultimos_datos.emocion,
+            emocion: expresion,
             texto: avatar_context.instrucciones_ejercicio,
             opciones: [] //Sin opciones es solamente las instrucciones y la emocion
         };
-
+        
         avatar_context.crearAvatar(datos_avatar);
         avatar_context.mostrarAvatar();
+    },
+    mostrarInformacion: function () {
+        avatar_context.llamarInformacion(avatar_context.ultimos_datos.emocion);
+    },
+    primera_carga: function (data) { //Notificacion de que se esta cargando el ejercicio (diferente al paso inicial)
+        camera_sensei.detenerFotos();
+        iniciarSegundero();
+        avatar_context.bitacoras = new Array();
+        avatar_context.es_primera_carga = true;
+        camera_sensei.inicializarFotos();
+        avatar_context.sePuedeIntervencion = true;
+        avatar_context.instrucciones_ejercicio = data.instruccionesejercicio;
     },
     inicio_ejercicio: function (datos) {
         console.log("Paso Inicial notificado, ID: " + datos.id);
@@ -61,68 +77,71 @@ avatar_sensei.prototype = {
         if (avatar_context.es_primera_carga) {
             avatar_context.es_primera_carga = false;
 
-            var urlEmocion = avatar_context.url + "emociontutor";
+            if (usuario.activarEmociones){
+                $.ajax({
+                    url: avatar_context.url + "emociontutor",
+                    type: "POST",
+                    data: {
+                        datosestudiante: JSON.stringify(usuario)
+                    },
+                    dataType: "json"
+                }).done(function (datos) {
+                    avatar_context.llamarInformacion(datos.expresion);
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    console.error("Fallo: " + textStatus);
+                });
 
-            $.ajax({
-                url: urlEmocion,
-                type: "POST",
-                data: {
-                    datosestudiante: JSON.stringify(usuario)
-                },
-                dataType: "json"
-            }).done(function (datos) {
-                var datos_avatar = {
-                    emocion: datos.expresion,
-                    texto: avatar_context.instrucciones_ejercicio,
-                    opciones: [] //Sin opciones es solamente las instrucciones y la emocion
-                };
-
-                avatar_context.crearAvatar(datos_avatar);
-                avatar_context.mostrarAvatar();
-            }).fail(function (jqXHR, textStatus, errorThrown) {
-                console.error("Fallo: " + textStatus);
-            });
-
+            }else{
+                avatar_context.llamarInformacion("");
+            }
         }
 
     },
-    ejecutarAjax: function (tipoCamino, fotografias) {
-        //Se hace una solicitud rest al servidor java        
-        var urlAjax = avatar_context.url + tipoCamino;
-
-        $.ajax({
-            url: urlAjax,
-            type: "POST",
-            data: {
-                datosestudiante: JSON.stringify(usuario),
-                fotos: fotografias
-            },
-            dataType: "json"
-        }).always(function (datos) {
-            console.log("%cDatos recibidos: %O", "color:blue;", datos);
-            avatar_context.intervencion(datos);
-            //Agregamos un nuevo objeto a la bitacora
-            avatar_context.bitacoras.push({
-                idAlumno: usuario.id,
-                emocion: datos.emocion,
-                aciertos: tree_self.obtenerTotalAciertos(),
-                errores: tree_self.obtenerTotalErrores(),
-                promedioErrores: tree_self.obtenerCalidadRespuesta(),
-                promedioAciertos: tree_self.obtenerCalidadAcierto(),
-                totalErrores: tree_self.obtenerTotalPasosErrores(),
-                totalAciertos: tree_self.obtenerTotalPasosAciertos(),
-                ejercicioId: avatar_context.id,
-                pasoId: tree_self.obtenerId(),
-                fecha: new Date().toISOString(),
-                tipoPaso: contexto.tipoPaso,
-                fotografias : JSON.parse(camera_sensei.getUltimasFotografias())
-            });
-            if (tipoCamino=="caminofinaloptimo" ){ 
-                avatar_context.cierreEjercicio(1);
-            }else if (tipoCamino == "caminofinalsuboptimo"){
-                avatar_context.cierreEjercicio(0.7);
-            }
+    procesarBitacora: function(datos,tipoCamino){
+        //Agregamos un nuevo objeto a la bitacora
+        avatar_context.bitacoras.push({
+            idAlumno: usuario.id,
+            emocion: datos.emocion,
+            aciertos: tree_self.obtenerTotalAciertos(),
+            errores: tree_self.obtenerTotalErrores(),
+            promedioErrores: tree_self.obtenerCalidadRespuesta(),
+            promedioAciertos: tree_self.obtenerCalidadAcierto(),
+            totalErrores: tree_self.obtenerTotalPasosErrores(),
+            totalAciertos: tree_self.obtenerTotalPasosAciertos(),
+            ejercicioId: avatar_context.id,
+            pasoId: tree_self.pasoactual,
+            fecha: new Date().toISOString(),
+            tipoPaso: contexto.tipoPaso,
+            segundos: segundos,
+            fotografias : JSON.parse(camera_sensei.getUltimasFotografias())
         });
+        if (tipoCamino=="caminofinaloptimo" ){ 
+            avatar_context.cierreEjercicio(1);
+        }else if (tipoCamino == "caminofinalsuboptimo"){
+            avatar_context.cierreEjercicio(0.7);
+        }
+    },
+    ejecutarAjax: function (tipoCamino, fotografias) {
+        if(usuario.activarEmociones){
+            //Se hace una solicitud rest al servidor java en caso de que el detecto este activado
+            $.ajax({
+                url: avatar_context.url + tipoCamino,
+                type: "POST",
+                data: {
+                    datosestudiante: JSON.stringify(usuario),
+                    fotos: fotografias
+                },
+                dataType: "json"
+            }).always(function (datos) {
+                console.log("%cDatos recibidos: %O", "color:blue;", datos);
+                avatar_context.intervencion(datos);
+                avatar_context.procesarBitacora(datos,tipoCamino);
+            });
+        }else{
+            avatar_context.procesarBitacora({
+                emocion:"desactivado"
+            },tipoCamino);
+        }
     },
     llamarSistemaLogicoDifuso: function (tipoCamino) {
         usuario.calidadRespuesta = example_tracing.obtenerCalidadRespuesta();
@@ -172,14 +191,17 @@ avatar_sensei.prototype = {
         $("#progressbar > div").css({"background":"#3C3"});
     },
     cierreEjercicio: function (valor_paso) { //Funcion que se llama cuando se finaliza los ejercicios
+        //Logica de timers
         camera_sensei.detenerFotos();
         clearTimeout(avatar_context.idTimeout);
+        detenerSegundero();
 
-        $("#controles_tracing").hide();
-
+        //Logica de controles
+        contexto.controles.hide();
+        contexto.progressbar.hide();
+        contexto.cierretracing.show();
+        
         //Mostramos el rating
-        $("#controles_cierre_tracing").show();
-
         avatar_context.obtenerRatingEjercicio(avatar_context.id);
 
         //Ajax para cambiar el estado del ejercicio
@@ -190,13 +212,13 @@ avatar_sensei.prototype = {
                 idEjercicio: avatar_context.id,
                 idAlumno: usuario.id,
                 valor: valor_paso
-                
             },
             contentType: "application/json",
             dataType: "json"
         }).done(function (data) {
             console.log(data);
             menu_context.actualizarBoton(avatar_context.id, valor_paso);
+            avatar_context.id=0; //Se reinicia el id
         }).error(function (error) {
             console.error(error);
         });
@@ -209,7 +231,7 @@ avatar_sensei.prototype = {
                 logBitacoras : JSON.stringify(avatar_context.bitacoras)
             }
         }).done(function (data) {
-            console.log("Bitacora guardada:" + data);
+            console.log("Bitacora guardada:%O", data);
         }).error(function (error) {
             console.error(error);
         });
@@ -271,9 +293,15 @@ avatar_sensei.prototype = {
 
         //Obtenemos el control de la imagen
         var image_control = control.find("#image_avatar");
-        //Obtenemos la imagen de la emocion
-        var image = "img/avatar/" + datos.emocion + ".jpg"; //Las imagenes estan en ese formato
-        image_control.attr("src", image);
+        
+        if (datos.emocion!=""){ 
+            image_control.show();
+            //Obtenemos la imagen de la emocion
+            var image = "img/avatar/" + datos.emocion + ".jpg"; //Las imagenes estan en ese formato
+            image_control.attr("src", image);
+        }else{ //No hay imagen porque no esta el detector activado
+            image_control.hide();
+        }
 
         //Obtenemos el control del texto y opciones del avatar
         var texto_avatar = control.find("#texto_avatar");

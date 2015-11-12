@@ -1,0 +1,154 @@
+{
+	"id": 12,
+	"paso": -1,
+	"tipo": "instruccionesiniciales",
+	"instruccionesejercicio": [
+		"Este ejercicio está relacionado con imprimir texto con print/println."
+	],
+	"opciones": [
+		{
+			"paso": 0,
+			"tipo": "pasoinicial",
+			"instruccion": "Completa el código del programa para que imprima en la consola de salida la cadena: “007”",
+			"presentacion": [
+				"public class Test {",
+				"  public static void main(String[] args) {",
+				"    System.out.println(<input type='text' readonly>);",
+				"  }",
+				"}",
+				""
+			],
+			"textoEmocional": {
+	                        "neutral": "Inicia los ejercicios",
+                                "encantado": "Estas muy bien, inicia con el ejercicio",
+                                "sorprendido": "Wow, me sorprende el momento que pasas, inicia con el ejercicio",
+                                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
+                                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                                "retroalimentacion": {
+				                    "positiva": "No dejes que termine tu día sin haber aprendido algo. ¡Sigue estudiando con entusiasmo!",
+				                    "neutral": "Resuelve el ejercicio para continuar con tu proceso de aprendizaje",
+				                    "negativa": "Si no le pones empeño y dedicación a lo que haces es complicado que puedas aprender a programar en Java"
+                }
+			},
+			"opciones": [
+				{
+					"texto": "“00” + 4 + 3",
+					"paso": 1,
+					"tipo": "pasoerroneo",
+					"instruccion": "La respuesta es incorrecta, intenta de nuevo",
+					"presentacion": [
+						"public class Test {",
+						"  public static void main(String[] args) {",
+						"    System.out.println(<input type='text' readonly value='“00” + 4 + 3' class='errorTracing'>);",
+						"  }",
+						"}",
+						""
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+							"neutral": "La respuesta no es la correcta",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						} 
+					},
+					"opciones": [
+						
+					]
+				},
+				{
+					"texto": "“00” + (4 + 3)",
+					"paso": 2,
+					"tipo": "pasofinaloptimo",
+					"instruccion": "La respuesta es correcta, continua con otro ejercicio.",
+					"presentacion": [
+						"public class Test {",
+						"  public static void main(String[] args) {",
+						"    System.out.println(<input type='text' readonly value='“00” + (4 + 3)' class='focusInput'>);",
+						"  }",
+						"}",
+						""
+					],
+					"textoEmocional": {
+                                            "neutral": "La respuesta es correcta.  Resuelve otro ejercicio.",
+                                            "encantado": "¡Te siento comprometido contigo mismo, resuelve más ejercicios.",
+                                            "sorprendido": "¡Wow!, estás inspirado, continúa con ese entusiasmo.",
+                                            "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza otro ejercicio.",
+                                            "esceptico": "Se que este ejercicio es fácil para ti.  En el menú de opciones hay otros ejercicios más interesantes.",
+                                            "retroalimentacion": {
+                                                "positiva": "¡Muy bien!, Java es un lenguaje independiente de la plataforma.",
+                                                "neutral": "Sigue asi, continua.  Java es un lenguaje independiente de la plataforma.",
+                                                "negativa": "Se que no te gusta la teoría, pero es parte importante de tu formación académica."
+						}
+					},
+					"opciones": [
+						
+					]
+				},
+				{
+					"texto": "’00’ + 7",
+					"paso": 3,
+					"tipo": "pasoerroneo",
+					"instruccion": "La respuesta es incorrecta, intenta de nuevo",
+					"presentacion": [
+						"public class Test {",
+						"  public static void main(String[] args) {",
+						"    System.out.println(<input type='text' readonly value='’00’ + 7' class='errorTracing'>);",
+						"  }",
+						"}",
+						""
+					],
+					"textoEmocional": {
+                                            "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                            "encantado": "Tu actitud para aprender es ¡Excelente!",
+                                            "sorprendido": "¡Creo que te estás confiando demasiado!",
+                                            "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
+                                            "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
+                                            "retroalimentacion": {
+                                                "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
+                                                "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                                                "negativa": "¡Necesitas mayor concentración!"
+						}
+					},
+					"opciones": [
+						
+					]
+				},
+				{
+					"texto": "00 + 7",
+					"paso": 4,
+					"tipo": "pasoerroneo",
+					"instruccion": "La respuesta es incorrecta, intenta de nuevo",
+					"presentacion": [
+						"public class Test {",
+						"  public static void main(String[] args) {",
+						"     System.out.println(<input type='text' readonly value='00 + 7' class='errorTracing'>);",
+						"  }",
+						"}",
+						""
+					],
+					"textoEmocional": {
+                                            "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                            "encantado": "Tu actitud para aprender es ¡Excelente!",
+                                            "sorprendido": "¡Creo que te estás confiando demasiado!",
+                                            "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
+                                            "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
+                                            "retroalimentacion": {
+                                                "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
+                                                "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                                                "negativa": "¡Necesitas mayor concentración!"
+						}
+					},
+					"opciones": [
+						
+					]
+				}
+				
+			]
+		}
+	]
+}

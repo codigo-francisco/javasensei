@@ -17,6 +17,7 @@ function obtenerEjercicios(callback) {
         //datos.intervencion = true; //TODO: Quitar esto, es de prueba, falla las reglas difusas
         console.log("%cDatos recibidos: %O", "color:blue;", datos);
         callback(datos);
+        llenarTabla(datos);
     }).fail(function (jqXHR, textStatus, errorThrown) {
         console.log("Fallo " + textStatus);
     });
@@ -40,7 +41,7 @@ function menu_sensei() {
         }else if(valorTerminado == .7){
             link.css("color","#00FF40");
         }
-    }
+    };
     
     this.actualizarBoton=function (idEjercicio, valorPaso){
         menu_context.getColorFont($("#ejercicioMenu"+idEjercicio),valorPaso);
@@ -72,10 +73,9 @@ function menu_sensei() {
                             .click(
                                     {
                                         id: ejercicio.id,
-                                        url: ejercicio.url
-                                    },
-                            cargarEjercicio
-                                    );
+                                        url: ejercicio.url,
+                                        titulo: ejercicio.titulo
+                                    },cargarEjercicio);
                     
                     menu_context.getColorFont(link,ejercicio.terminado);
                     

@@ -25,3 +25,9 @@ input, button{
     margin-left: auto ;
     margin-right: auto ;
 }
+
+@media (max-width: 591px){
+    #nombre_usuario{
+        display: none;
+    }
+}
