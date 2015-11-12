@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bitácora</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8"/>
+        <script src="js/jquery-2.1.1.min.js"></script>
+        <link rel="stylesheet" href="jquerymobile/jquery.mobile-1.4.4.min.css">
+        <script src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
+        
+    </head>
+    <body>
+
+        <div data-role="page">
+          <div data-role="header">
+          <h1>Sistema Consulta de Bitácoras</h1>
+          </div>
+
+            <div data-role="main" class="ui-content">
+            
+                <div class="ui-field-contain">
+                    <label id="idAlumno" for="alumno">Alumno(id):</label>
+                    <input type="number" name="alumno" id="alumno">  
+
+                    <label for="sesion">Sesión(id):</label>
+                    <input type="number" name="sesion" id="sesion"> 
+
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" name="fecha" id="fecha">
+
+                    
+
+                    <label for="ejercicio">Ejercicio(id):</label>
+                    <input type="number" name="ejercicio" id="ejercicio">
+
+                    <label for="inicial">EmociónInicial:</label>
+                    <input type="text" name="inicial" id="inicial"> 
+
+                    <label for="final">EmociónFinal:</label>
+                    <input type="text" name="final" id="final">
+                </div>
+                <button type="button" data-inline="true" id="buscar">Submit</button>
+                
+                <div id="content-link">
+                    <a id="link">Descargar archivo csv</a>
+                </div>
+                
+            </div>
+              
+        </div>
+        
+        <script src="papaparse/papaparse.js"></script>
+        <script src="js/bitacora.js"></script>
+        
+    </body>
+</html>
