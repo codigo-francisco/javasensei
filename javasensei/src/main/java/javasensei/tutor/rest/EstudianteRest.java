@@ -27,11 +27,17 @@ public class EstudianteRest {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("getorcreatestudent")
-    public String getOrCreateEstudiante(@QueryParam("idFacebook") String idFacebook, @QueryParam("token") String token){
+    public String getOrCreateEstudiante(
+            @QueryParam("idFacebook") String idFacebook, 
+            @QueryParam("token") String token,
+            @QueryParam("nombre") String nombre,
+            @QueryParam("fotografia") String fotografia){
         
         ModeloEstudiante estudiante = new ModeloEstudiante();
         estudiante.setIdFacebook(idFacebook);
         estudiante.setToken(token);
+        estudiante.setNombre(nombre);
+        estudiante.setFotografia(fotografia);
         
         EstudiantesManager estudiantes = new EstudiantesManager(estudiante);
         String result = estudiantes.insertOrCreateStudent();

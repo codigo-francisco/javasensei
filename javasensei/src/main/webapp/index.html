@@ -188,23 +188,30 @@
                 });
  
                 $('#close').click(function(){
-                    $('#wrapper').animate({'bottom':'-100%'},300)        
+                    $('#wrapper').animate({'bottom':'-100%'},300);       
                 });
+                
                 $("#usermsg").keyup(function (e) {
                     var code = (e.keyCode ? e.keyCode : e.which);
                     if (code===13) {
-                        event.preventDefault();
+                        //event.preventDefault();
+                        
+                        var message = $("#usermsg").val();
+                        $("#usermsg").val("");
+                        $("#chatbox").prepend($("<p>").text(usuario.nombre + ": " + message));
+                        
+                        //Enviar mensaje al servidor
                         $.ajax({
-                            type: "POST",
-                            url: "index.html",
-                            data: $("#formchat").serialize(),
-                            success: function () {
-                                sender = $("#nombre_usuario").text();
-                                input = $("#usermsg").val();
-                                msg = $("#chatbox").html();
-                                msg += "<p>" + sender + ": " + input + "</p>";
-                                $("#chatbox").html(msg);
-                                $("#usermsg").val("");
+                            type: "GET",
+                            url: url + "chat/agregarmensaje",
+                            data: {
+                                message:message,
+                                nombreUsuario: usuario.nombre,
+                                idUsuario: usuario.id,
+                                fecha: new Date().toISOString()
+                            },
+                            success: function (data) {
+                                
                             }
                         });
                     }
