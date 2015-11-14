@@ -17,6 +17,7 @@
         <link href="css/main.css" rel="stylesheet">
         <link href="css/matriz.css" rel="stylesheet"/>
         <link href="css/recursos.css" rel="stylesheet">
+        <link href="css/chat.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
@@ -182,6 +183,32 @@
                 $("#progressbar").progressbar();
 
                 //eliminarBackgroundCamera();
+                $('#chatboton').click(function(){
+                    $('#panelchat').animate({'bottom':'0'},300);
+                });
+ 
+                $('#close').click(function(){
+                    $('#wrapper').animate({'bottom':'-100%'},300)        
+                });
+                $("#usermsg").keyup(function (e) {
+                    var code = (e.keyCode ? e.keyCode : e.which);
+                    if (code===13) {
+                        event.preventDefault();
+                        $.ajax({
+                            type: "POST",
+                            url: "index.html",
+                            data: $("#formchat").serialize(),
+                            success: function () {
+                                sender = $("#nombre_usuario").text();
+                                input = $("#usermsg").val();
+                                msg = $("#chatbox").html();
+                                msg += "<p>" + sender + ": " + input + "</p>";
+                                $("#chatbox").html(msg);
+                                $("#usermsg").val("");
+                            }
+                        });
+                    }
+                });
             });
             
         </script>
@@ -319,7 +346,7 @@
                     <span style="white-space: normal !important;" id="nombre_usuario"></span>
                     <!-- Score: -->
                 </div>
-
+                <a id="chatboton" title="¿Necesitas ayuda? ¡Habla con otros estudiantes!" href="#panelchat" style="margin-right: 6em" data-icon="comment" class="ui-btn-right" data-iconpos="notext"></a>
                 <a id="botoncamara" title="Colocate bien ante la camara" href="#" style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" data-iconpos="notext"></a>
                 <a id="botongrafica" title="Grafica del avance como estudiante" href="#paginagraficaestudiante" style="margin-right: 2em;" data-rel="dialog" data-icon="exclamation-circle" class="ui-btn-right" data-iconpos="notext"></a>
                 <a id="botonrecursos" title="Menu de ejercicios y recursos" href="#paginarecursos" data-rel="dialog" data-icon="ellipsis-v" class="ui-btn-right" data-iconpos="notext"></a>
@@ -363,6 +390,18 @@
                     </div>
                     <div id="areasolucion" class="ui-grid-a ui-responsive">
 
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div id="panelchat" class="box">
+                    <div id="wrapper" class="box-inner">
+                        <div id="menu">
+                            <p class="welcome">Bienvenido, </p>
+                            <div style="clear:both"></div>
+                        </div> 
+                        <div id="chatbox"></div>
+                        <input id="usermsg" name="usermsg" type="text" size="63"/>
                     </div>
                 </div>
             </div>

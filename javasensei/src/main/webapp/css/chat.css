@@ -1,0 +1,134 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20/10/2015, 01:21:25 PM
+    Author     : Frank
+*/
+
+.body {
+    font:12px arial;
+    color: #222;
+    text-align:center;
+    padding:35px;
+}
+  
+#form, #span {
+    margin:0;
+    padding:0;
+}
+  
+.input {
+    font:12px arial;
+}
+  
+.a {
+    color:#0000FF;
+    text-decoration:none;
+}
+  
+a:hover { text-decoration:underline; }
+  
+#wrapper {
+    margin:0em auto;
+    padding-bottom:25px;
+    background:#EBF4FB;
+    width:100%;
+    /*height: 100%;*/
+    border:1px solid #ACD8F0;
+}
+
+#chatbox {
+    text-align:left;
+    margin:0em 1em 0em 1em;
+    padding:10px;
+    background:#fff;
+    width:80%;
+    height:80%;
+    border:1px solid #ACD8F0;
+    overflow:auto;
+}
+
+#users {
+    text-align:left;
+    margin:0em 1em 2em 1em;
+    padding:10px;
+    background:#fff;
+    width:80%;
+    height:20%;
+    border:1px solid #ACD8F0;
+    overflow:auto;
+}
+
+#usermsg {
+    width:80%;
+    border:1px solid #ACD8F0;
+    font:12px arial;
+    margin: 1em 1em 1em 1em;
+    background:#fff;
+    float: left;
+    display:inline-block;
+}
+#submitmsg {
+    width: 70%;
+    font:12px arial;
+    
+    float: right;
+    display:inline-block;
+}
+#submit { 
+    width: 20%;
+    font:12px arial;
+}
+
+.chatcontainer {
+    display:inline-block;
+    width:100%;
+    height: 80%;
+}
+.box{
+    position:fixed;
+    bottom:-100%;
+    left:0%;
+    height:100%; 
+    background-color: #DBDBDB;
+    width: 100%;
+    height: 40%;
+    display: block;
+    z-index:999999;
+}
+
+.box-inner {
+    position: absolute;
+    width:100%;
+    top: 0px;
+    bottom: 0px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.error {
+    color: #ff0000;
+}
+  
+#menu {
+    padding:12.5px 25px 12.5px 25px;
+}
+  
+.welcome { 
+    float:left;
+    margin:0;
+    padding:0;
+}
+  
+.logout { 
+    float:right;
+    margin:0;
+    padding:0;
+}
+  
+.msgln {
+    margin:0 0 2px 0;
+}
