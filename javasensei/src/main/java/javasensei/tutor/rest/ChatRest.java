@@ -25,7 +25,7 @@ import javax.ws.rs.core.MediaType;
  * @author Rock
  */
 @Path("chat")
-public class Chat {
+public class ChatRest {
 
     @Context
     private UriInfo context;
@@ -33,7 +33,7 @@ public class Chat {
     /**
      * Creates a new instance of Chat
      */
-    public Chat() {
+    public ChatRest() {
     }
 
     @GET
@@ -42,9 +42,23 @@ public class Chat {
     public String agregarMensaje(@QueryParam("message") String message, 
             @QueryParam("nombreUsuario") String nombreUsuario, 
             @QueryParam("idUsuario") String idUsuario,
-            @QueryParam("fecha") String fecha){
-        return new ChatManager().agregarMensaje(message, nombreUsuario, idUsuario, 
-                Date.from(ZonedDateTime.parse(fecha).toInstant()))
-                .toString();
+            @QueryParam("fecha") Long fecha){
+        String resultMessage ="false";
+        
+        ChatManager chatManager = new ChatManager();
+        Boolean result = chatManager.agregarMensaje(message, nombreUsuario, idUsuario, fecha);
+        
+        if (result){
+            resultMessage = fecha.toString();
+        }
+        
+        return resultMessage;
+    }
+    
+    @GET
+    @Path("leermensajes")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String leerMensajes(@QueryParam("fechaActual") Long fechaActual){        
+        return new ChatManager().leerMensajes(fechaActual);
     }
 }

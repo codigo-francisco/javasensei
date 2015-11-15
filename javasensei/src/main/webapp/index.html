@@ -40,6 +40,7 @@
         <script type="text/javascript" src="js/graficos.js"></script>
         <script type="text/javascript" src="js/matriz.js"></script>
         <script type="text/javascript" src="js/graficaEmociones.js"></script>
+        <script type="text/javascript" src="js/chat.js"></script>
 
         <script>
             var menu = new menu_sensei();
@@ -49,6 +50,7 @@
             var avatar_sensei;
             var camera_sensei = new camera();
             var graficaComportamiento = new graficosEmocionesSensei();
+            var chat = new chatSensei();
             
             var carpeta_ejercicios = "lecciones/";
             var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
@@ -85,17 +87,12 @@
             ;
 
             $(document).ready(function () {
+                
                 $("#button_logout").click(function () {
                     logout();
                 });
 
                 $("#opciones_avatar").listview(); //Inicializacion de listview
-                
-                $("*").keyup(function(eventData){
-                    if (eventData.keyCode == 27){
-                        //$("#menuboton").panel().panel("open");
-                    }
-                });
 
                 hljs.configure({
                     useBR: true,
@@ -118,8 +115,10 @@
 
                 $("#fullscreenloading").hide(); //Escondemos el login
 
-                $(document).ajaxStart(function () {
-                    $("#fullscreenloading").show();
+                $(document).ajaxSend(function (event, jqxhr, settings) {
+                    if (!(settings.url.indexOf("chat")>-1)){
+                        $("#fullscreenloading").show();
+                    }
                 });
 
                 $(document).ajaxStop(function () {
@@ -127,6 +126,8 @@
                 });
 
                 camera_sensei.setup();
+                
+                chat.setUp();
 
                 $(":mobile-pagecontainer").on("pagecontainershow", function (event, ui) {
                     switch ($(ui.toPage).attr("id")) {
@@ -189,32 +190,6 @@
  
                 $('#close').click(function(){
                     $('#wrapper').animate({'bottom':'-100%'},300);       
-                });
-                
-                $("#usermsg").keyup(function (e) {
-                    var code = (e.keyCode ? e.keyCode : e.which);
-                    if (code===13) {
-                        //event.preventDefault();
-                        
-                        var message = $("#usermsg").val();
-                        $("#usermsg").val("");
-                        $("#chatbox").prepend($("<p>").text(usuario.nombre + ": " + message));
-                        
-                        //Enviar mensaje al servidor
-                        $.ajax({
-                            type: "GET",
-                            url: url + "chat/agregarmensaje",
-                            data: {
-                                message:message,
-                                nombreUsuario: usuario.nombre,
-                                idUsuario: usuario.id,
-                                fecha: new Date().toISOString()
-                            },
-                            success: function (data) {
-                                
-                            }
-                        });
-                    }
                 });
             });
             
