@@ -19,6 +19,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     private Emocion emocionPrevia = Emocion.NEUTRAL;
     private double habilidadGlobal = 0;
     private double calidadRespuesta = 0; //Parametros internos al crear un estudiante nuevo
+    private boolean activarEmociones = true;
 
     public ModeloEstudiante() {
 
@@ -36,6 +37,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         emocionActual = Emocion.getEmocion(jsonObj.get("emocionActual").getAsString());
         emocionPrevia = Emocion.getEmocion(jsonObj.get("emocionPrevia").getAsString());
         habilidadGlobal = jsonObj.get("habilidadGlobal").getAsDouble();
+        activarEmociones = jsonObj.get("activarEmociones").getAsBoolean();
     }
 
     public long getId() {
@@ -85,12 +87,21 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     public void setCalidadRespuesta(double calidadRespuesta) {
         this.calidadRespuesta = calidadRespuesta;
     }
+    
+    public boolean getActivarEmociones(){
+        return activarEmociones;
+    }
+    
+    public void setActivarEmociones(boolean activarEmociones){
+        this.activarEmociones = activarEmociones;
+    }
 
     @Override
     public DBObject convertToDBObject() {
         return convertToDBObject(false);
     }
     
+    @Override
     public DBObject convertToDBObject(boolean save) {
         DBObject dbObject = new BasicDBObject();
 
@@ -106,6 +117,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         dbObject.put("emocionPrevia", getEmocionPrevia().toString());
         dbObject.put("habilidadGlobal", getHabilidadGlobal().toString());
         dbObject.put("calidadRespuesta", getCalidadRespuesta());
+        dbObject.put("activarEmociones", getActivarEmociones());
 
         return dbObject;
     }
@@ -117,5 +129,4 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     public void setIdFacebook(String idFacebook) {
         this.idFacebook = idFacebook;
     }
-
 }

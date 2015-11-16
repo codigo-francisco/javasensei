@@ -3,16 +3,18 @@ var contexto = {};
 var progreso = 0;
 var nivelMax;
 var matrizEjercicios = [];
-var example_tracing_sensei = function (areatrabajo, areasoluciones, boton_adelante, boton_atras, controles, post_controles) { //Recibe el ejercicio que se va a cargar
+var example_tracing_sensei = function () { //Recibe el ejercicio que se va a cargar
     contexto = this; //Guardamos el contexto, una referencia a este owner
 
-    this.areatrabajo = $(areatrabajo);
-    this.areasoluciones = $(areasoluciones);
-    this.post_controles = $(post_controles);
-    this.cierretracing = $("#controles_cierre_tracing");
-    this.boton_adelante = $(boton_adelante);
-    this.boton_atras = $(boton_atras);
-    this.controles = $(controles);
+    this.areatrabajo = $("#areatrabajo");
+    this.areasoluciones = $("#areasolucion");
+    
+    this.cierretracing = $(".controles_cierre_tracing");
+    this.controles = $(".controles_tracing");
+    this.progressbar = $("#progressbar");
+    
+    this.boton_adelante = $("#adelante_tracing");
+    this.boton_atras = $("#atras_tracing");
 
     this.tree_example_tracing = emptyFunction;
     this.letras = ["a", "b", "a", "b"];
@@ -32,36 +34,6 @@ var example_tracing_sensei = function (areatrabajo, areasoluciones, boton_adelan
 
 var createInput = function createInput() {
     return $("<input type='text' readonly='readonly'>")[0].outerHTML;
-};
-
-window.onresize = mueve_progressbar;
-var acomodaProgressbar = mueve_progressbar;
-function mueve_progressbar(event) {
-    var controles_visible = $("#controles_tracing").is(":visible");
-    var cierre_visible = $("#controles_cierre_tracing").is(":visible");
-    if (controles_visible || cierre_visible) {
-        if (controles_visible) {
-            if (window.innerWidth < 580) {
-                $("#progressbar").detach().prependTo(contexto.post_controles);
-                $("#progressbar").css({"width":"100%"});
-                contexto.post_controles.show();
-            } else {
-                $("#progressbar").detach().prependTo("#controles_tracing");
-                $("#progressbar").css({"width":"50%"});
-                contexto.post_controles.hide();
-            }
-        } else {
-            if (window.innerWidth < 695) {
-                $("#progressbar").detach().prependTo(contexto.post_controles);
-                $("#progressbar").css({"width":"100%"});
-                contexto.post_controles.show();
-            } else {
-                $("#progressbar").detach().prependTo("#controles_cierre_tracing");
-                $("#progressbar").css({"width":"50%"});
-                contexto.post_controles.hide();
-            }
-        }
-    }
 };
 
 var createFocusInput = function createFocusInput() {
@@ -86,9 +58,6 @@ example_tracing_sensei.prototype = {
         contexto.suscriptores_final_suboptimo.add(obj_callbacks.paso_final_suboptimo);
         contexto.suscriptores_paso_atras.add(obj_callbacks.paso_atras);
         contexto.suscriptores_paso_siguiente.add(obj_callbacks.paso_siguiente);
-    },
-    suscribirse_inicio_ejercicio: function (callback_inicio) {
-        contexto.suscriptores_inicio.add(callback_inicio);
     },
     notificar_evento: function (tipo, datos) {
         var notificaciones;
@@ -155,18 +124,23 @@ example_tracing_sensei.prototype = {
         contexto.areatrabajo.hide();
         contexto.controles.hide();
         contexto.cierretracing.hide();
-        contexto.post_controles.hide();
+        contexto.progressbar.hide();
     },
-    construir_ejercicio: function (url) { //Construye todo el ejercicio junto con el example_tracing
+    construir_ejercicio: function (data) { //Construye todo el ejercicio junto con el example_tracing
         this.areatrabajo.show();
         this.controles.show();
+        this.progressbar.show();
+        this.cierretracing.hide();
 
         //Se enlazan los click con la funcion actual
         this.boton_atras.unbind("click").bind("click",this.mover_atras);
         this.boton_adelante.unbind("click").bind("click",this.mover_adelante);
 
+        //Titulo del ejercicio
+        $("#tituloEjercicio").text(data.titulo)
+
         //Obtenemos el json del ejercicio
-        $.getJSON(carpeta_ejercicios + url, function (data) {
+        $.getJSON(carpeta_ejercicios + data.url, function (data) {
             contexto.notificar_evento("carga",{
                 instruccionesejercicio: data.instruccionesejercicio
              });
@@ -238,7 +212,6 @@ example_tracing_sensei.prototype = {
     },
     construir_area_trabajo: function () {
         //Obtenemos el nodo del ejercicio
-        acomodaProgressbar();
         var instruccion = this.areatrabajo.find("#instruccion");
 
         instruccion.html(this.ejercicio.instruccion);

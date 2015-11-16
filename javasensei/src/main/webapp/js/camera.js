@@ -22,7 +22,8 @@ camera.prototype = {
     inicializarFotos: function () {
         console.log("Se inicializo a tomar fotos");
         //Se toma una foto de acuerdo a los milisegundos marcados
-        camera_context.id_interval = setInterval(camera_context.snap, camera_context.milisegundos);
+        if (usuario.activarEmociones)
+            camera_context.id_interval = setInterval(camera_context.snap, camera_context.milisegundos);
     },
     reiniciarFotos: function () {
         console.log("Se reinicio la lista");
@@ -31,7 +32,8 @@ camera.prototype = {
     },
     detenerFotos: function () {
         console.log("Se mando a detener");
-        clearInterval(camera_context.id_interval);
+        if (camera_context.id_interval)
+            clearInterval(camera_context.id_interval);
     },
     snap: function () {
         Webcam.snap(function (dataUrl) {

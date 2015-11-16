@@ -39,6 +39,7 @@ public class BitacoraEjerciciosDBO implements DBInterface {
     private int totalErrores, totalAciertos;
     private Date fecha;
     private String tipoPaso;
+    private int segundos;
     private List<byte[]> fotografias = new ArrayList<>();
     private long sesionId;
     
@@ -59,6 +60,7 @@ public class BitacoraEjerciciosDBO implements DBInterface {
         totalAciertos = object.get("totalAciertos").getAsInt();
         fecha = Date.from(ZonedDateTime.parse(object.get("fecha").getAsString()).toInstant());
         tipoPaso = object.get("tipoPaso").getAsString();
+        segundos = object.get("segundos").getAsInt();
         for (JsonElement element : object.get("fotografias").getAsJsonArray()){
             fotografias.add(decoder.decode(element.getAsString()));
         }
@@ -87,6 +89,7 @@ public class BitacoraEjerciciosDBO implements DBInterface {
         object.put("fecha",fecha);
         object.put("fotografias", fotografias);
         object.put("tipoPaso", tipoPaso);
+        object.put("segundos",segundos);
         object.put("sesionId",sesionId);
         
         return object;

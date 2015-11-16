@@ -20,7 +20,6 @@
   border-radius: 2px;
   font-size: 17px;
   font-weight: bold;
-  //text-transform: uppercase;
   background: rgb(200,200,200);
   cursor: pointer;
   position: relative;
@@ -32,7 +31,6 @@
 }
 .tabs label:hover {
   background: rgb(150,150,150);
-  
 }
 .tabs .tab-content {
   border: 1px solid black;
@@ -46,7 +44,6 @@
   position: absolute;
   top: 53px;
   left: 0;
-  //background: rgb(140,140,140);
 }
 .tabs [id^="tab"]:checked + label {
   top: 0;
