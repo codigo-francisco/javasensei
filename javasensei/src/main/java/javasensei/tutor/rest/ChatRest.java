@@ -42,11 +42,12 @@ public class ChatRest {
     public String agregarMensaje(@QueryParam("message") String message, 
             @QueryParam("nombreUsuario") String nombreUsuario, 
             @QueryParam("idUsuario") String idUsuario,
+            @QueryParam("idEjercicio") Integer idEjercicio,
             @QueryParam("fecha") Long fecha){
         String resultMessage ="false";
         
         ChatManager chatManager = new ChatManager();
-        Boolean result = chatManager.agregarMensaje(message, nombreUsuario, idUsuario, fecha);
+        Boolean result = chatManager.agregarMensaje(message, nombreUsuario, idUsuario, idEjercicio, fecha);
         
         if (result){
             resultMessage = fecha.toString();
@@ -58,7 +59,7 @@ public class ChatRest {
     @GET
     @Path("leermensajes")
     @Produces(MediaType.APPLICATION_JSON)
-    public String leerMensajes(@QueryParam("fechaActual") Long fechaActual){        
-        return new ChatManager().leerMensajes(fechaActual);
+    public String leerMensajes(@QueryParam("fechaActual") Long fechaActual, @QueryParam("idEjercicio") Integer idEjercicio){        
+        return new ChatManager().leerMensajes(fechaActual, idEjercicio);
     }
 }

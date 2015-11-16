@@ -15,17 +15,22 @@ import javasensei.db.Connection;
 public class ChatManager {
     private DBCollection chatCollection = Connection.getCollection().get(CollectionsDB.CHAT);
     
-    public Boolean agregarMensaje(String message, String nombreUsuario, String idUsuario, Long fecha){
+    public Boolean agregarMensaje(String message, String nombreUsuario, String idUsuario, Integer idEjercicio, Long fecha){
         BasicDBObject mensaje = new BasicDBObject("message", message);
         mensaje.put("nombreUsuario", nombreUsuario);
         mensaje.put("idUsuario", idUsuario);
+        mensaje.put("idEjercicio",idEjercicio);
         mensaje.put("fecha", fecha);
 
         return chatCollection.insert(mensaje)!=null;
     }
     
-    public String leerMensajes(Long fecha){
-        DBObject query = QueryBuilder.start("fecha").is(new BasicDBObject("$gt", fecha)).get();
+    public String leerMensajes(Long fecha, Integer idEjercicio){
+        DBObject query = QueryBuilder.start("fecha")
+                .is(new BasicDBObject("$gt", fecha))
+                .put("idEjercicio")
+                .is(idEjercicio)
+                .get();
         
         return chatCollection.find(query).toArray().toString();
     }

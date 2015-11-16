@@ -65,26 +65,22 @@
                 if (usuario.id !== '') {
                     $("#fullscreenlogin").hide();
                 }
-            }
-            ;
+            };
 
             function mostrarBackground() {
                 $("#fullscreenlogin").show();
-            }
-            ;
+            };
 
             function cargarEjercicio(event) {
                 example_tracing.suscribir_todos_ejercicios(avatar_sensei);
                 example_tracing.construir_ejercicio(event.data);
 
                 return false;
-            }
-            ;
+            };
 
             function eliminarBackgroundCamera() {
                 $("#fullscreenpermition").hide();
-            }
-            ;
+            };
 
             $(document).ready(function () {
                 
@@ -102,8 +98,6 @@
                 example_tracing = new example_tracing_sensei();
 
                 avatar_sensei = new avatar_sensei("#avatar_control");
-
-                //menu.actualizarMenu(); //Obtenemos el menu la primera vez
 
                 $("#menuboton").click(function () {
                     menu.getMenu("#ejerciciosmenu");
@@ -161,7 +155,7 @@
                         console.log(data);
                     }).fail(function(d,error){
                         console.log(error);
-                    })
+                    });
                 });
 
                 $("#areatrabajo").hide();
@@ -322,16 +316,15 @@
 
             <div data-role="header">
                 <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext" title="Este es el menu de ejercicios"></a>
-
                 <div class="ui-title">
                     <img id="imagen_usuario"><br>
                     <span style="white-space: normal !important;" id="nombre_usuario"></span>
                     <!-- Score: -->
                 </div>
-                <a id="chatboton" title="¿Necesitas ayuda? ¡Habla con otros estudiantes!" href="#panelchat" style="margin-right: 6em" data-icon="comment" class="ui-btn-right" data-iconpos="notext"></a>
-                <a id="botoncamara" title="Colocate bien ante la camara" href="#" style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" data-iconpos="notext"></a>
-                <a id="botongrafica" title="Grafica del avance como estudiante" href="#paginagraficaestudiante" style="margin-right: 2em;" data-rel="dialog" data-icon="exclamation-circle" class="ui-btn-right" data-iconpos="notext"></a>
-                <a id="botonrecursos" title="Menu de ejercicios y recursos" href="#paginarecursos" data-rel="dialog" data-icon="ellipsis-v" class="ui-btn-right" data-iconpos="notext"></a>
+                <a id="chatboton" title="¿Necesitas ayuda? ¡Habla con otros estudiantes!" href="#panelchat" data-icon="comment" data-iconpos="notext" style="margin-right: 6em;" class="ui-state-disabled ui-btn-right"></a>
+                <a id="botoncamara" title="Colocate bien ante la camara" href="#" data-icon="camera" data-iconpos="notext" style="margin-right: 4em;" class="ui-btn-right"></a>
+                <a id="botongrafica" title="Grafica del avance como estudiante" href="#paginagraficaestudiante" data-rel="dialog" data-icon="exclamation-circle" data-iconpos="notext" style="margin-right: 2em;" class="ui-btn-right"></a>
+                <a id="botonrecursos" title="Menu de ejercicios y recursos" href="#paginarecursos" data-rel="dialog" data-icon="ellipsis-v" data-iconpos="notext" class="ui-btn-right"></a>
             </div>
 
             <div role="main" class="ui-content">

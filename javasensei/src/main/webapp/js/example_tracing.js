@@ -125,6 +125,7 @@ example_tracing_sensei.prototype = {
         contexto.controles.hide();
         contexto.cierretracing.hide();
         contexto.progressbar.hide();
+        chat.changeExercise(false);
     },
     construir_ejercicio: function (data) { //Construye todo el ejercicio junto con el example_tracing
         this.areatrabajo.show();
@@ -137,7 +138,9 @@ example_tracing_sensei.prototype = {
         this.boton_adelante.unbind("click").bind("click",this.mover_adelante);
 
         //Titulo del ejercicio
-        $("#tituloEjercicio").text(data.titulo)
+        $("#tituloEjercicio").text(data.titulo);
+        
+        chat.changeExercise(true);
 
         //Obtenemos el json del ejercicio
         $.getJSON(carpeta_ejercicios + data.url, function (data) {
@@ -173,13 +176,6 @@ example_tracing_sensei.prototype = {
                 case "pasoinicial":
                     datos_notificacion.id = contexto.tree_example_tracing.obtenerId();
                     break;
-                    /*case "pasoerroneo":
-                     contexto.notificar_evento(contexto.ejercicio.tipo);
-                     break;
-                     case "pasooptimo":
-                     break;
-                     case "pasosuboptimo":
-                     break;*/
             }
             contexto.notificar_evento(tipo, datos_notificacion);
         }
