@@ -28,14 +28,14 @@ var processLogin = function processLogin(response) {
                 console.log("Datos del facebook: %O", response);
 
                 usuario.nombre = response.name;
-                usuario.foto = response.picture.data.url;
+                usuario.fotografia = response.picture.data.url;
 
                 eliminarBackground();
 
                 //Se manda un json para crear u obtener el usuario
                 checarUsuario(usuario);
 
-                $("#imagen_usuario").attr("src", usuario.foto);
+                $("#imagen_usuario").attr("src", usuario.fotografia);
                 $("#nombre_usuario").text(usuario.nombre);
             });
             break;
@@ -52,7 +52,9 @@ function checarUsuario(datos) {
     $.ajax(urlChecar, {
         data: {
             idFacebook: datos.idFacebook,
-            token: datos.token
+            token: datos.token,
+            nombre: datos.nombre,
+            fotografia: datos.fotografia
         },
         dataType: "json"
     }).done(function (data) {

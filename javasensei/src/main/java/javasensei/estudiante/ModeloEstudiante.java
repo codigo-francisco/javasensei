@@ -20,6 +20,8 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     private double habilidadGlobal = 0;
     private double calidadRespuesta = 0; //Parametros internos al crear un estudiante nuevo
     private boolean activarEmociones = true;
+    private String nombre;
+    private String fotografia;
 
     public ModeloEstudiante() {
 
@@ -38,6 +40,8 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         emocionPrevia = Emocion.getEmocion(jsonObj.get("emocionPrevia").getAsString());
         habilidadGlobal = jsonObj.get("habilidadGlobal").getAsDouble();
         activarEmociones = jsonObj.get("activarEmociones").getAsBoolean();
+        nombre = jsonObj.get("nombre").getAsString();
+        fotografia = jsonObj.get("fotografia").getAsString();
     }
 
     public long getId() {
@@ -95,6 +99,22 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     public void setActivarEmociones(boolean activarEmociones){
         this.activarEmociones = activarEmociones;
     }
+    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getFotografia() {
+        return fotografia;
+    }
+
+    public void setFotografia(String fotografia) {
+        this.fotografia = fotografia;
+    }
 
     @Override
     public DBObject convertToDBObject() {
@@ -118,6 +138,8 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         dbObject.put("habilidadGlobal", getHabilidadGlobal().toString());
         dbObject.put("calidadRespuesta", getCalidadRespuesta());
         dbObject.put("activarEmociones", getActivarEmociones());
+        dbObject.put("nombre", getNombre());
+        dbObject.put("fotografia", getFotografia());
 
         return dbObject;
     }

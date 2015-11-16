@@ -6,7 +6,6 @@ import com.mongodb.DBObject;
  *
  * @author Rock
  */
-public interface DBInterface {
+public interface DBInterface extends javasensei.db.DBInterface {
     DBObject convertToDBObject(boolean save);
-    DBObject convertToDBObject();
 }
