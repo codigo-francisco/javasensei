@@ -46,6 +46,16 @@ public class EstudianteRest {
     }
     
     @GET
+    @Path("activarEmociones")
+    public String activarEmociones(@QueryParam("idAlumno") Long idAlumno, @QueryParam("activarEmociones") Boolean activarEmociones){
+        ModeloEstudiante modeloEstudiante = new ModeloEstudiante();
+        modeloEstudiante.setId(idAlumno);
+        modeloEstudiante.setActivarEmociones(activarEmociones);
+        
+        return new EstudiantesManager(modeloEstudiante).saveActivarEmociones().toString();
+    }
+    
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("finalizarEjercicio")
     public String finalizarEjercicio(@QueryParam("idAlumno") Long idAlumno, @QueryParam("idEjercicio") Integer idEjercicio, @QueryParam ("valor") double valor){

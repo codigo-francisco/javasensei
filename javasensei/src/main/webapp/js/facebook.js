@@ -10,8 +10,8 @@ var processLoginJhonDoe = function(){
     usuario.token="asdfd67as76dfas8";
     usuario.nombre = "Jhon Doe";
     usuario.foto = "";
+    usuario.activarEmociones=true;
     eliminarBackground();
-    checarUsuario(usuario);
 };
 
 var processLogin = function processLogin(response) {

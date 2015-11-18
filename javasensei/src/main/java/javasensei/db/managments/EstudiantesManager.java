@@ -10,6 +10,7 @@ import com.mongodb.ReadPreference;
 import com.mongodb.WriteResult;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javasensei.db.Connection;
@@ -130,22 +131,47 @@ public class EstudiantesManager {
         );
 
         if (alumno != null) {
-            List<Integer> ejercicios = new ArrayList<>();
+            List<Integer> ejerciciosAlumno = new ArrayList<>();
             //List<DBObject> ejerciciosAlumno = new ArrayList<>();
 
             if (alumno.containsField("ejercicios")) {
                 BasicDBList listEjercicios = (BasicDBList) alumno.get("ejercicios");
 
                 for (Object objEjercicio : listEjercicios) {
-                    ejercicios.add(new Double(((DBObject) objEjercicio).get("id").toString()).intValue());
+                    ejerciciosAlumno.add(new Double(((DBObject) objEjercicio).get("id").toString()).intValue());
                 }
             }
-
+            
+            List<Integer> ejercicios = new ArrayList<>();
+            
+            ejerciciosCollection.find(
+                    new BasicDBObject(),
+                    (BasicDBObject)new BasicDBObject("_id", 0)
+                    .put("id", 1)
+            ).toArray().forEach((Object t) -> {
+                ejercicios.add(new Double(((DBObject)t).get("id").toString()).intValue());
+            });
+            
+            //Removemos los ejercicios que ya se encuentran con el alumno
+            List<Integer> ejerciciosSobrantes = new ArrayList<>(ejerciciosAlumno);
+            ejerciciosSobrantes.removeAll(ejercicios);
+            
+            //Los ejercicios restantes son removidos
+            alumnosCollection.update(new BasicDBObject("id", estudiante.getId()), 
+                    new BasicDBObject("$pull",
+                        new BasicDBObject("ejercicios",
+                            new BasicDBObject("id",
+                                new BasicDBObject("$in",ejerciciosSobrantes)
+                            )
+                        )
+                    )
+            );
+            
             //El campo ejercicio se llena con los id que no tenga el usuario (de ejercicios)
             //Ademas se pone un valor 0 para entender que no esta terminado
             //Id de ejercicios que el alumno no tiene
             DBCursor ejerciciosCursor = ejerciciosCollection.find(QueryBuilder.start("id")
-                    .notIn(ejercicios).get(),
+                    .notIn(ejerciciosAlumno).get(),
                     QueryBuilder.start("_id").is(0)
                     .get()
             );
@@ -195,5 +221,19 @@ public class EstudiantesManager {
 
     public void saveAbilityGlobal() {
         saveAbilityGlobal(getAbilityGlobal());
+    }
+    
+    public Boolean saveActivarEmociones(){
+        boolean result=false;
+        
+        alumnosCollection.update(
+                new BasicDBObject("id", estudiante.getId()), 
+                new BasicDBObject("$set", 
+                        new BasicDBObject("activarEmociones",
+                                estudiante.getActivarEmociones())
+                )
+        );
+        
+        return result;
     }
 }

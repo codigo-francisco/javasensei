@@ -1,0 +1,424 @@
+{
+	"id": 14,
+	"paso": -1,
+	"tipo": "instruccionesiniciales",
+	"instruccionesejercicio": [
+		"Este ejercicio esta relacionado con expresión de asignación.",
+                " Antes de usar una variable, es necesario declararla y asignarle un valor utilizando el signo igual (=)."
+	],
+	"opciones": [
+		{
+			"paso": 0,
+			"tipo": "pasoinicial",
+			"instruccion": "Selecciona la opción correcta.",
+			"presentacion": [
+				"Paso 1 de 4.  Si la variable \"x\" se declara de tipo double, selecciona la expresión de asignación que es compatible."
+
+			],
+			"textoEmocional": {
+                            "neutral": "Inicia el ejercicio.",
+                            "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                            "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                            "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                            "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                            "retroalimentacion": {
+                                "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
+                                "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
+                                "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                                            }
+			},
+			"opciones": [
+				{
+					"texto": "x = false;",
+					"paso": 1,
+					"tipo": "pasoerroneo",
+					"instruccion": "La respuesta es incorrecta, el valor que se le asigna se refiere a un valor de tipo boolean.",
+					"presentacion": [
+						"Paso 1 de 4.  Si la variable \"x\" se declara de tipo double, selecciona la expresión de asignación que es compatible."
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+							"neutral": "La respuesta no es la correcta",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						} 
+					},
+					"opciones": [
+						
+					]
+				},
+				{
+					"texto": "x =  \"7 \";",
+					"paso": 2,
+					"tipo": "pasoerroneo",
+					"instruccion": "La respuesta es incorrecta, el uso de comillas dobles es propio de un dato de tipo string.",
+					"presentacion": [
+						"Paso 1 de 4.  Si la variable \"x\" se declara de tipo double, selecciona la expresión de asignación que es compatible."
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+							"neutral": "La respuesta no es la correcta",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						} 
+					},
+					"opciones": [
+						
+					]
+				},{
+					"texto": "x = '7';",
+					"paso": 3,
+					"tipo": "pasoerroneo",
+					"instruccion": "La respuesta es incorrecta, el uso de comillas simples es propio de un dato de tipo char.",
+					"presentacion": [
+						"Paso 1 de 4.  Si la variable \"x\" se declara de tipo double, selecciona la expresión de asignación que es compatible."
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+							"neutral": "La respuesta no es la correcta",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						} 
+					},
+					"opciones": [
+						
+					]
+				},{
+					"texto": "x = 7;",
+					"paso": 4,
+					"tipo": "pasooptimo",
+					"instruccion": "Selecciona la opción correcta.",
+					"presentacion": [
+						"Paso 2 de 4.  Si la variable \"x\" se declara de tipo int, selecciona la expresión de asignación que es compatible."
+
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+						"encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+						"sorprendido": "¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+						"compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+						"esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+						"retroalimentacion": {
+							"positiva": "¡Excelente!, ¡La respuesta es correcta.",
+							"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+							"negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+							} 
+
+					},
+					"opciones": [
+							{
+								"texto": "x = false;",
+								"paso": 5,
+								"tipo": "pasoerroneo",
+								"instruccion": "La respuesta es incorrecta, el valor que se le asigna se refiere a un valor de tipo boolean.",
+								"presentacion": [
+									"Paso 2 de 4.  Si la variable \"x\" se declara de tipo int, selecciona la expresión de asignación que es compatible."
+
+								],
+								"textoEmocional": {
+									"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+									"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+									"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+									"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+									"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+									"retroalimentacion": {                           
+										"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+										"neutral": "La respuesta no es la correcta",
+										"negativa": "¿Estás seguro de querer estudiar este curso?."
+										} 
+
+								},
+								"opciones": [
+								]
+							},{
+								"texto": "x = 7.0;",
+								"paso": 6,
+								"tipo": "pasoerroneo",
+								"instruccion": "La respuesta es incorrecta, el uso de decimales es propio de los datos tipo float.",
+								"presentacion": [
+									"Paso 2 de 4.  Si la variable \"x\" se declara de tipo int, selecciona la expresión de asignación que es compatible."
+
+								],
+								"textoEmocional": {
+									"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+									"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+									"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+									"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+									"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+									"retroalimentacion": {                           
+										"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+										"neutral": "La respuesta no es la correcta",
+										"negativa": "¿Estás seguro de querer estudiar este curso?."
+										} 
+
+								},
+								"opciones": [
+								]
+							},{
+								"texto": "x = 7;",
+								"paso": 7,
+								"tipo": "pasooptimo",
+								"instruccion": "Selecciona la opción correcta.",
+								"presentacion": [
+									"Paso 3 de 4.  Si la variable “x” se declara de tipo boolean, selecciona la expresión de asignación que es compatible."
+
+								],
+								"textoEmocional": {
+									"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+									"encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+									"sorprendido": "¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+									"compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+									"esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+									"retroalimentacion": {
+										"positiva": "¡Excelente!, ¡La respuesta es correcta.",
+										"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+										"negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+										} 
+
+								},
+								"opciones": [
+										{
+											"texto": "x = TRUE;",
+											"paso": 8,
+											"tipo": "pasoerroneo",
+											"instruccion": "La respuesta es incorrecta, el valor no esta escrito de manera adecuada.",
+											"presentacion": [
+												"Paso 3 de 4.  Si la variable “x” se declara de tipo boolean, selecciona la expresión de asignación que es compatible."
+
+											],
+											"textoEmocional": {
+												"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+												"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+												"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+												"retroalimentacion": {                           
+													"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+													"neutral": "La respuesta no es la correcta",
+													"negativa": "¿Estás seguro de querer estudiar este curso?."
+													} 
+
+											},
+											"opciones": [
+											]
+										},
+										{
+											"texto": "x = true;",
+											"paso": 9,
+											"tipo": "pasooptimo",
+											"instruccion": "Selecciona la opción correcta.",
+											"presentacion": [
+												"Paso 4 de 4. ¿Cuál de las siguientes sentencias de asignación es válida? (asumiendo que las variables están declaradas correctamente)"
+
+											],
+											"textoEmocional": {
+												"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+												"encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+												"sorprendido": "¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+												"compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+												"esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+												"retroalimentacion": {
+													"positiva": "¡Excelente!, ¡La respuesta es correcta.",
+													"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+													"negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+													} 
+
+											},
+											"opciones": [
+													{
+														"texto": "x 12 =;",
+														"paso": 10,
+														"tipo": "pasoerroneo",
+														"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+														"presentacion": [
+															"Paso 4 de 4. ¿Cuál de las siguientes sentencias de asignación es válida? (asumiendo que las variables están declaradas correctamente)"
+
+														],
+														"textoEmocional": {
+															"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+															"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+															"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+															"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+															"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+															"retroalimentacion": {                           
+																"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+																"neutral": "La respuesta no es la correcta",
+																"negativa": "¿Estás seguro de querer estudiar este curso?."
+																			} 
+
+														},
+														"opciones": [
+														]
+													},{
+														"texto": "12 = x;",
+														"paso": 11,
+														"tipo": "pasoerroneo",
+														"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
+														"presentacion": [
+															"Paso 4 de 4. ¿Cuál de las siguientes sentencias de asignación es válida? (asumiendo que las variables están declaradas correctamente)"
+
+														],
+														"textoEmocional": {
+															"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+															"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+															"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+															"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+															"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+															"retroalimentacion": {                           
+																"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+																"neutral": "La respuesta no es la correcta",
+																"negativa": "¿Estás seguro de querer estudiar este curso?."
+																			} 
+
+														},
+														"opciones": [
+														]
+													},{
+														"texto": "y + x = x;",
+														"paso": 12,
+														"tipo": "pasoerroneo",
+														"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
+														"presentacion": [
+															"Paso 4 de 4. ¿Cuál de las siguientes sentencias de asignación son válida? (asumiendo que las variables están declaradas correctamente)"
+
+														],
+														"textoEmocional": {
+															"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+															"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+															"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+															"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+															"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+															"retroalimentacion": {                           
+																"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+																"neutral": "La respuesta no es la correcta",
+																"negativa": "¿Estás seguro de querer estudiar este curso?."
+																			} 
+
+														},
+														"opciones": [
+														]
+													},{
+														"texto": "y = x + 12;",
+														"paso": 13,
+														"tipo": "pasofinaloptimo",
+														"instruccion": "Muy bien, la respuesta es correcta, continua con mas ejercicios del menú.",
+														"presentacion": [
+															"Paso 4 de 4. ¿Cuáles de las siguientes sentencias de asignación son inválidas? (asumiendo que las variables están declaradas correctamente)"
+
+														],
+														"textoEmocional": {
+                                                                                                                        "neutral": "La respuesta es correcta.",
+                                                                                                                        "encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+                                                                                                                        "sorprendido": "¡Me sorprendes!, continúa así.",
+                                                                                                                        "compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+                                                                                                                        "esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+                                                                                                                        "retroalimentacion": {                            
+                                                                                                                                "positiva": "¡Excelente!, la respuesta es correcta.  Continúa con el ejercicio.",
+                                                                                                                                "neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+                                                                                                                                "negativa": "La respuesta es correcta, pero aprender Java requiere que te tomes las cosas en serio."                            
+                                                                                                                        } 
+
+														},
+														"opciones": [
+														]
+													}
+											]
+										},
+										{
+											"texto": "x = “true”;",
+											"paso": 14,
+											"tipo": "pasoerroneo",
+											"instruccion": "La respuesta es incorrecta, el uso de comillas dobles es propio de un dato tipo string.",
+											"presentacion": [
+												"Paso 3 de 4.  Si la variable “x” se declara de tipo boolean, selecciona la expresión de asignación que es compatible."
+
+											],
+											"textoEmocional": {
+												"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+												"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+												"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+												"retroalimentacion": {                           
+													"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+													"neutral": "La respuesta no es la correcta",
+													"negativa": "¿Estás seguro de querer estudiar este curso?."
+													} 
+
+											},
+											"opciones": [
+											]
+										},
+										{
+											"texto": "x = 1;",
+											"paso": 15,
+											"tipo": "pasoerroneo",
+											"instruccion": "La respuesta es incorrecta, un valor númerico no es propio de un dato tipo boolean",
+											"presentacion": [
+												"Paso 3 de 4.  Si la variable “x” se declara de tipo boolean, selecciona la expresión de asignación que es compatible."
+
+											],
+											"textoEmocional": {
+												"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+												"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+												"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+												"retroalimentacion": {                           
+													"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+													"neutral": "La respuesta no es la correcta",
+													"negativa": "¿Estás seguro de querer estudiar este curso?."
+													} 
+
+											},
+											"opciones": [
+											]
+										}
+								
+								]
+							},{
+								"texto": "x = 7L;",
+								"paso": 16,
+								"tipo": "pasoerroneo",
+								"instruccion": "La respuesta es incorrecta, los valores alfanúmericos no son compatibles con un valor de tipo int.",
+								"presentacion": [
+									"Paso 2 de 4.  Si la variable \"x\" se declara de tipo int, selecciona la expresión de asignación que es compatible."
+
+								],
+								"textoEmocional": {
+									"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+									"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+									"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+									"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+									"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+									"retroalimentacion": {                           
+										"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+										"neutral": "La respuesta no es la correcta",
+										"negativa": "¿Estás seguro de querer estudiar este curso?."
+										} 
+
+								},
+								"opciones": [
+								]
+							}
+					]
+				}
+			]
+		}
+	]
+}

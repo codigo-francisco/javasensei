@@ -1,0 +1,797 @@
+{
+	"id": 17,
+	"paso": -1,
+	"tipo": "instruccionesiniciales",
+	"instruccionesejercicio": [
+		"El siguiente ejercicio esta relacionado con los programas básicos en Java"
+	],
+	"opciones": [
+		{
+			"paso": 0,
+			"tipo": "pasoinicial",
+			"instruccion": "Paso 1 de 6. Selecciona la opción que define a la clase Test.",
+			"presentacion": [
+				"public <input type='text' readonly> Test {",	
+				"}"
+			],
+			"textoEmocional": {
+				"neutral": "Inicia el ejercicio.",
+                                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                                "retroalimentacion": {
+                                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
+                                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
+                                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+				}
+			},
+			"opciones": [
+				{
+					"texto": "Class",
+					"paso": 1,
+					"tipo": "pasoerroneo",
+					"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
+					"presentacion": [
+						"public <input type='text' readonly value='Class' class='errorTracing'> Test {",	
+						"}"
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+							"neutral": "La respuesta no es la correcta",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+					},
+					"opciones": [
+						
+					]
+				},
+				{
+					"texto": "static",
+					"paso": 2,
+					"tipo": "pasoerroneo",
+					"instruccion": "La respuesta es incorrecta, Intenta de nuevo.",
+					"presentacion": [
+						"public <input type='text' readonly value='static' class='errorTracing'> Test {",	
+						"}"
+
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+							"neutral": "La respuesta no es la correcta",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+					},
+					"opciones": []
+				},{
+					"texto": "void",
+					"paso": 3,
+					"tipo": "pasoerroneo",
+					"instruccion": "La respuesta es incorrecta, Intenta de nuevo.",
+					"presentacion": [
+						"public <input type='text' readonly value='void' class='errorTracing'> Test {",	
+						"}"
+
+
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+							"neutral": "La respuesta no es la correcta",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						} 
+					},
+					"opciones": [
+						
+					]
+				},{
+					"texto": "class",
+					"paso": 4,
+					"tipo": "pasooptimo",
+					"instruccion": "Paso 2 de 6.  Selecciona la opción que declara una variable de tipo double de nombre num con un valor inicial de 5.0.",
+					"presentacion": [
+						"public <input type='text' readonly value='class' class='focusInput'> Test {",	
+							"\tpublic static void main(String[] args) {",
+								"\t\tSystem.out.println(\"Testing...\");",
+								"\t\t<input type='text' readonly> num = 5.0;",
+							"\t}",
+						"}"
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+						"encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+						"sorprendido": "¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+						"compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+						"esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+						"retroalimentacion": {
+							"positiva": "¡Excelente!, ¡La respuesta es correcta.",
+							"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+							"negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+							} 
+
+					},
+					"opciones": [
+						{
+							"texto": "boolean",
+							"paso": 5,
+							"tipo": "pasoerroneo",
+							"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
+							"presentacion": [
+								"public <input type='text' value='class' class='focusInput'> Test {",	
+									"\tpublic static void main(String[] args) {",
+										"\t\tSystem.out.println(\"Testing...\");",
+										"\t\t<input type='text' readonly value='boolean ' class='errorTracing'> num = 5.0;",
+									"\t}",
+								"}"
+
+							],
+							"textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+									"neutral": "La respuesta no es la correcta",
+									"negativa": "¿Estás seguro de querer estudiar este curso?."
+								} 
+							},
+							"opciones": [
+								
+							]
+						},{
+							"texto": "int",
+							"paso": 6,
+							"tipo": "pasoerroneo",
+							"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+							"presentacion": [
+								"public <input type='text' value='class' class='focusInput'> Test {",	
+									"\tpublic static void main(String[] args) {",
+										"\t\tSystem.out.println(\"Testing...\");",
+										"\t\t<input type='text' readonly value='int' class='errorTracing'> num = 5.0;",
+									"\t}",
+								"}"
+
+
+							],
+							"textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+									"neutral": "La respuesta no es la correcta",
+									"negativa": "¿Estás seguro de querer estudiar este curso?."
+								} 
+							},
+							"opciones": [
+								
+							]
+						},{
+							"texto": "double",
+							"paso": 7,
+							"tipo": "pasooptimo",
+							"instruccion": "Paso 3 de 6. Selecciona la opción que declara una variable de tipo cadena (String) e imprime el resultado de los cálculos en la consola de salida.",
+							"presentacion": [
+									"public <input type='text' value='class' class='focusInput'> Test {",	
+									"\tpublic static void main(String[] args) {",
+										"\t\tSystem.out.println(\"Testing...\");",
+										"\t\t<input type='text' readonly value='double' class='focusInput'> num = 5.0;",
+										"\t\tString<input type='text' readonly>= “El número es:” + num;",
+										"\t\tSystem.out.println(cadena);",
+									"\t}",
+								"}"
+
+							],
+							"textoEmocional": {
+								"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+								"encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+								"sorprendido": "¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+								"compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+								"esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+								"retroalimentacion": {
+									"positiva": "¡Excelente!, ¡La respuesta es correcta.",
+									"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+									"negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+									}
+ 
+							},
+							"opciones": [
+								{
+									"texto": "número",
+									"paso": 8,
+									"tipo": "pasoerroneo",
+									"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
+									"presentacion": [
+										"public <input type='text' value='class' class='focusInput'> Test {",	
+										"\tpublic static void main(String[] args) {",
+										"\t\tSystem.out.println(\"Testing...\");",
+										"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+										"\t\tString <input type='text' readonly value='número' class='errorTracing'> = “El número es:” + num;",
+										"\t\tSystem.out.println(cadena);",
+										"\t}",
+										"}"
+
+
+									],
+									"textoEmocional": {
+										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+										"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+										"retroalimentacion": {                           
+											"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+											"neutral": "La respuesta no es la correcta",
+											"negativa": "¿Estás seguro de querer estudiar este curso?."
+										} 
+									},
+									"opciones": [
+										
+									]
+								},{
+									"texto": "resultado",
+									"paso": 9,
+									"tipo": "pasoerroneo",
+									"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
+									"presentacion": [
+										"public <input type='text' value='class' class='focusInput'> Test {",	
+										"\tpublic static void main(String[] args) {",
+										"\t\tSystem.out.println(\"Testing...\");",
+										"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+										"\t\tString <input type='text' readonly value='resultado ' class='errorTracing'> = “El número es:” + num;",
+										"\t\tSystem.out.println(cadena);",
+										"\t}",
+										"}"
+
+
+									],
+									"textoEmocional": {
+										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+										"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+										"retroalimentacion": {                           
+											"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+											"neutral": "La respuesta no es la correcta",
+											"negativa": "¿Estás seguro de querer estudiar este curso?."
+										} 
+									},
+									"opciones": [
+										
+									]
+								},{
+									"texto": "imprimir",
+									"paso": 10,
+									"tipo": "pasoerroneo",
+									"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+									"presentacion": [
+										"public <input type='text' value='class' class='focusInput'> Test {",	
+										"\tpublic static void main(String[] args) {",
+										"\t\tSystem.out.println(\"Testing...\");",
+										"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+										"\t\tString <input type='text' readonly value='imprimir  ' class='errorTracing'> = “El número es:” + num;",
+										"\t\tSystem.out.println(cadena);",
+										"\t}",
+										"}"
+
+
+									],
+									"textoEmocional": {
+										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+										"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+										"retroalimentacion": {                           
+											"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+											"neutral": "La respuesta no es la correcta",
+											"negativa": "¿Estás seguro de querer estudiar este curso?."
+										} 
+									},
+									"opciones": [
+										
+									]
+								},{
+									"texto": "cadena",
+									"paso": 11,
+									"tipo": "pasooptimo",
+									"instruccion": "Paso 4 de 6. Con que nombre y extensión se deberá guardar el código anterior.",
+									"presentacion": [
+										"Nombre de archivo: <input type='text' readonly>",
+										"public <input type='text' value='class' class='focusInput'> Test {",	
+										"\tpublic static void main(String[] args) {",
+										"\t\tSystem.out.println(\"Testing...\");",
+										"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+										"\t\tString <input type='text' readonly value='cadena' class='focusInput'> = “El número es:” + num;",
+										"\t\tSystem.out.println(cadena);",
+										"\t}",
+										"}"
+
+
+									],
+									"textoEmocional": {
+										"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+										"encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+										"sorprendido": "¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+										"compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+										"esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+										"retroalimentacion": {
+											"positiva": "¡Excelente!, ¡La respuesta es correcta.",
+											"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+											"negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+											} 
+									},
+									"opciones": [
+										{
+											"texto": "Test.java",
+											"paso": 12,
+											"tipo": "pasoptimo",
+											"instruccion": "Paso 5 de 6.  ¿Con qué comando en modo consola se debe compilar el archivo Test.java?",
+											"presentacion": [
+												"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
+												"public <input type='text' value='class' class='focusInput'> Test {",	
+												"\tpublic static void main(String[] args) {",
+												"\t\tSystem.out.println(\"Testing...\");",
+												"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+												"\t\tString <input type='text' readonly value='cadena' class='focusInput'> = “El número es:” + num;",
+												"\t\tSystem.out.println(cadena);",
+												"\t}",
+												"}",
+												">> <input type='text' readonly>"
+
+											],
+											"textoEmocional": {
+												"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+												"encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+												"sorprendido": "¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+												"compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+												"esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+												"retroalimentacion": {
+													"positiva": "¡Excelente!, ¡La respuesta es correcta.",
+													"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+													"negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+													} 
+
+											},
+											"opciones": [
+												{
+													"texto": "java Test.java",
+													"paso": 13,
+													"tipo": "pasoerroneo",
+													"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+													"presentacion": [
+														"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
+														"public <input type='text' value='class' class='focusInput'> Test {",	
+														"\tpublic static void main(String[] args) {",
+														"\t\tSystem.out.println(\"Testing...\");",
+														"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+														"\t\tString <input type='text' readonly value='cadena' class='focusInput'> = “El número es:” + num;",
+														"\t\tSystem.out.println(cadena);",
+														"\t}",
+														"}",
+														">> <input type='text' readonly value='java Test.java' class='errorTracing'>"
+
+
+													],
+													"textoEmocional": {
+														"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+														"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+														"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+														"retroalimentacion": {                           
+															"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+															"neutral": "La respuesta no es la correcta",
+															"negativa": "¿Estás seguro de querer estudiar este curso?."
+														} 
+													},
+													"opciones": [
+														
+													]
+												},{
+													"texto": "javac Test",
+													"paso": 14,
+													"tipo": "pasoerroneo",
+													"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+													"presentacion": [
+														"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
+														"public <input type='text' value='class' class='focusInput'> Test {",	
+														"\tpublic static void main(String[] args) {",
+														"\t\tSystem.out.println(\"Testing...\");",
+														"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+														"\t\tString <input type='text' readonly value='cadena' class='focusInput'> = “El número es:” + num;",
+														"\t\tSystem.out.println(cadena);",
+														"\t}",
+														"}",
+														">> <input type='text' readonly value='javac Test' class='errorTracing'>"
+
+
+													],
+													"textoEmocional": {
+														"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+														"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+														"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+														"retroalimentacion": {                           
+															"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+															"neutral": "La respuesta no es la correcta",
+															"negativa": "¿Estás seguro de querer estudiar este curso?."
+														} 
+													},
+													"opciones": [
+														
+													]
+												},{
+													"texto": "run Test.java",
+													"paso": 15,
+													"tipo": "pasoerroneo",
+													"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+													"presentacion": [
+														"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
+														"public <input type='text' value='class' class='focusInput'> Test {",	
+														"\tpublic static void main(String[] args) {",
+														"\t\tSystem.out.println(\"Testing...\");",
+														"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+														"\t\tString <input type='text' readonly value='cadena' class='focusInput'> = “El número es:” + num;",
+														"\t\tSystem.out.println(cadena);",
+														"\t}",
+														"}",
+														">> <input type='text' readonly value='run Test.java' class='errorTracing'>"
+
+
+													],
+													"textoEmocional": {
+														"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+														"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+														"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+														"retroalimentacion": {                           
+															"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+															"neutral": "La respuesta no es la correcta",
+															"negativa": "¿Estás seguro de querer estudiar este curso?."
+														} 
+													},
+													"opciones": [
+														
+													]
+												},{
+														"texto": "javac Test.java",
+														"paso": 16,
+														"tipo": "pasooptimo",
+														"instruccion": "Paso 6 de 6. ¿Con qué comando en modo consola se ejecuta el programa anterior?",
+														"presentacion": [
+															"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
+															"public <input type='text' value='class' class='focusInput'> Test {",	
+															"\tpublic static void main(String[] args) {",
+															"\t\tSystem.out.println(\"Testing...\");",
+															"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+															"\t\tString <input type='text' readonly value='cadena' class='focusInput'> = “El número es:” + num;",
+															"\t\tSystem.out.println(cadena);",
+															"\t}",
+															"}",
+															">> <input type='text' readonly value='javac Test.java' class='focusInput'>",
+															">> <input type='text' readonly>"
+
+														],
+														"textoEmocional": {
+															"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+															"encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+															"sorprendido": "¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+															"compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+															"esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+															"retroalimentacion": {
+																"positiva": "¡Excelente!, ¡La respuesta es correcta.",
+																"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+																"negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+																} 
+														},
+														"opciones": [
+															{
+																"texto": "java test",
+																"paso": 17,
+																"tipo": "pasoerroneo",
+																"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+																"presentacion": [
+																	"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
+																	"public <input type='text' value='class' class='focusInput'> Test {",	
+																	"\tpublic static void main(String[] args) {",
+																	"\t\tSystem.out.println(\"Testing...\");",
+																	"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+																	"\t\tString <input type='text' readonly value='cadena' class='focusInput'> = “El número es:” + num;",
+																	"\t\tSystem.out.println(cadena);",
+																	"\t}",
+																	"}",
+																	">> <input type='text' readonly value='javac Test.java' class='focusInput'>",
+																	">> <input type='text' readonly value='java test ' class='errorTracing'>"
+
+																],
+																"textoEmocional": {
+																	"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+																	"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+																	"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+																	"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+																	"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+																	"retroalimentacion": {                           
+																		"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+																		"neutral": "La respuesta no es la correcta",
+																		"negativa": "¿Estás seguro de querer estudiar este curso?."
+																	} 
+																},
+																"opciones": [
+																	
+																]
+															},{
+																"texto": "java Test",
+																"paso": 18,
+																"tipo": "pasofinaloptimo",
+																"instruccion": "La respuesta es correcta, continua con más ejercicios del menú.",
+																"presentacion": [
+																	"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
+																	"public <input type='text' value='class' class='focusInput'> Test {",	
+																	"\tpublic static void main(String[] args) {",
+																	"\t\tSystem.out.println(\"Testing...\");",
+																	"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+																	"\t\tString <input type='text' readonly value='cadena' class='focusInput'> = “El número es:” + num;",
+																	"\t\tSystem.out.println(cadena);",
+																	"\t}",
+																	"}",
+																	">> <input type='text' readonly value='javac Test.java' class='focusInput'>",
+																	">> <input type='text' readonly value='java Test ' class='focusInput'>"
+
+
+																],
+																"textoEmocional": {
+																	"neutral": "La respuesta es correcta.  Has finalizado el ejercicio.",
+																	"encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+																	"sorprendido": "¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+																	"compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+																	"esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+																	"retroalimentacion": {
+																		"positiva": "¡Excelente!, ¡La respuesta es correcta.",
+																		"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+																		"negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+																		}  
+																},
+																"opciones": [
+																	
+																]
+															},{
+																"texto": "java Test.java",
+																"paso": 19,
+																"tipo": "pasoerroneo",
+																"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+																"presentacion": [
+																	"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
+																	"public <input type='text' value='class' class='focusInput'> Test {",	
+																	"\tpublic static void main(String[] args) {",
+																	"\t\tSystem.out.println(\"Testing...\");",
+																	"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+																	"\t\tString <input type='text' readonly value='cadena' class='focusInput'> = “El número es:” + num;",
+																	"\t\tSystem.out.println(cadena);",
+																	"\t}",
+																	"}",
+																	">> <input type='text' readonly value='javac Test.java' class='focusInput'>",
+																	">> <input type='text' readonly value='java Test.java' class='errorTracing'>"
+
+
+																],
+																"textoEmocional": {
+																	"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+																	"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+																	"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+																	"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+																	"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+																	"retroalimentacion": {                           
+																		"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+																		"neutral": "La respuesta no es la correcta",
+																		"negativa": "¿Estás seguro de querer estudiar este curso?."
+																	} 
+																},
+																"opciones": [
+																	
+																]
+															},{
+																"texto": "java Test.class",
+																"paso": 20,
+																"tipo": "pasoerroneo",
+																"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+																"presentacion": [
+																	"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
+																	"public <input type='text' value='class' class='focusInput'> Test {",	
+																	"\tpublic static void main(String[] args) {",
+																	"\t\tSystem.out.println(\"Testing...\");",
+																	"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+																	"\t\tString <input type='text' readonly value='cadena' class='focusInput'> = “El número es:” + num;",
+																	"\t\tSystem.out.println(cadena);",
+																	"\t}",
+																	"}",
+																	">> <input type='text' readonly value='javac Test.java' class='focusInput'>",
+																	">> <input type='text' readonly value='java Test.class' class='errorTracing'>"
+
+
+																],
+																"textoEmocional": {
+																	"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+																	"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+																	"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+																	"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+																	"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+																	"retroalimentacion": {                           
+																		"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+																		"neutral": "La respuesta no es la correcta",
+																		"negativa": "¿Estás seguro de querer estudiar este curso?."
+																	} 
+																},
+																"opciones": [
+																	
+																]
+															}
+
+
+														]
+													}
+											]
+										},{
+											"texto": "Test.class",
+											"paso": 21,
+											"tipo": "pasoerroneo",
+											"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+											"presentacion": [
+												"Nombre de archivo: <input type='text' readonly value='Test.class' class='errorTracing'>",
+												"public <input type='text' value='class' class='focusInput'> Test {",	
+												"\tpublic static void main(String[] args) {",
+												"\t\tSystem.out.println(\"Testing...\");",
+												"\t\t <input type='text' value='double' class='focusInput'>num = 5.0;",
+												"\t\tString <input type='text' readonly value='cadena' class='focusInput'>= “El número es:” + num;",
+												"\t\tSystem.out.println(cadena);",
+												"\t}",
+												"}"
+
+
+											],
+											"textoEmocional": {
+												"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+												"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+												"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+												"retroalimentacion": {                           
+													"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+													"neutral": "La respuesta no es la correcta",
+													"negativa": "¿Estás seguro de querer estudiar este curso?."
+												} 
+											},
+											"opciones": [
+												
+											]
+										},{
+											"texto": "test.java",
+											"paso": 22,
+											"tipo": "pasoerroneo",
+											"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+											"presentacion": [
+												"Nombre de archivo: <input type='text' readonly value='test.java ' class='errorTracing'>",
+												"public <input type='text' value='class' class='focusInput'> Test {",	
+												"\tpublic static void main(String[] args) {",
+												"\t\tSystem.out.println(\"Testing...\");",
+												"\t\t <input type='text' value='double' class='focusInput'> num = 5.0;",
+												"\t\tString <input type='text' readonly value='cadena' class='focusInput'>= “El número es:” + num;",
+												"\t\tSystem.out.println(cadena);",
+												"\t}",
+												"}"
+
+
+											],
+											"textoEmocional": {
+												"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+												"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+												"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+												"retroalimentacion": {                           
+													"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+													"neutral": "La respuesta no es la correcta",
+													"negativa": "¿Estás seguro de querer estudiar este curso?."
+												} 
+											},
+											"opciones": [
+												
+											]
+										},{
+											"texto": "test.exe",
+											"paso": 23,
+											"tipo": "pasoerroneo",
+											"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+											"presentacion": [
+												"Nombre de archivo: <input type='text' readonly value='test.exe ' class='errorTracing'>",
+												"public <input type='text' value='class' class='focusInput'> Test {",	
+												"\tpublic static void main(String[] args) {",
+												"\t\tSystem.out.println(\"Testing...\");",
+												"\t\t<input type='text' value='double' class='focusInput'> num = 5.0;",
+												"\t\tString <input type='text' readonly value='cadena' class='focusInput'>= “El número es:” + num;",
+												"\t\tSystem.out.println(cadena);",
+												"\t}",
+												"}"
+
+
+											],
+											"textoEmocional": {
+												"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+												"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+												"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+												"retroalimentacion": {                           
+													"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+													"neutral": "La respuesta no es la correcta",
+													"negativa": "¿Estás seguro de querer estudiar este curso?."
+												} 
+											},
+											"opciones": [
+												
+											]
+										}
+									]
+								}
+							]
+						},{
+							"texto": "float",
+							"paso": 24,
+							"tipo": "pasoerroneo",
+							"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
+							"presentacion": [
+								"public <input type='text' value='class' class='focusInput'> Test {"	,
+									"\tpublic static void main(String[] args) {",
+										"\t\tSystem.out.println(\"Testing...\");",
+										"\t\t <input type='text' readonly value='float' class='errorTracing'>num = 5.0;",
+									"\t}",
+								"}"
+
+
+							],
+							"textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+									"neutral": "La respuesta no es la correcta",
+									"negativa": "¿Estás seguro de querer estudiar este curso?."
+								} 
+							},
+							"opciones": [
+								
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

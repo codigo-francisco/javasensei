@@ -1,17 +1,17 @@
 .missconception{
     border: 1px solid red;
-    
+
 }
 .optiontext{
-    
+
 }
 .areatracing input[type='text']{
     -webkit-border-radius: 15px 15px 15px 15px;
     border-radius: 1em 1em 1em 1em;
-    
+
     font-size: small;
     padding-left: 0.5em;
-    
+
     /*width: 6em;*/
 }
 .focusInput{
@@ -29,4 +29,19 @@
 }
 .instrucciones{
     font-weight: bold;
+}
+
+#progressbar{
+    height: 1em;
+    background: #FFF;
+    border-radius: 1em;
+}
+
+@media only screen and (min-width:575px){
+    #divProgressbar{
+        width: 50%;
+        padding-top: 1em;
+        display: inline-block;
+        float: left;
+    }
 }

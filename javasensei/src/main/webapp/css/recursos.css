@@ -1,0 +1,63 @@
+/*Estilos del código*/
+pre.prettyprint{
+    border:1px solid #d6d6d6;
+    background: #eee;
+    font-size: 1.2em;
+    overflow: auto;
+    line-height: 1.6;
+    margin: 0em;
+    padding-top: 0.5em;
+}
+/*Estilo de los titulos de los recursos*/
+#titulo_recurso{
+    font-size: 1.5em;
+    margin: auto;
+}
+
+/*Estilo de los parrafos de los recursos*/
+p{
+    font-size: 1em;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/*Resposive text*/
+@media only screen and (max-width: 768px){
+
+    pre.prettyprint{
+        font-size: 1em;
+    }    
+    /*Estilo de los titulos de los recursos*/
+    #titulo_recurso{
+        font-size: 1em;
+
+    }
+    p{
+        font-size: 0.7em;
+    }
+}
+
+/*Estilo para los videos*/
+.js-video {
+    height: 0;
+    padding-top: 25px;
+    padding-bottom: 67.5%;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.js-video.widescreen {
+    padding-bottom: 56.34%;
+}
+
+.js-video.vimeo {
+    padding-top: 0;
+}
+.js-video embed, .js-video iframe, .js-video object, .js-video video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
