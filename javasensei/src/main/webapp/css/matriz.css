@@ -1,0 +1,40 @@
+span.optimo {
+  background: #21610b;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  line-height: 1.6em;
+  text-align: center;
+  width: 1.6em;
+  border: #21610b solid 0.1em;
+}
+ 
+span.sub {
+  background: #00ff40;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  line-height: 1.6em;
+  text-align: center;
+  width: 1.6em;
+  border: #00ff40 solid 0.1em;
+}
+span.white {
+  background: #ffffff;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #000000;
+  display: inline-block;
+  line-height: 1.6em;
+  text-align: center;
+  width: 1.6em;
+  border-radius: 0.8em;
+  border: black solid 0.1em;
+}
+.ui-table{
+    font-size:0.8em;
+}
