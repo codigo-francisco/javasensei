@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Constructor JSON para Java Sensei</title>
+	<link rel="stylesheet" href="css/constructorJSON.css">
+	<script type="text/javascript" src="js/constructorJSON.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/FileSaver.min.js"></script>
+</head>
+<body>
+	<header><h1>Autor para crear JSON</h1></header>
+	<section>
+		<article id="campos">
+			<p>
+			<span>Id</span> <br>
+			<input type="number" id="Id" autofocus> <br>
+			<span>Instrucciones del Ejercicio</span> <br>
+			<textarea id="Instrucciones del Ejercicio"></textarea><br>
+		</article>
+		<br>
+		<article id="opciones">
+			<p>
+			<span><strong>Opciones</strong></span>
+			<ul id="listaOpciones">
+				<li><span onmouseover="puntero()" onmouseout="punteroOut()" onclick="adentrar(0)">Paso Inicial</span></li>
+			</ul>
+		</article>
+		<br>
+		<article id="botones">
+			<input type="button" value="Agregar" id="btnAgregar" onclick="agregarOpcion()" disabled>
+			<input type="button" value="Borrar" id="btnBorrar" onclick="borrarOpcion()" disabled>
+		</article>
+		<br>
+		<article></article>
+		<article id="guardar">
+			<input type="button" value="Atras" id="btnAtras" onclick="atrasar()" disabled>
+			<input type="button" value="Grabar" onclick="transformarJSON()">
+		</article>
+	</section>
+</body>
+</html>
