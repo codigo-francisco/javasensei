@@ -106,15 +106,22 @@ public class RecursoManager {
     public String guardar(int coleccion, String json, String oldJson){
         BasicDBObject jsonResult = new BasicDBObject();
         DBObject old = oldJson.isEmpty()?null:(DBObject)JSON.parse(oldJson);
+        WriteResult result = null;
         //Eliminar
         if(json.trim().equalsIgnoreCase("delete") && old!=null){
             switch(coleccion){
-                case 1: leccionesCollection.remove(old); break;
-                case 2: temasCollection.remove(old); break;
-                case 3: ejerciciosCollection.remove(old); break;
+                case 1: result = leccionesCollection.remove(old); break;
+                case 2: result = temasCollection.remove(old); break;
+                case 3: result = ejerciciosCollection.remove(old); break;
             }
-            jsonResult.append("result", true);
-            jsonResult.append("More", "Operación de eliminacion realizada correctamente.");
+            if(result.getN() > 0){
+                jsonResult.append("result", true);
+                jsonResult.append("More", "Operación de eliminacion realizada correctamente.");
+            }
+            else{
+                jsonResult.append("result", false);
+                jsonResult.append("More", "Error en la operación de eliminacion.");
+            }
             return jsonResult.toString();
         }
         DBObject update; 
@@ -132,7 +139,6 @@ public class RecursoManager {
                 jsonResult.append("More", "No es posible realizar la operación, el ID ya existe.");
                 return jsonResult.toString();
             }
-        WriteResult result = null;
         //GuardarNuevo
         if(old==null){
             switch(coleccion){
@@ -149,14 +155,14 @@ public class RecursoManager {
                 case 3: result=ejerciciosCollection.update(old, update); break;
             }
         }
-        //genN() regresa si se hizo algun cambio (Francisco), pero en el Insert aunque si inserte regresa 0
-        if(result.getN()<=0 && old!=null){
+        if(result.isUpdateOfExisting() || result.getN()==0){
+            jsonResult.append("result",true);
+            jsonResult.append("More", "Operación Guardar realizada correctamente.");
+        }
+        else{
             jsonResult.append("result",false);
-            jsonResult.append("More", "Error en el servidor, no hizo cambios.");
-            return jsonResult.toString();
-        }    
-        jsonResult.append("result", true);
-        jsonResult.append("More", "Operación realizada correctamente.");
+            jsonResult.append("More", "Error en la operación Guardar.");
+        }
         return jsonResult.toString();
     }
     public Boolean validarId(int coleccion, int id){
