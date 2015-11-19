@@ -155,13 +155,16 @@ function guardar(op){
         dataType: "json"
     }).done(function (data) {
         alert(data.More);
+        if(data.result){
+            btnNuevo.value="Nuevo";
+            collectionBox.disabled=false;
+            collectionBox.selectedIndex=0;
+            cargarSelectJSON(0);
+        }
     }).fail(function (data) {
-        alert(data.More);        
+        alert("Error en la petición AJAX para Guardar.");        
     });
-    btnNuevo.value="Nuevo";
-    collectionBox.disabled=false;
-    collectionBox.selectedIndex=0;
-    cargarSelectJSON(0);
+    
 }
 function borrar(){
     var jsonBox = document.getElementById("jsonBox");
@@ -178,10 +181,12 @@ function borrar(){
         dataType: "json"
     }).done(function (data) {
         alert(data.More);
+        if(data.result){
+            collectionBox.disabled=false;
+            collectionBox.selectedIndex=0;
+            cargarSelectJSON(0);
+        }
     }).fail(function (data) {
-        alert(data.More);        
-    });
-    collectionBox.disabled=false;
-    collectionBox.selectedIndex=0;
-    cargarSelectJSON(0);
+        alert("Error en la petición AJAX para Borrar.");        
+    });   
 }
