@@ -1,0 +1,43 @@
+body{
+    font-family: Arial;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin: 20px auto;
+    max-width: 1024px;
+    text-align: center;
+}
+section article{
+	display: inline-block;
+	text-align: left;
+	width: 40%;
+}
+input, select{
+	width: 100%;
+}
+textarea{
+	resize: none;
+	width: 100%;
+	height: 60px;
+	font-family: Arial;
+}
+strong{
+	font-style: normal;
+	font-size: 1.2em;
+}
+span{
+	font-size: 1.1em;
+	font-style: italic;
+}
+#botones{
+	text-align: center;
+}
+#botones input{
+	width: 40%;
+}
+#guardar{
+	text-align: right;
+}
+#guardar input{
+	width: 25%;
+}
