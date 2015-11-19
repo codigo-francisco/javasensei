@@ -74,7 +74,7 @@
 
             function cargarEjercicio(event) {
                 example_tracing.suscribir_todos_ejercicios(avatar_sensei);
-                example_tracing.construir_ejercicio(event.data.url);
+                example_tracing.construir_ejercicio(event.data);
 
                 return false;
             }
@@ -349,6 +349,7 @@
                 <div class="areatracing">
                     <div id="areatrabajo">
                         <div class="ui-grid-solo ui-responsive">
+                            <span style="font-weight: bold;color: #3380b9" id="tituloEjercicio"></span><br><br>
                             <span class="instrucciones">Instrucciones:</span>
                             <div id="instruccion" class="ui-block-a">
 

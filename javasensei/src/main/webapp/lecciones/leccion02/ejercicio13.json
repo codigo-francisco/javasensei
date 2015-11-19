@@ -1,0 +1,316 @@
+{
+    "id": 13,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+        "El siguiente ejercicio está relacionado con el uso de identificadores en Java.",
+        "Un identificador es una serie de caracteres que pueden ser letras, dígitos, guiones bajos (_) y signos de moneda ($), que no comience con un dígito ni tenga espacios."       
+    ],
+    "opciones": [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Paso 1 de 3. ¿Cuál de los siguientes identificadores no es válido?",
+            "presentacion": [			
+			
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
+                    "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                } 
+            },
+            "opciones": [
+				{
+					"texto": "RDD2",
+					"paso": 1,
+					"tipo": "pasoerroneo",
+					"instruccion": "La respuesta es incorrecta. Es válido porque un identificador es una serie de caracteres que pueden ser letras, dígitos, guiones bajos (_) y signos de moneda ($), que no comience con un dígito ni tenga espacios.",
+					"presentacion": [
+						
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+					},
+					"opciones": [
+					]
+				},
+				{
+					"texto": "3CPO",
+					"paso": 2,
+					"tipo": "pasooptimo",
+					"instruccion": "Paso 2 de 3. ¿Cuál de los siguientes identificadores no es válido? ",
+					"presentacion": [
+
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es correcta.",
+						"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+						"sorprendido": "¡Me sorprendes!, continúa así.",
+						"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+						"esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+						"retroalimentacion": {                            
+							"positiva": "¡Excelente!, la respuesta es correcta.  Continúa con el ejercicio.",
+							"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+							"negativa": "La respuesta es correcta, pero aprender Java requiere que te tomes las cosas en serio."                            
+						}
+					},
+					"opciones": [  
+							{
+							"texto": "3amigos",
+							"paso": 3,
+							"tipo": "pasooptimo",
+							"instruccion": "Paso 3 de 3. De las siguientes declaraciones de variable señala la que no es correcta.",
+							"presentacion": [
+
+							],
+							"textoEmocional": {
+								"neutral": "La respuesta es correcta. Continúa con el ejercicio.",
+								"encantado": "¡Te siento comprometido contigo mismo, continúa con el ejercicio.",
+								"sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+								"compasivo": "Se que Java aveces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
+								"esceptico": "Se que Java te es indiferente.  Al menos trata de terminar el ejercicio.",
+								"retroalimentacion": {
+									"positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con el ejercicio.",
+									"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+									"negativa": "Al parecer no te gusta estudiar, pero es parte importante de tu formación académica."
+								}                                    
+							},
+							"opciones": [
+																	
+								{
+									"texto": "double iva;",
+									"paso": 4,
+									"tipo": "pasoerroneo",
+									"instruccion": "La respuesta es incorrecta. La declaración de una variable no implica su inicialización forzosa.",
+									"presentacion": [
+										
+									],
+									"textoEmocional": {
+										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+										"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+										"retroalimentacion": {                           
+											"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+											"neutral": "La respuesta no es la correcta.",
+											"negativa": "¿Estás seguro de querer estudiar este curso?."
+										}
+									},
+									"opciones": [
+									]
+								},
+								{
+									"texto": "float precio = 84.6f;",
+									"paso": 5,
+									"tipo": "pasoerroneo",
+									"instruccion": "La respuesta es incorrecta. En esa declaración se está asignando un valor correspondiente con el tipo float.",
+									"presentacion": [
+										
+									],
+									"textoEmocional": {
+										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+										"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+										"retroalimentacion": {                           
+											"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+											"neutral": "La respuesta no es la correcta.",
+											"negativa": "¿Estás seguro de querer estudiar este curso?."
+										}
+									},
+									"opciones": [
+									]
+								},
+								{
+									"texto": "boolean valor = 12;",
+									"paso": 6,
+									"tipo": "pasofinaloptimo",
+									"instruccion": "Respuesta correcta. A una variable de tipo boolean sólo se le pueden asignar los valores <i>true</i> o <i>false</i>.",
+									"presentacion": [
+										
+									],
+									"textoEmocional": {
+										"neutral": "La respuesta es correcta.",
+										"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+										"sorprendido": "¡Me sorprendes!, continúa así.",
+										"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+										"esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+										"retroalimentacion": {                            
+											"positiva": "¡Excelente!, la respuesta es correcta.  Continúa con el ejercicio.",
+											"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+											"negativa": "La respuesta es correcta, pero aprender Java requiere que te tomes las cosas en serio."                            
+										}
+									},
+									"opciones": [  
+										
+									]
+								},
+								{
+									"texto": "int inicio = 34, fin = 99; ",
+									"paso": 7,
+									"tipo": "pasoerroneo",
+									"instruccion": "La respuesta es incorrecta. Ambas variables comparten el tipo int y son inicializadas con valores compatibles, siguiendo la sintaxis apropiada.",
+									"presentacion": [
+										
+									],
+									"textoEmocional": {
+										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+										"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+										"retroalimentacion": {                           
+											"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+											"neutral": "La respuesta no es la correcta.",
+											"negativa": "¿Estás seguro de querer estudiar este curso?."
+										}
+									},
+									"opciones": [
+									]
+								}																	   
+							]
+						},	 
+						 {
+							"texto": "Precio_Piso",
+							"paso": 8,
+							"tipo": "pasoerroneo",
+							"instruccion": "La respuesta es incorrecta. Es válido porque un identificador es una serie de caracteres que pueden ser letras, dígitos, guiones bajos (_) y signos de moneda ($), que no comience con un dígito ni tenga espacios.",
+							"presentacion": [
+
+							],
+							"textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+									"neutral": "La respuesta no es la correcta.",
+									"negativa": "¿Estás seguro de querer estudiar este curso?."
+								}
+							},
+							"opciones": [
+																												
+							]
+						},	
+						
+						 {
+							"texto": "PrecioPiso",
+							"paso": 9,
+							"tipo": "pasoerroneo",
+							"instruccion": "La respuesta es incorrecta. Es válido porque un identificador es una serie de caracteres que pueden ser letras, dígitos, guiones bajos (_) y signos de moneda ($), que no comience con un dígito ni tenga espacios.",
+							"presentacion": [
+
+							],
+							"textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+									"neutral": "La respuesta no es la correcta.",
+									"negativa": "¿Estás seguro de querer estudiar este curso?."
+								}
+							},
+							"opciones": [
+																												
+							]
+						},
+						{
+							"texto": "$Piso",
+							"paso": 10,
+							"tipo": "pasoerroneo",
+							"instruccion": "La respuesta es incorrecta. Es válido porque un identificador es una serie de caracteres que pueden ser letras, dígitos, guiones bajos (_) y signos de moneda ($), que no comience con un dígito ni tenga espacios.",
+							"presentacion": [
+
+							],
+							"textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+									"neutral": "La respuesta no es la correcta.",
+									"negativa": "¿Estás seguro de querer estudiar este curso?."
+								}
+							},
+							"opciones": [
+																												
+							]
+						}
+					   
+					]
+				},
+				{
+					"texto": "Yoda",
+					"paso": 11,
+					"tipo": "pasoerroneo",
+					 "instruccion": "La respuesta es incorrecta. Es válido porque un identificador es una serie de caracteres que pueden ser letras, dígitos, guiones bajos (_) y signos de moneda ($), que no comience con un dígito ni tenga espacios.",
+					"presentacion": [
+
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+					},
+					"opciones": [
+					]
+				},
+				{
+					"texto": "JavaSensei",
+					"paso": 12,
+					"tipo": "pasoerroneo",
+					"instruccion": "La respuesta es incorrecta. Es válido porque un identificador es una serie de caracteres que pueden ser letras, dígitos, guiones bajos (_) y signos de moneda ($), que no comience con un dígito ni tenga espacios.",
+					"presentacion": [
+
+					],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+					},
+					"opciones": [
+					]
+				}
+            ]
+        }
+    ]
+}
