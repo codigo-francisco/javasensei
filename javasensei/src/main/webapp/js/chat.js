@@ -17,7 +17,7 @@ var chatSensei = function () {
             if (datos.length>0){
                 //Agregamos nuevos mensajes
                 $.each(datos,function(index,data){
-                    $("#chatbox").append($("<p>").text(data.nombreUsuario + ": " + data.message));
+                    $("#chatbox").append($("<p class='mensaje'>").text(data.nombreUsuario + ": " + data.message));
                 });
 
                 ultimoMensaje = datos[datos.length-1].fecha;
@@ -46,7 +46,7 @@ var chatSensei = function () {
         if (code === 13) {            
             var message = $("#usermsg").val();
             $("#usermsg").val("");
-            $("#chatbox").append($("<p>").text(usuario.nombre + ": " + message));
+            $("#chatbox").append($("<p class='mensaje'>").text(usuario.nombre + ": " + message));
 
             //Enviar mensaje al servidor
             $.ajax({

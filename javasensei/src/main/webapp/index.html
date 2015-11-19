@@ -178,13 +178,24 @@
                 $("#progressbar").progressbar();
 
                 //eliminarBackgroundCamera();
-                $('#chatboton').click(function(){
-                    $('#panelchat').animate({'bottom':'0'},300);
+                $("#chatboton").click(function(){
+                    if ($("#panelchat").css("bottom") == "0px")
+                        $("#panelchat").animate({'bottom':'-100%'},300);
+                    else
+                        $("#panelchat").animate({'bottom':'0'},300);
+                    event.stopPropagation();
                 });
- 
-                $('#close').click(function(){
-                    $('#wrapper').animate({'bottom':'-100%'},300);       
+                
+                $(document).click(function(event){
+                    isButton = $(event.target).is("button");
+                    isPartOfChat = $(event.target.parentNode).is("#wrapper") ||
+                                   $(event.target.parentNode).is("#panelchat") ||
+                                   $(event.target.parentNode).is(".ui-input-text");
+                    if (!isButton && !isPartOfChat) {
+                        $("#panelchat").animate({'bottom':'-100%'},300);
+                    }
                 });
+                
             });
             
         </script>
@@ -371,12 +382,8 @@
             <div data-role="footer" data-position="fixed">
                 <div id="panelchat" class="box">
                     <div id="wrapper" class="box-inner">
-                        <div id="menu">
-                            <p class="welcome">Bienvenido, </p>
-                            <div style="clear:both"></div>
-                        </div> 
                         <div id="chatbox"></div>
-                        <input id="usermsg" name="usermsg" type="text" size="63"/>
+                        <input id="usermsg" name="usermsg" type="text" size="13" autocomplete="off"/>
                     </div>
                 </div>
             </div>
