@@ -14,7 +14,8 @@ $(function(){
         var emocionInicial = $("#inicial").val();
         var emocionFinal = $("#final").val();
         var sesionId = $("#sesion").val();
-        var fecha = $("#fecha").val();
+        var fechaIncial = $("#fechaInicial").val();
+        var fechaFinal = $("#fechaFinal").val();
         var ejercicioId = $("#ejercicio").val();
         
         $.ajax({
@@ -24,7 +25,8 @@ $(function(){
             data:{
                 idAlumno: idAlumno, 
                 ejercicioId: ejercicioId,
-                fecha: fecha,
+                fechaInicial: fechaIncial,
+                fechaFinal: fechaFinal,
                 sesionId: sesionId,
                 emocionInicial: emocionInicial,
                 emocionFinal: emocionFinal

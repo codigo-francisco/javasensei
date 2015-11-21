@@ -9,15 +9,19 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
+
 import java.util.ArrayList;
 import java.util.List;
 import javasensei.db.Connection;
 import javasensei.dbo.bitacora.BitacoraEjerciciosDBO;
-
+import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 /**
  *
  * @author PosgradoMCC
@@ -60,5 +64,39 @@ public class BitacoraEjerciciosManager {
             
             return bitacoras.toString();
         }
+    }
+    
+    public String obtenerBitacora(String idAlumno, String ejercicioId, 
+                                  String fechaInicial, String fechaFinal, String sesionId,
+                                  String emocionInicial, String emocionFinal){
+        
+        //Query para hacer la consulta a la base de datos
+        QueryBuilder builder = QueryBuilder.start();
+        //BasicDBObject builder = new BasicDBObject();
+        
+        Date dateI;
+        Date dateF;
+        
+        if(!idAlumno.isEmpty())
+            builder.put("idAlumno").is(Integer.parseInt(idAlumno));
+        
+        if(!ejercicioId.isEmpty())
+            builder.put("ejercicioId").is(Integer.parseInt(ejercicioId));
+        
+        if(!fechaInicial.isEmpty()){
+            dateI = Date.from(LocalDateTime.parse(fechaInicial).toInstant(ZoneOffset.UTC));
+            builder.put("fecha").greaterThan(dateI);
+        }    
+        
+        if(!fechaFinal.isEmpty()){
+            dateF = Date.from(LocalDateTime.parse(fechaFinal).toInstant(ZoneOffset.UTC));
+            builder.put("fecha").lessThan(dateF);
+        }
+        
+        if(!sesionId.isEmpty())
+            builder.put("sesionId").is(Integer.parseInt(sesionId));
+            
+        List<DBObject> dbo = bitacoraEjercicios.find(builder.get(), new BasicDBObject("fotografias",0).append("_id", 0)).toArray();
+        return dbo.toString();
     }
 }

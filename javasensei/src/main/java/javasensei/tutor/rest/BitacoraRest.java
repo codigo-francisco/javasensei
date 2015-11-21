@@ -5,6 +5,7 @@
  */
 package javasensei.tutor.rest;
 
+import java.util.Date;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.FormParam;
@@ -41,5 +42,23 @@ public class BitacoraRest {
         BitacoraEjerciciosManager manager = new BitacoraEjerciciosManager();
         
         return manager.guardarBitacoras(logBitacoras);
+    }
+    
+    @Path("obtenerbitacora")
+    @Produces("application/json")
+    @POST
+    public String obtenerBitacora(@FormParam("idAlumno")String idAlumno,
+                                  @FormParam("ejercicioId")String ejercicioId,
+                                  @FormParam("fechaInicial")String fechaIncial,
+                                  @FormParam("fechaFinal")String fechaFinal,
+                                  @FormParam("sesionId")String sesionId,
+                                  @FormParam("emocionInicial")String emocionInicial,
+                                  @FormParam("emocionFinal")String emocionFinal){
+        
+        
+        BitacoraEjerciciosManager manager = new BitacoraEjerciciosManager();
+        
+        return manager.obtenerBitacora(idAlumno, ejercicioId, fechaIncial, fechaFinal, sesionId, emocionInicial, emocionFinal);
+                
     }
 }
