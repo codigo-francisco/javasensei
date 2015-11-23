@@ -15,13 +15,13 @@ import javasensei.db.Connection;
 public class ChatManager {
     private DBCollection chatCollection = Connection.getCollection().get(CollectionsDB.CHAT);
     
-    public Boolean agregarMensaje(String message, String nombreUsuario, String idUsuario, Integer idEjercicio, Long fecha){
+    public Boolean agregarMensaje(String message, String nombreUsuario, String idUsuario, Integer idEjercicio, Long fecha, String color){
         BasicDBObject mensaje = new BasicDBObject("message", message);
         mensaje.put("nombreUsuario", nombreUsuario);
         mensaje.put("idUsuario", idUsuario);
         mensaje.put("idEjercicio",idEjercicio);
         mensaje.put("fecha", fecha);
-
+        mensaje.put("color", color);
         return chatCollection.insert(mensaje)!=null;
     }
     

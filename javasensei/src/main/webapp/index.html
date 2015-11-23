@@ -29,6 +29,7 @@
         <script type="text/javascript" src="highlight.pack.js"></script>
         <script type="text/javascript" src="js/buckets-minified.js"></script>
         <script type="text/javascript" src="js/webcam.min.js"></script>
+        <script type="text/javascript" src="jscolor-2.0.4/jscolor.min.js"></script>
 
         <script type="text/javascript" src="js/menu.js"></script>
         <script type="text/javascript" src="js/recursos.js"></script>
@@ -181,21 +182,24 @@
                 $("#chatboton").click(function(){
                     if ($("#panelchat").css("bottom") == "0px")
                         $("#panelchat").animate({'bottom':'-100%'},300);
-                    else
+                    else {
                         $("#panelchat").animate({'bottom':'0'},300);
-                    event.stopPropagation();
+                        document.getElementById("usermsg").focus();
+                    }
+                    //event.stopPropagation();
                 });
-                
+                /*
                 $(document).click(function(event){
                     isButton = $(event.target).is("button");
                     isPartOfChat = $(event.target.parentNode).is("#wrapper") ||
                                    $(event.target.parentNode).is("#panelchat") ||
+                                   $(event.target.parentNode).is("#chatbox") ||
                                    $(event.target.parentNode).is(".ui-input-text");
                     if (!isButton && !isPartOfChat) {
                         $("#panelchat").animate({'bottom':'-100%'},300);
                     }
                 });
-                
+                */
             });
             
         </script>
@@ -383,7 +387,9 @@
                 <div id="panelchat" class="box">
                     <div id="wrapper" class="box-inner">
                         <div id="chatbox"></div>
-                        <input id="usermsg" name="usermsg" type="text" size="13" autocomplete="off"/>
+                        <!-- <input id="usermsg" name="usermsg" type="text" size="13" autocomplete="off"/> -->
+                        <textarea id="usermsg" name="usermsg"></textarea>
+                        <button id="botoncolor" class="jscolor {valueElement:null,value:'66ccff'}" style="width:50px; height:20px;"></button>
                     </div>
                 </div>
             </div>

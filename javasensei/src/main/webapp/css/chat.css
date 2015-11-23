@@ -58,20 +58,20 @@ and open the template in the editor.
 }
 
 .ui-page-theme-a .ui-body-inherit {
-    border-color:#EBF4FB;
+    border-color:#E9E9E9;
 }
 
 @media only screen and (max-width:420px) {
     .mensaje {
         margin-top: 0em;
-        margin-bottom: 0.3em;
+        margin-bottom: 0.1em;
         font-size: 0.6em;
     }
 }
 @media only screen and (min-width:540px) {
     .mensaje {
         margin-top: 0em;
-        margin-bottom: 0.3em;
+        margin-bottom: 0.2em;
         font-size: 0.7em;
     }
 }
