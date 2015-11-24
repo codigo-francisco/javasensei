@@ -46,8 +46,18 @@ var chatSensei = function () {
 
     this.procesarEnvioMensaje = function (e) {
         var code = (e.keyCode ? e.keyCode : e.which);
-        if (code === 13) {
-            var message = $("#usermsg").val();
+        var message = $("#usermsg").val();
+        var lastChar = message.length - 1;
+         if(e.shiftKey && e.keyCode === 13) {
+            //Espacio vacío
+        } else if (code === 13) {
+            var regex = /[a-z]|[0-9]|[áéíóú]/i;
+            if (!regex.test(message)){
+                $("#usermsg").val("");
+                return;
+            }
+            message = message.substring(0,lastChar);
+            message = message.replace(/(\r\n|\n|\r)/gm, " // ");
             var color = $("#botoncolor").css("background-color");
             $("#usermsg").val("");
             $("#chatbox").append(

@@ -24,6 +24,7 @@ and open the template in the editor.
     height:80%;
     border:1px solid #DDD;
     overflow:auto;
+    overflow-x: hidden;
 }
 
 #usermsg {
@@ -34,6 +35,10 @@ and open the template in the editor.
     background:#fff;
     float: left;
     display:inline-block;
+    overflow: scroll;
+    overflow-x: hidden;
+    resize: none;
+    max-height: 3em;
 }
 
 .box{
