@@ -16,7 +16,7 @@ import weka.core.converters.ArffLoader;
  * Estrada, Raul Oramas Bustillos Email Contacto:
  * franciscogonzalez_hernandez@hotmail.com
  */
-public class ExtractEmotion implements INeuralNetwork {
+public class ExtractEmotion implements INeuralNetwork<double[]> {
 
     private static MultilayerPerceptron multilayer;
 
@@ -59,13 +59,14 @@ public class ExtractEmotion implements INeuralNetwork {
             System.err.println(ex.getMessage());
         }
     }
-
-    public Emocion processData(double[] coordenadas) {
+    
+    @Override
+    public Emocion processData(double[] datos) {
         Emocion emocion = Emocion.NEUTRAL;
 
         try {
             //Creamos los datos de prueba
-            Instances testData = createData(coordenadas);
+            Instances testData = createData(datos);
 
             double resultIndex = multilayer.classifyInstance(testData.firstInstance());
 

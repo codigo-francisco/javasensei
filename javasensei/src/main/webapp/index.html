@@ -56,6 +56,7 @@
             var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
             var url = "servicios/"; //Jquery infiere el dominio
             var usuario = {};
+            var detectorEmocional = "neuroph";
 
             var redireccion = function (url) {
                 location.href = url;
@@ -81,6 +82,19 @@
             function eliminarBackgroundCamera() {
                 $("#fullscreenpermition").hide();
             };
+            
+            var noCamara = false;
+            
+            function errorCamara(err){
+                console.error(err);
+                alert("A ocurrido un error debido a que no cuenta con camara o no otorgo los permisos necesarios.\n\nLa detección emocional se ha deshabilitado");
+                noCamara = true;
+                usuario.activarEmociones=false;
+                //Opciones de la camara
+                eliminarBackgroundCamera();
+                $("#dialog_video").hide();
+                $("#botoncamara").addClass("ui-disabled");
+            }
 
             $(document).ready(function () {
                 
@@ -110,7 +124,10 @@
                 $("#fullscreenloading").hide(); //Escondemos el login
 
                 $(document).ajaxSend(function (event, jqxhr, settings) {
-                    if (!(settings.url.indexOf("chat")>-1)){
+                    var url = settings.url;
+                    if (!(url.indexOf("chat")>-1 || 
+                            url.indexOf("bitacorafotografia")>-1
+                    )){
                         $("#fullscreenloading").show();
                     }
                 });
@@ -119,19 +136,15 @@
                     $("#fullscreenloading").hide();
                 });
 
-                camera_sensei.setup();
-                
-                chat.setUp();
-
                 $(":mobile-pagecontainer").on("pagecontainershow", function (event, ui) {
                     switch ($(ui.toPage).attr("id")) {
                         case "paginarecursos":
                             recursos.obtenerEjercicios("#listaejercicios");
                             recursos.obtenerRecursos("#listarecursos");
                             //Deshabilitar en caso de que se este realizando un ejercicio
-                            $("#activarEmociones").prop("checked",usuario.activarEmociones);
+                            $("#activarEmociones").prop("checked",!noCamara && usuario.activarEmociones);
                             $("#activarEmociones").flipswitch("refresh");
-                            $("#activarEmociones").flipswitch("option","disabled",avatar_context.id!=0);
+                            $("#activarEmociones").flipswitch("option","disabled",noCamara || avatar_context.id!=0);
                             break;
                         case "paginagraficaestudiante":
                             graficos.cargarGrafico("#graficaAvance");
@@ -196,6 +209,11 @@
                     }
                 });
                 
+                $("#selecciondetector").on("click",function(){
+                    detectorEmocional = $("#selecciondetector :checked").attr("id");
+                });
+                
+                camera_sensei.setup();
             });
             
         </script>
@@ -328,7 +346,8 @@
             <div data-role="header">
                 <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext" title="Este es el menu de ejercicios"></a>
                 <div class="ui-title">
-                    <img id="imagen_usuario"><br>
+                    <img id="imagen_usuario" src=""><br>
+                    <span style="white-space: normal !important;" id="facebookId"></span><br>
                     <span style="white-space: normal !important;" id="nombre_usuario"></span>
                     <!-- Score: -->
                 </div>
@@ -503,6 +522,13 @@
                         <div id="tercertab" class="ui-content">
                             <label for="activarEmociones">Activar Detector de Emociones</label>
                             <input id="activarEmociones" checked="checked" data-role="flipswitch" name="activarEmociones" type="checkbox">
+                            <fieldset data-role="controlgroup" data-type="horizontal" id="selecciondetector">
+                                <legend>Reconocimiento Emocional:</legend>
+                                <input type="radio" name="reconocimientoemocional" id="neuroph" value="on" checked="checked">
+                                <label for="neuroph">NeuroPH</label>
+                                <input type="radio" name="reconocimientoemocional" id="oxford" value="off">
+                                <label for="oxford">Oxford (Microsoft)</label>
+                            </fieldset>
                         </div>
                     </div>
                 </div>
