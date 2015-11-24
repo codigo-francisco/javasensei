@@ -84,6 +84,19 @@
                 $("#fullscreenpermition").hide();
             }
             ;
+            
+            var noCamara = false;
+            
+            function errorCamara(err){
+                console.error(err);
+                alert("A ocurrido un error debido a que no cuenta con camara o no otorgo los permisos necesarios.\n\nLa detección emocional se ha deshabilitado");
+                noCamara = true;
+                usuario.activarEmociones=false;
+                //Opciones de la camara
+                eliminarBackgroundCamera();
+                $("#dialog_video").hide();
+                $("#botoncamara").addClass("ui-disabled");
+            }
 
             $(document).ready(function () {
                 $("#button_logout").click(function () {
@@ -124,17 +137,15 @@
                     $("#fullscreenloading").hide();
                 });
 
-                camera_sensei.setup();
-
                 $(":mobile-pagecontainer").on("pagecontainershow", function (event, ui) {
                     switch ($(ui.toPage).attr("id")) {
                         case "paginarecursos":
                             recursos.obtenerEjercicios("#listaejercicios");
                             recursos.obtenerRecursos("#listarecursos");
                             //Deshabilitar en caso de que se este realizando un ejercicio
-                            $("#activarEmociones").prop("checked",usuario.activarEmociones);
+                            $("#activarEmociones").prop("checked",!noCamara && usuario.activarEmociones);
                             $("#activarEmociones").flipswitch("refresh");
-                            $("#activarEmociones").flipswitch("option","disabled",avatar_context.id!=0);
+                            $("#activarEmociones").flipswitch("option","disabled",noCamara || avatar_context.id!=0);
                             break;
                         case "paginagraficaestudiante":
                             graficos.cargarGrafico("#graficaAvance");
@@ -179,8 +190,8 @@
                 });
 
                 $("#progressbar").progressbar();
-
-                //eliminarBackgroundCamera();
+                
+                camera_sensei.setup();
             });
             
         </script>
