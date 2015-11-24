@@ -38,10 +38,10 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         id = jsonObj.getLong("id");
         idFacebook = jsonObj.getString("idFacebook").replace("\"", "");
         token = jsonObj.getString("token");
-        calidadRespuesta = jsonObj.getDouble("calidadRespuesta");
+        calidadRespuesta = new Double(jsonObj.getString("calidadRespuesta"));
         emocionActual = Emocion.getEmocion(jsonObj.getString("emocionActual"));
         emocionPrevia = Emocion.getEmocion(jsonObj.getString("emocionPrevia"));
-        habilidadGlobal = jsonObj.getDouble("habilidadGlobal");
+        habilidadGlobal = new Double(jsonObj.getString("habilidadGlobal"));
         activarEmociones = jsonObj.getBoolean("activarEmociones");
         tiempo = jsonObj.getDouble("tiempo");
         creado = jsonObj.getDate("creado", Date.from(Instant.now()));

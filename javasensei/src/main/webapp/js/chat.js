@@ -1,6 +1,6 @@
 /* global usuario */
 
-var ultimoMensaje = new Date().getTime();
+var ultimoMensaje;
 var chatSensei = function () {
     this.idInterval = -1;
     this.verificarMensaje = function () {        
@@ -30,7 +30,7 @@ var chatSensei = function () {
     
     this.changeExercise = function(estado){
         var chatBoton = $("#chatboton");
-        if (estado){ //Se habilita y ademas se cambia el id
+        if (estado && ultimoMensaje){ //Se habilita y ademas se cambia el id
             chatBoton.removeClass("ui-state-disabled");
             this.idInterval = setInterval(this.verificarMensaje, 500);
         }else{
@@ -42,6 +42,8 @@ var chatSensei = function () {
 
     this.setUp = function () {
         $("#usermsg").keyup(this.procesarEnvioMensaje);
+        //Obtenemos la hora del servidor
+        obtenerHora();
     };
 
     this.procesarEnvioMensaje = function (e) {
@@ -64,14 +66,22 @@ var chatSensei = function () {
                     nombreUsuario: usuario.nombre,
                     idUsuario: usuario.id,
                     idEjercicio: avatar_context.id,
-                    fecha: new Date().getTime(),
                     color: color
                 }
             }).done(function(data){
-                if (data!="false")
+                if (data>ultimoMensaje)
                     ultimoMensaje = data;
             });
         }
     };
 
 };
+
+function obtenerHora(){
+    $.get(url+"servidor/obtenerHora")
+    .done(function(data){
+        ultimoMensaje = data;
+    }).fail(function(){
+        setTimeout(1000, obtenerHora);
+    });
+}

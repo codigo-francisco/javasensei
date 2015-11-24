@@ -36,6 +36,7 @@ public class ApplicationConfig extends Application {
         resources.add(javasensei.tutor.rest.EstudianteRest.class);
         resources.add(javasensei.tutor.rest.RecomendacionRest.class);
         resources.add(javasensei.tutor.rest.RecursosRest.class);
+        resources.add(javasensei.tutor.rest.ServidorRest.class);
     }
     
 }
