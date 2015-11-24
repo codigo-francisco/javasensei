@@ -43,11 +43,12 @@ public class ChatRest {
             @QueryParam("nombreUsuario") String nombreUsuario, 
             @QueryParam("idUsuario") String idUsuario,
             @QueryParam("idEjercicio") Integer idEjercicio,
-            @QueryParam("fecha") Long fecha){
+            @QueryParam("fecha") Long fecha,
+            @QueryParam("color") String color){
         String resultMessage ="false";
         
         ChatManager chatManager = new ChatManager();
-        Boolean result = chatManager.agregarMensaje(message, nombreUsuario, idUsuario, idEjercicio, fecha);
+        Boolean result = chatManager.agregarMensaje(message, nombreUsuario, idUsuario, idEjercicio, fecha, color);
         
         if (result){
             resultMessage = fecha.toString();
