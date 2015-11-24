@@ -14,6 +14,8 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
+import com.mongodb.client.MongoCollection;
+import static com.mongodb.client.model.Filters.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,9 @@ import javasensei.dbo.bitacora.BitacoraEjerciciosDBO;
 import java.util.Date;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import org.bson.BsonDocument;
+import org.bson.Document;
+import org.bson.conversions.Bson;
 /**
  *
  * @author PosgradoMCC
@@ -71,14 +76,17 @@ public class BitacoraEjerciciosManager {
                                   String emocionInicial, String emocionFinal){
         
         //Query para hacer la consulta a la base de datos
-        QueryBuilder builder = QueryBuilder.start();
-        //BasicDBObject builder = new BasicDBObject();
+        Bson query = new BsonDocument();
+        MongoCollection<DBObject> bitacoras = Connection.getDBV3().getCollection("bitacora_ejercicios", DBObject.class);
         
-        Date dateI;
-        Date dateF;
+        
+        Date dateI=null;
+        Date dateF=null;
         
         if(!idAlumno.isEmpty())
-            builder.put("idAlumno").is(Integer.parseInt(idAlumno));
+            
+            eq("idAlumno",Integer.parseInt(idAlumno));
+            //builder.put("idAlumno").is(Integer.parseInt(idAlumno));
         
         if(!ejercicioId.isEmpty())
             builder.put("ejercicioId").is(Integer.parseInt(ejercicioId));
@@ -96,7 +104,19 @@ public class BitacoraEjerciciosManager {
         if(!sesionId.isEmpty())
             builder.put("sesionId").is(Integer.parseInt(sesionId));
             
-        List<DBObject> dbo = bitacoraEjercicios.find(builder.get(), new BasicDBObject("fotografias",0).append("_id", 0)).toArray();
+        List<DBObject> dbo = bitacoras.find(
+                and(
+                    gt("fecha", dateI),
+                    lt("fecha", dateF)
+                )
+        ).projection(
+                and(
+                        eq("_id",0),
+                        eq("fotografias",0)
+                )
+        ).into(new ArrayList<DBObject>());
+        //bitacoraEjercicios.find(builder.get(), new BasicDBObject("fotografias",0).append("_id", 0)).toArray();
+        
         return dbo.toString();
     }
 }
