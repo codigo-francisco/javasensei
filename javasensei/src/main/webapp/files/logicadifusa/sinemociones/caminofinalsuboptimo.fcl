@@ -1,0 +1,98 @@
+FUNCTION_BLOCK caminofinalsuboptimo	// Block definition (there may be more than one block per file)
+
+VAR_INPUT				// Define input variables
+    habilidadglobal : REAL;
+    calidadrespuesta : REAL;
+    tiempo : REAL;
+END_VAR
+
+VAR_OUTPUT				// Define output variable
+    expresion : REAL;
+    retroalimentacion : REAL;
+    intervencion : REAL;
+END_VAR
+
+FUZZIFY habilidadglobal			// Fuzzify input variable 'habilidadglobal'
+	TERM mala := trian 0 0 0.6;
+	TERM buena := trian 0.4 1 1;
+END_FUZZIFY
+
+FUZZIFY calidadrespuesta			// Fuzzify input variable 'calidadrespuestaactual'
+	TERM buena := trian 0 0 0.6;
+	TERM mala := trian 0.4 1 1;
+END_FUZZIFY
+
+FUZZIFY tiempo			// Fuzzify input variable 'calidadrespuestaactual'
+	TERM poco := trian 0 0 4;
+        TERM medio := trian 4 5 8;
+	TERM mucho := trian 7 999 999;
+END_FUZZIFY
+
+DEFUZZIFY expresion		// Defuzzify output variable 'expresion'
+	TERM neutral := trian 0 1 1.5;
+        TERM encantado := trian 1.5 2 2.5;
+	TERM sorprendido := trian 2.5 3 3.5;
+	TERM compasivo := trian 3.5 4 4.5;
+        TERM esceptico := trian 4.5 5 5;
+	DEFAULT := 0;		// Default value is 0 (if no rule activates defuzzifier)
+END_DEFUZZIFY
+
+DEFUZZIFY intervencion		// Defuzzify output variable 'expresion'
+	TERM no := trian 0 0.6 1.1;
+        TERM si := trian 0.9 1 2;
+	DEFAULT := 0;		// Default value is 0 (if no rule activates defuzzifier)
+END_DEFUZZIFY
+
+DEFUZZIFY retroalimentacion		// Defuzzify output variable 'expresion'
+	TERM positiva := trian 0 1 1.4;
+        TERM neutral := trian 1 2 2.4;
+        TERM negativa := trian 2 3 4;
+	DEFAULT := 1;		// Default value is 0 (if no rule activates defuzzifier)
+END_DEFUZZIFY
+
+RULEBLOCK REGLAS_EXPRESION
+    RULE 1 : IF habilidadglobal IS mala AND calidadrespuesta IS mala AND tiempo IS poco THEN expresion IS esceptico;
+    RULE 2 : IF habilidadglobal IS mala AND calidadrespuesta IS mala AND tiempo IS medio THEN expresion IS esceptico;
+    RULE 3 : IF habilidadglobal IS mala AND calidadrespuesta IS mala AND tiempo IS mucho THEN expresion IS esceptico;
+    RULE 4 : IF habilidadglobal IS mala AND calidadrespuesta IS buena AND tiempo IS poco THEN expresion IS esceptico;
+    RULE 5 : IF habilidadglobal IS mala AND calidadrespuesta IS buena AND tiempo IS medio THEN expresion IS esceptico;
+    RULE 6 : IF habilidadglobal IS mala AND calidadrespuesta IS buena AND tiempo IS mucho THEN expresion IS esceptico;
+    RULE 7 : IF habilidadglobal IS buena AND calidadrespuesta IS mala AND tiempo IS poco THEN expresion IS sorprendido;
+    RULE 8 : IF habilidadglobal IS buena AND calidadrespuesta IS mala AND tiempo IS medio THEN expresion IS sorprendido;
+    RULE 9 : IF habilidadglobal IS buena AND calidadrespuesta IS mala AND tiempo IS mucho THEN expresion IS sorprendido;
+    RULE 10 : IF habilidadglobal IS buena AND calidadrespuesta IS buena AND tiempo IS poco THEN expresion IS encantado;
+    RULE 11 : IF habilidadglobal IS buena AND calidadrespuesta IS buena AND tiempo IS medio THEN expresion IS encantado;
+    RULE 12 : IF habilidadglobal IS buena AND calidadrespuesta IS buena AND tiempo IS mucho THEN expresion IS encantado;
+END_RULEBLOCK
+
+RULEBLOCK REGLAS_INTERVENCION
+    RULE 1 : IF habilidadglobal IS mala AND calidadrespuesta IS mala AND tiempo IS poco THEN intervencion IS si;
+    RULE 2 : IF habilidadglobal IS mala AND calidadrespuesta IS mala AND tiempo IS medio THEN intervencion IS si;
+    RULE 3 : IF habilidadglobal IS mala AND calidadrespuesta IS mala AND tiempo IS mucho THEN intervencion IS si;
+    RULE 4 : IF habilidadglobal IS mala AND calidadrespuesta IS buena AND tiempo IS poco THEN intervencion IS no;
+    RULE 5 : IF habilidadglobal IS mala AND calidadrespuesta IS buena AND tiempo IS medio THEN intervencion IS si;
+    RULE 6 : IF habilidadglobal IS mala AND calidadrespuesta IS buena AND tiempo IS mucho THEN intervencion IS si;
+    RULE 7 : IF habilidadglobal IS buena AND calidadrespuesta IS mala AND tiempo IS poco THEN intervencion IS no;
+    RULE 8 : IF habilidadglobal IS buena AND calidadrespuesta IS mala AND tiempo IS medio THEN intervencion IS si;
+    RULE 9 : IF habilidadglobal IS buena AND calidadrespuesta IS mala AND tiempo IS mucho THEN intervencion IS si;
+    RULE 10 : IF habilidadglobal IS buena AND calidadrespuesta IS buena AND tiempo IS poco THEN intervencion IS no;
+    RULE 11 : IF habilidadglobal IS buena AND calidadrespuesta IS buena AND tiempo IS medio THEN intervencion IS no;
+    RULE 12 : IF habilidadglobal IS buena AND calidadrespuesta IS buena AND tiempo IS mucho THEN intervencion IS si;
+END_RULEBLOCK
+
+RULEBLOCK REGLAS_RETROALIMENTACION
+    RULE 1 : IF habilidadglobal IS mala AND calidadrespuesta IS mala AND tiempo IS poco THEN retroalimentacion IS negativa;
+    RULE 2 : IF habilidadglobal IS mala AND calidadrespuesta IS mala AND tiempo IS medio THEN retroalimentacion IS neutral;
+    RULE 3 : IF habilidadglobal IS mala AND calidadrespuesta IS mala AND tiempo IS mucho THEN retroalimentacion IS neutral;
+    RULE 4 : IF habilidadglobal IS mala AND calidadrespuesta IS buena AND tiempo IS poco THEN retroalimentacion IS positiva;
+    RULE 5 : IF habilidadglobal IS mala AND calidadrespuesta IS buena AND tiempo IS medio THEN retroalimentacion IS positiva;
+    RULE 6 : IF habilidadglobal IS mala AND calidadrespuesta IS buena AND tiempo IS mucho THEN retroalimentacion IS neutral;
+    RULE 7 : IF habilidadglobal IS buena AND calidadrespuesta IS mala AND tiempo IS poco THEN retroalimentacion IS negativa;
+    RULE 8 : IF habilidadglobal IS buena AND calidadrespuesta IS mala AND tiempo IS medio THEN retroalimentacion IS negativa;
+    RULE 9 : IF habilidadglobal IS buena AND calidadrespuesta IS mala AND tiempo IS mucho THEN retroalimentacion IS negativa;
+    RULE 10 : IF habilidadglobal IS buena AND calidadrespuesta IS buena AND tiempo IS poco THEN retroalimentacion IS positiva;
+    RULE 11 : IF habilidadglobal IS buena AND calidadrespuesta IS buena AND tiempo IS medio THEN retroalimentacion IS positiva;
+    RULE 12 : IF habilidadglobal IS buena AND calidadrespuesta IS buena AND tiempo IS mucho THEN retroalimentacion IS neutral;
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK

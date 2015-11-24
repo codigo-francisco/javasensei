@@ -50,5 +50,6 @@ public class Connection {
         collections.put(CollectionsDB.TEMAS, db.getCollection("temas"));
         collections.put(CollectionsDB.BITACORA_EJERCICIOS, db.getCollection("bitacora_ejercicios"));
         collections.put(CollectionsDB.CHAT, db.getCollection("chat"));
+        collections.put(CollectionsDB.BITACORA_FOTOGRAFIAS, db.getCollection("bitacora_fotografias"));
     }
 }

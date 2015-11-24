@@ -7,7 +7,7 @@ import javasensei.util.FileHelper;
  *
  * @author Rock
  */
-public class ExtractEmotionNeuroph implements INeuralNetwork {
+public class ExtractEmotionNeuroph implements INeuralNetwork<double[]> {
 
     private static NeuralNetwork neuralNetwork = NeuralNetwork.createFromFile(FileHelper.getInstance().getFile("files\\NeuralRecognitionFace.nnet"));
     

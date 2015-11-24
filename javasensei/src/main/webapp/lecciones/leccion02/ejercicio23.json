@@ -3,7 +3,8 @@
 	"paso": -1,
 	"tipo": "instruccionesiniciales",
 	"instruccionesejercicio": [
-		"El siguiente ejercicio está relacionado con operaciones aritméticas."
+		"Este ejercicio esta relacionado con operaciones aritméticas:",
+		"En Java el asterisco (*) indica la multiplicación,el signo de porcentaje (%) es el operador residuo,el signo más (+) indica suma, el signo menos(-) indica resta, el signo entre(/) indica division."
 	],
 	"opciones": [
 		{
@@ -33,10 +34,10 @@
 			},
 			"opciones": [
 				{
-					"texto": "4.9",
+					"texto": "4 9",
 					"paso": 1,
 					"tipo": "pasofinaloptimo",
-					"instruccion": "La respuesta es correcta, continua con más ejercicios.",
+					"instruccion": "La respuesta es correcta, continúa con más ejercicios.",
 					"presentacion": [
 							"int m = 9;",
 							"int n = 4;",
@@ -62,10 +63,10 @@
 					]
 				},
 				{
-					"texto": "5.5",
+					"texto": "5 5",
 					"paso": 2,
 					"tipo": "pasoerroneo",
-					"instruccion": "La respuesta es incorrecta, ",
+					"instruccion": "La respuesta es incorrecta. Intenta de nuevo",
 					"presentacion": [
 							"int m = 9;",
 							"int n = 4;",
@@ -90,10 +91,10 @@
 					},
 					"opciones": []
 				},{
-					"texto": "13.5",
+					"texto": "13 5",
 					"paso": 3,
 					"tipo": "pasoerroneo",
-					"instruccion": "La respuesta es incorrecta, intentalo de nuevo.",
+					"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 					"presentacion": [
 							"int m = 9;",
 							"int n = 4;",
@@ -119,10 +120,10 @@
 						
 					]
 				},{
-					"texto": "9.4",
+					"texto": "9 4",
 					"paso": 4,
 					"tipo": "pasoerroneo",
-					"instruccion": "La respuesta es incorrecta, intentalo de nuevo.",
+					"instruccion": "La respuesta es incorrecta. Intenta de nuevo",
 					"presentacion": [
 						"int m = 9;",
 						"int n = 4;",

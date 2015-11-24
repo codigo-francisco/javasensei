@@ -8,6 +8,7 @@ import javasensei.util.EnumHelper;
  * @author Rock
  */
 public enum Emocion {
+    SINEMOCION(-1),
     FELIZ(1),
     SORPRESA(2),
     TRISTE(3),
