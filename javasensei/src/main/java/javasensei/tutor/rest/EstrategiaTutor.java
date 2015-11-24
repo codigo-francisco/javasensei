@@ -6,6 +6,7 @@
 package javasensei.tutor.rest;
 
 import javasensei.estudiante.ModeloEstudiante;
+import javasensei.ia.recognitionemotion.Emocion;
 import javasensei.ia.recognitionemotion.RecognitionEmotionalFace;
 import javasensei.tutor.TutorEvaluacion;
 import javax.ws.rs.FormParam;
@@ -37,9 +38,14 @@ public class EstrategiaTutor {
         ModeloEstudiante modeloEstudiante = new ModeloEstudiante(datosEstudiante);
         RecognitionEmotionalFace recognition = new RecognitionEmotionalFace(fotos);
         
-        //Cambio de emocion
-        modeloEstudiante.setEmocionPrevia(modeloEstudiante.getEmocionActual());
-        modeloEstudiante.setEmocionActual(recognition.getEmocion());
+        if (modeloEstudiante.getActivarEmociones()){
+            //Cambio de emocion
+            modeloEstudiante.setEmocionPrevia(modeloEstudiante.getEmocionActual());
+            modeloEstudiante.setEmocionActual(recognition.getEmocion());
+        }else{
+            modeloEstudiante.setEmocionActual(Emocion.SINEMOCION);
+            modeloEstudiante.setEmocionActual(Emocion.SINEMOCION);
+        }
         
         return new TutorEvaluacion(modeloEstudiante);
     }

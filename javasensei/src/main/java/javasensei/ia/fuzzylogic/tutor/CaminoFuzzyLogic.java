@@ -11,10 +11,13 @@ import net.sourceforge.jFuzzyLogic.FIS;
  */
 public abstract class CaminoFuzzyLogic {
     protected ModeloEstudiante estudiante;
-    protected String folderIA = "files/";
+    protected String folderIA = "files/logicadifusa/";
     
     public CaminoFuzzyLogic(ModeloEstudiante estudiante){
         this.estudiante = estudiante;
+        
+        folderIA += (estudiante.getActivarEmociones()) ? "conemociones/":"sinemociones/";
+        
     }
     
     protected abstract String getFile();
@@ -23,19 +26,27 @@ public abstract class CaminoFuzzyLogic {
         return FileHelper.getInstance().getFile(folderIA.concat(name));
     }
     
-    protected abstract FIS getFuzzySystem();
+    protected abstract FIS getFuzzySystemConEmociones();
+    protected abstract FIS getFuzzySystemSinEmociones();
     
     public final ResultadoTutor evaluarEmocion(){
         ResultadoTutor resultado = new ResultadoTutor();
         
         try {
-            FIS fis = getFuzzySystem();
+            FIS fis=null;
             
-            fis.setVariable("emocionactual", estudiante.getEmocionActual().getValue());
-            fis.setVariable("emocionprevia", estudiante.getEmocionPrevia().getValue());
+            if (estudiante.getActivarEmociones()){
+                fis = getFuzzySystemConEmociones();
+                fis.setVariable("emocionactual", estudiante.getEmocionActual().getValue());
+                fis.setVariable("emocionprevia", estudiante.getEmocionPrevia().getValue());
+            }else{
+                fis = getFuzzySystemSinEmociones();
+                fis.setVariable("tiempo", estudiante.getTiempo());
+            }
+            
             fis.setVariable("habilidadglobal", estudiante.getHabilidadGlobal());
             fis.setVariable("calidadrespuesta", estudiante.getCalidadRespuesta());
-
+            
             fis.evaluate();
             
             double expresion = fis.getVariable("expresion").getValue();

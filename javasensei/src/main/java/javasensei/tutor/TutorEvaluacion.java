@@ -19,7 +19,6 @@ import javasensei.ia.fuzzylogic.tutor.CaminoSubOptimoFuzzyLogic;
 public class TutorEvaluacion {
 
     private ModeloEstudiante estudiante;
-    //private CaminoFuzzyLogic camino;
     private Gson gson = new Gson();
     private EstudiantesManager managerDb;
 

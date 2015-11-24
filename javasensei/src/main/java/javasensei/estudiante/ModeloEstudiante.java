@@ -20,6 +20,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     private double habilidadGlobal = 0;
     private double calidadRespuesta = 0; //Parametros internos al crear un estudiante nuevo
     private boolean activarEmociones = true;
+    private double tiempo = 0;
 
     public ModeloEstudiante() {
 
@@ -38,6 +39,34 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         emocionPrevia = Emocion.getEmocion(jsonObj.get("emocionPrevia").getAsString());
         habilidadGlobal = jsonObj.get("habilidadGlobal").getAsDouble();
         activarEmociones = jsonObj.get("activarEmociones").getAsBoolean();
+        tiempo = jsonObj.get("tiempo").getAsDouble();
+    }
+    
+    @Override
+    public DBObject convertToDBObject() {
+        return convertToDBObject(false);
+    }
+    
+    @Override
+    public DBObject convertToDBObject(boolean save) {
+        DBObject dbObject = new BasicDBObject();
+
+        dbObject.put("idFacebook", getIdFacebook());
+        if (save) {
+            dbObject.put("id", "ultimoIdAlumno()");
+        } else {
+            dbObject.put("id", getId());
+        }
+        dbObject.put("token", getToken());
+
+        dbObject.put("emocionActual", getEmocionActual().toString());
+        dbObject.put("emocionPrevia", getEmocionPrevia().toString());
+        dbObject.put("habilidadGlobal", getHabilidadGlobal().toString());
+        dbObject.put("calidadRespuesta", getCalidadRespuesta());
+        dbObject.put("activarEmociones", getActivarEmociones());
+        dbObject.put("tiempo", getTiempo());
+
+        return dbObject;
     }
 
     public long getId() {
@@ -95,31 +124,13 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     public void setActivarEmociones(boolean activarEmociones){
         this.activarEmociones = activarEmociones;
     }
-
-    @Override
-    public DBObject convertToDBObject() {
-        return convertToDBObject(false);
-    }
     
-    @Override
-    public DBObject convertToDBObject(boolean save) {
-        DBObject dbObject = new BasicDBObject();
+    public double getTiempo() {
+        return tiempo;
+    }
 
-        dbObject.put("idFacebook", getIdFacebook());
-        if (save) {
-            dbObject.put("id", "ultimoIdAlumno()");
-        } else {
-            dbObject.put("id", getId());
-        }
-        dbObject.put("token", getToken());
-
-        dbObject.put("emocionActual", getEmocionActual().toString());
-        dbObject.put("emocionPrevia", getEmocionPrevia().toString());
-        dbObject.put("habilidadGlobal", getHabilidadGlobal().toString());
-        dbObject.put("calidadRespuesta", getCalidadRespuesta());
-        dbObject.put("activarEmociones", getActivarEmociones());
-
-        return dbObject;
+    public void setTiempo(double tiempo) {
+        this.tiempo = tiempo;
     }
 
     public String getIdFacebook() {
