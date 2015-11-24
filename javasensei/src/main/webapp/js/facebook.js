@@ -21,6 +21,7 @@ var processLogin = function processLogin(response) {
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
 
+            $("#facebookId").text("ID: "+uid);
             usuario.idFacebook = uid;
             usuario.token = accessToken;
 
