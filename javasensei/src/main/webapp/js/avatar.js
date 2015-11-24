@@ -1,4 +1,4 @@
-/* global menu_context, usuario, camera_sensei, example_tracing, tree_self, contexto */
+/* global menu_context, usuario, camera_sensei, example_tracing, tree_self, contexto, detectorEmocional */
 
 var avatar_context;
 var avatar_sensei = function avatar_sensei(avatar_control) {
@@ -121,7 +121,8 @@ avatar_sensei.prototype = {
                 type: "POST",
                 data: {
                     datosestudiante: JSON.stringify(usuario),
-                    fotos: fotografias
+                    fotos: fotografias,
+                    detector:detectorEmocional
                 },
                 dataType: "json"
             }).always(function (datos) {

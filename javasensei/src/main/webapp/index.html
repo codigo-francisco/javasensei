@@ -55,6 +55,7 @@
             var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
             var url = "servicios/"; //Jquery infiere el dominio
             var usuario = {};
+            var detectorEmocional = "neuroph";
 
             var redireccion = function (url) {
                 location.href = url;
@@ -190,6 +191,10 @@
                 });
 
                 $("#progressbar").progressbar();
+                
+                $("#selecciondetector").on("click",function(){
+                    detectorEmocional = $("#selecciondetector :checked").attr("id");
+                });
                 
                 camera_sensei.setup();
             });
@@ -491,6 +496,13 @@
                         <div id="tercertab" class="ui-content">
                             <label for="activarEmociones">Activar Detector de Emociones</label>
                             <input id="activarEmociones" checked="checked" data-role="flipswitch" name="activarEmociones" type="checkbox">
+                            <fieldset data-role="controlgroup" data-type="horizontal" id="selecciondetector">
+                                <legend>Reconocimiento Emocional:</legend>
+                                <input type="radio" name="reconocimientoemocional" id="neuroph" value="on" checked="checked">
+                                <label for="neuroph">NeuroPH</label>
+                                <input type="radio" name="reconocimientoemocional" id="oxford" value="off">
+                                <label for="oxford">Oxford (Microsoft)</label>
+                            </fieldset>
                         </div>
                     </div>
                 </div>

@@ -33,10 +33,10 @@ public class EstrategiaTutor {
     public EstrategiaTutor() {
     }
 
-    private static TutorEvaluacion getEvaluationAndProcessEmotion(String datosEstudiante, String fotos){
+    private static TutorEvaluacion getEvaluationAndProcessEmotion(String datosEstudiante, String fotos, String detector){
         //datosTutor es un json que contendra datos que se necesitan del tutor
         ModeloEstudiante modeloEstudiante = new ModeloEstudiante(datosEstudiante);
-        RecognitionEmotionalFace recognition = new RecognitionEmotionalFace(fotos);
+        RecognitionEmotionalFace recognition = new RecognitionEmotionalFace(fotos, detector);
         
         if (modeloEstudiante.getActivarEmociones()){
             //Cambio de emocion
@@ -58,9 +58,9 @@ public class EstrategiaTutor {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("caminoerroneo")
-    public String getEstrategiaCaminoErroneo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos) {
+    public String getEstrategiaCaminoErroneo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos, @FormParam("detector") String detector) {
         
-        return getEvaluationAndProcessEmotion(datosEstudiante, fotos).obtenerEvaluacionPasoErroneo();
+        return getEvaluationAndProcessEmotion(datosEstudiante, fotos, detector).obtenerEvaluacionPasoErroneo();
     }
     
     /**
@@ -71,8 +71,8 @@ public class EstrategiaTutor {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("caminosuboptimo")
-    public String getEstrategiaCaminoSubOptimo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos) {
-        return getEvaluationAndProcessEmotion(datosEstudiante, fotos).obtenerEvaluacionPasoSubOptimo();
+    public String getEstrategiaCaminoSubOptimo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos, @FormParam("detector") String detector) {
+        return getEvaluationAndProcessEmotion(datosEstudiante, fotos, detector).obtenerEvaluacionPasoSubOptimo();
     }
     
     /**
@@ -83,32 +83,36 @@ public class EstrategiaTutor {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("caminooptimo")
-    public String getEstrategiaCaminoOptimo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos) {
-        return getEvaluationAndProcessEmotion(datosEstudiante, fotos).obtenerEvaluacionPasoOptimo();
+    public String getEstrategiaCaminoOptimo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos, @FormParam("detector") String detector) {
+        return getEvaluationAndProcessEmotion(datosEstudiante, fotos, detector).obtenerEvaluacionPasoOptimo();
     }
     
     /**
      * Retrieves representation of an instance of javasensei.tutor.EstrategiaTutor
      * @param datosEstudiante
+     * @param fotos
+     * @param detector
      * @return an instance of java.lang.String
      */
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("caminofinaloptimo")
-    public String getEstrategiaCaminoFinalOptimo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos) {
-        return getEvaluationAndProcessEmotion(datosEstudiante, fotos).obtenerEvaluacionPasoFinalOptimo();
+    public String getEstrategiaCaminoFinalOptimo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos, @FormParam("detector") String detector) {
+        return getEvaluationAndProcessEmotion(datosEstudiante, fotos, detector).obtenerEvaluacionPasoFinalOptimo();
     }
     
     /**
      * Retrieves representation of an instance of javasensei.tutor.EstrategiaTutor
      * @param datosEstudiante
+     * @param fotos
+     * @param detector
      * @return an instance of java.lang.String
      */
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("caminofinalsuboptimo")
-    public String getEstrategiaCaminoFinalSubOptimo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos) {
-       return getEvaluationAndProcessEmotion(datosEstudiante, fotos).obtenerEvaluacionPasoFinalSubOptimo();
+    public String getEstrategiaCaminoFinalSubOptimo(@FormParam("datosestudiante") String datosEstudiante, @FormParam("fotos") String fotos, @FormParam("detector") String detector) {
+       return getEvaluationAndProcessEmotion(datosEstudiante, fotos, detector).obtenerEvaluacionPasoFinalSubOptimo();
     }
     
     /**

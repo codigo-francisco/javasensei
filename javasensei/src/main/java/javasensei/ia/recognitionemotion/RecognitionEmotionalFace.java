@@ -20,11 +20,13 @@ import javasensei.util.ImageHelper;
 public class RecognitionEmotionalFace {
 
     private Gson gson = new Gson();
-    JsonArray fotos;
+    private JsonArray fotos;
+    private String detector;
 
-    public RecognitionEmotionalFace(String fotosJson) {
+    public RecognitionEmotionalFace(String fotosJson, String detector) {
         JsonElement element = new JsonParser().parse(fotosJson);
         fotos = element.getAsJsonArray();
+        this.detector = detector;
     }
 
     public Emocion getEmocion() {
@@ -38,12 +40,21 @@ public class RecognitionEmotionalFace {
                 //javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("G:/imagenes")));
                 
                 if (image != null) {
-                    System.out.println("Se decodifico la imagen");
-                    RecognitionResult result = new RecognitionFace().processFace(image);
-                    if (result.isHayEmocion()) { //Si hay una emocion se ejecuta la red neuronal, en caso contrario se desecha
-                        System.out.println("Se encontro un rostro");
-                        emocion = new ExtractEmotionNeuroph().processData(result.getCoordenadas());
-                        System.out.println("Emocion procesada");
+                    System.out.println("Se decodifico de base64 a imagebuffer");
+                    switch (detector) {
+                        case "oxford":
+                            System.out.println("Se llama detector de oxford");
+                            emocion = new ExtractEmotionMicrosoft().processData(image);
+                            System.out.println("Rostro procesado, oxford");
+                            break;
+                        case "neuroph":
+                        default:
+                            RecognitionResult result = new RecognitionFace().processFace(image);
+                            if (result.isHayEmocion()) { //Si hay una emocion se ejecuta la red neuronal, en caso contrario se desecha
+                                System.out.println("Se encontro un rostro, opencv");
+                                emocion = new ExtractEmotionNeuroph().processData(result.getCoordenadas());
+                                System.out.println("Emocion procesada: NeuroPH");
+                            }   break;
                     }
                 }
 
