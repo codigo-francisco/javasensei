@@ -91,12 +91,6 @@
                 });
 
                 $("#opciones_avatar").listview(); //Inicializacion de listview
-                
-                $("*").keyup(function(eventData){
-                    if (eventData.keyCode == 27){
-                        //$("#menuboton").panel().panel("open");
-                    }
-                });
 
                 hljs.configure({
                     useBR: true,
@@ -106,8 +100,6 @@
                 example_tracing = new example_tracing_sensei();
 
                 avatar_sensei = new avatar_sensei("#avatar_control");
-
-                //menu.actualizarMenu(); //Obtenemos el menu la primera vez
 
                 $("#menuboton").click(function () {
                     menu.getMenu("#ejerciciosmenu");
@@ -119,8 +111,13 @@
 
                 $("#fullscreenloading").hide(); //Escondemos el login
 
-                $(document).ajaxStart(function () {
-                    $("#fullscreenloading").show();
+                $(document).ajaxSend(function (event, jqxhr, settings) {
+                    var url = settings.url;
+                    if (!(url.indexOf("chat")>-1 || 
+                            url.indexOf("bitacorafotografia")>-1
+                    )){
+                        $("#fullscreenloading").show();
+                    }
                 });
 
                 $(document).ajaxStop(function () {
@@ -161,7 +158,7 @@
                         console.log(data);
                     }).fail(function(d,error){
                         console.log(error);
-                    })
+                    });
                 });
 
                 $("#areatrabajo").hide();
