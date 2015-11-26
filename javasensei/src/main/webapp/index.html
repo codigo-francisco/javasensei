@@ -3,7 +3,7 @@
     <head>
         <title>Java Sensei</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="shortcut icon" href="img/logo.jpg">
 
         <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
@@ -123,19 +123,6 @@
                 });
 
                 $("#fullscreenloading").hide(); //Escondemos el login
-
-                $(document).ajaxSend(function (event, jqxhr, settings) {
-                    var url = settings.url;
-                    if (!(url.indexOf("chat")>-1 || 
-                            url.indexOf("bitacorafotografia")>-1
-                    )){
-                        $("#fullscreenloading").show();
-                    }
-                });
-
-                $(document).ajaxStop(function () {
-                    $("#fullscreenloading").hide();
-                });
 
                 $(":mobile-pagecontainer").on("pagecontainershow", function (event, ui) {
                     switch ($(ui.toPage).attr("id")) {
@@ -352,7 +339,7 @@
                 <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext" title="Este es el menu de ejercicios"></a>
                 <div class="ui-title">
                     <img id="imagen_usuario" src=""><br>
-                    <span style="white-space: normal !important;" id="facebookId"></span><br>
+                    <span style="white-space: normal !important;word-break: break-all;font-size:12px" id="facebookId"></span><br>
                     <span style="white-space: normal !important;" id="nombre_usuario"></span>
                     <!-- Score: -->
                 </div>
