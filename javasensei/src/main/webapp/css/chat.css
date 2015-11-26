@@ -41,6 +41,10 @@ and open the template in the editor.
     max-height: 3em;
 }
 
+#botoncolor {
+    width: 10%
+}
+
 .box{
     position:fixed;
     bottom:-100%;

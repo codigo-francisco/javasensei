@@ -4,28 +4,34 @@ var ultimoMensaje;
 var chatSensei = function () {
     this.idInterval = -1;
     this.verificarMensaje = function () {        
-        //Ajax para saber si hay nuevos mensajes
-        $.ajax({
-            type: "GET",
-            url: url + "chat/leermensajes",
-            data: {
-                fechaActual: ultimoMensaje,
-                idEjercicio: avatar_context.id
-            }
-        }).done(function(datos){
-            if (datos.length>0){
-                //Agregamos nuevos mensajes
-                $.each(datos,function(index,data){
-                    $("#chatbox").append(
-                            $("<p class='mensaje'>").text(data.nombreUsuario + ": " + data.message)
-                            .css("color",data.color));
-                    chatbox = document.getElementById("chatbox");
-                    chatbox.scrollTop = chatbox.scrollHeight;
-                });
+        //Ajax para saber si hay nuevos mensajes, verifica si hay conectividad
+        Offline.options = {checks: {xhr: {url: '/test.txt'}}};
+        Offline.on('up', function() {
+            $.ajax({
+                type: "GET",
+                url: url + "chat/leermensajes",
+                data: {
+                    fechaActual: ultimoMensaje,
+                    idEjercicio: avatar_context.id
+                }
+            }).done(function(datos){
+                if (datos.length>0){
+                    //Agregamos nuevos mensajes
+                    $.each(datos,function(index,data){
+                        $("#chatbox").append(
+                                $("<p class='mensaje'>").text(data.nombreUsuario + ": " + data.message)
+                                .css("color",data.color));
+                        chatbox = document.getElementById("chatbox");
+                        chatbox.scrollTop = chatbox.scrollHeight;
+                    });
 
-                ultimoMensaje = datos[datos.length-1].fecha;
-            }
+                    ultimoMensaje = datos[datos.length-1].fecha;
+                }    
+            });
         });
+//        Offline.on('down', function() {
+//            //
+//        });
     };
     
     this.changeExercise = function(estado){
@@ -53,7 +59,7 @@ var chatSensei = function () {
          if(e.shiftKey && e.keyCode === 13) {
             //Espacio vacío
         } else if (code === 13) {
-            var regex = /[a-z]|[0-9]|[áéíóú]/i;
+            var regex = /[a-z]|[0-9]|[áéíóúñ]/i;
             if (!regex.test(message)){
                 $("#usermsg").val("");
                 return;
