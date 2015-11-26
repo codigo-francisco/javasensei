@@ -125,19 +125,6 @@
 
                 $("#fullscreenloading").hide(); //Escondemos el login
 
-                $(document).ajaxSend(function (event, jqxhr, settings) {
-                    var url = settings.url;
-                    if (!(url.indexOf("chat")>-1 || 
-                            url.indexOf("bitacorafotografia")>-1
-                    )){
-                        $("#fullscreenloading").show();
-                    }
-                });
-
-                $(document).ajaxStop(function () {
-                    $("#fullscreenloading").hide();
-                });
-
                 $(":mobile-pagecontainer").on("pagecontainershow", function (event, ui) {
                     switch ($(ui.toPage).attr("id")) {
                         case "paginarecursos":
