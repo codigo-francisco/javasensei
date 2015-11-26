@@ -5,7 +5,8 @@ var chatSensei = function () {
     this.idInterval = -1;
     this.verificarMensaje = function () {        
         //Ajax para saber si hay nuevos mensajes, verifica si hay conectividad
-        Offline.options = {checks: {xhr: {url: '/test.txt'}}};
+        Offline.options = {checks: {xhr: {url: '/favicon.ico'}}};
+        Offline.check();
         Offline.on('up', function() {
             $.ajax({
                 type: "GET",
@@ -29,9 +30,9 @@ var chatSensei = function () {
                 }    
             });
         });
-//        Offline.on('down', function() {
-//            //
-//        });
+        Offline.on('down', function() {
+            this.verificarMensaje();
+        });
     };
     
     this.changeExercise = function(estado){
@@ -65,7 +66,7 @@ var chatSensei = function () {
                 return;
             }
             message = message.substring(0,lastChar);
-            message = message.replace(/(\r\n|\n|\r)/gm, " // ");
+            message = message.replace(/(\r\n|\n|\r)/gm, "<br>");
             var color = $("#botoncolor").css("background-color");
             $("#usermsg").val("");
             $("#chatbox").append(
