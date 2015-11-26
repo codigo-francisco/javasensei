@@ -3,9 +3,9 @@
 var ultimoMensaje;
 var chatSensei = function () {
     this.idInterval = -1;
+    Offline.options = {checks: {xhr: {url: '/favicon.ico'}}};
     this.verificarMensaje = function () {        
         //Ajax para saber si hay nuevos mensajes, verifica si hay conectividad
-        Offline.options = {checks: {xhr: {url: '/favicon.ico'}}};
         Offline.check();
         Offline.on('up', function() {
             $.ajax({
@@ -31,7 +31,7 @@ var chatSensei = function () {
             });
         });
         Offline.on('down', function() {
-            this.verificarMensaje();
+            //
         });
     };
     
