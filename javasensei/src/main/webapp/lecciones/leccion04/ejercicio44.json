@@ -10,7 +10,7 @@
       {
          "paso": 0,
          "tipo": "pasoinicial",
-         "instruccion": "Paso 1 de 2.  Completa el siguiente código.  Se desea que el ciclo  recorra los números del 1 al 3",
+         "instruccion": "Paso 1 de 2.  Completa el siguiente código.  Se desea que el ciclo  recorra los números del 1 al 3.",
          "presentacion": [
             "public class ParejaValores {",
             "\tpublic static void main(String[] args) {",
@@ -113,7 +113,7 @@
                "paso": 4,
                "texto": "1, <=",
                "tipo": "pasooptimo",
-               "instruccion": "Paso 2 de 2.  Completa el siguiente código.  Se desea que el ciclo anidado recorra los números 1 y 2",
+               "instruccion": "Paso 2 de 2.  Completa el siguiente código.  Se desea que el ciclo anidado recorra los números 1 y 2.",
                "presentacion": [
                   "public class ParejaValores {",
                   "\tpublic static void main(String[] args) {",
