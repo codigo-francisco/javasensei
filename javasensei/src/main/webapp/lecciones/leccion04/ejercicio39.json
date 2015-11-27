@@ -1,0 +1,136 @@
+{
+   "id": 39,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con el estatuto while.",
+      "La instrucción de repetición while permite al programador especificar que un programa debe repetir una acción, mientras cierta condición siga siendo verdadera."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Selecciona la condición apropiada en el ciclo while para lograr que la impresión en la consola de salida sea: 1 2 3 4 5 6 7 8 9 10",
+         "presentacion": [
+            "int contador=1;",
+            "while(<input type='text' readonly>) {",
+            "\tSystem.out.print(contador + \" \");",
+            "\t++contador;",
+            "}",
+            ""
+         ],
+        "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "false",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Para que el cuerpo del while se ejecute, se necesita una expresión booleana verdadera.",
+               "presentacion": [
+                  "int contador=1;",
+                  "while(<input type='text' readonly value='false' class='errorTracing'>) {",
+                  "\tSystem.out.print(contador + \" \");",
+                  "\t++contador;",
+                  "}",
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+					"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.",
+						"negativa": "¿Estás seguro de querer estudiar este curso?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "contador<10",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código, cuando el valor del contador llegue a 10 la condición será falsa y por lo tanto no logrará imprimirlo.",
+               "presentacion": [
+                  "int contador=1;",
+                  "while(<input type='text' readonly value='contador<10' class='errorTracing'>) {",
+                  "\tSystem.out.print(contador + \" \");",
+                  "\t++contador;",
+                  "}",
+                  ""
+               ],
+                "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+					"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.",
+						"negativa": "¿Estás seguro de querer estudiar este curso?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "contador<=10",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio, continúa con otro del menú de opciones.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es correcta. Has finalizado el ejercicio",
+					"encantado": "¡Te siento comprometido contigo mismo, continúa con el ejercicio.",
+					"sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+					"compasivo": "Se que Java a veces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
+					"esceptico": "Se que Java te es indiferente.  Al menos trata de terminar el ejercicio.",
+					"retroalimentacion": {
+						"positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con el ejercicio.",
+						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+						"negativa": "Al parecer no te gusta estudiar, pero es parte importante de tu formación académica."
+					}                                    
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "true",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa el código, al utilizar el valor <i>true</i> como condición del ciclo, provoca que esté se repita sin tomar en cuenta el contador.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+					"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.",
+						"negativa": "¿Estás seguro de querer estudiar este curso?."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
