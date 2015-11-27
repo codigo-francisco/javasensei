@@ -1,0 +1,215 @@
+{
+   "id": 42,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con el estatuto do while.",
+      "La instrucción de repetición do while es similar a la instrucción while. En ésta última el programa evalúa la condición de continuación de ciclo al principio, antes de ejecutar el cuerpo del ciclo; si la condición es falsa, el cuerpo nunca se ejecuta."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Paso 1 de 3.  Verdadero o Falso.  ",
+         "presentacion": [
+            "Tanto en la instrucción while como do while el programa evalúa la condición antes de ejecutar el cuerpo del ciclo"
+         ],
+		"textoEmocional": {
+			"neutral": "Inicia el ejercicio.",
+			"encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+			"sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+			"compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+			"esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+			"retroalimentacion": {
+				"positiva": "¡Adelante!, con este ejercicio vas a aprender sobre la utilización de métodos en Java..",
+				"neutral": "Inicia con el ejercicio para aprender sobre la utilización de métodos en Java.",
+				"negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+			} 
+		},
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "Verdadero",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
+               "presentacion": [
+                  "Tanto en la instrucción while como do while el programa evalúa la condición antes de ejecutar el cuerpo del ciclo"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+					"compasivo": "Que no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.",
+						"negativa": "¿Estás seguro de querer estudiar este curso?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "Falso",
+               "tipo": "pasooptimo",
+               "instruccion": "Paso 2 de 3.  Completa la oración.  ",
+               "presentacion": [
+                  "La instrucción do while evalúa la condición de continuación de ciclo <input type='text' readonly> de ejecutar el cuerpo del ciclo; por lo tanto",
+                  "el cuerpo siempre se ejecuta por lo menos una vez."
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta es correcta.",
+					"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+					"sorprendido": "¡Me sorprendes!, continúa así.",
+					"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+					"esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+					"retroalimentacion": {                            
+						"positiva": "¡Excelente!, la respuesta es correcta.  Continúa con el ejercicio.",
+						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+						"negativa": "La respuesta es correcta, pero aprender Java requiere que te tomes las cosas en serio."                            
+					}
+				},
+               "opciones": [
+                  {
+                     "paso": 3,
+                     "texto": "Antes",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
+                     "presentacion": [
+                        "La instrucción do while evalúa la condición de continuación de ciclo <input type='text' class='errorTracing' value='Antes' readonly>de ejecutar el cuerpo del ciclo; por lo tanto",
+                        "el cuerpo siempre se ejecuta por lo menos una vez."
+                     ],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Que no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 4,
+                     "texto": "Después",
+                     "tipo": "pasooptimo",
+                     "instruccion": "Paso 3 de 3.  Completa la oración.  ",
+                     "presentacion": [
+                        "La instrucción do while evalúa la condición de continuación de ciclo después de ejecutar el cuerpo del ciclo; por lo tanto el cuerpo ..."
+                     ],
+					"textoEmocional": {
+						"neutral": "La respuesta es correcta.",
+						"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+						"sorprendido": "¡Me sorprendes!, continúa así.",
+						"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+						"esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+						"retroalimentacion": {                            
+							"positiva": "¡Excelente!, la respuesta es correcta.  Continúa con el ejercicio.",
+							"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+							"negativa": "La respuesta es correcta, pero aprender Java requiere que te tomes las cosas en serio."                            
+						}
+					},
+                     "opciones": [
+                        {
+                           "paso": 5,
+                           "texto": "...siempre se ejecuta por lo menos una vez",
+                           "tipo": "pasofinaloptimo",
+                           "instruccion": "La respuesta es correcta. Continúa con más ejercicios.",
+                           "presentacion": [
+                              "La instrucción do while evalúa la condición de continuación de ciclo después de ejecutar el cuerpo del ciclo;",
+							  "por lo tanto el cuerpo siempre se ejecuta por lo menos una vez."
+                           ],
+							"textoEmocional": {
+								"neutral": "La respuesta es correcta. Has finalizado el ejercicio",
+								"encantado": "Te siento comprometido contigo mismo, continúa con el ejercicio.",
+								"sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+								"compasivo": "Se que Java a veces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
+								"esceptico": "Se que Java te es indiferente.  Al menos trata de terminar el ejercicio.",
+								"retroalimentacion": {
+									"positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con más ejercicios.",
+									"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+									"negativa": "Al parecer no te gusta estudiar, pero es parte importante de tu formación académica."
+								}                                    
+							},
+                           "opciones": []
+                        },
+                        {
+                           "paso": 6,
+                           "texto": "...nunca se ejecuta",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "La respuesta es incorrecta, lee con detenimiento e intenta de nuevo.",
+                           "presentacion": [
+                              "La instrucción do while evalúa la condición de continuación de ciclo después de ejecutar el cuerpo del ciclo; por lo tanto el cuerpo..."
+                           ],
+							"textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+								"compasivo": "Que no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+									"neutral": "La respuesta no es la correcta.",
+									"negativa": "¿Estás seguro de querer estudiar este curso?."
+								}
+							},
+                           "opciones": []
+                        },
+                        {
+                           "paso": 7,
+                           "texto": "...se ejecuta de ser necesario",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "La respuesta es incorrecta, lee con detenimiento e intenta de nuevo.",
+                           "presentacion": [
+                              "La instrucción do while evalúa la condición de continuación de ciclo después de ejecutar el cuerpo del ciclo; por lo tanto el cuerpo ..."
+                           ],
+							"textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+								"compasivo": "Que no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+									"neutral": "La respuesta no es la correcta.",
+									"negativa": "¿Estás seguro de querer estudiar este curso?."
+								}
+							},
+                           "opciones": []
+                        },
+                        {
+                           "paso": 8,
+                           "texto": "...no siempre se ejecuta",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "La respuesta es incorrecta, lee con detenimiento e intenta de nuevo.",
+                           "presentacion": [
+                              "La instrucción do while evalúa la condición de continuación de ciclo después de ejecutar el cuerpo del ciclo; por lo tanto el cuerpo... "
+                           ],
+							"textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+								"compasivo": "Que no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+									"neutral": "La respuesta no es la correcta.",
+									"negativa": "¿Estás seguro de querer estudiar este curso?."
+								}
+							},
+
+                           "opciones": []
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
