@@ -4,6 +4,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
+import java.time.Instant;
+import java.util.Date;
 import javasensei.ia.recognitionemotion.Emocion;
 
 /**
@@ -20,24 +22,55 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     private double habilidadGlobal = 0;
     private double calidadRespuesta = 0; //Parametros internos al crear un estudiante nuevo
     private boolean activarEmociones = true;
+    private double tiempo = 0;
+    private Date creado = Date.from(Instant.now());
 
     public ModeloEstudiante() {
-
+        
     }
 
     public ModeloEstudiante(String jsonEstudiante) {
-        JsonParser parser = new JsonParser();
-        JsonObject jsonObj = parser.parse(jsonEstudiante).getAsJsonObject();
+        BasicDBObject jsonObj = BasicDBObject.parse(jsonEstudiante);
 
         //Se construye el objeto del estudiante
-        id = jsonObj.get("id").getAsLong();
-        idFacebook = jsonObj.get("idFacebook").toString().replace("\"", "");
-        token = jsonObj.get("token").getAsString();
-        calidadRespuesta = jsonObj.get("calidadRespuesta").getAsDouble();
-        emocionActual = Emocion.getEmocion(jsonObj.get("emocionActual").getAsString());
-        emocionPrevia = Emocion.getEmocion(jsonObj.get("emocionPrevia").getAsString());
-        habilidadGlobal = jsonObj.get("habilidadGlobal").getAsDouble();
-        activarEmociones = jsonObj.get("activarEmociones").getAsBoolean();
+        id = jsonObj.getLong("id");
+        idFacebook = jsonObj.getString("idFacebook").replace("\"", "");
+        token = jsonObj.getString("token");
+        calidadRespuesta = new Double(jsonObj.getString("calidadRespuesta"));
+        emocionActual = Emocion.getEmocion(jsonObj.getString("emocionActual"));
+        emocionPrevia = Emocion.getEmocion(jsonObj.getString("emocionPrevia"));
+        habilidadGlobal = new Double(jsonObj.getString("habilidadGlobal"));
+        activarEmociones = jsonObj.getBoolean("activarEmociones");
+        tiempo = jsonObj.getDouble("tiempo");
+        creado = jsonObj.getDate("creado", Date.from(Instant.now()));
+    }
+    
+    @Override
+    public DBObject convertToDBObject() {
+        return convertToDBObject(false);
+    }
+    
+    @Override
+    public DBObject convertToDBObject(boolean save) {
+        DBObject dbObject = new BasicDBObject();
+
+        dbObject.put("idFacebook", getIdFacebook());
+        if (save) {
+            dbObject.put("id", "ultimoIdAlumno()");
+        } else {
+            dbObject.put("id", getId());
+        }
+        dbObject.put("token", getToken());
+
+        dbObject.put("emocionActual", getEmocionActual().toString());
+        dbObject.put("emocionPrevia", getEmocionPrevia().toString());
+        dbObject.put("habilidadGlobal", getHabilidadGlobal().toString());
+        dbObject.put("calidadRespuesta", getCalidadRespuesta());
+        dbObject.put("activarEmociones", getActivarEmociones());
+        dbObject.put("tiempo", getTiempo());
+        dbObject.put("creado", getCreado());
+
+        return dbObject;
     }
 
     public long getId() {
@@ -95,31 +128,13 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     public void setActivarEmociones(boolean activarEmociones){
         this.activarEmociones = activarEmociones;
     }
-
-    @Override
-    public DBObject convertToDBObject() {
-        return convertToDBObject(false);
-    }
     
-    @Override
-    public DBObject convertToDBObject(boolean save) {
-        DBObject dbObject = new BasicDBObject();
+    public double getTiempo() {
+        return tiempo;
+    }
 
-        dbObject.put("idFacebook", getIdFacebook());
-        if (save) {
-            dbObject.put("id", "ultimoIdAlumno()");
-        } else {
-            dbObject.put("id", getId());
-        }
-        dbObject.put("token", getToken());
-
-        dbObject.put("emocionActual", getEmocionActual().toString());
-        dbObject.put("emocionPrevia", getEmocionPrevia().toString());
-        dbObject.put("habilidadGlobal", getHabilidadGlobal().toString());
-        dbObject.put("calidadRespuesta", getCalidadRespuesta());
-        dbObject.put("activarEmociones", getActivarEmociones());
-
-        return dbObject;
+    public void setTiempo(double tiempo) {
+        this.tiempo = tiempo;
     }
 
     public String getIdFacebook() {
@@ -128,5 +143,9 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
 
     public void setIdFacebook(String idFacebook) {
         this.idFacebook = idFacebook;
+    }
+    
+    public Date getCreado() {
+        return creado;
     }
 }

@@ -1,1 +1,1 @@
-mongod --dbpath . --auth --config "mongodb.conf"
+mongod --auth --dbpath D:\javasensei\mongobd --logpath D:\javasensei\mongobd\log.txt

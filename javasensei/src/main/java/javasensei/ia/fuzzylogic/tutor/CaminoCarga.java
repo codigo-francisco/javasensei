@@ -11,17 +11,25 @@ public class CaminoCarga extends CaminoFuzzyLogic {
     
     public CaminoCarga(ModeloEstudiante estudiante) {
         super(estudiante);
-        if (fuzzySystem==null)
-            fuzzySystem = FIS.load(getFile());
+        if (estudiante.getActivarEmociones() && fuzzySystemConEmociones==null)
+            fuzzySystemConEmociones = FIS.load(getFile());
+        else if (fuzzySystemSinEmociones==null)
+            fuzzySystemSinEmociones = FIS.load(getFile());
     }
     
-    protected static FIS fuzzySystem;
+    protected static FIS fuzzySystemConEmociones;
+    protected static FIS fuzzySystemSinEmociones;
     
     @Override
-    protected FIS getFuzzySystem(){
-        return fuzzySystem;
+    protected FIS getFuzzySystemConEmociones(){
+        return fuzzySystemConEmociones;
     }
 
+    @Override
+    protected FIS getFuzzySystemSinEmociones() {
+        return fuzzySystemSinEmociones;
+    }
+    
     @Override
     protected String getFile() {
         return getFile("caminocarga.fcl");
