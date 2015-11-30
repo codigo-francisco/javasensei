@@ -1,0 +1,127 @@
+{
+    "id": 35,
+    "paso":-1,
+    "instruccionesejercicio": 
+    [
+		"Este ejercicio esta relacionado con el operador en corto circuito.",
+		"Las partes de una expresión que contienen los operadores && o || se evalúan sólo hasta que se sabe si la condición es verdadera o falsa. Esta característica de las expresiones AND y OR condicional se conoce como evaluación en corto circuito."
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Señala los operadores que se evalúan en corto circuito.",
+            "presentacion": 
+            [ ""
+
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+            },
+            "opciones": 
+            [
+                
+                {
+                    "texto": "& , |",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta, los operadores & y | siempre evalúan ambos operandos (es decir, no realizan una evaluación en corto circuito).  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+						""
+                    ],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+                    },
+                    "opciones": []
+                },{
+                    "texto": "&& , ||",
+                    "paso": 2,
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
+                    "presentacion": 
+                    [
+                        ""
+                    ],
+					"textoEmocional": {
+                        "neutral": "La respuesta es correcta.  Continúa con más ejercicios.",
+                        "encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con más ejercicios.",              
+                        "sorprendido": "Perro que ladra no muerde.  ¿Al final Java no parece tan complicado verdad?  Sigue con más ejercicios.",
+                        "compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con más ejercicios.",                
+                        "esceptico": "Con calma y nos amanecemos, Sigue con más ejercicios.",
+                        "retroalimentacion": {
+                            "positiva": "¡Excelente!, ¡La respuesta es correcta.",
+                            "neutral": "La respuesta es correcta. Sigue con más ejercicios.",
+                            "negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+                        }  
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "||,&",
+                    "paso": 3,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta, los operadores & y | siempre evalúan ambos operandos (es decir, no realizan una evaluación en corto circuito).  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+                       ""
+                    ],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+                    },
+                    "opciones": []
+                },{
+                    "texto": "//, &&",
+                    "paso": 4,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta, el caracter / no es un operador. Intenta de nuevo",
+                    "presentacion": 
+                    [
+						""
+                    ],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+                    },
+                    "opciones": []
+                }
+            ]
+        }
+    ] 
+}

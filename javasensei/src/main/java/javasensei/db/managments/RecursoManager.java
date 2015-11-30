@@ -175,7 +175,7 @@ public class RecursoManager {
             case 2: json=temasCollection.findOne(query); break;
             case 3: json=ejerciciosCollection.findOne(query); break;
         }
-        return json!=null?true:false;
+        return json!=null;
         //regresa true si ya existe ese ID
     }
 }

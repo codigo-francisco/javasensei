@@ -1,4 +1,4 @@
-/* global menu_context, usuario, camera_sensei, example_tracing, tree_self, contexto */
+/* global menu_context, usuario, camera_sensei, example_tracing, tree_self, contexto, detectorEmocional */
 
 var avatar_context;
 var avatar_sensei = function avatar_sensei(avatar_control) {
@@ -76,26 +76,19 @@ avatar_sensei.prototype = {
         avatar_context.id = datos.id; //Id del ejercicio actual
         if (avatar_context.es_primera_carga) {
             avatar_context.es_primera_carga = false;
-
-            if (usuario.activarEmociones){
-                $.ajax({
-                    url: avatar_context.url + "emociontutor",
-                    type: "POST",
-                    data: {
-                        datosestudiante: JSON.stringify(usuario)
-                    },
-                    dataType: "json"
-                }).done(function (datos) {
-                    avatar_context.llamarInformacion(datos.expresion);
-                }).fail(function (jqXHR, textStatus, errorThrown) {
-                    console.error("Fallo: " + textStatus);
-                });
-
-            }else{
-                avatar_context.llamarInformacion("");
-            }
+            $.ajax({
+                url: avatar_context.url + "emociontutor",
+                type: "POST",
+                data: {
+                    datosestudiante: JSON.stringify(usuario)
+                },
+                dataType: "json"
+            }).done(function (datos) {
+                avatar_context.llamarInformacion(datos.expresion);
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                console.error("Fallo: " + textStatus);
+            });
         }
-
     },
     procesarBitacora: function(datos,tipoCamino){
         //Agregamos un nuevo objeto a la bitacora
@@ -122,26 +115,30 @@ avatar_sensei.prototype = {
         }
     },
     ejecutarAjax: function (tipoCamino, fotografias) {
-        if(usuario.activarEmociones){
             //Se hace una solicitud rest al servidor java en caso de que el detecto este activado
             $.ajax({
                 url: avatar_context.url + tipoCamino,
                 type: "POST",
+                beforeSend:function(jqXHR,settings){
+                    $("#fullscreenloading").show();
+                },
                 data: {
                     datosestudiante: JSON.stringify(usuario),
-                    fotos: fotografias
+                    fotos: fotografias,
+                    detector:detectorEmocional
                 },
                 dataType: "json"
             }).always(function (datos) {
+                $("#fullscreenloading").hide();
                 console.log("%cDatos recibidos: %O", "color:blue;", datos);
                 avatar_context.intervencion(datos);
-                avatar_context.procesarBitacora(datos,tipoCamino);
+                if (usuario.activarEmociones)
+                    avatar_context.procesarBitacora(datos,tipoCamino);
+                else{
+                    datos.emocion = "sinemocion";
+                    avatar_context.procesarBitacora(datos,tipoCamino);
+                }
             });
-        }else{
-            avatar_context.procesarBitacora({
-                emocion:"desactivado"
-            },tipoCamino);
-        }
     },
     llamarSistemaLogicoDifuso: function (tipoCamino) {
         usuario.calidadRespuesta = example_tracing.obtenerCalidadRespuesta();
