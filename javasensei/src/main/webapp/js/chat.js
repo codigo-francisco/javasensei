@@ -16,11 +16,16 @@ var chatSensei = function () {
                     idEjercicio: avatar_context.id
                 }
             }).done(function(datos){
+                data.message = data.message.val()
+                        .replace(/<br\/>/g,"\n")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/\n/g, "<br/>");
                 if (datos.length>0){
                     //Agregamos nuevos mensajes
                     $.each(datos,function(index,data){
                         $("#chatbox").append(
-                                $("<p class='mensaje'>").text(data.nombreUsuario + ": " + data.message)
+                                $("<p class='mensaje'>").html(data.nombreUsuario + ": " + data.message)
                                 .css("color",data.color));
                         chatbox = document.getElementById("chatbox");
                         chatbox.scrollTop = chatbox.scrollHeight;
@@ -55,22 +60,24 @@ var chatSensei = function () {
 
     this.procesarEnvioMensaje = function (e) {
         var code = (e.keyCode ? e.keyCode : e.which);
-        var message = $("#usermsg").val();
+        var message = $("#usermsg").val()
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/\n/g, "<br/>");
         var lastChar = message.length - 1;
-         if(e.shiftKey && e.keyCode === 13) {
+        if(e.shiftKey && e.keyCode === 13) {
             //Espacio vacío
         } else if (code === 13) {
-            var regex = /[a-z]|[0-9]|[áéíóúñ]/i;
+            var regex = /[a-z]|[0-9]|[áéíóúñ]|[$-/:-?{-~!"^_`\[\]]/i;
             if (!regex.test(message)){
                 $("#usermsg").val("");
                 return;
             }
             message = message.substring(0,lastChar);
-            message = message.replace(/(\r\n|\n|\r)/gm, "<br>");
             var color = $("#botoncolor").css("background-color");
             $("#usermsg").val("");
             $("#chatbox").append(
-                    $("<p class='mensaje'>").text(usuario.nombre + ": " + message)
+                    $("<p class='mensaje'>").html(usuario.nombre + ": " + message)
                     .css("color",color));
             chatbox = document.getElementById("chatbox");
             chatbox.scrollTop = chatbox.scrollHeight;
