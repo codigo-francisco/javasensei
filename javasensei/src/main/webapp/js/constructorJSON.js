@@ -23,13 +23,24 @@ var edges;
 var container;
 var data;
 var options =   {
-                    
+                    edges: {
+                        smooth: {
+                            type:'cubicBezier',
+                            forceDirection: "vertical",
+                            roundness: 0.4
+                        }
+                    },
+                    layout: {
+                        hierarchical:{
+                            direction: "UD"
+                        }
+                    }
                 };
 var network;
 $(document).ready(function(){
     nodes = new vis.DataSet([
-        {id: -1, label: 'I.I.', cola:[]},
-        {id: 0, label: 'P.I.', cola:[0]}]);
+        {id: -1, label: 'I.I.', color:"#F2F2F2", level:0, cola:[]},
+        {id: 0, label: 'P.I.', level:1, cola:[0]}]);
     edges = new vis.DataSet([
         {from: -1, to: 0}]);
     data = {nodes: nodes, edges: edges};
@@ -99,21 +110,35 @@ function guardar(){
     });
     ob.json=jsonTexts;
     var etiq;
+    var color;
+    var fuente;
     switch(parseInt(jsonTexts["Tipo"])){
-       case 0: etiq="P.O."; break;
-       case 1: etiq="P.SO."; break;
-       case 2: etiq="P.E."; break;
-       case 3: etiq="P.F.O."; break;
-       case 4: etiq="P.F.SO."; break;
+        case 0: etiq="P.O.";
+            color="#21610B";
+            break;
+        case 1: etiq="P.SO."; 
+            color="#21610B";
+            break;
+        case 2: etiq="P.E."; 
+            color="#FF0000";
+            break;
+        case 3: etiq="P.F.O."; 
+            color="#21610B";
+            fuente = {color:"#000000", strokeWidth:2, strokeColor:"#000000"};
+            break;
+        case 4: etiq="P.F.SO."; 
+            color="#21610B";
+            fuente = {color:"#000000", strokeWidth:2, strokeColor:"#000000"};
+            break;
     }
     if(!banderaNuevaOpGuard){
         ob.nodo=idNode;
-        agregarNodo(etiq);
+        agregarNodo(etiq, color, fuente);
         network.selectNodes([ob.nodo]);
         banderaNuevaOpGuard=true;
     }else{
         if(n.length>1)
-        nodes.update({id:ob.nodo, label:etiq, cola: [].concat(n)});
+        nodes.update({id:ob.nodo, label:etiq, color:color, font:fuente, cola: [].concat(n)});
     }
 }
 function cambiarCampos(){
@@ -272,13 +297,14 @@ function transformar(ob){
     return jsonAux;
 }
 var idNode=1;
-function agregarNodo(etiq){
+function agregarNodo(etiq, color, fuente){
     var ob=objeto;
     for(i=0; i<n.length-1;i++){
         ob=ob.opciones[n[i]];
     }
     var idNodeBefore= ob.nodo;
-    nodes.add({id:idNode,label:etiq, cola: [].concat(n)});
+    var levelBefore = nodes.get(idNodeBefore)["level"];
+    nodes.add({id:idNode,label:etiq, color:color, font:fuente, level:levelBefore+1, cola: [].concat(n)});
     edges.add({from: idNodeBefore, to:idNode++});
 }
 var borrarBand=true;
