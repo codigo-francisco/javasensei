@@ -3,28 +3,40 @@
 var ultimoMensaje;
 var chatSensei = function () {
     this.idInterval = -1;
+    Offline.options = {checks: {xhr: {url: '/favicon.ico'}}};
     this.verificarMensaje = function () {        
-        //Ajax para saber si hay nuevos mensajes
-        $.ajax({
-            type: "GET",
-            url: url + "chat/leermensajes",
-            data: {
-                fechaActual: ultimoMensaje,
-                idEjercicio: avatar_context.id
-            }
-        }).done(function(datos){
-            if (datos.length>0){
-                //Agregamos nuevos mensajes
-                $.each(datos,function(index,data){
-                    $("#chatbox").append(
-                            $("<p class='mensaje'>").text(data.nombreUsuario + ": " + data.message)
-                            .css("color",data.color));
-                    chatbox = document.getElementById("chatbox");
-                    chatbox.scrollTop = chatbox.scrollHeight;
-                });
+        //Ajax para saber si hay nuevos mensajes, verifica si hay conectividad
+        Offline.check();
+        Offline.on('up', function() {
+            $.ajax({
+                type: "GET",
+                url: url + "chat/leermensajes",
+                data: {
+                    fechaActual: ultimoMensaje,
+                    idEjercicio: avatar_context.id
+                }
+            }).done(function(datos){
+                data.message = data.message.val()
+                        .replace(/<br\/>/g,"\n")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/\n/g, "<br/>");
+                if (datos.length>0){
+                    //Agregamos nuevos mensajes
+                    $.each(datos,function(index,data){
+                        $("#chatbox").append(
+                                $("<p class='mensaje'>").html(data.nombreUsuario + ": " + data.message)
+                                .css("color",data.color));
+                        chatbox = document.getElementById("chatbox");
+                        chatbox.scrollTop = chatbox.scrollHeight;
+                    });
 
-                ultimoMensaje = datos[datos.length-1].fecha;
-            }
+                    ultimoMensaje = datos[datos.length-1].fecha;
+                }    
+            });
+        });
+        Offline.on('down', function() {
+            //
         });
     };
     
@@ -48,22 +60,24 @@ var chatSensei = function () {
 
     this.procesarEnvioMensaje = function (e) {
         var code = (e.keyCode ? e.keyCode : e.which);
-        var message = $("#usermsg").val();
+        var message = $("#usermsg").val()
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/\n/g, "<br/>");
         var lastChar = message.length - 1;
-         if(e.shiftKey && e.keyCode === 13) {
+        if(e.shiftKey && e.keyCode === 13) {
             //Espacio vacío
         } else if (code === 13) {
-            var regex = /[a-z]|[0-9]|[áéíóú]/i;
+            var regex = /[a-z]|[0-9]|[áéíóúñ]|[$-/:-?{-~!"^_`\[\]]/i;
             if (!regex.test(message)){
                 $("#usermsg").val("");
                 return;
             }
             message = message.substring(0,lastChar);
-            message = message.replace(/(\r\n|\n|\r)/gm, " // ");
             var color = $("#botoncolor").css("background-color");
             $("#usermsg").val("");
             $("#chatbox").append(
-                    $("<p class='mensaje'>").text(usuario.nombre + ": " + message)
+                    $("<p class='mensaje'>").html(usuario.nombre + ": " + message)
                     .css("color",color));
             chatbox = document.getElementById("chatbox");
             chatbox.scrollTop = chatbox.scrollHeight;

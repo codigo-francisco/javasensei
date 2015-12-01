@@ -18,6 +18,8 @@
         <link href="css/matriz.css" rel="stylesheet"/>
         <link href="css/recursos.css" rel="stylesheet">
         <link href="css/chat.css" rel="stylesheet">
+        <link href="offline-js/offline-theme-default.css" rel="stylesheet">
+        <link href="offline-js/offline-language-spanish.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
@@ -30,6 +32,7 @@
         <script type="text/javascript" src="js/buckets-minified.js"></script>
         <script type="text/javascript" src="js/webcam.min.js"></script>
         <script type="text/javascript" src="jscolor-2.0.4/jscolor.min.js"></script>
+        <script type="text/javascript" src="offline-js/offline.min.js"></script>
 
         <script type="text/javascript" src="js/menu.js"></script>
         <script type="text/javascript" src="js/recursos.js"></script>
@@ -199,7 +202,7 @@
                         $("#panelchat").animate({'bottom':'-100%'},300);
                     }
                 });*/
-        
+                    
                 $("#selecciondetector").on("click",function(){
                     detectorEmocional = $("#selecciondetector :checked").attr("id");
                 });
