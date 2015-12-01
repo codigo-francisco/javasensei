@@ -32,16 +32,16 @@ var chatSensei = function () {
                     idEjercicio: avatar_context.id
                 }
             }).done(function(datos){
-                data.message = data.message.val()
+                /*data.message = $("#usermsg").val()
                         .replace(/<br\/>/g,"\n")
                         .replace(/</g, "&lt;")
                         .replace(/>/g, "&gt;")
-                        .replace(/\n/g, "<br/>");
+                        .replace(/\n/g, "<br/>");*/
                 if (datos.length>0){
                     //Agregamos nuevos mensajes
                     $.each(datos,function(index,data){
                         $("#chatbox").append(
-                                $("<p class='mensaje'>").html(data.nombreUsuario + ": " + data.message)
+                                $("<p class='mensaje'>").html(data.nombreUsuario + ": " + datos.message)
                                 .css("color",data.color));
                         var chatbox = document.getElementById("chatbox");
                         chatbox.scrollTop = chatbox.scrollHeight;
@@ -57,7 +57,7 @@ var chatSensei = function () {
 
     this.procesarEnvioMensaje = function (e) {
         var code = (e.keyCode ? e.keyCode : e.which);
-        var message = $("#usermsg").val()
+        var message = ("<br>"+$("#usermsg").val())
                 .replace(/</g, "&lt;")
                 .replace(/>/g, "&gt;")
                 .replace(/\n/g, "<br/>");
