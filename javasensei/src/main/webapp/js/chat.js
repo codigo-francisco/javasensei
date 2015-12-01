@@ -7,6 +7,22 @@ var chatSensei = function () {
     this.verificarMensaje = function () {        
         //Ajax para saber si hay nuevos mensajes, verifica si hay conectividad
         Offline.check();
+    };
+    
+    this.changeExercise = function(estado){
+        var chatBoton = $("#chatboton");
+        if (estado && ultimoMensaje){ //Se habilita y ademas se cambia el id
+            chatBoton.removeClass("ui-state-disabled");
+            this.idInterval = setInterval(this.verificarMensaje, 500);
+        }else{
+            chatBoton.addClass("ui-state-disabled");
+            clearInterval(this.idInterval);
+        }
+        $("#chatbox").empty();
+    };
+
+    this.setUp = function () {
+        $("#usermsg").keyup(this.procesarEnvioMensaje);
         Offline.on('up', function() {
             $.ajax({
                 type: "GET",
@@ -27,7 +43,7 @@ var chatSensei = function () {
                         $("#chatbox").append(
                                 $("<p class='mensaje'>").html(data.nombreUsuario + ": " + data.message)
                                 .css("color",data.color));
-                        chatbox = document.getElementById("chatbox");
+                        var chatbox = document.getElementById("chatbox");
                         chatbox.scrollTop = chatbox.scrollHeight;
                     });
 
@@ -35,25 +51,6 @@ var chatSensei = function () {
                 }    
             });
         });
-        Offline.on('down', function() {
-            //
-        });
-    };
-    
-    this.changeExercise = function(estado){
-        var chatBoton = $("#chatboton");
-        if (estado && ultimoMensaje){ //Se habilita y ademas se cambia el id
-            chatBoton.removeClass("ui-state-disabled");
-            this.idInterval = setInterval(this.verificarMensaje, 500);
-        }else{
-            chatBoton.addClass("ui-state-disabled");
-            clearInterval(this.idInterval);
-        }
-        $("#chatbox").empty();
-    };
-
-    this.setUp = function () {
-        $("#usermsg").keyup(this.procesarEnvioMensaje);
         //Obtenemos la hora del servidor
         obtenerHora();
     };
