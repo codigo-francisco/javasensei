@@ -4,9 +4,7 @@
     "instruccionesejercicio": 
     [
 		"Este ejercicio esta relacionado con el estatuto de selección if/else/if.",
-		"Cuando en una condición existen diversas posibilidades, nos vemos obligados a programar",
-		"usando if anidados, lo que complica la realización y depuración del código. Para facilitar la",
-		"programación en estas situaciones se proporciona la instrucción if/else/if."
+		"Cuando en una condición existen diversas posibilidades, nos vemos obligados a programar usando if anidados, lo que complica la realización y depuración del código. Para facilitar la programación en estas situaciones se proporciona la instrucción if/else/if."
     ],
     "opciones": 
     [
