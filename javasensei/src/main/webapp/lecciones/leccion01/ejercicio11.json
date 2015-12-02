@@ -4,9 +4,7 @@
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
 		"El siguiente ejercicio está relacionado con imprimir con print/println.",
-        "El método println de System.out imprime una línea de texto en la consola de salida (ventana de comandos, línea de comandos, shell, etc.).",
-        "La cadena dentro de paréntesis es el argumento para el método.",
-        "El método print y println se utilizan para mostrar texto. La diferencia es que println da un salto de línea."
+        "El método println de System.out imprime una línea de texto en la consola de salida (ventana de comandos, línea de comandos, shell, etc.). La cadena dentro de paréntesis es el argumento para el método. El método print y println se utilizan para mostrar texto. La diferencia es que println da un salto de línea."
 	],
     "opciones": [
         {
@@ -23,12 +21,12 @@
                 "neutral": "Inicia los ejercicios",
                 "encantado": "Estas muy bien, inicia con el ejercicio",
                 "sorprendido": "¡Me sorprendes!, continúa así.",
-                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio.",
+                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio.",
                 "retroalimentacion": {
                     "positiva": "No dejes que termine tu día sin haber aprendido algo. ¡Sigue estudiando con entusiasmo!",
-                    "neutral": "Resuelve el ejercicio para continuar con tu proceso de aprendizaje",
-                    "negativa": "Si no le pones empeño y dedicación a lo que haces es complicado que puedas aprender a programar en Java"
+                    "neutral": "Resuelve el ejercicio para continuar con tu proceso de aprendizaje.",
+                    "negativa": "Si no le pones empeño y dedicación a lo que haces es complicado que puedas aprender a programar en Java."
                 }
             },
             "opciones": [
@@ -36,7 +34,7 @@
                     "texto": "Imprime: 23, 5, 5 y 23",
                     "paso": 1,
                     "tipo": "pasofinaloptimo",
-                    "instruccion": "La respuesta es correcta. Selecciona otro ejercicio del menú de opciones",
+                    "instruccion": "La respuesta es correcta. Selecciona otro ejercicio del menú de opciones.",
                     "presentacion": [
 						"System.out.print(\"\" +2 + 3);",
 						"System.out.print(2 + 3);",
@@ -51,8 +49,8 @@
                         "esceptico": "Se que este ejercicio es fácil para ti.  En el menú de opciones hay otros ejercicios más interesantes.",
                         "retroalimentacion": {
                            "positiva": "No dejes que termine tu día sin haber aprendido algo. ¡Sigue estudiando con entusiasmo!",
-                           "neutral": "Resuelve el ejercicio para continuar con tu proceso de aprendizaje",
-                           "negativa": "Si no le pones empeño y dedicación a lo que haces es complicado que puedas aprender a programar en Java"
+                           "neutral": "Resuelve el ejercicio para continuar con tu proceso de aprendizaje.",
+                           "negativa": "Si no le pones empeño y dedicación a lo que haces es complicado que puedas aprender a programar en Java."
                         }
                     },
                     "opciones": [
@@ -62,7 +60,7 @@
                     "texto": "Imprime: 5, 5, 5 y 23",
                     "paso": 2,
                     "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta. Intenta de nuevo",
+                    "instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
                     "presentacion": [
 						"System.out.print(\"\" +2 + 3);",
 						"System.out.print(2 + 3);",
@@ -73,12 +71,12 @@
                         "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
                         "encantado": "La respuesta es incorrecta.  ¡Animo!, Intenta encontrar la respuesta correcta.", 
                         "sorprendido": "Wow, me sorprende el momento que pasas,",
-                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                        "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio.",
+                        "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio.",
                         "retroalimentacion": {
                            "positiva": "No dejes que termine tu día sin haber aprendido algo. ¡Sigue estudiando con entusiasmo!",
-                           "neutral": "Resuelve el ejercicio para continuar con tu proceso de aprendizaje",
-                           "negativa": "Si no le pones empeño y dedicación a lo que haces es complicado que puedas aprender a programar en Java"
+                           "neutral": "Resuelve el ejercicio para continuar con tu proceso de aprendizaje.",
+                           "negativa": "Si no le pones empeño y dedicación a lo que haces es complicado que puedas aprender a programar en Java."
                         }
                     },
                     "opciones": [
@@ -99,7 +97,7 @@
                         "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
                         "encantado": "La respuesta es incorrecta.  ¡Animo!, Intenta encontrar la respuesta correcta.",              
                         "sorprendido": "La respuesta es incorrecta.  ¡Concéntrate! e Intenta encontrar la respuesta correcta.",
-                        "compasivo": "Nuestra mayor debilidad reside en rendirnos.   Intenta encontrar la respuesta correcta",                
+                        "compasivo": "Nuestra mayor debilidad reside en rendirnos.   Intenta encontrar la respuesta correcta.",                
                         "esceptico": "¿Te equivocaste de nuevo?, sigue con el ejercicio.",
                         "retroalimentacion": {
                             "positiva": "La respuesta es incorrecta.  Revisa tu respuesta.",
