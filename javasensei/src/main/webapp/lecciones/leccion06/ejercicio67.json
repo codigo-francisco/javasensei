@@ -1,0 +1,87 @@
+{
+   "id": 67,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+        "Este ejercicio está relacionado con los índices de un arreglo.",
+      "El número de la posición del elemento se conoce formalmente como el índice o subíndice del elemento."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Al ejecutar el siguiente fragmento de código el resultado que se imprime en la consola de salida es 12.",
+         "presentacion": [
+            "int[] numeros;",
+            "numeros = new int [12];",
+            "for (int i = 0 ; i < numeros.length ; i++){",
+            "\tnumeros[i] = (i+1) * 2;",
+            "}",
+            "System.out.println(numeros[6]-2);"
+         ],
+		"textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+         },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "Verdadero",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Muy bien la respuesta es correcta. Continúa con más ejercicios del menú.",
+               "presentacion": [
+                  ""
+               ],
+			"textoEmocional": {
+				"neutral": "La respuesta es correcta.",
+				"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+				"sorprendido": "¡Me sorprendes!, sigue hacia adelante.",
+				"compasivo": "Aquellas cosas que nos apasionan son aquellas que no nos cansan, ¡ánimo!.",
+				"esceptico": "Deja tus excusas y trata de superarte día a día.",
+				"retroalimentacion": {                            
+					"positiva": "Muy bien!, estás en lo correcto.",
+					"neutral": "La respuesta es correcta",
+					"negativa": "¿Estás estudiando con seriedad? ¿O sólo estas pasando el rato?"                            
+				}
+			},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "Falso",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
+               "presentacion": [
+                  "int[] numeros;",
+                  "numeros = new int [12];",
+                  "for (int i = 0 ; i < numeros.length ; i++){",
+                  "\tnumeros[i] = (i+1) * 2;",
+                  "}",
+                  "System.out.println(numeros[6]-2);"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

@@ -1,0 +1,130 @@
+{
+   "id": 68,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "Este ejercicio está relacionado con la declaración y creación de un arreglo.",
+      "Para crear un objeto arreglo debemos especificar el tipo de cada elemento y el número de elementos que se requieren para el arreglo como parte de una expresión para crear un arreglo que utiliza la palabra clave new."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "De las siguientes instrucciones, selecciona la opción que declara y crea un arreglo de String.",
+         "presentacion": [
+            "1.\tString temp [] = new String {\"j\" \"a\" \"z\"}; ",
+            "2.\tString temp [] = { \"j\" \"b\" \"c\"}; ",
+            "3.\tString temp = {\"a\",\"b\",\"c\"}; ",
+            "4.\tString temp [] = {\"a\",\"b\",\"c\"};"
+         ],
+		"textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+         },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": 1,
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Verifica que la inicialización sea de manera correcta e intenta de nuevo.",
+               "presentacion": [
+                  "1.\tString temp [] = new String {\"j\" \"a\" \"z\"}; "
+                  
+               ],
+			"textoEmocional": {
+				"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+				"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+				"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+				"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+				"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+				"retroalimentacion": {                           
+					"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+					"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+				}
+			},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": 2,
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Verifica que la inicialización sea de manera correcta e intenta de nuevo.",
+               "presentacion": [
+					
+					"2.\tString temp [] = { \"j\" \"b\" \"c\"}; "
+					
+				],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": 3,
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Asegúrate que la declaración sea correcta e intenta de nuevo.",
+               "presentacion": [
+               
+                  "3.\tString temp = {\"a\",\"b\",\"c\"}; "
+                  
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": 4,
+               "tipo": "pasofinaloptimo",
+               "instruccion": "La respuesta es correcta. Continúa con más ejercicios del menú.",
+               "presentacion": [
+                  
+                  "4.\tString temp [] = {\"a\", \"b\", \"c\"};"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta es correcta.",
+					"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+					"sorprendido": "¡Me sorprendes!, sigue hacia adelante.",
+					"compasivo": "Aquellas cosas que nos apasionan son aquellas que no nos cansan, ¡ánimo!.",
+					"esceptico": "Deja tus excusas y trata de superarte día a día.",
+					"retroalimentacion": {                            
+						"positiva": "Muy bien!, estás en lo correcto.",
+						"neutral": "La respuesta es correcta",
+						"negativa": "¿Estás estudiando con seriedad? ¿O sólo estas pasando el rato?"                            
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
