@@ -1,13 +1,14 @@
 /* global usuario */
 
 var ultimoMensaje;
+var enviandoMensaje = false;
 var chatSensei = function () {
     this.idInterval = -1;
     Offline.options = {checks: {xhr: {url: '/favicon.ico'}}};
     this.verificarMensaje = function () {        
         //Ajax para saber si hay nuevos mensajes, verifica si hay conectividad
         Offline.check();
-        if (Offline.state !== "up")
+        if (Offline.state !== "up" || enviandoMensaje)
             return;
         $.ajax({
             type: "GET",
@@ -59,6 +60,7 @@ var chatSensei = function () {
         if(e.shiftKey && e.keyCode === 13) {
             //Espacio vacío
         } else if (code === 13) {
+            enviandoMensaje = true;
             var regex = /[a-z]|[0-9]|[áéíóúñ]|[$-/:-?{-~!"^_`\[\]]/i;
             if (!regex.test(message)){
                 $("#usermsg").val("");
@@ -85,6 +87,7 @@ var chatSensei = function () {
             }).done(function(data){
                 if (data>ultimoMensaje)
                     ultimoMensaje = data;
+                enviandoMensaje = false;
             });
         }
     };
