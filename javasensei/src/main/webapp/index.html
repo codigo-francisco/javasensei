@@ -87,16 +87,22 @@
             ;
             
             var noCamara = false;
+            var mensajeCamara=false;
             
             function errorCamara(err){
-                console.error(err);
-                alert("A ocurrido un error debido a que no cuenta con camara o no otorgo los permisos necesarios.\n\nLa detección emocional se ha deshabilitado");
-                noCamara = true;
-                usuario.activarEmociones=false;
-                //Opciones de la camara
-                eliminarBackgroundCamera();
-                $("#dialog_video").hide();
-                $("#botoncamara").addClass("ui-disabled");
+                if (!mensajeCamara){
+                    
+                    console.error(err);
+                    alert("A ocurrido un error debido a que no cuenta con camara o no otorgo los permisos necesarios.\n\nLa detección emocional se ha deshabilitado");
+                    noCamara = true;
+                    usuario.activarEmociones=false;
+                    //Opciones de la camara
+                    eliminarBackgroundCamera();
+                    $("#dialog_video").hide();
+                    $("#botoncamara").addClass("ui-disabled");
+                    
+                    mensajeCamara=true;
+                }
             }
 
             $(document).ready(function () {
@@ -484,7 +490,7 @@
                         <div id="tercertab" class="ui-content">
                             <label for="activarEmociones">Activar Detector de Emociones</label>
                             <input id="activarEmociones" checked="checked" data-role="flipswitch" name="activarEmociones" type="checkbox">
-                            <fieldset data-role="controlgroup" data-type="horizontal" id="selecciondetector">
+                            <fieldset class="ui-disabled" data-role="controlgroup" data-type="horizontal" id="selecciondetector">
                                 <legend>Reconocimiento Emocional:</legend>
                                 <input type="radio" name="reconocimientoemocional" id="neuroph" value="on" checked="checked">
                                 <label for="neuroph">NeuroPH</label>
