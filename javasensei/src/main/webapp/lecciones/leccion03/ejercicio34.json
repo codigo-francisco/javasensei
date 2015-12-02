@@ -4,9 +4,7 @@
     "instruccionesejercicio": 
     [
 		"Este ejercicio esta relacionado con el operador condicional.",
-		"Java cuenta con el operador condicional (?:), que en ocasiones puede utilizarse en lugar",
-		"de una instrucción if/else. Éste es el único operador ternario en Java; es decir, que",
-		"utiliza tres operandos. En conjunto, los operandos y el símbolo ?: forman una expresión condicional."
+		"Java cuenta con el operador condicional (?:), que en ocasiones puede utilizarse en lugar de una instrucción if/else. Éste es el único operador ternario en Java; es decir, que utiliza tres operandos. En conjunto, los operandos y el símbolo ?: forman una expresión condicional."
     ],
     "opciones": 
     [
