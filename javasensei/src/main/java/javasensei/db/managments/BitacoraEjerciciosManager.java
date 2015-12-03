@@ -14,8 +14,12 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import static com.mongodb.client.model.Filters.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,10 +27,14 @@ import javasensei.db.Connection;
 import javasensei.dbo.bitacora.BitacoraEjerciciosDBO;
 import java.util.Date;
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.time.ZoneOffset;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.bson.BsonDocument;
 import org.bson.Document;
-import org.bson.conversions.Bson;
+import org.bson.json.JsonMode;
+import org.bson.json.JsonWriterSettings;
 /**
  *
  * @author PosgradoMCC
@@ -73,49 +81,45 @@ public class BitacoraEjerciciosManager {
     
     public String obtenerBitacora(String idAlumno, String ejercicioId, 
                                   String fechaInicial, String fechaFinal, String sesionId,
-                                  String emocionInicial, String emocionFinal){
+                                  String emocionInicial, String emocionFinal) {
         
-        //Query para hacer la consulta a la base de datos
-        Bson query = new BsonDocument();
+        
         MongoCollection<DBObject> bitacoras = Connection.getDBV3().getCollection("bitacora_ejercicios", DBObject.class);
+        Document query = new Document();
+        
+        Date dateI;
+        Date dateF;
         
         
-        Date dateI=null;
-        Date dateF=null;
-        
-        if(!idAlumno.isEmpty())
+        if(!idAlumno.isEmpty()){
+            query.append("idAlumno", Integer.parseInt(idAlumno));
+        }
             
-            eq("idAlumno",Integer.parseInt(idAlumno));
-            //builder.put("idAlumno").is(Integer.parseInt(idAlumno));
-        
-        if(!ejercicioId.isEmpty())
-            builder.put("ejercicioId").is(Integer.parseInt(ejercicioId));
-        
-        if(!fechaInicial.isEmpty()){
-            dateI = Date.from(LocalDateTime.parse(fechaInicial).toInstant(ZoneOffset.UTC));
-            builder.put("fecha").greaterThan(dateI);
-        }    
-        
-        if(!fechaFinal.isEmpty()){
-            dateF = Date.from(LocalDateTime.parse(fechaFinal).toInstant(ZoneOffset.UTC));
-            builder.put("fecha").lessThan(dateF);
+        if(!ejercicioId.isEmpty()){
+            query.append("ejercicioId", Integer.parseInt(ejercicioId));
         }
         
-        if(!sesionId.isEmpty())
-            builder.put("sesionId").is(Integer.parseInt(sesionId));
+        if(!sesionId.isEmpty()){
+            query.append("sesionId", Integer.parseInt(sesionId));
+        }    
+        
+        if(!fechaFinal.isEmpty() && !fechaInicial.isEmpty()){
+            dateI = Date.from(LocalDateTime.parse(fechaInicial).toInstant(ZoneOffset.UTC));
+            dateF = Date.from(LocalDateTime.parse(fechaFinal).toInstant(ZoneOffset.UTC));
+            query.append("fecha", new Document("$gte", dateI).append("$lte", dateF));
             
-        List<DBObject> dbo = bitacoras.find(
-                and(
-                    gt("fecha", dateI),
-                    lt("fecha", dateF)
-                )
-        ).projection(
-                and(
-                        eq("_id",0),
-                        eq("fotografias",0)
-                )
-        ).into(new ArrayList<DBObject>());
-        //bitacoraEjercicios.find(builder.get(), new BasicDBObject("fotografias",0).append("_id", 0)).toArray();
+        }else if(!fechaInicial.isEmpty()){
+            dateI = Date.from(LocalDateTime.parse(fechaInicial).toInstant(ZoneOffset.UTC));
+            query.append("fecha", new Document("$gte", dateI));
+            
+        }else if(!fechaFinal.isEmpty()){
+            dateF = Date.from(LocalDateTime.parse(fechaFinal).toInstant(ZoneOffset.UTC));
+            query.append("fecha", new Document("$lte", dateF));
+        }    
+        
+        System.out.println(query.toJson(new JsonWriterSettings(JsonMode.SHELL))); 
+        
+        List<DBObject> dbo = bitacoras.find(query).projection(new Document("fotografias",0).append("_id" , 0)).into(new ArrayList<DBObject>());
         
         return dbo.toString();
     }

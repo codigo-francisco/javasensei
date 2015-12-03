@@ -35,8 +35,9 @@ $(function(){
             }).done(function(data){
                 
                 $.each(data, function(index,value) {
-                    var dateConvert = new Date(value.fecha.$date).toLocaleString();
-                    value.fecha = dateConvert;
+                    var dateConvert = new Date(value.fecha.$date);
+                    dateConvert = new Date(dateConvert.getTime()+(dateConvert.getTimezoneOffset()*60000));
+                    value.fecha = dateConvert.toLocaleString();
                     
                 });
                 
