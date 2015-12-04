@@ -16,13 +16,13 @@ import weka.core.converters.ArffLoader;
  * Estrada, Raul Oramas Bustillos Email Contacto:
  * franciscogonzalez_hernandez@hotmail.com
  */
-public class ExtractEmotion implements INeuralNetwork<double[]> {
+public class ExtractEmotionWeka implements INeuralNetwork<double[]> {
 
     private static MultilayerPerceptron multilayer;
 
     private static boolean loadFiles = false;
 
-    public ExtractEmotion() {
+    public ExtractEmotionWeka() {
         if (!loadFiles) { //Carga de 
             loadFiles();
             loadFiles = true;
