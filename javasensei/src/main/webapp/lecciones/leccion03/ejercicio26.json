@@ -1,0 +1,416 @@
+{
+    "id": 26,
+    "paso":-1,
+    "tipo":"instruccionesiniciales",
+    "instruccionesejercicio": [
+        "El siguiente ejercicio está relacionado con los estatutos de selección.",
+        "Los programas utilizan instrucciones de selección para elegir entre los cursos alternativos de acción."       
+    ],
+    "opciones": [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Paso 1 de 4.  Selecciona la opción correcta.",
+            "presentacion": [			
+				"¿Cuáles son las instrucciones de selección con las que cuenta Java?"
+            ],
+             "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+            },
+            "opciones": [
+				 				   {
+						"texto": "if, if else, switch",
+						"paso": 1,
+						"tipo": "pasooptimo",
+						"instruccion": "Paso 2 de 4.  Completa la oración.",
+						"presentacion": [
+							"La instrucción <input type='text' readonly> realiza (selecciona) una acción si la condición es verdadera, o evita la acción si la condición es falsa."
+						],
+						"textoEmocional": {
+							"neutral": "La respuesta es correcta.",
+							"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+							"sorprendido": "¡Me sorprendes!, continúa así.",
+							"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+							"esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+							"retroalimentacion": {                            
+								"positiva": "¡Excelente!, la respuesta es correcta.  Continúa con el ejercicio.",
+								"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+								"negativa": "La respuesta es correcta, pero aprender Java requiere que te tomes las cosas en serio."                            
+							}
+						},
+						"opciones": [  
+											   {
+						"texto": "if",
+						"paso": 2,
+						"tipo": "pasooptimo",
+						"instruccion": "Paso 3 de 4.  Completa la oración.",
+						"presentacion": [
+							"La instrucción <input type='text' readonly> realiza una acción si la condición es verdadera, o realiza una acción distinta si la condición es falsa."
+						],
+						"textoEmocional": {
+							"neutral": "La respuesta es correcta.",
+							"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+							"sorprendido": "¡Me sorprendes!, continúa así.",
+							"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+							"esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+							"retroalimentacion": {                            
+								"positiva": "¡Excelente!, la respuesta es correcta.  Continúa con el ejercicio.",
+								"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+								"negativa": "La respuesta es correcta, pero aprender Java requiere que te tomes las cosas en serio."                            
+							}
+						},
+						"opciones": [  
+														{
+								"texto": "if",
+								"paso": 3,
+								"tipo": "pasoerroneo",
+								"instruccion": "La respuesta es incorrecta. La instrucción <i>if</i> realiza una acción si la condición es verdadera, o evita la acción si la condición es falsa.",
+								"presentacion": [
+									"La instrucción <input type='text' readonly value='if' class='errorTracing'> realiza una acción si la condición es verdadera, o realiza una acción distinta si la condición es falsa."
+								],
+								"textoEmocional": {
+									"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+									"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+									"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+									"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+									"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+									"retroalimentacion": {                           
+										"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+										"neutral": "La respuesta no es la correcta.",
+										"negativa": "¿Estás seguro de querer estudiar este curso?."
+									}
+								},
+								"opciones": [
+								]
+							},
+							{
+								"texto": "if else",
+								"paso": 4,
+								"tipo": "pasooptimo",
+								"instruccion": "Paso 4 de 4. Completa la oración.",
+								"presentacion": [
+									"La instrucción <input type='text' readonly> es una estructura de selección múltiple ya que selecciona de entre diversas acciones distintas, dependiendo del valor de una expresión."
+								],
+								"textoEmocional": {
+									"neutral": "La respuesta es correcta.",
+									"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+									"sorprendido": "¡Me sorprendes!, continúa así.",
+									"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+									"esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+									"retroalimentacion": {                            
+										"positiva": "¡Excelente!, la respuesta es correcta.  Continúa con el ejercicio.",
+										"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+										"negativa": "La respuesta es correcta, pero aprender Java requiere que te tomes las cosas en serio."                            
+									}
+								},
+								"opciones": [  
+									
+								{
+									"texto": "if",
+									"paso": 5,
+									"tipo": "pasoerroneo",
+									"instruccion": "La respuesta es incorrecta. La instrucción <i>if</i> realiza una acción si la condición es verdadera, o evita la acción si la condición es falsa.",
+									"presentacion": [
+										"La instrucción <input type='text' readonly value='if' class='errorTracing'> es una estructura de selección múltiple ya que selecciona de entre diversas acciones distintas, dependiendo del valor de una expresión."
+									],
+									"textoEmocional": {
+										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+										"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+										"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+										"retroalimentacion": {                           
+											"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+											"neutral": "La respuesta no es la correcta.",
+											"negativa": "¿Estás seguro de querer estudiar este curso?."
+										}
+									},
+									"opciones": [
+																														
+									]
+								},
+								{
+									"texto": "if else",
+									"paso": 6,
+									"tipo": "pasoerroneo",
+									"instruccion": "La respuesta es incorrecta. La instrucción if...else de permite especificar una acción a realizar cuando la condición es verdadera, y otra distinta cuando es falsa.",
+									"presentacion": [
+										
+										"La instrucción <input type='text' readonly value='if else' class='errorTracing'> es una estructura de selección múltiple ya que selecciona de entre diversas acciones distintas, dependiendo del valor de una expresión."
+									
+									],
+									"textoEmocional": {
+										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+										"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+										"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+										"retroalimentacion": {                           
+											"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+											"neutral": "La respuesta no es la correcta.",
+											"negativa": "¿Estás seguro de querer estudiar este curso?."
+										}
+									},
+									"opciones": [
+																														
+									]
+								},
+								{
+									"texto": "If Then",
+									"paso": 7,
+									"tipo": "pasoerroneo",
+									"instruccion": "La respuesta es incorrecta. La instrucción <i>If Then</i> no pertenece al lenguaje Java.",
+									"presentacion": [
+
+										
+										"La instrucción <input type='text' readonly value='If Then' class='errorTracing'> es una estructura de selección múltiple ya que selecciona de entre diversas acciones distintas, dependiendo del valor de una expresión."
+									
+									],
+									"textoEmocional": {
+										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+										"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+										"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+										"retroalimentacion": {                           
+											"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+											"neutral": "La respuesta no es la correcta.",
+											"negativa": "¿Estás seguro de querer estudiar este curso?."
+										}
+									},
+									"opciones": [
+																														
+									]
+								},
+												
+								{
+									"texto": "switch",
+									"paso": 8,
+									"tipo": "pasofinaloptimo",
+									"instruccion": "Has finalizado el ejercicio. Selecciona otro del menú de opciones. ",
+									"presentacion": [
+
+									],
+									"textoEmocional": {
+										"neutral": "La respuesta es correcta. Has finalizado el ejercicio",
+										"encantado": "¡Te siento comprometido contigo mismo, continúa con el ejercicio.",
+										"sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+										"compasivo": "Se que Java a veces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
+										"esceptico": "Se que Java te es indiferente.  Al menos trata de terminar el ejercicio.",
+										"retroalimentacion": {
+											"positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con el ejercicio.",
+											"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+											"negativa": "Al parecer no te gusta estudiar, pero es parte importante de tu formación académica."
+										}                                    
+									},
+									"opciones": [
+										
+									]
+								}
+								]
+							},
+							{
+								"texto": "If Then",
+								"paso": 9,
+								"tipo": "pasoerroneo",
+								"instruccion": "La respuesta es incorrecta. La instrucción <i>If Then</i> no pertenece al lenguaje Java.",
+								"presentacion": [
+									"La instrucción <input type='text' readonly value='If Then' class='errorTracing'> realiza una acción si la condición es verdadera, o realiza una acción distinta si la condición es falsa."
+								],
+								"textoEmocional": {
+									"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+									"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+									"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+									"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+									"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+									"retroalimentacion": {                           
+										"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+										"neutral": "La respuesta no es la correcta.",
+										"negativa": "¿Estás seguro de querer estudiar este curso?."
+									}
+								},
+								"opciones": [
+								]
+							},
+							{
+								"texto": "switch",
+								"paso": 10,
+								"tipo": "pasoerroneo",
+								"instruccion": "La respuesta es incorrecta. La instrucción <i>switch</i> realiza una de entre varias acciones distintas, dependiendo del valor de una expresión",
+								"presentacion": [
+									"La instrucción <input type='text' readonly value='switch' class='errorTracing'> realiza una acción si la condición es verdadera, o realiza una acción distinta si la condición es falsa."
+								],
+								"textoEmocional": {
+									"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+									"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+									"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+									"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+									"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+									"retroalimentacion": {                           
+										"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+										"neutral": "La respuesta no es la correcta.",
+										"negativa": "¿Estás seguro de querer estudiar este curso?."
+									}
+								},
+								"opciones": [
+								]
+							}
+						]
+					},
+				   {
+						"texto": "if else",
+						"paso": 11,
+						"tipo": "pasoerroneo",
+						"instruccion": "La respuesta es incorrecta. La instrucción if...else de permite especificar una acción a realizar cuando la condición es verdadera, y otra distinta cuando es falsa.",
+						"presentacion": [
+							"La instrucción <input type='text' readonly value='if else' class='errorTracing'> realiza (selecciona) una acción si la condición es verdadera, o evita la acción si la condición es falsa."
+						],
+						"textoEmocional": {
+							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+							"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+							"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+							"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+							"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+							"retroalimentacion": {                           
+								"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+								"neutral": "La respuesta no es la correcta.",
+								"negativa": "¿Estás seguro de querer estudiar este curso?."
+							}
+						},
+						"opciones": [
+						]
+					},
+					
+					{
+						"texto": "If Then",
+						"paso": 12,
+						"tipo": "pasoerroneo",
+						 "instruccion": "La respuesta es incorrecta. La instrucción <i>If Then</i> no pertenece al lenguaje Java.",
+						"presentacion": [
+							"La instrucción <input type='text' readonly value='If Then' class='errorTracing'> realiza (selecciona) una acción si la condición es verdadera, o evita la acción si la condición es falsa."
+						],
+						"textoEmocional": {
+							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+							"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+							"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+							"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+							"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+							"retroalimentacion": {                           
+								"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+								"neutral": "La respuesta no es la correcta.",
+								"negativa": "¿Estás seguro de querer estudiar este curso?."
+							}
+						},
+						"opciones": [
+						]
+					},
+					{
+						"texto": "switch",
+						"paso": 13,
+						"tipo": "pasoerroneo",
+						"instruccion": "La respuesta es incorrecta. La instrucción <i>switch</i> realiza una de entre varias acciones distintas, dependiendo del valor de una expresión",
+						"presentacion": [
+							"La instrucción <input type='text' readonly value='switch' class='errorTracing'> realiza (selecciona) una acción si la condición es verdadera, o evita la acción si la condición es falsa."
+						],
+						"textoEmocional": {
+							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+							"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+							"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+							"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+							"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+							"retroalimentacion": {                           
+								"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+								"neutral": "La respuesta no es la correcta.",
+								"negativa": "¿Estás seguro de querer estudiar este curso?."
+							}
+						},
+						"opciones": [
+						]
+					}
+						]
+					},
+				   {
+						"texto": "for, if, switch",
+						"paso": 14,
+						"tipo": "pasoerroneo",
+						"instruccion": "La respuesta es incorrecta. La instrucción <i>for</i> es una instrucción de repetición.",
+						"presentacion": [
+							"¿Cuáles son las instrucciones de selección con las que cuenta Java?"
+						],
+						"textoEmocional": {
+							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+							"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+							"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+							"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+							"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+							"retroalimentacion": {                           
+								"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+								"neutral": "La respuesta no es la correcta.",
+								"negativa": "¿Estás seguro de querer estudiar este curso?."
+							}
+						},
+						"opciones": [
+						]
+					},
+					
+					{
+						"texto": "if, for, while",
+						"paso": 15,
+						"tipo": "pasoerroneo",
+						 "instruccion": "La respuesta es incorrecta. Las instrucciones <i>for</i> y <i>while</i> son instrucciones de repetición.",
+						"presentacion": [
+							"¿Cuáles son las instrucciones de selección con las que cuenta Java?"
+						],
+						"textoEmocional": {
+							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+							"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+							"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+							"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+							"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+							"retroalimentacion": {                           
+								"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+								"neutral": "La respuesta no es la correcta.",
+								"negativa": "¿Estás seguro de querer estudiar este curso?."
+							}
+						},
+						"opciones": [
+						]
+					},
+					{
+						"texto": "switch, for, while",
+						"paso": 16,
+						"tipo": "pasoerroneo",
+						"instruccion": "La respuesta es incorrecta. Las instrucciones <i>for</i> y <i>while</i> son instrucciones de repetición.",
+						"presentacion": [
+							"¿Cuáles son las instrucciones de selección con las que cuenta Java?"
+						],
+						"textoEmocional": {
+							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+							"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+							"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+							"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+							"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+							"retroalimentacion": {                           
+								"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+								"neutral": "La respuesta no es la correcta.",
+								"negativa": "¿Estás seguro de querer estudiar este curso?."
+							}
+						},
+						"opciones": [
+						]
+					}     
+            ]
+        }
+    ]
+        
+ 
+}

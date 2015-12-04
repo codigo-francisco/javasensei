@@ -42,6 +42,11 @@ public class RecognitionEmotionalFace {
                 if (image != null) {
                     System.out.println("Se decodifico de base64 a imagebuffer");
                     switch (detector) {
+                        case "indico":
+                            System.out.println("Se llama detecto indico");
+                            emocion = new ExtractEmotionIndico().processData(image);
+                            System.out.println("Rostro procesado, indico: "+emocion);
+                            break;
                         case "oxford":
                             System.out.println("Se llama detector de oxford");
                             emocion = new ExtractEmotionMicrosoft().processData(image);

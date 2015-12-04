@@ -294,7 +294,7 @@
 														"tipo": "pasoerroneo",
 														"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 														"presentacion": [
-															"Paso 4 de 4. ¿Cuál de las siguientes sentencias de asignación son válida? (asumiendo que las variables están declaradas correctamente)"
+															"Paso 4 de 4. ¿Cuál de las siguientes sentencias de asignación es válida? (asumiendo que las variables están declaradas correctamente)"
 
 														],
 														"textoEmocional": {
@@ -318,7 +318,7 @@
 														"tipo": "pasofinaloptimo",
 														"instruccion": "Muy bien, la respuesta es correcta, continua con mas ejercicios del menú.",
 														"presentacion": [
-															"Paso 4 de 4. ¿Cuáles de las siguientes sentencias de asignación son inválidas? (asumiendo que las variables están declaradas correctamente)"
+															"Paso 4 de 4. ¿Cuál de las siguientes sentencias de asignación es válida? (asumiendo que las variables están declaradas correctamente)"
 
 														],
 														"textoEmocional": {

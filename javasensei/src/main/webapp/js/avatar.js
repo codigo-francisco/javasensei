@@ -119,6 +119,9 @@ avatar_sensei.prototype = {
             $.ajax({
                 url: avatar_context.url + tipoCamino,
                 type: "POST",
+                beforeSend:function(jqXHR,settings){
+                    $("#fullscreenloading").show();
+                },
                 data: {
                     datosestudiante: JSON.stringify(usuario),
                     fotos: fotografias,
@@ -126,6 +129,7 @@ avatar_sensei.prototype = {
                 },
                 dataType: "json"
             }).always(function (datos) {
+                $("#fullscreenloading").hide();
                 console.log("%cDatos recibidos: %O", "color:blue;", datos);
                 avatar_context.intervencion(datos);
                 if (usuario.activarEmociones)
@@ -133,7 +137,7 @@ avatar_sensei.prototype = {
                 else{
                     datos.emocion = "sinemocion";
                     avatar_context.procesarBitacora(datos,tipoCamino);
-                }                    
+                }
             });
     },
     llamarSistemaLogicoDifuso: function (tipoCamino) {

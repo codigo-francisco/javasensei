@@ -82,7 +82,7 @@ camera.prototype = {
             dest_width: 610,
             dest_height: 400,
             image_format: 'jpeg',
-            jpeg_quality: 100,
+            jpeg_quality: 75,
             force_flash: false,
             flip_horiz: true
         });

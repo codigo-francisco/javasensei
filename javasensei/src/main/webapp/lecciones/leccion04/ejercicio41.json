@@ -1,0 +1,314 @@
+{
+   "id": 41,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado la variable de control.",
+      "La modificación del valor de la variable de control (posiblemente un incremento o un decremento), hace posible que la condición de continuación de ciclo se vuelva falsa en un momento dado.",
+      "Si la expresión de inicialización en el encabezado del for declara la variable de control ésta solo puede utilizarse en esa instrucción for; no existirá fuera de ella. "
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Paso 1 de 3.  Elige los valores apropiados en el orden correcto para modificar la variable de control de 1 a 100 en incrementos de 1. ",
+         "presentacion": [
+            "for(int i=1;i<=<input type='text' readonly>;<input type='text' readonly>){",
+            "}",
+            ""
+         ],
+         "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "i++, 100",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa el código con atención. El formato general de la instrucción for es: <i>for</i> ( <i>inicialización</i>;<i>condiciónDeContinuaciónDeCiclo</i>; <i>instrucción incremento</i>). Asegúrate de estar tomando en cuenta el orden.",
+               "presentacion": [
+                  "for(int i=1;i<=<input type='text' readonly value='i++' class='errorTracing'>;<input type='text' readonly value='100' class='errorTracing'>){",
+                  "}"
+               ],
+              "textoEmocional": {
+                        "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+                        "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+                        "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+                        "compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+                        }
+                    },
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "100, i--",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. La instrucción <i>i--</i> indica decrementos de uno en la variable de control.",
+               "presentacion": [
+                  "for(int i=1;i<=<input type='text' readonly value='100' class='errorTracing'>;<input type='text' readonly value='i--' class='errorTracing'>){",
+                  "}"
+               ],
+               "textoEmocional": {
+                        "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+                        "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+                        "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+                        "compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+                        }
+                    },
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "100, i++",
+               "tipo": "pasooptimo",
+               "instruccion": "Paso 2 de 3.  Elige los valores apropiados en el orden correcto para modificar la variable de control de 100 a 1 en decrementos de 1.",
+               "presentacion": [
+                  "for (int i =<input type='text' readonly>;i>=<input type='text' readonly>;<input type='text' readonly>){",
+                  "}",
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es correcta.",
+					"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+					"sorprendido": "¡Me sorprendes!, continúa así.",
+					"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+					"esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+					"retroalimentacion": {                            
+						"positiva": "¡Excelente!, la respuesta es correcta.  Continúa con el ejercicio.",
+						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+						"negativa": "La respuesta es correcta, pero aprender Java requiere que te tomes las cosas en serio."                            
+					}
+				},
+               "opciones": [
+                  {
+                     "paso": 4,
+                     "texto": "1, 100, i--",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Observa con atención el código, aunque la instrucción <i>i--</i> indica decremento en uno, la inicialización de la variable en 1 no permite lograr lo que se pide.",
+                     "presentacion": [
+                        "for (int i =<input type='text' readonly value='1' class='errorTracing'>;i>=<input type='text' readonly value='100' class='errorTracing'>;<input type='text' readonly value='i--' class='errorTracing'>){",
+                        "}"
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+                        "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+                        "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+                        "compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+                        }
+                    },
+                     "opciones": []
+                  },
+                  {
+                     "paso": 5,
+                     "texto": "100, 1, i--",
+                     "tipo": "pasooptimo",
+                     "instruccion": "Paso 3 de 3.  Elige los valores apropiados en el orden correcto para modificar la variable de control con la siguiente secuencia de valores: 2, 5, 8,11,14,17, 20.",
+                     "presentacion": [
+                        "for(int i=<input type='text' readonly>;i<=<input type='text' readonly>;<input type='text' readonly>){",
+                        "}",
+                        ""
+                     ],
+					   "textoEmocional": {
+							"neutral": "La respuesta es correcta.",
+							"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+							"sorprendido": "¡Me sorprendes!, continúa así.",
+							"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+							"esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+							"retroalimentacion": {                            
+								"positiva": "¡Excelente!, la respuesta es correcta.  Continúa con el ejercicio.",
+								"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+								"negativa": "La respuesta es correcta, pero aprender Java requiere que te tomes las cosas en serio."                            
+							}
+						},
+                     "opciones": [
+                        {
+                           "paso": 6,
+                           "texto": "2, 20, i-=3",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                           "presentacion": [
+                              "for(int i=<input type='text' readonly value='2' class='errorTracing'>;i<=<input type='text' readonly value='20' class='errorTracing'>;<input type='text' readonly value='i-=3' class='errorTracing'>){",
+                              "}"
+                           ],
+                           "textoEmocional": {
+								"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+								"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+								"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+								"compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+									"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+									"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+								}
+							},
+                           "opciones": []
+                        },
+                        {
+                           "paso": 7,
+                           "texto": "2, 20, i+=2",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Observa con atención el código  e intenta de nuevo.",
+                           "presentacion": [
+                              "for(int i=<input type='text' readonly value='2' class='errorTracing'>;i<=<input type='text' readonly value='20' class='errorTracing'>;<input type='text' readonly value='i+=2' class='errorTracing'>){",
+                              "}"
+                           ],
+                          "textoEmocional": {
+								"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+								"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+								"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+								"compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+									"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+									"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+								}
+							},
+                           "opciones": []
+                        },
+                        {
+                           "paso": 8,
+                           "texto": "20, 2, i+=3",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Observa con atención el código  e intenta de nuevo. ",
+                           "presentacion": [
+                              "for(int i=<input type='text' readonly value='20' class='errorTracing'>;i<=<input type='text' readonly value='2' class='errorTracing'>;<input type='text' readonly value='i+=3' class='errorTracing'>){",
+                              "}"
+                           ],
+                           "textoEmocional": {
+								"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+								"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+								"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+								"compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+									"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+									"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+								}
+							},
+                           "opciones": []
+                        },
+                        {
+                           "paso": 9,
+                           "texto": "2, 20, i+=3",
+                           "tipo": "pasofinaloptimo",
+                           "instruccion": "Respuesta correcta. Has finalizado el ejercicio continúa con otro ejercicio del menú de opciones.",
+                           "presentacion": [
+                              ""
+                           ],
+                           "textoEmocional": {
+								"neutral": "Has finalizado con este ejercicio.",
+								"encantado": "Cada logro comienza con la decisión de intentarlo.”, ¡sigue con este entusiasmo!.",              
+								"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio..",
+								"compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio..",                
+								"esceptico": "Al menos llegaste al final del ejercicio.",
+								"retroalimentacion": {
+									"positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+									"neutral": "Has finalizado con este ejercicio.",
+									"negativa": "Has finalizado con este ejercicio."
+								} 
+							},
+                           "opciones": []
+                        }
+                     ]
+                  },
+                  {
+                     "paso": 10,
+                     "texto": "100, 0, i--",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Observa con atención el código, la condición de continuación <i>i>=0</i> provocaría que el valor de la variable de control llegue a 0.",
+                     "presentacion": [
+                        "for (int i =<input type='text' readonly value='100' class='errorTracing'>;i>=<input type='text' readonly value='1' class='errorTracing'>;<input type='text' readonly value='i--' class='errorTracing'>){",
+                        "}"
+                     ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+                        "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+                        "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+                        "compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+                        }
+                    },
+                     "opciones": []
+                  },
+                  {
+                     "paso": 11,
+                     "texto": "i--, 100, 1",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Observa el código con atención. El formato general de la instrucción for es: <i>for</i> ( <i>inicialización</i>;<i>condiciónDeContinuaciónDeCiclo</i>; <i>instrucción incremento</i>). Asegúrate de estar tomando en cuenta el orden.",
+                     "presentacion": [
+                        "for (int i =<input type='text' readonly value='i--' class='errorTracing'>;i>=<input type='text' readonly value='100' class='errorTracing'>;<input type='text' readonly value='1' class='errorTracing'>){",
+                        "}"
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+                        "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+                        "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+                        "compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+                        }
+                    },
+                     "opciones": []
+                  }
+               ]
+            },
+            {
+               "paso": 12,
+               "texto": "100, i=+1",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Con la instrucción <i>i=+1</i> se asigna el valor de 1 a la variable de control en cada iteración.",
+               "presentacion": [
+                  "for(int i=1;i<=<input type='text' readonly value='100' class='errorTracing'>;<input type='text' readonly value='i=+1' class='errorTracing'>){"
+               ],
+              "textoEmocional": {
+                        "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+                        "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+                        "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+                        "compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+                        }
+                    },
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
