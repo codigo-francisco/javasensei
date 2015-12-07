@@ -12,7 +12,7 @@
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Paso 1 de 3.  Dado el siguiente código, selecciona la línea de código que define un comentario de una sola línea",
+            "instruccion": "Paso 1 de 3.  Dado el siguiente código, selecciona la línea de código que define un comentario de una sola línea.",
             "presentacion": [			
 				"1: // Bienvenido.java",
 				"2: public class Bienvenido {",
@@ -31,7 +31,7 @@
                 "retroalimentacion": {
                     "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
                     "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java."
                 } 
             },
             "opciones": [
@@ -39,7 +39,7 @@
 					"texto": "1",
 					"paso": 1,
 					"tipo": "pasooptimo",
-					"instruccion": "Paso 2 de 3. Verdadero o Falso.  Las convenciones estándar de código señalan que los nombres de las clases inician con una letra minúscula en el primer carácter.  Por lo tanto, el código siguiente sigue las convenciones estándar del lenguaje: (ver línea 2)",
+					"instruccion": "Paso 2 de 3. Verdadero o Falso.  Las convenciones estándar de código señalan que los nombres de las clases inician con una letra minúscula en el primer carácter.  Por lo tanto, el código siguiente sigue las convenciones estándar del lenguaje: (ver línea 2).",
 					"presentacion": [
 						"1: // bienvenido.java",
 						"2: public class bienvenido {",
@@ -80,12 +80,12 @@
 								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 								"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
 								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
-								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 								"retroalimentacion": {                           
 									"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
 									"neutral": "La respuesta no es la correcta.",
-									"negativa": "¿Estás seguro de querer estudiar este curso?."
+									"negativa": "¿Estás seguro de querer estudiar este curso?"
 								}
 							},
 							"opciones": [
@@ -107,7 +107,7 @@
 								"7: }"
 							],
 							"textoEmocional": {
-								"neutral": "La respuesta es correcta. Selecciona otro ejercicio",
+								"neutral": "La respuesta es correcta. Selecciona otro ejercicio.",
 								"encantado": "¡Te siento comprometido contigo mismo, continúa con el ejercicio.",
 								"sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
 								"compasivo": "Se que Java aveces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
@@ -136,8 +136,8 @@
 									"textoEmocional": {
 										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 										"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
-										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
-										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 										"retroalimentacion": {                           
 											"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
@@ -164,7 +164,7 @@
 										"7: }"
 									],
 									"textoEmocional": {
-										"neutral": "La respuesta es correcta. Selecciona otro ejercicio",
+										"neutral": "La respuesta es correcta. Selecciona otro ejercicio.",
 										"encantado": "¡Te siento comprometido contigo mismo, continúa con el ejercicio.",
 										"sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
 										"compasivo": "Se que Java aveces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
@@ -201,8 +201,8 @@
 					"textoEmocional": {
 						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
-						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
-						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 						"retroalimentacion": {                           
 							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
