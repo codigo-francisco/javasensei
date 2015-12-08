@@ -1,0 +1,133 @@
+{
+   "id": 70,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+	  "El siguiente ejercicio está relacionado con el tamaño de un arreglo.",
+      "Los arreglos se crean con la palabra clave new. Para crear un objeto arreglo, debemos especificar el tipo de cada elemento y el número de elementos que se requieren para el arreglo."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Dado el siguiente fragmento de código, ¿qué sucede cuando se ejecutan las instrucciones?",
+         "presentacion": [
+           
+			"int[] iArray = new int[10];",  
+			"iArray.length = 15;",
+			"System.out.println(iArray.length);" 
+
+         ],
+		"textoEmocional": {
+                "neutral": "Inicia el ejercicio para continuar con el curso.",
+                "encantado": "El secreto real del éxito es el entusiasmo.  Inicia con el ejercicio.",              
+                "sorprendido": "La determinación es el punto inicial de todo logro.  Inicia con el ejercicio.",
+                "compasivo": "Da siempre lo mejor que tienes. Lo que plantes ahora, lo cosecharás más tarde.  Inicia con el ejercicio.",                
+                "esceptico": "Cómo comienzas tu día es cómo vives tu día. Cómo vives tu día es cómo vives tu vida.  Inicia con el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "Tus acciones positivas combinadas con pensamientos positivos resultan en el éxito.",
+                    "neutral": "El hombre necesita dificultades porque son necesarias para disfrutar el éxito.",
+                    "negativa": "El éxito va a aquellos que se atreven y actúan."
+                } 
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "10",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                    "int[] iArray = new int[10];",  
+					"iArray.length = 15;",
+					"System.out.println(iArray.length);"
+               ],
+               "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                        }
+                    },
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "15",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+					"int[] iArray = new int[10];",  
+					"iArray.length = 15;",
+					"System.out.println(iArray.length);"
+               ],
+               "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                        }
+                },
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "Error de sintaxis",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+					"int[] iArray = new int[10];",  
+					"iArray.length = 15;",
+					"System.out.println(iArray.length);"
+               ],
+               "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                        }
+                },
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "Error de compilación",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio, continúa con otro ejercicio del menú de opciones.",
+               "presentacion": [
+					"int[] iArray = new int[10];",  
+					"iArray.length = 15;",
+					"System.out.println(iArray.length);"
+               ],
+              "textoEmocional": {
+					"neutral": "La respuesta es correcta. Has finalizado el ejercicio",
+					"encantado": "Te siento comprometido contigo mismo, continúa con el ejercicio.",
+					"sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+					"compasivo": "Se que Java a veces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
+					"esceptico": "Se que Java te es indiferente.  Al menos trata de terminar el ejercicio.",
+					"retroalimentacion": {
+						"positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con más ejercicios.",
+						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+						"negativa": "Al parecer no te gusta estudiar, pero es parte importante de tu formación académica."
+					}                                    
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

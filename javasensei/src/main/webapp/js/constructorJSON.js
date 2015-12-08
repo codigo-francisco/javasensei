@@ -1,35 +1,84 @@
-function Dato(json){
-	this.json= JSON.parse(JSON.stringify(json));
-	this.opciones=[];
+function Dato(json, nodo){
+    this.json= JSON.parse(JSON.stringify(json));
+    this.nodo=nodo;
+    this.opciones=[];
 }
 function puntero(){
-	document.body.style.cursor = "pointer";
+    document.body.style.cursor = "pointer";
 }
 function punteroOut(){
-	document.body.style.cursor = "auto";
+    document.body.style.cursor = "auto";
 }
-
 var jsonVacio = {"Tipo":"", "Texto":"", "Instruccion":"", "Presentacion":"", 
-				"Neutral":"", "Encantado":"", "Sorprendido":"",
-				"Compasivo":"", "Esceptico":"", "Positiva":"", "Neutral ":"", "Negativa":""};
+                "Neutral":"", "Encantado":"", "Sorprendido":"",
+                "Compasivo":"", "Esceptico":"", "Positiva":"", "Neutral ":"", "Negativa":""};
 
-var objeto= new Dato({});
-objeto.opciones.push(new Dato(jsonVacio));
+var objeto= new Dato({},-1);
+objeto.opciones.push(new Dato(jsonVacio,0));
 
 var n = [];
+//VARIABLES PARA EL ARBOL
+var nodes;
+var edges;
+var container;
+var data;
+var options =   {
+                    edges: {
+                        smooth: {
+                            type:'cubicBezier',
+                            forceDirection: "vertical",
+                            roundness: 0.4
+                        }
+                    },
+                    layout: {
+                        hierarchical:{
+                            direction: "UD"
+                        }
+                    }
+                };
+var network;
+$(document).ready(function(){
+    nodes = new vis.DataSet([
+        {id: -1, label: 'I.I.', color:"#F2F2F2", level:0, cola:[]},
+        {id: 0, label: 'P.I.', level:1, cola:[0]}]);
+    edges = new vis.DataSet([
+        {from: -1, to: 0}]);
+    data = {nodes: nodes, edges: edges};
+    container = document.getElementById('mynetwork');
+    network = new vis.Network(container, data, options);
+    network.selectNodes([-1]);
+
+    network.on("selectNode",function(){
+        guardar();
+        n=[].concat(nodes.get(network.getSelectedNodes()[0]).cola);
+        cambiarCampos();
+    });
+});
 
 function adentrar(indice){
-	document.body.style.cursor = "auto";
-	guardar();
+    document.body.style.cursor = "auto";
+    guardar();
     n.push(indice);
     cambiarCampos();
 }
+var banderaNuevaOpGuard=true;
 function atrasar(){
-    guardar();
-    n.pop();
-    cambiarCampos();
+    if(banderaNuevaOpGuard){
+        if(n.length==1)
+            guardar();
+        n.pop();
+        cambiarCampos();    
+    }
+    else{
+        borrarOpcion();
+        banderaNuevaOpGuard=true;
+    }   
 }
 //Guardar es para guardar localmente en el objeto global de tipo DATO.
+function funcBtnAceptar(){
+    guardar();
+    atrasar();
+}
 function guardar(){
     var jsonTexts = {};
     //Guarda el tipo si no es pasoinicial
@@ -60,15 +109,46 @@ function guardar(){
         ob=ob.opciones[valor];
     });
     ob.json=jsonTexts;
+    var etiq;
+    var color;
+    var fuente;
+    switch(parseInt(jsonTexts["Tipo"])){
+        case 0: etiq="P.O.";
+            color="#21610B";
+            break;
+        case 1: etiq="P.SO."; 
+            color="#21610B";
+            break;
+        case 2: etiq="P.E."; 
+            color="#FF0000";
+            break;
+        case 3: etiq="P.F.O."; 
+            color="#21610B";
+            fuente = {color:"#000000", strokeWidth:2, strokeColor:"#000000"};
+            break;
+        case 4: etiq="P.F.SO."; 
+            color="#21610B";
+            fuente = {color:"#000000", strokeWidth:2, strokeColor:"#000000"};
+            break;
+    }
+    if(!banderaNuevaOpGuard){
+        ob.nodo=idNode;
+        agregarNodo(etiq, color, fuente);
+        network.selectNodes([ob.nodo]);
+        banderaNuevaOpGuard=true;
+    }else{
+        if(n.length>1)
+        nodes.update({id:ob.nodo, label:etiq, color:color, font:fuente, cola: [].concat(n)});
+    }
 }
 function cambiarCampos(){
-	var ob=objeto;
-	n.forEach( function(valor){
-		ob=ob.opciones[valor];
-	});
-	var campos=$("#campos");
+    var ob=objeto;
+    n.forEach( function(valor){
+        ob=ob.opciones[valor];
+    });
+    var campos=$("#campos");
     campos.empty();
-	var datos = ob.json;
+    var datos = ob.json;
     Object.keys(datos).forEach(
         function(key) {
             var value = datos[key];
@@ -102,6 +182,10 @@ function cambiarCampos(){
         $("#lblTipo").remove();
         $("#selTipo").remove();
     }
+    if(n.length>1){
+        $("#Negativa").after("<button id='btnAceptar' onclick='funcBtnAceptar()'> Aceptar </button>");
+        $("#Negativa").after("<br><br>");
+    }
     var listaOp = $("#listaOpciones");
     listaOp.empty();
     var textList;
@@ -109,36 +193,57 @@ function cambiarCampos(){
         textList = ob.opciones[i].json["Texto"];
         if(textList=="")
             textList="Sin Texto";
-    	listaOp.append($("<li>").append($("<span onmouseover='puntero()' onmouseout='punteroOut()' onclick='adentrar("+i+")'>").text(textList)));
+        listaOp.append($("<li>").append($("<span onmouseover='puntero()' onmouseout='punteroOut()' onclick='adentrar("+i+")'>").text(textList)));
     }
     if(n.length>0){
-    	$("#btnAgregar").attr("disabled",false);
-    	$("#btnAtras").attr("disabled",false);
+        $("#btnAgregar").attr("disabled",false);
+        $("#btnAtras").attr("disabled",false);
     }
     else{
-    	$("#btnAgregar").attr("disabled",true);
-    	$("#btnAtras").attr("disabled",true);
+        $("#btnAgregar").attr("disabled",true);
+        $("#btnAtras").attr("disabled",true);
     }
     if(n.length>1)
-    	$("#btnBorrar").attr("disabled",false);
+        $("#btnBorrar").attr("disabled",false);
     else
-    	$("#btnBorrar").attr("disabled",true);
+        $("#btnBorrar").attr("disabled",true);
+
+    if(ob.nodo != undefined)
+        network.selectNodes([ob.nodo]);
 }
 function agregarOpcion(){
-	var ob=objeto;
-	n.forEach( function(valor){
-		ob=ob.opciones[valor];
-	});
-	ob.opciones.push(new Dato(jsonVacio));
-	adentrar(ob.opciones.length-1);
+    var ob=objeto;
+    n.forEach( function(valor){
+        ob=ob.opciones[valor];
+    });
+    ob.opciones.push(new Dato(jsonVacio));
+    adentrar(ob.opciones.length-1); 
+    banderaNuevaOpGuard=false;
 }
 function borrarOpcion(){
-	var ob=objeto;
-	for(i=0; i<n.length-1;i++)
-		ob=ob.opciones[n[i]];
-	ob.opciones.splice(n[n.length-1],1);
-	n.pop();
-	cambiarCampos();
+    //Borrar el nodo del arbol
+    var ob=objeto;
+    n.forEach( function(valor){
+        ob=ob.opciones[valor];
+    });
+    if(ob.nodo != undefined){
+        borrarNodo();
+        borrarBand=true;
+    }
+    //Borrar del la lista de opciones
+    ob=objeto;
+    for(i=0; i<n.length-1;i++){
+        ob=ob.opciones[n[i]];
+    }
+    ob.opciones.splice(n[n.length-1],1);
+    n.pop();
+    for(i=0; i<ob.opciones.length;i++){
+        var opc = ob.opciones[i];
+        var aux = [].concat(n);
+        aux.push(i);
+        nodes.update({id:opc.nodo, cola:aux});
+    }
+    cambiarCampos();
 }
 var paso;
 function transformarJSON(){
@@ -190,4 +295,36 @@ function transformar(ob){
         jsonAux["opciones"].push(transformar(ob.opciones[i]));
     }
     return jsonAux;
+}
+var idNode=1;
+function agregarNodo(etiq, color, fuente){
+    var ob=objeto;
+    for(i=0; i<n.length-1;i++){
+        ob=ob.opciones[n[i]];
+    }
+    var idNodeBefore= ob.nodo;
+    var levelBefore = nodes.get(idNodeBefore)["level"];
+    nodes.add({id:idNode,label:etiq, color:color, font:fuente, level:levelBefore+1, cola: [].concat(n)});
+    edges.add({from: idNodeBefore, to:idNode++});
+}
+var borrarBand=true;
+function borrarNodo(){
+    var nodoSel = network.getSelectedNodes()[0];
+    if(borrarBand){
+        borrarBand=false;
+        var ob=objeto;
+        for(i=0; i<n.length;i++){
+            ob=ob.opciones[n[i]];
+        }
+        nodoSel = ob.nodo;
+    }
+    var nodosHijos = edges.get({filter:function(item){return item.from == nodoSel}});
+
+    nodosHijos.forEach(function(nodo){
+        network.selectNodes([nodo.to]);
+        borrarNodo();        
+    });
+
+    network.selectNodes([nodoSel]);
+    network.deleteSelected();
 }

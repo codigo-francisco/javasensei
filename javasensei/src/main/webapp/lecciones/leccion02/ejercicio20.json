@@ -3,7 +3,8 @@
 	"paso": -1,
 	"tipo": "instruccionesiniciales",
 	"instruccionesejercicio": [
-		"Este ejercicio esta relacionado con la regla de precedencia de los operadores ,  Java aplica los operadores en expresiones aritméticas en una secuencia precisa, determinada por reglas de precedencia"
+		"Este ejercicio esta relacionado con la regla de precedencia de los operadores.",
+		"Java aplica los operadores en expresiones aritméticas en una secuencia precisa, determinada por reglas de precedencia."
 	],
 	"opciones": [
 		{
@@ -11,7 +12,7 @@
 			"tipo": "pasoinicial",
 			"instruccion": "Verdadero o Falso.",
 			"presentacion": [
-				"El operador de adición (+) tiene más alta precedencia que el operador de sustracción (-)"
+				"El operador de adición (+) tiene más alta precedencia que el operador de sustracción (-)."
 
 			],
 			"textoEmocional": {
@@ -23,7 +24,7 @@
                 "retroalimentacion": {
                     "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
                     "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java."
 				}
 			},
 			"opciones": [
@@ -33,17 +34,17 @@
 					"tipo": "pasoerroneo",
 					"instruccion": "La respuesta es incorrecta, intentalo de nuevo.",
 					"presentacion": [
-						"El operador de adición (+) tiene más alta precedencia que el operador de sustracción (-)"
+						"El operador de adición (+) tiene más alta precedencia que el operador de sustracción (-)."
 					],
 					"textoEmocional": {
 						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 						"retroalimentacion": {                           
 							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-							"neutral": "La respuesta no es la correcta",
+							"neutral": "La respuesta no es la correcta.",
 							"negativa": "¿Estás seguro de querer estudiar este curso?."
 						} 
 					},
@@ -55,9 +56,9 @@
 					"texto": "Falso",
 					"paso": 2,
 					"tipo": "pasofinaloptimo",
-					"instruccion": "La respuesta es correcta, continua con más ejercicios.",
+					"instruccion": "La respuesta es correcta, continúa con más ejercicios.",
 					"presentacion": [
-						"El operador de adición (+) tiene más alta precedencia que el operador de sustracción (-)"
+						"El operador de adición (+) tiene más alta precedencia que el operador de sustracción (-)."
 
 					],
 					"textoEmocional": {

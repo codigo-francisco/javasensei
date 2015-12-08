@@ -3,7 +3,7 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "El siguiente ejercicio está relacionado con Crear, compilar y ejecutar un programa.",
+        "El siguiente ejercicio está relacionado con crear, compilar y ejecutar un programa.",
 		"Para desarrollar un programa en Java tenemos que pasar por las siguientes etapas: edición, compilación y ejecución."        
     ],
     "opciones": [
@@ -24,7 +24,7 @@
                 "retroalimentacion": {
                     "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
                     "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java."
                 } 
             },
             "opciones":[
@@ -53,19 +53,19 @@
 								"texto": "javac",
 								"paso": 2,
 								"tipo": "pasoerroneo",
-								"instruccion": "La respuesta es incorrecta, lee con atención el ejercicio",
+								"instruccion": "La respuesta es incorrecta, lee con atención el ejercicio.",
 								"presentacion": [
 									"Completa la oración.  El comando ________ del JDK ejecuta una aplicación en Java."
 								],                   
 									"textoEmocional": {
 										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 										"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 										"retroalimentacion": {                           
 											"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-											"neutral": "La respuesta no es la correcta",
+											"neutral": "La respuesta no es la correcta.",
 											"negativa": "¿Estás seguro de querer estudiar este curso?."
 										}   
 								},
@@ -78,7 +78,7 @@
 								"tipo": "pasooptimo",
 								"instruccion": "Paso 3 de 4. Selecciona la opción según corresponda. ",
 								"presentacion": [
-									"Completa la oración.  El archivo de un programa en Java debe terminar con la extensión de archivo ________"
+									"Completa la oración.  El archivo de un programa en Java debe terminar con la extensión de archivo ________ ."
 								],                   
 									"textoEmocional": {
 										"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
@@ -97,20 +97,20 @@
 										"texto": "html",
 										"paso": 4,
 										"tipo": "pasoerroneo",
-										"instruccion": "La respuesta es incorrecta, intentalo de nuevo",
+										"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 										"presentacion": [
-											"Completa la oración.  El archivo de un programa en Java debe terminar con la extensión de archivo ________"
+											"Completa la oración.  El archivo de un programa en Java debe terminar con la extensión de archivo ________ ."
 										],                   
 											"textoEmocional": {
 												"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 												"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 												"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 												"retroalimentacion": {                           
 													"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-													"neutral": "La respuesta no es la correcta",
-													"negativa": "¿Estás seguro de querer estudiar este curso?."
+													"neutral": "La respuesta no es la correcta.",
+													"negativa": "¿Estás seguro de querer estudiar este curso?"
 												}   
 										},
 										"opciones": [                                          
@@ -119,20 +119,20 @@
 										"texto": "exe",
 										"paso": 5,
 										"tipo": "pasoerroneo",
-										"instruccion": "La respuesta es incorrecta, intentalo de nuevo",
+										"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 										"presentacion": [
-											"Completa la oración.  El archivo de un programa en Java debe terminar con la extensión de archivo ________"
+											"Completa la oración.  El archivo de un programa en Java debe terminar con la extensión de archivo ________ ."
 										],                   
 											"textoEmocional": {
 												"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 												"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 												"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 												"retroalimentacion": {                           
 													"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-													"neutral": "La respuesta no es la correcta",
-													"negativa": "¿Estás seguro de querer estudiar este curso?."
+													"neutral": "La respuesta no es la correcta.",
+													"negativa": "¿Estás seguro de querer estudiar este curso?"
 												}   
 										},
 										"opciones": [                                          
@@ -141,20 +141,20 @@
 										"texto": "class",
 										"paso": 6,
 										"tipo": "pasoerroneo",
-										"instruccion": "La respuesta es incorrecta, intentalo de nuevo",
+										"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 										"presentacion": [
-											"Completa la oración.  El archivo de un programa en Java debe terminar con la extensión de archivo ________"
+											"Completa la oración.  El archivo de un programa en Java debe terminar con la extensión de archivo ________ ."
 										],                   
 											"textoEmocional": {
 												"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 												"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 												"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 												"retroalimentacion": {                           
 													"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-													"neutral": "La respuesta no es la correcta",
-													"negativa": "¿Estás seguro de querer estudiar este curso?."
+													"neutral": "La respuesta no es la correcta.",
+													"negativa": "¿Estás seguro de querer estudiar este curso?"
 												}   
 										},
 										"opciones": [                                          
@@ -165,7 +165,7 @@
 										"tipo": "pasooptimo",
 										"instruccion": "Paso 4 de 4. Selecciona la opción según corresponda. ",
 										"presentacion": [
-											"Completa la oración.  Cuando se compila un programa en Java, el archivo producido por el compilador termina con la extensión ________"
+											"Completa la oración.  Cuando se compila un programa en Java, el archivo producido por el compilador termina con la extensión ________ ."
 										],                   
 											"textoEmocional": {
 												"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
@@ -184,20 +184,20 @@
 												"texto": "html",
 												"paso": 8,
 												"tipo": "pasoerroneo",
-												"instruccion": "La respuesta es incorrecta, .html es la extensión para archivos del lenguaje marcado de hipertexto",
+												"instruccion": "La respuesta es incorrecta, .html es la extensión para archivos del lenguaje marcado de hipertexto.",
 												"presentacion": [
-													"Completa la oración.  Cuando se compila un programa en Java, el archivo producido por el compilador termina con la extensión ________"
+													"Completa la oración.  Cuando se compila un programa en Java, el archivo producido por el compilador termina con la extensión ________ ."
 													],                   
 													"textoEmocional": {
 														"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 														"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 														"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 														"retroalimentacion": {                           
 															"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-															"neutral": "La respuesta no es la correcta",
-															"negativa": "¿Estás seguro de querer estudiar este curso?."
+															"neutral": "La respuesta no es la correcta.",
+															"negativa": "¿Estás seguro de querer estudiar este curso?"
 														}   
 												},
 												"opciones": [                                          
@@ -208,18 +208,18 @@
 												"tipo": "pasoerroneo",
 												"instruccion": "La respuesta es incorrecta,.exe es una extension para archivos ejecutables.",
 												"presentacion": [
-													"Completa la oración.  Cuando se compila un programa en Java, el archivo producido por el compilador termina con la extensión ________"
+													"Completa la oración.  Cuando se compila un programa en Java, el archivo producido por el compilador termina con la extensión ________ ."
 												],                   
 													"textoEmocional": {
 														"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 														"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
 														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 														"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 														"retroalimentacion": {                           
 															"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
 															"neutral": "La respuesta no es la correcta",
-															"negativa": "¿Estás seguro de querer estudiar este curso?."
+															"negativa": "¿Estás seguro de querer estudiar este curso?"
 														}   
 												},
 												"opciones": [                                          
@@ -228,9 +228,9 @@
 												"texto": "class",
 												"paso": 10,
 												"tipo": "pasofinaloptimo",
-												"instruccion": "La respuesta es correcta, continua con más ejercicios",
+												"instruccion": "La respuesta es correcta, continúa con más ejercicios.",
 												"presentacion": [
-													"Completa la oración.  Cuando se compila un programa en Java, el archivo producido por el compilador termina con la extensión ________"
+													"Completa la oración.  Cuando se compila un programa en Java, el archivo producido por el compilador termina con la extensión ________ ."
 												],                   
 													"textoEmocional": {
 														"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
@@ -252,18 +252,18 @@
 												"tipo": "pasoerroneo",
 												"instruccion": "La respuesta es incorrecta, .java es la extensión para los archivos de código fuente.",
 												"presentacion": [
-													"Completa la oración.  Cuando se compila un programa en Java, el archivo producido por el compilador termina con la extensión ________"
+													"Completa la oración.  Cuando se compila un programa en Java, el archivo producido por el compilador termina con la extensión ________ ."
 												],                   
 													"textoEmocional": {
 														"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 														"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 														"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 														"retroalimentacion": {                           
 															"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-															"neutral": "La respuesta no es la correcta",
-															"negativa": "¿Estás seguro de querer estudiar este curso?."
+															"neutral": "La respuesta no es la correcta.",
+															"negativa": "¿Estás seguro de querer estudiar este curso?"
 														}   
 												},
 												"opciones": [                                          
@@ -280,20 +280,20 @@
 								"texto": "run",
 								"paso": 12,
 								"tipo": "pasoerroneo",
-								"instruccion": "La respuesta es incorrecta, lee con atención el ejercicio",
+								"instruccion": "La respuesta es incorrecta, lee con atención el ejercicio.",
 								"presentacion": [
 									"Completa la oración.  El comando ________ del JDK ejecuta una aplicación en Java."
 								],                   
 									"textoEmocional": {
 										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 										"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 										"retroalimentacion": {                           
 											"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-											"neutral": "La respuesta no es la correcta",
-											"negativa": "¿Estás seguro de querer estudiar este curso?."
+											"neutral": "La respuesta no es la correcta.",
+											"negativa": "¿Estás seguro de querer estudiar este curso?"
 										}   
 								},
 								"opciones": [                                          
@@ -311,12 +311,12 @@
 										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 										"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
 										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 										"retroalimentacion": {                           
 											"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-											"neutral": "La respuesta no es la correcta",
-											"negativa": "¿Estás seguro de querer estudiar este curso?."
+											"neutral": "La respuesta no es la correcta.",
+											"negativa": "¿Estás seguro de querer estudiar este curso?"
 										}   
 								},
 								"opciones": [                                          
@@ -327,20 +327,20 @@
                     "texto": "java",
                     "paso": 14,
                     "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta, concentrate e intentalo de nuevo",
+                    "instruccion": "La respuesta es incorrecta, concentrate e intentalo de nuevo.",
                     "presentacion": [
 						"Completa la oración.  El comando ________ del JDK compila una aplicación en Java."
                     ],
                     "textoEmocional": {
                         "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
                         "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {                           
                             "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-                            "neutral": "La respuesta no es la correcta",
-                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                            "neutral": "La respuesta no es la correcta.",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?"
                         }
                     },
                     "opciones": [
@@ -350,20 +350,20 @@
                     "texto": "run",
                     "paso": 15,
                     "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta, concentrate e intentalo de nuevo",
+                    "instruccion": "La respuesta es incorrecta, concentrate e intentalo de nuevo.",
                     "presentacion": [
 						"Completa la oración.  El comando ________ del JDK compila una aplicación en Java."
                     ],
                     "textoEmocional": {
                         "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
                         "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {                           
                             "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-                            "neutral": "La respuesta no es la correcta",
-                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                            "neutral": "La respuesta no es la correcta.",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?"
                         }
                     },
                     "opciones": [
@@ -373,20 +373,20 @@
                     "texto": "execute",
                     "paso": 16,
                     "tipo": "pasoerroneo",
-					                    "instruccion": "La respuesta es incorrecta, lee con atención el ejercicio",
+					                    "instruccion": "La respuesta es incorrecta, lee con atención el ejercicio.",
                     "presentacion": [
 						"Completa la oración.  El comando ________ del JDK compila una aplicación en Java."
                     ],
                     "textoEmocional": {
                         "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
                         "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {                           
                             "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-                            "neutral": "La respuesta no es la correcta",
-                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                            "neutral": "La respuesta no es la correcta.",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?"
                         }
                     },
                     "opciones": [

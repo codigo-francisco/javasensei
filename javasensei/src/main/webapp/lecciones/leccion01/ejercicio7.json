@@ -24,7 +24,7 @@
                 "retroalimentacion": {
                     "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
                     "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java."
                 } 
             },
             "opciones": [
@@ -60,13 +60,13 @@
                             "textoEmocional": {
                                 "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
                                 "encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
-                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
-                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
                                 "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                                 "retroalimentacion": {                           
                                     "positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
                                     "neutral": "La respuesta no es la correcta.",
-                                    "negativa": "¿Estás seguro de querer estudiar este curso?."
+                                    "negativa": "¿Estás seguro de querer estudiar este curso?"
                                 }
                             },
                             "opciones": [
@@ -76,7 +76,7 @@
                             "texto": "Falso",
                             "paso": 3,
                             "tipo": "pasooptimo",
-                            "instruccion": "Paso 3 de 3.  Verdadero o Falso.  ¿Es posible compilar el siguiente código fuente?.",
+                            "instruccion": "Paso 3 de 3.  Verdadero o Falso.  ¿Es posible compilar el siguiente código fuente?",
                             "presentacion": [
                                 "public class Bienvenido {",
                                 "\tpublic static void main( String[] args ) {",
@@ -112,13 +112,13 @@
                                     "textoEmocional": {
                                         "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
                                         "encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
-                                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
-                                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+                                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
                                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                                         "retroalimentacion": {                           
                                             "positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
                                             "neutral": "La respuesta no es la correcta.",
-                                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                                            "negativa": "¿Estás seguro de querer estudiar este curso?"
                                         }
                                     },
                                     "opciones": [
@@ -134,7 +134,7 @@
                                         
                                     ],
                                     "textoEmocional": {
-                                        "neutral": "La respuesta es correcta. Selecciona otro ejercicio",
+                                        "neutral": "La respuesta es correcta. Selecciona otro ejercicio.",
                                         "encantado": "¡Te siento comprometido contigo mismo, continúa con el ejercicio.",
                                         "sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
                                         "compasivo": "Se que Java aveces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
@@ -164,13 +164,13 @@
                     "textoEmocional": {
                         "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
                         "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {                           
                             "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-                            "neutral": "La respuesta no es la correcta",
-                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                            "neutral": "La respuesta no es la correcta.",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?"
                         }
                     },
                     "opciones": [

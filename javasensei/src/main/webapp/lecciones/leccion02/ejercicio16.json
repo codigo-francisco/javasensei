@@ -113,7 +113,7 @@
 							"texto": "public static void main( String[] args )",
 							"paso": 4,
 							"tipo": "pasooptimo",
-							"instruccion": "Paso 3 de 4. Cada método es un componente que contiene instrucciones. Selecciona la opción que define una instrucción de declaración de variable entera con valor a 5, y otra ins-trucción donde se le sume 5 a dicha variable.",
+							"instruccion": "Paso 3 de 4. Cada método es un componente que contiene instrucciones. Selecciona la opción que define una instrucción de declaración de variable entera con valor a 5, y otra instrucción donde se le sume 5 a dicha variable.",
 							"presentacion": [
 								"public <input type='text' readonly value='class Bienvenido' class='focusInput'>{",
 								"\t<input type='text' readonly value='public static void main( String[] args )' class='focusInput'>{",
