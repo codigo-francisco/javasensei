@@ -1,0 +1,133 @@
+{
+   "id": 71,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "Este ejercicio está relacionado con la declaración y creación de un arreglo.",
+      "Para declarar un arreglo unidimensional, debemos especificar el tipo de cada elemento y el número de elementos que se requieren para el arreglo."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "¿Cuál de las siguientes instrucciones declara e inicializa un arreglo de enteros de tamaño 5?",
+         "presentacion": [
+            "1.\tArray = new Array(5);",
+            "2.\tint []a = {23,22,21,20,19};",
+            "3.\tint a[] = new a[5];",
+            "4.\tint[5]array;"
+         ],
+		"textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+         },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": 1,
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Para declarar un arreglo es necesario declarar una variable y añadir corchetes después del tipo de dato para indicar que es un arreglo. Intenta de nuevo.",
+               "presentacion": [
+					"1.\tArray = new Array(5);"
+					
+				],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": 2,
+               "tipo": "pasofinaloptimo",
+               "instruccion": "La respuesta es correcta. Continúa con más ejercicios del menú.",
+               "presentacion": [
+					
+					"2.\tint []a = {23,22,21,20,19};"
+					
+               ],
+			"textoEmocional": {
+				"neutral": "Has finalizado con este ejercicio.",
+				"encantado": "Cada logro comienza con la decisión de intentarlo.”, ¡sigue con este entusiasmo!.",              
+				"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio..",
+				"compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio..",                
+				"esceptico": "Al menos llegaste al final del ejercicio.",
+				"retroalimentacion": {
+					"positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+					"neutral": "Has finalizado con este ejercicio.",
+					"negativa": "Has finalizado con este ejercicio."
+				} 
+			},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": 3,
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Un arreglo se crea con la palabra reservada new seguida del tipo de dato de la variable y corchetes, dentro de estos se coloca la cantidad de elementos que contendrá. Intenta de nuevo.",
+               "presentacion": [
+					
+					"3.\tint a[] = new a[5];"
+					
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": 4,
+               "tipo": "pasoerroneo",
+               "instruccion":[
+				   "La respuesta es incorrecta. Para declarar un arreglo es necesario declarar una variable y añadir corchetes después del tipo de dato para indicar que es un arreglo.",
+				   " Este arreglo se crea con la palabra reservada new seguida del tipo de dato de la variable y corchetes, dentro de estos se coloca la cantidad de elementos que contendrá. Intenta de nuevo."
+				],
+				   "presentacion":[
+					
+					"4.\tint[5]array;"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

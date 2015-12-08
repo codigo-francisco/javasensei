@@ -1,0 +1,156 @@
+{
+   "id": 72,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "Este ejercicio está relacionado con el tamaño de un arreglo.",
+      "La manera en que un programa hace referencia a un elemento individual de un arreglo unidimensional es especificando el valor de su índice encerrado entre corchetes ([]). El primer elemento en cualquier arreglo unidimensional tiene el índice cero y algunas veces se le denomina elemento cero."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Dado el siguiente código, ¿qué se imprime en la consola de salida?",
+         "presentacion": [
+            "public class Test {",
+            "\tpublic static void main(String args[]){",
+            "\t\tboolean[] b = new boolean[2];",
+            "\t\tdouble[] d = new double[2];",
+            "\t\tSystem.out.print(b[0]);",
+            "\t\tSystem.out.println(d[1]);",
+            "\t}",
+            "}"
+         ],
+		"textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+         },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "true0.0",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Observa con atención e intenta de nuevo.",
+               "presentacion": [
+                  "public class Test {",
+                  "\tpublic static void main(String args[]){",
+                  "\t\tboolean[] b = new boolean[2];",
+                  "\t\tdouble[] d = new double[2];",
+                  "\t\tSystem.out.print(b[0]);",
+                  "\t\tSystem.out.println(d[1]);",
+                  "\t}",
+                  "}"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "true0",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Observa con atención e intenta de nuevo.",
+               "presentacion": [
+                  "public class Test {",
+                  "\tpublic static void main(String args[]){",
+                  "\t\tboolean[] b = new boolean[2];",
+                  "\t\tdouble[] d = new double[2];",
+                  "\t\tSystem.out.print(b[0]);",
+                  "\t\tSystem.out.println(d[1]);",
+                  "\t}",
+                  "}"
+               ],
+			"textoEmocional": {
+				"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+				"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+				"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+				"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+				"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+				"retroalimentacion": {                           
+					"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+					"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+				}
+			},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "false0.0",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "La respuesta es correcta. Continúa con más ejercicios del menú.",
+               "presentacion": [
+                  "public class Test {",
+                  "\tpublic static void main(String args[]){",
+                  "\t\tboolean[] b = new boolean[2];",
+                  "\t\tdouble[] d = new double[2];",
+                  "\t\tSystem.out.print(b[0]);",
+                  "\t\tSystem.out.println(d[1]);",
+                  "\t}",
+                  "}"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta es correcta.",
+					"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+					"sorprendido": "¡Me sorprendes!, sigue hacia adelante.",
+					"compasivo": "Aquellas cosas que nos apasionan son aquellas que no nos cansan, ¡ánimo!.",
+					"esceptico": "Deja tus excusas y trata de superarte día a día.",
+					"retroalimentacion": {                            
+						"positiva": "Muy bien!, estás en lo correcto.",
+						"neutral": "La respuesta es correcta",
+						"negativa": "¿Estás estudiando con seriedad? ¿O sólo estas pasando el rato?"                            
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "false0",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Observa con atención e intenta de nuevo.",
+               "presentacion": [
+                  "public class Test {",
+                  "\tpublic static void main(String args[]){",
+                  "\t\tboolean[] b = new boolean[2];",
+                  "\t\tdouble[] d = new double[2];",
+                  "\t\tSystem.out.print(b[0]);",
+                  "\t\tSystem.out.println(d[1]);",
+                  "\t}",
+                  "}"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

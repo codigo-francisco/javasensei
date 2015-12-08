@@ -4,8 +4,7 @@
     "instruccionesejercicio": 
     [
 		"Este ejercicio esta relacionado con estatuto de selección switch.",
-		"La instrucción Switch realiza distintas acciones, con base en los",
-		"posibles valores de una expresión entera constante de tipo byte, short, int o char."
+		"La instrucción Switch realiza distintas acciones, con base en los posibles valores de una expresión entera constante de tipo byte, short, int o char."
     ],
     "opciones": 
     [

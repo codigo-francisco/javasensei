@@ -37,6 +37,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>io.indico</groupId>
+            <artifactId>indico</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
             <groupId>nz.ac.waikato.cms.weka</groupId>
             <artifactId>weka-stable</artifactId>
             <version>3.6.13</version>

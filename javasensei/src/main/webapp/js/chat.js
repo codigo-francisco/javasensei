@@ -92,11 +92,11 @@ var chatSensei = function () {
                     color: color
                 }
             }).done(function(data){
-                //data tiene la fecha y el _id, la fecha son los primeros 13 caracteres
-                var fecha = Number(data.substring(0,13));
+                colaMensajes.add(data._id);
+                
+                var fecha = data.fecha;
                 if (fecha>ultimoMensaje)
                     ultimoMensaje = fecha;
-                colaMensajes.add(data.substring(13));
             });
         }
     };

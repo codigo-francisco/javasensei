@@ -36,8 +36,8 @@
 				{
 					"texto": "{ y }",
 					"paso": 1,
-					"tipo": "pasofinalptimo",
-					"instruccion": "La respuesta es correcta.",
+					"tipo": "pasofinaloptimo",
+					"instruccion": "Has finalizado el ejercicio. Continúa con otro del menú.",
 					"presentacion": [
 						"public class Bienvenido <input type='text' readonly class='focusInput' value='{'>",
 						"  \tpublic static void main( String[] args ) {",

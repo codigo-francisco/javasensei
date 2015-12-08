@@ -1,0 +1,124 @@
+{
+   "id": 69,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+	  "El siguiente ejercicio está relacionado con la declaración y creación de un arreglo.",
+      "Los arreglos se crean con la palabra clave new. Para crear un objeto arreglo, debemos especificar el tipo de cada elemento y el número de elementos que se requieren para el arreglo."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "¿Cuál de las siguientes instrucciones declara, construye e inicializa correctamente un arreglo?",
+         "presentacion": [
+            "1.\tint [] myList = {“1”,”2”,”3”};",
+            "2.\tint []myList = (5,8,2);",
+            "3.\tint myList[][] = {4,9,7,0};",
+            "4.\tint myList[] = {4,3,7};"
+         ],
+        "textoEmocional": {
+			"neutral": "Inicia el ejercicio.",
+			"encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+			"sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+			"compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+			"esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+			"retroalimentacion": {
+				"positiva": "¡Adelante!, con este ejercicio vas a aprender sobre la utilización de métodos en Java..",
+				"neutral": "Inicia con el ejercicio para aprender sobre la utilización de métodos en Java.",
+				"negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+			} 
+		},
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "1",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. El uso de comillas dobles es propio de los datos tipo String.",
+               "presentacion": [
+                  "1.\tint [] myList = {“1”,”2”,”3”};"
+               ],
+               "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                        }
+                    },
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "2",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. La lista inicializadora que especifica el valor para cada elemento debe estar encerrada entre llaves.",
+               "presentacion": [
+                  "2.\tint []myList = (5,8,2);"
+               ],
+               "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                        }
+                    },
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "3",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. En la declaración, los corchetes indican que es una variable que hará referencia a un arreglo bidimensional, sin embargo, la lista inicializadora corresponde a un arreglo unidimensional.",
+               "presentacion": [
+                  "3.\tint myList[][] = {4,9,7,0};"
+               ],
+               "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                        }
+                    },
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "4",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio, continúa con otro ejercicio del menú de opciones.",
+               "presentacion": [
+                  "4.\tint myList[] = {4,3,7};"
+               ],
+              "textoEmocional": {
+					"neutral": "La respuesta es correcta. Has finalizado el ejercicio",
+					"encantado": "Te siento comprometido contigo mismo, continúa con el ejercicio.",
+					"sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+					"compasivo": "Se que Java a veces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
+					"esceptico": "Se que Java te es indiferente.  Al menos trata de terminar el ejercicio.",
+					"retroalimentacion": {
+						"positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con más ejercicios.",
+						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+						"negativa": "Al parecer no te gusta estudiar, pero es parte importante de tu formación académica."
+					}                                    
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
