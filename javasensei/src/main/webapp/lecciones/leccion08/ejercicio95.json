@@ -1,0 +1,77 @@
+{
+   "id": 95,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con el constructor de una clase en Java.",
+      "El constructor cual puede utilizarse para inicializar un objeto de una clase al momento de crearlo y debe tener el mismo nombre que la clase. De manera predeterminada, el compilador proporciona un constructor predeterminado sin parámetros, en cualquier clase que no incluya un constructor en forma explícita. Si un programador declara uno o más constructores para una clase, el compilador de Java no creará un constructor predeterminado para esa clase."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Selecciona verdadero o falso.",
+         "presentacion": [
+            "Una clase solo puede tener un constructor."
+         ],
+         "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Nada sobre esta tierra puede detener al hombre que posee la correcta actitud mental para lograr su meta. ¡Inicia con el ejercicio!",
+                "sorprendido": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede. ¡Comienza con el ejercicio!",
+                "compasivo": "No hay nada en la vida que no contenga sus lecciones. Si estás vivo, siempre tendrás algo para aprender.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "Es posible que las lecciones te gusten o que te parezcan irrelevantes y tontas, pero no hay errores, sólo lecciones..  Comienza con el ejercicio.",
+                "retroalimentacion": {
+                        "positiva": "¡El mejor momento para aprender es ahora!. !Sigue así!.",
+                        "neutral": "Cuando deseas algo, todo el universo conspira para que realices tu deseo.",
+                        "negativa": "No deja de ser humillante para una persona de ingenio, saber que no hay tonto que no le pueda enseñar algo."
+                }
+        },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "Verdadero",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Intenta de nuevo.",
+               "presentacion": [
+                  
+               ],
+               "textoEmocional": {
+                    "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                    "encantado": "Me parece que puedes hacerlo mejor, sigue intentándolo.",              
+                    "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                    "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                    "esceptico": "La respuesta es incorrecta.  También de las equivocaciones se puede aprender.",
+                    "retroalimentacion": {
+                            "positiva": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                            "neutral": "Para estudiar hay que tener perseverancia, paciencia y motivación.  ¡Sigue así!",
+                            "negativa": "¡La respuesta es incorrecta!.  ¿Estás seguro de no estar adivinando?"
+                    } 
+                },
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "Falso",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio, continúa con otro ejercicio del menú.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+                    "neutral": "Has finalizado con este ejercicio.",
+                     "encantado": "El arte de vencer se aprende en las derrotas, ¡sigue con este entusiasmo!.",              
+                     "sorprendido": "Somos lo que hacemos día a día. De modo que la excelencia no es un acto, sino un hábito.",
+                     "compasivo": "No te des por vencido, ni aún vencido.  Cuando hay un problema, no hay nada que hacer; hay algo que saber.",                
+                     "esceptico": "Muchos creen que el talento es cuestión de suerte, pero pocos saben que la suerte es cuestión de talento.",
+                     "retroalimentacion": {
+                               "positiva": "Para tener éxito, tus deseos de triunfar deberían ser más grandes que tu miedo de fracasar.",
+                               "neutral": "Has finalizado con este ejercicio.",
+                               "negativa": "El que no sabe lo que busca, no sabe lo que encuentra.  ¡Deja de jugar y ponte a estudiar!."
+                    } 
+            },
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
