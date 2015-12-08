@@ -1,0 +1,132 @@
+{
+    "id": 34,
+    "paso":-1,
+    "instruccionesejercicio": 
+    [
+		"Este ejercicio esta relacionado con el operador condicional.",
+		"Java cuenta con el operador condicional (?:), que en ocasiones puede utilizarse en lugar de una instrucción if/else. Éste es el único operador ternario en Java; es decir, que utiliza tres operandos. En conjunto, los operandos y el símbolo ?: forman una expresión condicional."
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Selecciona la instrucción que es similar a:",
+            "presentacion": 
+            [
+
+				"y = x >=0 ? x: -x;"
+
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+            },
+            "opciones": 
+            [
+                
+                {
+                    "texto": "if(x>=0) y = x;",
+                    "paso": 1,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta, el tercer operando (a la derecha de <i>:</i>) es el valor de la expresión condicional si la expresión booleana se evalúa como falsa. Intenta de nuevo",
+                    "presentacion": 
+                    [
+						"y = x >=0 ? x: -x;"
+                    ],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+                    },
+                    "opciones": []
+                },{
+                    "texto": "if(x>=0) y = x; else y = -x;",
+                    "paso": 2,
+                    "tipo": "pasofinaloptimo",
+                    "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
+                    "presentacion": 
+                    [
+						"y = x >=0 ? x: -x;"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "Has finalizado con este ejercicio.",
+                        "encantado": "Cada logro comienza con la decisión de intentarlo.”, ¡sigue con este entusiasmo!.",              
+                        "sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio..",
+                        "compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio..",                
+                        "esceptico": "Al menos llegaste al final del ejercicio.",
+                        "retroalimentacion": {
+                            "positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+                            "neutral": "Has finalizado con este ejercicio.",
+                            "negativa": "Has finalizado con este ejercicio."
+                        } 
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "if(x>=0) y = -x;",
+                    "paso": 3,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta, el segundo operando (entre el <i>?</i> y <i>:</i>) es el valor de la expresión condicional si la expresión booleana es verdadera. Intenta de nuevo",
+                    "presentacion": 
+                    [
+						"y = x >=0 ? x: -x;"
+                    ],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "if(x>=0) y = -x; else y = x;",
+                    "paso": 4,
+                    "tipo": "pasoerroneo",
+                    "instruccion": ["La respuesta es incorrecta, el segundo operando (entre el <i>?</i> y <i>:</i>) es el valor de la expresión condicional si la expresión booleana es verdadera,",
+                        " y el tercer operando (a la derecha de <i>:</i>) es el valor de la expresión condicional si la expresión booleana se evalúa como falsa. Intenta de nuevo"],
+                    "presentacion": 
+                    [
+						"y = x >=0 ? x: -x;"
+                    ],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+                    },
+                    "opciones": []
+                }
+				
+            ]
+        }
+    ] 
+}

@@ -1,0 +1,283 @@
+{
+    "id":25,
+    "paso":-1,
+    "instruccionesejercicio": 
+    [
+		"Este ejercicio esta relacionado con las expresiones booleanas es decir, condiciones que da como resultado un valor true o false."
+    ],
+    "opciones": 
+    [
+        {
+            "paso": 0,
+            "tipo": "pasoinicial",
+            "instruccion": "Paso 1 de 4.  Dado el fragmento de código evalúa la siguiente expresión booleana:",
+            "presentacion": [ 
+				"int edad = 16;",
+				"int altura = 175;",
+				"int peso = 70;",
+				"char sexo ='M';",
+				"boolean estadoSalud = true;",
+				"",
+				"edad >= 16 && estadoSalud;"
+
+            ],
+            "textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+            },
+            "opciones": 
+            [
+                
+                {
+                    "texto": "true",
+                    "paso": 1,
+                    "tipo": "pasooptimo",
+                    "instruccion": "Paso 2 de 4.  Dado el fragmento de código evalúa la siguiente expresión booleana:",
+                    "presentacion": 
+                    [
+						"int edad = 16;",
+						"int altura = 175;",
+						"int peso = 70;",
+						"char sexo = ‘M’;",
+						"boolean estadoSalud = true;",
+						"",
+						"!(peso <= 75) && altura >= 180;"
+                    ],
+                    "textoEmocional": {
+						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+						"encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+						"sorprendido": "¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+						"compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+						"esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+						"retroalimentacion": {
+							"positiva": "¡Excelente!, ¡La respuesta es correcta.",
+							"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+							"negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+							} 
+
+					},
+                    "opciones": [
+						{
+							"texto": "true",
+							"paso": 2,
+							"tipo": "pasoerroneo",
+							"instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+							"presentacion": 
+							[
+								"int edad = 16;",
+								"int altura = 175;",
+								"int peso = 70;",
+								"char sexo = ‘M’;",
+								"boolean estadoSalud = true;",
+								"",
+								"!(peso <= 75) && altura >= 180;"
+							],
+							"textoEmocional": {
+								"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+								"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+								"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+								"compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+								"retroalimentacion": {                           
+									"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+									"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+									"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+								}
+							},
+							"opciones": []
+						},
+						
+						{
+							"texto": "false",
+							"paso": 3,
+							"tipo": "pasooptimo",
+							"instruccion": "Paso 3 de 4.  Dado el fragmento de código evalúa la siguiente expresión booleana:",
+							"presentacion": 
+							[
+								"int edad = 16;",
+								"int altura = 175;",
+								"int peso = 70;",
+								"char sexo ='M';",
+								"boolean estadoSalud = true;",
+								"",
+								"edad>10 || (sexo==’F’ && altura<170);"
+							],
+							"textoEmocional": {
+								"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+								"encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+								"sorprendido": "¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+								"compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+								"esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+								"retroalimentacion": {
+									"positiva": "¡Excelente!, ¡La respuesta es correcta.",
+									"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+									"negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+									} 
+
+							},
+							"opciones": [
+									{
+										"texto": "true",
+										"paso": 4,
+										"tipo": "pasooptimo",
+										"instruccion": "Paso 4 de 4.  Dado el fragmento de código evalúa la siguiente expresión booleana:",
+										"presentacion": 
+										[
+											"int edad = 16;",
+											"int altura = 175;",
+											"int peso = 70;",
+											"char sexo = ‘M’;",
+											"boolean estadoSalud = true;",
+											"",
+											"!(altura < 160) && (peso > 60);"
+										],
+										"textoEmocional": {
+											"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+											"encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con el ejercicio.",              
+											"sorprendido": "¿Al final Java no parece tan complicado verdad?  Sigue con el ejercicio.",
+											"compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con el ejercicio.",                
+											"esceptico": "Con calma y nos amanecemos, trata de terminar el ejercicio.",
+											"retroalimentacion": {
+												"positiva": "¡Excelente!, ¡La respuesta es correcta.",
+												"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+												"negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+												} 
+
+										},
+										"opciones": [	
+											{
+												"texto": "true",
+												"paso": 5,
+												"tipo": "pasofinaloptimo",
+												"instruccion": "La respuesta es correcta, continúa con más ejercicios del menú.",
+												"presentacion": 
+												[
+													"int edad = 16;",
+													"int altura = 175;",
+													"int peso = 70;",
+													"char sexo = ‘M’;",
+													"boolean estadoSalud = true;",
+													"",
+													"!(altura < 160) && (peso > 60);"
+												],
+												"textoEmocional": {
+													"neutral": "Has finalizado con este ejercicio.",
+													"encantado": "Cada logro comienza con la decisión de intentarlo.”, ¡sigue con este entusiasmo!.",              
+													"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio..",
+													"compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio..",                
+													"esceptico": "Al menos llegaste al final del ejercicio.",
+													"retroalimentacion": {
+														"positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+														"neutral": "Has finalizado con este ejercicio.",
+														"negativa": "Has finalizado con este ejercicio."
+													} 
+												},
+												"opciones": [					
+												]
+											},{
+												"texto": "false",
+												"paso": 6,
+												"tipo": "pasoerroneo",
+												"instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+												"presentacion": 
+												[
+													"int edad = 16;",
+													"int altura = 175;",
+													"int peso = 70;",
+													"char sexo = ‘M’;",
+													"boolean estadoSalud = true;",
+													"",
+													"!(altura < 160) && (peso > 60);"
+												],
+												"textoEmocional": {
+													"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+													"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+													"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+													"compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+													"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+													"retroalimentacion": {                           
+														"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+														"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+														"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+													}
+												},
+												"opciones": []
+											}										
+										]
+									},{
+										"texto": "false",
+										"paso": 7,
+										"tipo": "pasoerroneo",
+										"instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+										"presentacion": 
+										[
+											"int edad = 16;",
+											"int altura = 175;",
+											"int peso = 70;",
+											"char sexo ='M';",
+											"boolean estadoSalud = true;",
+											"",
+											"edad>10 || (sexo==’F’ && altura<170);"
+										],
+										"textoEmocional": {
+											"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+											"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+											"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+											"compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+											"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+											"retroalimentacion": {                           
+												"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+												"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+												"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+											}
+										},
+										"opciones": []
+									}
+							
+							
+							]
+						}
+						
+					]
+                },
+                {
+                    "texto": "false",
+                    "paso": 8,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "presentacion": 
+                    [
+						"int edad = 16;",
+						"int altura = 175;",
+						"int peso = 70;",
+						"char sexo ='M';",
+						"boolean estadoSalud = true;",
+						"",
+						"edad >= 16 && estadoSalud;"
+                    ],
+                    "textoEmocional": {
+                        "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+                        "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+                        "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+                        "compasivo": "A veces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+                        }
+                    },
+                    "opciones": []
+                }
+            ]
+        }
+    ] 
+}

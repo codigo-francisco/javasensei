@@ -1,1 +1,1 @@
-mongod --auth --config "D:\javasensei\javasensei\mongobd\mongodb.conf" --install
+mongod --auth --dbpath D:\javasensei\mongobd --logpath D:\javasensei\mongobd\log.txt --install

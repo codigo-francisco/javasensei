@@ -3,7 +3,7 @@
     <head>
         <title>Java Sensei</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="shortcut icon" href="img/logo.jpg">
 
         <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
@@ -28,8 +28,8 @@
         <script type="text/javascript" src="jquery/jRating.jquery.min.js"></script>
         <script type="text/javascript" src="highlight.pack.js"></script>
         <script type="text/javascript" src="js/buckets-minified.js"></script>
-        <script type="text/javascript" src="js/webcam.min.js"></script>
         <script type="text/javascript" src="jscolor-2.0.4/jscolor.min.js"></script>
+        <script type="text/javascript" src="js/webcam.js"></script>
 
         <script type="text/javascript" src="js/menu.js"></script>
         <script type="text/javascript" src="js/recursos.js"></script>
@@ -52,7 +52,7 @@
             var camera_sensei = new camera();
             var graficaComportamiento = new graficosEmocionesSensei();
             var chat = new chatSensei();
-            
+			
             var carpeta_ejercicios = "lecciones/";
             var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
             var url = "servicios/"; //Jquery infiere el dominio
@@ -83,14 +83,14 @@
             function eliminarBackgroundCamera() {
                 $("#fullscreenpermition").hide();
             };
-            
+
             var noCamara = false;
-            
-            function errorCamara(err){
+
+            function errorCamara(err) {
                 console.error(err);
                 alert("A ocurrido un error debido a que no cuenta con camara o no otorgo los permisos necesarios.\n\nLa detección emocional se ha deshabilitado");
                 noCamara = true;
-                usuario.activarEmociones=false;
+                usuario.activarEmociones = false;
                 //Opciones de la camara
                 eliminarBackgroundCamera();
                 $("#dialog_video").hide();
@@ -124,28 +124,15 @@
 
                 $("#fullscreenloading").hide(); //Escondemos el login
 
-                $(document).ajaxSend(function (event, jqxhr, settings) {
-                    var url = settings.url;
-                    if (!(url.indexOf("chat")>-1 || 
-                            url.indexOf("bitacorafotografia")>-1
-                    )){
-                        $("#fullscreenloading").show();
-                    }
-                });
-
-                $(document).ajaxStop(function () {
-                    $("#fullscreenloading").hide();
-                });
-
                 $(":mobile-pagecontainer").on("pagecontainershow", function (event, ui) {
                     switch ($(ui.toPage).attr("id")) {
                         case "paginarecursos":
                             recursos.obtenerEjercicios("#listaejercicios");
                             recursos.obtenerRecursos("#listarecursos");
                             //Deshabilitar en caso de que se este realizando un ejercicio
-                            $("#activarEmociones").prop("checked",!noCamara && usuario.activarEmociones);
+                            $("#activarEmociones").prop("checked", !noCamara && usuario.activarEmociones);
                             $("#activarEmociones").flipswitch("refresh");
-                            $("#activarEmociones").flipswitch("option","disabled",noCamara || avatar_context.id!=0);
+                            $("#activarEmociones").flipswitch("option", "disabled", noCamara || avatar_context.id != 0);
                             break;
                         case "paginagraficaestudiante":
                             graficos.cargarGrafico("#graficaAvance");
@@ -156,18 +143,18 @@
                             break;
                     }
                 });
-                
-                $("#activarEmociones").on("change",function(){
+
+                $("#activarEmociones").on("change", function () {
                     usuario.activarEmociones = $("#activarEmociones").prop("checked");
                     //Guardado en base de datos
-                    $.ajax(url+"estudiantes/activarEmociones",{
-                        data:{
+                    $.ajax(url + "estudiantes/activarEmociones", {
+                        data: {
                             idAlumno: usuario.id,
                             activarEmociones: usuario.activarEmociones
                         }
-                    }).done(function(data){
+                    }).done(function (data) {
                         console.log(data);
-                    }).fail(function(d,error){
+                    }).fail(function (d, error) {
                         console.log(error);
                     });
                 });
@@ -191,7 +178,6 @@
 
                 $("#progressbar").progressbar();
 
-                //eliminarBackgroundCamera();
                 $("#chatboton").click(function(){
                     if ($("#panelchat").css("bottom") == "0px")
                         $("#panelchat").animate({'bottom':'-100%'},300);
@@ -199,28 +185,16 @@
                         $("#panelchat").animate({'bottom':'0'},300);
                         document.getElementById("usermsg").focus();
                     }
-                    //event.stopPropagation();
                 });
-                /*
-                $(document).click(function(event){
-                    isButton = $(event.target).is("button");
-                    isPartOfChat = $(event.target.parentNode).is("#wrapper") ||
-                                   $(event.target.parentNode).is("#panelchat") ||
-                                   $(event.target.parentNode).is("#chatbox") ||
-                                   $(event.target.parentNode).is(".ui-input-text");
-                    if (!isButton && !isPartOfChat) {
-                        $("#panelchat").animate({'bottom':'-100%'},300);
-                    }
-                });*/
         
                 $("#selecciondetector").on("click",function(){
                     detectorEmocional = $("#selecciondetector :checked").attr("id");
                 });
-                
+
                 camera_sensei.setup();
                 chat.setUp();
             });
-            
+
         </script>
 
         <style type="text/css">
@@ -293,7 +267,7 @@
                 position: relative;
                 top: -15px;
             }
-            
+
             /*Esto es para mostrar las lineas 
             de codigo que se muestra en el documento.*/
             li.L0, li.L1, li.L2, li.L3,
@@ -352,7 +326,7 @@
                 <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext" title="Este es el menu de ejercicios"></a>
                 <div class="ui-title">
                     <img id="imagen_usuario" src=""><br>
-                    <span style="white-space: normal !important;" id="facebookId"></span><br>
+                    <span style="white-space: normal !important;word-break: break-all;font-size:12px" id="facebookId"></span><br>
                     <span style="white-space: normal !important;" id="nombre_usuario"></span>
                     <!-- Score: -->
                 </div>
@@ -483,7 +457,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="datosTabla">
-                                        
+
                                     </tbody>
                                 </table>
                             </div>
@@ -535,7 +509,9 @@
                                 <label for="neuroph">NeuroPH</label>
                                 <input type="radio" name="reconocimientoemocional" id="oxford" value="off">
                                 <label for="oxford">Oxford (Microsoft)</label>
-                            </fieldset>
+                                <input type="radio" name="reconocimientoemocional" id="indico" value="off">
+                                <label for="indico">Indico</label>
+                            </fieldset>
                         </div>
                     </div>
                 </div>

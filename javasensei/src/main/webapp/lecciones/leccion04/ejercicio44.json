@@ -1,0 +1,256 @@
+{
+   "id": 44,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio esta relacionado con ciclos anidados.",
+      "El anidamiento de instrucciones de control es cuando una instrucción de control aparece dentro de otra."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Paso 1 de 2.  Completa el siguiente código.  Se desea que el ciclo  recorra los números del 1 al 3.",
+         "presentacion": [
+            "public class ParejaValores {",
+            "\tpublic static void main(String[] args) {",
+            "\t\tfor (int i = <input type=\"text\" readonly>; i<input type=\"text\" readonly>3; i++)",
+            "\t} ",
+            "} "
+         ],
+		"textoEmocional": {
+			"neutral": "Inicia el ejercicio.",
+			"encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+			"sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+			"compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+			"esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+			"retroalimentacion": {
+				"positiva": "¡Adelante!, con este ejercicio vas a aprender sobre la utilización de métodos en Java..",
+				"neutral": "Inicia con el ejercicio para aprender sobre la utilización de métodos en Java.",
+				"negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+			} 
+		},
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "0, <=",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Se requiere que los valores que se recorran sean del 1 al 3, asegúrate que la variable del control se inicie en el valor correcto.",
+               "presentacion": [
+                  "public class ParejaValores {",
+                  "\tpublic static void main(String[] args) {",
+                  "\t\tfor (int i =<input type='text' readonly class='errorTracing' value='0'>; i<input type='text' readonly class='errorTracing' value='<=' >3; i++)",
+                  "\t} ",
+                  "} "
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+					"compasivo": "Que no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.",
+						"negativa": "¿Estás seguro de querer estudiar este curso?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "1, ==",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Se requiere que los valores que se recorran sean del 1 al 3, asegúrate que la condición permita recorrer los valores requeridos. ",
+               "presentacion": [
+                  "public class ParejaValores {",
+                  "\tpublic static void main(String[] args) {",
+                  "\t\tfor (int i =<input type='text' class='errorTracing' value='1' readonly>; i<input type='text' class='errorTracing' value='==' readonly>3; i++)",
+                  "\t} ",
+                  "} "
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+					"compasivo": "Que no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.",
+						"negativa": "¿Estás seguro de querer estudiar este curso?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "1, >=",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Se requiere que los valores que se recorran sean del 1 al 3, asegúrate que la condición sea la correcta para recorrer los valores requeridos. ",
+               "presentacion": [
+                  "public class ParejaValores {",
+                  "\tpublic static void main(String[] args) {",
+                  "\t\tfor (int i =<input type='text' class='errorTracing' value='1' readonly>; i<input type='text' class='errorTracing' value='>='>3; i++)",
+                  "\t} ",
+                  "} "
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+					"compasivo": "Que no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.",
+						"negativa": "¿Estás seguro de querer estudiar este curso?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "1, <=",
+               "tipo": "pasooptimo",
+               "instruccion": "Paso 2 de 2.  Completa el siguiente código.  Se desea que el ciclo anidado recorra los números 1 y 2.",
+               "presentacion": [
+                  "public class ParejaValores {",
+                  "\tpublic static void main(String[] args) {",
+                  "\t\tfor (int i =<input type='text' class='focusInput' value='1' readonly>; i<input type='text' class='focusInput' value='<='>3; i++)",
+                  "\t\t\tfor (int <input type='text' readonly>= 1;<input type='text' readonly>2;<input type='text' readonly>)",
+                  "\t\t\t\tSystem.out.println(i + “ ” + j);",
+                  "\t} ",
+                  "} "
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta es correcta.",
+					"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+					"sorprendido": "¡Me sorprendes!, continúa así.",
+					"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+					"esceptico": "Se que este ejercicio es fácil para ti.  Trata de terminar el ejercicio.",
+					"retroalimentacion": {                            
+						"positiva": "¡Excelente!, la respuesta es correcta.  Continúa con el ejercicio.",
+						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+						"negativa": "La respuesta es correcta, pero aprender Java requiere que te tomes las cosas en serio."                            
+					}
+				},
+               "opciones": [
+                  {
+                     "paso": 5,
+                     "texto": "j==1, j<=, j++",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "La respuesta es incorrecta. Verifica que la variable de control este asignada de manera correcta.",
+                     "presentacion": [
+                        "public class ParejaValores {",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tfor (int i =<input type='text' class='focusInput' value='1' readonly>; i<input type='text' class='focusInput' value='<='>3; i++)",
+                        "\t\t\tfor (int <input type='text' readonly class='errorTracing' value='j==1'>= 1;<input type='text' readonly class='errorTracing' value='j<='>2;<input type='text' readonly class='errorTracing' value='j++'>)",
+                        "\t\t\t\tSystem.out.println(i + “ ” + j);",
+                        "\t} ",
+                        "} "
+                     ],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Que no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 6,
+                     "texto": "j=0, j==, j++",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "La respuesta  es incorrecta, verifica que la condición permita recorrer los valores requeridos.",
+                     "presentacion": [
+                        "public class ParejaValores {",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tfor (int i =<input type='text' class='focusInput' value='1' readonly>; i<input type='text' class='focusInput' value='<='>3; i++)",
+                        "\t\t\tfor (int <input type='text' readonly class='errorTracing' value='j=0'>= 1;<input type='text' readonly class='errorTracing' value='j=='>2;<input type='text' readonly class='errorTracing' value='j++'>)",
+                        "\t\t\t\tSystem.out.println(i + “ ” + j);",
+                        "\t} ",
+                        "} "
+                     ],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Que no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 7,
+                     "texto": "j=1, j<=, j++",
+                     "tipo": "pasofinaloptimo",
+                     "instruccion": "La respuesta es correcta. Continúa con más ejercicios.",
+                     "presentacion": [
+                        "public class ParejaValores {",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tfor (int i =<input type='text' class='focusInput' value='1' readonly>; i<input type='text' class='focusInput' value='<='>3; i++)",
+                        "\t\t\tfor (int <input type='text' readonly class='focusInput' value='j=1'>= 1;<input type='text' readonly class='focusInput' value='j<='>2;<input type='text' readonly class='focusInput' value='j++'>)",
+                        "\t\t\t\tSystem.out.println(i + “ ” + j);",
+                        "\t} ",
+                        "} "
+                     ],
+					"textoEmocional": {
+						"neutral": "La respuesta es correcta. Has finalizado el ejercicio",
+						"encantado": "Te siento comprometido contigo mismo, continúa con el ejercicio.",
+						"sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+						"compasivo": "Se que Java a veces se complica un poco, pero se que vas a mejorar tu desempeño, sigue con el ejercicio.",
+						"esceptico": "Se que Java te es indiferente.  Al menos trata de terminar el ejercicio.",
+						"retroalimentacion": {
+							"positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con más ejercicios.",
+							"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+							"negativa": "Al parecer no te gusta estudiar, pero es parte importante de tu formación académica."
+						}                                    
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 8,
+                     "texto": "j=1, j<=, j--",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "La respuesta es incorrecta. Verifica que el incremento ó decremento de la variable de control permita recorrer los valores requeridos.",
+                     "presentacion": [
+                        "public class ParejaValores {",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tfor (int i =<input type='text' class='focusInput' value='1' readonly>; i<input type='text' class='focusInput' value='<='>3; i++)",
+                        "\t\t\tfor (int <input type='text' readonly class='errorTracing' value='j=1'>= 1;<input type='text' readonly class='errorTracing' value='j<='>2;<input type='text' readonly class='errorTracing' value='j--'>)",
+                        "\t\t\t\tSystem.out.println(i + “ ” + j);",
+                        "\t} ",
+                        "} "
+                     ],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Que no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+					},
+                     "opciones": []
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
