@@ -18,6 +18,8 @@
         <link href="css/matriz.css" rel="stylesheet"/>
         <link href="css/recursos.css" rel="stylesheet">
         <link href="css/chat.css" rel="stylesheet">
+        <link href="offline-js/offline-theme-default.css" rel="stylesheet">
+        <link href="offline-js/offline-language-spanish.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
@@ -30,6 +32,7 @@
         <script type="text/javascript" src="js/buckets-minified.js"></script>
         <script type="text/javascript" src="jscolor-2.0.4/jscolor.min.js"></script>
         <script type="text/javascript" src="js/webcam.js"></script>
+        <script type="text/javascript" src="offline-js/offline.min.js"></script>
 
         <script type="text/javascript" src="js/menu.js"></script>
         <script type="text/javascript" src="js/recursos.js"></script>
@@ -186,7 +189,7 @@
                         document.getElementById("usermsg").focus();
                     }
                 });
-        
+
                 $("#selecciondetector").on("click",function(){
                     detectorEmocional = $("#selecciondetector :checked").attr("id");
                 });
@@ -383,7 +386,7 @@
                         <div id="chatbox"></div>
                         <!-- <input id="usermsg" name="usermsg" type="text" size="13" autocomplete="off"/> -->
                         <textarea id="usermsg" name="usermsg"></textarea>
-                        <button id="botoncolor" class="jscolor {valueElement:null,value:'66ccff'}" style="width:50px; height:20px;"></button>
+                        <button id="botoncolor" class="jscolor {valueElement:null,value:'000000'}" style="width:50px; height:20px;"></button>
                     </div>
                 </div>
             </div>
