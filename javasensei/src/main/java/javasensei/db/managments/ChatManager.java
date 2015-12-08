@@ -26,9 +26,9 @@ public class ChatManager {
         mensaje.put("idEjercicio",idEjercicio);
         mensaje.put("fecha", fecha);
         mensaje.put("color", color);
-        chatCollection.insert(mensaje);
-        ObjectId id = (ObjectId)mensaje.get("_id");
-        return fecha+""+id;
+        mensaje.put("_id", chatCollection.insert(mensaje));
+        
+        return mensaje.toString();
     }
     
     public String leerMensajes(Long fecha, Integer idEjercicio){
