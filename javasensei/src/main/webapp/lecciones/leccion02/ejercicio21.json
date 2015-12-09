@@ -3,7 +3,7 @@
     "paso":-1,
     "instruccionesejercicio": 
     [
-        "Muchos programas suman o restan el valor de 1 de variables usando los operadores de incremento (++) y decremento (--)",
+        "Muchos programas suman o restan el valor de 1 de variables usando los operadores de incremento (++) y decremento (--).",
         "Estos operadores funcionan en incremento/decremento postfijo y prefijo."
     ],
     "opciones": 
@@ -31,7 +31,7 @@
                 "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
                 "retroalimentacion": {
                     "positiva": "¡Adelante!",
-                    "neutral": "Inicia con el ejercicio",
+                    "neutral": "Inicia con el ejercicio.",
                     "negativa": "El éxito empieza cuando tu quieres."
                 } 
             },
@@ -56,8 +56,8 @@
                     "textoEmocional": {
                         "neutral": "Has finalizado con este ejercicio.",
                         "encantado": "Cada logro comienza con la decisión de intentarlo.”, ¡sigue con este entusiasmo!.",              
-                        "sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio..",
-                        "compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio..",                
+                        "sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+                        "compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio.",                
                         "esceptico": "Al menos llegaste al final del ejercicio.",
                         "retroalimentacion": {
                             "positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
@@ -87,11 +87,11 @@
                         "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
                         "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
                         "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
-                        "compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java.",
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {                           
                             "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
-                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
                             "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
                         }
                     },
@@ -117,11 +117,11 @@
                         "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
                         "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
                         "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
-                        "compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java.",
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {                           
                             "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
-                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
                             "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
                         }
                     },
@@ -151,7 +151,7 @@
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {                           
                             "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
-                            "neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+                            "neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
                             "negativa": "¿Estás seguro de no querer cambiar tu actitud?."
                         }
                     },

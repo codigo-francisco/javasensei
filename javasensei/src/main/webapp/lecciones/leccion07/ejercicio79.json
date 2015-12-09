@@ -1,0 +1,256 @@
+{
+   "id": 79,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "Este ejercicio está relacionado con operaciones con arreglos.",
+      "Al igual que los arreglos unidimensionales, multidimensionales pueden inicializarse mediante inicializadores de arreglos en las declaraciones. Un arreglo bidimensional b con dos filas y dos columnas podría declararse e inicializarse con inicializadores de arreglos anidados, como se muestra a continuación:",
+      "\tint [ ] [ ] b = {{1,2},{3,4}};"
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Selecciona la respuesta correcta. ¿Cuántas filas tiene el siguiente arreglo?",
+         "presentacion": [
+            "int[][] arreglo2D = new int[8][7];"
+         ],
+		"textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+         },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": 8,
+               "tipo": "pasooptimo",
+               "instruccion": "Selecciona los valores que completan la declaración correcta del siguiente arreglo bidimensional basándote en la inicialización de sus elementos:",
+               "presentacion": [
+                  "int[][] arreglo2D = new int[<input type='text' readonly>][<input type='text' readonly>];",
+                  "",
+                  "arreglo2D [0][0]= 5;",
+                  "arreglo2D [0][1]= 5;",
+                  "arreglo2D [0][2]= 5;",
+                  "arreglo2D [0][3]= 5;",
+                  "arreglo2D [1][0]= 5;",
+                  "arreglo2D [1][1]= 5;",
+                  "arreglo2D [1][2]= 5;",
+                  "arreglo2D [1][3]= 5;"
+               ],
+			"textoEmocional": {
+				"neutral": "La respuesta es correcta.",
+				"encantado": "Siento que tu entusiasmo hace que el ejercicio sea muy fácil de resolver",
+				"sorprendido": "¡Me sorprendes!, sigue hacia adelante.",
+				"compasivo": "Aquellas cosas que nos apasionan son aquellas que no nos cansan, ¡ánimo!.",
+				"esceptico": "Deja tus excusas y trata de superarte día a día.",
+				"retroalimentacion": {                            
+					"positiva": "Muy bien!, estás en lo correcto.",
+					"neutral": "La respuesta es correcta",
+					"negativa": "¿Estás estudiando con seriedad? ¿O sólo estas pasando el rato?"                            
+				}
+			},
+               "opciones": [
+                  {
+                     "paso": 2,
+                     "texto": "3,1",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "La respuesta es incorrecta. Recuerda que para declarar un arreglo se define el tamaño por dos valores entre corchetes [ ][ ], primero el tamaño en filas seguido de el tamaño en columnas. Intenta de nuevo. ",
+                     "presentacion": [
+                        "int[][] arreglo2D = new int[<input type='text' readonly value='3' class='errorTracing'>][<input type='text' readonly value='1' class='errorTracing'>];",
+                        "",
+                        "arreglo2D [0][0]= 5;",
+                        "arreglo2D [0][1]= 5;",
+                        "arreglo2D [0][2]= 5;",
+                        "arreglo2D [0][3]= 5;",
+                        "arreglo2D [1][0]= 5;",
+                        "arreglo2D [1][1]= 5;",
+                        "arreglo2D [1][2]= 5;",
+                        "arreglo2D [1][3]= 5;"
+                     ],
+					"textoEmocional": {
+						"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
+						"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+						"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+						"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java.",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo",
+							"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+						}
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 3,
+                     "texto": "4,2",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "La respuesta es incorrecta. Recuerda que para declarar un arreglo se define el tamaño por dos valores entre corchetes [ ][ ], primero el tamaño en filas seguido de el tamaño en columnas. Intenta de nuevo. ",
+                     "presentacion": [
+                        "int[][] arreglo2D = new int[<input type='text' readonly value='4' class='errorTracing'>][<input type='text' readonly value='2' class='errorTracing'>];",
+                        "",
+                        "arreglo2D [0][0]= 5;",
+                        "arreglo2D [0][1]= 5;",
+                        "arreglo2D [0][2]= 5;",
+                        "arreglo2D [0][3]= 5;",
+                        "arreglo2D [1][0]= 5;",
+                        "arreglo2D [1][1]= 5;",
+                        "arreglo2D [1][2]= 5;",
+                        "arreglo2D [1][3]= 5;"
+                     ],
+					"textoEmocional": {
+						"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
+						"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+						"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+						"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo",
+							"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+						}
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 4,
+                     "texto": "2,3",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "La respuesta es incorrecta. Recuerda que para declarar un arreglo se define el tamaño por dos valores entre corchetes [ ][ ], primero el tamaño en filas seguido de el tamaño en columnas. Intenta de nuevo. ",
+                     "presentacion": [
+                        "int[][] arreglo2D = new int[<input type='text' readonly value='2' class='errorTracing'>][<input type='text' readonly value='3' class='errorTracing'>];",
+                        "",
+                        "arreglo2D [0][0]= 5;",
+                        "arreglo2D [0][1]= 5;",
+                        "arreglo2D [0][2]= 5;",
+                        "arreglo2D [0][3]= 5;",
+                        "arreglo2D [1][0]= 5;",
+                        "arreglo2D [1][1]= 5;",
+                        "arreglo2D [1][2]= 5;",
+                        "arreglo2D [1][3]= 5;"
+                     ],
+					"textoEmocional": {
+						"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
+						"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+						"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+						"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo",
+							"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+						}
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 5,
+                     "texto": "2,4",
+                     "tipo": "pasofinaloptimo",
+                     "instruccion": "La respuesta es correcta. Continúa con un nuevo ejercicio del menú de opciones.",
+                     "presentacion": [
+                        "int[][] arreglo2D = new int[<input type='text' readonly value='2' class='focusInput'>][<input type='text' readonly value='3' class='focusInput'>];",
+                        "",
+                        "arreglo2D [0][0]= 5;",
+                        "arreglo2D [0][1]= 5;",
+                        "arreglo2D [0][2]= 5;",
+                        "arreglo2D [0][3]= 5;",
+                        "arreglo2D [1][0]= 5;",
+                        "arreglo2D [1][1]= 5;",
+                        "arreglo2D [1][2]= 5;",
+                        "arreglo2D [1][3]= 5;"
+                     ],
+					"textoEmocional": {
+						"neutral": "Has finalizado con este ejercicio. Continúa con más ejercicios.",
+						"encantado": "Cada logro comienza con la decisión de intentarlo.”, ¡sigue con este entusiasmo!.",              
+						"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio..",
+						"compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio..",                
+						"esceptico": "Al menos llegaste al final del ejercicio.",
+						"retroalimentacion": {
+							"positiva": "¡Felicidades!. Has finalizado con este ejercicio.",
+							"neutral": "Has finalizado con este ejercicio.",
+							"negativa": "Has finalizado con este ejercicio."
+						} 
+					},
+                     "opciones": []
+                  }
+               ]
+            },
+            {
+               "paso": 6,
+               "texto": 7,
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Para declarar y crear un arreglo bidimensional utilizamos el operador new y dos valores literales que representan las filas y columnas respectivamente. Intenta de nuevo.",
+               "presentacion": [
+                  "int[][] arreglo2D = new int[8][7];"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 7,
+               "texto": 6,
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Para declarar y crear un arreglo bidimensional utilizamos el operador new y dos valores literales que representan las filas y columnas respectivamente. Intenta de nuevo.",
+               "presentacion": [
+                  "int[][] arreglo2D = new int[8][7];"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 8,
+               "texto": 9,
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Para declarar y crear un arreglo bidimensional utilizamos el operador new y dos valores literales que representan las filas y columnas respectivamente. Intenta de nuevo.",
+               "presentacion": [
+                  "int[][] arreglo2D = new int[8][7];"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
