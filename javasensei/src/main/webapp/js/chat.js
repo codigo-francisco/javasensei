@@ -2,18 +2,17 @@
 
 var ultimoMensaje;
 var colaMensajes = new buckets.Queue();
-var leerMensajes = true;
 
 var chatSensei = function () {
-    
+
     this.idInterval = -1;
-    
+
     Offline.options = {checks: {xhr: {url: '/favicon.ico'}}};
-    
+
     this.verificarMensaje = function () {
-        if (leerMensajes) {
+        if (!enviandoMensaje) {
             if (colaMensajes.size() >= 100)
-                colaMensajes.Queue.dequeue();
+                colaMensajes.dequeue();
             //Ajax para saber si hay nuevos mensajes, verifica si hay conectividad
             Offline.check();
             if (Offline.state !== "up")
@@ -30,19 +29,17 @@ var chatSensei = function () {
                 if (datos.length > 0) {
                     //Agregamos nuevos mensajes
                     $.each(datos, function (index, data) {
-                        var last = colaMensajes.list.last();
-                        var current = data._id.$oid;
-                        if (last === current)
-                            return;
-                        $("#chatbox").append(
-                                $("<p class='mensaje'>").html(data.nombreUsuario + ": " + data.message)
-                                .css("color", data.color));
-                        var chatbox = document.getElementById("chatbox");
-                        chatbox.scrollTop = chatbox.scrollHeight;
+                        if (!colaMensajes.contains(data._id.$oid)) {
+                            colaMensajes.add(ultimoMensaje);
+                            $("#chatbox").append(
+                                    $("<p class='mensaje'>").html(data.nombreUsuario + ":\n" + data.message)
+                                    .css("color", data.color));
+                            var chatbox = document.getElementById("chatbox");
+                            chatbox.scrollTop = chatbox.scrollHeight;
+                        }
                     });
 
                     ultimoMensaje = datos[datos.length - 1].fecha;
-                    colaMensajes.add(ultimoMensaje);
                 }
             });
         }
@@ -66,8 +63,9 @@ var chatSensei = function () {
         obtenerHora();
     };
 
+    var enviandoMensaje = false;
+
     this.procesarEnvioMensaje = function (e) {
-        leerMensajes = false;
         var code = (e.keyCode ? e.keyCode : e.which);
         var message = $("#usermsg").val()
                 .replace(/</g, "&lt;")
@@ -85,7 +83,7 @@ var chatSensei = function () {
             var color = $("#botoncolor").css("background-color");
             $("#usermsg").val("");
             $("#chatbox").append(
-                    $("<p class='mensaje'>").html(usuario.nombre + ": " + message)
+                    $("<p class='mensaje'>").html(usuario.nombre + ":\n" + message)
                     .css("color", color));
             chatbox = document.getElementById("chatbox");
             chatbox.scrollTop = chatbox.scrollHeight;
@@ -102,13 +100,14 @@ var chatSensei = function () {
                 },
                 dataType: "json"
             }).done(function (data) {
-                colaMensajes.add(data._id.$oid);
+                if (!colaMensajes.contains(data._id.$oid))
+                    colaMensajes.add(data._id.$oid);
 
                 var fecha = data.fecha;
                 if (fecha > ultimoMensaje)
                     ultimoMensaje = fecha;
-
-                leerMensajes = true;
+                
+                enviandoMensaje = false;
             });
         }
     };
