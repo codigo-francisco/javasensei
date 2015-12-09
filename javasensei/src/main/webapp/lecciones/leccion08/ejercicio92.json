@@ -1,0 +1,134 @@
+{
+   "id": 92,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con las clases y objetos en Java.",
+      "Un <b>objeto</b> es una instancia o caso particular de una clase. Un objeto contiene atributos y métodos. Los atributos identifican el estado del objeto (su identidad) y los métodos establecen su comportamiento (funcionamiento)."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Dado el siguiente código, ¿Qué se obtiene en la consola de salida cuando se ejecuta?",
+         "presentacion": [
+            "class Test { ",
+            "\tint x, y;",
+            "\tboolean test() {",
+            "\t\tif (x < y) return true;",
+            "\t\telse return false;",
+            "\t}",
+            "\tpublic static void main (String [] args) {",
+            "\t\tTest t = new Test();",
+            "\t\tt.x = 3; t.y = 17;",
+            "\t\tif (t.test()) System.out.println(\"SI\");",
+            "\t\telse System.out.println(\"NO\");",
+            "\t}",
+            "}"
+         ],
+         "textoEmocional": {
+			"neutral": "Inicia con el ejercicio.",                
+			"encantado": "Para mover una montaña necesitas comenzar por pequeñas piedras.  ¡Inicia con el ejercicio!",
+			"sorprendido": "No permitas que nadie te diga que no puedes conseguir aquello que quieres. ¡Inicia con el ejercicio!",
+			"compasivo": "No importa que hoy te equivoques, tienes el resto de tu vida para solucionarlo.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+			"esceptico": "Por muy poco que puedas hacer, siempre es más que quedarse de brazos cruzados.  Empieza el ejercicio.",
+			"retroalimentacion": {
+				"positiva": "Nadie dijo que la vida fuera fácil ¿pero vas a rendirte ante la primera dificultad?.",
+				"neutral": "La motivación es el mejor método para hacer las cosas.",
+				"negativa": "Rendirse no es la solución, es la escapatorio más fácil."
+			}
+
+		},
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "SI",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio. Selecciona otro del menú de opciones.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio.",
+					"encantado": "En la vida no hay que esperar a que pase la tormenta, hay que aprender a bailar bajo la lluvia, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+					"compasivo": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede.  ¡continua así!.",                
+					"esceptico": "Lo que con mucho trabajo se adquiere, más se ama.  Sigue aprendiendo Java.",
+					"retroalimentacion": {
+						"positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+						"neutral": "Has finalizado con este ejercicio.",
+						"negativa": "No se puede cambiar lo que te niegas a afrontar.  Al menos llegaste al final del ejercicio."
+					}	
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "NO",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+					"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Intentalo una vez más!",
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"negativa": "Creo que no has estudiado lo suficiente."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": 17,
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+					"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Intentalo una vez más!",
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"negativa": "Creo que no has estudiado lo suficiente."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": 3,
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+					"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Intentalo una vez más!",
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"negativa": "Creo que no has estudiado lo suficiente."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

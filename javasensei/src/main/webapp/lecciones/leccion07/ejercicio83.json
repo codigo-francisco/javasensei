@@ -1,0 +1,121 @@
+{
+   "id": 83,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "Este ejercicio está relacionado con las longitudes de arreglos bidimensionales.",
+      "Cada elemento del arreglo se identifica mediante una expresión de acceso a un arreglo de la forma tabla[fila][columna] donde tabla es el nombre del arreglofila y columna son los subíndices que identifican en forma única a cada elemento en el arreglo tabla por número de fila y columna."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Dado el siguiente fragmento de código, que valor tendría x[2][1].",
+         "presentacion": [
+            "double [ ][ ] x = {{1.1,9.0,3.2}{9.2,0.5,1.5,-1.2}{7.3,7.9,4.8}}"
+         ],
+		"textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+         },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "7.2",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Observa con atención e intenta de nuevo.",
+               "presentacion": [
+					"double [ ][ ] x = {{1.1,9.0,3.2}{9.2,0.5,1.5,-1.2}{7.3,7.9,4.8}}"
+				],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "7.9",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Muy bien respuesta es correcta. Selecciona otro ejercicio del menú de opciones.",
+               "presentacion": [
+                  ""
+               ],
+				"textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio. Continúa con más ejercicios.",
+					"encantado": "Cada logro comienza con la decisión de intentarlo.”, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio..",
+					"compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio..",                
+					"esceptico": "Al menos llegaste al final del ejercicio.",
+					"retroalimentacion": {
+						"positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+						"neutral": "Has finalizado con este ejercicio.",
+						"negativa": "Has finalizado con este ejercicio."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "9.2",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Observa con atención e intenta de nuevo.",
+               "presentacion": [
+					"double [ ][ ] x = {{1.1,9.0,3.2}{9.2,0.5,1.5,-1.2}{7.3,7.9,4.8}}"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "Ninguna de las anteriores.",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Observa con atención e intenta de nuevo.",
+               "presentacion": [
+                   "double [ ][ ] x = {{1.1,9.0,3.2}{9.2,0.5,1.5,-1.2}{7.3,7.9,4.8}}"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

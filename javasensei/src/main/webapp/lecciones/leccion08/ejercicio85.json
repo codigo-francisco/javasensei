@@ -1,0 +1,121 @@
+{
+   "id": 85,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "Este ejercicio está relacionado con el constructor.",
+      "Cada clase que se declare puede proporcionar un método especial llamado constructor, el cual puede utilizarse para inicializar un objeto de una clase al momento de crearlo."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Selecciona la opción correcta. ",
+         "presentacion": [
+            "Es un método especial pero solo es llamado cuando se quiere crear un objeto de una clase para inicializar los datos."
+         ],
+		"textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio.",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+         },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "main",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Todo programa en Java debe de contener un método principal al que se le denomina main. Intenta de nuevo.",
+               "presentacion": [
+                  "Es un método especial pero solo es llamado cuando se quiere crear un objeto de una clase para inicializar los datos."
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?"
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "Constructor",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "La respuesta es correcta. Continúa con más ejercicios del menú de opciones.",
+               "presentacion": [
+                  "El constructor es un método especial pero solo es llamado cuando se quiere crear un objeto de una clase para inicializar los datos."
+               ],
+				"textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio. Continúa con más ejercicios.",
+					"encantado": "Cada logro comienza con la decisión de intentarlo.”, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+					"compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio.",                
+					"esceptico": "Al menos llegaste al final del ejercicio.",
+					"retroalimentacion": {
+						"positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+						"neutral": "Has finalizado con este ejercicio.",
+						"negativa": "Has finalizado con este ejercicio."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "Método",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. En el lenguaje Java a los módulos o subprogramas se les conoce con el nombre de métodos. Intenta de nuevo.",
+               "presentacion": [
+                  "Es un método especial pero solo es llamado cuando se quiere crear un objeto de una clase para inicializar los datos."
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?"
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "Clase",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. En Java, se crea una unidad de programa llamada clase para alojar el conjunto de métodos que realizan las tareas de esa clase. Intenta de nuevo",
+               "presentacion": [
+                  "Es un método especial pero solo es llamado cuando se quiere crear un objeto de una clase para inicializar los datos."
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Inténtalo de nuevo.",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?"
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

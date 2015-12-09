@@ -21,15 +21,15 @@
 				"<input type='text' readonly>"
 			],
 			"textoEmocional": {
-                "neutral": "Inicia el ejercicio",
-                "encantado": "Estas muy bien, inicia con el ejercicio",
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Estas muy bien, inicia con el ejercicio.",
                 "sorprendido": "¡Me sorprendes!, continúa así.",
-                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio",
-                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio",
+                "compasivo": "Se que has sentido que no progresas del todo bien, pero mejoraras, realiza el ejercicio.",
+                "esceptico": "No creo que este ejercicio sea adecuado para ti, piensa si quieres iniciar este ejercicio.",
                 "retroalimentacion": {
                     "positiva": "No dejes que termine tu día sin haber aprendido algo. ¡Sigue estudiando con entusiasmo!",
-                    "neutral": "Resuelve el ejercicio para continuar con tu proceso de aprendizaje",
-                    "negativa": "Si no le pones empeño y dedicación a lo que haces es complicado que puedas aprender a programar en Java"
+                    "neutral": "Resuelve el ejercicio para continuar con tu proceso de aprendizaje.",
+                    "negativa": "Si no le pones empeño y dedicación a lo que haces es complicado que puedas aprender a programar en Java."
                 }
             },
 			"opciones": [
@@ -53,7 +53,7 @@
                         "esceptico": "Se que este ejercicio es fácil para ti.  En el menú de opciones hay otros ejercicios más interesantes.",
                         "retroalimentacion": {
                             "positiva": "No dejes que termine tu día sin haber aprendido algo. ¡Sigue estudiando con entusiasmo!",
-                 			"neutral":  "Resuelve el ejercicio para continuar con tu proceso de aprendizaje",
+                 			"neutral":  "Resuelve el ejercicio para continuar con tu proceso de aprendizaje.",
                             "negativa": "Se que no te gusta la teoría, pero es parte importante de tu formación académica."
                         }
                     },
@@ -64,7 +64,7 @@
 					"texto": "[ y ]",
 					"paso": 2,
 					"tipo": "pasoerroneo",
-					"instruccion": "La respuesta es incorrecta. Intenta de nuevo",
+					"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 					"presentacion": [
 						"public class Bienvenido <input type='text' readonly class='errorTracing' value='['>",
 						"  \tpublic static void main( String[] args ) {",
@@ -76,11 +76,11 @@
                         "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
                         "encantado": "Tu actitud para aprender es ¡Excelente!",
                         "sorprendido": "¡Creo que te estás confiando demasiado!",
-                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
-                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
+                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo.",
+                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad.",
                         "retroalimentacion": {
-                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
-                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo.",
+                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta.",
                             "negativa": "¡Necesitas mayor concentración!"
                         }
                     },
@@ -101,11 +101,11 @@
                         "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
                         "encantado": "Tu actitud para aprender es ¡Excelente!",
                         "sorprendido": "¡Creo que te estás confiando demasiado!",
-                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
-                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
+                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo.",
+                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad.",
                         "retroalimentacion": {
-                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
-                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo.",
+                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta.",
                             "negativa": "¡Necesitas mayor concentración!"
                         }
 					},
@@ -126,11 +126,11 @@
                         "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
                         "encantado": "Tu actitud para aprender es ¡Excelente!",
                         "sorprendido": "¡Creo que te estás confiando demasiado!",
-                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo",
-                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad",
+                        "compasivo": "Aprender Java no es una tarea trivial pero con tu esfuerzo vas a lograrlo.",
+                        "esceptico": "Es posible que no te interese este tipo de ejercicios, intenta realizar otra actividad.",
                         "retroalimentacion": {
-                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo",
-                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta",
+                            "positiva": "Los programas en Java deben ser sintácticamente correctos para que pueda compilarse.  Intentalo de nuevo.",
+                            "neutral": "La respuesta es incorrecta, intenta encontrar la respuesta correcta.",
                             "negativa": "¡Necesitas mayor concentración!"
                         }
 					},

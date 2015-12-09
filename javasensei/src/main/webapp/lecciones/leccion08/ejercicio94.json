@@ -1,0 +1,130 @@
+{
+   "id": 94,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con los valores por default.",
+      "Las variables de instancia de tipos primitivos se inicializan de manera predeterminada, a menos que se inicialicen en forma explícita. ",
+      "Las variables de instancia de los tipos char, byte, short, in t, long, float y double reciben el valor 0 de manera predeterminada. Las variables de tipo boolean reciben el valor false de manera predeterminada. Las variables de instancia de tipo por referencia se inicializan de manera predeterminada con el valor null."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Dado la siguiente definición de clase, ¿Qué se imprime en la consola de salida cuando se ejecuta la clase?",
+         "presentacion": [
+            "public class Mascota {",
+            "\tboolean tieneDueño;",
+            "\tint edad; ",
+            "\tpublic static void main(String[] args) {",
+            "\t\tMascota m = new Mascota();",
+            "\t\tSystem.out.print(m.tieneDueño + “ “ + m.edad);",
+            "  \t}",
+            "}"
+         ],
+         "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Para mover una montaña necesitas comenzar por pequeñas piedras.  ¡Inicia con el ejercicio!",
+                "sorprendido": "No permitas que nadie te diga que no puedes conseguir aquello que quieres. ¡Inicia con el ejercicio!",
+                "compasivo": "No importa que hoy te equivoques, tienes el resto de tu vida para solucionarlo.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "Por muy poco que puedas hacer, siempre es más que quedarse de brazos cruzados.  Empieza el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "Nadie dijo que la vida fuera fácil ¿pero vas a rendirte ante la primera dificultad?.",
+                    "neutral": "La motivación es el mejor método para hacer las cosas.",
+                    "negativa": "Rendirse no es la solución, es la escapatorio más fácil."
+                }
+
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "false 0",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio, continúa con otro ejercicio del menú.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio.",
+					"encantado": "El arte de vencer se aprende en las derrotas, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Somos lo que hacemos día a día. De modo que la excelencia no es un acto, sino un hábito.",
+					"compasivo": "No te des por vencido, ni aún vencido.  Establece objetivos a corto plazo y pronto serás un Sensei de Java.",                
+					"esceptico": "Es absurdo continuar haciendo siempre lo mismo y esperar resultados diferentes.  Al menos llegaste al final del ejercicio.",
+					"retroalimentacion": {
+						"positiva": "¡Felicidades!.  Las oportunidades solamente las aprovechan las mentes preparadas.",
+						"neutral": "Has finalizado con este ejercicio.",
+						"negativa": "Las oportunidades no ocurren, las creas tú.  ¡Deja de jugar y ponte a estudiar!."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "true 0",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+              "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+					"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "Casi, casi, ¡Intentalo de nuevo!",
+						"neutral": "Te felicito por tu excelente rendimiento y comportamiento.",
+						"negativa": "Creo que no has estudiado lo suficiente."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "Error sintaxis",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+					"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "Casi, casi, ¡Intentalo de nuevo!",
+						"neutral": "Te felicito por tu excelente rendimiento y comportamiento.",
+						"negativa": "Creo que no has estudiado lo suficiente."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "Error ejecución",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+					"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "Casi, casi, ¡Intentalo de nuevo!",
+						"neutral": "Te felicito por tu excelente rendimiento y comportamiento.",
+						"negativa": "Creo que no has estudiado lo suficiente."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
