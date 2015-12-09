@@ -3,7 +3,7 @@
 	"paso": -1,
 	"tipo": "instruccionesiniciales",
 	"instruccionesejercicio": [
-		"El siguiente ejercicio esta relacionado con los programas básicos en Java"
+		"El siguiente ejercicio esta relacionado con los programas básicos en Java."
 	],
 	"opciones": [
 		{
@@ -23,7 +23,7 @@
                                 "retroalimentacion": {
                                     "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
                                     "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java."
 				}
 			},
 			"opciones": [
@@ -39,8 +39,8 @@
 					"textoEmocional": {
 						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 						"retroalimentacion": {                           
 							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -56,7 +56,7 @@
 					"texto": "static",
 					"paso": 2,
 					"tipo": "pasoerroneo",
-					"instruccion": "La respuesta es incorrecta, Intenta de nuevo.",
+					"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 					"presentacion": [
 						"public <input type='text' readonly value='static' class='errorTracing'> Test {",	
 						"}"
@@ -65,8 +65,8 @@
 					"textoEmocional": {
 						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 						"retroalimentacion": {                           
 							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -79,7 +79,7 @@
 					"texto": "void",
 					"paso": 3,
 					"tipo": "pasoerroneo",
-					"instruccion": "La respuesta es incorrecta, Intenta de nuevo.",
+					"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 					"presentacion": [
 						"public <input type='text' readonly value='void' class='errorTracing'> Test {",	
 						"}"
@@ -89,8 +89,8 @@
 					"textoEmocional": {
 						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 						"retroalimentacion": {                           
 							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -145,8 +145,8 @@
 							"textoEmocional": {
 								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 								"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 								"retroalimentacion": {                           
 									"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -161,7 +161,7 @@
 							"texto": "int",
 							"paso": 6,
 							"tipo": "pasoerroneo",
-							"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+							"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 							"presentacion": [
 								"public <input type='text' value='class' class='focusInput'> Test {",	
 									"\tpublic static void main(String[] args) {",
@@ -175,8 +175,8 @@
 							"textoEmocional": {
 								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 								"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 								"retroalimentacion": {                           
 									"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -237,8 +237,8 @@
 									"textoEmocional": {
 										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 										"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 										"retroalimentacion": {                           
 											"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -269,8 +269,8 @@
 									"textoEmocional": {
 										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 										"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 										"retroalimentacion": {                           
 											"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -285,7 +285,7 @@
 									"texto": "imprimir",
 									"paso": 10,
 									"tipo": "pasoerroneo",
-									"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+									"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 									"presentacion": [
 										"public <input type='text' value='class' class='focusInput'> Test {",	
 										"\tpublic static void main(String[] args) {",
@@ -301,8 +301,8 @@
 									"textoEmocional": {
 										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 										"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+										"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+										"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 										"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 										"retroalimentacion": {                           
 											"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -380,7 +380,7 @@
 													"texto": "java Test.java",
 													"paso": 13,
 													"tipo": "pasoerroneo",
-													"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+													"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 													"presentacion": [
 														"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
 														"public <input type='text' value='class' class='focusInput'> Test {",	
@@ -398,8 +398,8 @@
 													"textoEmocional": {
 														"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 														"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 														"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 														"retroalimentacion": {                           
 															"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -414,7 +414,7 @@
 													"texto": "javac Test",
 													"paso": 14,
 													"tipo": "pasoerroneo",
-													"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+													"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 													"presentacion": [
 														"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
 														"public <input type='text' value='class' class='focusInput'> Test {",	
@@ -432,8 +432,8 @@
 													"textoEmocional": {
 														"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 														"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 														"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 														"retroalimentacion": {                           
 															"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -466,8 +466,8 @@
 													"textoEmocional": {
 														"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 														"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+														"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+														"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 														"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 														"retroalimentacion": {                           
 															"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -532,8 +532,8 @@
 																"textoEmocional": {
 																	"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 																	"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-																	"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-																	"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+																	"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+																	"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 																	"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 																	"retroalimentacion": {                           
 																		"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -548,7 +548,7 @@
 																"texto": "java Test",
 																"paso": 18,
 																"tipo": "pasofinaloptimo",
-																"instruccion": "La respuesta es correcta, continua con más ejercicios del menú.",
+																"instruccion": "La respuesta es correcta, continúa con más ejercicios del menú.",
 																"presentacion": [
 																	"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
 																	"public <input type='text' value='class' class='focusInput'> Test {",	
@@ -583,7 +583,7 @@
 																"texto": "java Test.java",
 																"paso": 19,
 																"tipo": "pasoerroneo",
-																"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+																"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 																"presentacion": [
 																	"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
 																	"public <input type='text' value='class' class='focusInput'> Test {",	
@@ -602,8 +602,8 @@
 																"textoEmocional": {
 																	"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 																	"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-																	"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-																	"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+																	"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+																	"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 																	"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 																	"retroalimentacion": {                           
 																		"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -618,7 +618,7 @@
 																"texto": "java Test.class",
 																"paso": 20,
 																"tipo": "pasoerroneo",
-																"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+																"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 																"presentacion": [
 																	"Nombre de archivo: <input type='text' readonly value='Test.java ' class='focusInput'>",
 																	"public <input type='text' value='class' class='focusInput'> Test {",	
@@ -637,8 +637,8 @@
 																"textoEmocional": {
 																	"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 																	"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-																	"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-																	"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+																	"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+																	"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 																	"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 																	"retroalimentacion": {                           
 																		"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -659,7 +659,7 @@
 											"texto": "Test.class",
 											"paso": 21,
 											"tipo": "pasoerroneo",
-											"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+											"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 											"presentacion": [
 												"Nombre de archivo: <input type='text' readonly value='Test.class' class='errorTracing'>",
 												"public <input type='text' value='class' class='focusInput'> Test {",	
@@ -676,8 +676,8 @@
 											"textoEmocional": {
 												"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 												"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 												"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 												"retroalimentacion": {                           
 													"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -692,7 +692,7 @@
 											"texto": "test.java",
 											"paso": 22,
 											"tipo": "pasoerroneo",
-											"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+											"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 											"presentacion": [
 												"Nombre de archivo: <input type='text' readonly value='test.java ' class='errorTracing'>",
 												"public <input type='text' value='class' class='focusInput'> Test {",	
@@ -709,8 +709,8 @@
 											"textoEmocional": {
 												"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 												"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 												"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 												"retroalimentacion": {                           
 													"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -725,7 +725,7 @@
 											"texto": "test.exe",
 											"paso": 23,
 											"tipo": "pasoerroneo",
-											"instruccion": "La respuesta es incorrecta.Intenta de nuevo.",
+											"instruccion": "La respuesta es incorrecta. Intenta de nuevo.",
 											"presentacion": [
 												"Nombre de archivo: <input type='text' readonly value='test.exe ' class='errorTracing'>",
 												"public <input type='text' value='class' class='focusInput'> Test {",	
@@ -742,8 +742,8 @@
 											"textoEmocional": {
 												"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 												"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+												"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+												"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 												"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 												"retroalimentacion": {                           
 													"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
@@ -776,8 +776,8 @@
 							"textoEmocional": {
 								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 								"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+								"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+								"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 								"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 								"retroalimentacion": {                           
 									"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",

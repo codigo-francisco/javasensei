@@ -1,0 +1,131 @@
+{
+   "id": 81,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con operaciones con arreglos.",
+      "Una matriz, en realidad, es un arreglo de arreglos. En Java, el índice de la primera componente de un arreglo es siempre 0, por lo que matriz[0][0] será el primer elemento de la matriz."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Selecciona el valor del elemento de la tercera fila y primer columna. ",
+         "presentacion": [
+            "int[][] arreglo2D = new int[4][2];",
+            "",
+            "arreglo2D [0][0]= 1;",
+            "arreglo2D [0][1]= 2;",
+            "arreglo2D [1][0]= 3;",
+            "arreglo2D [1][1]= 4;",
+            "arreglo2D [2][0]= 5;",
+            "arreglo2D [2][1]= 6;",
+            "arreglo2D [3][0]= 7;",
+            "arreglo2D [3][1]= 8;"
+         ],
+        "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Con esfuerzo y perseverancia podrás alcanzar tus metas.  ¡Inicia con el ejercicio!",
+                "sorprendido": "No digas que no eres capaz de lograrlo, si nunca lo has intentado. ¡Inicia con el ejercicio!",
+                "compasivo": "Todos tus intentos son un exito.  Unas veces ganas y otras aprendes.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "¿Por qué confías más en la suerte que en tu propio trabajo? La suerte nunca va a depender de ti.  Empieza el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "!Estoy orgulloso de ti!.",
+                    "neutral": "No vas a conseguir siempre lo que deseas, pero si aquello por lo que te esfuerces.",
+                    "negativa": "Tu actitud y no tu aptitud será la que defina tus metas."
+                }
+
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": 7,
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+					"encantado": "Cada logro comienza con la decisión de intentarlo.  Continúa con el ejercicio.",              
+					"sorprendido": "No hay sustituto del trabajo duro.  Sigue estudiando como hasta ahora.",
+					"compasivo": "El experto en algo fue una vez un novato.  Sigue con el ejercicio.",                
+					"esceptico": "No te preocupes por los fracasos, preocúpate por las oportunidades que pierdes cuando ni siquiera lo intentas.",
+					"retroalimentacion": {
+						"positiva": "¡Casi casi! pero la respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.",
+						"negativa": "¿Te acuerdas para que estás estudiando?.  Trata de no perder tu tiempo."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": 3,
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+					"encantado": "Cada logro comienza con la decisión de intentarlo.  Continúa con el ejercicio.",              
+					"sorprendido": "No hay sustituto del trabajo duro.  Sigue estudiando como hasta ahora.",
+					"compasivo": "El experto en algo fue una vez un novato.  Sigue con el ejercicio.",                
+					"esceptico": "No te preocupes por los fracasos, preocúpate por las oportunidades que pierdes cuando ni siquiera lo intentas.",
+					"retroalimentacion": {
+						"positiva": "¡Casi casi! pero la respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.",
+						"negativa": "¿Te acuerdas para que estás estudiando?.  Trata de no perder tu tiempo."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": 8,
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+					"encantado": "Cada logro comienza con la decisión de intentarlo.  Continúa con el ejercicio.",              
+					"sorprendido": "No hay sustituto del trabajo duro.  Sigue estudiando como hasta ahora.",
+					"compasivo": "El experto en algo fue una vez un novato.  Sigue con el ejercicio.",                
+					"esceptico": "No te preocupes por los fracasos, preocúpate por las oportunidades que pierdes cuando ni siquiera lo intentas.",
+					"retroalimentacion": {
+						"positiva": "¡Casi casi! pero la respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.",
+						"negativa": "¿Te acuerdas para que estás estudiando?.  Trata de no perder tu tiempo."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": 5,
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio. Selecciona otro del menú de opciones.",
+               "presentacion": [
+                  ""
+               ],
+              "textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio.",
+					"encantado": "En la vida no hay que esperar a que pase la tormenta, hay que aprender a bailar bajo la lluvia, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Si sigues haciendo lo que estás haciendo, seguirás consiguiendo lo que estás consiguiendo. Has finalizado con este ejercicio.",
+					"compasivo": "Para ser el mejor y alcanzar tus metas solo hay un camino, estudiar y prepararte para los retos de la vida.",                
+					"esceptico": "El éxito de la vida no está en vencer siempre, sino en no desanimarse nunca.",
+					"retroalimentacion": {
+						"positiva": "Nunca te rindas ante dificultades, siempre sigue adelante que el éxito tarda pero llega.",
+						"neutral": "El nueve no es sino un seis que se superó a sí mismo.",
+						"negativa": "Aquel que no ha fracasado es porque nunca ha intentado algo nuevo."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

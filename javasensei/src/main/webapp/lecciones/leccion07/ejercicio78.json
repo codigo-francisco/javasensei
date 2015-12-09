@@ -1,0 +1,368 @@
+{
+   "id": 78,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+    "Este ejercicio está relacionado con operaciones con arreglos.",
+      "Al igual que los arreglos unidimensionales, multidimensionales pueden inicializarse mediante inicializadores de arreglos en las declaraciones. Un arreglo bidimensional b con dos filas y dos columnas podría declararse e inicializarse con inicializadores de arreglos anidados, como se muestra a continuación:",
+	"\tint [ ] [ ] b = {{1,2},{3,4}};"
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Paso 1 de 4.  Responde verdadero o falso. El siguiente código permite llenar correctamente un arreglo bidimensional.",
+         "presentacion": [
+            "public class LecturaArreglo2D {",
+            "\tpublic static void main(String[] args) {",
+            "\t\tint[][] tabla = new int[2][3];",
+            "\t\tfor (int i = 0; i < tabla.length; i++) {",
+            "\t\t\tfor (int j = 0; j < tabla[i].length; j++) {",
+            "\t\t\t\ttabla[j][i] = 1;",
+            "\t\t\t} ",
+            "\t\t}",
+            "\t} // fin main",
+            "} // fin clase"
+         ],
+         "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Para mover una montaña necesitas comenzar por pequeñas piedras.  ¡Inicia con el ejercicio!",
+                "sorprendido": "No permitas que nadie te diga que no puedes conseguir aquello que quieres. ¡Inicia con el ejercicio!",
+                "compasivo": "No importa que hoy te equivoques, tienes el resto de tu vida para solucionarlo.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "Por muy poco que puedas hacer, siempre es más que quedarse de brazos cruzados.  Empieza el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "Nadie dijo que la vida fuera fácil ¿pero vas a rendirte ante la primera dificultad?",
+                    "neutral": "La motivación es el mejor método para hacer las cosas.",
+                    "negativa": "Rendirse no es la solución, es la escapatorio más fácil."
+                }
+
+         },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "Verdadero",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+					"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+					"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+					"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+					"retroalimentacion": {                           
+						"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+						"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+						"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "Falso",
+               "tipo": "pasooptimo",
+               "instruccion": "Paso 2 de 4.  ¿Qué línea debe modificarse para que el arreglo bidimensional se llene correctamente?",
+               "presentacion": [
+                  "Línea 1:public class LecturaArreglo2D {",
+                  "Línea 2:\tpublic static void main(String[] args) {",
+                  "Línea 3:\t\tint[][] tabla = new int[2][3];",
+                  "Línea 4:\t\tfor (int i = 0; i < tabla.length; i++) {",
+                  "Línea 5:\t\t\tfor (int j = 0; j < tabla[i].length; j++) {",
+                  "Línea 6:\t\t\t\ttabla[j][i] = 1;",
+                  "Línea 7:\t\t\t} ",
+                  "Línea 8:\t\t}",
+                  "Línea 9:\t} // fin main",
+                  "Línea 10:} // fin clase",
+                  ""
+               ],
+               "textoEmocional": {
+                        "neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+                        "encantado": "Continua con este entusiasmo.  Ya casi terminas el ejercicio.",
+                        "sorprendido": "¡Me sorprendes!, noto que cada día eres mejor, continúa con el ejercicio.",
+                        "compasivo": "Yo se que tu puedes, ¡sigue adelante!",
+                        "esceptico": "Me parece que tienes una actitud indiferente.  Al menos trata de terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "¡Perfecto!.  Sigue con el ejercicio.",
+                            "neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+                            "negativa": "¿Estás seguro que se trata de una respuesta razonada?  Sigue con el ejercicio."                            
+                        }
+                    },
+               "opciones": [
+                  {
+                     "paso": 3,
+                     "texto": "Línea 3",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. La linea declara de manera correcta un arreglo bidimensional, no es necesario modificarla. Intenta de nuevo.",
+                     "presentacion": [
+                        "Línea 3:\t\tint[][] tabla = new int[2][3];"
+                     ],
+                      "textoEmocional": {
+							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+							"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+							"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+							"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+							"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+							"retroalimentacion": {                           
+								"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+								"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+								"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+							}
+						},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 4,
+                     "texto": "Línea 4",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. La linea declara un encabezado for correctamente para recorrer las filas del arreglo, no es necesario modificarla. Intenta de nuevo. ",
+                     "presentacion": [
+                        "Línea 4:\t\tfor (int i = 0; i < tabla.length; i++) {"
+                     ],
+                      "textoEmocional": {
+							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+							"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+							"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+							"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+							"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+							"retroalimentacion": {                           
+								"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+								"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+								"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+							}
+						},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 5,
+                     "texto": "Linea 5",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. La linea declara un encabezado for correctamente para recorrer las columnas del arreglo, no es necesario modificarla. Intenta de nuevo. ",
+                     "presentacion": [
+                        "Línea 5:\t\t\tfor (int j = 0; j < tabla[i].length; j++) {"
+                     ],
+                     "textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+						"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+						"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+						"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+						"retroalimentacion": {                           
+							"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+							"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+							"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+						}
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 6,
+                     "texto": "Línea 6",
+                     "tipo": "pasooptimo",
+                     "instruccion": "Paso 3 de 4.  Completa el código con la instrucción apropiada para llenar el arreglo bidimensional.",
+                     "presentacion": [
+                        "public class LecturaArreglo2D {",
+                        "\tpublic static void main(String[] args) {",
+                        "\t\tint[][] tabla = new int[2][3];",
+                        "\t\tfor (int i = 0; i < tabla.length; i++) {",
+                        "\t\t\tfor (int j = 0; j < tabla[i].length; j++) {",
+                        "\t\t\t\t<input type='text' readonly>",
+                        "\t\t\t} ",
+                        "\t\t}",
+                        "\t} // fin main",
+                        "} // fin clase",
+                        ""
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+                        "encantado": "Continua con este entusiasmo.  Ya casi terminas el ejercicio.",
+                        "sorprendido": "¡Me sorprendes!, noto que cada día eres mejor, continúa con el ejercicio.",
+                        "compasivo": "Yo se que tu puedes, ¡sigue adelante!.",
+                        "esceptico": "Me parece que tienes una actitud indiferente.  Al menos trata de terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "¡Perfecto!.  Sigue con el ejercicio.",
+                            "neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+                            "negativa": "¿Estás seguro que se trata de una respuesta razonada?  Sigue con el ejercicio."                            
+                        }
+                    },
+                     "opciones": [
+                        {
+                           "paso": 7,
+                           "texto": "tabla[i][i] = 1;",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Observa con atención los subíndices e intena de nuevo.",
+                           "presentacion": [
+                              "public class LecturaArreglo2D {",
+                              "\tpublic static void main(String[] args) {",
+                              "\t\tint[][] tabla = new int[2][3];",
+                              "\t\tfor (int i = 0; i < tabla.length; i++) {",
+                              "\t\t\tfor (int j = 0; j < tabla[i].length; j++) {",
+                              "\t\t\t\t<input type='text' readonly value='tabla[i][i] = 1;' class='errorTracing'>",
+                              "\t\t\t} ",
+                              "\t\t}",
+                              "\t} // fin main",
+                              "} // fin clase",
+                              ""
+                           ],
+                           "textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+								"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+								"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+								"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+								"retroalimentacion": {                           
+									"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+									"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+									"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+								}
+							},
+                           "opciones": []
+                        },
+                        {
+                           "paso": 8,
+                           "texto": "tabla[j][i] = 1;",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Observa con atención los subíndices e intena de nuevo.",
+                           "presentacion": [
+                              "public class LecturaArreglo2D {",
+                              "\tpublic static void main(String[] args) {",
+                              "\t\tint[][] tabla = new int[2][3];",
+                              "\t\tfor (int i = 0; i < tabla.length; i++) {",
+                              "\t\t\tfor (int j = 0; j < tabla[i].length; j++) {",
+                              "\t\t\t\t<input type='text' readonly value='tabla[j][i] = 1;' class='errorTracing'>",
+                              "\t\t\t} ",
+                              "\t\t}",
+                              "\t} // fin main",
+                              "} // fin clase"
+                           ],
+                            "textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+								"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+								"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+								"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+								"retroalimentacion": {                           
+									"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+									"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+									"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+								}
+							},
+                           "opciones": []
+                        },
+                        {
+                           "paso": 9,
+                           "texto": "tabla[i][j] = 1;",
+                           "tipo": "pasooptimo",
+                           "instruccion": "Paso 4 de 4.  Responde verdadero o falso. Este código llena el arreglo por columnas de arriba hacia abajo.",
+                           "presentacion": [
+                              "public class LecturaArreglo2D {",
+                              "\tpublic static void main(String[] args) {",
+                              "\t\tint[][] tabla = new int[2][3];",
+                              "\t\tfor (int i = 0; i < tabla.length; i++) {",
+                              "\t\t\tfor (int j = 0; j < tabla[i].length; j++) {",
+                              "\t\t\t\t<input type='text' readonly value='tabla[i][j] = 1;' class='focusInput'>",
+                              "\t\t\t} ",
+                              "\t\t}",
+                              "\t} // fin main",
+                              "} // fin clase"
+                           ],
+                           "textoEmocional": {
+								"neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+								"encantado": "Continua con este entusiasmo.  Ya casi terminas el ejercicio.",
+								"sorprendido": "¡Me sorprendes!, noto que cada día eres mejor, continúa con el ejercicio.",
+								"compasivo": "Yo se que tu puedes, ¡sigue adelante!.",
+								"esceptico": "Me parece que tienes una actitud indiferente.  Al menos trata de terminar el ejercicio.",
+								"retroalimentacion": {                            
+									"positiva": "¡Perfecto!.  Sigue con el ejercicio.",
+									"neutral": "La respuesta es correcta.  Sigue con el ejercicio.",
+									"negativa": "¿Estás seguro que se trata de una respuesta razonada?  Sigue con el ejercicio."                            
+								}
+							},
+                           "opciones": [
+                              {
+                                 "paso": 10,
+                                 "texto": "Verdadero",
+                                 "tipo": "pasoerroneo",
+                                 "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                                 "presentacion": [
+                                    ""
+                                 ],
+                                  "textoEmocional": {
+										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+										"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+										"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+										"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+										"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+										"retroalimentacion": {                           
+											"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+											"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+											"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+										}
+									},
+                                 "opciones": []
+                              },
+                              {
+                                 "paso": 11,
+                                 "texto": "Falso",
+                                 "tipo": "pasofinaloptimo",
+                                 "instruccion": "Has finalizado el ejercicio. Continúa con otro ejercicio del menú.",
+                                 "presentacion": [
+                                    ""
+                                 ],
+                                "textoEmocional": {
+                                        "neutral": "Has finalizado con este ejercicio.",
+										"encantado": "En la vida no hay que esperar a que pase la tormenta, hay que aprender a bailar bajo la lluvia, ¡sigue con este entusiasmo!",              
+										"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+										"compasivo": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede.  ¡continua así!.",                
+										"esceptico": "Lo que con mucho trabajo se adquiere, más se ama.  Sigue aprendiendo Java.",
+										"retroalimentacion": {
+                                            "positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+                                            "neutral": "Has finalizado con este ejercicio.",
+                                            "negativa": "No se puede cambiar lo que te niegas a afrontar.  Al menos llegaste al final del ejercicio."
+										}	
+                                    },
+                                 "opciones": []
+                              }
+                           ]
+                        },
+                        {
+                           "paso": 12,
+                           "texto": "tabla[j][j] = 1;",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Observa con atención los subíndices e intena de nuevo.",
+                           "presentacion": [
+                              "public class LecturaArreglo2D {",
+                              "\tpublic static void main(String[] args) {",
+                              "\t\tint[][] tabla = new int[2][3];",
+                              "\t\tfor (int i = 0; i < tabla.length; i++) {",
+                              "\t\t\tfor (int j = 0; j < tabla[i].length; j++) {",
+                              "\t\t\t\t<input type='text' readonly value='tabla[j][j] = 1;' class='errorTracing'>",
+                              "\t\t\t} ",
+                              "\t\t}",
+                              "\t} // fin main",
+                              "} // fin clase"
+                           ],
+                            "textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+								"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+								"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+								"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+								"retroalimentacion": {                           
+									"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+									"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+									"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+								}
+							},
+                           "opciones": []
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

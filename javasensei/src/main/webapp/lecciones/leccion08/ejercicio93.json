@@ -1,0 +1,127 @@
+{
+   "id": 93,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con las clases y objetos en Java.",
+      "Cada nueva clase que creamos se convierte en un nuevo tipo, que puede usarse para declarar variables y crear objetos. ",
+      "Una clase es una abstracción y un objeto es una manifestación de una clase."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Dado el siguiente fragmento de código, selecciona la opción para instanciar a la clase Mascota.",
+         "presentacion": [
+            "public class Mascota { ",
+            "\tpublic Mascota() { /*código*/ }",
+            "\t// más código…",
+            "\t}",
+            "}"
+         ],
+        "textoEmocional": {
+			"neutral": "Inicia con el ejercicio.",                
+			"encantado": "Cuando te arriesgas sacrificas todo lo que puedes perder, por lo mucho que puedes ganar.  ¡Inicia con el ejercicio!",
+			"sorprendido": "Tus límites los conoces tú, no permitas que nadie levante muros ante tus objetivos. ¡Inicia con el ejercicio!",
+			"compasivo": "Una voluntad fuerte es la mejor ayuda para alcanzar tus metas.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+			"esceptico": "¡Estudia! No para saber una cosa más, sino para saberla mejor.  Empieza el ejercicio.",
+			"retroalimentacion": {
+				"positiva": "!Estoy orgulloso de ti!.",
+				"neutral": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede.",
+				"negativa": "Si sabes lo que quieres pero no te molestas en luchar por ello, no te lamentes por no conseguirlo."
+			}
+
+		},
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "Mascota m = Mascota();",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. La palabra clave new debe incluirse a la izquierda de la clase especificada. Intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+					"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+					"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+					"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+					"retroalimentacion": {                           
+						"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+						"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+						"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "Mascota m = Mascota;",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Los objetos se crean usando  <i>new Constructor( parámetros )</i>. Intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+					"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+					"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+					"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+					"retroalimentacion": {                           
+						"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+						"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+						"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "Mascota m = new Mascota;",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Los objetos se crean usando  <i>new Constructor( parámetros )</i>. Intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+					"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+					"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+					"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+					"retroalimentacion": {                           
+						"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentandolo!",
+						"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+						"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "Mascota m = new Mascota();",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio, continúa con otro ejercicio del menú de opciones.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+                        "neutral": "Has finalizado con este ejercicio.",
+						"encantado": "En la vida no hay que esperar a que pase la tormenta, hay que aprender a bailar bajo la lluvia, ¡sigue con este entusiasmo!.",              
+						"sorprendido": "Si sigues haciendo lo que estás haciendo, seguirás consiguiendo lo que estás consiguiendo. Has finalizado con este ejercicio.",
+						"compasivo": "Para ser el mejor y alcanzar tus metas solo hay un camino, estudiar y prepararte para los retos de la vida.",                
+						"esceptico": "El tiempo pasa rápido y no debes desaprovecharlo, estudia ahora y mañana será una persona exitosa.",
+						"retroalimentacion": {
+							"positiva": "Aprovecha tu juventud e inteligencia para convertirte en un buen estudiante. Los años se pasan rápido así que no los desperdicies.",
+							"neutral": "La vida es un 10% lo que te pasa y el 90% cómo reaccionas ante lo que te pasa.",
+							"negativa": "No se puede cambiar lo que te niegas a afrontar.  Al menos llegaste al final del ejercicio."
+						}
+                    },
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
