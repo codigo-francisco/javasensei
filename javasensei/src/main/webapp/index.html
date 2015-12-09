@@ -20,6 +20,7 @@
         <link href="css/chat.css" rel="stylesheet">
         <link href="offline-js/offline-theme-default.css" rel="stylesheet">
         <link href="offline-js/offline-language-spanish.css" rel="stylesheet">
+        <link href="css/mobile.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
@@ -30,8 +31,8 @@
         <script type="text/javascript" src="jquery/jRating.jquery.min.js"></script>
         <script type="text/javascript" src="highlight.pack.js"></script>
         <script type="text/javascript" src="js/buckets-minified.js"></script>
-        <script type="text/javascript" src="js/webcam.min.js"></script>
         <script type="text/javascript" src="jscolor-2.0.4/jscolor.min.js"></script>
+        <script type="text/javascript" src="js/webcam.js"></script>
         <script type="text/javascript" src="offline-js/offline.min.js"></script>
 
         <script type="text/javascript" src="js/menu.js"></script>
@@ -55,7 +56,7 @@
             var camera_sensei = new camera();
             var graficaComportamiento = new graficosEmocionesSensei();
             var chat = new chatSensei();
-            
+			
             var carpeta_ejercicios = "lecciones/";
             var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
             var url = "servicios/"; //Jquery infiere el dominio
@@ -86,14 +87,14 @@
             function eliminarBackgroundCamera() {
                 $("#fullscreenpermition").hide();
             };
-            
+
             var noCamara = false;
-            
-            function errorCamara(err){
+
+            function errorCamara(err) {
                 console.error(err);
                 alert("A ocurrido un error debido a que no cuenta con camara o no otorgo los permisos necesarios.\n\nLa detección emocional se ha deshabilitado");
                 noCamara = true;
-                usuario.activarEmociones=false;
+                usuario.activarEmociones = false;
                 //Opciones de la camara
                 eliminarBackgroundCamera();
                 $("#dialog_video").hide();
@@ -133,9 +134,9 @@
                             recursos.obtenerEjercicios("#listaejercicios");
                             recursos.obtenerRecursos("#listarecursos");
                             //Deshabilitar en caso de que se este realizando un ejercicio
-                            $("#activarEmociones").prop("checked",!noCamara && usuario.activarEmociones);
+                            $("#activarEmociones").prop("checked", !noCamara && usuario.activarEmociones);
                             $("#activarEmociones").flipswitch("refresh");
-                            $("#activarEmociones").flipswitch("option","disabled",noCamara || avatar_context.id!=0);
+                            $("#activarEmociones").flipswitch("option", "disabled", noCamara || avatar_context.id != 0);
                             break;
                         case "paginagraficaestudiante":
                             graficos.cargarGrafico("#graficaAvance");
@@ -146,18 +147,18 @@
                             break;
                     }
                 });
-                
-                $("#activarEmociones").on("change",function(){
+
+                $("#activarEmociones").on("change", function () {
                     usuario.activarEmociones = $("#activarEmociones").prop("checked");
                     //Guardado en base de datos
-                    $.ajax(url+"estudiantes/activarEmociones",{
-                        data:{
+                    $.ajax(url + "estudiantes/activarEmociones", {
+                        data: {
                             idAlumno: usuario.id,
                             activarEmociones: usuario.activarEmociones
                         }
-                    }).done(function(data){
+                    }).done(function (data) {
                         console.log(data);
-                    }).fail(function(d,error){
+                    }).fail(function (d, error) {
                         console.log(error);
                     });
                 });
@@ -181,7 +182,6 @@
 
                 $("#progressbar").progressbar();
 
-                //eliminarBackgroundCamera();
                 $("#chatboton").click(function(){
                     if ($("#panelchat").css("bottom") == "0px")
                         $("#panelchat").animate({'bottom':'-100%'},300);
@@ -189,28 +189,16 @@
                         $("#panelchat").animate({'bottom':'0'},300);
                         document.getElementById("usermsg").focus();
                     }
-                    //event.stopPropagation();
                 });
-                /*
-                $(document).click(function(event){
-                    isButton = $(event.target).is("button");
-                    isPartOfChat = $(event.target.parentNode).is("#wrapper") ||
-                                   $(event.target.parentNode).is("#panelchat") ||
-                                   $(event.target.parentNode).is("#chatbox") ||
-                                   $(event.target.parentNode).is(".ui-input-text");
-                    if (!isButton && !isPartOfChat) {
-                        $("#panelchat").animate({'bottom':'-100%'},300);
-                    }
-                });*/
-                    
+
                 $("#selecciondetector").on("click",function(){
                     detectorEmocional = $("#selecciondetector :checked").attr("id");
                 });
-                
+
                 camera_sensei.setup();
                 chat.setUp();
             });
-            
+
         </script>
 
         <style type="text/css">
@@ -283,7 +271,7 @@
                 position: relative;
                 top: -15px;
             }
-            
+
             /*Esto es para mostrar las lineas 
             de codigo que se muestra en el documento.*/
             li.L0, li.L1, li.L2, li.L3,
@@ -304,14 +292,14 @@
                          data-size="xlarge" 
                          data-show-faces="false" 
                          data-auto-logout-link="false" 
-                         onlogin="checkLoginState();"></div>
+                         onlogin="checkLoginState();"></div> 
                     <button style="display: none" onclick="processLoginJhonDoe();">Login Jhon Doe</button>
                 </div>
             </div>
         </div>
         <div id="dialog_video" class="fullscreencamera">
             <div class="divContenidoCamara">
-                <div><strong>Posicione su rostro al centro de la camara</strong></div>
+                <div><strong>Posicione su rostro al centro de la cámara</strong></div>
                 <button class="ui-btn ui-btn-corner-all ui-btn-active" id="cerrarEjemplo">Ok, Lo tengo</button>
                 <div id="camera" class="camera"></div>
             </div>
@@ -321,7 +309,7 @@
         </div>
         <div id="fullscreenpermition" class="fullscreenpermition">
             <div style="text-align: center;margin-top: 4em;">
-                Por favor acepte los permisos de utilizar la camara o use el tutor desde un dispositivo con camara
+                Por favor acepte los permisos de utilizar la cámara o use el tutor desde un dispositivo con cámara
             </div>
         </div>
 
@@ -333,7 +321,7 @@
 
                 </div>
                 <div style="display:none;" data-position="fixed" data-role="footer">
-                    <a id="button_logout" href="#" data-icon="lock" >Cerrar Sesion</a>
+                    <a id="button_logout" href="#" data-icon="lock" >Cerrar Sesión</a>
                 </div>
             </div>
 
@@ -363,7 +351,7 @@
                         <button class="controles_tracing" id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
 
                         <div class="controles_cierre_tracing" style="float: right;">
-                            <span>¿Que te ha parecido este ejercicio?</span>
+                            <span>¿Qué te ha parecido este ejercicio?</span>
                             <div>
                                 <div id="calificaciones_ejercicios"></div>
                             </div>
@@ -398,7 +386,7 @@
                     <div id="wrapper" class="box-inner">
                         <div id="chatbox"></div>
                         <!-- <input id="usermsg" name="usermsg" type="text" size="13" autocomplete="off"/> -->
-                        <textarea id="usermsg" name="usermsg"></textarea>
+                        <textarea id="usermsg" name="usermsg" maxlength="256"></textarea>
                         <button id="botoncolor" class="jscolor {valueElement:null,value:'000000'}" style="width:50px; height:20px;"></button>
                     </div>
                 </div>
@@ -440,7 +428,7 @@
                     </div>
                 </div>
                 <div data-role="footer">
-                    ¿Que te ha parecido este recurso?<br>
+                    ¿Qué te ha parecido este recurso?<br>
                     <div id="calificaciones">
 
                     </div>
@@ -473,7 +461,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="datosTabla">
-                                        
+
                                     </tbody>
                                 </table>
                             </div>
@@ -496,15 +484,15 @@
 
         <div data-role="page" id="paginarecursos" data-close-btn="right">
             <div data-role="header" data-position="fixed">
-                <h2>Menu de recursos</h2>
+                <h2>Menú de recursos</h2>
             </div>
             <div role="main" class="ui-content">
                 <div data-role="tabs" id="tabsrecursos">
                     <div data-role="navbar">
-                        <ul>
+                        <ul id="tabs">
                             <li><a href="#primertab" data-ajax="false">Ejercicios</a></li>
                             <li><a href="#segundotab" data-ajax="false">Recursos</a></li>
-                            <li><a href="#tercertab" data-ajax="false">Configuracion</a></li>
+                            <li><a href="#tercertab" data-ajax="false">Configuración</a></li>
                         </ul>
                         <div id="primertab" class="ui-content">
                             <ul id="listaejercicios" class="tablist-content" data-role="listview" data-inset="true">
@@ -525,7 +513,9 @@
                                 <label for="neuroph">NeuroPH</label>
                                 <input type="radio" name="reconocimientoemocional" id="oxford" value="off">
                                 <label for="oxford">Oxford (Microsoft)</label>
-                            </fieldset>
+                                <input type="radio" name="reconocimientoemocional" id="indico" value="off">
+                                <label for="indico">Indico</label>
+                            </fieldset>
                         </div>
                     </div>
                 </div>

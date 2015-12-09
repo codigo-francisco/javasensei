@@ -13,6 +13,6 @@ public class BitacoraFotografia {
    private DBCollection bitacoraFotografias = Connection.getCollection().get(CollectionsDB.BITACORA_FOTOGRAFIAS);
     
     public void guardarBitacoraFotografia(String datos){
-        bitacoraFotografias.save(BasicDBObject.parse(datos));
+        bitacoraFotografias.insert(BasicDBObject.parse(datos));
     }
 }

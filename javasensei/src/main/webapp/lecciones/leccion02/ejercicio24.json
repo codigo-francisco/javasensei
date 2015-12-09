@@ -4,7 +4,7 @@
     "instruccionesejercicio": 
     [
 		"El siguiente ejercicio se relaciona con los errores de sintaxis.",
-        "Un error de sintaxis ocurre cuando el compilador encuentra código que viola las reglas del lenguaje Java"
+        "Un error de sintaxis ocurre cuando el compilador encuentra código que viola las reglas del lenguaje Java."
     ],
     "opciones": 
     [
@@ -51,7 +51,7 @@
                         "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
                         "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
                         "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
-                        "compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java.",
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {                           
                             "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
@@ -77,7 +77,7 @@
                         "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
                         "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
                         "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
-                        "compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java.",
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {                           
                             "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
@@ -103,7 +103,7 @@
                         "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
                         "encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
                         "sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
-                        "compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java",
+                        "compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java.",
                         "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                         "retroalimentacion": {                           
                             "positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",

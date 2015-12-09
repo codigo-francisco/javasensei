@@ -71,8 +71,7 @@ public class EstudiantesManager {
                         new BasicDBObject("idFacebook", estudiante.getIdFacebook())
                 );
                 if (dbObject != null) {
-                    estudiante.setId(new Double(dbObject.get("id").toString()).longValue());
-                    dbObject.put("token", estudiante.getToken()); //Se actualiza el token de facebook
+                    dbObject.putAll(estudiante.convertToDBObject());
                 } else { //El estudiante es nuevo
                     estudiante.setId(alumnosCollection.count());
                     dbObject = estudiante.convertToDBObject(); //True para guardar

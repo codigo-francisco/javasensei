@@ -79,7 +79,7 @@
 					"texto": "4.5",
 					"paso": 3,
 					"tipo": "pasofinaloptimo",
-					"instruccion": "La respuesta es correcta, continua con más ejercicios.",
+					"instruccion": "La respuesta es correcta, continúa con más ejercicios.",
 					"presentacion": [
 						"¿La siguiente expresión en Java 3.5 + 5 / 4 da como resultado?"
 

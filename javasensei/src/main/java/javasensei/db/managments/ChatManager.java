@@ -8,6 +8,7 @@ import java.time.Instant;
 import java.util.Arrays;
 import java.util.Date;
 import javasensei.db.Connection;
+import org.bson.types.ObjectId;
 
 /**
  *
@@ -16,7 +17,7 @@ import javasensei.db.Connection;
 public class ChatManager {
     private DBCollection chatCollection = Connection.getCollection().get(CollectionsDB.CHAT);
     
-    public Long agregarMensaje(String message, String nombreUsuario, String idUsuario, Integer idEjercicio, String color){
+    public String agregarMensaje(String message, String nombreUsuario, String idUsuario, Integer idEjercicio, String color){
         Long fecha = Instant.now().toEpochMilli();
         
         BasicDBObject mensaje = new BasicDBObject("message", message);
@@ -25,9 +26,11 @@ public class ChatManager {
         mensaje.put("idEjercicio",idEjercicio);
         mensaje.put("fecha", fecha);
         mensaje.put("color", color);
+        
         chatCollection.insert(mensaje);
         
-        return fecha;
+        //Ya debe contener el _id
+        return mensaje.toString();
     }
     
     public String leerMensajes(Long fecha, Integer idEjercicio){

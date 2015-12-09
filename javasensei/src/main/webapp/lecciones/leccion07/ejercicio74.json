@@ -1,0 +1,122 @@
+{
+   "id": 74,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con declarar, crear y asignar valores a un arreglo bidimensional.",
+      "Al crear un arreglo declarado como <i>int[][] A;</i> y haciendo la siguiente asignación <i>A = new int[3][4];</i>, se obtiene un arreglo bidimensional que puede ser mejor entendido como una matriz de 3 renglones y 4 columnas."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Selecciona la opción que corresponde a la declaración correcta de un arreglo bidimensional de enteros de 4 filas y 3 columnas.",
+         "presentacion": [
+            ""
+         ],
+         "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "El futuro está oculto detrás de los hombres que lo hacen.  ¡Inicia con el ejercicio!",
+                "sorprendido": "Por muy cansado que estés, nunca te des por vencido. ¡Adelante! ¡Inicia con el ejercicio!",
+                "compasivo": "La vida nos pone piedras en el camino, tú debes esforzarte para poder saltarlas.  ¡Adelante!  Empieza el ejercicio.",
+                "esceptico": "¡Estudia! No para saber una cosa más, sino para saberla mejor.  Inicia el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "Noto que cada día eres mejor. ¡Continúa así!",
+                    "neutral": "Nunca olvides que eres más inteligente de lo que te piensas, más fuerte de lo que imaginas y más valiente de lo que te crees.",
+                    "negativa": "El que adelante no mira, atrás se queda."
+                }
+
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "int [][] b = new int [3][4]; ",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. La declaración es correcta para un arreglo bidimensional de enteros de 3 filas y 4 columnas. Intenta de nuevo.",
+               "presentacion": [
+                  "int [][] b = new int [3][4];"
+               ],
+              "textoEmocional": {
+					 "neutral": "La respuesta es incorrecta.  Inténtalo de nuevo.",
+					"encantado": "¿Te has dado cuenta que cuando conoces bien un tema, te gusta?  Sigue con el ejercicio.",
+					"sorprendido": "Me sorprende tu deseo por aprender Java.  Sigue con el ejercicio.",
+					"compasivo": "Aprender requiere de paciencia, intentalo de nuevo.",
+					"esceptico": "Trata de encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+					}
+				},
+		   "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "int [][] a = new int [4][3];",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio, continúa con otro ejercicio del menú.",
+               "presentacion": [
+                  "int [][] a = new int [4][3];"
+               ],
+                "textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio.",
+					"encantado": "En la vida no hay que esperar a que pase la tormenta, hay que aprender a bailar bajo la lluvia, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Si sigues haciendo lo que estás haciendo, seguirás consiguiendo lo que estás consiguiendo. Has finalizado con este ejercicio.",
+					"compasivo": "Para ser el mejor y alcanzar tus metas solo hay un camino, estudiar y prepararte para los retos de la vida.",                
+					"esceptico": "El tiempo pasa rápido y no debes desaprovecharlo, estudia ahora y mañana será una persona exitosa.",
+					"retroalimentacion": {
+						"positiva": "Aprovecha tu juventud e inteligencia para convertirte en un buen estudiante. Los años se pasan rápido así que no los desperdicies.",
+						"neutral": "La vida es un 10% lo que te pasa y el 90% cómo reaccionas ante lo que te pasa.",
+						"negativa": "No se puede cambiar lo que te niegas a afrontar.  Al menos llegaste al final del ejercicio."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "int d= new int [4][3];",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Después del nombre de la variable son necesarios los corchetes que indican que se trata de un arreglo bidimensional. Intenta de nuevo.",
+               "presentacion": [
+                  "int d= new int [4][3];"
+               ],
+               "textoEmocional": {
+					 "neutral": "La respuesta es incorrecta.  Inténtalo de nuevo.",
+					"encantado": "¿Te has dado cuenta que cuando conoces bien un tema, te gusta?  Sigue con el ejercicio.",
+					"sorprendido": "Me sorprende tu deseo por aprender Java.  Sigue con el ejercicio.",
+					"compasivo": "Aprender requiere de paciencia, intentalo de nuevo",
+					"esceptico": "Trata de encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "int k =int [3][4];",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Después del nombre de la variable son necesarios los corchetes que indican que se trata de un arreglo bidimensional, así como la palabra new en la asignación. Intenta de nuevo.",
+               "presentacion": [
+                  "int k =int [3][4];"
+               ],
+               "textoEmocional": {
+					 "neutral": "La respuesta es incorrecta.  Inténtalo de nuevo.",
+					"encantado": "¿Te has dado cuenta que cuando conoces bien un tema, te gusta?  Sigue con el ejercicio.",
+					"sorprendido": "Me sorprende tu deseo por aprender Java.  Sigue con el ejercicio.",
+					"compasivo": "Aprender requiere de paciencia, intentalo de nuevo",
+					"esceptico": "Trata de encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
