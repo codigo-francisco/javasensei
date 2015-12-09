@@ -1,8 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 $(function(){
     var contentLink = $("#content-link");
@@ -42,7 +37,7 @@ $(function(){
                 });
                 
                 csv = Papa.unparse(data);
-                contentLink.show();
+                contentLink.show(1000);
 
             }).fail(function(){
                 alert("No se pudo hacer la peticion de las bitacoras");
@@ -54,7 +49,7 @@ $(function(){
                 link.attr("href", 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv));
                 link.attr("target","_blank");
                 link.attr("download",'bitacoras.csv');
-                contentLink.hide();
+                contentLink.hide(1000);
             });
         
     });

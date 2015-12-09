@@ -10,6 +10,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mongodb.BasicDBObject;
+import com.mongodb.Block;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
@@ -29,6 +30,9 @@ import java.util.Date;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.ZoneOffset;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bson.BsonDocument;
@@ -87,10 +91,6 @@ public class BitacoraEjerciciosManager {
         MongoCollection<DBObject> bitacoras = Connection.getDBV3().getCollection("bitacora_ejercicios", DBObject.class);
         Document query = new Document();
         
-        Date dateI;
-        Date dateF;
-        
-        
         if(!idAlumno.isEmpty()){
             query.append("idAlumno", Integer.parseInt(idAlumno));
         }
@@ -101,26 +101,147 @@ public class BitacoraEjerciciosManager {
         
         if(!sesionId.isEmpty()){
             query.append("sesionId", Integer.parseInt(sesionId));
-        }    
-        
+        }
+        //Variables para las fechas
+        Date dateI;
+        Date dateF;
         if(!fechaFinal.isEmpty() && !fechaInicial.isEmpty()){
+            
             dateI = Date.from(LocalDateTime.parse(fechaInicial).toInstant(ZoneOffset.UTC));
             dateF = Date.from(LocalDateTime.parse(fechaFinal).toInstant(ZoneOffset.UTC));
             query.append("fecha", new Document("$gte", dateI).append("$lte", dateF));
             
         }else if(!fechaInicial.isEmpty()){
+            
             dateI = Date.from(LocalDateTime.parse(fechaInicial).toInstant(ZoneOffset.UTC));
             query.append("fecha", new Document("$gte", dateI));
             
         }else if(!fechaFinal.isEmpty()){
             dateF = Date.from(LocalDateTime.parse(fechaFinal).toInstant(ZoneOffset.UTC));
             query.append("fecha", new Document("$lte", dateF));
-        }    
+        }
         
-        System.out.println(query.toJson(new JsonWriterSettings(JsonMode.SHELL))); 
+        //Lista donde se guardaran las bitacoras a enviar
+        List<DBObject> dbo = bitacoras.find().into(new ArrayList<>()); 
+        Map<Integer,List<DBObject>> map = new HashMap<>();
         
-        List<DBObject> dbo = bitacoras.find(query).projection(new Document("fotografias",0).append("_id" , 0)).into(new ArrayList<DBObject>());
         
+        if(!emocionInicial.isEmpty() && !emocionFinal.isEmpty()){
+            FindIterable<DBObject> iterable = bitacoras.find(query).projection(new Document("fotografias",0).append("_id" , 0))
+                    .sort(new BasicDBObject("fecha" , 1));
+            
+            
+            //Recorro las bitacoras
+            iterable.forEach(new Block<DBObject>() {
+                @Override
+                public void apply(final DBObject document) {
+                    Integer sesionId = Integer.parseInt(document.get("sesionId")+"");
+                    
+                    List<DBObject> list = new ArrayList<>();
+                    
+                    if(!map.containsKey(sesionId)){
+                        list.add(document);
+                        map.put(sesionId, list);
+                        
+                    }else{
+                        map.get(sesionId).add(document);
+                    }
+                }
+            });
+            
+            List<DBObject> lista = new ArrayList<>();
+            Iterator it = map.keySet().iterator();
+            
+            while(it.hasNext()){
+                List<DBObject> l = map.get(it.next());
+                String emocionIni = l.get(0).get("emocion").toString().toUpperCase();
+                String emocionFin = l.get(l.size()-1).get("emocion").toString().toUpperCase();
+                
+                if(emocionIni.equals(emocionInicial.toUpperCase()) && emocionFin.equals(emocionFinal.toUpperCase())){
+                   lista.addAll(l);  
+                }
+            }
+            dbo = lista;
+            
+        //Si solo se busca las bitacoras con la emoción inicial
+        }else if(!emocionInicial.isEmpty()){
+            FindIterable<DBObject> iterable = bitacoras.find(query).projection(new Document("fotografias",0).append("_id" , 0))
+                    .sort(new BasicDBObject("fecha" , 1));
+            
+            
+            //Recorro las bitacoras
+            iterable.forEach(new Block<DBObject>() {
+                @Override
+                public void apply(final DBObject document) {
+                    Integer sesionId = Integer.parseInt(document.get("sesionId")+"");
+                    
+                    List<DBObject> list = new ArrayList<>();
+                    
+                    if(!map.containsKey(sesionId)){
+                        list.add(document);
+                        map.put(sesionId, list);
+                        
+                    }else{
+                        map.get(sesionId).add(document);
+                    }
+                }
+            });
+            
+            List<DBObject> lista = new ArrayList<>();
+            Iterator it = map.keySet().iterator();
+            
+            while(it.hasNext()){
+                List<DBObject> l = map.get(it.next());
+                String emocionIni = l.get(0).get("emocion").toString().toUpperCase();
+                
+                if(emocionIni.equals(emocionInicial.toUpperCase())){
+                   lista.addAll(l);  
+                }
+            }
+            dbo = lista;
+            
+        //Si solo se busca las bitacoras con la emocion final    
+        }else if(!emocionFinal.isEmpty()){
+            FindIterable<DBObject> iterable = bitacoras.find(query).projection(new Document("fotografias",0).append("_id" , 0))
+                    .sort(new BasicDBObject("fecha" , 1));
+            
+            
+            //Recorro las bitacoras
+            iterable.forEach(new Block<DBObject>() {
+                @Override
+                public void apply(final DBObject document) {
+                    Integer sesionId = Integer.parseInt(document.get("sesionId")+"");
+                    
+                    List<DBObject> list = new ArrayList<>();
+                    
+                    if(!map.containsKey(sesionId)){
+                        list.add(document);
+                        map.put(sesionId, list);
+                        
+                    }else{
+                        map.get(sesionId).add(document);
+                    }
+                }
+            });
+            
+            List<DBObject> lista = new ArrayList<>();
+            Iterator it = map.keySet().iterator();
+            
+            while(it.hasNext()){
+                List<DBObject> l = map.get(it.next());
+                String emocionFin = l.get(l.size()-1).get("emocion").toString().toUpperCase();
+                if(emocionFin.equals(emocionFinal.toUpperCase())){
+                   lista.addAll(l);  
+                }
+            }
+            dbo = lista;
+           
+        }else{
+            dbo = bitacoras.find(query).projection(new Document("fotografias",0).append("_id" , 0))
+                .sort(new BasicDBObject("fecha" , 1))
+                .into(new ArrayList<>());  
+        }
+               
         return dbo.toString();
     }
 }
