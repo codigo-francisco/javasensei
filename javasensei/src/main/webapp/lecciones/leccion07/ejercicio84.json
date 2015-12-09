@@ -1,0 +1,125 @@
+{
+   "id": 84,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+     "El siguiente ejercicio está relacionado con longitudes de los arreglos bidimensionales.",
+     "El tamaño de un arreglo puede obtenerse utilizando la propiedad array.length: <b>matriz.length</b> nos da el número de filas <b>matriz[0].length</b> nos da el número de columnas."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Dado el siguiente fragmento de código, que valor tendría x[3][0].",
+         "presentacion": [
+            "double [ ][ ] x = {",
+            "\t\t\t{1.1, 9.0, 3.2},",
+            "\t\t\t{9.2, 0.5, 1.5, -1.2},",
+            "\t\t\t{7.3, 7.9, 4.8} ",
+            "\t\t  };"
+         ],
+          "textoEmocional": {
+			"neutral": "Inicia con el ejercicio.",                
+			"encantado": "Con esfuerzo y perseverancia podrás alcanzar tus metas.  ¡Inicia con el ejercicio!",
+			"sorprendido": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede. ¡Inicia con el ejercicio!",
+			"compasivo": "Aprender sin reflexionar es malgastar la energía.  ¡Se que tu puedes!  Empieza el ejercicio.",
+			"esceptico": "¡Estudia! No para saber una cosa más, sino para saberla mejor.  Empieza el ejercicio.",
+			"retroalimentacion": {
+				"positiva": "!Estoy orgulloso de ti!",
+				"neutral": "Lo maravilloso de aprender algo, es que nadie puede arrebatárnoslo.",
+				"negativa": "Enseñar a quien no quiere aprender es como sembrar un campo sin ararlo."
+			}
+		},
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "'7.3'",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. ",
+					"encantado": "La respuesta es incorrecta.  Intenta encontrar la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta.  Intenta encontrar la respuesta correcta.",
+					"compasivo": "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más.",                
+					"esceptico": "Con un poco de motivación vas a encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!  Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!  Me parece que no te estás tomando en serio el ejercicio."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "'7.9'",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. ",
+					"encantado": "La respuesta es incorrecta.  Intenta encontrar la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta.  Intenta encontrar la respuesta correcta.",
+					"compasivo": "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más.",                
+					"esceptico": "Con un poco de motivación vas a encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!  Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!  Me parece que no te estás tomando en serio el ejercicio."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "'9.2'",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. ",
+					"encantado": "La respuesta es incorrecta.  Intenta encontrar la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta.  Intenta encontrar la respuesta correcta.",
+					"compasivo": "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más.",                
+					"esceptico": "Con un poco de motivación vas a encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!  Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!  Me parece que no te estás tomando en serio el ejercicio."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "Ninguna de las anteriores",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio, continúa con otro ejercicio del menú de opciones.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio.",
+					"encantado": "Por muy alta que sea una colina siempre hay un sendero hacia su cima, ¡sigue así!",              
+					"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+					"compasivo": "El éxito nunca llega solo; hay que trabajar arduamente para conseguirlo.",                
+					"esceptico": "Lo que con mucho trabajo se adquiere, más se ama.  Sigue aprendiendo Java.",
+					"retroalimentacion": {
+						"positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+						"neutral": "Has finalizado con este ejercicio.",
+						"negativa": "El éxito es como un tren, todos los días pasa pero si no te subes tú se subirá otro."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

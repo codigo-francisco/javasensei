@@ -65,8 +65,7 @@ camera.prototype = {
                 type: "POST",
                 data: {
                     datos: JSON.stringify(datos)
-                },
-                dataType: "json"
+                }
             });
 
             localStorage.setItem("photo_list", JSON.stringify(photo_list));

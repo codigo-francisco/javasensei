@@ -26,8 +26,10 @@ public class ChatManager {
         mensaje.put("idEjercicio",idEjercicio);
         mensaje.put("fecha", fecha);
         mensaje.put("color", color);
-        mensaje.put("_id", chatCollection.insert(mensaje));
         
+        chatCollection.insert(mensaje);
+        
+        //Ya debe contener el _id
         return mensaje.toString();
     }
     

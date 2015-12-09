@@ -3,7 +3,9 @@
 	"paso": -1,
 	"tipo": "instruccionesiniciales",
 	"instruccionesejercicio": [
-		"Este ejercicio esta relacionado con el método main."
+		"Este ejercicio esta relacionado con el método main.",
+		"Todo programa en Java debe de contener un método principal al que se le denomina main.",
+		"Se dice entonces que una aplicación en Java es un programa que contiene el método main."
 	],
 	"opciones": [
 		{
@@ -22,7 +24,7 @@
                 "retroalimentacion": {
                     "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
                     "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java."
                 } 
             },
 			"opciones": [
@@ -37,13 +39,13 @@
 					"textoEmocional": {
 						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 						"retroalimentacion": {                           
 							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-							"neutral": "La respuesta no es la correcta",
-							"negativa": "¿Estás seguro de querer estudiar este curso?."
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?"
 						} 
 					},
 					"opciones": [
@@ -61,13 +63,13 @@
 					"textoEmocional": {
 						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
-						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
-						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 						"retroalimentacion": {                           
 							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
-							"neutral": "La respuesta no es la correcta",
-							"negativa": "¿Estás seguro de querer estudiar este curso?."
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?"
 						} 
 
 					},
@@ -100,7 +102,7 @@
 					"texto": "main",
 					"paso": 4,
 					"tipo": "pasofinaloptimo",
-					"instruccion": "La respuesta es correcta, continua con otro ejercicio.",
+					"instruccion": "La respuesta es correcta, continúa con otro ejercicio.",
 					"presentacion": [
 						"Las aplicaciones en Java comienzan su ejecución en el método:"
 					],

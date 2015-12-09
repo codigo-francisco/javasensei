@@ -1,0 +1,78 @@
+{
+   "id": 96,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con las clases y objetos en Java.",
+      "Una clase contiene el código para la manipulacíon de objetos de esa clase:<ul><li>Constructores para crear objetos.</li><li>Variables (atributos) para almacenar el estado de la clase y sus objetos.</li><li>Métodos que implementan el comportamiento de la clase y sus objetos.</li></ul>Un objeto es una instancia de una clase que puede ejecutar todos los métodos de instancia declarados en la clase. Los objetos se crean usando <i>new  Constructor( parámetros )</i>."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Selecciona verdadero o falso.",
+         "presentacion": [
+            "Cada nueva clase que creamos se convierte en un nuevo tipo que puede usarse para declarar variables y crear objetos."
+         ],
+         "textoEmocional": {
+			"neutral": "Inicia con el ejercicio.",                
+			"encantado": "Para completar una gran carrera tan sólo necesitas dar el primer paso, tu fuerza y tu valentía harán el resto.  ¡Inicia con el ejercicio!",
+			"sorprendido": "Si tienes una motivación encontrarás el camino, tu sacrificio y esfuerzo serán los que te ayuden a recorrerlo. ¡Inicia con el ejercicio!",
+			"compasivo": "Aprender sin reflexionar es malgastar la energía.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+			"esceptico": "Si no sabes lo que quieres en la vida, como pretendes conseguirlo.  Empieza el ejercicio.",
+			"retroalimentacion": {
+				"positiva": "Si lo puedes intentar es que no es imposible.  !Sigue así!.",
+				"neutral": "Transforma el No Puedo por Si Quiero y conseguirás todo lo que te propongas.",
+				"negativa": "No esperes grandes resultados sin grandes esfuerzos por tu parte."
+			}
+
+		},
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "Verdadero",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio, continúa con otro del menú de opciones.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio.",
+					"encantado": "Por muy alta que sea una colina siempre hay un sendero hacia su cima, ¡sigue así!.",              
+					"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+					"compasivo": "El éxito nunca llega solo; hay que trabajar arduamente para conseguirlo.",                
+					"esceptico": "Lo que con mucho trabajo se adquiere, más se ama.  Sigue aprendiendo Java.",
+					"retroalimentacion": {
+						"positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+						"neutral": "Has finalizado con este ejercicio.",
+						"negativa": "El éxito es como un tren, todos los días pasa pero si no te subes tú se subirá otro."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "Falso",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. ",
+					"encantado": "La respuesta es incorrecta.  Intenta encontrar la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta.  Intenta encontrar la respuesta correcta.",
+					"compasivo": "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más.",                
+					"esceptico": "Con un poco de motivación vas a encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+					} 
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

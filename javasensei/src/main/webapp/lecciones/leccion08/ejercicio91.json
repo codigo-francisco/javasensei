@@ -1,0 +1,139 @@
+{
+   "id": 91,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con las clases y objetos en Java.",
+      "En el contexto del análisis y el diseño  una <b>clase</b> es una categoría o grupo de cosas que tienen atributos y comportamientos comunes. La palabra clave <i>new</i> crea un nuevo objeto de la clase especificada a la derecha de la palabra clave."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Dado el siguiente código, ¿Qué se obtiene en la consola de salida cuando se ejecuta?",
+         "presentacion": [
+            "class Persona {",
+            "\tpublic int numero;",
+            "}",
+            "public class Test {",
+            "\tpublic void procesa(int i",
+            " Persona p) {",
+            "\ti = 5;",
+            "\tp.numero = 8;",
+            "}",
+            "\tpublic static void main(String[] args) {",
+            "\t\tint x = 0;",
+            "\t\tPersona p = new Persona();",
+            "\t\tTest objeto=new Test();",
+            "    \t\tobjeto.procesa(x",
+            "p);",
+            "    \t\tSystem.out.println(x + “ “ + p.numero);",
+            "  \t}",
+            "}  ",
+            ""
+         ],
+         "textoEmocional": {
+			"neutral": "Inicia con el ejercicio.",                
+			"encantado": "!Estoy orgulloso de ti!.  ¡Empieza el ejercicio!",
+			"sorprendido": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede. ¡Inicia con el ejercicio!",
+			"compasivo": "Nunca consideres el estudio como una obligación, sino como una oportunidad para penetrar en el bello y maravilloso mundo del saber.  ¡Se que tu puedes!.",
+			"esceptico": "Hay ciertas cosas que para hacerlas bien no basta haberlas aprendido.  Inicia con el ejercicio.",
+			"retroalimentacion": {
+				"positiva": "Con esfuerzo y perseverancia podrás alcanzar tus metas.",
+				"neutral": "Lo maravilloso de aprender algo, es que nadie puede arrebatárnoslo.",
+				"negativa": "El verdadero modo de no saber nada es aprenderlo todo a la vez."
+			}
+		},
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "0 8",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio, continúa con otro ejercicio.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio.",
+					"encantado": "Siempre intenta aprender todo lo que puedas, pues el conocimiento es una llave que abre muchas puertas.",              
+					"sorprendido": "El que persevera alcanza!, ¡sigue con este entusiasmo!.",
+					"compasivo": "Para alcanzar el éxito se requiere de tres cosas: voluntad, valor y decisión.",                
+					"esceptico": "Al menos llegaste al final del ejercicio.",
+					"retroalimentacion": {
+						"positiva": "La confianza en sí mismo, la actitud positiva y la perseverancia son los argumentos claves para triunfar.",
+						"neutral": "El éxito nunca llega solo; hay que trabajar arduamente para conseguirlo.",
+						"negativa": "No te preocupes de las cosas, ocúpate de ellas.  Has finalizado con este ejercicio."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "5 0",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "¿Sigues sin cambiar tu actitud?.  No aprende el que no quiere.",
+                        "retroalimentacion": {
+                            "positiva": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java.",
+                            "neutral": "¿Tienes dificultad con el ejercicio? ten paciencia.  Continúa con el ejercicio.",
+                            "negativa": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti."
+                        } 
+                    },
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "0 0",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+					"encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+					"compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+					"esceptico": "¿Sigues sin cambiar tu actitud?.  No aprende el que no quiere.",
+					"retroalimentacion": {
+						"positiva": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java.",
+						"neutral": "¿Tienes dificultad con el ejercicio? ten paciencia.  Continúa con el ejercicio.",
+						"negativa": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "5 8",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+					"encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+					"compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+					"esceptico": "¿Sigues sin cambiar tu actitud?.  No aprende el que no quiere.",
+					"retroalimentacion": {
+						"positiva": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java.",
+						"neutral": "¿Tienes dificultad con el ejercicio? ten paciencia.  Continúa con el ejercicio.",
+						"negativa": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti."
+					} 
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

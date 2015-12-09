@@ -15,6 +15,7 @@ import javasensei.db.managments.BitacoraEjerciciosManager;
 import javasensei.db.managments.BitacoraFotografia;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
+import javax.ws.rs.core.Response;
 
 /**
  * REST Web Service
@@ -48,8 +49,9 @@ public class BitacoraRest {
     
     @Path("bitacorafotografia")
     @POST
-    public void guardarBitacoraFotografia(@FormParam("datos") String datos){
+    public Response guardarBitacoraFotografia(@FormParam("datos") String datos){
         new BitacoraFotografia().guardarBitacoraFotografia(datos);
+        return Response.ok().build();
     }
     
 }

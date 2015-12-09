@@ -3,7 +3,7 @@
     "paso":-1,
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
-        "El siguiente ejercicio está relacionado con la declaración de una variable",
+        "El siguiente ejercicio está relacionado con la declaración de una variable.",
         "Una variable es el nombre de una posición de memoria que puede guardar un valor específico. Una declaración de variable indica al compilador cuál es su nombre y su tipo. El tipo de una variable indica la clase de valor que ésta puede almacenar, así como las operaciones que se puede hacer con ella."       
     ],
     "opciones": [
@@ -28,7 +28,7 @@
                 "retroalimentacion": {
                     "positiva": "¡Adelante!, con este ejercicio vas a aprender a crear un programa simple en Java.",
                     "neutral": "Inicia con el ejercicio para aprender a crear un programa simple en Java.",
-                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java"
+                    "negativa": "El éxito empieza cuando tu quieres.  Con esta actitud me parece dificil que llegues muy lejos con Java."
                 } 
             },
             "opciones": [
@@ -36,7 +36,7 @@
                             "texto": "int x;",
                             "paso": 1,
                             "tipo": "pasoerroneo",
-                            "instruccion": "La respuesta es incorrecta. Aunque el nombre de la variable es <i>x</i>, el tipo <i>int</i> es para números enteros.",
+                            "instruccion": "La respuesta es incorrecta. Aunque el nombre de la variable es <i>x</i>, el tipo <i>int</i> es para números enteros. Intenta de nuevo.",
                             "presentacion": [
                                 "public class Test {",
 								"\tpublic static void main( String[ ] args ) {",
@@ -47,8 +47,8 @@
                             "textoEmocional": {
                                 "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
                                 "encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
-                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
-                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
                                 "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                                 "retroalimentacion": {                           
                                     "positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
@@ -86,23 +86,23 @@
                             },
                             "opciones": [  
                                 							{
-								"texto": "x = 12;",
+								"texto": "x = 'a';",
 								"paso": 3,
 								"tipo": "pasoerroneo",
-								"instruccion": "La respuesta es incorrecta. A la variable se le está asignando un valor entero.",
+								"instruccion": "La respuesta es incorrecta. A la variable se le está asignando un caracter. Intenta de nuevo.",
 								"presentacion": [
 									"public class Test {",
 									"\tpublic static void main( String[ ] args ) {",
 									"\t\t<input type='text' readonly value='float x; ' class='focusInput'>",
-									"\t\t<input type='text' readonly value='x = 12; ' class='errorTracing'>",
+									"\t\t<input type='text' readonly value='x = &#39;a&#39;;' class='errorTracing'>",
 									"\t}",
 									"}"
 								],
 								"textoEmocional": {
 									"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 									"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
-									"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
-									"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+									"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+									"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 									"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 									"retroalimentacion": {                           
 										"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
@@ -117,7 +117,7 @@
 								"texto": "x = 12.0;",
 								"paso": 4,
 								"tipo": "pasoerroneo",
-								"instruccion": "La respuesta es incorrecta. Aunque corresponde a una inicialización de punto flotante, es necesario especificar que no se trata de un tipo <i>double</i>. ",
+								"instruccion": "La respuesta es incorrecta. Aunque corresponde a una inicialización de punto flotante, es necesario especificar que no se trata de un tipo <i>double</i>. Intenta de nuevo. ",
 								"presentacion": [
 									"public class Test {",
 									"\tpublic static void main( String[ ] args ) {",
@@ -129,8 +129,8 @@
 								"textoEmocional": {
 									"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 									"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
-									"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
-									"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+									"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+									"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 									"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 									"retroalimentacion": {                           
 										"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
@@ -169,7 +169,7 @@
 								"texto": "x = \"12\";",
 								"paso": 6,
 								"tipo": "pasoerroneo",
-								"instruccion": "La respuesta es incorrecta. El uso de comillas dobles es propio de un dato de tipo String.",
+								"instruccion": "La respuesta es incorrecta. El uso de comillas dobles es propio de un dato de tipo String. Intenta de nuevo.",
 								"presentacion": [
 									"public class Test {",
 									"\tpublic static void main( String[ ] args ) {",
@@ -181,8 +181,8 @@
 								"textoEmocional": {
 									"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 									"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
-									"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
-									"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+									"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+									"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
 									"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
 									"retroalimentacion": {                           
 										"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
@@ -199,7 +199,7 @@
                             "texto": "Int x;",
                             "paso": 7,
                             "tipo": "pasoerroneo",
-                             "instruccion": "La respuesta es incorrecta. Aunque el nombre de la variable es <i>x</i>, la palabra <i>Int</i> no corresponde a una declaración de variable.",
+                             "instruccion": "La respuesta es incorrecta. Aunque el nombre de la variable es <i>x</i>, la palabra <i>Int</i> no corresponde a una declaración de variable. Intenta de nuevo.",
                             "presentacion": [
 								"public class Test {",
 								"\tpublic static void main( String[ ] args ) {",
@@ -210,8 +210,8 @@
                             "textoEmocional": {
                                 "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
                                 "encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
-                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
-                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
                                 "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                                 "retroalimentacion": {                           
                                     "positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
@@ -226,7 +226,7 @@
                             "texto": "Integer x;",
                             "paso": 8,
                             "tipo": "pasoerroneo",
-                            "instruccion": "La respuesta es incorrecta. Aunque el nombre de la variable es <i>x</i>, el tipo <i>Integer</i> es para números enteros.",
+                            "instruccion": "La respuesta es incorrecta. Aunque el nombre de la variable es <i>x</i>, el tipo <i>Integer</i> es para números enteros. Intenta de nuevo.",
                             "presentacion": [
 								"public class Test {",
 								"\tpublic static void main( String[ ] args ) {",
@@ -237,8 +237,8 @@
                             "textoEmocional": {
                                 "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
                                 "encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
-                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
-                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java",
+                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta.",
+                                "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
                                 "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
                                 "retroalimentacion": {                           
                                     "positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",

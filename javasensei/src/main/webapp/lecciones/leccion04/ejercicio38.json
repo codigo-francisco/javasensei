@@ -102,7 +102,7 @@
                      "paso": 4,
                      "texto": "int i",
                      "tipo": "pasoerroneo",
-                     "instruccion": "Respuesta incorrecta. La variable <i></i> fue previamente declarada. ",
+                     "instruccion": "Respuesta incorrecta. La variable <i></i> fue previamente declarada. Intenta de nuevo.",
                      "presentacion": [
                         "public static void main (String [] args){",
                         "\tfor(int i=1; <input type='text'readonly value='int i' class='errorTracing'><=10; i++) {",
@@ -311,7 +311,7 @@
                      "paso": 12,
                      "texto": "int",
                      "tipo": "pasoerroneo",
-                     "instruccion": "Respuesta incorrecta.",
+                     "instruccion": "Respuesta incorrecta. Asegúrate de que la condicion de continuación este correcta. Intenta de nuevo.",
                      "presentacion": [
                         "public static void main (String [] args){",
                         "\tfor(int i=1;<input type='text' value='int' class='errorTracing' readonly> <=10; i++) {",
@@ -337,7 +337,7 @@
                      "paso": 13,
                      "texto": "num",
                      "tipo": "pasoerroneo",
-                     "instruccion": "Respuesta incorrecta.",
+                     "instruccion": "Respuesta incorrecta. La variable num no ha sido declarada previamente. Intenta de nuevo.",
                      "presentacion": [
                         "public static void main (String [] args){",
                         "\tfor(int i=1;<input type='text' value='num' class='errorTracing' readonly> <=10; i++) {",
@@ -365,7 +365,7 @@
                "paso": 14,
                "texto": "next",
                "tipo": "pasoerroneo",
-               "instruccion": "Respuesta incorrecta.",
+               "instruccion": "Respuesta incorrecta. La palabra next no corresponde al lenguaje Java.",
                "presentacion": [
                   "Cuando la instrucción <input type='text' class='errorTracing' value='next' readonly> se ejecuta en una instrucción while  for  do…while  o switch  ocasiona la salida inmediata de esa instrucción."
                ],
