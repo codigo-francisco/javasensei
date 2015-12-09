@@ -1,0 +1,218 @@
+{
+   "id": 99,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con la definición de herencia.",
+      "La herencia es una forma de reutilización de software en la que se crea una nueva clase al absorber los miembros de una existente en la que se mejoran con nuevas capacidades o con modificaciones en las capacidades ya existentes."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Paso 1 de 2.  Considera el siguiente código para contestar a la pregunta.  ¿Cómo se le llama a la clase principal de la cual otras clases heredan?",
+         "presentacion": [
+            "class Deporte {  // a esta clase se le llama: ?",
+            "}",
+            "class Futbol extends Deporte {",
+            "}",
+            ""
+         ],
+         "textoEmocional": {
+			"neutral": "Inicia con el ejercicio.",                
+			"encantado": "Cuando te arriesgas sacrificas todo lo que puedes perder, por lo mucho que puedes ganar.  ¡Inicia con el ejercicio!",
+			"sorprendido": "Tus límites los conoces tú, no permitas que nadie levante muros ante tus objetivos. ¡Inicia con el ejercicio!",
+			"compasivo": "Una voluntad fuerte es la mejor ayuda para alcanzar tus metas.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+			"esceptico": "¡Estudia! No para saber una cosa más, sino para saberla mejor.  Empieza el ejercicio.",
+			"retroalimentacion": {
+				"positiva": "!Estoy orgulloso de ti!.",
+				"neutral": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede.",
+				"negativa": "Si sabes lo que quieres pero no te molestas en luchar por ello, no te lamentes por no conseguirlo."
+			}
+
+		},
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "Superclase o clase padre",
+               "tipo": "pasooptimo",
+               "instruccion": "Paso 2 de 2.  Considera el siguiente código para contestar a la pregunta.  ¿A la clase que hereda de una superclase se le llama?",
+               "presentacion": [
+                  "class Deporte {  // a esta clase se le llama: Superclase o clase padre",
+                  "}",
+                  "class Futbol extends Deporte { // a esta clase se le llama: ?",
+                  "}"
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+					"encantado": "Tú entusiasmo hace que aprender sea más fácil.",
+					"sorprendido": "¡Me sorprende tu actitud positiva!, continúa así.",
+					"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+					"esceptico": "Tal vez este ejercicio es fácil para ti pero almenos intenta terminar el ejercicio.",
+					"retroalimentacion": {                            
+						"positiva": "Nunca te rindas y nunca te rindas.  Pronto serás un Sensei de Java.  Continúa con el ejercicio.",
+						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+						"negativa": "La respuesta es correcta, pero, ¿te lo estas tomando en serio?"                            
+					}
+				},
+               "opciones": [
+                  {
+                     "paso": 2,
+                     "texto": "Superclase o clase padre",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. La superclase es la clase que es el ancestro directo de otra clase. Intenta de nuevo.",
+                     "presentacion": [
+                        ""
+                     ],
+                     "textoEmocional": {
+							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+							"encantado": "¡Estoy feliz por tu decisión de aprender Java!.  Inténtalo de nuevo.",
+							"sorprendido": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java.",
+							"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+							"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+							"retroalimentacion": {                           
+								"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+								"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+								"negativa": "¿Estás seguro de querer estudiar este curso?."
+							}
+						},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 3,
+                     "texto": "Subclase o clase derivada",
+                     "tipo": "pasofinaloptimo",
+                     "instruccion": "Respuesta correcta. Continúa con más ejercicios.",
+                     "presentacion": [
+                        ""
+                     ],
+                     "textoEmocional": {
+						"neutral": "Has finalizado con este ejercicio.",
+						"encantado": "El arte de vencer se aprende en las derrotas, ¡sigue con este entusiasmo!.",              
+						"sorprendido": "No te preocupes por los fracasos, preocúpate por las oportunidades que pierdes cuando ni siquiera lo intentas.",
+						"compasivo": "No te des por vencido, ni aún vencido.  Establece objetivos a corto plazo y pronto serás un Sensei de Java.",                
+						"esceptico": "Es absurdo continuar haciendo siempre lo mismo y esperar resultados diferentes.  Al menos llegaste al final del ejercicio.",
+						"retroalimentacion": {
+							"positiva": "¡Felicidades!.  Las oportunidades solamente las aprovechan las mentes preparadas.",
+							"neutral": "Cada logro comienza con la decisión de intentarlo.  Has finalizado con este ejercicio.",
+							"negativa": "Nuestra mayor debilidad reside en rendirnos.  ¡Deja de jugar y ponte a estudiar!."
+						} 
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 4,
+                     "texto": "Superclase o subclase",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Tanto superclase como subclase son conceptos distintos. Intenta de nuevo.",
+                     "presentacion": [
+                        ""
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                        "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                        "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                        "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                        "retroalimentacion": {                           
+                            "positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                            "negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+                        }
+                    },
+                     "opciones": []
+                  },
+                  {
+                     "paso": 5,
+                     "texto": "Ninguna de las anteriores",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Lee con atención la pregunta e intenta de nuevo.",
+                     "presentacion": [
+                        ""
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                        "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                        "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                        "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡Intentalo de nuevo!",
+                            "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                            "negativa": "La respuesta es incorrecta.  Necesitas mejorar."
+                        }
+                    },
+                     "opciones": []
+                  }
+               ]
+            },
+            {
+               "paso": 6,
+               "texto": "Subclase o clase derivada",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Una subclase es un objeto de su superclase. Intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+					"encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+					"compasivo": "La respuestaes incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+					"esceptico": "Necesitas dedicarle un poco más de tiempo para aprender Java.",
+					"retroalimentacion": {
+						"positiva": "Nada es demasiado difícil si se lo divide en pequeñas tareas.  Intenta ir paso a paso con el ejercicio.",
+						"neutral": "Tal vez necesites investigar un poco más.  Continúa con el ejercicio.",
+						"negativa": "¡Necesitas mayor concentración!"
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 7,
+               "texto": "Superclase o subclase",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Tanto superclase como subclase son conceptos distintos. Intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+					"encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+					"compasivo": "La respuestaes incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+					"esceptico": "Se que estos ejercicios no son un reto para ti, pero cubren conceptos básicos que se necesitan en los cursos avanzados.",
+					"retroalimentacion": {
+						"positiva": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.  Sigue con el ejercicio.  Continúa con el ejercicio.",
+						"neutral": "Estudiar con esfuerzo y positivismo trae consigo siempre buenas recompensas..  Continúa con el ejercicio.",
+						"negativa": "Si estos ejercicios son aburridos para ti, ¿porqué no lograr acertar con la respuesta?."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 8,
+               "texto": "Ninguna de las anteriores",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Lee con atención la pregunta e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+					"encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+					"compasivo": "La respuestaes incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+					"esceptico": "Se que estos ejercicios no son un reto para ti, pero cubren conceptos básicos que se necesitan en los cursos avanzados.",
+					"retroalimentacion": {
+						"positiva": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.  Sigue con el ejercicio.  Continúa con el ejercicio.",
+						"neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+						"negativa": "¿Ya te aburriste de encontrar las respuestas en forma aleatoria?."
+					} 
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

@@ -1,0 +1,146 @@
+{
+   "id": 100,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con los conceptos básicos de herencia: superclase, subclase. ",
+      "Al crear una clase, en vez de declarar miembros completamente nuevos, el programador puede designar que la nueva clase herede los miembros de una existente. La cual se conoce como superclase, y la clase nueva como subclase. <br>Una subclase puede agregar sus propios campos y métodos. Por lo tanto, una subclase es más específica que su superclase y representa a un grupo más especializado de objetos."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Selecciona la respuesta correcta.",
+         "presentacion": [
+            "Considerando el siguiente código, la clase Deporte es <input type='text' readonly> mientras que la clase Futbol es <input type='text' readonly>.<b>",
+            "class Deporte {  //a esta clase se le llama: ?",
+            "}",
+            "class Futbol extends Deporte { //a esta clase se le llama: ?",
+            "}",
+            ""
+         ],
+         "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Nada sobre esta tierra puede detener al hombre que posee la correcta actitud mental para lograr su meta. ¡Inicia con el ejercicio!",
+                "sorprendido": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede. ¡Comienza con el ejercicio!",
+                "compasivo": "No hay nada en la vida que no contenga sus lecciones. Si estás vivo, siempre tendrás algo para aprender.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "Es posible que las lecciones te gusten o que te parezcan irrelevantes y tontas, pero no hay errores, sólo lecciones..  Comienza con el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "¡El mejor momento para aprender es ahora!. !Sigue así!.",
+                    "neutral": "Cuando deseas algo, todo el universo conspira para que realices tu deseo.",
+                    "negativa": "No deja de ser humillante para una persona de ingenio, saber que no hay tonto que no le pueda enseñar algo."
+                }
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "Superclase, clase padre",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Aunque la clase Deporte es la superclase, la clase Futbol extiende de ella y por tanto no es la clase padre. Intenta de nuevo.",
+               "presentacion": [
+                  "Considerando el siguiente código, la clase Deporte es <input type='text' readonly value='superclase' class='focusInput'> mientras que la clase Futbol es <input type='text' readonly value='clase padre' class='errorTracing'>.",
+                  "",
+                  "class Deporte {  //a esta clase se le llama: ?",
+                  "}",
+                  "class Futbol extends Deporte { //a esta clase se le llama: ?",
+                  "}"
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "¡Estoy feliz por tu decisión de aprender Java!.  Inténtalo de nuevo.",
+					"sorprendido": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java.",
+					"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+						"negativa": "¿Estás seguro de querer estudiar este curso?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "Subclase, clase derivada",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. La clase Futbol hereda de la clase Deporte, por lo tanto la clase Deporte no es la subclase. Intenta de nuevo. ",
+               "presentacion": [
+                  "Considerando el siguiente código, la clase Deporte es <input type='text' readonly value='subclase  ' class='errorTracing'>  mientras que la clase Futbol es <input type='text' readonly value='clase derivada' class='focusInput'>.",
+                  "",
+                  "class Deporte {  //a esta clase se le llama: ?",
+                  "}",
+                  "class Futbol extends Deporte { //a esta clase se le llama: ?",
+                  "}"
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+					"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+					"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+					"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡Intentalo de nuevo!",
+						"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+						"negativa": "La respuesta es incorrecta.  Necesitas mejorar."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "Superclase, subclase",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Continúa con más ejercicios.",
+               "presentacion": [
+                  "Considerando el siguiente código, la clase Deporte es <input type='text' readonly value='superclase  ' class='focusInput'>  mientras que la clase Futbol es <input type='text' readonly value='subclase  ' class='focusInput'>.",
+                  "",
+                  "class Deporte {  //a esta clase se le llama: ?",
+                  "}",
+                  "class Futbol extends Deporte { //a esta clase se le llama: ?",
+                  "}"
+               ],
+               "textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio.",
+					"encantado": "En la vida no hay que esperar a que pase la tormenta, hay que aprender a bailar bajo la lluvia, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Si sigues haciendo lo que estás haciendo, seguirás consiguiendo lo que estás consiguiendo. Has finalizado con este ejercicio.",
+					"compasivo": "Para ser el mejor y alcanzar tus metas solo hay un camino, estudiar y prepararte para los retos de la vida.",                
+					"esceptico": "El tiempo pasa rápido y no debes desaprovecharlo, estudia ahora y mañana será una persona exitosa.",
+					"retroalimentacion": {
+						"positiva": "Aprovecha tu juventud e inteligencia para convertirte en un buen estudiante. Los años se pasan rápido así que no los desperdicies.",
+						"neutral": "La vida es un 10% lo que te pasa y el 90% cómo reaccionas ante lo que te pasa.",
+						"negativa": "No se puede cambiar lo que te niegas a afrontar.  Al menos llegaste al final del ejercicio."
+				   }
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "Ninguna de las anteriores",
+               "tipo": "pasoerroneo",
+               "instruccion": "Repuesta incorrecta. Lee con atención la pregunta e intenta de nuevo.",
+               "presentacion": [
+                  "Considerando el siguiente código, la clase Deporte es <input type='text' readonly class='errorTracing'>  mientras que la clase Futbol es <input type='text' readonly class='errorTracing'>.",
+                  "",
+                  "class Deporte {  //a esta clase se le llama: ?",
+                  "}",
+                  "class Futbol extends Deporte { //a esta clase se le llama: ?",
+                  "}"
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+					"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+					"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+					"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+					"retroalimentacion": {                           
+						"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+						"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
