@@ -44,8 +44,9 @@ public class ChatRest {
             @QueryParam("idUsuario") String idUsuario,
             @QueryParam("idEjercicio") Integer idEjercicio,
             @QueryParam("color") String color){        
-        ChatManager chatManager = new ChatManager();
-        return chatManager.agregarMensaje(message, nombreUsuario, idUsuario, idEjercicio, color).toString();
+        String result = new ChatManager().agregarMensaje(message, nombreUsuario, idUsuario, idEjercicio, color);
+        
+        return result;
     }
     
     @GET
