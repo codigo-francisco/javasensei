@@ -1,0 +1,367 @@
+{
+   "id": 102,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con los conceptos básicos de herencia: sobrecarga, redefinición.",
+      "Sobrecarga significa usar un identificador para referirse a múltiples elementos en el mismo ámbito. Java permite al programador sobrecargar métodos y constructores pero no variables u operadores. Los métodos sobrecargados tienen firmas distintas."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Paso 1 de 3. Responde verdadero o falso.",
+         "presentacion": [
+            "Cuando una subclase redefine al método de una superclase utilizando la misma firma se dice que la subclase sobrecarga a ese método de la superclase.<b>",
+            "",
+            "class Mascota {",
+            "    public void comer() {  //método de la superclase",
+            "        System.out.println( \"Mascota::comer()\" );",
+            "    }",
+            "}",
+            "public class Gato extends Mascota {",
+            "    public void comer() {  //¿es un método overload?",
+            "         System.out.println( \"Gato::comer()\" ); ",
+            "    }",
+            "}"
+         ],
+         "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "!Estoy orgulloso de ti!.  ¡Empieza el ejercicio!",
+                "sorprendido": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede. ¡Inicia con el ejercicio!",
+                "compasivo": "Nunca consideres el estudio como una obligación, sino como una oportunidad para penetrar en el bello y maravilloso mundo del saber.  ¡Se que tu puedes!.",
+                "esceptico": "Hay ciertas cosas que para hacerlas bien no basta haberlas aprendido.  Inicia con el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "Con esfuerzo y perseverancia podrás alcanzar tus metas.",
+                    "neutral": "Lo maravilloso de aprender algo, es que nadie puede arrebatárnoslo.",
+                    "negativa": "El verdadero modo de no saber nada es aprenderlo todo a la vez."
+                }
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "Verdadero",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Lee con atención la pregunta e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. Continúa con el ejercicio.",
+					"encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta. Sigue adelante con el ejercicio.",
+					"compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+					"esceptico": "¿Sigues sin cambiar tu actitud?. No aprende el que no quiere.",
+					"retroalimentacion": {
+						"positiva": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java.",
+						"neutral": "¿Tienes dificultad con el ejercicio? ten paciencia.  Continúa con el ejercicio.",
+						"negativa": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "Falso",
+               "tipo": "pasooptimo",
+               "instruccion": "Paso 2 de 3. Selecciona la opción que complete correctamente.",
+               "presentacion": [
+                  "En el siguiente código el método comer() ha sido <input type='text' readonly> en la clase Gato.",
+                  "class Mascota {",
+                  "    public void comer() {  ",
+                  "        System.out.println( \"Mascota::comer()\" );",
+                  "    }",
+                  "}",
+                  "public class Gato extends Mascota {",
+                  "    public void comer() {  ",
+                  "        System.out.println( \"Gato::comer()\" ); ",
+                  "    }",
+                  "}"
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+					"encantado": "Tú entusiasmo hace que aprender sea más fácil.",
+					"sorprendido": "¡Me sorprende tu actitud positiva!, continúa así.",
+					"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+					"esceptico": "Tal vez este ejercicio es fácil para ti pero almenos intenta terminar el ejercicio.",
+					"retroalimentacion": {                            
+						"positiva": "Nunca te rindas y nunca te rindas.  Pronto serás un Sensei de Java.  Continúa con el ejercicio.",
+						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+						"negativa": "La respuesta es correcta, pero, ¿te lo estas tomando en serio?"                            
+					}
+				},
+               "opciones": [
+                  {
+                     "paso": 3,
+                     "texto": "Sobrecargado",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Se dice que un método está sobrecargado cuando hay varios métodos con el mismo nombre y diferentes parámetros. Intenta de nuevo.",
+                     "presentacion": [
+                        "En el siguiente código el método comer() ha sido <input type='text' readonly value='sobrecargado' class='errorTracing'> en la clase Gato.",
+                        "class Mascota {",
+                        "    public void comer() {  ",
+                        "        System.out.println( \"Mascota::comer()\" );",
+                        "    }",
+                        "}",
+                        "public class Gato extends Mascota {",
+                        "    public void comer() {  ",
+                        "        System.out.println( \"Gato::comer()\" ); ",
+                        "    }",
+                        "}"
+                     ],
+                     "textoEmocional": {
+							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+							"encantado": "¡Estoy feliz por tu decisión de aprender Java!.  Inténtalo de nuevo.",
+							"sorprendido": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java.",
+							"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+							"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+							"retroalimentacion": {                           
+								"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+								"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+								"negativa": "¿Estás seguro de querer estudiar este curso?."
+							}
+						},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 4,
+                     "texto": "Recargado",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Este no es un término que identifique los tipos de métodos en Java. Intenta de nuevo.",
+                     "presentacion": [
+                        "En el siguiente código el método comer() ha sido <input type='text' readonly value='recargado  ' class='errorTracing'> en la clase Gato.",
+                        "class Mascota {",
+                        "    public void comer() {  ",
+                        "        System.out.println( \"Mascota::comer()\" );",
+                        "    }",
+                        "}",
+                        "public class Gato extends Mascota {",
+                        "    public void comer() {  ",
+                        "        System.out.println( \"Gato::comer()\" ); ",
+                        "    }",
+                        "}"
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta. Intenta de nuevo.",
+                        "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                        "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                        "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                        "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                        "retroalimentacion": {                           
+                            "positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                            "negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+                        }
+                    },
+                     "opciones": []
+                  },
+                  {
+                     "paso": 5,
+                     "texto": "Redefinido",
+                     "tipo": "pasooptimo",
+                     "instruccion": "Paso 3 de 3. Completa el siguiente código para sobrecargar el método comer().",
+                     "presentacion": [
+                        "class Mascota {",
+                        "    public void comer() {",
+                        "        System.out.println( \"Mascota::comer()\" );",
+                        "    }",
+                        "}",
+                        "public class Gato extends Mascota {",
+                        "    public void comer() { ",
+                        "        System.out.println( \"Gato::comer()\" ); ",
+                        "    }",
+                        "    <input type='text' readonly> {",
+                        "    }",
+                        "}",
+                        "",
+                        "1)\tpublic void comer()",
+                        "2)\tpublic void comer (String comida)",
+                        "3)\tpublic void comiendo( String comida)",
+                        "4)\tprivate void comer()",
+                        ""
+                     ],
+                     "textoEmocional": {
+							"neutral": "La respuesta es correcta. Sigue con el ejercicio.",
+							"encantado": "El éxito empieza cuando tú quieres, ¡continúa así!.",              
+							"sorprendido": "Por cada esfuerzo, hay una recompensa. Nunca te rindas. Sigue adelante con el ejercicio.",
+							"compasivo": "Aprender Java es una oportunidad, no una obligación.  Sigue con el ejercicio.",                
+							"esceptico": "Ama lo que haces, haz lo que amas.  Sigue aprendiendo Java",
+							"retroalimentacion": {
+								"positiva": "¡Muy bien!, la respuesta correcta.  Sigue con el ejercicio",
+								"neutral": " La respuesta es correcta.  Continúa con el ejercicio",
+								"negativa": "Encontraste la respuesta correcta sin saber el por qué."
+							} 
+						},
+                     "opciones": [
+                        {
+                           "paso": 6,
+                           "texto": 1,
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                           "presentacion": [
+                              "class Mascota {",
+                              "    public void comer() {",
+                              "\tSystem.out.println( \"Mascota::comer()\" );",
+                              "    }",
+                              "}",
+                              "public class Gato extends Mascota {",
+                              "    public void comer() { ",
+                              "        System.out.println( \"Gato::comer()\" ); ",
+                              "    }",
+                              "    <input type='text' readonly value='public void comer()' class='errorTracing'> {",
+                              "    }",
+                              "}"
+                           ],
+                           "textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Continúa con el ejercicio.",
+								"encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+								"sorprendido": "La respuesta es incorrecta.  Sigue adelante con el ejercicio.",
+								"compasivo": "La respuestaes incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+								"esceptico": "Se que estos ejercicios no son un reto para ti, pero cubren conceptos básicos que se necesitan en los cursos avanzados.",
+								"retroalimentacion": {
+									"positiva": "Vive un día a la vez y te vas a dar cuenta que Java no es tan complicado.  Sigue con el ejercicio.  Continúa con el ejercicio.",
+									"neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+									"negativa": "¿Ya te aburriste de encontrar las respuestas en forma aleatoria?."
+								} 
+							},
+                           "opciones": []
+                        },
+                        {
+                           "paso": 7,
+                           "texto": 2,
+                           "tipo": "pasofinaloptimo",
+                           "instruccion": "Respuesta correcta. Continúa con más ejercicios del menú de opciones.",
+                           "presentacion": [
+                              "class Mascota {",
+                              "    public void comer() {",
+                              "\tSystem.out.println( \"Mascota::comer()\" );",
+                              "    }",
+                              "}",
+                              "public class Gato extends Mascota {",
+                              "    public void comer() { ",
+                              "        System.out.println( \"Gato::comer()\" ); ",
+                              "    }",
+                              "    <input type='text' readonly value='public void comer(String comida)' class='focusInput'> {",
+                              "    }",
+                              "}"
+                           ],
+                           "textoEmocional": {
+								"neutral": "Has finalizado con este ejercicio.",
+								"encantado": "Por muy alta que sea una colina siempre hay un sendero hacia su cima, ¡sigue así!.",              
+								"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+								"compasivo": "El éxito nunca llega solo; hay que trabajar arduamente para conseguirlo.",                
+								"esceptico": "Lo que con mucho trabajo se adquiere, más se ama.  Sigue aprendiendo Java.",
+								"retroalimentacion": {
+									"positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+									"neutral": "Has finalizado con este ejercicio.",
+									"negativa": "El éxito es como un tren, todos los días pasa pero si no te subes tú se subirá otro."
+								}
+							},
+                           "opciones": []
+                        },
+                        {
+                           "paso": 8,
+                           "texto": 3,
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                           "presentacion": [
+                              "class Mascota {",
+                              "    public void comer() {",
+                              "\tSystem.out.println( \"Mascota::comer()\" );",
+                              "    }",
+                              "}",
+                              "public class Gato extends Mascota {",
+                              "    public void comer() { ",
+                              "        System.out.println( \"Gato::comer()\" ); ",
+                              "    }",
+                              "    <input type='text' readonly value='public void comiendo(String comida)' class='errorTracing'> {",
+                              "    }",
+                              "}"
+                           ],
+                           "textoEmocional": {
+								"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+								"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+								"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+								"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+								"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+								"retroalimentacion": {                           
+									"positiva": "La respuesta no es la correcta, ¡Intentalo de nuevo!",
+									"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+									"negativa": "La respuesta es incorrecta.  Necesitas mejorar."
+								}
+							},
+                           "opciones": []
+                        },
+                        {
+                           "paso": 9,
+                           "texto": 4,
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                           "presentacion": [
+                              "class Mascota {",
+                              "    public void comer() {",
+                              "\tSystem.out.println( \"Mascota::comer()\" );",
+                              "    }",
+                              "}",
+                              "public class Gato extends Mascota {",
+                              "    public void comer() { ",
+                              "        System.out.println( \"Gato::comer()\" ); ",
+                              "    }",
+                              "    <input type='text' readonly value='private void comer()' class='errorTracing'> {",
+                              "    }",
+                              "}"
+                           ],
+                           "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta. Intenta de nuevo.",
+                                "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                                "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java",
+                                "compasivo": "Todos tenemos una habilidad distinta y cada día aprendemos un poquito más, tú eres una persona triunfadora.",
+                                "esceptico": "No desperdicies tu talento sin hacer nada productivo, estudia y sácale provecho a tus habilidades.",
+                                "retroalimentacion": {                           
+                                    "positiva": "Casi, casi, ¡Intentalo de nuevo!",
+                                    "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                                    "negativa": "Creo que no has estudiado lo suficiente."
+                                }
+                            },
+                           "opciones": []
+                        }
+                     ]
+                  },
+                  {
+                     "paso": 10,
+                     "texto": "Overload",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Se dice que un método está sobrecargado<i>(overloaded)</i> cuando hay varios métodos con el mismo nombre y diferentes parámetros. Intenta de nuevo.",
+                     "presentacion": [
+                        "En el siguiente código el método comer() ha sido <input type='text' readonly value='overload  ' class='errorTracing'> en la clase Gato.",
+                        "class Mascota {",
+                        "    public void comer() {  ",
+                        "        System.out.println( \"Mascota::comer()\" );",
+                        "    }",
+                        "}",
+                        "public class Gato extends Mascota {",
+                        "    public void comer() {  ",
+                        "        System.out.println( \"Gato::comer()\" ); ",
+                        "    }",
+                        "}"
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta. Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta pero con un poco de esfuerzo encontrarás la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta. Sigue adelante con el ejercicio.",
+                        "compasivo": "La respuesta es incorrecta, ¡que no decaigan esos ánimos!.  Sigue adelante con el ejercicio.",                
+                        "esceptico": "¿Sigues sin cambiar tu actitud?. No aprende el que no quiere.",
+                        "retroalimentacion": {
+                            "positiva": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java.",
+                            "neutral": "¿Tienes dificultad con el ejercicio? ten paciencia.  Continúa con el ejercicio.",
+                            "negativa": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti."
+                        } 
+                    },
+                     "opciones": []
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
