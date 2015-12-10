@@ -1,6 +1,7 @@
 package javasensei.db.managments;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
@@ -41,5 +42,12 @@ public class ChatManager {
                 .get();
         
         return chatCollection.find(query).toArray().toString();
+    }
+
+    public String cargarMensajes(Integer cantidad, Integer idEjercicio) {
+        return chatCollection.find(
+                new BasicDBObject("idEjercicio", idEjercicio)
+        ).sort(new BasicDBObject("fecha",1))
+        .limit(cantidad).toArray().toString();
     }
 }

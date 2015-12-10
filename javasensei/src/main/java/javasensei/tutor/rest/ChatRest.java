@@ -14,6 +14,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.QueryParam;
@@ -36,7 +37,7 @@ public class ChatRest {
     public ChatRest() {
     }
 
-    @GET
+    @POST
     @Path("agregarmensaje")
     @Produces(MediaType.TEXT_HTML)
     public String agregarMensaje(@QueryParam("message") String message, 
@@ -49,10 +50,17 @@ public class ChatRest {
         return result;
     }
     
-    @GET
+    @POST
     @Path("leermensajes")
     @Produces(MediaType.APPLICATION_JSON)
     public String leerMensajes(@QueryParam("fechaActual") Long fechaActual, @QueryParam("idEjercicio") Integer idEjercicio){        
         return new ChatManager().leerMensajes(fechaActual, idEjercicio);
+    }
+    
+    @POST
+    @Path("cargarmensajes")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String cargarMensajes(@QueryParam("cantidad") Integer cantidad, @QueryParam("idEjercicio") Integer idEjercicio){
+        return new ChatManager().cargarMensajes(cantidad, idEjercicio);
     }
 }
