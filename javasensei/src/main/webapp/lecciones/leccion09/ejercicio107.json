@@ -1,0 +1,176 @@
+{
+   "id": 107,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con los conceptos básicos de herencia: polimorfismo.",
+      "El polimorfismo es un concepto orientado a objetos que nos permite escribir programas que puedan manipular convenientemente, de una forma más general, objetos de una amplia variedad de clases relacionadas por la herencia."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": " Paso 1 de 2. Responde verdadero o falso.",
+         "presentacion": [
+            "Si X es la superclase de Y. el siguiente código es correcto. ",
+            "",
+            "X x = new X(); ",
+            "Y y = new Y(); ",
+            "y = x;",
+            ""
+         ],
+         "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Nada sobre esta tierra puede detener al hombre que posee la correcta actitud mental para lograr su meta. ¡Inicia con el ejercicio!",
+                "sorprendido": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede. ¡Comienza con el ejercicio!",
+                "compasivo": "No hay nada en la vida que no contenga sus lecciones. Si estás vivo, siempre tendrás algo para aprender.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "Es posible que las lecciones te gusten o que te parezcan irrelevantes y tontas, pero no hay errores, sólo lecciones..  Comienza con el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "¡El mejor momento para aprender es ahora!. !Sigue así!.",
+                    "neutral": "Cuando deseas algo, todo el universo conspira para que realices tu deseo.",
+                    "negativa": "No deja de ser humillante para una persona de ingenio, saber que no hay tonto que no le pueda enseñar algo."
+                }
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "Verdadero",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. Continúa con el ejercicio.",
+					"encantado": "La respuesta es incorrecta. Intenta encontrar la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta. Intenta encontrar la respuesta correcta.",
+					"compasivo": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",                
+					"esceptico": "La respuesta es incorrecta. Revisa tu respuesta. Con un cambio en tu actitud vas a encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "Estudiar Java demanda tiempo y esfuerzo pero al final siempre hay resultados positivos, ¡ánimo!.",
+						"neutral": "La forma más segura de tener éxito es intentarlo una vez más.",
+						"negativa": "Me parece que necesitas cambiar tu actitud."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "Falso",
+               "tipo": "pasooptimo",
+               "instruccion": "Paso 2 de 2. Elige la instrucción que según el código sea correcta.",
+               "presentacion": [
+                  "Si X es la superclase de Y. ",
+                  "",
+                  "X x = new X(); ",
+                  "Y y = new Y(); ",
+                  "Y w = new Y();",
+                  "Y z = new Y();"
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+					"encantado": "Los estudios son el camino al éxito, piensa en positivo siempre.",
+					"sorprendido": "¡Wow!, estás inspirado, continúa con el ejercicio.",
+					"compasivo": "Hay etapas en los estudios que sentimos que no entendemos nada, haz un esfuerzo por averiguar y entender a Java.",
+					"esceptico": "De ti depende el futuro de tu vida.  Al menos trata de terminar el ejercicio.",
+					"retroalimentacion": {
+						"positiva": "¡Muy bien!, la respuesta es correcta.  Sigue con el ejercicio.",
+						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+						"negativa": "Al parecer no te hacer nada en serio.  Necesitas replantearte tus prioridades en esta vida."
+					}
+				},
+               "opciones": [
+                  {
+                     "paso": 3,
+                     "texto": "y = x",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                     "presentacion": [
+                        ""
+                     ],
+                     "textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "¡Estoy feliz por tu decisión de aprender Java!.  Inténtalo de nuevo.",
+						"sorprendido": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java.",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 4,
+                     "texto": "x = y",
+                     "tipo": "pasofinaloptimo",
+                     "instruccion": "Respuesta correcta. Continúa con más ejercicios.",
+                     "presentacion": [
+                        ""
+                     ],
+                     "textoEmocional": {
+                        "neutral": "Has finalizado con este ejercicio.",
+                         "encantado": "El arte de vencer se aprende en las derrotas, ¡sigue con este entusiasmo!.",              
+                         "sorprendido": "Somos lo que hacemos día a día. De modo que la excelencia no es un acto, sino un hábito.",
+                         "compasivo": "No te des por vencido, ni aún vencido.  Cuando hay un problema, no hay nada que hacer; hay algo que saber.",                
+                         "esceptico": "Muchos creen que el talento es cuestión de suerte, pero pocos saben que la suerte es cuestión de talento.",
+                         "retroalimentacion": {
+                               "positiva": "Para tener éxito, tus deseos de triunfar deberían ser más grandes que tu miedo de fracasar.",
+                               "neutral": "Has finalizado con este ejercicio.",
+                               "negativa": "El que no sabe lo que busca, no sabe lo que encuentra.  ¡Deja de jugar y ponte a estudiar!."
+                        } 
+                    },
+                     "opciones": []
+                  },
+                  {
+                     "paso": 5,
+                     "texto": "w = x",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                     "presentacion": [
+                        ""
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                        "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                        "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                        "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                        "retroalimentacion": {                           
+                            "positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentándolo!",
+                            "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                            "negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+                        }
+                    },
+                     "opciones": []
+                  },
+                  {
+                     "paso": 6,
+                     "texto": "z = x",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                     "presentacion": [
+                        ""
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                        "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                        "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                        "esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡Intentalo de nuevo!",
+                            "neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+                            "negativa": "La respuesta es incorrecta.  Necesitas mejorar."
+                        }
+                    },
+                     "opciones": []
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

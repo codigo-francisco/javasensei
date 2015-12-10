@@ -60,13 +60,15 @@ camera.prototype = {
                 fotografia: image
             };
 
-            $.ajax({
+            /*$.ajax({
                 url: url + "bitacora/bitacorafotografia",
                 type: "POST",
                 data: {
                     datos: JSON.stringify(datos)
                 }
-            });
+            }).done(function(){
+                console.log("fotografia de bitacora guardada");
+            });*/
 
             localStorage.setItem("photo_list", JSON.stringify(photo_list));
 
