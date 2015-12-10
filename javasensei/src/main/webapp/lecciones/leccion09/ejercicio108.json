@@ -1,0 +1,122 @@
+{
+   "id": 108,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con los Conceptos básicos de herencia: redefinición.",
+      "La redefinicion o sobreescritura es la habilidad de una subclase de redefinir el método de una superclase cuyo comportamiento es “muy parecido”, pero diferente, en la subclase.<br>El tipo de retorno, nombre del método, número, tipo y orden de los parámetros para el método redefinido debe ser igual que para el método original. El método redefinido puede tener mayor acceso que el método redefiniendo, pero no menos."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "¿Con qué palabra clave se previene la sobreescritura (override) de un método en las subclases?",
+         "presentacion": [
+            ""
+         ],
+         "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "El futuro está oculto detrás de los hombres que lo hacen.  ¡Inicia con el ejercicio!",
+                "sorprendido": "Por muy cansado que estés, nunca te des por vencido. ¡Adelante! ¡Inicia con el ejercicio!",
+                "compasivo": "La vida nos pone piedras en el camino, tú debes esforzarte para poder saltarlas.  ¡Adelante!.  Empieza el ejercicio.",
+                "esceptico": "¡Estudia! No para saber una cosa más, sino para saberla mejor.  Inicia el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "Noto que cada día eres mejor. ¡Continúa así!",
+                    "neutral": "Nunca olvides que eres más inteligente de lo que te piensas, más fuerte de lo que imaginas y más valiente de lo que te crees.",
+                    "negativa": "El que adelante no mira, atrás se queda."
+                }
+
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "static",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. La palabra reservada <i>static</i> indica que solo hay un método para todos los objetos. Intenta de nuevo",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+					"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+					"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+					"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡Intentalo de nuevo!",
+						"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+						"negativa": "La respuesta es incorrecta.  Necesitas mejorar."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "stop",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. La palabra <i>stop</i> no es una palabra clave en Java. Intenta de nuevo",
+               "presentacion": [
+                  ""
+               ],
+              "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "¡Estoy feliz por tu decisión de aprender Java!.  Inténtalo de nuevo.",
+					"sorprendido": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java.",
+					"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+						"negativa": "¿Estás seguro de querer estudiar este curso?."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "final",
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Has finalizado el ejercicio, selecciona otro del menú.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio.",
+					"encantado": "Siempre intenta aprender todo lo que puedas, pues el conocimiento es una llave que abre muchas puertas.",              
+					"sorprendido": "El que persevera alcanza!, ¡sigue con este entusiasmo!.",
+					"compasivo": "Para alcanzar el éxito se requiere de tres cosas: voluntad, valor y decisión.",                
+					"esceptico": "Al menos llegaste al final del ejercicio.",
+					"retroalimentacion": {
+						"positiva": "La confianza en sí mismo, la actitud positiva y la perseverancia son los argumentos claves para triunfar.",
+						"neutral": "El éxito nunca llega solo; hay que trabajar arduamente para conseguirlo.",
+						"negativa": "No te preocupes de las cosas, ocúpate de ellas.  Has finalizado con este ejercicio."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "private",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. La palabra reservada <i>private</i> es un modificador de acceso que indica que los métodos son accesibles sólo para los métodos de la clase en la que se declaran. Intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+					"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+					"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+					"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+					"retroalimentacion": {                           
+						"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+						"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
