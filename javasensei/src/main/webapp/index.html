@@ -20,6 +20,7 @@
         <link href="css/chat.css" rel="stylesheet">
         <link href="offline-js/offline-theme-default.css" rel="stylesheet">
         <link href="offline-js/offline-language-spanish.css" rel="stylesheet">
+        <link href="jQuery-CSSEmoticons/jquery.cssemoticons.css" rel="stylesheet">
         <link href="css/mobile.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
@@ -34,6 +35,7 @@
         <script type="text/javascript" src="jscolor-2.0.4/jscolor.min.js"></script>
         <script type="text/javascript" src="js/webcam.js"></script>
         <script type="text/javascript" src="offline-js/offline.min.js"></script>
+        <script type="text/javascript" src="jQuery-CSSEmoticons/jquery.cssemoticons.min.js"></script>
 
         <script type="text/javascript" src="js/menu.js"></script>
         <script type="text/javascript" src="js/recursos.js"></script>
@@ -92,7 +94,7 @@
 
             function errorCamara(err) {
                 console.error(err);
-                alert("Ha ocurrido un error debido a que no cuenta con cámara o no otorgó los permisos necesarios.\n\nLa detección emocional se ha deshabilitado.");
+                alert("A ocurrido un error debido a que no cuenta con camara o no otorgo los permisos necesarios.\n\nLa detección emocional se ha deshabilitado");
                 noCamara = true;
                 usuario.activarEmociones = false;
                 //Opciones de la camara
@@ -194,6 +196,8 @@
                 $("#selecciondetector").on("click",function(){
                     detectorEmocional = $("#selecciondetector :checked").attr("id");
                 });
+                
+                $("#emoticons").emoticonize();
 
                 camera_sensei.setup();
                 chat.setUp();
@@ -346,8 +350,8 @@
                         <div id="progressbar"></div>
                     </div>
                     <div>
-                        <button class="controles_tracing" id="informacion_tracing" data-inline="true" data-mini="true">Información</button>
-                        <button class="controles_tracing" id="atras_tracing" data-inline="true" data-mini="true">Atrás</button>
+                        <button class="controles_tracing" id="informacion_tracing" data-inline="true" data-mini="true">Informacion</button>
+                        <button class="controles_tracing" id="atras_tracing" data-inline="true" data-mini="true">Atras</button>
                         <button class="controles_tracing" id="adelante_tracing" data-inline="true" class="ui-disabled" data-mini="true">Adelante</button>
 
                         <div class="controles_cierre_tracing" style="float: right;">
@@ -386,8 +390,16 @@
                     <div id="wrapper" class="box-inner">
                         <div id="chatbox"></div>
                         <!-- <input id="usermsg" name="usermsg" type="text" size="13" autocomplete="off"/> -->
-                        <textarea id="usermsg" name="usermsg" maxlength="256"></textarea>
-                        <button id="botoncolor" class="jscolor {valueElement:null,value:'000000'}" style="width:50px; height:20px;"></button>
+                        <div>
+                            <button id="botoncolor" class="jscolor {valueElement:null,value:'000000'}">Elige un color</button>
+                            <a href="#popupInfo" data-rel="popup" data-transition="pop" class="emoticons my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-user ui-btn-icon-notext">Emoticons</a>
+                            <div data-role="popup" id="popupInfo" class="ui-content" data-theme="a">
+                                <p id="emoticons">:-) :) :o) :c) :^) :-D :-( :-9 ;-) :-P :-p :-Þ :-b :-O :-/ :-X :-# :'( B-) 8-) :-\ ;*( :-* :] :&gt; =] =) 8) :} :D 8D XD xD =D :( :&lt; :[ :{ =( ;) ;] ;D :P :p =P =p :b :Þ :O 8O :/ =/ :S :# :X B) O:)</p>
+                            </div>
+                            <textarea id="usermsg" name="usermsg" maxlength="256"></textarea>
+                        </div>
+                        
+                        
                     </div>
                 </div>
             </div>

@@ -32,13 +32,12 @@ var chatSensei = function () {
                     $.each(datos, function (index, data) {
                         if (!colaMensajes.contains(data._id.$oid)) {
                             colaMensajes.add(data._id.$oid);
-                            agregarMensajeChatbox(data.nombreUsuario, data.message, data.color);
+                            agregarMensajeChatbox(data.nombreUsuario,data.message,data.color);
+                            var chatbox = document.getElementById("chatbox");
+                            chatbox.scrollTop = chatbox.scrollHeight;
                         }
                     });
-                    
-                    var chatbox = document.getElementById("chatbox");
-                    chatbox.scrollTop = chatbox.scrollHeight;
-                    
+                    agregarEmoticons();
                     ultimoMensaje = datos[datos.length - 1].fecha;
                 }
             });
@@ -66,9 +65,9 @@ var chatSensei = function () {
                 
                 var chatbox = document.getElementById("chatbox");
                 chatbox.scrollTop = chatbox.scrollHeight;
-                
                 ultimoMensaje = datos[datos.length - 1].fecha;
             }
+            agregarEmoticons();
         });
     };
 
@@ -84,7 +83,7 @@ var chatSensei = function () {
             colaMensajes.clear();
             
             //Cargamos los ultimos mensajes            
-            this.cargarMensajes();
+            //this.cargarMensajes();
             
             this.idInterval = setInterval(this.verificarMensaje, 500);
         } else {
@@ -101,7 +100,7 @@ var chatSensei = function () {
     };
 
     var enviandoMensaje = false;
-
+    
     this.procesarEnvioMensaje = function (e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         var message = $("#usermsg").val()
@@ -119,7 +118,7 @@ var chatSensei = function () {
             message = message.replace(/\n/g, "<br/>");
             var color = $("#botoncolor").css("background-color");
             $("#usermsg").val("");
-            agregarMensajeChatbox(usuario.nombre, message, color);
+            agregarMensajeChatbox(usuario.nombre,message,color);
             chatbox = document.getElementById("chatbox");
             chatbox.scrollTop = chatbox.scrollHeight;
             //Enviar mensaje al servidor
@@ -141,19 +140,13 @@ var chatSensei = function () {
                 var fecha = data.fecha;
                 if (fecha > ultimoMensaje)
                     ultimoMensaje = fecha;
-
+                agregarEmoticons();
                 enviandoMensaje = false;
             });
         }
     };
 
 };
-
-function agregarMensajeChatbox(usuario, message, color) {
-    $("#chatbox").append(
-            $("<p class='mensaje'>").html(usuario + ":<br>" + message)
-            .css("color", color));
-}
 
 function obtenerHora() {
     $.get(url + "servidor/obtenerHora")
@@ -162,4 +155,15 @@ function obtenerHora() {
             }).fail(function () {
         setTimeout(1000, obtenerHora);
     });
+}
+
+function agregarMensajeChatbox(usuario, message, color) {
+    var mensajeFinal = $("<p class='mensaje'>").html(usuario + ":<br>" + message).css("color", color);
+
+    $("#chatbox").append(mensajeFinal);
+    //$("#chatbox").emoticonize({animate:false});
+}
+
+function agregarEmoticons() {
+    $("#chatbox").emoticonize({animate:false});
 }
