@@ -47,7 +47,9 @@ public class ChatManager {
     public String cargarMensajes(Integer cantidad, Integer idEjercicio) {
         return chatCollection.find(
                 new BasicDBObject("idEjercicio", idEjercicio)
-        ).sort(new BasicDBObject("fecha",1))
-        .limit(cantidad).toArray().toString();
+        ).sort(new BasicDBObject("fecha",new Integer(-1))) //Hay un bug que no permite valores primitivos :/
+        .limit(cantidad)
+        .sort(new BasicDBObject("fecha", new Integer(1)))
+        .toArray().toString();
     }
 }

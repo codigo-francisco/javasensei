@@ -12,6 +12,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -40,11 +41,11 @@ public class ChatRest {
     @POST
     @Path("agregarmensaje")
     @Produces(MediaType.TEXT_HTML)
-    public String agregarMensaje(@QueryParam("message") String message, 
-            @QueryParam("nombreUsuario") String nombreUsuario, 
-            @QueryParam("idUsuario") String idUsuario,
-            @QueryParam("idEjercicio") Integer idEjercicio,
-            @QueryParam("color") String color){        
+    public String agregarMensaje(@FormParam("message") String message, 
+            @FormParam("nombreUsuario") String nombreUsuario, 
+            @FormParam("idUsuario") String idUsuario,
+            @FormParam("idEjercicio") Integer idEjercicio,
+            @FormParam("color") String color){        
         String result = new ChatManager().agregarMensaje(message, nombreUsuario, idUsuario, idEjercicio, color);
         
         return result;
@@ -53,14 +54,14 @@ public class ChatRest {
     @POST
     @Path("leermensajes")
     @Produces(MediaType.APPLICATION_JSON)
-    public String leerMensajes(@QueryParam("fechaActual") Long fechaActual, @QueryParam("idEjercicio") Integer idEjercicio){        
+    public String leerMensajes(@FormParam("fechaActual") Long fechaActual, @FormParam("idEjercicio") Integer idEjercicio){        
         return new ChatManager().leerMensajes(fechaActual, idEjercicio);
     }
     
     @POST
     @Path("cargarmensajes")
     @Produces(MediaType.APPLICATION_JSON)
-    public String cargarMensajes(@QueryParam("cantidad") Integer cantidad, @QueryParam("idEjercicio") Integer idEjercicio){
+    public String cargarMensajes(@FormParam("cantidad") Integer cantidad, @FormParam("idEjercicio") Integer idEjercicio){
         return new ChatManager().cargarMensajes(cantidad, idEjercicio);
     }
 }

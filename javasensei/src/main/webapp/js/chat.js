@@ -31,13 +31,14 @@ var chatSensei = function () {
                     //Agregamos nuevos mensajes
                     $.each(datos, function (index, data) {
                         if (!colaMensajes.contains(data._id.$oid)) {
-                            colaMensajes.add(ultimoMensaje);
+                            colaMensajes.add(data._id.$oid);
                             agregarMensajeChatbox(data.nombreUsuario, data.message, data.color);
-                            var chatbox = document.getElementById("chatbox");
-                            chatbox.scrollTop = chatbox.scrollHeight;
                         }
                     });
-
+                    
+                    var chatbox = document.getElementById("chatbox");
+                    chatbox.scrollTop = chatbox.scrollHeight;
+                    
                     ultimoMensaje = datos[datos.length - 1].fecha;
                 }
             });
@@ -58,13 +59,14 @@ var chatSensei = function () {
                 //Agregamos nuevos mensajes
                 $.each(datos, function (index, data) {
                     if (!colaMensajes.contains(data._id.$oid)) {
-                        colaMensajes.add(ultimoMensaje);
+                        colaMensajes.add(data._id.$oid);
                         agregarMensajeChatbox(data.nombreUsuario, data.message, data.color);
-                        var chatbox = document.getElementById("chatbox");
-                        chatbox.scrollTop = chatbox.scrollHeight;
                     }
                 });
-
+                
+                var chatbox = document.getElementById("chatbox");
+                chatbox.scrollTop = chatbox.scrollHeight;
+                
                 ultimoMensaje = datos[datos.length - 1].fecha;
             }
         });
@@ -74,10 +76,17 @@ var chatSensei = function () {
         var chatBoton = $("#chatboton");
         if (estado && ultimoMensaje) { //Se habilita y ademas se cambia el id
             chatBoton.removeClass("ui-state-disabled");
-            this.idInterval = setInterval(this.verificarMensaje, 500);
-
-            //Cargamos los ultimos mensajes
+            
+            var chatbox = $("#chatbox");
+            
+            //Vaciamos la caja y la cola de mensajes
+            chatbox.empty();
+            colaMensajes.clear();
+            
+            //Cargamos los ultimos mensajes            
             this.cargarMensajes();
+            
+            this.idInterval = setInterval(this.verificarMensaje, 500);
         } else {
             chatBoton.addClass("ui-state-disabled");
             clearInterval(this.idInterval);
@@ -140,10 +149,10 @@ var chatSensei = function () {
 
 };
 
-function agregarMensajeChatbox(usuario, message, color){
+function agregarMensajeChatbox(usuario, message, color) {
     $("#chatbox").append(
-                    $("<p class='mensaje'>").html(usuario + ":\n" + message)
-                    .css("color", color));
+            $("<p class='mensaje'>").html(usuario + ":<br>" + message)
+            .css("color", color));
 }
 
 function obtenerHora() {
