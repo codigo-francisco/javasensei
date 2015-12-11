@@ -22,8 +22,10 @@ section article{
 	height: 100%;	
 }
 #mynetwork {
+	overflow: auto; 
 	height: 550px;
-  border: 1px solid lightgray;
+	width: 460px;
+  	border: 1px solid lightgray;
 }
 input, select{
 	width: 100%;
