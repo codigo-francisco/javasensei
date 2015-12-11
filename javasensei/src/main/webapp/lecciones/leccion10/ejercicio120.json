@@ -1,0 +1,130 @@
+{
+   "id": 120,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "Este ejercicio está relacionado con diferencias entre clases abstractas e interfaces, algunas diferencias son:",
+	  "Interfaces <ul><li>No  contiene métodos implementados.</li><li>No forma parte de la jerarquia de clases.</li></ul>Clases Abstractas <ul><li>Puede contener métodos implementados.</li><li>Es parte de la jerarquia de clases.</li></ul>"
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "¿Cuál de las siguientes afirmaciones es incorrecta?",
+         "presentacion": [
+            "1.\tLas interfaces y las clases abstractas se usan como mecanismos para definir jerarquías (de clases) más finas.",
+            "2.\tLos métodos definidos en una clase abstracta pueden ser implícitamente abstractos.",
+            "3.\tUna clase puede implementar de muchas interfaces.",
+            "4.\tJava cuenta con un conjunto de clases abstractas e interfaces dentro de sus APIs"
+         ],
+		"textoEmocional": {
+                "neutral": "Inicia el ejercicio.",
+                "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
+                "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
+                "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "retroalimentacion": {
+                    "positiva": "¡Adelante!",
+                    "neutral": "Inicia con el ejercicio",
+                    "negativa": "El éxito empieza cuando tu quieres."
+                } 
+         },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": 1,
+               "tipo": "pasoerroneo",
+               "instruccion": [
+					"La respuesta es incorrecta. Esta afirmación es correcta, debido a que las clases abstractas se usan para definir jerarquias de clases (herencia) que contienen comportamiento y estructura,",
+					" y las interfaces es una colección de variables y métodos que pueden ser implementadas por una clase. Intenta de nuevo"
+					],
+               "presentacion": [
+                  "1.\tLas interfaces y las clases abstractas se usan como mecanismos para definir jerarquías (de clases) más finas."
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?"
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": 2,
+               "tipo": "pasofinaloptimo",
+               "instruccion": "La respuesta es correcta. Continúa con más ejercicios.",
+               "presentacion": [
+                  "2.\tLos métodos definidos en una clase abstracta pueden ser implícitamente abstractos."
+               ],
+				"textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio. Continúa con más ejercicios.",
+					"encantado": "Cada logro comienza con la decisión de intentarlo.”, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+					"compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio.",                
+					"esceptico": "Al menos llegaste al final del ejercicio.",
+					"retroalimentacion": {
+						"positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+						"neutral": "Has finalizado con este ejercicio.",
+						"negativa": "Has finalizado con este ejercicio."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": 3,
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Debido a que una clase si puede implementar más de una interfaz. Intenta de nuevo.",
+               "presentacion": [
+                  "3.\tUna clase puede implementar de muchas interfaces."
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?"
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "Todas son correctas",
+               "tipo": "pasoerroneo",
+               "instruccion": "La respuesta es incorrecta. Lee con atención todas las opciones e intenta de nuevo.",
+               "presentacion": [
+                  "1.\tLas interfaces y las clases abstractas se usan como mecanismos para definir jerarquías (de clases) más finas.",
+                  "2.\tLos métodos definidos en una clase abstracta pueden ser implícitamente abstractos.",
+                  "3.\tUna clase puede implementar de muchas interfaces.",
+                  "4.\tJava cuenta con un conjunto de clases abstractas e interfaces dentro de sus APIs"
+               ],
+				"textoEmocional": {
+					"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+					"encantado": "Intenta encontrar la respuesta, Adelante, confió en ti.",
+					"sorprendido": "¡Adelante!, encuentra la respuesta correcta.",
+					"compasivo": "Aveces se requiere de un poco de esfuerzo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "¡Tu puedes hacerlo mejor!, estoy seguro, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
+						"negativa": "¿Estás seguro de no querer cambiar tu actitud?"
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
