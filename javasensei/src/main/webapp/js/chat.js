@@ -158,10 +158,9 @@ function obtenerHora() {
 }
 
 function agregarMensajeChatbox(usuario, message, color) {
-    var mensajeFinal = $("<p class='mensaje'>").html(usuario + ":<br>" + message).css("color", color);
+    var mensajeFinal = $("<p class='mensaje'>").html(usuario + ":<br> " + message).css("color", color);
 
     $("#chatbox").append(mensajeFinal);
-    //$("#chatbox").emoticonize({animate:false});
 }
 
 function agregarEmoticons() {
