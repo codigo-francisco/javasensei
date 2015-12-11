@@ -27,14 +27,18 @@ var options =   {
                         smooth: {
                             type:'cubicBezier',
                             forceDirection: "vertical",
-                            roundness: 0.4
+                            roundness: 0.5
                         }
                     },
                     layout: {
                         hierarchical:{
-                            direction: "UD"
+                            direction: "UD",
                         }
-                    }
+                    },
+                    interaction:{
+						dragNodes:false,
+
+					}
                 };
 var network;
 $(document).ready(function(){
@@ -115,20 +119,23 @@ function guardar(){
     switch(parseInt(jsonTexts["Tipo"])){
         case 0: etiq="P.O.";
             color="#21610B";
+            fuente = {color:"#FFFFFF"};
             break;
         case 1: etiq="P.SO."; 
             color="#21610B";
+            fuente = {color:"#FFFFFF"};
             break;
         case 2: etiq="P.E."; 
             color="#FF0000";
+            fuente = {color:"#FFFFFF"};
             break;
         case 3: etiq="P.F.O."; 
             color="#21610B";
-            fuente = {color:"#000000", strokeWidth:2, strokeColor:"#000000"};
+            fuente = {color:"#FFFFFF", strokeWidth:1, strokeColor:"#FFFFFF"};
             break;
         case 4: etiq="P.F.SO."; 
             color="#21610B";
-            fuente = {color:"#000000", strokeWidth:2, strokeColor:"#000000"};
+            fuente = {color:"#FFFFFF", strokeWidth:1, strokeColor:"#FFFFFF"};
             break;
     }
     if(!banderaNuevaOpGuard){
