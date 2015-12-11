@@ -20,7 +20,7 @@ and open the template in the editor.
     margin:0.5em 1em 0em 1em;
     padding:10px;
     background:#fff;
-    width:80%;
+    width:87.5%;
     height:80%;
     border:1px solid #DDD;
     overflow:auto;
@@ -28,12 +28,12 @@ and open the template in the editor.
 }
 
 #usermsg {
-    width:83%;
+    max-width:80%;
     border:1px solid #ACD8F0;
     font:12px arial;
-    margin: 0em 1em 0em 1em;
+    margin: 0.5em 1em 0em 1em;
     background:#fff;
-    float: left;
+    float: right;
     display:inline-block;
     overflow: scroll;
     overflow-x: hidden;
@@ -42,7 +42,15 @@ and open the template in the editor.
 }
 
 #botoncolor {
-    width: 10%
+    margin: 0.5em 0.5em 0em 1em; 
+    width:9em;
+    max-height:3em;
+    display:inline-block;
+    float:left;
+}
+
+#popupInfo {
+    max-width: 350px;
 }
 
 .box{
@@ -68,6 +76,16 @@ and open the template in the editor.
 
 .ui-page-theme-a .ui-body-inherit {
     border-color:#E9E9E9;
+}
+
+/*Emoticons*/
+.ui-btn.my-tooltip-btn,.ui-btn.my-tooltip-btn:hover,.ui-btn.my-tooltip-btn:active {
+    background:none;
+    border:0
+}
+
+.emoticons {
+    margin: 0em 0.5em 0.5em 0.5em;
 }
 
 @media only screen and (max-width:420px) {

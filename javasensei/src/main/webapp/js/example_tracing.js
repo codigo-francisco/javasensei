@@ -139,8 +139,6 @@ example_tracing_sensei.prototype = {
 
         //Titulo del ejercicio
         $("#tituloEjercicio").text(data.titulo);
-        
-        chat.changeExercise(true);
 
         //Obtenemos el json del ejercicio
         $.getJSON(carpeta_ejercicios + data.url, function (data) {
@@ -148,8 +146,11 @@ example_tracing_sensei.prototype = {
                 instruccionesejercicio: data.instruccionesejercicio
              });
             contexto.tree_example_tracing = new tree_example_tracing(data);
-            contexto.tree_example_tracing.construirMatriz(); //Se construye la matriz de ejercicios.
+            contexto.tree_example_tracing.construirMatriz(); //Se construye la matriz de ejercicios.            
             contexto.construir_interfaz(0); //El paso inicial siempre sera el 0
+            
+            //Cambio de ejercicio, carga mensajes nuevos del chat
+            chat.changeExercise(true);
         });
     },
     cambiar_interfaz: function (event) {

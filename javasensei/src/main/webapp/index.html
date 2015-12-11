@@ -20,6 +20,7 @@
         <link href="css/chat.css" rel="stylesheet">
         <link href="offline-js/offline-theme-default.css" rel="stylesheet">
         <link href="offline-js/offline-language-spanish.css" rel="stylesheet">
+        <link href="jQuery-CSSEmoticons/jquery.cssemoticons.css" rel="stylesheet">
         <link href="css/mobile.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
@@ -34,6 +35,7 @@
         <script type="text/javascript" src="jscolor-2.0.4/jscolor.min.js"></script>
         <script type="text/javascript" src="js/webcam.js"></script>
         <script type="text/javascript" src="offline-js/offline.min.js"></script>
+        <script type="text/javascript" src="jQuery-CSSEmoticons/jquery.cssemoticons.min.js"></script>
 
         <script type="text/javascript" src="js/menu.js"></script>
         <script type="text/javascript" src="js/recursos.js"></script>
@@ -194,6 +196,8 @@
                 $("#selecciondetector").on("click",function(){
                     detectorEmocional = $("#selecciondetector :checked").attr("id");
                 });
+                
+                $("#emoticons").emoticonize();
 
                 camera_sensei.setup();
                 chat.setUp();
@@ -386,8 +390,16 @@
                     <div id="wrapper" class="box-inner">
                         <div id="chatbox"></div>
                         <!-- <input id="usermsg" name="usermsg" type="text" size="13" autocomplete="off"/> -->
-                        <textarea id="usermsg" name="usermsg" maxlength="256"></textarea>
-                        <button id="botoncolor" class="jscolor {valueElement:null,value:'000000'}" style="width:50px; height:20px;"></button>
+                        <div>
+                            <button id="botoncolor" class="jscolor {valueElement:null,value:'000000'}">Elige un color</button>
+                            <a href="#popupInfo" data-rel="popup" data-transition="pop" class="emoticons my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-user ui-btn-icon-notext">Emoticons</a>
+                            <div data-role="popup" id="popupInfo" class="ui-content" data-theme="a">
+                                <p id="emoticons">:-) :) :o) :c) :^) :-D :-( :-9 ;-) :-P :-p :-Þ :-b :-O :-/ :-X :-# :'( B-) 8-) :-\ ;*( :-* :] :&gt; =] =) 8) :} :D 8D XD xD =D :( :&lt; :[ :{ =( ;) ;] ;D :P :p =P =p :b :Þ :O 8O :/ =/ :S :# :X B) O:)</p>
+                            </div>
+                            <textarea id="usermsg" name="usermsg" maxlength="256"></textarea>
+                        </div>
+                        
+                        
                     </div>
                 </div>
             </div>

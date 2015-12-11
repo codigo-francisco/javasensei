@@ -1,0 +1,152 @@
+{
+   "id": 104,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "El siguiente ejercicio está relacionado con los conceptos básicos de herencia: redefinición.",
+      "La redefinición de un método se da cuando una subclase contiene un método con la misma firma (mismo nombre y numero, tipo y orden de los parámetros) que la clase base."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "¿Cuál de los siguientes métodos se puede agregar en la clase Test2 para cumplir con la redefinición (override) del método aMethod de la clase Test1?",
+         "presentacion": [
+            "class Test1 {",
+            "    public float aMethod(float a, float b) { … }",
+            "}",
+            "public class Test2 extends Test1 {",
+            "    <input type='text' readonly>",
+            "}",
+            "",
+            "1)public float AMethod(float a, float b) { … }",
+            "2) private int aMethod(float a, float b) { … }",
+            "3) public float aMethod(float p, float q){ … }",
+            "4) public float aMethod(float a) { … }"
+         ],
+         "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "!Estoy orgulloso de ti!.  ¡Empieza el ejercicio!",
+                "sorprendido": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede. ¡Inicia con el ejercicio!",
+                "compasivo": "Nunca consideres el estudio como una obligación, sino como una oportunidad para penetrar en el bello y maravilloso mundo del saber.  ¡Se que tu puedes!.",
+                "esceptico": "Hay ciertas cosas que para hacerlas bien no basta haberlas aprendido.  Inicia con el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "Con esfuerzo y perseverancia podrás alcanzar tus metas.",
+                    "neutral": "Lo maravilloso de aprender algo, es que nadie puede arrebatárnoslo.",
+                    "negativa": "El verdadero modo de no saber nada es aprenderlo todo a la vez."
+                }
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": 1,
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  "class Test1 {",
+                  "    public float aMethod(float a, float b) { … }",
+                  "}",
+                  "public class Test2 extends Test1 {",
+                  "    <input type='text' readonly value='public float AMethod(float a, float b) { … }' class='errorTracing'>",
+                  "}"
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Inténtalo de nuevo.",
+					"encantado": "¿Te has dado cuenta que cuando conoces bien un tema, te gusta?.  Sigue con el ejercicio.",
+					"sorprendido": "Me sorprende tu deseo por aprender Java.  Sigue con el ejercicio.",
+					"compasivo": "Aprender requiere de paciencia, intentalo de nuevo",
+					"esceptico": "Trata de encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!.  Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!.  Me parece que no te estás tomando en serio el ejercicio."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": 2,
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  "class Test1 {",
+                  "    public float aMethod(float a, float b) { … }",
+                  "}",
+                  "public class Test2 extends Test1 {",
+                  "    <input type='text' readonly value='private int aMethod(float a, float b) { … }' class='errorTracing'>",
+                  "}",
+                  ""
+               ],
+              "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+					"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+					"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+					"esceptico": "Me preocupa un poco tu indiferencia.  Intenta terminar el ejercicio.",
+					"retroalimentacion": {                           
+						"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+						"negativa": "La respuesta es incorrecta.  Me siento intranquilo por tu desempeño."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": 3,
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Continúa con más ejercicios.",
+               "presentacion": [
+                  "class Test1 {",
+                  "    public float aMethod(float a, float b) { … }",
+                  "}",
+                  "public class Test2 extends Test1 {",
+                  "    <input type='text' readonly value='public float aMethod(float p, float q){ … }' class='focusInput'>",
+                  "}"
+               ],
+              "textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio.",
+					 "encantado": "El arte de vencer se aprende en las derrotas, ¡sigue con este entusiasmo!.",              
+					 "sorprendido": "Somos lo que hacemos día a día. De modo que la excelencia no es un acto, sino un hábito.",
+					 "compasivo": "No te des por vencido, ni aún vencido.  Cuando hay un problema, no hay nada que hacer; hay algo que saber.",                
+					 "esceptico": "Muchos creen que el talento es cuestión de suerte, pero pocos saben que la suerte es cuestión de talento.",
+					 "retroalimentacion": {
+						   "positiva": "Para tener éxito, tus deseos de triunfar deberían ser más grandes que tu miedo de fracasar.",
+						   "neutral": "Has finalizado con este ejercicio.",
+						   "negativa": "El que no sabe lo que busca, no sabe lo que encuentra.  ¡Deja de jugar y ponte a estudiar!."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": 4,
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  "class Test1 {",
+                  "    public float aMethod(float a, float b) { … }",
+                  "}",
+                  "public class Test2 extends Test1 {",
+                  "    <input type='text' readonly value='public float aMethod(float a) { … }' class='errorTracing'>",
+                  "}"
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "¡Estoy feliz por tu decisión de aprender Java!.  Inténtalo de nuevo.",
+					"sorprendido": "¡Me sorprende tu actitud! ya que veo que tienes muchas ganas por aprender Java.",
+					"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta.  Intenta de nuevo.",
+						"negativa": "¿Estás seguro de querer estudiar este curso?."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
