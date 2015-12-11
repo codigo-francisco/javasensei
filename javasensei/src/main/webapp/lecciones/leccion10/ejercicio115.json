@@ -1,0 +1,349 @@
+{
+   "id": 115,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "Este ejercicio está relacionado con las interfaces y las clases abstractas.",
+      "Algunas diferencias entre ambas son:",
+      "<b>Interfaces</b><br><ul><li>Puede extender muchas interfaces</li><li>Los métodos definidos en una interface son implícitamente abstractos</li></ul><b>Clases abstractas</b><br><ul><li>Puede extender sólo una superclase</li><li>Los métodos abstractos deben ser explícitamente definidos</li></ul>"
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Paso 1 de 4.  Elija la opción que complete correctamente el enunciado.",
+         "presentacion": [
+            "<input type='text' readonly> se usan para definir jerarquías de clases (herencia) que contienen comportamiento y estructura."
+         ],
+         "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "Cuando te arriesgas sacrificas todo lo que puedes perder, por lo mucho que puedes ganar.  ¡Inicia con el ejercicio!",
+                "sorprendido": "Tus límites los conoces tú, no permitas que nadie levante muros ante tus objetivos. ¡Inicia con el ejercicio!",
+                "compasivo": "Una voluntad fuerte es la mejor ayuda para alcanzar tus metas.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "¡Estudia! No para saber una cosa más, sino para saberla mejor.  Empieza el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "!Estoy orgulloso de ti!.",
+                    "neutral": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede.",
+                    "negativa": "Si sabes lo que quieres pero no te molestas en luchar por ello, no te lamentes por no conseguirlo."
+                }
+
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "Las interfaces",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Una interface se usa para definir la estructura de un grupo de elementos. Intenta de nuevo.",
+               "presentacion": [
+                  "<input type='text' readonly value='Las interfaces' class='errorTracing'> se usan para definir jerarquías de clases (herencia) que contienen comportamiento y estructura.",
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. Inténtalo de nuevo.",
+					"encantado": "¿Te has dado cuenta que cuando conoces bien un tema, te gusta?.  Sigue con el ejercicio.",
+					"sorprendido": "Me sorprende tu deseo por aprender Java.  Sigue con el ejercicio.",
+					"compasivo": "Aprender requiere de paciencia, intentalo de nuevo",
+					"esceptico": "Trata de encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!. Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!. Me parece que no te estás tomando en serio el ejercicio."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "Los métodos abstractos",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Un método abstracto es aquel que no proporciona una implementación del método, pero es necesario que se implemente en clases derivadas. Intenta de nuevo.",
+               "presentacion": [
+                  "<input type='text' readonly value='Los métodos abstractos' class='errorTracing'> se usan para definir jerarquías de clases (herencia) que contienen comportamiento y estructura.",
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. Continúa con el ejercicio.",
+					"encantado": "La respuesta es incorrecta. Intenta encontrar la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta. Intenta encontrar la respuesta correcta.",
+					"compasivo": "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más.",                
+					"esceptico": "Con un poco de motivación vas a encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!. Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!. Me parece que no te estás tomando en serio el ejercicio."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "Las clases abstractas",
+               "tipo": "pasooptimo",
+               "instruccion": "Paso 2 de 4.  Elija la opción que complete correctamente el enunciado.",
+               "presentacion": [
+                  "La palabra reservada <input type='text' readonly> aparece en el encabezado de la definición de la clase cuando esta contiene uno o más métodos abstractos."
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es correcta. Continúa con el ejercicio.",
+					"encantado": "Mas vale paso que dure y no trote que canse. Sigue con el ejercicio.",              
+					"sorprendido": "No hay ascensor al éxito, tienes que tomar las escaleras. Sigue con el ejercicio.",
+					"compasivo": "Cree y actúa como si fuese imposible fracasar. Sigue con el ejercicio.",                
+					"esceptico": "Tus aspiraciones son tus posibilidades. Creo que tu escepticismo no te deja progresar.  Sigue con el ejercicio.",
+					"retroalimentacion": {
+						"positiva": "Revisa tu respuesta. ¡También de los errores se aprende!",
+						"neutral": "La respuesta es correcta. Continúa con el ejercicio.",
+						"negativa": "Me parece que sólo estás perdiendo el tiempo.  Sigue con el ejercicio."
+					} 
+				},
+               "opciones": [
+                  {
+                     "paso": 4,
+                     "texto": "abstraction",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. La palabra abstraction no es una palabra reservada en Java. Intenta de nuevo",
+                     "presentacion": [
+                        "La palabra reservada <input type='text' readonly value='abstraction' class='errorTracing'> aparece en el encabezado de la definición de la clase cuando esta contiene uno o más métodos abstractos."
+                     ],
+                     "textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+							"neutral": "La respuesta no es la correcta",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 5,
+                     "texto": "abstract",
+                     "tipo": "pasooptimo",
+                     "instruccion": "Paso 3 de 4.  Elija la opción que complete correctamente el enunciado.",
+                     "presentacion": [
+                        "<input type='text' readonly> es una colección de constantes y métodos sin implementación que se usa para definir la estructura de un grupo de elementos."
+                     ],
+                     "textoEmocional": {
+						"neutral": "!Correcto!.  Continúa con el ejercicio.",
+						"encantado": "Cada logro comienza con la decisión de intentarlo, ¡sigue así!.",              
+						"sorprendido": "¡Cosechas lo que siembras!, sigue adelante con el ejercicio.",
+						"compasivo": "No hay ascensor al éxito, tienes que tomar las escaleras.  Sigue adelante con el ejercicio.",                
+						"esceptico": "¿Todavía no crees que aprender Java sea importante?, al menos intenta terminar el ejercicio.",
+						"retroalimentacion": {
+							"positiva": "¡Correcto!.  El que persevera alcanza!.",
+							"neutral": "El éxito consiste en ir de fracaso en fracaso sin pérdida de entusiasmo.",
+							"negativa": "¿Ya te aburriste de encontrar las respuestas en forma aleatoria?"
+						} 
+					},
+                     "opciones": [
+                        {
+                           "paso": 6,
+                           "texto": "Una interfaz",
+                           "tipo": "pasooptimo",
+                           "instruccion": "Paso 4 de 4.  Responde verdadero o falso.  Sólo puede implementarse una interfaz en cada clase.",
+                           "presentacion": [
+                              ""
+                           ],
+                           "textoEmocional": {
+								"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+								"encantado": "Tú entusiasmo hace que aprender sea más fácil.",
+								"sorprendido": "¡Me sorprende tu actitud positiva!, continúa así.",
+								"compasivo": "Con un poco de paciencia vas a mejorar tu aprendizaje con Java, ¡ánimo!.",
+								"esceptico": "Tal vez este ejercicio es fácil para ti pero almenos intenta terminar el ejercicio.",
+								"retroalimentacion": {                            
+									"positiva": "Un viaje de mil kilómetros comienza con un simple paso.”, ¡sigue así!.",
+									"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
+									"negativa": "La respuesta es correcta, pero, ¿te lo estas tomando en serio?"                            
+								}
+							},
+                           "opciones": [
+                              {
+                                 "paso": 7,
+                                 "texto": "Verdadero",
+                                 "tipo": "pasoerroneo",
+                                 "instruccion": "Respuesta incorrecta. Intenta de nuevo.",
+                                 "presentacion": [
+                                    ""
+                                 ],
+                                 "textoEmocional": {
+									"neutral": "La respuesta es incorrecta. Intenta de nuevo.",
+									"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+									"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+									"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+									"esceptico": "Me preocupa un poco tu indiferencia. Intenta terminar el ejercicio.",
+									"retroalimentacion": {                           
+										"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentándolo!",
+										"neutral": "La respuesta no es la correcta. Intenta de nuevo.",
+										"negativa": "La respuesta es incorrecta. Me siento intranquilo por tu desempeño."
+									}
+								},
+                                 "opciones": []
+                              },
+                              {
+                                 "paso": 8,
+                                 "texto": "Falso",
+                                 "tipo": "pasofinaloptimo",
+                                 "instruccion": "Respuesta correcta. Continúa con más ejercicios.",
+                                 "presentacion": [
+                                    ""
+                                 ],
+                                 "textoEmocional": {
+									"neutral": "Has finalizado con este ejercicio.",
+									"encantado": "En la vida no hay que esperar a que pase la tormenta, hay que aprender a bailar bajo la lluvia, ¡sigue con este entusiasmo!.",              
+									"sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio.",
+									"compasivo": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede.  ¡continua así!.",                
+									"esceptico": "Lo que con mucho trabajo se adquiere, más se ama.  Sigue aprendiendo Java.",
+									"retroalimentacion": {
+										"positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
+										"neutral": "Has finalizado con este ejercicio.",
+										"negativa": "No se puede cambiar lo que te niegas a afrontar.  Al menos llegaste al final del ejercicio."
+									}	
+								},
+                                 "opciones": []
+                              }
+                           ]
+                        },
+                        {
+                           "paso": 9,
+                           "texto": "Un método abstracto",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Un método abstracto es aquel que no proporciona una implementación del método, pero es necesario que se implemente en clases derivadas. Intenta de nuevo.",
+                           "presentacion": [
+                              "<input type='text' readonly value='Un método abstracto' class='errorTracing'> es una colección de constantes y métodos sin implementación que se usa para definir la estructura de un grupo de elementos."
+                           ],
+                           "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta. Intenta de nuevo.",
+                                "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                                "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                                "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                                "esceptico": "Me preocupa un poco tu indiferencia. Intenta terminar el ejercicio.",
+                                "retroalimentacion": {                           
+                                    "positiva": "Por cada esfuerzo, hay una recompensa. Nunca te rindas. Sigue adelante con el ejercicio.",
+                                    "neutral": "La respuesta no es la correcta. Intenta de nuevo.",
+                                    "negativa": "La respuesta es incorrecta. Necesitas mejorar."
+                                }
+                            },
+                           "opciones": []
+                        },
+                        {
+                           "paso": 10,
+                           "texto": "Una clase abstracta",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Una clase abstracta se usa para definir jerarquías de clases (herencia) que contienen comportamiento y estructura. Intenta de nuevo.",
+                           "presentacion": [
+                              "<input type='text' readonly value='Una clase abstracta' class='errorTracing'> es una colección de constantes y métodos sin implementación que se usa para definir la estructura de un grupo de elementos."
+                           ],
+                          "textoEmocional": {
+								"neutral": "La respuesta es incorrecta. Sigue con el ejercicio.",
+								"encantado": "Continua con este entusiasmo y veras que todos tus sueños mañana se harán realidad.",
+								"sorprendido": "¡Me sorprendes!, noto que cada día eres mejor, continúa así.",
+								"compasivo": "Yo se que eres buen estudiante, ¡sigue adelante!.",
+								"esceptico": "Una persona que estudia jamás será un fracasado. Trata de terminar el ejercicio.",
+								"retroalimentacion": {                            
+									"positiva": "¡Lo has hecho muy bien!. Sigue con el ejercicio.",
+									"neutral": "La respuesta es incorrecta. Sigue con el ejercicio.",
+									"negativa": "¿Estás seguro que se trata de una respuesta razonada?"  
+								}
+							},
+                           "opciones": []
+                        },
+                        {
+                           "paso": 11,
+                           "texto": "Una librería",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Una librería en Java se puede entender como un conjunto de clases, que poseen una serie de métodos y atributos. Intenta de nuevo.",
+                           "presentacion": [
+                              "<input type='text' readonly value='Una librería' class='errorTracing'> es una colección de constantes y métodos sin implementación que se usa para definir la estructura de un grupo de elementos."
+                           ],
+                           "textoEmocional": {
+								"neutral": "La respuesta es incorrecta. Intenta de nuevo.",
+								"encantado": "Para estudiar hay que tener perseverancia, paciencia y motivación.  ¡Sigue así!",
+								"sorprendido": "¡Me sorprendes!, la respuesta no es correcta pero no pierdas esa actitud por aprender.",
+								"compasivo": "Estudiar Java demanda tiempo y esfuerzo pero al final siempre hay resultados positivos, ¡ánimo!.",
+								"esceptico": "Una persona que estudia jamás será un fracasado.  Trata de terminar el ejercicio.",
+								"retroalimentacion": {                            
+									"positiva": "¡Casi casi!.  La respuesta es incorrecta.  Continúa con el ejercicio.",
+									"neutral": "La respuesta es incorrecta.  Sigue con el ejercicio.",
+									"negativa": "La respuesta es incorrecta, ¿estás seguro que se trata de una respuesta razonada?"                            
+								}
+							},
+                           "opciones": []
+                        }
+                     ]
+                  },
+                  {
+                     "paso": 12,
+                     "texto": "implements",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. La palabra clave <i>implements</i> es para indicar que se implementa una interfaz. Intenta de nuevo.",
+                     "presentacion": [
+                        "La palabra reservada <input type='text' readonly value='implements' class='errorTracing'> aparece en el encabezado de la definición de la clase cuando esta contiene uno o más métodos abstractos."
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "A pesar de que la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+                        "compasivo": "Todos tenemos una habilidad distinta y cada día aprendemos un poquito más, tú eres una persona triunfadora.",
+                        "esceptico": "No desperdicies tu talento sin hacer nada productivo, estudia y sácale provecho a tus habilidades.",
+                        "retroalimentacion": {                           
+                            "positiva": "Casi, casi, ¡Intentalo de nuevo!",
+                            "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                            "negativa": "Creo que no has estudiado lo suficiente."
+                        }
+                    },
+                     "opciones": []
+                  },
+                  {
+                     "paso": 13,
+                     "texto": "extends",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. La palabra clave <i>extends</i> indica la relación de herencia. Intenta de nuevo.",
+                     "presentacion": [
+                        "La palabra reservada <input type='text' readonly value='extends   ' class='errorTracing'> aparece en el encabezado de la definición de la clase cuando esta contiene uno o más métodos abstractos."
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+                        "encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+                        "sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+                        "compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+                        "esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+                        "retroalimentacion": {                           
+                            "positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+                            "neutral": "La respuesta no es la correcta",
+                            "negativa": "¿Estás seguro de querer estudiar este curso?."
+                        }
+                    },
+                     "opciones": []
+                  }
+               ]
+            },
+            {
+               "paso": 14,
+               "texto": "Las librerías",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Una librería en Java se puede entender como un conjunto de clases, que poseen una serie de métodos y atributos. Intenta de nuevo.",
+               "presentacion": [
+                  "<input type='text' readonly value='Las librerías' class='errorTracing'> se usan para definir jerarquías de clases (herencia) que contienen comportamiento y estructura."
+               ],
+              "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. Intenta de nuevo.",
+					"encantado": "Para estudiar hay que tener perseverancia, paciencia y motivación.  ¡Sigue así!",
+					"sorprendido": "¡Me sorprendes!, la respuesta no es correcta pero no pierdas esa actitud por aprender.",
+					"compasivo": "Estudiar Java demanda tiempo y esfuerzo pero al final siempre hay resultados positivos, ¡ánimo!.",
+					"esceptico": "Una persona que estudia jamás será un fracasado.  Trata de terminar el ejercicio.",
+					"retroalimentacion": {                            
+						"positiva": "¡Casi casi!.  La respuesta es incorrecta.  Continúa con el ejercicio.",
+						"neutral": "La respuesta es incorrecta.  Sigue con el ejercicio.",
+						"negativa": "La respuesta es incorrecta, ¿estás seguro que se trata de una respuesta razonada?"                            
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}

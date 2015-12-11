@@ -1,0 +1,231 @@
+{
+   "id": 117,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "Este ejercicio está relacionado con la implementación de una interfaz.",
+      "Una interface establece una garantia de los servicios que un objeto proporciona. Una clase puede heredar la estructura de muchas interfaces.",
+      "El encabezado de una interfaz se define: <br><i>ModificadorAcceso</i> <b>interface</b> <i>Identificador</i> <b>Superinterfaces</b>"
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Paso 1 de 2. Analiza el código siguiente y responde verdadero o falso. La clase Cuadrado contiene por lo menos un error.",
+         "presentacion": [
+            "public interface Figura {  ",
+            "\tfloat PI = 3.1416f;   \t",
+            "\tfloat area();   ",
+            "}  ",
+            "",
+            "class Cuadrado implements Figura { ",
+            "\tprivate float lado;",
+            "\tpublic Cuadrado (float lado) { ",
+            "\t\tthis.lado = lado; ",
+            "\t}\t",
+            "} "
+         ],
+         "textoEmocional": {
+			"neutral": "Inicia con el ejercicio.",                
+			"encantado": "Para completar una gran carrera tan sólo necesitas dar el primer paso, tu fuerza y tu valentía harán el resto.  ¡Inicia con el ejercicio!",
+			"sorprendido": "Si tienes una motivación encontrarás el camino, tu sacrificio y esfuerzo serán los que te ayuden a recorrerlo. ¡Inicia con el ejercicio!",
+			"compasivo": "Aprender sin reflexionar es malgastar la energía.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+			"esceptico": "Si no sabes lo que quieres en la vida, como pretendes conseguirlo.  Empieza el ejercicio.",
+			"retroalimentacion": {
+				"positiva": "Si lo puedes intentar es que no es imposible.  !Sigue así!.",
+				"neutral": "Transforma el No Puedo por Si Quiero y conseguirás todo lo que te propongas.",
+				"negativa": "No esperes grandes resultados sin grandes esfuerzos por tu parte."
+			}
+
+		},
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "Verdadero",
+               "tipo": "pasooptimo",
+               "instruccion": "Paso 2 de 2.  ¿Cuál es el error (o los errores) presentes en la clase Cuadrado?",
+               "presentacion": [
+                  "public interface Figura {  ",
+                  "\tfloat PI = 3.1416f;   \t",
+                  "\tfloat area();   ",
+                  "}  ",
+                  "",
+                  "class Cuadrado implements Figura { ",
+                  "\tprivate float lado;",
+                  "\tpublic Cuadrado (float lado) { ",
+                  "\t\tthis.lado = lado; ",
+                  "\t}\t",
+                  "}",
+                  "",
+                  "1.\tSe debe usar la palabra extends en lugar de implements.",
+                  "2.\tFalta sobreescribir el método area().",
+                  "3.\tEs necesaria la palabra public antes de class."
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es correcta. Continúa con el ejercicio.",
+					"encantado": "Mas vale paso que dure y no trote que canse. Sigue con el ejercicio.",              
+					"sorprendido": "No hay ascensor al éxito, tienes que tomar las escaleras. Sigue con el ejercicio.",
+					"compasivo": "Cree y actúa como si fuese imposible fracasar. Sigue con el ejercicio.",                
+					"esceptico": "Tus aspiraciones son tus posibilidades. Creo que tu escepticismo no te deja progresar.  Sigue con el ejercicio.",
+					"retroalimentacion": {
+						"positiva": "Revisa tu respuesta. ¡También de los errores se aprende!",
+						"neutral": "La respuesta es correcta. Continúa con el ejercicio.",
+						"negativa": "Me parece que sólo estás perdiendo el tiempo.  Sigue con el ejercicio."
+					} 
+				},
+               "opciones": [
+                  {
+                     "paso": 2,
+                     "texto": "1 y 2",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                     "presentacion": [
+                        "public interface Figura {  ",
+                        "\tfloat PI = 3.1416f;   \t",
+                        "\tfloat area();   ",
+                        "}  ",
+                        "",
+                        "class Cuadrado implements Figura { ",
+                        "\tprivate float lado;",
+                        "\tpublic Cuadrado (float lado) { ",
+                        "\t\tthis.lado = lado; ",
+                        "\t}\t",
+                        "}",
+                        "",
+                        "1.\tSe debe usar la palabra extends en lugar de implements.",
+                        "2.\tFalta sobreescribir el método area()."
+                     ],
+                    "textoEmocional": {
+						"neutral": "La respuesta es incorrecta. Inténtalo de nuevo.",
+						"encantado": "¿Te has dado cuenta que cuando conoces bien un tema, te gusta?.  Sigue con el ejercicio.",
+						"sorprendido": "Me sorprende tu deseo por aprender Java.  Sigue con el ejercicio.",
+						"compasivo": "Aprender requiere de paciencia, intentalo de nuevo",
+						"esceptico": "Trata de encontrar la respuesta correcta.",
+						"retroalimentacion": {
+							"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+							"neutral": "¡La respuesta es incorrecta!. Continúa con el ejercicio.",
+							"negativa": "¡La respuesta es incorrecta!. Me parece que no te estás tomando en serio el ejercicio."
+						}
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 3,
+                     "texto": "2 y 3",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                     "presentacion": [
+                        "public interface Figura {  ",
+                        "\tfloat PI = 3.1416f;   \t",
+                        "\tfloat area();   ",
+                        "}  ",
+                        "",
+                        "class Cuadrado implements Figura { ",
+                        "\tprivate float lado;",
+                        "\tpublic Cuadrado (float lado) { ",
+                        "\t\tthis.lado = lado; ",
+                        "\t}\t",
+                        "}",
+                        "",
+                        "2.\tFalta sobreescribir el método area().",
+                        "3.\tEs necesaria la palabra public antes de class."
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta. Continúa con el ejercicio.",
+                        "encantado": "La respuesta es incorrecta. Intenta encontrar la respuesta correcta.",              
+                        "sorprendido": "La respuesta es incorrecta. Intenta encontrar la respuesta correcta.",
+                        "compasivo": "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más.",                
+                        "esceptico": "Con un poco de motivación vas a encontrar la respuesta correcta.",
+                        "retroalimentacion": {
+                            "positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+                            "neutral": "¡La respuesta es incorrecta!. Continúa con el ejercicio.",
+                            "negativa": "¡La respuesta es incorrecta!. Me parece que no te estás tomando en serio el ejercicio."
+                        } 
+                    },
+                     "opciones": []
+                  },
+                  {
+                     "paso": 4,
+                     "texto": 3,
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                     "presentacion": [
+                        "public interface Figura {  ",
+                        "\tfloat PI = 3.1416f;   \t",
+                        "\tfloat area();   ",
+                        "}  ",
+                        "",
+                        "class Cuadrado implements Figura { ",
+                        "\tprivate float lado;",
+                        "\tpublic Cuadrado (float lado) { ",
+                        "\t\tthis.lado = lado; ",
+                        "\t}\t",
+                        "}",
+                        "",
+                        "3.\tEs necesaria la palabra public antes de class."
+                     ],
+                     "textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+						"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+							"neutral": "La respuesta no es la correcta",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 5,
+                     "texto": 2,
+                     "tipo": "pasofinaloptimo",
+                     "instruccion": "Respuesta correcta. Continúa con más ejercicios.",
+                     "presentacion": [
+                        ""
+                     ],
+                     "textoEmocional": {
+                        "neutral": "Has finalizado con este ejercicio.",
+                        "encantado": "El arte de vencer se aprende en las derrotas, ¡sigue con este entusiasmo!.",              
+                        "sorprendido": "Somos lo que hacemos día a día. De modo que la excelencia no es un acto, sino un hábito.",
+                        "compasivo": "No te des por vencido, ni aún vencido.  Establece objetivos a corto plazo y pronto serás un Sensei de Java.",                
+                        "esceptico": "Es absurdo continuar haciendo siempre lo mismo y esperar resultados diferentes.  Al menos llegaste al final del ejercicio.",
+                        "retroalimentacion": {
+                            "positiva": "¡Felicidades!.  Las oportunidades solamente las aprovechan las mentes preparadas.",
+                            "neutral": "Has finalizado con este ejercicio.",
+                            "negativa": "Las oportunidades no ocurren, las creas tú.  ¡Deja de jugar y ponte a estudiar!."
+                        } 
+                    },
+                     "opciones": []
+                  }
+               ]
+            },
+            {
+               "paso": 6,
+               "texto": "Falso",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. Intenta de nuevo.",
+					"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+					"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+					"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+					"esceptico": "Me preocupa un poco tu indiferencia. Intenta terminar el ejercicio.",
+					"retroalimentacion": {                           
+						"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentándolo!",
+						"neutral": "La respuesta no es la correcta. Intenta de nuevo.",
+						"negativa": "La respuesta es incorrecta. Me siento intranquilo por tu desempeño."
+					}
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
