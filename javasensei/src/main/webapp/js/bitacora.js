@@ -6,8 +6,8 @@ $(function(){
     $("#buscar").on("click",function (){
         
         var idAlumno = $("#alumno").val();
-        var emocionInicial = $("#inicial").val();
-        var emocionFinal = $("#final").val();
+        var emocionInicial = $("#emocionInicial").val();
+        var emocionFinal = $("#emocionFinal").val();
         var sesionId = $("#sesion").val();
         var fechaIncial = $("#fechaInicial").val();
         var fechaFinal = $("#fechaFinal").val();

@@ -20,10 +20,10 @@
             
                 <div class="ui-field-contain">
                     <label id="idAlumno" for="alumno">Alumno(id):</label>
-                    <input type="text" name="alumno" id="alumno">  
+                    <input type="number" name="alumno" id="alumno">  
 
                     <label for="sesion">Sesión(id):</label>
-                    <input type="text" name="sesion" id="sesion"> 
+                    <input type="number" name="sesion" id="sesion"> 
 
                     <label for="fecha1">Fecha Inicial:</label>
                     <input type="datetime-local" name="fecha" id="fechaInicial">
@@ -32,14 +32,34 @@
                     <input type="datetime-local" name="fecha" id="fechaFinal">
 
                     <label for="ejercicio">Ejercicio(id):</label>
-                    <input type="text" name="ejercicio" id="ejercicio">
-
-                    <label for="inicial">EmociónInicial:</label>
-                    <input type="text" name="inicial" id="inicial"> 
-
-                    <label for="final">EmociónFinal:</label>
-                    <input type="text" name="final" id="final">
+                    <input type="number" name="ejercicio" id="ejercicio">
+                    
                 </div>
+                <div data-role="fieldcontain">
+                        <label  class="select">Emoción Inicial: </label>
+                        <select name="select-choice-1" id="emocionInicial">
+                           <option value="">...</option>
+                           <option value="Feliz">Feliz</option>
+                           <option value="Sorpresa">Sorpresa</option>
+                           <option value="Neutral">Neutral</option>
+                           <option value="Enojado">Enojado</option>
+                           <option value="Triste">Triste</option>
+                           <option value="sinemocion">Sin Emoción</option>
+                        </select>
+                    </div>
+                    
+                    <div data-role="fieldcontain">
+                        <label class="select">Emoción Final: </label>
+                        <select name="select-choice-1" id="emocionFinal">
+                           <option value="">...</option>
+                           <option value="Feliz">Feliz</option>
+                           <option value="Sorpresa">Sorpresa</option>
+                           <option value="Neutral">Neutral</option>
+                           <option value="Enojado">Enojado</option>
+                           <option value="Triste">Triste</option>
+                           <option value="sinemocion">Sin Emoción</option>
+                        </select>
+                    </div>
                 <button type="button" data-inline="true" id="buscar">Submit</button>
                 
                 <div id="content-link">
