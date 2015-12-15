@@ -1,0 +1,127 @@
+{
+   "id": 116,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "Este ejercicio está relacionado con el uso de clases abstractas.",
+      "Una clase abstracta se usa cuando:<ul><li>Habrá varias subclases.</li><li>Se desea manejar a todas las diferentes subclases como instancias de la superclase.</li><li>La superclase por si misma no tiene sentido como un objeto.</li></ul>"
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "¿Cuál de las siguientes afirmaciones NO pertenece a las razones para usar una clase abstracta?",
+         "presentacion": [
+            "<ol><li>Habrá varias subclases.</li>",
+            "<li>Se desea manejar a todas las diferentes subclases como instancias de la superclase.</li>",
+            "<li>Es necesario capturar similitudes entre clases no relacionadas.</li>",
+            "<li>La superclase por sí misma no tiene sentido como un objeto.</li>",
+            "</ol>"
+         ],
+         "textoEmocional": {
+                "neutral": "Inicia con el ejercicio.",                
+                "encantado": "El estudio requiere de mucho esfuerzo y dedicación, ayúdate averiguando, reúnete con tus compañeros, intercambia opiniones y piensa que si se puede.  ¡Inicia con el ejercicio!",
+                "sorprendido": "Aprender es como remar contra corriente: en cuanto se deja, se retrocede. ¡Inicia con el ejercicio!",
+                "compasivo": "Sé que te encuentras abrumado con los estudios y estas indeciso a seguir, pero todo sueño requiere un esfuerzo sigue adelante y mañana veras que valió la pena.  ¡Se que tu puedes!.  Empieza el ejercicio.",
+                "esceptico": "No desperdicies tu talento sin hacer nada productivo, estudia y sácale provecho a tus habilidades.  Comienza con el ejercicio.",
+                "retroalimentacion": {
+                    "positiva": "El día a día nos va enseñando cosas, la vida es una escuela diaria siempre hay algo nuevo que aprender, estudiando lo lograras.",
+                    "neutral": "Para empezar un gran proyecto, hace falta valentía. Para terminar un gran proyecto, hace falta perseverancia.",
+                    "negativa": "Si no te esfuerzas hasta el máximo, ¿cómo sabrás donde está tu límite? "
+                }
+
+            },
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": 1,
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Se trata de una de las razones para usar una clase abstracta. Intenta de nuevo.",
+               "presentacion": [
+                  "1.\tHabrá varias subclases."
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. Inténtalo de nuevo.",
+					"encantado": "¿Te has dado cuenta que cuando conoces bien un tema, te gusta?.  Sigue con el ejercicio.",
+					"sorprendido": "Me sorprende tu deseo por aprender Java.  Sigue con el ejercicio.",
+					"compasivo": "Aprender requiere de paciencia, intentalo de nuevo",
+					"esceptico": "Trata de encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!. Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!. Me parece que no te estás tomando en serio el ejercicio."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": 2,
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Se trata de una de las razones para usar una clase abstracta. Intenta de nuevo.",
+               "presentacion": [
+                  "2.\tSe desea manejar a todas las diferentes subclases como instancias de la superclase."
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. Continúa con el ejercicio.",
+					"encantado": "La respuesta es incorrecta. Intenta encontrar la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta. Intenta encontrar la respuesta correcta.",
+					"compasivo": "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más.",                
+					"esceptico": "Con un poco de motivación vas a encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!. Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!. Me parece que no te estás tomando en serio el ejercicio."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": 3,
+               "tipo": "pasofinaloptimo",
+               "instruccion": "Respuesta correcta. Continúa con más ejercicios.",
+               "presentacion": [
+                  "3.\tEs necesario capturar similitudes entre clases no relacionadas."
+               ],
+              "textoEmocional": {
+					"neutral": "Has finalizado con este ejercicio.",
+					"encantado": "El arte de vencer se aprende en las derrotas, ¡sigue con este entusiasmo!.",              
+					"sorprendido": "No te preocupes por los fracasos, preocúpate por las oportunidades que pierdes cuando ni siquiera lo intentas.",
+					"compasivo": "No te des por vencido, ni aún vencido.  Establece objetivos a corto plazo y pronto serás un Sensei de Java.",                
+					"esceptico": "Es absurdo continuar haciendo siempre lo mismo y esperar resultados diferentes.  Al menos llegaste al final del ejercicio.",
+					"retroalimentacion": {
+						"positiva": "¡Felicidades!.  Las oportunidades solamente las aprovechan las mentes preparadas.",
+						"neutral": "Cada logro comienza con la decisión de intentarlo.  Has finalizado con este ejercicio.",
+						"negativa": "Nuestra mayor debilidad reside en rendirnos.  ¡Deja de jugar y ponte a estudiar!."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": 4,
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. Se trata de una de las razones para usar una clase abstracta. Intenta de nuevo.",
+               "presentacion": [
+                  ""
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+					"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+						"neutral": "La respuesta no es la correcta",
+						"negativa": "¿Estás seguro de querer estudiar este curso?."
+					}
+
+				},
+               "opciones": []
+            }
+         ]
+      }
+   ]
+}
