@@ -46,7 +46,7 @@ var cambioAlSelectNode = function(){
         guardar();
         n=[].concat(nodes.get(network.getSelectedNodes()[0]).cola);
         cambiarCampos();
-    };z
+    };
 $(document).ready(function(){
     nodes = new vis.DataSet([
         {id: -1, label: 'I.I.', color:"#F2F2F2", level:0, cola:[]},
