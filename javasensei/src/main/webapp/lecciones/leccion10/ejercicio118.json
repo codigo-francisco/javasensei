@@ -1,0 +1,306 @@
+{
+   "id": 118,
+   "paso": -1,
+   "tipo": "instruccionesiniciales",
+   "instruccionesejercicio": [
+      "Este ejercicio está relacionado con la definición de una clase abstracta.",
+      "El propósito de una clase abstracta es proporcionar una superclase apropiada a partir de la cual puedan heredar otras clases y por ende compartir un diseño común. Estas clases no pueden utilizarse para instanciar objetos y sus métodos abstractos deben ser explícitamente definidos."
+   ],
+   "opciones": [
+      {
+         "paso": 0,
+         "tipo": "pasoinicial",
+         "instruccion": "Paso 1 de 3.  Analice el código que se presenta a continuación y elija la palabra que lo complete correctamente.",
+         "presentacion": [
+            "public <input type='text' readonly> class Component {",
+            "      public abstract void DrawMeOnScreen();",
+            "}",
+            ""
+         ],
+         "textoEmocional": {
+			"neutral": "Inicia con el ejercicio.",                
+			"encantado": "El futuro está oculto detrás de los hombres que lo hacen.  ¡Inicia con el ejercicio!",
+			"sorprendido": "Por muy cansado que estés, nunca te des por vencido. ¡Adelante! ¡Inicia con el ejercicio!",
+			"compasivo": "La vida nos pone piedras en el camino, tú debes esforzarte para poder saltarlas.  ¡Adelante!.  Empieza el ejercicio.",
+			"esceptico": "¡Estudia! No para saber una cosa más, sino para saberla mejor.  Inicia el ejercicio.",
+			"retroalimentacion": {
+				"positiva": "Noto que cada día eres mejor. ¡Continúa así!",
+				"neutral": "Nunca olvides que eres más inteligente de lo que te piensas, más fuerte de lo que imaginas y más valiente de lo que te crees.",
+				"negativa": "El que adelante no mira, atrás se queda."
+			}
+
+		},
+         "opciones": [
+            {
+               "paso": 1,
+               "texto": "package",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. El encabezado de la clase ya tiene un modificador de acceso. Intenta de nuevo.",
+               "presentacion": [
+                  "public <input type='text' readonly value='package   ' class='errorTracing'> class Component {",
+                  "      public abstract void DrawMeOnScreen();",
+                  "}"
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. Inténtalo de nuevo.",
+					"encantado": "¿Te has dado cuenta que cuando conoces bien un tema, te gusta?.  Sigue con el ejercicio.",
+					"sorprendido": "Me sorprende tu deseo por aprender Java.  Sigue con el ejercicio.",
+					"compasivo": "Aprender requiere de paciencia, intentalo de nuevo",
+					"esceptico": "Trata de encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!. Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!. Me parece que no te estás tomando en serio el ejercicio."
+					}
+				},
+               "opciones": []
+            },
+            {
+               "paso": 2,
+               "texto": "void",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. La palabra reservada <i>void</i> se utiliza en los métodos para indicar que no regresan un valor. Intenta de nuevo.",
+               "presentacion": [
+                  "public <input type='text' readonly value='void' class='errorTracing'> class Component {",
+                  "      public abstract void DrawMeOnScreen();",
+                  "}"
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta. Continúa con el ejercicio.",
+					"encantado": "La respuesta es incorrecta. Intenta encontrar la respuesta correcta.",              
+					"sorprendido": "La respuesta es incorrecta. Intenta encontrar la respuesta correcta.",
+					"compasivo": "Nuestra mayor debilidad reside en rendirnos. La forma más segura de tener éxito es intentarlo una vez más.",                
+					"esceptico": "Con un poco de motivación vas a encontrar la respuesta correcta.",
+					"retroalimentacion": {
+						"positiva": "¡Casi, casi! pero la respuesta es incorrecta.",
+						"neutral": "¡La respuesta es incorrecta!. Continúa con el ejercicio.",
+						"negativa": "¡La respuesta es incorrecta!. Me parece que no te estás tomando en serio el ejercicio."
+					} 
+				},
+               "opciones": []
+            },
+            {
+               "paso": 3,
+               "texto": "implements",
+               "tipo": "pasoerroneo",
+               "instruccion": "Respuesta incorrecta. La palabra clave <i>implements</i> permite implementar una interfaz en una clase y se escribe después del identificador de dicha clase. Intenta de nuevo.",
+               "presentacion": [
+                  "public <input type='text' readonly value='implements' class='errorTracing'> class Component {",
+                  "      public abstract void DrawMeOnScreen();",
+                  "}"
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+					"encantado": "Aun cuando la respuesta es incorrecta, se que estás intentando aprender Java.",
+					"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión por aprender Java.",
+					"compasivo": "Qué no decaiga tu autoestima, aveces se requiere de tiempo para asimilar los conceptos de Java.",
+					"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+					"retroalimentacion": {                           
+						"positiva": "La respuesta no es la correcta, ¡sigue intentandolo!",
+						"neutral": "La respuesta no es la correcta",
+						"negativa": "¿Estás seguro de querer estudiar este curso?."
+					}
+
+				},
+               "opciones": []
+            },
+            {
+               "paso": 4,
+               "texto": "abstract",
+               "tipo": "pasooptimo",
+               "instruccion": "Paso 2 de 3.  Analice el código que se presenta a continuación y elija la palabra que lo complete correctamente.",
+               "presentacion": [
+                  "public abstract class Component {",
+                  "      public <input type='text' readonly value='abstract  ' class='focusInput'> void DrawMeOnScreen();",
+                  "}",
+                  "public class Button extends Component {",
+                  "      public void <input type='text' readonly>(){",
+                  "        // implementación",
+                  "     }",
+                  "}"
+               ],
+               "textoEmocional": {
+					"neutral": "La respuesta es correcta. Continúa con el ejercicio.",
+					"encantado": "Mas vale paso que dure y no trote que canse. Sigue con el ejercicio.",              
+					"sorprendido": "No hay ascensor al éxito, tienes que tomar las escaleras. Sigue con el ejercicio.",
+					"compasivo": "Cree y actúa como si fuese imposible fracasar. Sigue con el ejercicio.",                
+					"esceptico": "Tus aspiraciones son tus posibilidades. Creo que tu escepticismo no te deja progresar.  Sigue con el ejercicio.",
+					"retroalimentacion": {
+						"positiva": "Revisa tu respuesta. ¡También de los errores se aprende!",
+						"neutral": "La respuesta es correcta. Continúa con el ejercicio.",
+						"negativa": "Me parece que sólo estás perdiendo el tiempo.  Sigue con el ejercicio."
+					} 
+				},
+               "opciones": [
+                  {
+                     "paso": 5,
+                     "texto": "abstract void DrawMeOnScreen",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                     "presentacion": [
+                        "public abstract class Component {",
+                        "      public <input type='text' readonly value='abstract  ' class='focusInput'> void DrawMeOnScreen();",
+                        "}",
+                        "public class Button extends Component {",
+                        "      public void <input type='text' readonly value='abstract void DrawMeOnScreen' class='errorTracing'>(){",
+                        "        // implementación",
+                        "     }",
+                        "}"
+                     ],
+                     "textoEmocional": {
+						"neutral": "La respuesta es incorrecta. Intenta de nuevo.",
+						"encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+						"sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+						"compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+						"esceptico": "Me preocupa un poco tu indiferencia. Intenta terminar el ejercicio.",
+						"retroalimentacion": {                           
+							"positiva": "Casi, casi, aciertas con la respuesta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta. Intenta de nuevo.",
+							"negativa": "La respuesta es incorrecta. Me siento intranquilo por tu desempeño."
+						}
+					},
+                     "opciones": []
+                  },
+                  {
+                     "paso": 6,
+                     "texto": "DrawMeOnScreen",
+                     "tipo": "pasooptimo",
+                     "instruccion": "Paso 3 de 3.  Analice el código que se presenta a continuación y responda verdadero o falso a la afirmación:  Solo es posible crear instancias de las clases Component y ScrollBar.",
+                     "presentacion": [
+                        "public abstract class Component {",
+                        "      public <input type='text' readonly value='abstract  ' class='focusInput'> void DrawMeOnScreen();",
+                        "}",
+                        "public class Button extends Component {",
+                        "      public void <input type='text' readonly value='DrawMeOnScreen' class='focusInput'>(){",
+                        "        // implementación",
+                        "     }",
+                        "}",
+                        "public class ScrollBar extends Component {",
+                        "     public void DrawMeOnScreen(){",
+                        "        // implementación",
+                        "     }",
+                        "}"
+                     ],
+                     "textoEmocional": {
+						"neutral": "!Correcto!.  Continúa con el ejercicio.",
+						"encantado": "Cada logro comienza con la decisión de intentarlo, ¡sigue así!.",              
+						"sorprendido": "¡Cosechas lo que siembras!, sigue adelante con el ejercicio.",
+						"compasivo": "No hay ascensor al éxito, tienes que tomar las escaleras.  Sigue adelante con el ejercicio.",                
+						"esceptico": "¿Todavía no crees que aprender Java sea importante?, al menos intenta terminar el ejercicio.",
+						"retroalimentacion": {
+							"positiva": "¡Correcto!.  El que persevera alcanza!.",
+							"neutral": "El éxito consiste en ir de fracaso en fracaso sin pérdida de entusiasmo.",
+							"negativa": "¿Ya te aburriste de encontrar las respuestas en forma aleatoria?"
+						} 
+					},
+                     "opciones": [
+                        {
+                           "paso": 7,
+                           "texto": "Verdadero",
+                           "tipo": "pasoerroneo",
+                           "instruccion": "Respuesta incorrecta. Observa que la clase <i>Component</i> está declarada como abstracta y por lo tanto no se pueden crear objetos de ella. Intenta de nuevo.",
+                           "presentacion": [
+                              ""
+                           ],
+                           "textoEmocional": {
+                                "neutral": "La respuesta es incorrecta. Intenta de nuevo.",
+                                "encantado": "La respuesta no es la correcta pero estoy seguro que vas a encontrar la respuesta correcta.",
+                                "sorprendido": "¡Me gusta tu actitud!, sigue así y estoy seguro que vas a encontrar la respuesta correcta.",
+                                "compasivo": "Me parece que puedes hacerlo mejor, sigue intentándolo.",
+                                "esceptico": "Me preocupa un poco tu indiferencia. Intenta terminar el ejercicio.",
+                                "retroalimentacion": {                           
+                                    "positiva": "Por cada esfuerzo, hay una recompensa. Nunca te rindas. Sigue adelante con el ejercicio.",
+                                    "neutral": "La respuesta no es la correcta. Intenta de nuevo.",
+                                    "negativa": "La respuesta es incorrecta. Necesitas mejorar."
+                                }
+                            },
+                           "opciones": []
+                        },
+                        {
+                           "paso": 8,
+                           "texto": "Falso",
+                           "tipo": "pasofinaloptimo",
+                           "instruccion": "Respuesta correcta. Continúa con más ejercicios.",
+                           "presentacion": [
+                              ""
+                           ],
+                           "textoEmocional": {
+								"neutral": "Has finalizado con este ejercicio.",
+								"encantado": "Siempre intenta aprender todo lo que puedas, pues el conocimiento es una llave que abre muchas puertas.",              
+								"sorprendido": "El que persevera alcanza!, ¡sigue con este entusiasmo!.",
+								"compasivo": "Para alcanzar el éxito se requiere de tres cosas: voluntad, valor y decisión.",                
+								"esceptico": "Al menos llegaste al final del ejercicio.",
+								"retroalimentacion": {
+									"positiva": "La confianza en sí mismo, la actitud positiva y la perseverancia son los argumentos claves para triunfar.",
+									"neutral": "El éxito nunca llega solo; hay que trabajar arduamente para conseguirlo.",
+									"negativa": "No te preocupes de las cosas, ocúpate de ellas.  Has finalizado con este ejercicio."
+								} 
+							},
+                           "opciones": []
+                        }
+                     ]
+                  },
+                  {
+                     "paso": 9,
+                     "texto": "abstract DrawMeOnScreen",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                     "presentacion": [
+                        "public abstract class Component {",
+                        "      public abstract void DrawMeOnScreen();",
+                        "}",
+                        "public class Button extends Component {",
+                        "      public void <input type='text' readonly value='abstract DrawMeOnScreen ' class='errorTracing'>(){",
+                        "        // implementación",
+                        "     }",
+                        "}"
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta. Sigue con el ejercicio.",
+                        "encantado": "Continua con este entusiasmo y veras que todos tus sueños mañana se harán realidad.",
+                        "sorprendido": "¡Me sorprendes!, noto que cada día eres mejor, continúa así.",
+                        "compasivo": "Yo se que eres buen estudiante, ¡sigue adelante!.",
+                        "esceptico": "Una persona que estudia jamás será un fracasado. Trata de terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "¡Lo has hecho muy bien!. Sigue con el ejercicio.",
+                            "neutral": "La respuesta es incorrecta. Sigue con el ejercicio.",
+                            "negativa": "¿Estás seguro que se trata de una respuesta razonada?"  
+                        }
+                    },
+                     "opciones": []
+                  },
+                  {
+                     "paso": 10,
+                     "texto": "void DrawMeOnScreen",
+                     "tipo": "pasoerroneo",
+                     "instruccion": "Respuesta incorrecta. Observa con atención el código e intenta de nuevo.",
+                     "presentacion": [
+                        "public abstract class Component {",
+                        "      public abstract void DrawMeOnScreen();",
+                        "}",
+                        "public class Button extends Component {",
+                        "      public void <input type='text' readonly value='void DrawMeOnScreen' class='errorTracing'>(){",
+                        "        // implementación",
+                        "     }",
+                        "}"
+                     ],
+                     "textoEmocional": {
+                        "neutral": "La respuesta es incorrecta. Intenta de nuevo.",
+                        "encantado": "Para estudiar hay que tener perseverancia, paciencia y motivación.  ¡Sigue así!",
+                        "sorprendido": "¡Me sorprendes!, la respuesta no es correcta pero no pierdas esa actitud por aprender.",
+                        "compasivo": "Estudiar Java demanda tiempo y esfuerzo pero al final siempre hay resultados positivos, ¡ánimo!.",
+                        "esceptico": "Una persona que estudia jamás será un fracasado.  Trata de terminar el ejercicio.",
+                        "retroalimentacion": {                            
+                            "positiva": "¡Casi casi!.  La respuesta es incorrecta.  Continúa con el ejercicio.",
+                            "neutral": "La respuesta es incorrecta.  Sigue con el ejercicio.",
+                            "negativa": "La respuesta es incorrecta, ¿estás seguro que se trata de una respuesta razonada?"                            
+                        }
+                    },
+                     "opciones": []
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
