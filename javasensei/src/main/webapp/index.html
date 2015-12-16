@@ -198,6 +198,14 @@
                 });
                 
                 $("#emoticons").emoticonize();
+                //Eventos click de los emoticons
+                $("#emoticons span").each(function(index,item){
+                    $(item).click(function(){
+                        $("#usermsg").append(" "+$(this).text()+" ");
+                        $("#popupInfo").popup("close"); //Cerramos el popup
+                        setTimeout(function(){$("#usermsg").focus();},500);
+                    });
+                });
 
                 camera_sensei.setup();
                 chat.setUp();
