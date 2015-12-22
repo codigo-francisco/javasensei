@@ -41,6 +41,12 @@ var options =   {
 					}
                 };
 var network;
+var jsonUpload={};
+var cambioAlSelectNode = function(){
+        guardar();
+        n=[].concat(nodes.get(network.getSelectedNodes()[0]).cola);
+        cambiarCampos();
+    };
 $(document).ready(function(){
     nodes = new vis.DataSet([
         {id: -1, label: 'I.I.', color:"#F2F2F2", level:0, cola:[]},
@@ -52,10 +58,18 @@ $(document).ready(function(){
     network = new vis.Network(container, data, options);
     network.selectNodes([-1]);
 
-    network.on("selectNode",function(){
-        guardar();
-        n=[].concat(nodes.get(network.getSelectedNodes()[0]).cola);
-        cambiarCampos();
+    network.on("selectNode",cambioAlSelectNode);
+
+    
+
+    $("#fileJson").fileReaderJS({
+        readAsDefault:"Text",
+        on:{
+            load:function(e, file){
+                jsonUpload = JSON.parse(e.target.result);
+                transformarAObjeto();
+            }
+        }
     });
 });
 
@@ -113,31 +127,10 @@ function guardar(){
         ob=ob.opciones[valor];
     });
     ob.json=jsonTexts;
-    var etiq;
-    var color;
-    var fuente;
-    switch(parseInt(jsonTexts["Tipo"])){
-        case 0: etiq="P.O.";
-            color="#21610B";
-            fuente = {color:"#FFFFFF"};
-            break;
-        case 1: etiq="P.SO."; 
-            color="#21610B";
-            fuente = {color:"#FFFFFF"};
-            break;
-        case 2: etiq="P.E."; 
-            color="#FF0000";
-            fuente = {color:"#FFFFFF"};
-            break;
-        case 3: etiq="P.F.O."; 
-            color="#21610B";
-            fuente = {color:"#FFFFFF", strokeWidth:1, strokeColor:"#FFFFFF"};
-            break;
-        case 4: etiq="P.F.SO."; 
-            color="#21610B";
-            fuente = {color:"#FFFFFF", strokeWidth:1, strokeColor:"#FFFFFF"};
-            break;
-    }
+    colores= colorNodo(parseInt(jsonTexts["Tipo"]));
+    var etiq = colores.etiq;
+    var color= colores.color;
+    var fuente= colores.fuente;
     if(!banderaNuevaOpGuard){
         ob.nodo=idNode;
         agregarNodo(etiq, color, fuente);
@@ -198,7 +191,7 @@ function cambiarCampos(){
     var textList;
     for(i=0; i<ob.opciones.length;i++){
         textList = ob.opciones[i].json["Texto"];
-        if(textList=="")
+        if(textList=="" || textList==undefined)
             textList="Sin Texto";
         listaOp.append($("<li>").append($("<span onmouseover='puntero()' onmouseout='punteroOut()' onclick='adentrar("+i+")'>").text(textList)));
     }
@@ -304,12 +297,17 @@ function transformar(ob){
     return jsonAux;
 }
 var idNode=1;
-function agregarNodo(etiq, color, fuente){
+function agregarNodo(etiq, color, fuente,nodoAnterior){
+    var idNodeBefore;
     var ob=objeto;
-    for(i=0; i<n.length-1;i++){
-        ob=ob.opciones[n[i]];
+    if(nodoAnterior == undefined){
+        for(i=0; i<n.length-1;i++){
+            ob=ob.opciones[n[i]];
+        }
+        idNodeBefore= ob.nodo;
     }
-    var idNodeBefore= ob.nodo;
+    else
+        idNodeBefore=nodoAnterior;
     var levelBefore = nodes.get(idNodeBefore)["level"];
     nodes.add({id:idNode,label:etiq, color:color, font:fuente, level:levelBefore+1, cola: [].concat(n)});
     edges.add({from: idNodeBefore, to:idNode++});
@@ -334,4 +332,101 @@ function borrarNodo(){
 
     network.selectNodes([nodoSel]);
     network.deleteSelected();
+}
+
+
+
+
+function transformarAObjeto(){
+    objeto=new Dato({},-1);
+    objeto.json["Id"]=jsonUpload.id;
+    objeto.json["Instrucciones del Ejercicio"]=jsonUpload.instruccionesejercicio;
+    n=[];
+    ////
+    nodes = new vis.DataSet([
+        {id: -1, label: 'I.I.', color:"#F2F2F2", level:0, cola:[]},
+        {id: 0, label: 'P.I.', level:1, cola:[0]}]);
+    edges = new vis.DataSet([
+        {from: -1, to: 0}]);
+    data = {nodes: nodes, edges: edges};
+    container = document.getElementById('mynetwork');
+    network = new vis.Network(container, data, options);
+    network.selectNodes([-1]);
+    network.on("selectNode",cambioAlSelectNode);
+    idNode=1;
+    ////
+    n.push(0);
+    objeto["opciones"].push(transformar2(jsonUpload.opciones[0]));
+    n=[];
+    cambiarCampos();
+}
+function transformar2(jsonUp, nodoAnterior){
+    var datoAux= new Dato({}, 0);
+    var jsonAux=datoAux.json;
+    switch(jsonUp.tipo){
+       case "pasooptimo": jsonAux["Tipo"]=0; break;
+       case "pasosuboptimo": jsonAux["Tipo"]=1; break;
+       case "pasoerroneo": jsonAux["Tipo"]=2; break;
+       case "pasofinaloptimo": jsonAux["Tipo"]=3; break;
+       case "pasofinalsuboptimo": jsonAux["Tipo"]=4; break;
+       case "pasoinicial": jsonAux["Tipo"]=-1; break;
+    }
+    jsonAux["Texto"]=jsonUp["texto"];
+    if(jsonAux.Tipo ==-1)
+        jsonAux["Texto"]="Paso Inicial";
+    jsonAux["Instruccion"]=jsonUp.instruccion;
+    jsonAux["Presentacion"]=jsonUp.presentacion;
+    jsonAux["Neutral"]=jsonUp["textoEmocional"]["neutral"];
+    jsonAux["Encantado"]=jsonUp["textoEmocional"]["encantado"];
+    jsonAux["Sorprendido"]=jsonUp["textoEmocional"]["sorprendido"];
+    jsonAux["Compasivo"]=jsonUp["textoEmocional"]["compasivo"];
+    jsonAux["Esceptico"]=jsonUp["textoEmocional"]["esceptico"];
+    jsonAux["Positiva"]=jsonUp["textoEmocional"]["retroalimentacion"]["positiva"];
+    jsonAux["Neutral "]=jsonUp["textoEmocional"]["retroalimentacion"]["neutral"];
+    jsonAux["Negativa"]=jsonUp["textoEmocional"]["retroalimentacion"]["negativa"];
+    //Agregar el nodo VIS
+    colores= colorNodo(parseInt(jsonAux["Tipo"]));
+    var etiq = colores.etiq;
+    var color= colores.color;
+    var fuente= colores.fuente;
+    if(jsonAux.Tipo !=-1){
+        datoAux.nodo=idNode;
+        agregarNodo(etiq, color, fuente, nodoAnterior==undefined?0:nodoAnterior);
+    }
+    if(jsonUp.opciones.length>0)
+        nodoAnterior=idNode-1;
+    for(var i=0; i<jsonUp.opciones.length; i++){
+        n.push(i);
+        datoAux["opciones"].push(transformar2(jsonUp.opciones[i],nodoAnterior));
+        n.pop();
+    }
+    return datoAux;
+}
+function colorNodo(tipo){
+    var etiq;
+    var color;
+    var fuente;
+    switch(tipo){
+        case 0: etiq="P.O.";
+            color="#21610B";
+            fuente = {color:"#FFFFFF"};
+            break;
+        case 1: etiq="P.SO."; 
+            color="#21610B";
+            fuente = {color:"#FFFFFF"};
+            break;
+        case 2: etiq="P.E."; 
+            color="#FF0000";
+            fuente = {color:"#FFFFFF"};
+            break;
+        case 3: etiq="P.F.O."; 
+            color="#21610B";
+            fuente = {color:"#FFFFFF", strokeWidth:1, strokeColor:"#FFFFFF"};
+            break;
+        case 4: etiq="P.F.SO."; 
+            color="#21610B";
+            fuente = {color:"#FFFFFF", strokeWidth:1, strokeColor:"#FFFFFF"};
+            break;
+    }
+    return {"etiq": etiq, "color":color, "fuente":fuente};
 }
