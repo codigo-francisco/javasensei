@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="img/logo.jpg">
 
         <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
-        <link href="jquerymobile/jquery.mobile-1.4.4.min.css" rel="stylesheet">
+        <link href="jquerymobile/jquery.mobile-1.4.5.min.css" rel="stylesheet">
         <link href="jquerymobile/icon-pack-custom.css" rel="stylesheet">
         <link href="styles/github.css" rel="stylesheet">
         <link href="jquery/jRating.jquery.css" rel="stylesheet" media="screen">
@@ -22,7 +22,7 @@
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
+        <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="Prettyprint/google-code-prettify/prettify.js"></script>
 
         <script type="text/javascript" src="js/highcharts.js"></script>
@@ -266,6 +266,14 @@
             li.L5, li.L6, li.L7, li.L8
             { list-style-type: decimal !important }
 
+            #miembros_equipo table,th,td{
+                border-style: solid;
+                border-width: .13em;
+            }
+            
+            #principal{
+                width: 72.5%;
+            }
         </style>
     </head>
     <body>
@@ -298,6 +306,77 @@
         <div id="fullscreenpermition" class="fullscreenpermition">
             <div style="text-align: center;margin-top: 4em;">
                 Por favor acepte los permisos de utilizar la cámara o use el tutor desde un dispositivo con cámara
+            </div>
+        </div>
+        <div id="div_equipo" style="position: absolute;height: 50%;width: 60%;z-index: 3;background-color: white;
+             transform: translate(40%,50%);border-color: black;border-style: solid;border-width: .13em;
+             padding: 1em;display: none">
+            <span style="text-align: center;font-weight: bold;">
+                Los siguientes miembros estarán en el equipo
+                <br>Tiempo restante: <span>10 segundos</span>
+            </span>
+            <table style=" border-collapse: collapse;
+                   width: 100%;" id="miembros_equipo">
+                <thead>
+                    <tr>
+                        <th>
+                            Miembro
+                        </th>
+                        <th>
+                            Habilidad Global
+                        </th>
+                        <th>
+                            Color
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Francisco González Hernández <img style="width: 2em;height: 2em;" src="img/estrella_lider.jpg" alt="lider">
+                        </td>
+                        <td>
+                            20.5%
+                        </td>
+                        <td>
+                            <span style="background-color: #3380b9;width: 100%;display:inline-block">
+                                &nbsp;
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Raul Oramas Bustillos
+                        </td>
+                        <td>
+                            18.3%
+                        </td>
+                        <td>
+                            <span style="background-color: #007700;width: 100%;display:inline-block">
+                                &nbsp;
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="panelchat" style="width:27%;height: 100%;position: absolute;
+             z-index: 1199;background-color: #FFF; left: 73%" >
+            <div style="height: 85%">
+                <span>
+                    <span style="color:#3380b9;font-weight: bold">Francisco Gónzalez Hernandez:</span><br>Estoy seguro que esa es la definición correcta de variable
+                </span><br>
+                <span>
+                    <span style="color:#007700;font-weight: bold">Raul Oramas Bustillos:</span><br>Yo leí otra cosa en un libro de Java.
+                </span>
+            </div>
+            <div>
+                <textarea style="width: 100%">¿Que libro es?</textarea>
+            </div>
+            <div>
+                <img src="img/emoticons/smile.jpg" alt="Emoticones" style="width: 1em; height: 1em;">
+                <img src="img/microphone.png" alt="Envía un mensaje de texto" style="width: 1em; height: 1em;">
             </div>
         </div>
 
@@ -486,11 +565,11 @@
                             <label for="activarEmociones">Activar Detector de Emociones</label>
                             <input id="activarEmociones" checked="checked" data-role="flipswitch" name="activarEmociones" type="checkbox">
                             <fieldset data-role="controlgroup" data-type="horizontal" id="selecciondetector">
-                                <legend>Reconocimiento Emocional:</legend>
-                                <input type="radio" name="reconocimientoemocional" id="neuroph" value="on" checked="checked">
-                                <label for="neuroph">NeuroPH</label>
-                                <input type="radio" name="reconocimientoemocional" id="oxford" value="off">
-                                <label for="oxford">Oxford (Microsoft)</label>
+                                        <legend>Reconocimiento Emocional:</legend>
+                                        <input type="radio" name="reconocimientoemocional" id="neuroph" value="on" checked="checked">
+                                        <label for="neuroph">NeuroPH</label>
+                                        <input type="radio" name="reconocimientoemocional" id="oxford" value="off">
+                                        <label for="oxford">Oxford (Microsoft)</label>
                                 <input type="radio" name="reconocimientoemocional" id="indico" value="off">
                                 <label for="indico">Indico</label>
                             </fieldset>
