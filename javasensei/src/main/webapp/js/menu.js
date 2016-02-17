@@ -19,8 +19,25 @@ function obtenerEjercicios(callback) {
         callback(datos);
         llenarTabla(datos);
     }).fail(function (jqXHR, textStatus, errorThrown) {
-        console.log("Fallo " + textStatus);
+        console.log("Falló " + textStatus);
     });
+}
+
+function cerrarSesion() {
+    var result = confirm("¿Desea cerrar la sesión de este ejercicio?, su progreso se guardará");
+    if (result) {
+        //Ajax para confirmar cerrado de sesión
+        $.get(url + "/estudiantes/registrarSalida",
+                {
+                    idAlumno: usuario.id
+                },
+                function (result) {
+                    FB.logout(function (response) {
+                        location.reload();
+                    });
+                }
+        );
+    }
 }
 
 function menu_sensei() {
@@ -34,17 +51,17 @@ function menu_sensei() {
             menu_context.updateMenu = true;
         });
     };
-    
-    this.getColorFont=function(link, valorTerminado){
+
+    this.getColorFont = function (link, valorTerminado) {
         if (valorTerminado == 1) {
             link.css("color", "#21610B");
-        }else if(valorTerminado == .7){
-            link.css("color","#00FF40");
+        } else if (valorTerminado == .7) {
+            link.css("color", "#00FF40");
         }
     };
-    
-    this.actualizarBoton=function (idEjercicio, valorPaso){
-        menu_context.getColorFont($("#ejercicioMenu"+idEjercicio),valorPaso);
+
+    this.actualizarBoton = function (idEjercicio, valorPaso) {
+        menu_context.getColorFont($("#ejercicioMenu" + idEjercicio), valorPaso);
     };
 
     this.getMenu = function getMenu(menuejercicios) { //Debera ser un div el primer argumento
@@ -67,7 +84,7 @@ function menu_sensei() {
                 //Lista de ejercicios
                 $.each(leccion.ejercicios, function (index, ejercicio) {
                     var link = $("<a href='#'>")
-                            .attr("id","ejercicioMenu"+ejercicio.id)
+                            .attr("id", "ejercicioMenu" + ejercicio.id)
                             .text(ejercicio.titulo)
                             .click(cerrarMenu)
                             .click(
@@ -75,24 +92,31 @@ function menu_sensei() {
                                         id: ejercicio.id,
                                         url: ejercicio.url,
                                         titulo: ejercicio.titulo
-                                    },cargarEjercicio);
-                    
-                    menu_context.getColorFont(link,ejercicio.terminado);
-                    
+                                    }, cargarEjercicio);
+
+                    menu_context.getColorFont(link, ejercicio.terminado);
+
                     listaLecciones.append(
                             $("<li>")
                             .append(link)
-                    );
+                            );
                 });
 
                 menu.append(divEjercicio
-                        .append(listaLecciones
-                                .listview()
-                                ).collapsible()
+                        .append(listaLecciones.listview()).collapsible()
                         );
 
                 menu.find("a").addClass("noWrap");
             });
+
+            //Boton de cierre de sesion
+            var btnCerrar = $("<a>")
+                    .prop("id", "cerrarSesion")
+                    .text("Cerrar Sesión")
+                    .addClass("ui-btn ui-icon-power")
+                    .click(cerrarSesion);
+
+            menu.append(btnCerrar);
         }
         this.updateMenu = false;
     };

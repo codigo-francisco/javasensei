@@ -1,6 +1,7 @@
 package javasensei.tutor.rest;
 
-import com.google.gson.JsonObject;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
 import javasensei.db.managments.EstudiantesManager;
 import javasensei.db.managments.RankingManager;
 import javasensei.estudiante.ModeloEstudiante;
@@ -64,16 +65,28 @@ public class EstudianteRest {
         
         EstudiantesManager manager = new EstudiantesManager(estudiante);
         
-        JsonObject json = new JsonObject();
+        DBObject json = new BasicDBObject();
         
         Double value = manager.getAbilityGlobal();
         
-        json.addProperty("result", manager.finalizarEjercicio(idEjercicio,valor));
-        json.addProperty("habilidadGlobal", value);
+        json.put("result", manager.finalizarEjercicio(idEjercicio,valor));
+        json.put("habilidadGlobal", value);
         
         
         manager.saveAbilityGlobal(value);
         
         return json.toString();
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("registrarSalida")
+    public String registrarSalida(@QueryParam("idAlumno") Long idAlumno){
+        ModeloEstudiante estudiante = new ModeloEstudiante();
+        estudiante.setId(idAlumno);
+        
+        EstudiantesManager manager = new EstudiantesManager(estudiante);
+        
+        return manager.registrarVisita("salida");
     }
 }

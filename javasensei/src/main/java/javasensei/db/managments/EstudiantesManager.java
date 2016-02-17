@@ -8,7 +8,12 @@ import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
 import com.mongodb.ReadPreference;
 import com.mongodb.WriteResult;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.logging.Level;
@@ -25,6 +30,7 @@ public class EstudiantesManager {
     private DBCollection alumnosCollection = Connection.getCollection().get(CollectionsDB.ALUMNOS);
     private DBCollection temasCollection = Connection.getCollection().get(CollectionsDB.TEMAS);
     private DBCollection ejerciciosCollection = Connection.getCollection().get(CollectionsDB.EJERCICIOS);
+    private DBCollection bitacoraVisitas = Connection.getCollection().get(CollectionsDB.BITACORA_VISITAS);
 
     private ModeloEstudiante estudiante;
 
@@ -77,6 +83,9 @@ public class EstudiantesManager {
                     estudiante.setId(alumnosCollection.count());
                     dbObject = estudiante.convertToDBObject(); //True para guardar
                 }
+                
+                //Se registra el ingreso del estudiante
+                registrarVisita("entrada");
 
                 //Se actualizan o insertan los cambios
                 WriteResult write = alumnosCollection.save(dbObject);
@@ -91,6 +100,23 @@ public class EstudiantesManager {
         }
 
         return result;
+    }
+    
+    public String registrarVisita(String tipoEntrada){
+        DBObject objVisita = new BasicDBObject();
+        LocalTime time = LocalTime.now();
+        LocalDate date = LocalDate.now();
+        
+        objVisita.put("hora", time.format(DateTimeFormatter.ISO_TIME));
+        objVisita.put("fecha", date.format(DateTimeFormatter.ISO_DATE));
+        objVisita.put("id", estudiante.getId());
+        objVisita.put("tipo", tipoEntrada);
+        
+        bitacoraVisitas.insert(
+                objVisita
+        );
+        
+        return objVisita.toString();
     }
 
     public Double getAbilityGlobal() {
