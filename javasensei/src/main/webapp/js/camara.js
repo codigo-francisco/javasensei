@@ -57,6 +57,7 @@ camera.prototype = {
                 fecha: new Date().toISOString(),
                 tipoPaso: contexto.tipoPaso,
                 segundos: segundos,
+                procesada:false,
                 fotografia: image
             };
 

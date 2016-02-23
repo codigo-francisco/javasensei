@@ -124,7 +124,6 @@ avatar_sensei.prototype = {
                 },
                 data: {
                     datosestudiante: JSON.stringify(usuario),
-                    fotos: fotografias,
                     detector:detectorEmocional
                 },
                 dataType: "json"

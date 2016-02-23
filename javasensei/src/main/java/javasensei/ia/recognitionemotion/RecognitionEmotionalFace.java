@@ -1,16 +1,16 @@
 package javasensei.ia.recognitionemotion;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.mongodb.DBObject;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javasensei.db.managments.BitacoraFotografia;
 import javasensei.util.ImageHelper;
 
 /**
@@ -20,22 +20,23 @@ import javasensei.util.ImageHelper;
 public class RecognitionEmotionalFace {
 
     private Gson gson = new Gson();
-    private JsonArray fotos;
     private String detector;
+    private Long idUsuario;
 
-    public RecognitionEmotionalFace(String fotosJson, String detector) {
-        JsonElement element = new JsonParser().parse(fotosJson);
-        fotos = element.getAsJsonArray();
+    public RecognitionEmotionalFace(String detector, long idUsuario) {
         this.detector = detector;
+        this.idUsuario = idUsuario;
     }
 
     public Emocion getEmocion() {
         Map<Emocion, Integer> emociones = new HashMap<>();
-
+        //Las fotos son una lista obtenida de mongo, son las ultimas fotografias del usuario sin procesar
+        List<DBObject> fotos = new BitacoraFotografia().obtenerFotografiasSinProcesar(idUsuario);
+        
         for (int index = 0; index < fotos.size(); index++) {
             try {
                 Emocion emocion = Emocion.NEUTRAL;
-                String datos = fotos.get(index).getAsString();
+                String datos = fotos.get(index).get("fotografia").toString();
                 BufferedImage image = ImageHelper.decodeToImage(datos);
                 //javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("G:/imagenes")));
                 
