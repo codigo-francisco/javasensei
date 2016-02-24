@@ -51,14 +51,16 @@ public class BitacoraRest {
     
     @Path("bitacorafotografia")
     @POST
-    public void guardarBitacoraFotografia(@FormParam("datos") String datos){
+    public String guardarBitacoraFotografia(@FormParam("datos") String datos){
         new BitacoraFotografia().guardarBitacoraFotografia(datos);
+        return "{result:true}";
     }
     
     @Path("reiniciarsesionfotografia")
     @GET
-    public void reiniciarSesionFotografia(@QueryParam("id") Long idAlumno){
+    public String reiniciarSesionFotografia(@QueryParam("id") Long idAlumno){
         new BitacoraFotografia().reiniciarSesion(idAlumno);
+        return "{result:true}";
     }
     
     @Path("obtenerbitacora")

@@ -21,14 +21,16 @@ camera.prototype = {
         if (usuario.activarEmociones)
             camera_context.id_interval = setInterval(camera_context.snap, camera_context.milisegundos);
     },
-    reiniciarFotos: function () {
+    reiniciarFotos: function (inicializar) {
         console.log("Se reinicio la sesion de fotografias");
         
         $.get(
-            url + "bitacoras/reiniciarsesionfotografia",
-            {idAlumno:usuario.id},
-            function(){
-                
+            url + "bitacora/reiniciarsesionfotografia",
+            {id:usuario.id},
+            function(result){
+                if (inicializar){
+                    camera_context.inicializarFotos();
+                }
             }
         );
     },

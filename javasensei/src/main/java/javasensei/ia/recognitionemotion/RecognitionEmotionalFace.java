@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javasensei.db.managments.BitacoraFotografia;
 import javasensei.util.ImageHelper;
+import org.bson.types.ObjectId;
 
 /**
  *
@@ -31,14 +32,19 @@ public class RecognitionEmotionalFace {
     public Emocion getEmocion() {
         Map<Emocion, Integer> emociones = new HashMap<>();
         //Las fotos son una lista obtenida de mongo, son las ultimas fotografias del usuario sin procesar
+        BitacoraFotografia bitacoraFotografia = new BitacoraFotografia();
         List<DBObject> fotos = new BitacoraFotografia().obtenerFotografiasSinProcesar(idUsuario);
         
         for (int index = 0; index < fotos.size(); index++) {
             try {
                 Emocion emocion = Emocion.NEUTRAL;
-                String datos = fotos.get(index).get("fotografia").toString();
+                boolean emocionEncontrada = true;
+                DBObject foto = fotos.get(index);
+                
+                String datos = foto.get("fotografia").toString();
                 BufferedImage image = ImageHelper.decodeToImage(datos);
-                //javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("G:/imagenes")));
+                
+                javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("D:/imagenes")));
                 
                 if (image != null) {
                     System.out.println("Se decodifico de base64 a imagebuffer");
@@ -60,10 +66,16 @@ public class RecognitionEmotionalFace {
                                 System.out.println("Se encontro un rostro, opencv");
                                 emocion = new ExtractEmotionNeuroph().processData(result.getCoordenadas());
                                 System.out.println("Emocion procesada: NeuroPH");
-                            }   break;
+                            }else{
+                                emocionEncontrada = false;
+                            }
+                            break;
                     }
                 }
-
+                
+                if (emocionEncontrada)
+                    bitacoraFotografia.categorizarFotografia( new ObjectId(foto.get("_id").toString()), emocion.toString(), detector );
+                
                 if (emociones.containsKey(emocion)) {
                     emociones.put(emocion, emociones.get(emocion) + 1);
                 } else {

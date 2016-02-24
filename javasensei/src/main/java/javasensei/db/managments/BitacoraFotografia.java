@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javasensei.db.Connection;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 /**
  *
@@ -23,19 +24,29 @@ public class BitacoraFotografia {
     
     public void reiniciarSesion(Long idUsuario){
         synchronized(bitacoraFotografias){
-            DBObject query = new BasicDBObject("idUsuario", idUsuario);
+            DBObject query = new BasicDBObject("usuario", idUsuario);
             query.put("sesionactual", true);
             DBObject update = new BasicDBObject();
             update.put("$set", new BasicDBObject("sesionactual",false));
 
-            bitacoraFotografias.updateMulti(query, update);
+            bitacoraFotografias.update(query, update, false, true);
         }
     }
     
-    private static int limiteDocumentos = 3;
+    public void categorizarFotografia(ObjectId id, String emocionTutor, String tutor){        
+        DBObject set = new BasicDBObject();
+        set.put("emocionTutor", emocionTutor);
+        set.put("tutor",tutor);
+        
+        bitacoraFotografias.update(new BasicDBObject("_id", id), 
+                new BasicDBObject("$set",set)
+        );
+    }
+    
+    private final static int limiteDocumentos = 3;
     
     public List<DBObject> obtenerFotografiasSinProcesar(Long idUsuario){
-        DBObject query = new BasicDBObject("idUsuario", idUsuario);
+        DBObject query = new BasicDBObject("usuario", idUsuario);
         query.put("sesionactual", true);
         return bitacoraFotografias.find(query).limit(limiteDocumentos).
                 sort(new BasicDBObject("_id",-1)).toArray();
