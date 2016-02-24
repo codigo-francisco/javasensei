@@ -15,7 +15,9 @@ import javax.ws.rs.Path;
 import javasensei.db.managments.BitacoraEjerciciosManager;
 import javasensei.db.managments.BitacoraFotografia;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.QueryParam;
 
 /**
  * REST Web Service
@@ -51,6 +53,12 @@ public class BitacoraRest {
     @POST
     public void guardarBitacoraFotografia(@FormParam("datos") String datos){
         new BitacoraFotografia().guardarBitacoraFotografia(datos);
+    }
+    
+    @Path("reiniciarsesionfotografia")
+    @GET
+    public void reiniciarSesionFotografia(@QueryParam("id") Long idAlumno){
+        new BitacoraFotografia().reiniciarSesion(idAlumno);
     }
     
     @Path("obtenerbitacora")

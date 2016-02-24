@@ -11,10 +11,6 @@ var camera = function () {
     this.funcionEmocion = function () {
     };
 
-    localStorage.setItem("last_photo", JSON.stringify([]));
-
-    localStorage.setItem("photo_list", JSON.stringify([]));
-
     camera_context = this;
 };
 
@@ -26,9 +22,15 @@ camera.prototype = {
             camera_context.id_interval = setInterval(camera_context.snap, camera_context.milisegundos);
     },
     reiniciarFotos: function () {
-        console.log("Se reinicio la lista");
-        localStorage.setItem("last_photo", localStorage.getItem("photo_list"));
-        localStorage.setItem("photo_list", JSON.stringify([]));
+        console.log("Se reinicio la sesion de fotografias");
+        
+        $.get(
+            url + "bitacoras/reiniciarsesionfotografia",
+            {idAlumno:usuario.id},
+            function(){
+                
+            }
+        );
     },
     detenerFotos: function () {
         console.log("Se mando a detener");
@@ -40,16 +42,6 @@ camera.prototype = {
             console.log("Snap");
             var image = dataUrl.replace("data:image/jpeg;base64,", "");
 
-            //var photo_list = camera_context.photo_list;
-            var photo_list = JSON.parse(localStorage.getItem("photo_list"));
-
-            if (photo_list.length >= camera_context.limite) {
-                //delete photo_list[0];
-                photo_list.shift(); //Remueve primer elemento
-            }
-
-            photo_list[photo_list.length] = image;
-
             var datos = {
                 usuario: usuario.id,
                 ejercicioId: avatar_context.id,
@@ -57,7 +49,7 @@ camera.prototype = {
                 fecha: new Date().toISOString(),
                 tipoPaso: contexto.tipoPaso,
                 segundos: segundos,
-                procesada:false,
+                sesionactual: true,
                 fotografia: image
             };
 
@@ -70,9 +62,6 @@ camera.prototype = {
                 dataType: "json"
             });
 
-            localStorage.setItem("photo_list", JSON.stringify(photo_list));
-
-            delete photo_list;
             delete datos;
             delete image;
         });
@@ -89,17 +78,14 @@ camera.prototype = {
         });
 
         Webcam.on("live", eliminarBackgroundCamera);
-        
+
         Webcam.on("error", errorCamara);
 
         Webcam.attach('#camera');
     },
-    getUltimasFotografias: function () {
-        return localStorage.getItem("last_photo");
-    },
     getFotografias: function () {
         camera_context.detenerFotos();
 
-        return localStorage.getItem("photo_list");
+        //return localStorage.getItem("photo_list");
     }
 };

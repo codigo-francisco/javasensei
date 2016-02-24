@@ -105,8 +105,8 @@ avatar_sensei.prototype = {
             pasoId: tree_self.pasoactual,
             fecha: new Date().toISOString(),
             tipoPaso: contexto.tipoPaso,
-            segundos: segundos,
-            fotografias : JSON.parse(camera_sensei.getUltimasFotografias())
+            segundos: segundos
+            //,fotografias : JSON.parse(camera_sensei.getUltimasFotografias())
         });
         if (tipoCamino=="caminofinaloptimo" ){ 
             avatar_context.cierreEjercicio(1);
@@ -114,7 +114,7 @@ avatar_sensei.prototype = {
             avatar_context.cierreEjercicio(0.7);
         }
     },
-    ejecutarAjax: function (tipoCamino, fotografias) {
+    ejecutarAjax: function (tipoCamino) {
             //Se hace una solicitud rest al servidor java en caso de que el detecto este activado
             $.ajax({
                 url: avatar_context.url + tipoCamino,
@@ -141,9 +141,9 @@ avatar_sensei.prototype = {
     },
     llamarSistemaLogicoDifuso: function (tipoCamino) {
         usuario.calidadRespuesta = example_tracing.obtenerCalidadRespuesta();
-        var fotografias = camera_sensei.getFotografias();
+        //var fotografias = camera_sensei.getFotografias();
         camera_sensei.reiniciarFotos();
-        avatar_context.ejecutarAjax(tipoCamino, fotografias);
+        avatar_context.ejecutarAjax(tipoCamino);
         $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_suboptimo: function () {
