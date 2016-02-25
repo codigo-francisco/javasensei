@@ -52,6 +52,8 @@ camera.prototype = {
                 tipoPaso: contexto.tipoPaso,
                 segundos: segundos,
                 sesionactual: true,
+                tutor:"",
+                emocionTutor:"",
                 fotografia: image
             };
 

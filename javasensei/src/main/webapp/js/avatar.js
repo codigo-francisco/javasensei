@@ -112,6 +112,8 @@ avatar_sensei.prototype = {
             avatar_context.cierreEjercicio(1);
         }else if (tipoCamino == "caminofinalsuboptimo"){
             avatar_context.cierreEjercicio(0.7);
+        }else{
+            camera_sensei.inicializarFotos(); //Es un camino donde hay que seguir tomando fotografias
         }
     },
     ejecutarAjax: function (tipoCamino) {
@@ -133,7 +135,6 @@ avatar_sensei.prototype = {
                 avatar_context.intervencion(datos);
                 if (usuario.activarEmociones){
                     avatar_context.procesarBitacora(datos,tipoCamino);
-                    camera_sensei.reiniciarFotos(true);
                 }else{
                     datos.emocion = "sinemocion";
                     avatar_context.procesarBitacora(datos,tipoCamino);
@@ -229,6 +230,8 @@ avatar_sensei.prototype = {
         }).error(function (error) {
             console.error(error);
         });
+        
+        iniciarCatagorizacion();
     },
     obtenerRatingEjercicio: function (idEjercicio) {
         $.ajax({

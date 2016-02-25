@@ -49,6 +49,13 @@ public class BitacoraRest {
         return manager.guardarBitacoras(logBitacoras);
     }
     
+    @Path("obtenerbitacoracategorizacion")
+    @POST
+    public String obtenerBitacoraCategorizacion(@FormParam("idUsuario") Long idUsuario) {
+        //Ultimas fotografias de las seccion activa
+        return new BitacoraFotografia().obtenerFotografiasCategorizadas(idUsuario);
+    }
+    
     @Path("bitacorafotografia")
     @POST
     public String guardarBitacoraFotografia(@FormParam("datos") String datos){

@@ -43,6 +43,15 @@ public class BitacoraFotografia {
         );
     }
     
+    public String obtenerFotografiasCategorizadas(Long idUsuario){
+        DBObject query = new BasicDBObject();
+        query.put("usuario", idUsuario);
+        query.put("sesionactual", true);
+        query.put("tutor", new BasicDBObject("$ne",""));
+        
+        return bitacoraFotografias.find(query, new BasicDBObject("fotografia",1)).toArray().toString();
+    }
+    
     private final static int limiteDocumentos = 3;
     
     public List<DBObject> obtenerFotografiasSinProcesar(Long idUsuario){

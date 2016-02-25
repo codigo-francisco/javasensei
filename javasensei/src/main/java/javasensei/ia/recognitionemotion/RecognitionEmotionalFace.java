@@ -44,7 +44,7 @@ public class RecognitionEmotionalFace {
                 String datos = foto.get("fotografia").toString();
                 BufferedImage image = ImageHelper.decodeToImage(datos);
                 
-                javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("D:/imagenes")));
+                //javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("D:/imagenes")));
                 
                 if (image != null) {
                     System.out.println("Se decodifico de base64 a imagebuffer");
