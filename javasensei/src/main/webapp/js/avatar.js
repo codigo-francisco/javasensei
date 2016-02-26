@@ -231,7 +231,7 @@ avatar_sensei.prototype = {
             console.error(error);
         });
         
-        iniciarCatagorizacion();
+        iniciarCategorizacion();
     },
     obtenerRatingEjercicio: function (idEjercicio) {
         $.ajax({

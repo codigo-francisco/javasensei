@@ -57,6 +57,7 @@ public class BitacoraRest {
     }
     
     @Path("bitacorafotografia")
+    @Produces("application/json")
     @POST
     public String guardarBitacoraFotografia(@FormParam("datos") String datos){
         new BitacoraFotografia().guardarBitacoraFotografia(datos);
