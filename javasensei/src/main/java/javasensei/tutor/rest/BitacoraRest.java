@@ -18,6 +18,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.QueryParam;
+import org.bson.types.ObjectId;
 
 /**
  * REST Web Service
@@ -47,6 +48,21 @@ public class BitacoraRest {
         BitacoraEjerciciosManager manager = new BitacoraEjerciciosManager();
         
         return manager.guardarBitacoras(logBitacoras);
+    }
+    
+    @Path("categorizarfotografiausuario")
+    @GET
+    public String categorizarFotografiaUsuario(
+            @QueryParam("idFotografia") String idFotografia,
+            @QueryParam("idUsuario") String idUsuario,
+            @QueryParam("emocion") String emocion){
+        
+        BitacoraFotografia bitacoraFotografia = new BitacoraFotografia();
+        
+        ObjectId idFoto = new ObjectId(idFotografia);
+        bitacoraFotografia.categorizarFotografiaUsuario(idFoto, idUsuario, emocion);
+        
+        return "{result:true}";
     }
     
     @Path("obtenerbitacoracategorizacion")

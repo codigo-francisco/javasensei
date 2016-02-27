@@ -17,6 +17,9 @@ public class BitacoraFotografia {
     
    private DBCollection bitacoraFotografias = Connection.getCollection()
            .get(CollectionsDB.BITACORA_FOTOGRAFIAS);
+   
+   private DBCollection bitacoraFotografiasUsuario = Connection.getCollection()
+           .get(CollectionsDB.BITACORA_FOTOGRAFIAS_USUARIO);
     
     public void guardarBitacoraFotografia(String datos){
         bitacoraFotografias.save(BasicDBObject.parse(datos));
@@ -33,7 +36,10 @@ public class BitacoraFotografia {
         }
     }
     
-    public void categorizarFotografia(ObjectId id, String emocionTutor, String tutor){        
+    public void categorizarFotografia(
+            ObjectId id, 
+            String emocionTutor, 
+            String tutor){        
         DBObject set = new BasicDBObject();
         set.put("emocionTutor", emocionTutor);
         set.put("tutor",tutor);
@@ -41,6 +47,18 @@ public class BitacoraFotografia {
         bitacoraFotografias.update(new BasicDBObject("_id", id), 
                 new BasicDBObject("$set",set)
         );
+    }
+    
+     public void categorizarFotografiaUsuario(
+             ObjectId id, 
+             String usuario,
+             String emocion){        
+        DBObject object = new BasicDBObject();
+        object.put("_id", id);
+        object.put("usuario",usuario);
+        object.put("emocion", emocion);
+        
+        bitacoraFotografiasUsuario.save(object);
     }
     
     public String obtenerFotografiasCategorizadas(Long idUsuario){
