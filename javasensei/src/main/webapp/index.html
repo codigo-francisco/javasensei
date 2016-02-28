@@ -502,14 +502,17 @@
                 </div>
             </div>
         </div>
-
-        <div data-role="page" data-dialog="true" id="paginacategorizacion" data-close-btn="right">
+        
+        <div data-role="page" data-dialog="true" id="paginacategorizacion" data-close-btn="none">
             <div data-role="header">
                 <h2>
                     Categorización de fotos
                 </h2>
             </div>
             <div class="ui-content" role="main">
+                <div data-role="popup" id="popupAdvertencia" data-transition="pop">
+                    <p>Por favor, seleccione una emoción para cada fotografia.</p>
+                </div>
                 <div id="div_categorizar">
                     
                 </div>
@@ -519,7 +522,7 @@
                 </div>
                 <div id="emociones_categorizar">
                     <span style="font-weight: bold">¿Cómo te sentías en esta fotografía?</span><br>
-                    <div class="categorizar">
+                    <div id="categorizar">
                         <div><img id="feliz" src="img/emociones_categorizar/feliz.svg"></div>
                         <div><img id="enojado" src="img/emociones_categorizar/enojado.svg"></div>
                         <div><img id="neutral" src="img/emociones_categorizar/neutral.svg"></div>

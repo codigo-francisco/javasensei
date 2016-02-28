@@ -37,12 +37,12 @@ input, button{
     height: 23em;
 }
 
-.categorizar img{
+#categorizar img{
     width:100%;
     height: 5em;
 }
 
-.categorizar div{
+#categorizar div{
     width:20%;
     float:left;
 }

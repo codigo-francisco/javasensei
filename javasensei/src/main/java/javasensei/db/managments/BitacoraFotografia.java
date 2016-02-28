@@ -2,8 +2,10 @@ package javasensei.db.managments;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javasensei.db.Connection;
 import org.bson.Document;
@@ -67,7 +69,16 @@ public class BitacoraFotografia {
         query.put("sesionactual", true);
         query.put("tutor", new BasicDBObject("$ne",""));
         
-        return bitacoraFotografias.find(query, new BasicDBObject("fotografia",1)).toArray().toString();
+        List<DBObject> fotografias = bitacoraFotografias.find(query, new BasicDBObject("fotografia",1)).toArray();
+        
+        //Se extraen 5 fotografias en caso de que sea una coleccion más grande
+        if (fotografias.size()>5){
+            //Elegir aleatoriamente las fotografias
+            Collections.shuffle(fotografias);
+            fotografias = fotografias.subList(0, 4);
+        }
+        
+        return fotografias.toString();
     }
     
     private final static int limiteDocumentos = 3;
