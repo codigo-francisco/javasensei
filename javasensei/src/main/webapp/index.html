@@ -43,6 +43,7 @@
         <script type="text/javascript" src="js/matriz.js"></script>
         <script type="text/javascript" src="js/graficaEmociones.js"></script>
         <script type="text/javascript" src="js/categorizacion.js"></script>
+        <script type="text/javascript" src="js/navegador.js"></script>
 
         <script>
             var menu = new menu_sensei();
@@ -187,7 +188,7 @@
                 
                 enlazarBotonesCarousel();
 
-                camera_sensei.setup();
+                detectarNavegador();
             });
 
         </script>
@@ -233,6 +234,16 @@
                 left: 0;
                 background-color:white;
             }
+            .fullscreenbrowser{
+                width: 100%;
+                height: 100%;
+                position:fixed;
+                z-index:1600;
+                top:0;
+                left:0;
+                background-color: white;
+                padding-top: 10em;
+            }
             .loginScreen{
                 position: absolute;
                 top: 25%;
@@ -272,6 +283,14 @@
         </style>
     </head>
     <body>
+        <div class="fullscreenbrowser">
+            <h1 style="font-weight: bold;text-align:center;">
+               Este sitio web solo funciona con el navegador Firefox, por favor realiza tus ejercicios desde él
+            </h1>
+            <a href="https://www.mozilla.org/es-MX/firefox/new/">
+                <img style="display: block; margin-left: auto; margin-right: auto;width: 50em;height: 50%;" src="img/firefox-logo-full.png" alt="Firefox">
+            </a>
+        </div>
         <!-- Seccion del login -->
         <div id="fullscreenlogin" class="fullscreen">
             <div class="loginScreen">
@@ -281,7 +300,7 @@
                     <div class="fb-login-button" 
                          data-max-rows="1" 
                          data-size="xlarge" 
-                         data-show-faces="false" 
+                         data-show-faces="true" 
                          data-auto-logout-link="false" 
                          onlogin="checkLoginState();"></div> 
                     <button style="display: none" onclick="processLoginJhonDoe();">Login Jhon Doe</button>
