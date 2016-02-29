@@ -268,7 +268,7 @@ public class EstudiantesManager {
                 new BasicDBObject("id", estudiante.getId()), 
                 new BasicDBObject("$set", 
                         new BasicDBObject("aceptarCondiciones",
-                                estudiante.getAceptarCondiciones())
+                                true)
                 )
         );
     }

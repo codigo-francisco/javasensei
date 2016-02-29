@@ -34,6 +34,7 @@ function enlazarControlesCondiciones() {
                 url + "condiciones",
                 {id: usuario.id},
                 function (response) {
+                    usuario.aceptarCondiciones = true;
                     console.log("Se guardaron las condiciones");
                 }
         );
