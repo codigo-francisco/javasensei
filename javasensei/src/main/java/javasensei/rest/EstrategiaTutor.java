@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javasensei.tutor.rest;
+package javasensei.rest;
 
 import javasensei.estudiante.ModeloEstudiante;
 import javasensei.ia.recognitionemotion.Emocion;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javasensei.tutor.rest;
+package javasensei.rest;
 
 import java.util.Set;
 import javax.ws.rs.core.Application;
@@ -29,12 +29,13 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(javasensei.tutor.rest.BitacoraRest.class);
-        resources.add(javasensei.tutor.rest.DominioRest.class);
-        resources.add(javasensei.tutor.rest.EstrategiaTutor.class);
-        resources.add(javasensei.tutor.rest.EstudianteRest.class);
-        resources.add(javasensei.tutor.rest.RecomendacionRest.class);
-        resources.add(javasensei.tutor.rest.RecursosRest.class);
+        resources.add(javasensei.rest.BitacoraRest.class);
+        resources.add(javasensei.rest.Condiciones.class);
+        resources.add(javasensei.rest.DominioRest.class);
+        resources.add(javasensei.rest.EstrategiaTutor.class);
+        resources.add(javasensei.rest.EstudianteRest.class);
+        resources.add(javasensei.rest.RecomendacionRest.class);
+        resources.add(javasensei.rest.RecursosRest.class);
     }
     
 }

@@ -60,6 +60,9 @@ function checarUsuario(datos) {
         console.log("%cLogin de facebook realizado: %O", "color: red", data);
         usuario = data;
         menu.actualizarMenu();
+        //Verificamos si ya firmo las condiciones
+        if (!usuario.aceptarCondiciones)
+            mostrarCondiciones();
     });
 }
 

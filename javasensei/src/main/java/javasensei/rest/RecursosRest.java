@@ -1,4 +1,4 @@
-package javasensei.tutor.rest;
+package javasensei.rest;
 
 import com.google.gson.JsonObject;
 import javasensei.db.managments.EjerciciosManager;

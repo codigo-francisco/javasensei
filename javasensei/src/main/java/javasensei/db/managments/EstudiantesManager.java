@@ -262,4 +262,14 @@ public class EstudiantesManager {
         
         return result;
     }
+    
+    public void guardarCondiciones(){
+        alumnosCollection.update(
+                new BasicDBObject("id", estudiante.getId()), 
+                new BasicDBObject("$set", 
+                        new BasicDBObject("aceptarCondiciones",
+                                estudiante.getAceptarCondiciones())
+                )
+        );
+    }
 }

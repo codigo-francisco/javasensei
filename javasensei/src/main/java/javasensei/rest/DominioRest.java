@@ -1,4 +1,4 @@
-package javasensei.tutor.rest;
+package javasensei.rest;
 
 import javasensei.db.managments.MenuManager;
 import javax.ws.rs.Consumes;

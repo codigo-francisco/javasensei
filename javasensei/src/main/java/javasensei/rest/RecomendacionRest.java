@@ -1,4 +1,4 @@
-package javasensei.tutor.rest;
+package javasensei.rest;
 
 import javasensei.db.managments.RankingManager;
 import javasensei.estudiante.ModeloEstudiante;

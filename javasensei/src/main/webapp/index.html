@@ -187,7 +187,9 @@
                 });
                 
                 enlazarBotonesCarousel();
-
+                
+                enlazarControlesCondiciones();
+                
                 detectarNavegador();
             });
 
@@ -519,6 +521,24 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <div data-role="page" data-dialog="true" id="paginacondiciones" data-close-btn="none">
+            <div data-role="header">
+                <h2>
+                    Aceptar condiciones
+                </h2>
+            </div>
+            <div class="ui-content" role="main">
+                <h3>                    
+                   JavaSensei te tomará fotografías en segundo plano mientras realizas tus ejercicios.
+                   Estas fotografías serán evaluadas por el sistema para conocer cuál es tu estado emocional y así poderte ayudar durante tu proceso de aprendizaje.
+                   Las fotografías se guardarán en nuestra base de datos y servirán para apoyar y realizar trabajos de naturaleza científica,
+                   por lo que estas no serán difundidas fuera de nuestros laboratorios y no se utilizarán con fines de lucro.
+                </h3>
+                <input id="checkAcuerdo" type="checkbox" value="Entiendo y estoy de acuerdo.">
+                <input id="btnAceptarCondiciones" type="button" class="ui-btn ui-disabled" value="Aceptar">
             </div>
         </div>
         

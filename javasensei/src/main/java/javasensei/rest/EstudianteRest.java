@@ -1,4 +1,4 @@
-package javasensei.tutor.rest;
+package javasensei.rest;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;

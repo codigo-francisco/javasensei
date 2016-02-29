@@ -1,7 +1,5 @@
 package javasensei.estudiante;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import java.time.Instant;
@@ -22,6 +20,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     private double habilidadGlobal = 0;
     private double calidadRespuesta = 0; //Parametros internos al crear un estudiante nuevo
     private boolean activarEmociones = true;
+    private boolean aceptarCondiciones = false;
     private double tiempo = 0;
     private Date creado = Date.from(Instant.now());
 
@@ -41,6 +40,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         emocionPrevia = Emocion.getEmocion(jsonObj.getString("emocionPrevia"));
         habilidadGlobal = new Double(jsonObj.getString("habilidadGlobal"));
         activarEmociones = jsonObj.getBoolean("activarEmociones");
+        aceptarCondiciones = jsonObj.getBoolean("aceptarCondiciones");
         tiempo = jsonObj.getDouble("tiempo");
         creado = jsonObj.getDate("creado", Date.from(Instant.now()));
     }
@@ -67,6 +67,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         dbObject.put("habilidadGlobal", getHabilidadGlobal().toString());
         dbObject.put("calidadRespuesta", getCalidadRespuesta());
         dbObject.put("activarEmociones", getActivarEmociones());
+        dbObject.put("aceptarCondiciones", getAceptarCondiciones());
         dbObject.put("tiempo", getTiempo());
         dbObject.put("creado", getCreado());
 
@@ -147,5 +148,13 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     
     public Date getCreado() {
         return creado;
+    }
+    
+     public boolean getAceptarCondiciones() {
+        return aceptarCondiciones;
+    }
+
+    public void setAceptarCondiciones(boolean aceptarCondiciones) {
+        this.aceptarCondiciones = aceptarCondiciones;
     }
 }
