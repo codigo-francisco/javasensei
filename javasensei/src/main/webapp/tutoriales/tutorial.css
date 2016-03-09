@@ -1,13 +1,20 @@
 .principal_tutorial{
     /*height: 35ex;*/
 }
+.imagenes_tutorial div{
+    text-align: center;
+}
+
+.imagenes_tutorial p{
+    text-align: center;
+}
 .imagenes_tutorial img{
-    width: 100%;
+    width: 90%;
     height: 35ex;
 }
 
 .atras_tutorial, .adelante_tutorial{
-    border-style: outset;
+    border-style: solid;
     opacity: 0.5;
     color: #161716 !important;
     border-radius: 2em;
@@ -17,7 +24,7 @@
     position: absolute;
 }
 .atras_tutorial:hover, .adelante_tutorial:hover{
-     border-style: inset;
+     
 }
 
 .atras_tutorial{
@@ -25,4 +32,22 @@
 
 .adelante_tutorial{
     right: 0ex;
+}
+
+.barraprogreso_tutorial{
+    text-align: center;
+}
+
+.barraprogreso_tutorial_activo{
+    background-color:green;
+}
+
+.barraprogreso_boton{
+    height: 1em;
+    border-radius: 1em;
+    border : none;
+    margin: .2em;
+    border-color: black;
+    border-width: .1em;
+    border-style: solid;
 }
