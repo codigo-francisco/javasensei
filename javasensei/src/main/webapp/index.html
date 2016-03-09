@@ -8,7 +8,7 @@
 
         <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
         <link href="jquerymobile/jquery.mobile-1.4.4.min.css" rel="stylesheet">
-        <link href="jquerymobile/icon-pack-custom.css" rel="stylesheet">
+        <link href="jquerymobile/jqm-icon-pack-fa.css" rel="stylesheet">
         <link href="styles/github.css" rel="stylesheet">
         <link href="jquery/jRating.jquery.css" rel="stylesheet" media="screen">
         <link href="Prettyprint/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
@@ -19,13 +19,12 @@
         <link href="css/matriz.css" rel="stylesheet"/>
         <link href="css/recursos.css" rel="stylesheet">
         <link href="css/mobile.css" rel="stylesheet">
+        <link href="tutoriales/tutorial.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
         <script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
         <script type="text/javascript" src="Prettyprint/google-code-prettify/prettify.js"></script>
-        <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
-        <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
 
         <script type="text/javascript" src="js/highcharts.js"></script>
         <script type="text/javascript" src="js/highcharts-more.js"></script>
@@ -47,6 +46,7 @@
         <script type="text/javascript" src="js/categorizacion.js"></script>
         <script type="text/javascript" src="js/navegador.js"></script>
         <script type="text/javascript" src="js/canvas.js"></script>
+        <script src="tutoriales/tutorial.js"></script>
 
         <script>
             var menu = new menu_sensei();
@@ -106,6 +106,8 @@
             }
 
             $(document).ready(function () {
+                detectarNavegador();
+                
                 $("#button_logout").click(function () {
                     logout();
                 });
@@ -193,7 +195,8 @@
                 
                 enlazarControlesCondiciones();
                 
-                detectarNavegador();
+                tutorial_principal = new tutorial($("#tutorial_principal"));
+                
             });
 
         </script>
@@ -288,7 +291,6 @@
         </style>
     </head>
     <body>
-        <canvas id="canvas" style="position: absolute; top:0; left:0; width: 100%; height: 100%;z-index: 1800"></canvas>
         <div class="fullscreenbrowser">
             <h1 style="font-weight: bold;text-align:center;">
                Este sitio web solo funciona con el navegador Firefox, por favor realiza tus ejercicios desde él
@@ -333,27 +335,43 @@
 
             <!-- Paneles -->
             <div data-role="panel" data-display="overlay" id="panelmenu">
-                <div id="ejerciciosmenu" style="white-space: normal !important;" data-role="collapsibleset">
+                <div id="ejerciciosmenu" style="white-space: normal !important;" 
+                     data-role="collapsibleset">
 
                 </div>
                 <div style="display:none;" data-position="fixed" data-role="footer">
-                    <a id="button_logout" href="#" data-icon="lock" >Cerrar Sesión</a>
+                    <a id="button_logout" href="#" data-icon="power-off" >Cerrar Sesión</a>
                 </div>
             </div>
 
             <div data-role="header">
-                <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext" title="Este es el menu de ejercicios"></a>
+                <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext" 
+                   title="Este es el menu de ejercicios"></a>
 
                 <div class="ui-title">
                     <img id="imagen_usuario" src=""><br>
-                    <span style="white-space: normal !important;word-break: break-all;font-size:12px" id="facebookId"></span><br>
+                    <span style="white-space: normal !important;word-break: 
+                          break-all;font-size:12px" id="facebookId"></span><br>
                     <span style="white-space: normal !important;" id="nombre_usuario"></span>
                     <!-- Score: -->
                 </div>
 
-                <a id="botoncamara" title="Colocate bien ante la camara" href="#" style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" data-iconpos="notext"></a>
-                <a id="botongrafica" title="Grafica del avance como estudiante" href="#paginagraficaestudiante" style="margin-right: 2em;" data-rel="dialog" data-icon="exclamation-circle" class="ui-btn-right" data-iconpos="notext"></a>
-                <a id="botonrecursos" title="Menu de ejercicios y recursos" href="#paginarecursos" data-rel="dialog" data-icon="ellipsis-v" class="ui-btn-right" data-iconpos="notext"></a>
+                <a id="botonayuda" title="Mira la ayuda" href="#tutorial_pantallaprincipal" 
+                   style="margin-right: 6em;" data-icon="question-circle" class="ui-btn-right"
+                   data-iconpos="notext"></a>
+                   
+                <a id="botoncamara" title="Colocate bien ante la camara" href="#"
+                   style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" 
+                   data-iconpos="notext"></a>
+                
+                <a id="botongrafica" title="Grafica del avance como estudiante" 
+                   href="#paginagraficaestudiante" style="margin-right: 2em;" 
+                   data-rel="dialog" data-icon="user" 
+                   class="ui-btn-right" data-iconpos="notext"></a>
+                   
+                <a id="botonrecursos" title="Menu de ejercicios y recursos" href="#paginarecursos" 
+                   data-rel="dialog" data-icon="gear" class="ui-btn-right" 
+                   data-iconpos="notext"></a>
             </div>
 
             <div role="main" class="ui-content">
@@ -543,6 +561,48 @@
                     <input id="checkAcuerdo" type="checkbox">Entiendo y estoy de acuerdo.
                 </label>
                 <a id="btnAceptarCondiciones" href="#" class="ui-btn ui-disabled">Aceptar</a>
+            </div>
+        </div>
+        
+        <div data-role="page" id="tutorial_pantallaprincipal" data-dialog="true"
+             data-transition="slidedown" data-close-btn="right">
+            <div data-role="header">
+                <h2>Tutorial de la Pantalla Principal</h2>
+            </div>
+            <div class="ui-content" role="main">
+                <div id="tutorial_principal" class="principal_tutorial">
+                    <div class="imagenes_tutorial">
+                        <div>
+                            <img src="tutoriales/imagenes/pantalla_principal.png">
+                            <p>Esta es la interfaz de Java Sensei, desde ella podrás acceder a todos las opciones del sistema.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes/pantalla_principal_senalamientos.png">
+                             <p>Los botones te llevarán a las distintas opciones del sistema, las cuales son:<br>
+                                Menú de ejercicios<br>
+                                Ayuda del sistema<br>
+                                Posicionamiento ante la camara<br>
+                                Grafica y tabla de avances del estudiante<br>
+                                Menú de recomendaciones de ejercicios, obtención de recursos y configuración del sistema<br>
+                            </p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes/grafica_estudiante_senalamiento.png">
+                            <p>La grafica de y tabla de avances te proporcionara una retroalimentación de tu avance</p>
+                        </div>
+                        <div>
+                            <p>Este menú te proporcionará recomendaciones de ejercicios de acuerdo a tu gusto y preferencias</p>
+                        </div>
+                        <div>
+                            <p>Este menú te permitirá consultar distintos recursos que te ayudarán a entender conceptos claves del Lenguaje Java</p>
+                        </div>
+                    </div>
+                    <a class="atras_tutorial" href="#">&lt;</a>
+                    <a class="adelante_tutorial" href="#">&gt;</a>
+                    <div>
+                        
+                    </div>
+                </div>
             </div>
         </div>
         

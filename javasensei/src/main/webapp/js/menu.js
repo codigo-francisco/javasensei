@@ -112,8 +112,9 @@ function menu_sensei() {
             //Boton de cierre de sesion
             var btnCerrar = $("<a>")
                     .prop("id", "cerrarSesion")
+                    .prop("data-icon", "power-off")
                     .text("Cerrar Sesión")
-                    .addClass("ui-btn ui-icon-power")
+                    .addClass("ui-btn")
                     .click(cerrarSesion);
 
             menu.append(btnCerrar);
