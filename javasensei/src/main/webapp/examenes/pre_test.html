@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Examen pre-test.  Java Sensei 2016.</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" href="../img/logo.jpg">
+        <script src="../prism/prism.js"></script>
+        <link href="../prism/prism.css" type="text/css" rel="stylesheet" />
+        <script src="../js/jquery-2.1.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#button").click(function () {
+                    var jsonRespuestas = [];
+                    var idPregunta = $("div").filter(function () {
+                        return this.id.match(/question\d+/);
+                    });
+                    idPregunta.each(function (index, obj) {
+                        var respuesta = $(obj).find("input:checked");
+                        var o = {};
+                        o.pregunta = respuesta.prop("name");
+                        o.respuesta = respuesta.prop("id");
+                        jsonRespuestas.push(o);
+                    });
+
+                    $.post(
+                            "../servicios/examenes/calificarexamenpretest",
+                            {
+                                idUsuario: 0,
+                                json: JSON.stringify(jsonRespuestas)
+                            }, function (response) {
+                                alert("Hola.");
+                    }, function (error) {
+                        alert("Error en la petición AJAX para procesar el examen pre-test.");
+                    }
+                    );
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <p>"ID del usuario, fecha."</p>
+        <h2>Este es el examen pre-test</h2>
+        <p>Instrucciones:  contesta las siguientes preguntas seg&uacute;n corresponda.</p>
+
+
+        <hr/>
+        <p class="question">1. What is the answer to this question?</p>
+        <pre>
+                <code class="language-java line-numbers">public class Foo {
+                    public void bar(){
+                        System.out.println("Foo.bar");
+                    }
+                }
+                </code>
+        </pre>
+
+        <div id="question1">
+            <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Answer 1</label><br/>          
+            <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Answer 2</label><br/>            
+            <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Answer 3</label><br/>            
+            <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Answer 4</label><br/>
+        </div>
+        <hr/>
+        <p class="question">2. What is the answer to this question?</p>
+        <pre class = "prettyprint lang-java linenums">
+public class Perro {
+public static void main(String[] args) {
+System.out.println("Hola");
+}
+}	
+        </pre>	
+
+        <div id="question2">
+            <input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Answer 1</label><br/>          
+            <input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Answer 2</label><br/>            
+            <input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Answer 3</label><br/>            
+            <input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Answer 4</label><br/>
+        </div>
+
+        <br/>
+        <div id="button">
+            <input type="button" value="Calificar Pre-test" />
+        </div>
+</html>
