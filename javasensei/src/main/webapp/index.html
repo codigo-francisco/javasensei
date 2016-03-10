@@ -8,7 +8,7 @@
 
         <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
         <link href="jquerymobile/jquery.mobile-1.4.4.min.css" rel="stylesheet">
-        <link href="jquerymobile/icon-pack-custom.css" rel="stylesheet">
+        <link href="jquerymobile/jqm-icon-pack-fa.css" rel="stylesheet">
         <link href="styles/github.css" rel="stylesheet">
         <link href="jquery/jRating.jquery.css" rel="stylesheet" media="screen">
         <link href="Prettyprint/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
@@ -19,6 +19,7 @@
         <link href="css/matriz.css" rel="stylesheet"/>
         <link href="css/recursos.css" rel="stylesheet">
         <link href="css/mobile.css" rel="stylesheet">
+        <link href="tutoriales/tutorial.css" rel="stylesheet">
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
@@ -38,10 +39,14 @@
         <script type="text/javascript" src="js/tree-example-tracing.js"></script>
         <script type="text/javascript" src="js/example_tracing.js"></script>
         <script type="text/javascript" src="js/avatar.js"></script>
-        <script type="text/javascript" src="js/camera.js"></script>
+        <script type="text/javascript" src="js/camara.js"></script>
         <script type="text/javascript" src="js/graficos.js"></script>
         <script type="text/javascript" src="js/matriz.js"></script>
         <script type="text/javascript" src="js/graficaEmociones.js"></script>
+        <script type="text/javascript" src="js/categorizacion.js"></script>
+        <script type="text/javascript" src="js/navegador.js"></script>
+        <script type="text/javascript" src="js/canvas.js"></script>
+        <script src="tutoriales/tutorial.js"></script>
 
         <script>
             var menu = new menu_sensei();
@@ -105,7 +110,37 @@
                 }
             }
 
+            var tutorial_principal, tutorial_ejercicios;
+
+            function configurarTutoriales() {
+                tutorial_principal = new tutorial(
+                        $("#tutorial_principal"),
+                        {
+                            idDialog: "#tutorial_pantallaprincipal",
+                            urlPrimeraVez: "estudiantes/modificarPropiedad",
+                            parametroUrl: {
+                                id: usuario.id,
+                                mostrarTutorialPrincipal: true
+                            }
+                        }
+                );
+
+                tutorial_ejercicios = new tutorial(
+                        $("#tutorial_ejercicios"),
+                        {
+                            idDialog: "#tutorial_pantallaejercicios",
+                            urlPrimeraVez: "estudiantes/modificarPropiedad",
+                            parametroUrl: {
+                                id: usuario.id,
+                                mostrarTutorialEjercicio: true
+                            }
+                        }
+                );
+            }
+
             $(document).ready(function () {
+                detectarNavegador();
+
                 $("#button_logout").click(function () {
                     logout();
                 });
@@ -189,7 +224,17 @@
                     detectorEmocional = $("#selecciondetector :checked").attr("id");
                 });
 
-                camera_sensei.setup();
+                $("#botonayuda").click(function (event) {
+                    if (avatar_context.id === 0) {
+                        tutorial_principal.mostrarTutorial();
+                    } else { //Un ejercicio esta activo;
+                        tutorial_ejercicios.mostrarTutorial();
+                    }
+                });
+
+                enlazarBotonesCarousel();
+
+                enlazarControlesCondiciones();
             });
 
         </script>
@@ -235,6 +280,16 @@
                 left: 0;
                 background-color:white;
             }
+            .fullscreenbrowser{
+                width: 100%;
+                height: 100%;
+                position:fixed;
+                z-index:1600;
+                top:0;
+                left:0;
+                background-color: white;
+                padding-top: 6em;
+            }
             .loginScreen{
                 position: absolute;
                 top: 25%;
@@ -274,6 +329,14 @@
         </style>
     </head>
     <body>
+        <div class="fullscreenbrowser">
+            <p style="font-weight: bold;text-align:center;">
+                Este sitio web solo funciona con el navegador Firefox, por favor realiza tus ejercicios desde él
+            </p>
+            <a href="https://www.mozilla.org/es-MX/firefox/new/">
+                <img style="display: block; margin-left: auto; margin-right: auto;width: 100%;max-width: 45em;height: 50%;" src="img/firefox-logo-full.png" alt="Firefox">
+            </a>
+        </div>
         <!-- Seccion del login -->
         <div id="fullscreenlogin" class="fullscreen">
             <div class="loginScreen">
@@ -283,7 +346,7 @@
                     <div class="fb-login-button" 
                          data-max-rows="1" 
                          data-size="xlarge" 
-                         data-show-faces="false" 
+                         data-show-faces="true" 
                          data-auto-logout-link="false" 
                          onlogin="checkLoginState();"></div> 
                     <button style="display: none" onclick="processLoginJhonDoe();">Login Jhon Doe</button>
@@ -293,7 +356,7 @@
         <div id="dialog_video" class="fullscreencamera">
             <div class="divContenidoCamara">
                 <div><strong>Posicione su rostro al centro de la cámara</strong></div>
-                <button class="ui-btn ui-btn-corner-all ui-btn-active" id="cerrarEjemplo">Ok, Lo tengo</button>
+                <button class="ui-btn ui-btn-corner-all ui-btn-active" id="cerrarEjemplo">Entiendo</button>
                 <div id="camera" class="camera"></div>
             </div>
         </div>
@@ -302,7 +365,8 @@
         </div>
         <div id="fullscreenpermition" class="fullscreenpermition">
             <div style="text-align: center;margin-top: 4em;">
-                Por favor acepte los permisos de utilizar la cámara o use el tutor desde un dispositivo con cámara
+                <p style="text-align: center;">Por favor acepte los permisos de utilizar la cámara o use el tutor desde un dispositivo con cámara</p>
+                <img style="width: 100%;" src="tutoriales/tutorial_camara.gif">
             </div>
         </div>
 
@@ -310,27 +374,43 @@
 
             <!-- Paneles -->
             <div data-role="panel" data-display="overlay" id="panelmenu">
-                <div id="ejerciciosmenu" style="white-space: normal !important;" data-role="collapsibleset">
+                <div id="ejerciciosmenu" style="white-space: normal !important;" 
+                     data-role="collapsibleset">
 
                 </div>
                 <div style="display:none;" data-position="fixed" data-role="footer">
-                    <a id="button_logout" href="#" data-icon="lock" >Cerrar Sesión</a>
+                    <a id="button_logout" href="#" data-icon="power-off" >Cerrar Sesión</a>
                 </div>
             </div>
 
             <div data-role="header">
-                <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext" title="Este es el menu de ejercicios"></a>
+                <a id="menuboton" href="#panelmenu" data-icon="bullets" data-iconpos="notext" 
+                   title="Este es el menu de ejercicios"></a>
 
                 <div class="ui-title">
                     <img id="imagen_usuario" src=""><br>
-                    <span style="white-space: normal !important;word-break: break-all;font-size:12px" id="facebookId"></span><br>
+                    <span style="white-space: normal !important;word-break: 
+                          break-all;font-size:12px" id="facebookId"></span><br>
                     <span style="white-space: normal !important;" id="nombre_usuario"></span>
                     <!-- Score: -->
                 </div>
 
-                <a id="botoncamara" title="Colocate bien ante la camara" href="#" style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" data-iconpos="notext"></a>
-                <a id="botongrafica" title="Grafica del avance como estudiante" href="#paginagraficaestudiante" style="margin-right: 2em;" data-rel="dialog" data-icon="exclamation-circle" class="ui-btn-right" data-iconpos="notext"></a>
-                <a id="botonrecursos" title="Menu de ejercicios y recursos" href="#paginarecursos" data-rel="dialog" data-icon="ellipsis-v" class="ui-btn-right" data-iconpos="notext"></a>
+                <a id="botonayuda" title="Mira la ayuda" href="#" 
+                   style="margin-right: 6em;" data-icon="question-circle" class="ui-btn-right"
+                   data-iconpos="notext"></a>
+
+                <a id="botoncamara" title="Colocate bien ante la camara" href="#"
+                   style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" 
+                   data-iconpos="notext"></a>
+
+                <a id="botongrafica" title="Grafica del avance como estudiante" 
+                   href="#paginagraficaestudiante" style="margin-right: 2em;" 
+                   data-rel="dialog" data-icon="user" 
+                   class="ui-btn-right" data-iconpos="notext"></a>
+
+                <a id="botonrecursos" title="Menu de ejercicios y recursos" href="#paginarecursos" 
+                   data-rel="dialog" data-icon="gear" class="ui-btn-right" 
+                   data-iconpos="notext"></a>
             </div>
 
             <div role="main" class="ui-content">
@@ -490,12 +570,12 @@
                         <div id="tercertab" class="ui-content">
                             <label for="activarEmociones">Activar Detector de Emociones</label>
                             <input id="activarEmociones" checked="checked" data-role="flipswitch" name="activarEmociones" type="checkbox">
-                            <fieldset class="ui-disabled" data-role="controlgroup" data-type="horizontal" id="selecciondetector">
-                                <legend>Reconocimiento Emocional:</legend>
-                                <input type="radio" name="reconocimientoemocional" id="neuroph" value="on" checked="checked">
-                                <label for="neuroph">NeuroPH</label>
-                                <input type="radio" name="reconocimientoemocional" id="oxford" value="off">
-                                <label for="oxford">Oxford (Microsoft)</label>
+                            <fieldset data-role="controlgroup" data-type="horizontal" id="selecciondetector">
+                                        <legend>Reconocimiento Emocional:</legend>
+                                        <input type="radio" name="reconocimientoemocional" id="neuroph" value="on" checked="checked">
+                                        <label for="neuroph">NeuroPH</label>
+                                        <input type="radio" name="reconocimientoemocional" id="oxford" value="off">
+                                        <label for="oxford">Oxford (Microsoft)</label>
                                 <input type="radio" name="reconocimientoemocional" id="indico" value="off">
                                 <label for="indico">Indico</label>
                             </fieldset>
@@ -504,5 +584,148 @@
                 </div>
             </div>
         </div>
+
+        <div data-role="page" data-dialog="true" id="paginacondiciones" data-transition="slidedown" data-close-btn="none">
+            <div data-role="header">
+                <h2>
+                    Aceptar condiciones
+                </h2>
+            </div>
+            <div class="ui-content" role="main">
+                <span>
+                    JavaSensei te tomará fotografías en segundo plano mientras realizas tus ejercicios. Estas fotografías serán evaluadas por el sistema para conocer cuál es tu estado emocional y así poderte ayudar durante tu proceso de aprendizaje.<br><br>
+                    Las fotografías se guardarán en nuestra base de datos y servirán para apoyar y realizar trabajos de naturaleza científica,por lo que estas no serán difundidas fuera de nuestros laboratorios y no se utilizarán con fines de lucro.<br>
+                </span>
+                <label>
+                    <input id="checkAcuerdo" type="checkbox">Entiendo y estoy de acuerdo.
+                </label>
+                <a id="btnAceptarCondiciones" href="#" class="ui-btn ui-disabled">Aceptar</a>
+            </div>
+        </div>
+
+        <div data-role="page" id="tutorial_pantallaprincipal" data-dialog="true"
+             data-transition="slidedown" data-close-btn="right">
+            <div data-role="header">
+                <h2>Tutorial de la Pantalla Principal</h2>
+            </div>
+            <div class="ui-content" role="main">
+                <div id="tutorial_principal" class="principal_tutorial">
+                    <div class="barraprogreso_tutorial"></div>
+                    <div class="imagenes_tutorial">                        
+                        <div>
+                            <img src="tutoriales/imagenes_principal/interfaz_principal.png">
+                            <p>Esta es la interfaz principal del sistema Java Sensei, desde ella podrás acceder a todos las opciones del sistema.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_principal/interfaz_principal_botones.png">
+                            <p>Los botones te llevarán a las distintas opciones del sistema. Navega por ellas para que las conozcas.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_principal/avance_estudiante.png">
+                            <p>Puedes observar y verificar tu progreso en Java Sensei.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_principal/menu_ejercicios.png">
+                            <p>El sistema te podrá recomendar ejercicios en base a tus preferencias. Recuerda calificar los recursos y ejercicios.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_principal/menu_recursos.png">
+                            <p>Puedes consultar recursos que te ayudarán a entender conceptos claves del lenguaje Java.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_principal/camara.png">
+                            <p><span style="font-weight: bolder">!IMPORTANTE!</span>, recuerda mantener tu rostro al centro de la cámara y de ser posible no utilices lentes u otros objetos que obstruyan tu rostro. Esto ayudara al sistema a reconocer tus emociones y nos ayudaras a mejorarlo.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_principal/cerrar_sesion.png">
+                            <p><span style="font-weight: bolder; color: red;">!MUY IMPORTANTE!</span>, recuerda cerrar la sesión del sistema cuando vayas a dejar de utilizar el sistema.</p>
+                        </div>
+                    </div>
+
+                    <a class="atras_tutorial" href="#">&lt;</a>
+                    <a class="adelante_tutorial" href="#">&gt;</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="tutorial_pantallaejercicios" data-dialog="true"
+             data-transition="slidedown" data-close-btn="right">
+            <div data-role="header">
+                <h2>Tutorial de la Pantalla de Ejercicios</h2>
+            </div>
+            <div class="ui-content" role="main">
+                <div id="tutorial_ejercicios" class="principal_tutorial">
+                    <div class="barraprogreso_tutorial"></div>
+                    <div class="imagenes_tutorial">                        
+                        <div>
+                            <img src="tutoriales/imagenes_ejercicio/ejercicio.png">
+                            <p>Esta es el área de ejercicios, aquí aprenderás Java</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_ejercicio/ejercicio_problema.png">
+                            <p>En esta área podrás ver el problema que se está planteado, recuerda leer y poner atención a las preguntas o al código que falta completar.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_ejercicio/ejercicio_solucion.png">
+                            <p>En esta sección puedes consultar las respuestas disponibles, siempre habrá una que sea correcta, tus errores y aciertos son registrados para saber cómo estas avanzando.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_ejercicio/tutor.png">
+                            <p>Recuerda consultar al tutor, el podrá darte la información que necesitas para resolver el ejercicio. A veces él te hablara para apoyarte.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_ejercicio/categorizacion.png">
+                            <p>Al finalizar categoriza que emoción sentiste, esto es importante para ayudarnos a mejorar el sistema.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_principal/camara.png">
+                            <p><span style="font-weight: bolder">!IMPORTANTE!</span>, recuerda mantener tu rostro al centro de la cámara y de ser posible no utilices lentes u otros objetos que obstruyan tu rostro. Esto ayudara al sistema a reconocer tus emociones y nos ayudaras a mejorarlo.</p>
+                        </div>
+                    </div>
+
+                    <a class="atras_tutorial" href="#">&lt;</a>
+                    <a class="adelante_tutorial" href="#">&gt;</a>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" data-dialog="true" id="paginacategorizacion" data-close-btn="none">
+            <div data-role="header">
+                <h2>
+                    Categorización de fotos
+                </h2>
+            </div>
+            <div class="ui-content" role="main">
+                <div data-role="popup" id="popupAdvertencia" data-transition="pop">
+                    <p>Por favor, seleccione una emoción para cada fotografia.</p>
+                </div>
+                <div id="div_categorizar">
+
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><button class="ui-btn ui-mini" id="atras_categorizar">Atras</button></div>
+                    <div class="ui-block-b"><button class="ui-btn ui-mini" id="adelante_categorizar">Adelante</button></div>
+                </div>
+                <div id="emociones_categorizar">
+                    <span style="font-weight: bold">¿Cómo te sentías en esta fotografía?</span><br>
+                    <div id="categorizar">
+                        <div><img id="feliz" src="img/emociones_categorizar/feliz.svg"></div>
+                        <div><img id="enojado" src="img/emociones_categorizar/enojado.svg"></div>
+                        <div><img id="neutral" src="img/emociones_categorizar/neutral.svg"></div>
+                        <div><img id="sorprendido" src="img/emociones_categorizar/sorprendido.svg"></div>
+                        <div><img id="triste" src="img/emociones_categorizar/triste.svg"></div>
+                    </div>
+                    <div class="calificar">
+                        <div>Feliz</div>
+                        <div>Enojado</div>
+                        <div>Neutral</div>
+                        <div>Sorprendido</div>
+                        <div>Triste</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </body>
 </html>

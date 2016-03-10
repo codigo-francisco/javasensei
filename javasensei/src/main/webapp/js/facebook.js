@@ -59,7 +59,15 @@ function checarUsuario(datos) {
     }).done(function (data) {
         console.log("%cLogin de facebook realizado: %O", "color: red", data);
         usuario = data;
+        configurarTutoriales();
         menu.actualizarMenu();
+        //Verificamos si ya firmo las condiciones
+        if (!usuario.aceptarCondiciones){
+            mostrarCondiciones();
+        }
+        else if (usuario.mostrarTutorialPrincipal==false){ //Verificamos si ya observo el tutorial
+            tutorial_principal.mostrarTutorial(true);
+        }
     });
 }
 

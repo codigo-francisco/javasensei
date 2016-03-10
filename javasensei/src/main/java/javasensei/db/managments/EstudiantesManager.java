@@ -8,7 +8,13 @@ import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
 import com.mongodb.ReadPreference;
 import com.mongodb.WriteResult;
+import com.mongodb.util.JSON;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.logging.Level;
@@ -22,12 +28,16 @@ import javasensei.estudiante.ModeloEstudiante;
  */
 public class EstudiantesManager {
 
-    private DBCollection alumnosCollection = Connection.getCollection().get(CollectionsDB.ALUMNOS);
-    private DBCollection temasCollection = Connection.getCollection().get(CollectionsDB.TEMAS);
-    private DBCollection ejerciciosCollection = Connection.getCollection().get(CollectionsDB.EJERCICIOS);
+    private final DBCollection alumnosCollection = Connection.getCollection().get(CollectionsDB.ALUMNOS);
+    private final DBCollection ejerciciosCollection = Connection.getCollection().get(CollectionsDB.EJERCICIOS);
+    private final DBCollection bitacoraVisitas = Connection.getCollection().get(CollectionsDB.BITACORA_VISITAS);
 
     private ModeloEstudiante estudiante;
 
+    public EstudiantesManager(){
+        
+    }
+    
     public EstudiantesManager(ModeloEstudiante estudiante) {
         this.estudiante = estudiante;
     }
@@ -77,6 +87,9 @@ public class EstudiantesManager {
                     estudiante.setId(alumnosCollection.count());
                     dbObject = estudiante.convertToDBObject(); //True para guardar
                 }
+                
+                //Se registra el ingreso del estudiante
+                registrarVisita("entrada");
 
                 //Se actualizan o insertan los cambios
                 WriteResult write = alumnosCollection.save(dbObject);
@@ -91,6 +104,23 @@ public class EstudiantesManager {
         }
 
         return result;
+    }
+    
+    public String registrarVisita(String tipoEntrada){
+        DBObject objVisita = new BasicDBObject();
+        LocalTime time = LocalTime.now();
+        LocalDate date = LocalDate.now();
+        
+        objVisita.put("hora", time.format(DateTimeFormatter.ISO_TIME));
+        objVisita.put("fecha", date.format(DateTimeFormatter.ISO_DATE));
+        objVisita.put("id", estudiante.getId());
+        objVisita.put("tipo", tipoEntrada);
+        
+        bitacoraVisitas.insert(
+                objVisita
+        );
+        
+        return objVisita.toString();
     }
 
     public Double getAbilityGlobal() {
@@ -235,5 +265,32 @@ public class EstudiantesManager {
         );
         
         return result;
+    }
+    
+    public void guardarCondiciones(){
+        alumnosCollection.update(
+                new BasicDBObject("id", estudiante.getId()), 
+                new BasicDBObject("$set", 
+                        new BasicDBObject("aceptarCondiciones",
+                                true)
+                )
+        );
+    }
+    
+    public void modificarPropiedades(String json){
+        DBObject query = new BasicDBObject();
+        BasicDBObject object = (BasicDBObject)JSON.parse(json);
+        
+        query.put("id", object.getLong("id"));
+        
+        DBObject update = new BasicDBObject();
+                
+        for(String key : object.keySet()){
+           update.put(key, object.get(key));
+        }
+        
+        DBObject set = new BasicDBObject("$set", update);
+        
+        alumnosCollection.update(query, set);
     }
 }

@@ -61,8 +61,10 @@ public class BitacoraEjerciciosDBO implements DBInterface {
         fecha = Date.from(ZonedDateTime.parse(object.get("fecha").getAsString()).toInstant());
         tipoPaso = object.get("tipoPaso").getAsString();
         segundos = object.get("segundos").getAsInt();
-        for (JsonElement element : object.get("fotografias").getAsJsonArray()){
-            fotografias.add(decoder.decode(element.getAsString()));
+        if (object.get("fotografias")!=null){ //Las fotografias se guardan completamente en el servidor
+            for (JsonElement element : object.get("fotografias").getAsJsonArray()){
+                fotografias.add(decoder.decode(element.getAsString()));
+            }
         }
         //fotografias = new Gson().fromJson(object.get("fotografias").getAsJsonArray(), ArrayList.class);
         this.sesionId = sesionId;

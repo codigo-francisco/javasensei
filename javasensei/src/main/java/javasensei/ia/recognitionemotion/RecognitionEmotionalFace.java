@@ -1,17 +1,18 @@
 package javasensei.ia.recognitionemotion;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.mongodb.DBObject;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javasensei.db.managments.BitacoraFotografia;
 import javasensei.util.ImageHelper;
+import org.bson.types.ObjectId;
 
 /**
  *
@@ -20,24 +21,30 @@ import javasensei.util.ImageHelper;
 public class RecognitionEmotionalFace {
 
     private Gson gson = new Gson();
-    private JsonArray fotos;
     private String detector;
+    private Long idUsuario;
 
-    public RecognitionEmotionalFace(String fotosJson, String detector) {
-        JsonElement element = new JsonParser().parse(fotosJson);
-        fotos = element.getAsJsonArray();
+    public RecognitionEmotionalFace(String detector, long idUsuario) {
         this.detector = detector;
+        this.idUsuario = idUsuario;
     }
 
     public Emocion getEmocion() {
         Map<Emocion, Integer> emociones = new HashMap<>();
-
+        //Las fotos son una lista obtenida de mongo, son las ultimas fotografias del usuario sin procesar
+        BitacoraFotografia bitacoraFotografia = new BitacoraFotografia();
+        List<DBObject> fotos = new BitacoraFotografia().obtenerFotografiasSinProcesar(idUsuario);
+        
         for (int index = 0; index < fotos.size(); index++) {
             try {
                 Emocion emocion = Emocion.NEUTRAL;
-                String datos = fotos.get(index).getAsString();
+                boolean emocionEncontrada = true;
+                DBObject foto = fotos.get(index);
+                
+                String datos = foto.get("fotografia").toString();
                 BufferedImage image = ImageHelper.decodeToImage(datos);
-                //javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("G:/imagenes")));
+                
+                //javax.imageio.ImageIO.write(image, "jpg", java.io.File.createTempFile("img", ".jpg", new java.io.File("D:/imagenes")));
                 
                 if (image != null) {
                     System.out.println("Se decodifico de base64 a imagebuffer");
@@ -59,10 +66,16 @@ public class RecognitionEmotionalFace {
                                 System.out.println("Se encontro un rostro, opencv");
                                 emocion = new ExtractEmotionNeuroph().processData(result.getCoordenadas());
                                 System.out.println("Emocion procesada: NeuroPH");
-                            }   break;
+                            }else{
+                                emocionEncontrada = false;
+                            }
+                            break;
                     }
                 }
-
+                
+                if (emocionEncontrada)
+                    bitacoraFotografia.categorizarFotografia( new ObjectId(foto.get("_id").toString()), emocion.toString(), detector );
+                
                 if (emociones.containsKey(emocion)) {
                     emociones.put(emocion, emociones.get(emocion) + 1);
                 } else {

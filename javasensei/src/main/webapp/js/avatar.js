@@ -64,12 +64,16 @@ avatar_sensei.prototype = {
     },
     primera_carga: function (data) { //Notificacion de que se esta cargando el ejercicio (diferente al paso inicial)
         camera_sensei.detenerFotos();
-        iniciarSegundero();
+        camera_sensei.reiniciarFotos(true);
         avatar_context.bitacoras = new Array();
         avatar_context.es_primera_carga = true;
-        camera_sensei.inicializarFotos();
         avatar_context.sePuedeIntervencion = true;
         avatar_context.instrucciones_ejercicio = data.instruccionesejercicio;
+        if (!usuario.mostrarTutorialEjercicio){
+            tutorial_ejercicios.mostrarTutorial(true);
+            usuario.mostrarTutorialEjercicio = true;
+        }
+        iniciarSegundero();
     },
     inicio_ejercicio: function (datos) {
         console.log("Paso Inicial notificado, ID: " + datos.id);
@@ -105,16 +109,18 @@ avatar_sensei.prototype = {
             pasoId: tree_self.pasoactual,
             fecha: new Date().toISOString(),
             tipoPaso: contexto.tipoPaso,
-            segundos: segundos,
-            fotografias : JSON.parse(camera_sensei.getUltimasFotografias())
+            segundos: segundos
+            //,fotografias : JSON.parse(camera_sensei.getUltimasFotografias())
         });
         if (tipoCamino=="caminofinaloptimo" ){ 
             avatar_context.cierreEjercicio(1);
         }else if (tipoCamino == "caminofinalsuboptimo"){
             avatar_context.cierreEjercicio(0.7);
+        }else{
+            camera_sensei.inicializarFotos(); //Es un camino donde hay que seguir tomando fotografias
         }
     },
-    ejecutarAjax: function (tipoCamino, fotografias) {
+    ejecutarAjax: function (tipoCamino) {
             //Se hace una solicitud rest al servidor java en caso de que el detecto este activado
             $.ajax({
                 url: avatar_context.url + tipoCamino,
@@ -124,7 +130,6 @@ avatar_sensei.prototype = {
                 },
                 data: {
                     datosestudiante: JSON.stringify(usuario),
-                    fotos: fotografias,
                     detector:detectorEmocional
                 },
                 dataType: "json"
@@ -132,9 +137,9 @@ avatar_sensei.prototype = {
                 $("#fullscreenloading").hide();
                 console.log("%cDatos recibidos: %O", "color:blue;", datos);
                 avatar_context.intervencion(datos);
-                if (usuario.activarEmociones)
+                if (usuario.activarEmociones){
                     avatar_context.procesarBitacora(datos,tipoCamino);
-                else{
+                }else{
                     datos.emocion = "sinemocion";
                     avatar_context.procesarBitacora(datos,tipoCamino);
                 }
@@ -142,27 +147,24 @@ avatar_sensei.prototype = {
     },
     llamarSistemaLogicoDifuso: function (tipoCamino) {
         usuario.calidadRespuesta = example_tracing.obtenerCalidadRespuesta();
-        var fotografias = camera_sensei.getFotografias();
-        camera_sensei.reiniciarFotos();
-        avatar_context.ejecutarAjax(tipoCamino, fotografias);
+        //var fotografias = camera_sensei.getFotografias();
+        camera_sensei.detenerFotos();
+        avatar_context.ejecutarAjax(tipoCamino);
         $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_suboptimo: function () {
         console.log("Paso suboptimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminosuboptimo");
-        camera_sensei.inicializarFotos();
         $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_optimo: function () {
         console.log("Paso optimo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminooptimo");
-        camera_sensei.inicializarFotos();
         $("#progressbar > div").css({"background":"#3C3"});
     },
     paso_erroneo: function () {
         console.log("Paso erroneo notificado");
         avatar_context.llamarSistemaLogicoDifuso("caminoerroneo");
-        camera_sensei.inicializarFotos();
         $("#progressbar > div").css({"background":"#FA0"});
     },
     paso_final_suboptimo: function () {
@@ -232,6 +234,8 @@ avatar_sensei.prototype = {
         }).error(function (error) {
             console.error(error);
         });
+        
+        iniciarCategorizacion();
     },
     obtenerRatingEjercicio: function (idEjercicio) {
         $.ajax({
