@@ -104,28 +104,32 @@
                 $("#dialog_video").hide();
                 $("#botoncamara").addClass("ui-disabled");
             }
-            
-            function configurarTutoriales(){
+
+            var tutorial_principal, tutorial_ejercicios;
+
+            function configurarTutoriales() {
                 tutorial_principal = new tutorial(
-                    $("#tutorial_principal"),
-                    {
-                        urlPrimeraVez : "estudiantes/modificarPropiedad",
-                        parametroUrl : {
-                            id: usuario.id,
-                            mostrarTutorialPrincipal: true
+                        $("#tutorial_principal"),
+                        {
+                            idDialog: "#tutorial_pantallaprincipal",
+                            urlPrimeraVez: "estudiantes/modificarPropiedad",
+                            parametroUrl: {
+                                id: usuario.id,
+                                mostrarTutorialPrincipal: true
+                            }
                         }
-                    }
                 );
 
                 tutorial_ejercicios = new tutorial(
-                    $("#tutorial_ejercicios"),
-                    {
-                        urlPrimeraVez : "estudiantes/modificarPropiedad",
-                        parametroUrl : {
-                            id: usuario.id,
-                            mostrarTutorialEjercicio: true
+                        $("#tutorial_ejercicios"),
+                        {
+                            idDialog: "#tutorial_pantallaejercicios",
+                            urlPrimeraVez: "estudiantes/modificarPropiedad",
+                            parametroUrl: {
+                                id: usuario.id,
+                                mostrarTutorialEjercicio: true
+                            }
                         }
-                    }
                 );
             }
 
@@ -214,11 +218,11 @@
                 $("#selecciondetector").on("click", function () {
                     detectorEmocional = $("#selecciondetector :checked").attr("id");
                 });
-                
-                $("#botonayuda").click(function(event){
-                    if (avatar_context.id===0){
+
+                $("#botonayuda").click(function (event) {
+                    if (avatar_context.id === 0) {
                         tutorial_principal.mostrarTutorial();
-                    }else{ //Un ejercicio esta activo;
+                    } else { //Un ejercicio esta activo;
                         tutorial_ejercicios.mostrarTutorial();
                     }
                 });
@@ -347,7 +351,7 @@
         <div id="dialog_video" class="fullscreencamera">
             <div class="divContenidoCamara">
                 <div><strong>Posicione su rostro al centro de la cámara</strong></div>
-                <button class="ui-btn ui-btn-corner-all ui-btn-active" id="cerrarEjemplo">Ok, Lo tengo</button>
+                <button class="ui-btn ui-btn-corner-all ui-btn-active" id="cerrarEjemplo">Entiendo</button>
                 <div id="camera" class="camera"></div>
             </div>
         </div>
@@ -356,7 +360,8 @@
         </div>
         <div id="fullscreenpermition" class="fullscreenpermition">
             <div style="text-align: center;margin-top: 4em;">
-                Por favor acepte los permisos de utilizar la cámara o use el tutor desde un dispositivo con cámara
+                <p style="text-align: center;">Por favor acepte los permisos de utilizar la cámara o use el tutor desde un dispositivo con cámara</p>
+                <img style="width: 100%;" src="tutoriales/tutorial_camara.gif">
             </div>
         </div>
 
@@ -642,7 +647,7 @@
         <div data-role="page" id="tutorial_pantallaejercicios" data-dialog="true"
              data-transition="slidedown" data-close-btn="right">
             <div data-role="header">
-                <h2>Tutorial de la Pantalla Principal</h2>
+                <h2>Tutorial de la Pantalla de Ejercicios</h2>
             </div>
             <div class="ui-content" role="main">
                 <div id="tutorial_ejercicios" class="principal_tutorial">
@@ -650,19 +655,19 @@
                     <div class="imagenes_tutorial">                        
                         <div>
                             <img src="tutoriales/imagenes_ejercicio/ejercicio.png">
-                            <p>Esta es la area de ejercicios, aquí aprenderas Java</p>
+                            <p>Esta es el área de ejercicios, aquí aprenderás Java</p>
                         </div>
                         <div>
                             <img src="tutoriales/imagenes_ejercicio/ejercicio_problema.png">
-                            <p>En esta area podras ver el problema que se esta planteado, recuerda leer y poner atención a las preguntas o al codigo que falta completar.</p>
+                            <p>En esta área podrás ver el problema que se está planteado, recuerda leer y poner atención a las preguntas o al código que falta completar.</p>
                         </div>
                         <div>
                             <img src="tutoriales/imagenes_ejercicio/ejercicio_solucion.png">
-                            <p>En esta sección puedes consultar las respuestas disponibles, siempre habra una que sea correcta, tus errores y aciertos son registrados para saber como estas avanzando.</p>
+                            <p>En esta sección puedes consultar las respuestas disponibles, siempre habrá una que sea correcta, tus errores y aciertos son registrados para saber cómo estas avanzando.</p>
                         </div>
                         <div>
                             <img src="tutoriales/imagenes_ejercicio/tutor.png">
-                            <p>Recuerda consultar al tutor, el podra darte la información que necesitas para resolver el ejercicio. A veces el te hablara para apoyarte.</p>
+                            <p>Recuerda consultar al tutor, el podrá darte la información que necesitas para resolver el ejercicio. A veces él te hablara para apoyarte.</p>
                         </div>
                         <div>
                             <img src="tutoriales/imagenes_ejercicio/categorizacion.png">
@@ -678,43 +683,44 @@
                     <a class="adelante_tutorial" href="#">&gt;</a>
                 </div>
             </div>
+        </div>
 
-            <div data-role="page" data-dialog="true" id="paginacategorizacion" data-close-btn="none">
-                <div data-role="header">
-                    <h2>
-                        Categorización de fotos
-                    </h2>
+        <div data-role="page" data-dialog="true" id="paginacategorizacion" data-close-btn="none">
+            <div data-role="header">
+                <h2>
+                    Categorización de fotos
+                </h2>
+            </div>
+            <div class="ui-content" role="main">
+                <div data-role="popup" id="popupAdvertencia" data-transition="pop">
+                    <p>Por favor, seleccione una emoción para cada fotografia.</p>
                 </div>
-                <div class="ui-content" role="main">
-                    <div data-role="popup" id="popupAdvertencia" data-transition="pop">
-                        <p>Por favor, seleccione una emoción para cada fotografia.</p>
-                    </div>
-                    <div id="div_categorizar">
+                <div id="div_categorizar">
 
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><button class="ui-btn ui-mini" id="atras_categorizar">Atras</button></div>
+                    <div class="ui-block-b"><button class="ui-btn ui-mini" id="adelante_categorizar">Adelante</button></div>
+                </div>
+                <div id="emociones_categorizar">
+                    <span style="font-weight: bold">¿Cómo te sentías en esta fotografía?</span><br>
+                    <div id="categorizar">
+                        <div><img id="feliz" src="img/emociones_categorizar/feliz.svg"></div>
+                        <div><img id="enojado" src="img/emociones_categorizar/enojado.svg"></div>
+                        <div><img id="neutral" src="img/emociones_categorizar/neutral.svg"></div>
+                        <div><img id="sorprendido" src="img/emociones_categorizar/sorprendido.svg"></div>
+                        <div><img id="triste" src="img/emociones_categorizar/triste.svg"></div>
                     </div>
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a"><button class="ui-btn ui-mini" id="atras_categorizar">Atras</button></div>
-                        <div class="ui-block-b"><button class="ui-btn ui-mini" id="adelante_categorizar">Adelante</button></div>
-                    </div>
-                    <div id="emociones_categorizar">
-                        <span style="font-weight: bold">¿Cómo te sentías en esta fotografía?</span><br>
-                        <div id="categorizar">
-                            <div><img id="feliz" src="img/emociones_categorizar/feliz.svg"></div>
-                            <div><img id="enojado" src="img/emociones_categorizar/enojado.svg"></div>
-                            <div><img id="neutral" src="img/emociones_categorizar/neutral.svg"></div>
-                            <div><img id="sorprendido" src="img/emociones_categorizar/sorprendido.svg"></div>
-                            <div><img id="triste" src="img/emociones_categorizar/triste.svg"></div>
-                        </div>
-                        <div class="calificar">
-                            <div>Feliz</div>
-                            <div>Enojado</div>
-                            <div>Neutral</div>
-                            <div>Sorprendido</div>
-                            <div>Triste</div>
-                        </div>
+                    <div class="calificar">
+                        <div>Feliz</div>
+                        <div>Enojado</div>
+                        <div>Neutral</div>
+                        <div>Sorprendido</div>
+                        <div>Triste</div>
                     </div>
                 </div>
             </div>
-
+        </div>
+        
     </body>
 </html>

@@ -6,7 +6,6 @@ var tutorial = function (div, conf) {
     var divActual = 0;
     var currentDiv = $(divs[0]); //Div actual
     var lastDiv = $(divs[0]); //Primer Div
-    var primeraVez = false;
     var urlPrimeraVez = conf.urlPrimeraVez;
     var parametroUrl = conf.parametroUrl;
 
@@ -25,9 +24,14 @@ var tutorial = function (div, conf) {
     this.mostrarTutorial = function (primera) {
         
         if (primera) { //Deshabilitar el boton de salida
-            primeraVez = true;
-        }else{
-            primeraVez = false;
+            $.post(url + urlPrimeraVez,
+                {
+                    json:JSON.stringify(parametroUrl)
+                },
+                function (result) {
+                    console.log("Se guardo que el usuario ya vió el tutorial");
+                }
+            );
         }
 
         $(":mobile-pagecontainer")
@@ -47,19 +51,6 @@ var tutorial = function (div, conf) {
         currentButton.addClass("barraprogreso_tutorial_activo");
         currentDiv = $(divs[divActual]);
         currentDiv.show();
-
-        if (primeraVez && divActual === totalDiv - 1) {
-            //Habilitamos el boton
-            //Guardamos que vió el tutorial
-            $.post(url + urlPrimeraVez,
-                {
-                    json:JSON.stringify(parametroUrl)
-                },
-                function (result) {
-                    console.log("Se guardo que el usuario ya vió el tutorial");
-                }
-            );
-        }
     };
 
     //Construir barra de progreso
