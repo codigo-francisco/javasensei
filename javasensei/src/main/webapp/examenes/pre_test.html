@@ -8,8 +8,12 @@
         <script src="../prism/prism.js"></script>
         <link href="../prism/prism.css" type="text/css" rel="stylesheet" />
         <script src="../js/jquery-2.1.1.min.js"></script>
+        
         <script>
             $(document).ready(function () {
+                if (!localStorage.getItem("usuario"))
+                    window.location = "login.html";
+                
                 $("#button").click(function () {
                     var jsonRespuestas = [];
                     var idPregunta = $("div").filter(function () {
