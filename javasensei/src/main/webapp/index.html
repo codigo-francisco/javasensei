@@ -104,6 +104,30 @@
                 $("#dialog_video").hide();
                 $("#botoncamara").addClass("ui-disabled");
             }
+            
+            function configurarTutoriales(){
+                tutorial_principal = new tutorial(
+                    $("#tutorial_principal"),
+                    {
+                        urlPrimeraVez : "estudiantes/modificarPropiedad",
+                        parametroUrl : {
+                            id: usuario.id,
+                            mostrarTutorialPrincipal: true
+                        }
+                    }
+                );
+
+                tutorial_ejercicios = new tutorial(
+                    $("#tutorial_ejercicios"),
+                    {
+                        urlPrimeraVez : "estudiantes/modificarPropiedad",
+                        parametroUrl : {
+                            id: usuario.id,
+                            mostrarTutorialEjercicio: true
+                        }
+                    }
+                );
+            }
 
             $(document).ready(function () {
                 detectarNavegador();
@@ -202,11 +226,6 @@
                 enlazarBotonesCarousel();
 
                 enlazarControlesCondiciones();
-
-                tutorial_principal = new tutorial($("#tutorial_principal"));
-
-                tutorial_ejercicios = new tutorial($("#tutorial_ejercicios"));
-
             });
 
         </script>
@@ -609,7 +628,7 @@
                         </div>
                         <div>
                             <img src="tutoriales/imagenes_principal/cerrar_sesion.png">
-                            <p><span style="font-weight: bolder; color: red;">!MUY IMPORTANTE!</span>, recuerda cerrar la sesión del sistema cuando finalices los ejercicios.</p>
+                            <p><span style="font-weight: bolder; color: red;">!MUY IMPORTANTE!</span>, recuerda cerrar la sesión del sistema cuando vayas a dejar de utilizar el sistema.</p>
                         </div>
                     </div>
 

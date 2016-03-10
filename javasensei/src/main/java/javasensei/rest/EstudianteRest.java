@@ -5,7 +5,9 @@ import com.mongodb.DBObject;
 import javasensei.db.managments.EstudiantesManager;
 import javasensei.db.managments.RankingManager;
 import javasensei.estudiante.ModeloEstudiante;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -89,4 +91,11 @@ public class EstudianteRest {
         
         return manager.registrarVisita("salida");
     }
+    
+    @POST
+    @Path("modificarPropiedad")
+    public String modificarPropiedad(@FormParam("json") String json){
+        new EstudiantesManager().modificarPropiedades(json);
+        return "{result:true}";
+    }    
 }

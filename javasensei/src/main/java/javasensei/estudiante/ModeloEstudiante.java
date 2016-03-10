@@ -21,6 +21,8 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     private double calidadRespuesta = 0; //Parametros internos al crear un estudiante nuevo
     private boolean activarEmociones = true;
     private boolean aceptarCondiciones = false;
+    private boolean mostrarTutorialPrincipal  = false;
+    private boolean mostrarTutorialEjercicio  = false;
     private double tiempo = 0;
     private Date creado = Date.from(Instant.now());
 
@@ -41,6 +43,8 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         habilidadGlobal = new Double(jsonObj.getString("habilidadGlobal"));
         activarEmociones = jsonObj.getBoolean("activarEmociones");
         aceptarCondiciones = jsonObj.getBoolean("aceptarCondiciones");
+        mostrarTutorialEjercicio = jsonObj.getBoolean("mostrarTutorialEjercicio");
+        mostrarTutorialPrincipal = jsonObj.getBoolean("mostrarTutorialPrincipal");
         tiempo = jsonObj.getDouble("tiempo");
         creado = jsonObj.getDate("creado", Date.from(Instant.now()));
     }
@@ -68,6 +72,8 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         dbObject.put("calidadRespuesta", getCalidadRespuesta());
         dbObject.put("activarEmociones", getActivarEmociones());
         dbObject.put("aceptarCondiciones", getAceptarCondiciones());
+        dbObject.put("mostrarTutorialPrincipal", getMostrarTutorialPrincipal());
+        dbObject.put("mostrarTutorialEjercicio", getMostrarTutorialEjercicio());
         dbObject.put("tiempo", getTiempo());
         dbObject.put("creado", getCreado());
 
@@ -156,5 +162,33 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
 
     public void setAceptarCondiciones(boolean aceptarCondiciones) {
         this.aceptarCondiciones = aceptarCondiciones;
+    }
+
+    /**
+     * @return the mostrarTutorialPrincipal
+     */
+    public boolean getMostrarTutorialPrincipal() {
+        return mostrarTutorialPrincipal;
+    }
+
+    /**
+     * @param mostrarTutorialPrincipal the mostrarTutorialPrincipal to set
+     */
+    public void setMostrarTutorialPrincipal(boolean mostrarTutorialPrincipal) {
+        this.mostrarTutorialPrincipal = mostrarTutorialPrincipal;
+    }
+
+    /**
+     * @return the mostrarTutorialEjercicio
+     */
+    public boolean getMostrarTutorialEjercicio() {
+        return mostrarTutorialEjercicio;
+    }
+
+    /**
+     * @param mostrarTutorialEjercicio the mostrarTutorialEjercicio to set
+     */
+    public void setMostrarTutorialEjercicio(boolean mostrarTutorialEjercicio) {
+        this.mostrarTutorialEjercicio = mostrarTutorialEjercicio;
     }
 }

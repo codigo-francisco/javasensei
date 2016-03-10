@@ -39,6 +39,14 @@ function enlazarControlesCondiciones() {
                 }
         );
 
+        $( ":mobile-pagecontainer" ).one( "pagecontainerhide",
+            function( event, ui ) {
+                console.log(ui.prevPage[0].id);
+                if (ui.prevPage[0].id == "paginacondiciones")
+                    tutorial_principal.mostrarTutorial(true);
+            }
+        );
+        
         $.mobile.back();
     });
 }

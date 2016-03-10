@@ -65,11 +65,15 @@ avatar_sensei.prototype = {
     primera_carga: function (data) { //Notificacion de que se esta cargando el ejercicio (diferente al paso inicial)
         camera_sensei.detenerFotos();
         camera_sensei.reiniciarFotos(true);
-        iniciarSegundero();
         avatar_context.bitacoras = new Array();
         avatar_context.es_primera_carga = true;
         avatar_context.sePuedeIntervencion = true;
         avatar_context.instrucciones_ejercicio = data.instruccionesejercicio;
+        if (!usuario.mostrarTutorialEjercicio){
+            tutorial_ejercicios.mostrarTutorial(true);
+            usuario.mostrarTutorialEjercicio = true;
+        }
+        iniciarSegundero();
     },
     inicio_ejercicio: function (datos) {
         console.log("Paso Inicial notificado, ID: " + datos.id);

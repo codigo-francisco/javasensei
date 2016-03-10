@@ -8,6 +8,7 @@ import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
 import com.mongodb.ReadPreference;
 import com.mongodb.WriteResult;
+import com.mongodb.util.JSON;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -27,13 +28,16 @@ import javasensei.estudiante.ModeloEstudiante;
  */
 public class EstudiantesManager {
 
-    private DBCollection alumnosCollection = Connection.getCollection().get(CollectionsDB.ALUMNOS);
-    private DBCollection temasCollection = Connection.getCollection().get(CollectionsDB.TEMAS);
-    private DBCollection ejerciciosCollection = Connection.getCollection().get(CollectionsDB.EJERCICIOS);
-    private DBCollection bitacoraVisitas = Connection.getCollection().get(CollectionsDB.BITACORA_VISITAS);
+    private final DBCollection alumnosCollection = Connection.getCollection().get(CollectionsDB.ALUMNOS);
+    private final DBCollection ejerciciosCollection = Connection.getCollection().get(CollectionsDB.EJERCICIOS);
+    private final DBCollection bitacoraVisitas = Connection.getCollection().get(CollectionsDB.BITACORA_VISITAS);
 
     private ModeloEstudiante estudiante;
 
+    public EstudiantesManager(){
+        
+    }
+    
     public EstudiantesManager(ModeloEstudiante estudiante) {
         this.estudiante = estudiante;
     }
@@ -271,5 +275,22 @@ public class EstudiantesManager {
                                 true)
                 )
         );
+    }
+    
+    public void modificarPropiedades(String json){
+        DBObject query = new BasicDBObject();
+        BasicDBObject object = (BasicDBObject)JSON.parse(json);
+        
+        query.put("id", object.getLong("id"));
+        
+        DBObject update = new BasicDBObject();
+                
+        for(String key : object.keySet()){
+           update.put(key, object.get(key));
+        }
+        
+        DBObject set = new BasicDBObject("$set", update);
+        
+        alumnosCollection.update(query, set);
     }
 }
