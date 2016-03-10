@@ -16,19 +16,19 @@ import javasensei.util.FileHelper;
  * @author oramas
  */
 public class ExamenesManager {
-    private static final DBObject jsonRespuestasPreTest = 
-            (DBObject)JSON.parse(FileHelper.getInstance()
-                    .getContentFile("javasensei/examenes/respuestas_pretest.json"));
-    
-    private static final int cantidadPreguntas = jsonRespuestasPreTest.keySet().size();
     
     private static final DBCollection pretestCollection = Connection.getCollection().get(CollectionsDB.PRETEST);
     
     public String calificarExamenPreTest(String idFacebook, String jsonRespuestas){
         
+         DBObject jsonRespuestasPreTest = (DBObject)JSON.parse(FileHelper.getInstance()
+                    .getContentFile("examenes/respuestas_pretest.json"));
+    
+        double cantidadPreguntas = jsonRespuestasPreTest.keySet().size();
+        
         BasicDBList examen = (BasicDBList)com.mongodb.util.JSON.parse(jsonRespuestas);
         
-        int totalRespuestasCorrectas = 0;
+        double totalRespuestasCorrectas = 0;
         
         for(Object jsonRespuesta : examen.toArray()) {
             DBObject json = (DBObject) jsonRespuesta;

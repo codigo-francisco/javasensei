@@ -29,14 +29,13 @@
 
                     $.post("../servicios/examenes/calificarexamenpretest",
                         {
-                            idFacebook: "abcde",
+                            idFacebook: localStorage.getItem("usuario"),
                             json: JSON.stringify(jsonRespuestas)
                         }, function (response) {
                             console.log("examen calificado");
-                            console.log("aciertos: "+ response.totalRespuestasCorrectas);
-                        }, 
-                        function (error) {
-                            console.error("Error en la petición AJAX para procesar el examen pre-test.");
+                            
+                            $("#aciertos").text(response.totalRespuestasCorrectas);
+                            $("#mensaje").show("slow");
                         }
                     );
                 });
@@ -45,6 +44,11 @@
         </script>
     </head>
     <body>
+        <div id="mensaje" style="display:none;position:fixed; background-color:white;height: 100%;width: 100%;z-index: 1;">
+            <p>
+                Obtuviste <span id="aciertos"></span> aciertos, gracias por participar.
+            </p>
+        </div>
         <p>"ID del usuario, fecha."</p>
         <h2>Este es el examen pre-test</h2>
         <p>Instrucciones:  contesta las siguientes preguntas seg&uacute;n corresponda.</p>
