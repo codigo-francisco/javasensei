@@ -32,7 +32,7 @@
         <script type="text/javascript" src="highlight.pack.js"></script>
         <script type="text/javascript" src="js/buckets-minified.js"></script>
         <script type="text/javascript" src="js/webcam.js"></script>
-        
+
         <script type="text/javascript" src="js/menu.js"></script>
         <script type="text/javascript" src="js/recursos.js"></script>
         <script type="text/javascript" src="js/facebook.js"></script>
@@ -107,7 +107,7 @@
 
             $(document).ready(function () {
                 detectarNavegador();
-                
+
                 $("#button_logout").click(function () {
                     logout();
                 });
@@ -191,12 +191,22 @@
                     detectorEmocional = $("#selecciondetector :checked").attr("id");
                 });
                 
+                $("#botonayuda").click(function(event){
+                    if (avatar_context.id===0){
+                        tutorial_principal.mostrarTutorial();
+                    }else{ //Un ejercicio esta activo;
+                        tutorial_ejercicios.mostrarTutorial();
+                    }
+                });
+
                 enlazarBotonesCarousel();
-                
+
                 enlazarControlesCondiciones();
-                
+
                 tutorial_principal = new tutorial($("#tutorial_principal"));
-                
+
+                tutorial_ejercicios = new tutorial($("#tutorial_ejercicios"));
+
             });
 
         </script>
@@ -293,7 +303,7 @@
     <body>
         <div class="fullscreenbrowser">
             <h1 style="font-weight: bold;text-align:center;">
-               Este sitio web solo funciona con el navegador Firefox, por favor realiza tus ejercicios desde él
+                Este sitio web solo funciona con el navegador Firefox, por favor realiza tus ejercicios desde él
             </h1>
             <a href="https://www.mozilla.org/es-MX/firefox/new/">
                 <img style="display: block; margin-left: auto; margin-right: auto;width: 50em;height: 50%;" src="img/firefox-logo-full.png" alt="Firefox">
@@ -356,19 +366,19 @@
                     <!-- Score: -->
                 </div>
 
-                <a id="botonayuda" title="Mira la ayuda" href="#tutorial_pantallaprincipal" 
+                <a id="botonayuda" title="Mira la ayuda" href="#" 
                    style="margin-right: 6em;" data-icon="question-circle" class="ui-btn-right"
                    data-iconpos="notext"></a>
-                   
+
                 <a id="botoncamara" title="Colocate bien ante la camara" href="#"
                    style="margin-right: 4em;" data-icon="camera" class="ui-btn-right" 
                    data-iconpos="notext"></a>
-                
+
                 <a id="botongrafica" title="Grafica del avance como estudiante" 
                    href="#paginagraficaestudiante" style="margin-right: 2em;" 
                    data-rel="dialog" data-icon="user" 
                    class="ui-btn-right" data-iconpos="notext"></a>
-                   
+
                 <a id="botonrecursos" title="Menu de ejercicios y recursos" href="#paginarecursos" 
                    data-rel="dialog" data-icon="gear" class="ui-btn-right" 
                    data-iconpos="notext"></a>
@@ -532,11 +542,11 @@
                             <label for="activarEmociones">Activar Detector de Emociones</label>
                             <input id="activarEmociones" checked="checked" data-role="flipswitch" name="activarEmociones" type="checkbox">
                             <fieldset data-role="controlgroup" data-type="horizontal" id="selecciondetector">
-                                <legend>Reconocimiento Emocional:</legend>
-                                <input type="radio" name="reconocimientoemocional" id="neuroph" value="on" checked="checked">
-                                <label for="neuroph">NeuroPH</label>
-                                <input type="radio" name="reconocimientoemocional" id="oxford" value="off">
-                                <label for="oxford">Oxford (Microsoft)</label>
+                                        <legend>Reconocimiento Emocional:</legend>
+                                        <input type="radio" name="reconocimientoemocional" id="neuroph" value="on" checked="checked">
+                                        <label for="neuroph">NeuroPH</label>
+                                        <input type="radio" name="reconocimientoemocional" id="oxford" value="off">
+                                        <label for="oxford">Oxford (Microsoft)</label>
                                 <input type="radio" name="reconocimientoemocional" id="indico" value="off">
                                 <label for="indico">Indico</label>
                             </fieldset>
@@ -545,7 +555,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div data-role="page" data-dialog="true" id="paginacondiciones" data-transition="slidedown" data-close-btn="none">
             <div data-role="header">
                 <h2>
@@ -563,7 +573,7 @@
                 <a id="btnAceptarCondiciones" href="#" class="ui-btn ui-disabled">Aceptar</a>
             </div>
         </div>
-        
+
         <div data-role="page" id="tutorial_pantallaprincipal" data-dialog="true"
              data-transition="slidedown" data-close-btn="right">
             <div data-role="header">
@@ -574,89 +584,118 @@
                     <div class="barraprogreso_tutorial"></div>
                     <div class="imagenes_tutorial">                        
                         <div>
-                            <img src="tutoriales/imagenes/pantalla_principal.png">
-                            <p>Esta es la interfaz de Java Sensei, desde ella podrás acceder a todos las opciones del sistema.</p>
+                            <img src="tutoriales/imagenes_principal/interfaz_principal.png">
+                            <p>Esta es la interfaz principal del sistema Java Sensei, desde ella podrás acceder a todos las opciones del sistema.</p>
                         </div>
                         <div>
-                            <img src="tutoriales/imagenes/pantalla_principal_senalamientos.png">
-                            <br><span>Los botones te llevarán a las distintas opciones del sistema, las cuales son:</span>
-                            <ul>
-                                <li>Menú de ejercicios</li>
-                                <li>Ayuda del sistema<//li>
-                                <li>Posicionamiento ante la camara</li>
-                                <li>Grafica y tabla de avances del estudiante</li>
-                                <li>Menú de recomendaciones de ejercicios, obtención de recursos y configuración del sistema</li>
-                            </ul>
+                            <img src="tutoriales/imagenes_principal/interfaz_principal_botones.png">
+                            <p>Los botones te llevarán a las distintas opciones del sistema. Navega por ellas para que las conozcas.</p>
                         </div>
                         <div>
-                            <img src="tutoriales/imagenes/grafica_estudiante_senalamiento.png">
-                            <p>La grafica de y tabla de avances te proporcionara una retroalimentación de tu avance</p>
+                            <img src="tutoriales/imagenes_principal/avance_estudiante.png">
+                            <p>Puedes observar y verificar tu progreso en Java Sensei.</p>
                         </div>
                         <div>
-                            <img src="tutoriales/imagenes/recomendacion_ejercicios_senalamiento.png">
-                            <p>Este menú te proporcionará recomendaciones de ejercicios de acuerdo a tu gusto y preferencias</p>
+                            <img src="tutoriales/imagenes_principal/menu_ejercicios.png">
+                            <p>El sistema te podrá recomendar ejercicios en base a tus preferencias. Recuerda calificar los recursos y ejercicios.</p>
                         </div>
                         <div>
-                            <img src="tutoriales/imagenes/recursos_senalamiento.png">
-                            <p>Este menú te permitirá consultar distintos recursos que te ayudarán a entender conceptos claves del Lenguaje Java</p>
+                            <img src="tutoriales/imagenes_principal/menu_recursos.png">
+                            <p>Puedes consultar recursos que te ayudarán a entender conceptos claves del lenguaje Java.</p>
                         </div>
                         <div>
-                            <img src="tutoriales/imagenes/camara_senalamiento.png">
-                            <p>!IMPORTANTE!, recuerda mantener tu rostro al centro de la camara, esto ayudara al sistema a reconocer tus emociones.</p>
+                            <img src="tutoriales/imagenes_principal/camara.png">
+                            <p><span style="font-weight: bolder">!IMPORTANTE!</span>, recuerda mantener tu rostro al centro de la cámara y de ser posible no utilices lentes u otros objetos que obstruyan tu rostro. Esto ayudara al sistema a reconocer tus emociones y nos ayudaras a mejorarlo.</p>
                         </div>
                         <div>
-                            <img src="tutoriales/imagenes/menu_ejercicios.png">
-                            <p>Ahora, selecciona un ejercicio del menú de ejercicios.</p>
+                            <img src="tutoriales/imagenes_principal/cerrar_sesion.png">
+                            <p><span style="font-weight: bolder; color: red;">!MUY IMPORTANTE!</span>, recuerda cerrar la sesión del sistema cuando finalices los ejercicios.</p>
                         </div>
-                        <!--<div>
-                            <img src="tutoriales/imagenes/configuracion.png">
-                            <p>En la configuración podras adaptar los reconocedores de emociones</p>
-                        </div>-->
                     </div>
-                    
+
                     <a class="atras_tutorial" href="#">&lt;</a>
                     <a class="adelante_tutorial" href="#">&gt;</a>
-                    
+
                 </div>
             </div>
         </div>
-        
-        <div data-role="page" data-dialog="true" id="paginacategorizacion" data-close-btn="none">
+
+        <div data-role="page" id="tutorial_pantallaejercicios" data-dialog="true"
+             data-transition="slidedown" data-close-btn="right">
             <div data-role="header">
-                <h2>
-                    Categorización de fotos
-                </h2>
+                <h2>Tutorial de la Pantalla Principal</h2>
             </div>
             <div class="ui-content" role="main">
-                <div data-role="popup" id="popupAdvertencia" data-transition="pop">
-                    <p>Por favor, seleccione una emoción para cada fotografia.</p>
-                </div>
-                <div id="div_categorizar">
-                    
-                </div>
-                <div class="ui-grid-a">
-                    <div class="ui-block-a"><button class="ui-btn ui-mini" id="atras_categorizar">Atras</button></div>
-                    <div class="ui-block-b"><button class="ui-btn ui-mini" id="adelante_categorizar">Adelante</button></div>
-                </div>
-                <div id="emociones_categorizar">
-                    <span style="font-weight: bold">¿Cómo te sentías en esta fotografía?</span><br>
-                    <div id="categorizar">
-                        <div><img id="feliz" src="img/emociones_categorizar/feliz.svg"></div>
-                        <div><img id="enojado" src="img/emociones_categorizar/enojado.svg"></div>
-                        <div><img id="neutral" src="img/emociones_categorizar/neutral.svg"></div>
-                        <div><img id="sorprendido" src="img/emociones_categorizar/sorprendido.svg"></div>
-                        <div><img id="triste" src="img/emociones_categorizar/triste.svg"></div>
+                <div id="tutorial_ejercicios" class="principal_tutorial">
+                    <div class="barraprogreso_tutorial"></div>
+                    <div class="imagenes_tutorial">                        
+                        <div>
+                            <img src="tutoriales/imagenes_ejercicio/ejercicio.png">
+                            <p>Esta es la area de ejercicios, aquí aprenderas Java</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_ejercicio/ejercicio_problema.png">
+                            <p>En esta area podras ver el problema que se esta planteado, recuerda leer y poner atención a las preguntas o al codigo que falta completar.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_ejercicio/ejercicio_solucion.png">
+                            <p>En esta sección puedes consultar las respuestas disponibles, siempre habra una que sea correcta, tus errores y aciertos son registrados para saber como estas avanzando.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_ejercicio/tutor.png">
+                            <p>Recuerda consultar al tutor, el podra darte la información que necesitas para resolver el ejercicio. A veces el te hablara para apoyarte.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_ejercicio/categorizacion.png">
+                            <p>Al finalizar categoriza que emoción sentiste, esto es importante para ayudarnos a mejorar el sistema.</p>
+                        </div>
+                        <div>
+                            <img src="tutoriales/imagenes_principal/camara.png">
+                            <p><span style="font-weight: bolder">!IMPORTANTE!</span>, recuerda mantener tu rostro al centro de la cámara y de ser posible no utilices lentes u otros objetos que obstruyan tu rostro. Esto ayudara al sistema a reconocer tus emociones y nos ayudaras a mejorarlo.</p>
+                        </div>
                     </div>
-                    <div class="calificar">
-                        <div>Feliz</div>
-                        <div>Enojado</div>
-                        <div>Neutral</div>
-                        <div>Sorprendido</div>
-                        <div>Triste</div>
+
+                    <a class="atras_tutorial" href="#">&lt;</a>
+                    <a class="adelante_tutorial" href="#">&gt;</a>
+                </div>
+            </div>
+
+            <div data-role="page" data-dialog="true" id="paginacategorizacion" data-close-btn="none">
+                <div data-role="header">
+                    <h2>
+                        Categorización de fotos
+                    </h2>
+                </div>
+                <div class="ui-content" role="main">
+                    <div data-role="popup" id="popupAdvertencia" data-transition="pop">
+                        <p>Por favor, seleccione una emoción para cada fotografia.</p>
+                    </div>
+                    <div id="div_categorizar">
+
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a"><button class="ui-btn ui-mini" id="atras_categorizar">Atras</button></div>
+                        <div class="ui-block-b"><button class="ui-btn ui-mini" id="adelante_categorizar">Adelante</button></div>
+                    </div>
+                    <div id="emociones_categorizar">
+                        <span style="font-weight: bold">¿Cómo te sentías en esta fotografía?</span><br>
+                        <div id="categorizar">
+                            <div><img id="feliz" src="img/emociones_categorizar/feliz.svg"></div>
+                            <div><img id="enojado" src="img/emociones_categorizar/enojado.svg"></div>
+                            <div><img id="neutral" src="img/emociones_categorizar/neutral.svg"></div>
+                            <div><img id="sorprendido" src="img/emociones_categorizar/sorprendido.svg"></div>
+                            <div><img id="triste" src="img/emociones_categorizar/triste.svg"></div>
+                        </div>
+                        <div class="calificar">
+                            <div>Feliz</div>
+                            <div>Enojado</div>
+                            <div>Neutral</div>
+                            <div>Sorprendido</div>
+                            <div>Triste</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
     </body>
 </html>

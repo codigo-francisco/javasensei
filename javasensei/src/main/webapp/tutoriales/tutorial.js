@@ -20,7 +20,7 @@ var tutorial = function (div) {
 
     this.mostrarTutorial = function () {
         $(":mobile-pagecontainer")
-                .pagecontainer("change", "#" + div[0].id);
+                .pagecontainer("change", "#" + div.parent().parent().prop("id"));
     };
     
     var cambiarPosicion = function(event){
