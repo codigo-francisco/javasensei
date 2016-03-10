@@ -19,20 +19,21 @@
                         var respuesta = $(obj).find("input:checked");
                         var o = {};
                         o.pregunta = respuesta.prop("name");
-                        o.respuesta = respuesta.prop("id");
+                        o.respuesta = respuesta.val();
                         jsonRespuestas.push(o);
                     });
 
-                    $.post(
-                            "../servicios/examenes/calificarexamenpretest",
-                            {
-                                idUsuario: 0,
-                                json: JSON.stringify(jsonRespuestas)
-                            }, function (response) {
-                                alert("Hola.");
-                    }, function (error) {
-                        alert("Error en la petición AJAX para procesar el examen pre-test.");
-                    }
+                    $.post("../servicios/examenes/calificarexamenpretest",
+                        {
+                            idFacebook: "abcde",
+                            json: JSON.stringify(jsonRespuestas)
+                        }, function (response) {
+                            console.log("examen calificado");
+                            console.log("aciertos: "+ response.totalRespuestasCorrectas);
+                        }, 
+                        function (error) {
+                            console.error("Error en la petición AJAX para procesar el examen pre-test.");
+                        }
                     );
                 });
             });

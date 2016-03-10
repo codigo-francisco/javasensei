@@ -6,6 +6,10 @@
 package javasensei.rest;
 
 import com.mongodb.BasicDBList;
+import com.mongodb.DBObject;
+import java.util.List;
+import java.util.Map;
+import javasensei.db.managments.ExamenesManager;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
@@ -36,15 +40,11 @@ public class ExamenesRest {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("calificarexamenpretest")
     public String calificarExamenPreTest(
-            @FormParam("idUsuario") Long idUsuario,
+            @FormParam("idFacebook") String idFacebook,
             @FormParam("json") String jsonRespuestas){
-        BasicDBList respuestas = (BasicDBList)com.mongodb.util.JSON.parse(jsonRespuestas);
-        System.out.println(respuestas.toString());
-                
-        /*for(int i = 0; i < respuestas.size(); i++)
-		System.out.println((respuestas.get(i)));
-        return respuestas.toString();*/
-        return "hola";
+              
+        
+        return new ExamenesManager().calificarExamenPreTest(idFacebook, jsonRespuestas);
     }
     
     @POST
