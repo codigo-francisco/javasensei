@@ -41,22 +41,18 @@ var tutorial = function (div, conf) {
     var cambiarPosicion = function (event) {
         var index = event.data;
 
-
-        var movimiento = "left";
-
-        if (index < divActual) { //Movimiento hacia a la derecha
-            movimiento = "right";
-        }
-
         currentButton.removeClass("barraprogreso_tutorial_activo");
         lastDiv = currentDiv;
+        
         lastDiv.hide("slide", function () {
             divActual = index;
 
             currentButton = $(barraProgreso.find("button")[divActual]);
             currentButton.addClass("barraprogreso_tutorial_activo");
+            
             currentDiv = $(divs[divActual]);
             currentDiv.show("slide",250);
+            
         },250);
     };
 
