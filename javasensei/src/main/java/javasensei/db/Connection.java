@@ -63,6 +63,7 @@ public class Connection {
         collections.put(CollectionsDB.BITACORA_FOTOGRAFIAS, db.getCollection("bitacora_fotografias"));
         collections.put(CollectionsDB.BITACORA_VISITAS, db.getCollection("bitacora_visitas"));
         collections.put(CollectionsDB.BITACORA_FOTOGRAFIAS_USUARIO, db.getCollection("bitacora_fotografias_usuario"));
-
+        collections.put(CollectionsDB.PRETEST, db.getCollection("pretest"));
+        collections.put(CollectionsDB.POSTTEST, db.getCollection("posttest"));
     }
 }

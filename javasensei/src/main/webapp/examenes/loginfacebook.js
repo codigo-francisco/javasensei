@@ -15,10 +15,7 @@ function processLogin(response) {
     switch (response.status) {
         case 'connected' :
             
-            usuario = {};
-            usuario.idFacebook = response.authResponse.userID;
-            
-            localStorage.setItem("usuario", JSON.stringify(usuario));
+            localStorage.setItem("usuario",response.authResponse.userID);
             
             window.location = "pre_test.html";
             
