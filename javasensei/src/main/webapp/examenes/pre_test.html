@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="shortcut icon" href="../img/logo.jpg">
-        <script src="../prism/prism.js"></script>
+        <script src="../prism/prism.js" data-manual></script>
         <link href="../prism/prism.css" type="text/css" rel="stylesheet" />
         <script src="../js/jquery-2.1.1.min.js"></script>
 
@@ -19,41 +19,67 @@
                         {
                             idFacebook: localStorage.getItem("usuario")
                         }
-                    , function (response) {
-                        if (response.realizado){
-                            $("#mensaje p:eq(0)")
-                                    .text("Gracias por haber realizado el examen")
-                                    .parent()
-                                    .show("slow");
-                        }else{
-                            var numAleatorio = localStorage.getItem("examen");
-                            var url = "";
-                            switch(numAleatorio) {
-                                case "1":
-                                    url = "pre_testA.html";
-                                    tipoExamen = "A";
-                                    break;
-                                case "2":
-                                    url = "pre_testB.html";
-                                    tipoExamen = "B";
-                                    break;
-                                case "3": 
-                                    url = "pre_testC.html"; 
-                                    tipoExamen = "C"; 
-                                    break;
-                            }
-                            
-                            $("#contenido").load(url);
+                , function (response) {
+                    if (response.realizado) {
+                        $("#mensaje p:eq(0)")
+                                .text("Gracias por haber realizado el examen")
+                                .parent()
+                                .show("slow");
+                    } else {
+                        var numAleatorio = localStorage.getItem("examen");
+                        var url = "";
+                        switch (numAleatorio) {
+                            case "1":
+                                url = "pre_testA.html";
+                                tipoExamen = "A";
+                                break;
+                            case "2":
+                                url = "pre_testB.html";
+                                tipoExamen = "B";
+                                break;
+                            case "3":
+                                url = "pre_testC.html";
+                                tipoExamen = "C";
+                                break;
                         }
+
+                        $("#contenido").load(url, function () {
+                            //Agregar radio E
+                            var preguntas = $("div").filter(function () {
+                                return this.id.match(/question\d+/);
+                            });
+
+                            preguntas.find("ol").each(function (index, item) {
+                                var name = "q"+(index+1);
+                                var id= name+"e";
+                                $(item).append(
+                                    $("<li>")
+                                    .append(
+                                        $("<input>")
+                                            .prop("type", "radio")
+                                            .prop("name", name)
+                                            .prop("id", id)
+                                            .val("e")
+                                    ).append(
+                                        $("<label>")
+                                            .prop("for",id)
+                                            .text("no sé la respuesta")
+                                    )
+                                );
+                            });
+                            
+                            Prism.highlightAll();
+                        });
                     }
+                }
                 );
 
                 $("#button").click(function () {
                     var jsonRespuestas = [];
-                    var idPregunta = $("div").filter(function () {
+                    var preguntas = $("div").filter(function () {
                         return this.id.match(/question\d+/);
                     });
-                    idPregunta.each(function (index, obj) {
+                    preguntas.each(function (index, obj) {
                         var respuesta = $(obj).find("input:checked");
                         var o = {};
                         o.pregunta = respuesta.prop("name");
@@ -81,17 +107,29 @@
             ol{
                 list-style-type: upper-latin;
             }
+            #contenido p{
+                font-weight: bold;
+            }
+            #mensaje{
+                display:none;
+                position:fixed; 
+                background-color:white;
+                height: 100%;
+                width: 100%;
+                z-index: 1;
+                margin-top: -1.2em;
+            }
         </style>
     </head>
     <body>
-        <div id="mensaje" style="display:none;position:fixed; background-color:white;height: 100%;width: 100%;z-index: 1;margin-top: -2em;">
+        <div id="mensaje">
             <p>
                 Obtuviste <span id="aciertos"></span> aciertos, gracias por participar.<br>
                 Si eres parte del grupo que utilizará Java Sensei por favor regresa a la pagina de inicio.
             </p>
         </div>
         <div id="contenido">
-            
+
         </div>
         <div id="button">
             <input type="button" value="Calificar Pre-test" />
