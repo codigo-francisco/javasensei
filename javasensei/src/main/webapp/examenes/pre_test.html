@@ -8,12 +8,12 @@
         <script src="../prism/prism.js"></script>
         <link href="../prism/prism.css" type="text/css" rel="stylesheet" />
         <script src="../js/jquery-2.1.1.min.js"></script>
-        
+
         <script>
             $(document).ready(function () {
                 if (!localStorage.getItem("usuario"))
                     window.location = "login.html";
-                
+
                 $("#button").click(function () {
                     var jsonRespuestas = [];
                     var idPregunta = $("div").filter(function () {
@@ -28,20 +28,25 @@
                     });
 
                     $.post("../servicios/examenes/calificarexamenpretest",
-                        {
-                            idFacebook: localStorage.getItem("usuario"),
-                            json: JSON.stringify(jsonRespuestas)
-                        }, function (response) {
-                            console.log("examen calificado");
-                            
-                            $("#aciertos").text(response.totalRespuestasCorrectas);
-                            $("#mensaje").show("slow");
-                        }
+                            {
+                                idFacebook: localStorage.getItem("usuario"),
+                                json: JSON.stringify(jsonRespuestas)
+                            }, function (response) {
+                        console.log("examen calificado");
+
+                        $("#aciertos").text(response.totalRespuestasCorrectas);
+                        $("#mensaje").show("slow");
+                    }
                     );
                 });
             });
-
+            
         </script>
+        <style>
+            ol{
+                list-style-type: upper-latin;
+            }
+        </style>
     </head>
     <body>
         <div id="mensaje" style="display:none;position:fixed; background-color:white;height: 100%;width: 100%;z-index: 1;">
@@ -49,44 +54,200 @@
                 Obtuviste <span id="aciertos"></span> aciertos, gracias por participar.
             </p>
         </div>
-        <p>"ID del usuario, fecha."</p>
-        <h2>Este es el examen pre-test</h2>
-        <p>Instrucciones:  contesta las siguientes preguntas seg&uacute;n corresponda.</p>
-
+        <h2>Este es el examen pre-test.</h2>
+        <h2>Instrucciones:  contesta las siguientes preguntas de opción múltiple seg&uacute;n corresponda.</h2>
 
         <hr/>
-        <p class="question">1. What is the answer to this question?</p>
-        <pre>
-                <code class="language-java line-numbers">public class Foo {
-                    public void bar(){
-                        System.out.println("Foo.bar");
-                    }
-                }
-                </code>
-        </pre>
-
+        <p class="question">1. ¿Cuál es el comando del JDK compila una aplicación en Java?</p>
         <div id="question1">
-            <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Answer 1</label><br/>          
-            <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Answer 2</label><br/>            
-            <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Answer 3</label><br/>            
-            <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Answer 4</label><br/>
+            <ol>
+                <li><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">javac</label></li>
+                <li><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">java</label></li>            
+                <li><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">run</label></li>            
+                <li><input type="radio" name="q1" value="d" id="q1d"><label for="q1d">execute</label></li>
+            </ol>
+        </div>
+
+        <hr/>
+        <p class="question">2. Las aplicaciones en Java comienzan su ejecución en el método:</p>
+        <div id="question2">
+            <ol>
+                <li><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">void public main</label></li>          
+                <li><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">public void main</label></li>            
+                <li><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">public static void main</label></li>            
+                <li><input type="radio" name="q2" value="d" id="q2d"><label for="q2d">public static void Main</label></li>
+            </ol>
+        </div>
+
+        <hr/>
+        <p class="question">3. ¿Cuál de los siguientes identificadores no es válido en el lenguaje de programación Java?</p>
+        <div id="question3">
+            <ol>
+                <li><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">RDD2</label></li>          
+                <li><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">3CPO</label></li>            
+                <li><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Yoda</label></li>            
+                <li><input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Java Sensei</label></li>
+            </ol>
+        </div>
+
+        <hr/>
+        <p class="question">4. De las siguientes opciones, señala las declaraciones de variables que son correctas.</p>
+        <div id="question4">
+            <ol>
+                <li><input type="radio" name="q4" value="a" id="q4a"><label for="q4a">int i; j; k;</label></li>          
+                <li><input type="radio" name="q4" value="b" id="q4b"><label for="q4b">int i, j, k;</label></li>            
+                <li><input type="radio" name="q4" value="c" id="q4c"><label for="q4c">int i, int j, int k;</label></li>            
+                <li><input type="radio" name="q4" value="d" id="q4d"><label for="q4d">int i, j, k</label></li>
+            </ol>
+        </div>
+
+        <hr/>
+        <p class="question">5. De las siguientes declaraciones de variable, señala la que es correcta.</p>
+        <div id="question5">
+            <ol>
+                <li><input type="radio" name="q5" value="a" id="q5a"><label for="q5a">int 18 = edad;</label></li>          
+                <li><input type="radio" name="q5" value="b" id="q5b"><label for="q5b">int edad = 20;</label></li>            
+                <li><input type="radio" name="q5" value="c" id="q5c"><label for="q5c">int precio = 84.6;</label></li>            
+                <li><input type="radio" name="q5" value="d" id="q5d"><label for="q5d">int precio = 84,6;</label></li>
+            </ol>
+        </div>
+
+        <hr/>
+        <p class="question">6. ¿Dado el siguiente programa en Java, ¿qué se imprime en la consola de salida cuando se ejecuta? </p>
+        <pre class = "prettyprint lang-java linenums">
+public class Test {
+  public static void main( String args[ ] ){
+    int x = 10 + 10 + 10 / 3;
+    System.out.println(x); 
+  }
+}	
+        </pre>
+        <div id="question6">
+            <ol>
+                <li><input type="radio" name="q6" value="a" id="q6a"><label for="q6a">10</label></li>          
+                <li><input type="radio" name="q6" value="b" id="q6b"><label for="q6b">23</label></li>            
+                <li><input type="radio" name="q6" value="c" id="q6c"><label for="q6c">23.3</label></li>            
+                <li><input type="radio" name="q6" value="d" id="q6d"><label for="q6d">10</label></li>
+            </ol>
+        </div>
+
+        <hr/>
+        <p class="question">7. Dado el siguiente fragmento de código en Java, ¿Cuál es el valor final para la variable entera x?</p>
+        <pre class = "prettyprint lang-java linenums">
+int x = 10000;
+if( x  >  5000 ) 
+     x = 1000;
+System.out.println(x);	
+        </pre>
+        <div id="question7">
+            <ol>
+                <li><input type="radio" name="q7" value="a" id="q7a"><label for="q7a">10000</label></li>          
+                <li><input type="radio" name="q7" value="b" id="q7b"><label for="q7b">5000</label></li>            
+                <li><input type="radio" name="q7" value="c" id="q7c"><label for="q7c">1000</label></li>            
+                <li><input type="radio" name="q7" value="d" id="q7d"><label for="q7d">500</label></li>
+            </ol>    
+        </div>
+
+        <hr/>
+        <p class="question">8. Dado el siguiente fragmento de código en Java, ¿Qué se imprime en la consola de salida?</p>
+        <pre class = "prettyprint lang-java linenums">
+int sum = 14;
+if( sum < 20 )
+  System.out.print( "Abajo " );
+else
+  System.out.print( "Arriba " );
+System.out.println( "de los límites." );	
+        </pre>
+        <div id="question8">
+            <ol>
+                <li><input type="radio" name="q8" value="a" id="q8a"><label for="q8a">Abajo</label></li>          
+                <li><input type="radio" name="q8" value="b" id="q8b"><label for="q8b">Arriba</label></li>            
+                <li><input type="radio" name="q8" value="c" id="q8c"><label for="q8c">Abajo de los límites.</label></li>            
+                <li><input type="radio" name="q8" value="d" id="q8d"><label for="q8d">Arriba de los límites.</label></li>
+            </ol>    
+        </div>
+
+        <hr/>
+        <p class="question">9. Dado el siguiente fragmento de código en Java, ¿Qué se imprime en la consola de salida?</p>
+        <pre class = "prettyprint lang-java linenums">
+int x = 2;
+int y = 3;
+if( x < y )
+  if( x == 0 )
+    System.out.print ( "Rojo" );
+  else
+    System.out.print ( "Blanco" );
+else
+  System.out.print ( "Azul" );
+        </pre>
+        <div id="question9">
+            <ol>
+                <li><input type="radio" name="q9" value="a" id="q9a"><label for="q9a">Rojo</label></li>          
+                <li><input type="radio" name="q9" value="b" id="q9b"><label for="q9b">Blanco</label></li>            
+                <li><input type="radio" name="q9" value="c" id="q9c"><label for="q9c">Azul</label></li>            
+                <li><input type="radio" name="q9" value="d" id="q9d"><label for="q9d">RojoAzul</label></li>
+            </ol>
+        </div>
+
+        <hr/>
+        <p class="question">10. Dado el siguiente fragmento de código en Java, ¿Qué se imprime en la consola de salida?</p>
+        <pre class = "prettyprint lang-java linenums">
+int i = 1;
+
+switch ( i ) {
+  case 0:  System.out.println( "cero" );
+  case 1:  System.out.println( "uno" );
+  case 2:  System.out.println( "dos" );
+  default: System.out.println( "default" );
+}
+        </pre>
+        <div id="question10">
+            <ol>
+                <li><input type="radio" name="q10" value="a" id="q10a"><label for="q10a">cero</label></li>          
+                <li><input type="radio" name="q10" value="b" id="q10b"><label for="q10b">uno, default</label></li>            
+                <li><input type="radio" name="q10" value="c" id="q10c"><label for="q10c">uno, dos, default</label></li>            
+                <li><input type="radio" name="q10" value="d" id="q10d"><label for="q10d">default</label></li>
+            </ol>    
+        </div>
+
+        <hr/>
+        <p class="question">11. Selecciona la condición que es apropiada en el ciclo while para lograr que la impresión en la consola de salida sea: 1 2 3 4 5 6 7 8 9 10</p>
+        <pre class = "prettyprint lang-java linenums">
+int contador=1;
+while(……) {
+    System.out.print(contador + " ");
+    contador = contador + 1;
+}	
+        </pre>
+        <hr/>
+        <div id="question11">
+            <ol>
+                <li><input type="radio" name="q11" value="a" id="q11a"><label for="q11a">false</label></li>          
+                <li><input type="radio" name="q11" value="b" id="q11b"><label for="q11b">contador < 10</label></li>            
+                <li><input type="radio" name="q11" value="c" id="q11c"><label for="q11c">contador <= 10</label></li>            
+                <li><input type="radio" name="q11" value="d" id="q11d"><label for="q11d">true</label></li>
+            </ol>    
         </div>
         <hr/>
-        <p class="question">2. What is the answer to this question?</p>
-        <pre class = "prettyprint lang-java linenums">
-public class Perro {
-public static void main(String[] args) {
-System.out.println("Hola");
-}
-}	
-        </pre>	
 
-        <div id="question2">
-            <input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Answer 1</label><br/>          
-            <input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Answer 2</label><br/>            
-            <input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Answer 3</label><br/>            
-            <input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Answer 4</label><br/>
+        <p class="question">12. Dado el siguiente fragmento de código, ¿qué se imprime en la consola de salida?</p>
+        <pre class = "prettyprint lang-java linenums">
+int suma = 0;
+for(int i = 0; i < 4; i++) {
+  suma = suma + i;
+}
+System.out.println(suma);	
+        </pre>
+        <hr/>
+        <div id="question12">
+            <ol>
+                <li><input type="radio" name="q12" value="a" id="q12a"><label for="q12a">7</label></li>          
+                <li><input type="radio" name="q12" value="b" id="q12b"><label for="q12b">8</label></li>            
+                <li><input type="radio" name="q12" value="c" id="q12c"><label for="q12c">9</label></li>            
+                <li><input type="radio" name="q12" value="d" id="q12d"><label for="q12d">10</label></li>
+            </ol>    
         </div>
+        <hr/>
 
         <br/>
         <div id="button">
