@@ -1,7 +1,3 @@
-/*$(document).on('pagebeforehide', '#principal', function () {
- alert("Cerrando");
- });*/
-
 function enlazarBotonesCarousel() {
     $("#adelante_categorizar").click(adelanteCarousel);
     $("#atras_categorizar").click(atrasCarousel);
@@ -20,10 +16,9 @@ function iniciarCategorizacion() {
 
                 if (result.length > 0) {
                     crearCarousel(result);
+                    //Inicializar la categorización por parte del usuario
+                    $(":mobile-pagecontainer").pagecontainer("change", "#paginacategorizacion");
                 }
-
-                //Inicializar la categorización por parte del usuario
-                $(":mobile-pagecontainer").pagecontainer("change", "#paginacategorizacion");
             }
     );
 }
@@ -44,13 +39,13 @@ function crearCarousel(datos) {
         objeto = datos[objeto];
         //Agregamos los img
         divFotografias.append(
-                $("<img>")
+            $("<img>")
                 .prop("id", "img" + count)
                 .prop("src", "data:image/jpeg;base64," + objeto.fotografia)
                 .prop("_id", objeto._id)
                 .prop("idEmocion", "")
                 .css("display", "none")
-                );
+        );
 
         cantidadFotos++;
         count++;

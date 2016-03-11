@@ -58,4 +58,12 @@ public class ExamenesManager {
         
         return insert.toString();
     }
+
+    public String realizoExamenPreTest(String idFacebook) {
+        DBObject result = pretestCollection.findOne(
+                new BasicDBObject("idFacebook", idFacebook)
+        );
+        
+        return new BasicDBObject("realizado", result!=null).toJson();
+    }
 }
