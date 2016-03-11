@@ -39,9 +39,10 @@ public class ExamenesRest {
     @Path("calificarexamenpretest")
     public String calificarExamenPreTest(
             @FormParam("idFacebook") String idFacebook,
-            @FormParam("json") String jsonRespuestas){
+            @FormParam("json") String jsonRespuestas,
+            @FormParam("tipoExamen") String tipoExamen){
         
-        return new ExamenesManager().calificarExamenPreTest(idFacebook, jsonRespuestas);
+        return new ExamenesManager().calificarExamenPreTest(idFacebook, jsonRespuestas,tipoExamen);
     }
     
     @GET
