@@ -22,15 +22,15 @@ var tutorial = function (div, conf) {
     };
 
     this.mostrarTutorial = function (primera) {
-        
+
         if (primera) { //Deshabilitar el boton de salida
             $.post(url + urlPrimeraVez,
-                {
-                    json:JSON.stringify(parametroUrl)
-                },
-                function (result) {
-                    console.log("Se guardo que el usuario ya vió el tutorial");
-                }
+                    {
+                        json: JSON.stringify(parametroUrl)
+                    },
+                    function (result) {
+                        console.log("Se guardo que el usuario ya vió el tutorial");
+                    }
             );
         }
 
@@ -41,16 +41,23 @@ var tutorial = function (div, conf) {
     var cambiarPosicion = function (event) {
         var index = event.data;
 
+
+        var movimiento = "left";
+
+        if (index < divActual) { //Movimiento hacia a la derecha
+            movimiento = "right";
+        }
+
         currentButton.removeClass("barraprogreso_tutorial_activo");
         lastDiv = currentDiv;
-        lastDiv.hide();
+        lastDiv.hide("slide", function () {
+            divActual = index;
 
-        divActual = index;
-
-        currentButton = $(barraProgreso.find("button")[divActual]);
-        currentButton.addClass("barraprogreso_tutorial_activo");
-        currentDiv = $(divs[divActual]);
-        currentDiv.show();
+            currentButton = $(barraProgreso.find("button")[divActual]);
+            currentButton.addClass("barraprogreso_tutorial_activo");
+            currentDiv = $(divs[divActual]);
+            currentDiv.show("slide",250);
+        },250);
     };
 
     //Construir barra de progreso
