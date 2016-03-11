@@ -5,18 +5,16 @@
  */
 package javasensei.rest;
 
-import com.mongodb.BasicDBList;
-import com.mongodb.DBObject;
-import java.util.List;
-import java.util.Map;
 import javasensei.db.managments.ExamenesManager;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -42,9 +40,19 @@ public class ExamenesRest {
     public String calificarExamenPreTest(
             @FormParam("idFacebook") String idFacebook,
             @FormParam("json") String jsonRespuestas){
-              
         
         return new ExamenesManager().calificarExamenPreTest(idFacebook, jsonRespuestas);
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("realizoExamenPreTest")
+    public String realizoExamenPreTest(
+            @QueryParam("idFacebook") String idFacebook){
+        
+        
+        return new ExamenesManager().realizoExamenPreTest(idFacebook);
+        
     }
     
     @POST
