@@ -24,21 +24,38 @@ var processLogin = function processLogin(response) {
             $("#facebookId").text("ID: "+uid);
             usuario.idFacebook = uid;
             usuario.token = accessToken;
+            
+            //Validamos si ya realizo el examen pretest
+            //Validar si el usuario realizó el cuestionario
+            $.get("servicios/examenes/realizoExamenPreTest",
+                    {
+                        idFacebook: usuario.idFacebook
+                    }
+                , function (response) {
+                    if (response.realizado){
+                        FB.api("/me", {fields: "name,picture"}, function (response) {
+                            console.log("Datos del facebook: %O", response);
 
-            FB.api("/me", {fields: "name,picture"}, function (response) {
-                console.log("Datos del facebook: %O", response);
+                            usuario.nombre = response.name;
+                            usuario.foto = response.picture.data.url;
 
-                usuario.nombre = response.name;
-                usuario.foto = response.picture.data.url;
+                            eliminarBackground();
 
-                eliminarBackground();
+                            //Se manda un json para crear u obtener el usuario
+                            checarUsuario(usuario);
 
-                //Se manda un json para crear u obtener el usuario
-                checarUsuario(usuario);
-
-                $("#imagen_usuario").attr("src", usuario.foto);
-                $("#nombre_usuario").text(usuario.nombre);
-            });
+                            $("#imagen_usuario").attr("src", usuario.foto);
+                            $("#nombre_usuario").text(usuario.nombre);
+                        });
+                        
+                    }else{
+                        alert("Aún no has realizado tu examen pretest, seras redirigido a él");
+                        localStorage.setItem("usuario", usuario.idFacebook);
+                        window.location="examenes/pre_test.html";
+                    }
+                }
+            );
+    
             break;
         case "not_authorized":
             alert("Por favor autorize a la aplicacion para usar facebook");
