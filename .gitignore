@@ -6,3 +6,5 @@ javasensei/target/*
 *dataset*
 /GenerarDataset/nbproject/private/
 !/javasensei/src/main/webapp/img/firefox-logo-full.png
+!/javasensei/src/main/webapp/examenes/login.html
+!/javasensei/src/main/webapp/examenes/loginfacebook.js

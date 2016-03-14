@@ -5,21 +5,81 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="shortcut icon" href="../img/logo.jpg">
-        <script src="../prism/prism.js"></script>
+        <script src="../prism/prism.js" data-manual></script>
         <link href="../prism/prism.css" type="text/css" rel="stylesheet" />
         <script src="../js/jquery-2.1.1.min.js"></script>
-        
+
         <script>
             $(document).ready(function () {
                 if (!localStorage.getItem("usuario"))
                     window.location = "login.html";
-                
+
+                //Validar si el usuario realizó el cuestionario
+                $.get("../servicios/examenes/realizoExamenPreTest",
+                        {
+                            idFacebook: localStorage.getItem("usuario")
+                        }
+                , function (response) {
+                    if (response.realizado) {
+                        $("#mensaje p:eq(0)")
+                                .text("Gracias por haber realizado el examen")
+                                .parent()
+                                .show("slow");
+                    } else {
+                        var numAleatorio = localStorage.getItem("examen");
+                        var url = "";
+                        switch (numAleatorio) {
+                            case "1":
+                                url = "pre_testA.html";
+                                tipoExamen = "A";
+                                break;
+                            case "2":
+                                url = "pre_testB.html";
+                                tipoExamen = "B";
+                                break;
+                            case "3":
+                                url = "pre_testC.html";
+                                tipoExamen = "C";
+                                break;
+                        }
+
+                        $("#contenido").load(url, function () {
+                            //Agregar radio E
+                            var preguntas = $("div").filter(function () {
+                                return this.id.match(/question\d+/);
+                            });
+
+                            preguntas.find("ol").each(function (index, item) {
+                                var name = "q"+(index+1);
+                                var id= name+"e";
+                                $(item).append(
+                                    $("<li>")
+                                    .append(
+                                        $("<input>")
+                                            .prop("type", "radio")
+                                            .prop("name", name)
+                                            .prop("id", id)
+                                            .val("e")
+                                    ).append(
+                                        $("<label>")
+                                            .prop("for",id)
+                                            .text("no sé la respuesta")
+                                    )
+                                );
+                            });
+                            
+                            Prism.highlightAll();
+                        });
+                    }
+                }
+                );
+
                 $("#button").click(function () {
                     var jsonRespuestas = [];
-                    var idPregunta = $("div").filter(function () {
+                    var preguntas = $("div").filter(function () {
                         return this.id.match(/question\d+/);
                     });
-                    idPregunta.each(function (index, obj) {
+                    preguntas.each(function (index, obj) {
                         var respuesta = $(obj).find("input:checked");
                         var o = {};
                         o.pregunta = respuesta.prop("name");
@@ -28,67 +88,49 @@
                     });
 
                     $.post("../servicios/examenes/calificarexamenpretest",
-                        {
-                            idFacebook: localStorage.getItem("usuario"),
-                            json: JSON.stringify(jsonRespuestas)
-                        }, function (response) {
-                            console.log("examen calificado");
-                            
-                            $("#aciertos").text(response.totalRespuestasCorrectas);
-                            $("#mensaje").show("slow");
-                        }
+                            {
+                                idFacebook: localStorage.getItem("usuario"),
+                                json: JSON.stringify(jsonRespuestas),
+                                tipoExamen: tipoExamen
+                            }, function (response) {
+                        console.log("examen calificado");
+
+                        $("#aciertos").text(response.totalRespuestasCorrectas);
+                        $("#mensaje").show("slow");
+                    }
                     );
                 });
             });
 
         </script>
+        <style>
+            ol{
+                list-style-type: upper-latin;
+            }
+            #contenido p{
+                font-weight: bold;
+            }
+            #mensaje{
+                display:none;
+                position:fixed; 
+                background-color:white;
+                height: 100%;
+                width: 100%;
+                z-index: 1;
+                margin-top: -1.2em;
+            }
+        </style>
     </head>
     <body>
-        <div id="mensaje" style="display:none;position:fixed; background-color:white;height: 100%;width: 100%;z-index: 1;">
+        <div id="mensaje">
             <p>
-                Obtuviste <span id="aciertos"></span> aciertos, gracias por participar.
+                Obtuviste <span id="aciertos"></span> aciertos, gracias por participar.<br>
+                Si eres parte del grupo que utilizará Java Sensei por favor regresa a la pagina de inicio.
             </p>
         </div>
-        <p>"ID del usuario, fecha."</p>
-        <h2>Este es el examen pre-test</h2>
-        <p>Instrucciones:  contesta las siguientes preguntas seg&uacute;n corresponda.</p>
+        <div id="contenido">
 
-
-        <hr/>
-        <p class="question">1. What is the answer to this question?</p>
-        <pre>
-                <code class="language-java line-numbers">public class Foo {
-                    public void bar(){
-                        System.out.println("Foo.bar");
-                    }
-                }
-                </code>
-        </pre>
-
-        <div id="question1">
-            <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Answer 1</label><br/>          
-            <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Answer 2</label><br/>            
-            <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Answer 3</label><br/>            
-            <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Answer 4</label><br/>
         </div>
-        <hr/>
-        <p class="question">2. What is the answer to this question?</p>
-        <pre class = "prettyprint lang-java linenums">
-public class Perro {
-public static void main(String[] args) {
-System.out.println("Hola");
-}
-}	
-        </pre>	
-
-        <div id="question2">
-            <input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Answer 1</label><br/>          
-            <input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Answer 2</label><br/>            
-            <input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Answer 3</label><br/>            
-            <input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Answer 4</label><br/>
-        </div>
-
-        <br/>
         <div id="button">
             <input type="button" value="Calificar Pre-test" />
         </div>
