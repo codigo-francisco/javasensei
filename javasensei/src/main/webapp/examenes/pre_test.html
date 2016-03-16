@@ -10,6 +10,11 @@
         <script src="../js/jquery-2.1.1.min.js"></script>
 
         <script>
+            // Retorna un número aleatorio entre min (incluido) y max (excluido)
+            function getRandomInt(min, max) {
+              return Math.floor(Math.random() * (max - min)) + min;
+            }
+            
             $(document).ready(function () {
                 if (!sessionStorage.getItem("usuario"))
                     window.location = "login.html";
@@ -26,8 +31,11 @@
                                 .parent()
                                 .show("slow");
                     } else {
-                        var numAleatorio = sessionStorage.getItem("examen");
-                        var url = "";
+                        var numAleatorio = getRandomInt(1,4);
+                        
+                        var url = "pre_testA.html";
+                        tipoExamen = "A";
+                        
                         switch (numAleatorio) {
                             case "1":
                                 url = "pre_testA.html";

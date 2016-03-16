@@ -11,18 +11,11 @@ function checkLoginState(){
     FB.getLoginStatus(processLogin);
 }
 
-// Retorna un número aleatorio entre min (incluido) y max (excluido)
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
 function processLogin(response) {
     switch (response.status) {
         case 'connected' :
             
-            var numAleatorio = getRandomInt(1,4);
             sessionStorage.setItem("usuario",response.authResponse.userID);
-            sessionStorage.setItem("examen", numAleatorio);
             
             window.location="pre_test.html";
             break;
