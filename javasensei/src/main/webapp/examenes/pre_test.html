@@ -11,13 +11,13 @@
 
         <script>
             $(document).ready(function () {
-                if (!localStorage.getItem("usuario"))
+                if (!sessionStorage.getItem("usuario"))
                     window.location = "login.html";
 
                 //Validar si el usuario realizó el cuestionario
                 $.get("../servicios/examenes/realizoExamenPreTest",
                         {
-                            idFacebook: localStorage.getItem("usuario")
+                            idFacebook: sessionStorage.getItem("usuario")
                         }
                 , function (response) {
                     if (response.realizado) {
@@ -26,7 +26,7 @@
                                 .parent()
                                 .show("slow");
                     } else {
-                        var numAleatorio = localStorage.getItem("examen");
+                        var numAleatorio = sessionStorage.getItem("examen");
                         var url = "";
                         switch (numAleatorio) {
                             case "1":
@@ -84,12 +84,16 @@
                         var o = {};
                         o.pregunta = respuesta.prop("name");
                         o.respuesta = respuesta.val();
+                        if (respuesta.val()==""){
+                            alert("Por favor responda todas las preguntas del cuestionario");
+                            return false;
+                        }
                         jsonRespuestas.push(o);
                     });
 
                     $.post("../servicios/examenes/calificarexamenpretest",
                             {
-                                idFacebook: localStorage.getItem("usuario"),
+                                idFacebook: sessionStorage.getItem("usuario"),
                                 json: JSON.stringify(jsonRespuestas),
                                 tipoExamen: tipoExamen
                             }, function (response) {

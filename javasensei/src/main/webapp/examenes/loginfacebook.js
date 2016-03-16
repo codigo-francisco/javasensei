@@ -21,8 +21,8 @@ function processLogin(response) {
         case 'connected' :
             
             var numAleatorio = getRandomInt(1,4);
-            localStorage.setItem("usuario",response.authResponse.userID);
-            localStorage.setItem("examen", numAleatorio);
+            sessionStorage.setItem("usuario",response.authResponse.userID);
+            sessionStorage.setItem("examen", numAleatorio);
             
             window.location="pre_test.html";
             break;
