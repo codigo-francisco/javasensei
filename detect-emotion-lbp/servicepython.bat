@@ -1,0 +1,1 @@
+sc create service_emotion_detect binPath= "C:\Users\Francisco\Miniconda2\python.exe servicio.py"
