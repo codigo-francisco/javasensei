@@ -11,7 +11,7 @@ from detect_emotion import detect_emotion
 
 warnings.filterwarnings("ignore")
 
-detector = detect_emotion("data/modelo.m")
+detector = detect_emotion("data/modelo.m","data/X.x","data/y.y")
 
 #cargamos las imagenes
 imagenes_emocion = cPickle.load(open("data/imagenes_emocion.sav","rb"))

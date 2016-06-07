@@ -7,12 +7,11 @@ import os.path
 import sys
 
 import matplotlib.pyplot as plt
-import numpy as np
 from skimage.feature import local_binary_pattern
+from sklearn.preprocessing import normalize
 from sklearn import cross_validation
 from sklearn.metrics import confusion_matrix
 from sklearn.svm import LinearSVC
-
 from util import *
 
 
@@ -278,31 +277,22 @@ class detect_emotion(object):
         yPred = self.model.predict(self.X)
         yPred = map(lambda index: self.emociones[index], yPred)
         cm = confusion_matrix(yTrue, yPred, self.emociones)
+        norm_conf = np.round(normalize(cm.T, "l1").T, 2)
         self.cm = cm
-        print(cm)
+        self.norm_conf = norm_conf
+        print(cm, "\n",norm_conf)
 
         if graficar:
-            norm_conf = []
-            for i in cm:
-                a = 0
-                tmp_arr = []
-                a = sum(i, 0)
-                for j in i:
-                    tmp_arr.append(float(j) / float(a))
-                norm_conf.append(tmp_arr)
-
             fig = plt.figure()
             plt.clf()
             ax = fig.add_subplot(111)
             ax.set_aspect(1)
-            res = ax.imshow(np.array(norm_conf), cmap=plt.cm.jet,
+            res = ax.imshow(norm_conf, cmap=plt.cm.jet,
                             interpolation='nearest')
-
-            width, height = cm.shape
-
+            width, height = norm_conf.shape
             for x in xrange(width):
                 for y in xrange(height):
-                    ax.annotate(str(cm[x][y]), xy=(y, x),
+                    ax.annotate(str(norm_conf[x][y]), xy=(y, x),
                                 horizontalalignment='center',
                                 verticalalignment='center')
 
