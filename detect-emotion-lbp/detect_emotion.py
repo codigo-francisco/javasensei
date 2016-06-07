@@ -1,18 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*
 
-from util import *
-import glob
-import numpy as np
-import sys
-from skimage.feature import local_binary_pattern
-from skimage.exposure import histogram
-from sklearn.svm import LinearSVC
-from sklearn import cross_validation
 import cPickle
+import glob
 import os.path
+import sys
 
-class detect_emotion():
+import matplotlib.pyplot as plt
+import numpy as np
+from skimage.feature import local_binary_pattern
+from sklearn import cross_validation
+from sklearn.metrics import confusion_matrix
+from sklearn.svm import LinearSVC
+
+from util import *
+
+
+class detect_emotion(object):
     classifier_face = cv2.CascadeClassifier(r"classifiers\lbpcascade_frontalface.xml")
     # classifier_eyes = cv2.CascadeClassifier(r"D:\OpenCV-Face-andmore-Tracker\Face(andmore)Tracker\Resources\haarcascades\eye.xml")
     classifier_eyes = cv2.CascadeClassifier(r"classifiers/eyes_lbp.xml")
@@ -34,7 +38,7 @@ class detect_emotion():
             self.y = cPickle.load(open(yPath,"rb"))
 
     def predict(self, gray):
-        returnValue = (False, -1)
+        returnValue = (False, "Rostro no encontrado")
         result, img = self.__get_image__(gray)
         if result:
             y = self.model.predict(img)
@@ -218,31 +222,37 @@ class detect_emotion():
             raise
         return (True, face_array)
 
-    def __load_images__(self, path=None):
+    def __load_images__(self, path=None, rostrosPath=None):
         if path is None:
             path = "D:/Respaldo Jose Luis/proyecto RVERK/RafD_Ordenado/"
         X, y = [], []
+        rostros = []
         indice = -1
         for emocion in self.emociones:
             imagenes = glob.glob(path + emocion + "\\*.jpg")
             indice += 1
             try:
                 for imagen in imagenes:
-                    result, array = self.__get_image__(cv2.imread(imagen, cv2.IMREAD_GRAYSCALE))
+                    frame = cv2.imread(imagen)
+                    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                    result, array = self.__get_image__(gray)
                     if result:
                         X.append(array)
                         y.append(indice)
+                        rostros.append({"emocion":emocion, "imagen":frame})
             except IOError, (errno, strerror):
                 print "I/O error({0}): {1}".format(errno, strerror)
             except:
                 print "Unexpected error:", sys.exc_info()[0]
                 raise
+        if not rostrosPath is None:
+            cPickle.dump(rostros, open(rostrosPath,"wb"), cPickle.HIGHEST_PROTOCOL)
         return [X, y]
 
     @staticmethod
-    def create_model_training(savePath, XPath = None, yPath=None, path=None):
+    def create_model_training(savePath, XPath = None, yPath=None, path=None, rostrosPath=None):
         detector = detect_emotion()
-        X, y = detector.__load_images__(path)
+        X, y = detector.__load_images__(path, rostrosPath)
         #X = cPickle.load(open("data/X.x","rb"))
         #y = cPickle.load(open("data/y.y","rb"))
         detector.X = X
@@ -260,10 +270,46 @@ class detect_emotion():
         cPickle.dump(y, open(yPath,"wb"))
         return detector
 
-    def crossValidation(self):
-        scores = cross_validation.cross_val_score(self.model, self.X, self.y, cv=10)
-        print(scores)
+    def crossValidation(self, cv=10, graficar=False):
+        scores = cross_validation.cross_val_score(self.model,self.X,self.y)
         print("Precisión: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
+        #Matriz de confusión
+        yTrue = map(lambda index: self.emociones[index], self.y)
+        yPred = self.model.predict(self.X)
+        yPred = map(lambda index: self.emociones[index], yPred)
+        cm = confusion_matrix(yTrue, yPred, self.emociones)
+        self.cm = cm
+        print(cm)
 
-detector = detect_emotion.create_model_training("data\modelo.m")
-detector.crossValidation()
+        if graficar:
+            norm_conf = []
+            for i in cm:
+                a = 0
+                tmp_arr = []
+                a = sum(i, 0)
+                for j in i:
+                    tmp_arr.append(float(j) / float(a))
+                norm_conf.append(tmp_arr)
+
+            fig = plt.figure()
+            plt.clf()
+            ax = fig.add_subplot(111)
+            ax.set_aspect(1)
+            res = ax.imshow(np.array(norm_conf), cmap=plt.cm.jet,
+                            interpolation='nearest')
+
+            width, height = cm.shape
+
+            for x in xrange(width):
+                for y in xrange(height):
+                    ax.annotate(str(cm[x][y]), xy=(y, x),
+                                horizontalalignment='center',
+                                verticalalignment='center')
+
+            cb = fig.colorbar(res)
+            plt.xticks(range(width), self.emociones)
+            plt.yticks(range(height), self.emociones)
+
+#detector = detect_emotion.create_model_training("data\modelo.m")
+#detector = detect_emotion("data/modelo.m","data/X.x","data/y.y")
+#detector.crossValidation()

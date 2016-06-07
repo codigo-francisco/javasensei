@@ -1,13 +1,16 @@
 from __future__ import print_function
-import cv2
-from detect_emotion import detect_emotion
+
 import time
 import warnings
+
+import cv2
+
+from detect_emotion import detect_emotion
 
 warnings.filterwarnings("ignore")
 
 video = cv2.VideoCapture(0)
-detector = detect_emotion("data/prueba.m","data/X.x","data/y.y")
+detector = detect_emotion("data/modelo.m","data/X.x","data/y.y")
 
 while True:
     ret, frame = video.read()

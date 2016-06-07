@@ -6,6 +6,7 @@ import javasensei.exceptions.JavaException;
 import javasensei.util.FileHelper;
 import weka.classifiers.functions.MultilayerPerceptron;
 import weka.core.Attribute;
+import weka.core.DenseInstance;
 import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -102,7 +103,7 @@ public class ExtractEmotionWeka implements INeuralNetwork<double[]> {
         data.setClassIndex(data.numAttributes() - 1);
 
         //Ahora insertamos los datos
-        Instance instance = new Instance(11); //DenseInstance(11);
+        Instance instance = new DenseInstance(11); //DenseInstance(11);
         instance.setDataset(data);
 
         instance.setValue(0, values[0]);
