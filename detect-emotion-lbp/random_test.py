@@ -14,7 +14,7 @@ warnings.filterwarnings("ignore")
 detector = detect_emotion("data/modelo.m","data/X.x","data/y.y")
 
 #cargamos las imagenes
-imagenes_emocion = cPickle.load(open("data/imagenes_emocion.sav","rb"))
+imagenes_emocion = cPickle.load(open("data/imagenes_emociones2.sav","rb"))
 
 def predecir_muestra(k=5):
     #tamaño de las imagenes
@@ -24,10 +24,14 @@ def predecir_muestra(k=5):
 
     def predecir(index):
         frame = imagenes_emocion[index]["imagen"]
+        emocionImagen = imagenes_emocion[index]["emocion"]
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         result, emocion = detector.predict(gray)
-        frame = cv2.putText(frame, emocion, (0, 50), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 0, 0), 2, cv2.LINE_AA)
+        cv2.putText(frame, emocionImagen, (0, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2, cv2.LINE_AA)
+        cv2.putText(frame, emocion, (0,100), cv2.FONT_HERSHEY_SIMPLEX, 1,(0,0,0),2, cv2.LINE_AA)
         cv2.imshow("Imagen", frame)
         cv2.waitKey()
 
     map(predecir, indexes)
+
+#predecir_muestra(5)

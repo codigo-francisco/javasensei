@@ -7,11 +7,11 @@ from skimage.feature import local_binary_pattern
 
 from util import *
 
-classifier_face = cv2.CascadeClassifier(r"classifiers\lbpcascade_frontalface.xml")
-#classifier_eyes = cv2.CascadeClassifier(r"D:\OpenCV-Face-andmore-Tracker\Face(andmore)Tracker\Resources\haarcascades\eye.xml")
-classifier_eyes = cv2.CascadeClassifier(r"classifiers/eyes_lbp.xml")
-classifier_mouth = cv2.CascadeClassifier(r"classifiers\mouth.xml")
-classifier_nose = cv2.CascadeClassifier(r"classifiers\nose.xml")
+classifier_face = cv2.CascadeClassifier(r"classifiers/lbpcascade_frontalface.xml")
+classifier_eyes1 = cv2.CascadeClassifier(r"classifiers/eyes_lbp.xml")
+classifier_eyes2 = cv2.CascadeClassifier(r"classifiers/eye.xml")
+classifier_mouth = cv2.CascadeClassifier(r"classifiers/mouth.xml")
+classifier_nose = cv2.CascadeClassifier(r"classifiers/nose.xml")
 
 # roi of interest
 roi_mouth = Roi()
@@ -24,7 +24,7 @@ parts_founded = 0
 original = None
 
 #frame = cv2.imread("D:\\1.jpg")
-frame = cv2.imread("D:\\1.jpg")
+frame = cv2.imread(r"D:\javasensei\Subcorpus\Boredom\emotion5299.png")
 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
 cv2.imshow("Cara", frame)
@@ -70,10 +70,10 @@ for (x, y, w, h) in faces[:1]:
         cv2.waitKey()
 
         # A partir de donde termino la nariz, sacamos la parte restante para encontrar la boca
-        candidate_mouth = roi_face[first_part_face + yNose + hNose:]
+        candidate_mouth = roi_face[first_part_face + yNose + hNose: h_roi_face - int(h_roi_face*.1)]
 
         #dibujado candidato boca
-        boca = cv2.rectangle(frame.copy(), (x,y+first_part_face+yNose+hNose),(x+w_roi_face,y + h_roi_face),(0,0,0))
+        boca = cv2.rectangle(frame.copy(), (x,y+first_part_face+yNose+hNose),(x+w_roi_face,y + h_roi_face - int(h_roi_face*.1)),(0,0,0))
         cv2.imshow("Candidato boca", boca)
         cv2.waitKey()
 
@@ -114,39 +114,52 @@ for (x, y, w, h) in faces[:1]:
         cv2.imshow("Candidato ojo izquierdo", ojoIzquierdo)
         cv2.waitKey()
 
-        # Busqueda de ojo izquierdo
-        eyeLeft = classifier_eyes.detectMultiScale(candidate_eyeLeft)
-        if len(eyeLeft) > 0:
-            (xEyeLeft, yEyeLeft, wEyeLeft, hEyeLeft) = eyeLeft[0]
-            roi_eye_left.x = xEyeLeft
-            roi_eye_left.y = fix_forehead + yEyeLeft
-            roi_eye_left.w = wEyeLeft
-            roi_eye_left.h = hEyeLeft
-            roi_eye_left.image = candidate_eyeLeft[yEyeLeft:yEyeLeft + hEyeLeft, xEyeLeft:xEyeLeft + wEyeLeft]
+        def searchEyeLeft(classifier, frame, fix=1):
+            result = False
+            eyeLeft = classifier.detectMultiScale(candidate_eyeLeft)
 
-            #Dibujado del ojo izquierdo
-            frame = cv2.rectangle(frame, (x + xEyeLeft, y + fix_forehead + yEyeLeft),
-                                  (x + xEyeLeft + wEyeLeft, y + fix_forehead + yEyeLeft + hEyeLeft),
-                                  (30, 30, 50))
-            cv2.imshow("Ojo izquierdo", frame)
-            cv2.waitKey()
+            if len(eyeLeft) > 0:
+                (xEyeLeft, yEyeLeft, wEyeLeft, hEyeLeft) = eyeLeft[0]
+                roi_eye_left.x = xEyeLeft
+                roi_eye_left.y = fix_forehead + yEyeLeft
+                roi_eye_left.w = wEyeLeft
+                roi_eye_left.h = hEyeLeft
+                roi_eye_left.image = candidate_eyeLeft[yEyeLeft:yEyeLeft + hEyeLeft, xEyeLeft:xEyeLeft + wEyeLeft]
 
-            # A partir del ojo se cubre un area esperando que la ceja se encuentre ahí, el filtrado hará el trabajo de descubrirla despues
-            roi_eyebrown_left.w = xEyeLeft + int(wEyeLeft * 1.6)
-            roi_eyebrown_left.h = fix_forehead + yEyeLeft
-            roi_eyebrown_left.x = int(xEyeLeft * .5)
-            roi_eyebrown_left.y = fix_forehead + int(yEyeLeft * .3)
+                # Dibujado del ojo izquierdo
+                cv2.rectangle(frame, (x + xEyeLeft, y + fix_forehead + yEyeLeft),
+                                      (x + xEyeLeft + wEyeLeft, y + fix_forehead + yEyeLeft + hEyeLeft),
+                                      (30, 30, 50))
+                cv2.imshow("Ojo izquierdo", frame)
+                cv2.waitKey()
 
-            roi_eyebrown_left.image = gray[y + fix_forehead + int(yEyeLeft * .3):y + fix_forehead + yEyeLeft,
-                                      x + int(xEyeLeft * .5):x + xEyeLeft + int(wEyeLeft * 1.6)]
-            parts_founded += 1
+                # A partir del ojo se cubre un area esperando que la ceja se encuentre ahí, el filtrado hará el trabajo de descubrirla despues
+                roi_eyebrown_left.w = xEyeLeft + int(wEyeLeft * 1.6)
+                roi_eyebrown_left.h = fix_forehead + int(yEyeLeft * fix)
+                roi_eyebrown_left.x = int(xEyeLeft * .5)
+                roi_eyebrown_left.y = fix_forehead + int(yEyeLeft * .3)
 
-            #Dibujado de candidato a ceja
-            frame = cv2.rectangle(frame, (x + int(xEyeLeft * .5), y + fix_forehead + int(yEyeLeft * .3)),
-                              (x + xEyeLeft + int(wEyeLeft * 1.6), y + fix_forehead + yEyeLeft), (0, 0, 0))
+                roi_eyebrown_left.image = gray[
+                                          y + fix_forehead + int(yEyeLeft * .3):y + fix_forehead + int(yEyeLeft * fix),
+                                          x + int(xEyeLeft * .5):x + xEyeLeft + int(wEyeLeft * 1.6)]
+                result = True
 
-            cv2.imshow("Ceja izquierda", frame)
-            cv2.waitKey()
+                # Dibujado de candidato a ceja
+                frame = cv2.rectangle(frame, (x + int(xEyeLeft * .5), y + fix_forehead + int(yEyeLeft * .3)),
+                                      (x + xEyeLeft + int(wEyeLeft * 1.6), y + fix_forehead + int(yEyeLeft * fix)),
+                                      (0, 0, 0))
+
+                cv2.imshow("Ceja izquierda", frame)
+                cv2.waitKey()
+
+            return result
+
+        # Busqueda de ojo izquierdo con detector 1
+        resultEyeLeft = searchEyeLeft(classifier_eyes1, frame)
+        if not resultEyeLeft:
+            #Busqueda de ojo derecho con detector 2
+            resultEyeLeft = searchEyeLeft(classifier_eyes2, frame, 1.5)
+        parts_founded += resultEyeLeft
 
         #dibujado de candidato a ojo derecho
         ojoDerecho = cv2.rectangle(frame.copy(), (x + halfFace, y + fix_forehead),
@@ -154,41 +167,51 @@ for (x, y, w, h) in faces[:1]:
         cv2.imshow("Candidado ojo derecho", ojoDerecho)
         cv2.waitKey()
 
+        def searchEyeRight(classifier, frame, fix = 1):
+            result = False
+            eyeRight = classifier.detectMultiScale(candidate_eyeRight)
+
+            if len(eyeRight) > 0:
+                (xEyeRight, yEyeRight, wEyeRight, hEyeRight) = eyeRight[0]
+                roi_eye_right.x = halfFace + xEyeRight
+                roi_eye_right.y = fix_forehead + yEyeRight
+                roi_eye_right.w = wEyeRight
+                roi_eye_right.h = hEyeRight
+                roi_eye_right.image = candidate_eyeRight[yEyeRight:yEyeRight + hEyeRight,
+                                      xEyeRight:xEyeRight + wEyeRight]
+
+                # Dibujado del ojo derecho
+                frame = cv2.rectangle(frame, (x + halfFace + xEyeRight, y + fix_forehead + yEyeRight),
+                                      (x + halfFace + xEyeRight + wEyeRight, y + fix_forehead + yEyeRight + hEyeRight),
+                                      (30, 30, 50))
+
+                cv2.imshow("Ojo derecho", frame)
+                cv2.waitKey()
+
+                roi_eyebrown_right.w = xEyeRight + int(wEyeRight * 1.6)
+                roi_eyebrown_right.h = fix_forehead + int(yEyeRight * fix)
+                roi_eyebrown_right.x = halfFace + int(xEyeRight * .5)
+                roi_eyebrown_right.y = fix_forehead + int(yEyeRight * .3)
+
+                roi_eyebrown_right.image = gray[y + fix_forehead + int(yEyeRight * .3):y + fix_forehead + int(
+                    yEyeRight * 1.5), x + halfFace + int(xEyeRight * .5):x + halfFace + xEyeRight + int(
+                                               wEyeRight * fix)]
+
+                result = True
+
+                frame = cv2.rectangle(frame,
+                                      (x + halfFace + int(xEyeRight * .5), y + fix_forehead + int(yEyeRight * .3)),
+                                      (x + halfFace + xEyeRight + int(wEyeRight * fix),
+                                       y + fix_forehead + int(yEyeRight * 1.5)),
+                                      (0, 0, 0))
+                cv2.imshow("Ceja derecha", frame)
+                cv2.waitKey()
+            return result
         # Busqueda de ojo derecho
-        eyeRight = classifier_eyes.detectMultiScale(candidate_eyeRight)
-        if len(eyeRight) > 0:
-            (xEyeRight, yEyeRight, wEyeRight, hEyeRight) = eyeRight[0]
-            roi_eye_right.x = halfFace + xEyeRight
-            roi_eye_right.y = fix_forehead + yEyeRight
-            roi_eye_right.w = wEyeRight
-            roi_eye_right.h = hEyeRight
-            roi_eye_right.image = candidate_eyeRight[yEyeRight:yEyeRight + hEyeRight, xEyeRight:xEyeRight + wEyeRight]
-
-            #Dibujado del ojo derecho
-            frame = cv2.rectangle(frame, (x + halfFace + xEyeRight, y + fix_forehead + yEyeRight),
-                                  (x + halfFace + xEyeRight + wEyeRight, y + fix_forehead + yEyeRight + hEyeRight),
-                                  (30, 30, 50))
-
-            cv2.imshow("Ojo derecho", frame)
-            cv2.waitKey()
-
-            roi_eyebrown_right.w = xEyeRight + int(wEyeRight * 1.6)
-            roi_eyebrown_right.h = fix_forehead + yEyeRight
-            roi_eyebrown_right.x = halfFace + int(xEyeRight * .5)
-            roi_eyebrown_right.y = fix_forehead + int(yEyeRight * .3)
-
-            roi_eyebrown_right.image = gray[y + fix_forehead + int(yEyeRight * .3):y + fix_forehead + yEyeRight,
-                                       x + halfFace + int(xEyeRight * .5):x + halfFace + xEyeRight + int(
-                                           wEyeRight * 1.6)]
-
-            parts_founded += 1
-
-            frame = cv2.rectangle(frame,
-                                  (x + halfFace + int(xEyeRight * .5), y + fix_forehead + int(yEyeRight * .3)),
-                                  (x + halfFace + xEyeRight + int(wEyeRight * 1.6), y + fix_forehead + yEyeRight),
-                                  (0, 0, 0))
-            cv2.imshow("Ceja derecha", frame)
-            cv2.waitKey()
+        resultEyeRight = searchEyeRight(classifier_eyes1, frame)
+        if not resultEyeRight:
+            resultEyeRight = searchEyeRight(classifier_eyes2, frame, 1.5)
+        parts_founded += resultEyeRight
 
 # Preprocesamiento y extracción de caractersiticas
 # Filtrado en boca y posicion izquierda y derecha
