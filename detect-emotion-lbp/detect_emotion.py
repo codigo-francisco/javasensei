@@ -19,7 +19,7 @@ class detect_emotion(object):
     classifier_face = cv2.CascadeClassifier(r"classifiers/lbpcascade_frontalface.xml")
     classifier_eyes1 = cv2.CascadeClassifier("classifiers/eyes_lbp.xml")
     classifier_eyes2 = cv2.CascadeClassifier(
-        r"D:\OpenCV-Face-andmore-Tracker\Face(andmore)Tracker\Resources\haarcascades\eye.xml")
+        r"classifiers/eye.xml")
     classifier_mouth = cv2.CascadeClassifier("classifiers/mouth.xml")
     classifier_nose = cv2.CascadeClassifier("classifiers/nose.xml")
     model = None

@@ -14,7 +14,7 @@ warnings.filterwarnings("ignore")
 detector = detect_emotion("data/modelo.m","data/X.x","data/y.y")
 
 #cargamos las imagenes
-imagenes_emocion = cPickle.load(open("data/imagenes_emociones2.sav","rb"))
+imagenes_emocion = cPickle.load(open("data/imagenes_emociones1.sav","rb"))
 
 def predecir_muestra(k=5):
     #tamaño de las imagenes
