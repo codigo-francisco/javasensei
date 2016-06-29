@@ -50,17 +50,16 @@ public class RecognitionEmotionalFace {
                     System.out.println("Se decodifico de base64 a imagebuffer");
                     switch (detector) {
                         case "indico":
-                            System.out.println("Se llama detecto indico");
+                            System.out.println("Se llama a detector indico");
                             emocion = new ExtractEmotionIndico().processData(image);
                             System.out.println("Rostro procesado, indico: "+emocion);
                             break;
                         case "oxford":
-                            System.out.println("Se llama detector de oxford");
+                            System.out.println("Se llama a detector de oxford");
                             emocion = new ExtractEmotionMicrosoft().processData(image);
                             System.out.println("Rostro procesado, oxford");
                             break;
                         case "neuroph":
-                        default:
                             RecognitionResult result = new RecognitionFace().processFace(image);
                             if (result.isHayEmocion()) { //Si hay una emocion se ejecuta la red neuronal, en caso contrario se desecha
                                 System.out.println("Se encontro un rostro, opencv");
@@ -70,6 +69,12 @@ public class RecognitionEmotionalFace {
                                 emocionEncontrada = false;
                             }
                             break;
+                        case "lbppython":
+                        default:
+                            System.out.println("Se llama a detector lbp python");
+                            emocion = new ExtractEmotionPythonLBP().processData(image);
+                            System.out.println("Rostro procesado, lbppython: "+emocion);
+                            break;                            
                     }
                 }
                 

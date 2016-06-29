@@ -1,0 +1,1 @@
+python internet.py http://www.imoi.es/content/css/disena_sonrisa.jpg http://estaticos.muyinteresante.es/media/cache/400x300_thumb/uploads/images/pyr/55520750c0ea197b3fd51318/sonrisa.jpg http://image.posta.com.mx/sites/default/files/o-kanye-west-facebook.jpg http://static.notinerd.com/wp-content/uploads/2015/09/1293.jpg

@@ -61,7 +61,7 @@
             var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
             var url = "servicios/"; //Jquery infiere el dominio
             var usuario = {};
-            var detectorEmocional = "neuroph";
+            var detectorEmocional = "lbppython";
 
             var redireccion = function (url) {
                 location.href = url;
@@ -93,16 +93,21 @@
             ;
 
             var noCamara = false;
-
-            function errorCamara(err) {
-                console.error(err);
-                alert("Ha ocurrido un error debido a que no cuenta con cámara o no otorgó los permisos necesarios.\n\nLa detección emocional se ha deshabilitado.");
-                noCamara = true;
-                usuario.activarEmociones = false;
-                //Opciones de la camara
-                eliminarBackgroundCamera();
-                $("#dialog_video").hide();
-                $("#botoncamara").addClass("ui-disabled");
+            var mensajeCamara=false;
+            
+            function errorCamara(err){
+                if (!mensajeCamara){
+                    console.error(err);
+                    alert("A ocurrido un error debido a que no cuenta con camara o no otorgo los permisos necesarios.\n\nLa detección emocional se ha deshabilitado");
+                    noCamara = true;
+                    usuario.activarEmociones=false;
+                    //Opciones de la camara
+                    eliminarBackgroundCamera();
+                    $("#dialog_video").hide();
+                    $("#botoncamara").addClass("ui-disabled");
+                    
+                    mensajeCamara=true;
+                }
             }
 
             var tutorial_principal, tutorial_ejercicios;

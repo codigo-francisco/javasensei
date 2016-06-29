@@ -50,7 +50,7 @@ var processLogin = function processLogin(response) {
                         
                     }else{
                         alert("Aún no has realizado tu examen pretest, seras redirigido a él");
-                        localStorage.setItem("usuario", usuario.idFacebook);
+                        sessionStorage.setItem("usuario", usuario.idFacebook);
                         window.location="examenes/pre_test.html";
                     }
                 }
