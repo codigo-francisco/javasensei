@@ -2,12 +2,12 @@ package javasensei.ia.recognitionemotion;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 import javasensei.exceptions.JavaException;
 import javasensei.util.FileHelper;
 import weka.classifiers.functions.MultilayerPerceptron;
 import weka.core.Attribute;
 import weka.core.DenseInstance;
-import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader;
@@ -80,24 +80,25 @@ public class ExtractEmotionWeka implements INeuralNetwork<double[]> {
     }
 
     private static Instances createData(double[] values) {
-        FastVector atributos = new FastVector();
-        atributos.addElement(new Attribute("1"));
-        atributos.addElement(new Attribute("2"));
-        atributos.addElement(new Attribute("3"));
-        atributos.addElement(new Attribute("4"));
-        atributos.addElement(new Attribute("5"));
-        atributos.addElement(new Attribute("6"));
-        atributos.addElement(new Attribute("7"));
-        atributos.addElement(new Attribute("8"));
-        atributos.addElement(new Attribute("9"));
-        atributos.addElement(new Attribute("10"));
-        FastVector valoresAtributo = new FastVector();
-        valoresAtributo.addElement(Emocion.FELIZ.toString());
-        valoresAtributo.addElement(Emocion.SORPRESA.toString());
-        valoresAtributo.addElement(Emocion.TRISTE.toString());
-        valoresAtributo.addElement(Emocion.ENOJADO.toString());
-        valoresAtributo.addElement(Emocion.NEUTRAL.toString());
-        atributos.addElement(new Attribute("emocion", valoresAtributo));
+        ArrayList<Attribute> atributos = new ArrayList<>();
+        atributos.add(new Attribute("1"));
+        atributos.add(new Attribute("2"));
+        atributos.add(new Attribute("3"));
+        atributos.add(new Attribute("4"));
+        atributos.add(new Attribute("5"));
+        atributos.add(new Attribute("6"));
+        atributos.add(new Attribute("7"));
+        atributos.add(new Attribute("8"));
+        atributos.add(new Attribute("9"));
+        atributos.add(new Attribute("10"));
+        List<String> valoresAtributo = new ArrayList<>();
+        valoresAtributo.add(Emocion.FELIZ.toString());
+        valoresAtributo.add(Emocion.SORPRESA.toString());
+        valoresAtributo.add(Emocion.TRISTE.toString());
+        valoresAtributo.add(Emocion.ENOJADO.toString());
+        valoresAtributo.add(Emocion.NEUTRAL.toString());
+        
+        atributos.add(new Attribute("emocion", valoresAtributo));
 
         Instances data = new Instances("emocionesdatos", atributos, 0);
         data.setClassIndex(data.numAttributes() - 1);
