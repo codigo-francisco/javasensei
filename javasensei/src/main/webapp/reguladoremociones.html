@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<link href="jquerymobile/jquery.mobile-1.4.4.min.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
+
+<script src="js/webcam.js"></script>
+
+<script>
+    $(document).ready(function () {
+        Webcam.set({
+            dest_width: 610,
+            dest_height: 400,
+            image_format: 'jpeg',
+            jpeg_quality: 75,
+            force_flash: false
+                    /*flip_horiz: true*/
+        });
+        Webcam.attach("#cameraregulador");
+    });
+</script>
+<style>
+    .camera{
+        height: 20em !important;
+        width: 20em !important;
+    }
+    .camera video{
+        height: 100% !important;
+        width: 100% !important;
+        transform: none !important;
+        transform-origin: center;
+    }
+</style>
+
+<div data-role="page" data-dialog="true" id="paginacategorizacion" data-close-btn="none">
+    <div data-role="header">
+        <h2>
+
+        </h2>
+    </div>
+    <div class="ui-content" role="main">
+        <span>Instrucciones</span>
+        <div id="cameraregulador" class="camera"></div>
+        <span>Emoción</span>
+        <img src="">
+        <label></label>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <label for="check_repetir">Tomar fotografía cada 3 segundos</label>
+                <input id="check_repetir" name="check_repetir" type="checkbox">
+            </div>
+            <div class="ui-block-b">
+                <input id="button_cerrar" name="grid-cerrar" type="button" value="Cerrar">
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -14,6 +14,8 @@ var processLoginJhonDoe = function(){
     eliminarBackground();
 };
 
+var examenActivado = false;
+
 var processLogin = function processLogin(response) {
     //Construccion del usuario
     switch (response.status) {
@@ -25,36 +27,26 @@ var processLogin = function processLogin(response) {
             usuario.idFacebook = uid;
             usuario.token = accessToken;
             
-            //Validamos si ya realizo el examen pretest
-            //Validar si el usuario realizó el cuestionario
-            $.get("servicios/examenes/realizoExamenPreTest",
-                    {
-                        idFacebook: usuario.idFacebook
+            if (examenActivado){
+                //Validamos si ya realizo el examen pretest
+                //Validar si el usuario realizó el cuestionario
+                $.get("servicios/examenes/realizoExamenPreTest",
+                        {
+                            idFacebook: usuario.idFacebook
+                        }
+                    , function (response) {
+                        if (response.realizado){
+                            loginUsuario();
+                        }else{
+                            alert("Aún no has realizado tu examen pretest, serás redirigido a él");
+                            sessionStorage.setItem("usuario", usuario.idFacebook);
+                            window.location="examenes/pre_test.html";
+                        }
                     }
-                , function (response) {
-                    if (response.realizado){
-                        FB.api("/me", {fields: "name,picture"}, function (response) {
-                            console.log("Datos del facebook: %O", response);
-
-                            usuario.nombre = response.name;
-                            usuario.foto = response.picture.data.url;
-
-                            eliminarBackground();
-
-                            //Se manda un json para crear u obtener el usuario
-                            checarUsuario(usuario);
-
-                            $("#imagen_usuario").attr("src", usuario.foto);
-                            $("#nombre_usuario").text(usuario.nombre);
-                        });
-                        
-                    }else{
-                        alert("Aún no has realizado tu examen pretest, seras redirigido a él");
-                        sessionStorage.setItem("usuario", usuario.idFacebook);
-                        window.location="examenes/pre_test.html";
-                    }
-                }
-            );
+                );
+            }else{
+                loginUsuario();
+            }
     
             break;
         case "not_authorized":
@@ -64,6 +56,24 @@ var processLogin = function processLogin(response) {
             $("#fullscreenlogin").show();
     }
 };
+
+function loginUsuario(){
+    FB.api("/me", {fields: "name,picture"},
+        function (response) {
+            console.log("Datos del facebook: %O", response);
+
+            usuario.nombre = response.name;
+            usuario.foto = response.picture.data.url;
+
+            eliminarBackground();
+
+            //Se manda un json para crear u obtener el usuario
+            checarUsuario(usuario);
+
+            $("#imagen_usuario").attr("src", usuario.foto);
+            $("#nombre_usuario").text(usuario.nombre);
+    });
+}
 
 function checarUsuario(datos) {
     var urlChecar = url + "estudiantes/getorcreatestudent";
