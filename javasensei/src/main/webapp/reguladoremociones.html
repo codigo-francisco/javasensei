@@ -19,12 +19,36 @@
                     /*flip_horiz: true*/
         });
         Webcam.attach("#cameraregulador");
+
+
+        $("#boton_tomarfoto").click(function () {
+            Webcam.snap(function (dataUrl) {
+                
+                var imageOriginal = dataUrl;
+                var image = dataUrl.replace("data:image/jpeg;base64,", "");
+                
+                $.ajax({
+                    type: "POST",
+                    url: "http://javasensei.ddns.net/javasensei/servicios/emociones",
+                    data: {fotografia:image},
+                    success: function(response){
+                        $("#emocion_text").text(response);
+                        $("#image_rostro").prop("src", imageOriginal);
+                        delete image;
+                        delete imageOriginal;
+                    }
+                });
+
+            });
+
+        });
+
     });
 </script>
 <style>
     .camera{
         height: 20em !important;
-        width: 20em !important;
+        width: 100% !important;
     }
     .camera video{
         height: 100% !important;
@@ -32,29 +56,40 @@
         transform: none !important;
         transform-origin: center;
     }
+    .fotografia{
+        height: 20%;
+        width: 20%;
+    }
 </style>
 
 <div data-role="page" data-dialog="true" id="paginacategorizacion" data-close-btn="none">
     <div data-role="header">
         <h2>
-
+            Instrucciones
         </h2>
     </div>
     <div class="ui-content" role="main">
-        <span>Instrucciones</span>
+        <p>
+            A continuación, el sistema necesitará verificar que te encuentras en un estado emocional optimo, por lo que necesitas tomarte una foto, si la emoción es <b>enganchado</b> te dejará continuar.
+        </p>
         <div id="cameraregulador" class="camera"></div>
-        <span>Emoción</span>
-        <img src="">
-        <label></label>
+        <div style="text-align: center;">
+            <p>
+                <span>Emoción: </span><b><span id="emocion_text"></span></b>
+            </p>
+            <img class="fotografia" id="image_rostro" src="">
+        </div>
         <div class="ui-grid-a">
             <div class="ui-block-a">
-                <label for="check_repetir">Tomar fotografía cada 3 segundos</label>
-                <input id="check_repetir" name="check_repetir" type="checkbox">
+                <input id="boton_tomarfoto" type="button" value="Tomar Fotografía">
             </div>
             <div class="ui-block-b">
-                <input id="button_cerrar" name="grid-cerrar" type="button" value="Cerrar">
+                <label for="check_repetir">Intervalo automatico</label>
+                <input id="check_repetir" name="check_repetir" type="checkbox">
             </div>
         </div>
+        <label for="slider_intervalos">Duración de intervalos en segundos:</label>
+                <input name="slider_intervalos" id="slider_intervalos" min="2" max="5" value="3" type="range">
     </div>
 </div>
 
