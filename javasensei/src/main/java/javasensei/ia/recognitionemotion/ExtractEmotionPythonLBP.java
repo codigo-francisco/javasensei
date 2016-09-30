@@ -53,11 +53,7 @@ public class ExtractEmotionPythonLBP implements INeuralNetwork<BufferedImage> {
         String emocion = "error";
         try {
             return sendRequestPython(datos);
-        } catch (PickleException ex) {
-            Logger.getLogger(ExtractEmotionPythonLBP.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (PyroException ex) {
-            Logger.getLogger(ExtractEmotionPythonLBP.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
+        } catch (PickleException | PyroException | IOException ex) {
             Logger.getLogger(ExtractEmotionPythonLBP.class.getName()).log(Level.SEVERE, null, ex);
         }
         
