@@ -1,91 +1,3 @@
-<!DOCTYPE html>
-<meta charset="UTF-8">
-
-<link href="jquerymobile/jquery.mobile-1.4.4.min.css" rel="stylesheet">
-<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-<script type="text/javascript" src="jquerymobile/jquery.mobile-1.4.4.min.js"></script>
-
-<script src="js/webcam.js"></script>
-
-<script>
-    $(document).ready(function () {
-        Webcam.set({
-            dest_width: 610,
-            dest_height: 400,
-            image_format: 'jpeg',
-            jpeg_quality: 75,
-            force_flash: false
-                    /*flip_horiz: true*/
-        });
-        Webcam.attach("#cameraregulador");
-        
-        function tomarFotografia(){
-            Webcam.snap(function (dataUrl) {
-                
-                var imageOriginal = dataUrl;
-                var image = dataUrl.replace("data:image/jpeg;base64,", "");
-                
-                $.ajax({
-                    type: "POST",
-                    url: "http://javasensei.ddns.net/javasensei/servicios/emociones",
-                    data: {fotografia:image},
-                    success: function(response){
-                        var emocion = response;
-                        $("#emocion_text").text(emocion);
-                        $("#image_rostro").prop("src", imageOriginal);
-                        delete image;
-                        delete imageOriginal;
-                        
-                        /*
-                         * Habilitar boton de continuar/cerrar,
-                         * desactivar fotografias en caso de estar activado
-                         */
-                        if (emocion=="Engagment"){
-                            clearInterval(temporizador);
-                            $("#boton_tomarfoto").button("disable");
-                            $( "#check_repetir" ).checkboxradio( "option", "disabled", true );
-                            $("#boton_continuar").button("enable");
-                        }
-                    }
-                });
-
-            });
-        }
-        
-        window.temporizador = -1;
-        
-        $("#slider_intervalos").change(function(){
-            if (temporizador != -1){
-                clearInterval(temporizador);
-                var tiempo = $("#slider_intervalos").val()*1000;
-                temporizador = setInterval(tomarFotografia, tiempo);
-            }
-        });
-        
-        $("#check_repetir").change(function(){
-            //Activar o desactivar
-            estado = $("#check_repetir").prop("checked");
-            if (estado){
-                //Tiempo en milisegundos
-                var tiempo = $("#slider_intervalos").val()*1000;
-                //Activar temporizador
-                temporizador = setInterval(tomarFotografia,tiempo);
-                //Desactivar boton de toma de fotografias
-                $("#boton_tomarfoto").button("disable");
-            }else{
-                //Desactivar temporizador
-                clearInterval(temporizador);
-                temporizador = -1;
-                //Activar boton de toma de fotografias
-                $("#boton_tomarfoto").button("enable");
-            }
-        });
-
-        $("#boton_tomarfoto").click(tomarFotografia);
-
-    });
-</script>
 <style>
     .camera{
         height: 20em !important;
@@ -133,5 +45,83 @@
         <input name="slider_intervalos" id="slider_intervalos" min="2" max="5" value="3" type="range">
         <input type="button" disabled="disabled" id="boton_continuar" value="Continuar">
     </div>
-</div>
+    <script>
+        /*Webcam.set({
+            dest_width: 610,
+            dest_height: 400,
+            image_format: 'jpeg',
+            jpeg_quality: 75,
+            force_flash: false
+        });
+        Webcam.attach("#cameraregulador");
+        */
 
+        function tomarFotografia() {
+            Webcam.snap(function (dataUrl) {
+
+                var imageOriginal = dataUrl;
+                var image = dataUrl.replace("data:image/jpeg;base64,", "");
+
+                $.ajax({
+                    type: "POST",
+                    url: "servicios/emociones",
+                    data: {fotografia: image},
+                    success: function (response) {
+                        var emocion = response;
+                        $("#emocion_text").text(emocion);
+                        $("#image_rostro").prop("src", imageOriginal);
+                        delete image;
+                        delete imageOriginal;
+
+                        /*
+                         * Habilitar boton de continuar/cerrar,
+                         * desactivar fotografias en caso de estar activado
+                         */
+                        if (emocion == "Engagment") {
+                            clearInterval(temporizador);
+                            $("#boton_tomarfoto").button("disable");
+                            $("#check_repetir").checkboxradio("option", "disabled", true);
+                            $("#boton_continuar").button("enable");
+                        }
+                    }
+                });
+
+            });
+        }
+
+        window.temporizador = -1;
+
+        $("#slider_intervalos").change(function () {
+            if (temporizador != -1) {
+                clearInterval(temporizador);
+                var tiempo = $("#slider_intervalos").val() * 1000;
+                temporizador = setInterval(tomarFotografia, tiempo);
+            }
+        });
+
+        $("#check_repetir").change(function () {
+            //Activar o desactivar
+            estado = $("#check_repetir").prop("checked");
+            if (estado) {
+                //Tiempo en milisegundos
+                var tiempo = $("#slider_intervalos").val() * 1000;
+                //Activar temporizador
+                temporizador = setInterval(tomarFotografia, tiempo);
+                //Desactivar boton de toma de fotografias
+                $("#boton_tomarfoto").button("disable");
+            } else {
+                //Desactivar temporizador
+                clearInterval(temporizador);
+                temporizador = -1;
+                //Activar boton de toma de fotografias
+                $("#boton_tomarfoto").button("enable");
+            }
+        });
+
+        $("#boton_tomarfoto").click(tomarFotografia);
+
+        $("#boton_continuar").click(function () {
+            camera.attachAgain();
+        });
+    </script>
+</div>
