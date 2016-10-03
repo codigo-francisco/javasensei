@@ -183,11 +183,13 @@ public class RankingManager {
 
                 double number = collection.count();
 
-                DBObject object = collection.find().limit(1).skip((int) Math.floor(Math.random() * number)).next();
+                List<DBObject> objects = collection.find().limit(5).skip((int) Math.floor(Math.random() * number)).toArray();
 
-                array.add(
-                        Math.round(Double.parseDouble(object.get("idEjercicio").toString()))
-                );
+                for (DBObject object : objects) {
+                    array.add(
+                            Math.round(Double.parseDouble(object.get("idEjercicio").toString()))
+                    );
+                }
             }
 
             //Las recomendaciones se transforman en json array
