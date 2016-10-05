@@ -87,9 +87,6 @@ camera.prototype = {
 
         Webcam.attach('#camera');
     },
-    attachAgain: function(){
-        Webcam.attach('#camera');
-    },
     getFotografias: function () {
         camera_context.detenerFotos();
 
