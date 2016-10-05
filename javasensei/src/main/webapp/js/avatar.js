@@ -66,7 +66,7 @@ avatar_sensei.prototype = {
     //Notificacion de que se esta cargando el ejercicio (diferente al paso inicial)
     primera_carga: function (data) {
         //Se verifica que se este validando el estado emocional
-        var funciones_validacion_emocion = function(){
+        window.postvalidacion_emociones = function(){
             camera_sensei.detenerFotos();
             camera_sensei.reiniciarFotos(true);
             avatar_context.bitacoras = new Array();
@@ -83,7 +83,7 @@ avatar_sensei.prototype = {
         if (validarEmocion){
             $.mobile.pageContainer.pagecontainer("change", "reguladoremociones.html", { transition: 'pop', role: "dialog" });
         }else{
-            funciones_validacion_emocion();
+            postvalidacion_emociones();
         }
     },
     inicio_ejercicio: function (datos) {
