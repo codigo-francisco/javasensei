@@ -92,6 +92,7 @@
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
                     <showDeprecation>true</showDeprecation>
+                    <debug>false</debug>
                 </configuration>
             </plugin>
             <plugin>

@@ -11,11 +11,13 @@ from detect_emotion import detect_emotion
 
 
 class emotion_service(object):
+    @Pyro4.expose
     def emotion_face_prediction_java(self, fotografia):
         img = base64.decodestring(fotografia["data"])
         img = np.asanyarray(bytearray(img))
         gray = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
         result = detector.predict(gray)
+        print(result)
         return result
     def emotion_face_prediction_pythonweb(self, img):
         img = np.asanyarray(bytearray(img,"utf8"))
