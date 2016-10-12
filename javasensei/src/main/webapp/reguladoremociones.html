@@ -1,0 +1,133 @@
+<div data-role="page" id="paginacategorizacion" data-close-btn="boton_continuar">
+    <div data-role="header" data-backbtn="false">
+        <h2>
+            Instrucciones
+        </h2>
+    </div>
+    <div class="ui-content" role="main">
+        <p>
+            A continuación, el sistema necesitará verificar que te encuentras en un estado emocional optimo, por lo que necesitas tomarte una foto, si la emoción es <b>enganchado</b> te dejará continuar. Los puntos azules son la guía para colocar tus ojos, nariz y boca.
+        </p>
+        <div style="text-align: center !important;">
+            <canvas id="maskFace" style="position: absolute; width: 48%; height: 35%;">
+            </canvas>
+            <video style="height: 50% !important;width: 50% !important;transform: none !important;transform-origin: center;"
+               autoplay="autoplay" id="cameraregulador"></video>
+            <p>
+                <b><span>Emoción: </span><span id="emocion_text"></span></b>
+            </p>
+            <img style="width: 20%;height: 20%;" id="image_rostro" src="">
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <input id="boton_tomarfoto" type="button" value="Tomar Fotografía">
+            </div>
+            <div class="ui-block-b">
+                <label for="check_repetir">Intervalo automatico</label>
+                <input id="check_repetir" name="check_repetir" type="checkbox">
+            </div>
+        </div>
+        <label for="slider_intervalos">Duración de intervalos en segundos:</label>
+        <input name="slider_intervalos" id="slider_intervalos" min="2" max="5" value="3" type="range">
+        <input type="button" disabled="disabled" id="boton_continuar" value="Continuar">
+    </div>
+    <script>
+        function tomarFotografia() {
+            //Pintado del lienzo
+            var canvas = document.getElementById("maskFace");
+            var radius = 3;
+            var w = canvas.width;
+            var h = canvas.height;
+            var context = canvas.getContext("2d");
+            context.fillStyle="blue";
+            context.beginPath();
+            context.arc(w*.4,h*.5,radius,0,Math.PI*2,false);
+            context.closePath();
+            context.fill();    
+            context.beginPath();
+            context.arc(w*.6,h*.5,radius,0,Math.PI*2,false);
+            context.closePath();
+            context.fill();    
+            context.beginPath();
+            context.arc(w*.5,h*.6,radius,0,Math.PI*2,false);
+            context.closePath();
+            context.fill();
+            context.beginPath();
+            context.arc(w*.5,h*.75,radius,0,Math.PI*2,false);
+            context.fill();
+            
+            //Suponemos que la camara está activada llegado a este punto
+            $("video")[1].src=$("video")[0].src;
+            
+            Webcam.snap(function (dataUrl) {
+
+                var imageOriginal = dataUrl;
+                var image = dataUrl.replace("data:image/jpeg;base64,", "");
+
+                $.ajax({
+                    type: "POST",
+                    url: "servicios/emociones",
+                    data: {fotografia: image},
+                    success: function (response) {
+                        var emocion = response;
+                        $("#emocion_text").text(emocion);
+                        $("#image_rostro").prop("src", imageOriginal);
+                        delete image;
+                        delete imageOriginal;
+
+                        /*
+                         * Habilitar boton de continuar/cerrar,
+                         * desactivar fotografias en caso de estar activado
+                         */
+                        if (emocion == "enganchado") {
+                            clearInterval(temporizador);
+                            $("#boton_tomarfoto").button("disable");
+                            $("#check_repetir").checkboxradio("option", "disabled", true);
+                            $("#boton_continuar").button("enable");
+                        }
+                    }
+                });
+
+            });
+        }
+
+        window.temporizador = -1;
+
+        $("#slider_intervalos").change(function () {
+            if (temporizador != -1) {
+                clearInterval(temporizador);
+                var tiempo = $("#slider_intervalos").val() * 1000;
+                temporizador = setInterval(tomarFotografia, tiempo);
+            }
+        });
+
+        $("#check_repetir").change(function () {
+            //Activar o desactivar
+            estado = $("#check_repetir").prop("checked");
+            if (estado) {
+                //Tiempo en milisegundos
+                var tiempo = $("#slider_intervalos").val() * 1000;
+                //Activar temporizador
+                temporizador = setInterval(tomarFotografia, tiempo);
+                //Desactivar boton de toma de fotografias
+                $("#boton_tomarfoto").button("disable");
+            } else {
+                //Desactivar temporizador
+                clearInterval(temporizador);
+                temporizador = -1;
+                //Activar boton de toma de fotografias
+                $("#boton_tomarfoto").button("enable");
+            }
+        });
+
+        $("#boton_tomarfoto").click(tomarFotografia);
+        
+        tomarFotografia();
+        
+        //Cerrado del dialogo
+        $("#boton_continuar").click(function () {
+            history.back();
+            postvalidacion_emociones();
+        });
+    </script>
+</div>

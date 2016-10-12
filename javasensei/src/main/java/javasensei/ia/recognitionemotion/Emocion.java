@@ -13,7 +13,11 @@ public enum Emocion {
     SORPRESA(2),
     TRISTE(3),
     ENOJADO(4),
-    NEUTRAL(5);
+    NEUTRAL(5),
+    ENGANCHADO(6),
+    EMOCIONADO(7),
+    FRUSTRADO(8),
+    ABURRIDO(9);
     
     private final int emocionValue;
     

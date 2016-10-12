@@ -26,7 +26,8 @@ class detect_emotion(object):
     X = None
     y = None
     #emociones = ("enojado", "feliz", "neutral", "sorpresa", "triste")
-    emociones = ("Boredom","Engament","Excitement","Frustration")
+    #emociones = ("Boredom","Engament","Excitement","Frustration")
+    emociones = ("triste","enganchado", "emocionado", "frustrado")
 
     def __init__(self, modelPath=None, XPath = None, yPath = None):
         if not modelPath is None:
@@ -279,9 +280,11 @@ class detect_emotion(object):
     @staticmethod
     def create_model_training(savePath, XPath = None, yPath=None, path=None, rostrosPath=None):
         detector = detect_emotion()
-        X, y = detector.__load_images__(path, rostrosPath)
-        #X = cPickle.load(open("data/X.x","rb"))
-        #y = cPickle.load(open("data/y.y","rb"))
+        if XPath is None or yPath is None:
+            X, y = detector.__load_images__(path, rostrosPath)
+        else:
+            X = cPickle.load(open("data/X.x","rb"))
+            y = cPickle.load(open("data/y.y","rb"))
         detector.X = X
         detector.y = y
         svm = LinearSVC()
