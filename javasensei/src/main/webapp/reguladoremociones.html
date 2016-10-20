@@ -6,12 +6,11 @@
     </div>
     <div class="ui-content" role="main">
         <p>
-            A continuación, el sistema necesitará verificar que te encuentras en un estado emocional optimo, por lo que necesitas tomarte una foto, si la emoción es <b>enganchado</b> te dejará continuar. Los puntos azules son la guía para colocar tus ojos, nariz y boca.
+            A continuación, el sistema necesitará verificar que te encuentras en un estado emocional optimo, por lo que necesitas tomarte una foto, si la emoción es <b>engagement</b> te dejará continuar. Los puntos azules son la guía para colocar tus ojos, nariz y boca.
         </p>
         <div style="text-align: center !important;">
-            <canvas id="maskFace" style="position: absolute; width: 48%; height: 35%;">
-            </canvas>
-            <video style="height: 50% !important;width: 50% !important;transform: none !important;transform-origin: center;"
+            <img alt="" src="img/regulador_emociones/fondo.png" style="position: absolute; width: 15%; height: 15%; z-index: 1; left:42%; top:33%;" >
+            <video style="height: 50% !important;width: 50% !important;transform: scaleX(-1)!important;transform-origin: center;"
                autoplay="autoplay" id="cameraregulador"></video>
             <p>
                 <b><span>Emoción: </span><span id="emocion_text"></span></b>
@@ -33,28 +32,6 @@
     </div>
     <script>
         function tomarFotografia() {
-            //Pintado del lienzo
-            var canvas = document.getElementById("maskFace");
-            var radius = 3;
-            var w = canvas.width;
-            var h = canvas.height;
-            var context = canvas.getContext("2d");
-            context.fillStyle="blue";
-            context.beginPath();
-            context.arc(w*.4,h*.5,radius,0,Math.PI*2,false);
-            context.closePath();
-            context.fill();    
-            context.beginPath();
-            context.arc(w*.6,h*.5,radius,0,Math.PI*2,false);
-            context.closePath();
-            context.fill();    
-            context.beginPath();
-            context.arc(w*.5,h*.6,radius,0,Math.PI*2,false);
-            context.closePath();
-            context.fill();
-            context.beginPath();
-            context.arc(w*.5,h*.75,radius,0,Math.PI*2,false);
-            context.fill();
             
             //Suponemos que la camara está activada llegado a este punto
             $("video")[1].src=$("video")[0].src;
@@ -79,7 +56,10 @@
                          * Habilitar boton de continuar/cerrar,
                          * desactivar fotografias en caso de estar activado
                          */
-                        if (emocion == "enganchado") {
+                        
+                        console.log(emocion);
+                        
+                        if (emocion == "Engagement") {
                             clearInterval(temporizador);
                             $("#boton_tomarfoto").button("disable");
                             $("#check_repetir").checkboxradio("option", "disabled", true);

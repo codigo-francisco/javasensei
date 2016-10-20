@@ -26,8 +26,8 @@ class detect_emotion(object):
     X = None
     y = None
     #emociones = ("enojado", "feliz", "neutral", "sorpresa", "triste")
-    #emociones = ("Boredom","Engament","Excitement","Frustration")
-    emociones = ("triste","enganchado", "emocionado", "frustrado")
+    emociones = ("Boredom","Engagement","Excitement","Frustration")
+    #emociones = ("triste","enganchado", "emocionado", "frustrado")
 
     def __init__(self, modelPath=None, XPath = None, yPath = None):
         if not modelPath is None:
@@ -290,17 +290,17 @@ class detect_emotion(object):
         svm = LinearSVC()
         svm.fit(X,y)
         detector.model = svm
-        cPickle.dump(svm, open(savePath, "wb"))
+        cPickle.dump(svm, open("D:\modelo.m", "wb"))
         pathSVM = os.path.dirname(os.path.abspath(savePath))
         if XPath is None:
             XPath = os.path.join(pathSVM, "X.x")
         if yPath is None:
             yPath = os.path.join(pathSVM, "y.y")
-        cPickle.dump(X, open(XPath, "wb"))
-        cPickle.dump(y, open(yPath,"wb"))
+        cPickle.dump(X, open("D:\X.x", "wb"))
+        cPickle.dump(y, open("D:\y.y","wb"))
         return detector
 
-    def crossValidation(self, cv=10, graficar=False):
+    def crossValidation(self):
         scores = cross_validation.cross_val_score(self.model,self.X,self.y)
         print("Precisión: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
         #Matriz de confusión
@@ -311,27 +311,9 @@ class detect_emotion(object):
         norm_conf = np.round(normalize(cm.T, "l1").T, 2)
         self.cm = cm
         self.norm_conf = norm_conf
-        print(cm,"\n",norm_conf)
+        print(cm+"\n"+norm_conf)
 
-        if graficar:
-            fig = plt.figure()
-            plt.clf()
-            ax = fig.add_subplot(111)
-            ax.set_aspect(1)
-            res = ax.imshow(norm_conf, cmap=plt.cm.jet,
-                            interpolation='nearest')
-            width, height = norm_conf.shape
-            for x in xrange(width):
-                for y in xrange(height):
-                    ax.annotate(str(norm_conf[x][y]), xy=(y, x),
-                                horizontalalignment='center',
-                                verticalalignment='center')
-
-            cb = fig.colorbar(res)
-            plt.xticks(range(width), self.emociones)
-            plt.yticks(range(height), self.emociones)
-
-#detector = detect_emotion.create_model_training("data/modelo.m", "data/X.x", "data/y.y","D:/javasensei/Subcorpus/", "data/imagenes_emociones2.sav")
+#detector = detect_emotion.create_model_training("D:/javasensei/detect-emotion-lbp/data/",path="D:/javasensei/Subcorpus/")
 #detector = detect_emotion.create_model_training("data\modelo.m")
 #detector = detect_emotion("data/modelo.m","data/X.x","data/y.y")
 #detector.crossValidation()
