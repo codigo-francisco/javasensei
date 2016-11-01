@@ -187,7 +187,9 @@
                 });
 
                 $("#activarEmociones").on("change", function () {
-                    usuario.activarEmociones = $("#activarEmociones").prop("checked");
+                    //Esta función queda invalidada para pruebas
+                    
+                    /*usuario.activarEmociones = $("#activarEmociones").prop("checked");
                     //Guardado en base de datos
                     $.ajax(url + "estudiantes/activarEmociones", {
                         data: {
@@ -198,7 +200,7 @@
                         console.log(data);
                     }).fail(function (d, error) {
                         console.log(error);
-                    });
+                    });*/
                 });
 
                 $("#areatrabajo").hide();
@@ -322,8 +324,7 @@
 
             /*Esto es para mostrar las lineas 
             de codigo que se muestra en el documento.*/
-            li.L0, li.L1, li.L2, li.L3,
-            li.L5, li.L6, li.L7, li.L8
+            li.L0, li.L1, li.L2, li.L3,li.L5, li.L6, li.L7, li.L8
             { list-style-type: decimal !important }
 
         </style>
@@ -566,7 +567,7 @@
 
                             </div>
                         </div>
-                        <div id="tercertab" class="ui-content">
+                        <!--<div id="tercertab" class="ui-content">
                             <label for="activarEmociones">Activar Detector de Emociones</label>
                             <input id="activarEmociones" checked="checked" data-role="flipswitch" name="activarEmociones" type="checkbox">
                             <fieldset data-role="controlgroup" data-type="horizontal" id="selecciondetector">
@@ -578,7 +579,7 @@
                                 <input type="radio" name="reconocimientoemocional" id="indico" value="off">
                                 <label for="indico">Indico</label>
                             </fieldset>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
