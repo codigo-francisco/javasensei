@@ -5,10 +5,10 @@ import cPickle
 import glob
 import os.path
 import sys
+import cv2
 
-import matplotlib.pyplot as plt
+import dlib
 from skimage.feature import local_binary_pattern
-from sklearn.preprocessing import normalize
 from sklearn import cross_validation
 from sklearn.metrics import confusion_matrix
 from sklearn.svm import LinearSVC
@@ -18,24 +18,21 @@ from util import *
 class detect_emotion(object):
     classifier_face = cv2.CascadeClassifier(r"classifiers/lbpcascade_frontalface.xml")
     classifier_eyes1 = cv2.CascadeClassifier("classifiers/eyes_lbp.xml")
-    classifier_eyes2 = cv2.CascadeClassifier(
-        r"classifiers/eye.xml")
+    classifier_eyes2 = cv2.CascadeClassifier(r"classifiers/eye.xml")
     classifier_mouth = cv2.CascadeClassifier("classifiers/mouth.xml")
     classifier_nose = cv2.CascadeClassifier("classifiers/nose.xml")
     model = None
     X = None
     y = None
-    #emociones = ("enojado", "feliz", "neutral", "sorpresa", "triste")
     emociones = ("Boredom","Engagement","Excitement","Frustration")
     #emociones = ("triste","enganchado", "emocionado", "frustrado")
+    detector = dlib.get_frontal_face_detector()
+    predictor = dlib.shape_predictor("data\shape_predictor_68_face_landmarks.dat")
 
-    def __init__(self, modelPath=None, XPath = None, yPath = None):
-        if not modelPath is None:
-            self.model = cPickle.load(open(modelPath,"rb"))
-        if not XPath is None:
-            self.X = cPickle.load(open(XPath,"rb"))
-        if not yPath is None:
-            self.y = cPickle.load(open(yPath,"rb"))
+    #def __init__(self, modelPath="data/model.m", XPath = "data/X.x", yPath = "data/y.y"):
+        #self.model = cPickle.load(open(modelPath,"rb"))
+        #self.X = cPickle.load(open(XPath,"rb"))
+        #self.y = cPickle.load(open(yPath,"rb"))
 
     def predict(self, gray):
         returnValue = (False, "Rostro no encontrado")
@@ -164,7 +161,11 @@ class detect_emotion(object):
                 parts_founded += resultEyeRight
 
         not_result = (False,[])
+
+        #metodo normal con opencv no funciono
         if parts_founded < 4:
+            #metodo con dlib
+
             return not_result
 
         # Preprocesamiento y localización de puntos
@@ -308,12 +309,9 @@ class detect_emotion(object):
         yPred = self.model.predict(self.X)
         yPred = map(lambda index: self.emociones[index], yPred)
         cm = confusion_matrix(yTrue, yPred, self.emociones)
-        norm_conf = np.round(normalize(cm.T, "l1").T, 2)
-        self.cm = cm
-        self.norm_conf = norm_conf
-        print(cm+"\n"+norm_conf)
+        print(cm)
 
-#detector = detect_emotion.create_model_training("D:/javasensei/detect-emotion-lbp/data/",path="D:/javasensei/Subcorpus/")
-#detector = detect_emotion.create_model_training("data\modelo.m")
+#detector = detect_emotion.create_model_training("data/modelo.m", "data/X.x", "data/y.y","D:/javasensei/Subcorpus/", "data/imagenes_emociones2.sav")
+detector = detect_emotion.create_model_training("D:\javasensei\detect-emotion-lbp\data\modelo.m")
 #detector = detect_emotion("data/modelo.m","data/X.x","data/y.y")
 #detector.crossValidation()
