@@ -24,35 +24,45 @@ public class ExtractEmotionPythonLBP implements INeuralNetwork<BufferedImage> {
     @Override
     public Emocion processData(BufferedImage datos) {
         Emocion emocion = Emocion.NEUTRAL;
-        
-        try{
-            String prediction = sendRequestPython(datos);
-            
-            /*
-                Traducción de emociones
-            */
-            switch(prediction){
-                case "Engagement":
-                    prediction="Enganchado";
-                    break;
-                case "Frustration":
-                    prediction="Frustrado";
-                    break;
-                case "Boredom":
-                    prediction = "Aburrido";
-                    break;
-                case "Excitement":
-                    prediction = "Emocionado";
-                    break;
-            }
-            
-            return Emocion.getEmocion(prediction);
-        }catch(Exception ex){
+
+        try {
+            return traducir(sendRequestPython(datos));
+        } catch (Exception ex) {
             Logger.getLogger(ExtractEmotionPythonLBP.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
         return emocion;
+    }
+
+    public String processDataString(BufferedImage datos) {
+        String emocion = "error";
+        try {
+            return traducir(sendRequestPython(datos)).toString().toLowerCase();
+        } catch (PickleException | PyroException | IOException ex) {
+            Logger.getLogger(ExtractEmotionPythonLBP.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return emocion;
+    }
+
+    private Emocion traducir(String prediction) {
+        switch (prediction) {
+            case "Engagement":
+                prediction = "Enganchado";
+                break;
+            case "Frustration":
+                prediction = "Frustrado";
+                break;
+            case "Boredom":
+                prediction = "Aburrido";
+                break;
+            case "Excitement":
+                prediction = "Emocionado";
+                break;
+
+        }
+
+        return Emocion.getEmocion(prediction);
     }
 
     private String sendRequestPython(BufferedImage datos) throws PickleException, PyroException, IOException {
@@ -64,17 +74,5 @@ public class ExtractEmotionPythonLBP implements INeuralNetwork<BufferedImage> {
         boolean result = (boolean) results[0];
         String prediction = results[1].toString();
         return prediction;
-    }
-    
-    
-    public String processDataString(BufferedImage datos){
-        String emocion = "error";
-        try {
-            return sendRequestPython(datos);
-        } catch (PickleException | PyroException | IOException ex) {
-            Logger.getLogger(ExtractEmotionPythonLBP.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return emocion;
     }
 }
