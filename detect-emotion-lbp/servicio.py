@@ -25,7 +25,7 @@ class emotion_service(object):
         result = detector.predict(img)
         return result
 
-detector = detect_emotion("data/modelo.m", "data/X.x", "data/y.y")
+detector = detect_emotion("data/modelo.m")
 daemon = Pyro4.Daemon("localhost", 25312)
 uri = daemon.register(emotion_service, "emotion_service", True)
 print("Uri: ", uri)

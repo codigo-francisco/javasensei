@@ -21,7 +21,6 @@ for k, d in enumerate(dets):
         print("Punto " + str(punto))
 
         cv2.circle(img, (point.x, point.y), 4, (255, 242, 120))
+        cv2.imshow("imagen", img)
+        cv2.waitKey()
         punto += 1
-
-    cv2.imshow("imagen", img)
-    cv2.waitKey()

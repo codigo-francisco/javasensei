@@ -28,6 +28,24 @@ public class ExtractEmotionPythonLBP implements INeuralNetwork<BufferedImage> {
         try{
             String prediction = sendRequestPython(datos);
             
+            /*
+                Traducción de emociones
+            */
+            switch(prediction){
+                case "Engagement":
+                    prediction="Enganchado";
+                    break;
+                case "Frustration":
+                    prediction="Frustrado";
+                    break;
+                case "Boredom":
+                    prediction = "Aburrido";
+                    break;
+                case "Excitement":
+                    prediction = "Emocionado";
+                    break;
+            }
+            
             return Emocion.getEmocion(prediction);
         }catch(Exception ex){
             Logger.getLogger(ExtractEmotionPythonLBP.class.getName()).log(Level.SEVERE, null, ex);
