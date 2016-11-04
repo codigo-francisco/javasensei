@@ -4,24 +4,24 @@
 import base64
 
 import Pyro4
-import cv2
 import numpy as np
-
+import cv2
 from detect_emotion import detect_emotion
-
+import os
 
 class emotion_service(object):
     @Pyro4.expose
     def emotion_face_prediction_java(self, fotografia):
-        img = base64.decodestring(fotografia["data"])
-        img = np.asanyarray(bytearray(img))
-        gray = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
-        result = detector.predict(gray)
+        #ruta del archivo
+        img = cv2.imread(fotografia)
+        # gray = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
+        os.remove(fotografia)
+        result = detector.predict(img)
         print(result)
         return result
     def emotion_face_prediction_pythonweb(self, img):
         img = np.asanyarray(bytearray(img,"utf8"))
-        img = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
+        #img = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
         result = detector.predict(img)
         return result
 

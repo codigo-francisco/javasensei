@@ -6,7 +6,7 @@ import cv2
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("D:\dlib\python_examples\shape_predictor_68_face_landmarks.dat")
 
-img = io.imread("D:\corpus\Engagment\emotion5.png")
+img = io.imread("D:\corpus\Engagement\emotion5.png")
 
 dets = detector(img, 1)
 

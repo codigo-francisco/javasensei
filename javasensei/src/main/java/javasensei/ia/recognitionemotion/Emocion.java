@@ -8,6 +8,7 @@ import javasensei.util.EnumHelper;
  * @author Rock
  */
 public enum Emocion {
+    ROSTRO_NO_RECONOCIDO(-2),
     SINEMOCION(-1),
     FELIZ(1),
     SORPRESA(2),
@@ -30,7 +31,7 @@ public enum Emocion {
     }
     
     public static Emocion getEmocion(String value){
-        Emocion emocion = Emocion.NEUTRAL;
+        Emocion emocion = Emocion.ROSTRO_NO_RECONOCIDO;
         
         for (Emocion e : Emocion.values()){
             if (e.name().toLowerCase().equals(value.toLowerCase())){

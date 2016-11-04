@@ -2,13 +2,13 @@
 import dlib
 from skimage import io
 
-predictor_path = r"C:\Users\Francisco\PycharmProjects\detect-emotion-lbp\data\shape_predictor_68_face_landmarks.dat"
+predictor_path = r"D:\javasensei\detect-emotion-lbp\data\shape_predictor_68_face_landmarks.dat"
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor(predictor_path)
 win = dlib.image_window()
 
-img = io.imread(r"D:\cara.jpg")
+img = io.imread(r"D:\rostro.jpg")
 
 win.clear_overlay()
 win.set_image(img)
