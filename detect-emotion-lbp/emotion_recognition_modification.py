@@ -15,8 +15,8 @@ clf = SVC(kernel='linear', probability=True,
 def get_files(emotion):  # Define function to get file list, randomly shuffle it and split 80/20
     files = glob.glob("D:\Subcorpus\%s\*.png"%emotion)
     random.shuffle(files)
-    #top 100
-    files = files[:120]
+    #top files
+    #files = files[:200]
     training = files[:int(len(files) * 0.9)]  # get first 80% of file list
     prediction = files[-int(len(files) * 0.1):]  # get last 20% of file list
     return training, prediction
@@ -99,7 +99,7 @@ def make_sets():
 training_data, training_labels, prediction_data, prediction_labels = make_sets()
 
 #Guardado
-cPickle.dump(training_data, open("data/td.x","wb"))
-cPickle.dump(training_labels, open("data/tl.y","wb"))
-cPickle.dump(prediction_data, open("data/pd.x","wb"))
-cPickle.dump(prediction_labels, open("data/pl.y","wb"))
+#cPickle.dump(training_data, open("data/td.x","wb"))
+#cPickle.dump(training_labels, open("data/tl.y","wb"))
+#cPickle.dump(prediction_data, open("data/pd.x","wb"))
+#cPickle.dump(prediction_labels, open("data/pl.y","wb"))

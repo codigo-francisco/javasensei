@@ -1,15 +1,15 @@
 <div data-role="page" id="paginacategorizacion" data-close-btn="boton_continuar">
     <div data-role="header" data-backbtn="false">
         <h2>
-            Instrucciones
+            Regulador de Emociones
         </h2>
     </div>
     <div class="ui-content" role="main">
         <p>
-            A continuación, el sistema necesitará verificar que te encuentras en un estado emocional optimo, por lo que necesitas tomarte una foto, si la emoción es <b>engagement</b> te dejará continuar. Los puntos azules son la guía para colocar tus ojos, nariz y boca.
+            <b>Instrucciones.</b>A continuación, el sistema necesitará verificar que te encuentras en un estado emocional optimo, por lo que necesitas tomarte una foto, si la emoción es <b>enganchado o emocionado</b> te dejará continuar.
         </p>
         <div style="text-align: center !important;">
-            <img alt="" src="img/regulador_emociones/fondo.png" style="position: absolute; width: 15%; height: 15%; z-index: 1; left:42%; top:33%;" >
+            <!--<img alt="" src="img/regulador_emociones/fondo.png" style="position: absolute; width: 15%; height: 15%; z-index: 1; left:42%; top:33%;" >-->
             <video style="height: 50% !important;width: 50% !important;transform: scaleX(-1)!important;transform-origin: center;"
                autoplay="autoplay" id="cameraregulador"></video>
             <p>
@@ -32,6 +32,17 @@
     </div>
     <script>
         function tomarFotografia() {
+            
+            window.noKeyReturn = function(event){
+                key = event.which;
+                //console.log("Key "+event.which);
+                if (key==8 || key==13){
+                    event.preventDefault();
+                    return false;
+                }
+            };
+            
+            $(window).keypress(noKeyReturn);
             
             //Suponemos que la camara está activada llegado a este punto
             $("video")[1].src=$("video")[0].src;
@@ -59,7 +70,7 @@
                         
                         console.log(emocion);
                         
-                        if (emocion == "enganchado") {
+                        if (emocion == "enganchado" || emocion=="emocionado") {
                             clearInterval(temporizador);
                             $("#boton_tomarfoto").button("disable");
                             $("#check_repetir").checkboxradio("option", "disabled", true);
@@ -106,6 +117,7 @@
         
         //Cerrado del dialogo
         $("#boton_continuar").click(function () {
+            $(window).unbind("keypress", noKeyReturn);
             history.back();
             postvalidacion_emociones();
         });

@@ -14,7 +14,7 @@ warnings.filterwarnings("ignore")
 video = cv2.VideoCapture(0)
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("data/shape_predictor_68_face_landmarks.dat")  # Or set this to whatever you named the downloaded file
-svm = cPickle.load(open("D:\javasensei\detect-emotion-lbp\data/modelo2.m","rb"))
+svm = cPickle.load(open("data/modelo.m","rb"))
 
 def get_landmarks(image):
     image = cv2.resize(image, (500, 500))
@@ -69,7 +69,7 @@ while True:
         print(prediction, time.time())
         frame = cv2.putText(frame, prediction, (0, 50), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 0, 0), 2, cv2.LINE_AA)
     else:
-        frame = cv2.putText(frame, "error", (0, 50), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 0, 0), 2, cv2.LINE_AA)
+        frame = cv2.putText(frame, "No face", (0, 50), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 0, 0), 2, cv2.LINE_AA)
     cv2.imshow("frame", frame)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):

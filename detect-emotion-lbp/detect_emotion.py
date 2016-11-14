@@ -9,6 +9,7 @@ import dlib
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import confusion_matrix
 from sklearn.svm import LinearSVC
+from sklearn.svm import SVC
 from util import *
 import random
 
@@ -118,7 +119,7 @@ class detect_emotion(object):
                 else:
                     prediction_data.append(landmarks_vectorised)
                     prediction_labels.append(detect.emotions.index(emotion))
-        svm = LinearSVC()
+        svm = SVC(kernel='linear', probability=True,tol=1e-3)
         svm.fit(training_data, training_labels)
         detect.model = svm
         detect.td = training_data
