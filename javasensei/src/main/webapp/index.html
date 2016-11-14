@@ -187,7 +187,9 @@
                 });
 
                 $("#activarEmociones").on("change", function () {
-                    usuario.activarEmociones = $("#activarEmociones").prop("checked");
+                    //Esta función queda invalidada para pruebas
+                    
+                    /*usuario.activarEmociones = $("#activarEmociones").prop("checked");
                     //Guardado en base de datos
                     $.ajax(url + "estudiantes/activarEmociones", {
                         data: {
@@ -198,7 +200,7 @@
                         console.log(data);
                     }).fail(function (d, error) {
                         console.log(error);
-                    });
+                    });*/
                 });
 
                 $("#areatrabajo").hide();
@@ -322,8 +324,7 @@
 
             /*Esto es para mostrar las lineas 
             de codigo que se muestra en el documento.*/
-            li.L0, li.L1, li.L2, li.L3,
-            li.L5, li.L6, li.L7, li.L8
+            li.L0, li.L1, li.L2, li.L3,li.L5, li.L6, li.L7, li.L8
             { list-style-type: decimal !important }
 
         </style>
@@ -331,9 +332,10 @@
     <body>
         <div class="fullscreenbrowser">
             <p style="font-weight: bold;text-align:center;">
-                Este sitio web solo funciona con el navegador Firefox, por favor realiza tus ejercicios desde él
+                Este sitio web solo funciona con el navegador Firefox, por favor realiza tus ejercicios desde él.
             </p>
-            <a href="https://www.mozilla.org/es-MX/firefox/new/">
+            <a style="font-weight: bold;text-align:center;" href="https://www.mozilla.org/es-MX/firefox/new/">
+                Descargar Firefox.
                 <img style="display: block; margin-left: auto; margin-right: auto;width: 100%;max-width: 45em;height: 50%;" src="img/firefox-logo-full.png" alt="Firefox">
             </a>
         </div>
@@ -565,7 +567,7 @@
 
                             </div>
                         </div>
-                        <div id="tercertab" class="ui-content">
+                        <!--<div id="tercertab" class="ui-content">
                             <label for="activarEmociones">Activar Detector de Emociones</label>
                             <input id="activarEmociones" checked="checked" data-role="flipswitch" name="activarEmociones" type="checkbox">
                             <fieldset data-role="controlgroup" data-type="horizontal" id="selecciondetector">
@@ -577,7 +579,7 @@
                                 <input type="radio" name="reconocimientoemocional" id="indico" value="off">
                                 <label for="indico">Indico</label>
                             </fieldset>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
@@ -658,7 +660,7 @@
                     <div class="imagenes_tutorial">                        
                         <div>
                             <img src="tutoriales/imagenes_ejercicio/ejercicio.png">
-                            <p>Esta es el área de ejercicios, aquí aprenderás Java</p>
+                            <p>Este es el área de ejercicios, aquí aprenderás Java</p>
                         </div>
                         <div>
                             <img src="tutoriales/imagenes_ejercicio/ejercicio_problema.png">
@@ -672,10 +674,10 @@
                             <img src="tutoriales/imagenes_ejercicio/tutor.png">
                             <p>Recuerda consultar al tutor, el podrá darte la información que necesitas para resolver el ejercicio. A veces él te hablara para apoyarte.</p>
                         </div>
-                        <div>
+                        <!--<div>
                             <img src="tutoriales/imagenes_ejercicio/categorizacion.png">
                             <p>Al finalizar categoriza que emoción sentiste, esto es importante para ayudarnos a mejorar el sistema.</p>
-                        </div>
+                        </div>-->
                         <div>
                             <img src="tutoriales/imagenes_principal/camara.png">
                             <p><span style="font-weight: bolder">!IMPORTANTE!</span>, recuerda mantener tu rostro al centro de la cámara y de ser posible no utilices lentes u otros objetos que obstruyan tu rostro. Esto ayudara al sistema a reconocer tus emociones y nos ayudaras a mejorarlo.</p>

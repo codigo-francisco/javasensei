@@ -2,40 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23ec197e-61db-41d1-bb26-54e9f509bf96" name="Default" comment="Ya estan terminados todos los facial patches, ahora hay que pasar a la parte de aplicar la extración de caracteristicas (Local Binary Pattern).">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/X.x" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/modelo2.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/shape_predictor_68_face_landmarks.dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../CreateDataset/src/main/java/NuevoCorpus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/TestOpenCV.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/detect-emotion-lbp.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app_fix.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camara.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/camara2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classifiers/eyes_lbp.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classifiers/lbpcascade_frontalface.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classifiers/mouth.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classifiers/mouths.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classifiers/nose.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/modelo.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/prueba.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/y.y" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/detect_emotion.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/landmark.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/servicepython.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/servicio.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svm.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svmutil.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/util.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/X.x" afterPath="$PROJECT_DIR$/data/X.x" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/data.rar" afterPath="$PROJECT_DIR$/data/data.rar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/modelo.m" afterPath="$PROJECT_DIR$/data/modelo.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mongobd/mongod.lock" afterPath="$PROJECT_DIR$/../mongobd/mongod.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/y.y" afterPath="$PROJECT_DIR$/data/y.y" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detect_emotion.py" afterPath="$PROJECT_DIR$/detect_emotion.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example_dlib.py" afterPath="$PROJECT_DIR$/example_dlib.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/servicio.py" afterPath="$PROJECT_DIR$/servicio.py" />
     </list>
     <ignored path="TestOpenCV.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +21,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -56,35 +30,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="servicio.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/servicio.py">
+      <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+            <state relative-caret-position="188">
+              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feature.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/feature.py">
+      <file leaf-file-name="servicio.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servicio.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="264" column="53" selection-start-line="264" selection-start-column="53" selection-end-line="264" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+            <state relative-caret-position="55">
+              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#46#59#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,22 +57,10 @@
       <file leaf-file-name="detect_emotion.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/detect_emotion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="264" column="21" selection-start-line="264" selection-start-column="21" selection-end-line="264" selection-end-column="21" />
+            <state relative-caret-position="176">
+              <caret line="371" column="1" selection-start-line="371" selection-start-column="1" selection-end-line="371" selection-end-column="1" />
               <folding>
-                <element signature="e#46#64#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="camara.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/camara.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
+                <element signature="e#46#60#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,20 +116,21 @@
         <option value="$PROJECT_DIR$/util.py" />
         <option value="$PROJECT_DIR$/main2.py" />
         <option value="$PROJECT_DIR$/camara2.py" />
-        <option value="$PROJECT_DIR$/camara.py" />
         <option value="$PROJECT_DIR$/app_fix.py" />
         <option value="$PROJECT_DIR$/servicepython.cmd" />
         <option value="$PROJECT_DIR$/servicepython.bat" />
+        <option value="$PROJECT_DIR$/camara.py" />
+        <option value="$PROJECT_DIR$/example_dlib.py" />
         <option value="$PROJECT_DIR$/servicio.py" />
         <option value="$PROJECT_DIR$/detect_emotion.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="227" />
+    <option name="y" value="4" />
+    <option name="width" value="1143" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -233,32 +186,6 @@
               <option name="myItemId" value="detect-emotion-lbp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; Python 2.7.11 (C:\Users\Francisco\Miniconda2\python.exe) &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detect-emotion-lbp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; Python 2.7.11 (C:\Users\Francisco\Miniconda2\python.exe) &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site-packages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -286,6 +213,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches">
+        <subPane />
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -300,15 +230,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches">
-        <subPane />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -390,6 +317,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="detect-emotion-lbp" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CrossTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="example_dlib" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="detect-emotion-lbp" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/example_dlib.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -616,7 +560,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="9">
+    <list size="10">
       <item index="0" class="java.lang.String" itemvalue="Python.detect_emotion" />
       <item index="1" class="java.lang.String" itemvalue="Python.servicio" />
       <item index="2" class="java.lang.String" itemvalue="Python.main2" />
@@ -626,13 +570,15 @@
       <item index="6" class="java.lang.String" itemvalue="Python.test" />
       <item index="7" class="java.lang.String" itemvalue="Python.svm" />
       <item index="8" class="java.lang.String" itemvalue="Python.CrossTest" />
+      <item index="9" class="java.lang.String" itemvalue="Python.example_dlib" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.app_fix" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.svm" />
-        <item index="3" class="java.lang.String" itemvalue="Python.CrossTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.example_dlib" />
+        <item index="1" class="java.lang.String" itemvalue="Python.app_fix" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.svm" />
+        <item index="4" class="java.lang.String" itemvalue="Python.CrossTest" />
       </list>
     </recent_temporary>
   </component>
@@ -761,20 +707,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="227" y="4" width="1143" height="735" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.171875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16470589" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44026187" sideWeight="0.515625" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="GitLabIntegration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36437908" sideWeight="0.484375" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3251634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31045753" sideWeight="0.49702382" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44019935" sideWeight="0.484375" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5188216" sideWeight="0.49702382" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16145833" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35188216" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36877078" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -830,22 +776,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="83" />
+      <option name="time" value="128" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FiltroCejas.py" />
-    <entry file="file://$PROJECT_DIR$/Extraccion.py" />
-    <entry file="file://$PROJECT_DIR$/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FiltroBocas.py" />
-    <entry file="file://$PROJECT_DIR$/FiltroCejas.py" />
     <entry file="file://$PROJECT_DIR$/Extraccion.py" />
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -891,28 +826,10 @@
     <entry file="file://$PROJECT_DIR$/FiltroBocas.py" />
     <entry file="file://$PROJECT_DIR$/FiltroBocasAbierta.py" />
     <entry file="file://$PROJECT_DIR$/FiltroBocasAbierta.py" />
-    <entry file="file://$USER_HOME$/.PyCharm2016.1/system/python_stubs/779550263/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="837" column="8" selection-start-line="837" selection-start-column="8" selection-end-line="837" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2016.1/system/python_stubs/779550263/__builtin__.py" />
     <entry file="file://$PROJECT_DIR$/FiltroBocas.py" />
-    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-253">
-          <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/preprocessing.py" />
+    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/model.py" />
     <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/skimage/morphology/misc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -936,21 +853,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FiltroCejas.py" />
-    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/svm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1065">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/svm.py" />
     <entry file="file://$PROJECT_DIR$/DetectorEmociones.py" />
-    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/classifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="205" column="36" selection-start-line="205" selection-start-column="36" selection-end-line="205" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/classifier.py" />
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -965,13 +870,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/lbp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/lbp.py" />
     <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/skimage/feature/texture.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -1012,65 +911,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/servicepython.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="61" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/feature.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/779550263/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/modelo.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/Pyro4/socketserver/threadpoolserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/Pyro4/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="1178" column="0" selection-start-line="1178" selection-start-column="0" selection-end-line="1178" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example_dlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="23" selection-start-line="1" selection-start-column="0" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="e#18#29#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/camara.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        <state relative-caret-position="311">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/Pyro4/core.py">
+    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/sklearn/cross_validation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="1196" column="0" selection-start-line="1196" selection-start-column="0" selection-end-line="1196" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servicio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servicepython.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="61" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="96" />
+        <state relative-caret-position="55">
+          <caret line="40" column="35" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+        <state relative-caret-position="188">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Miniconda2/Lib/site-packages/facerec/feature.py">
+    <entry file="file://$PROJECT_DIR$/servicio.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="264" column="53" selection-start-line="264" selection-start-column="53" selection-end-line="264" selection-end-column="53" />
-          <folding />
+        <state relative-caret-position="55">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding>
+            <element signature="e#46#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/detect_emotion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="264" column="21" selection-start-line="264" selection-start-column="21" selection-end-line="264" selection-end-column="21" />
+        <state relative-caret-position="176">
+          <caret line="371" column="1" selection-start-line="371" selection-start-column="1" selection-end-line="371" selection-end-column="1" />
           <folding>
-            <element signature="e#46#64#0" expanded="true" />
+            <element signature="e#46#60#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -28,7 +28,17 @@ public class RecognitionEmotionalFace {
         this.detector = detector;
         this.idUsuario = idUsuario;
     }
-
+    
+    public RecognitionEmotionalFace(){
+        
+    }
+    
+    public String getEmocionSinProcesar(String fotografia){
+        BufferedImage image = ImageHelper.decodeToImage(fotografia);
+        
+        return new ExtractEmotionPythonLBP().processDataString(image);
+    }
+    
     public Emocion getEmocion() {
         Map<Emocion, Integer> emociones = new HashMap<>();
         //Las fotos son una lista obtenida de mongo, son las ultimas fotografias del usuario sin procesar
@@ -101,7 +111,7 @@ public class RecognitionEmotionalFace {
 
         return gson.toJson(jsonObject);
     }
-
+    
     protected Emocion findEmotion(Map<Emocion, Integer> emociones) {
 
         Emocion emocion = Emocion.NEUTRAL;

@@ -3,332 +3,154 @@
 
 import cPickle
 import glob
-import os.path
-import sys
-
-import matplotlib.pyplot as plt
-from skimage.feature import local_binary_pattern
-from sklearn.preprocessing import normalize
-from sklearn import cross_validation
+import cv2
+import math
+import dlib
+from sklearn.model_selection import cross_val_score
 from sklearn.metrics import confusion_matrix
 from sklearn.svm import LinearSVC
+from sklearn.svm import SVC
 from util import *
+import random
 
 
 class detect_emotion(object):
-    classifier_face = cv2.CascadeClassifier(r"classifiers/lbpcascade_frontalface.xml")
-    classifier_eyes1 = cv2.CascadeClassifier("classifiers/eyes_lbp.xml")
-    classifier_eyes2 = cv2.CascadeClassifier(
-        r"classifiers/eye.xml")
-    classifier_mouth = cv2.CascadeClassifier("classifiers/mouth.xml")
-    classifier_nose = cv2.CascadeClassifier("classifiers/nose.xml")
     model = None
-    X = None
-    y = None
-    #emociones = ("enojado", "feliz", "neutral", "sorpresa", "triste")
-    emociones = ("Boredom","Engament","Excitement","Frustration")
+    td = None
+    tl = None
+    pd = None
+    pl = None
+    emociones = ("Boredom", "Engagement", "Excitement", "Frustration")
 
-    def __init__(self, modelPath=None, XPath = None, yPath = None):
-        if not modelPath is None:
-            self.model = cPickle.load(open(modelPath,"rb"))
-        if not XPath is None:
-            self.X = cPickle.load(open(XPath,"rb"))
-        if not yPath is None:
-            self.y = cPickle.load(open(yPath,"rb"))
+    detector = dlib.get_frontal_face_detector()
+    predictor = dlib.shape_predictor("data\shape_predictor_68_face_landmarks.dat")
 
-    def predict(self, gray):
+    def __init__(self, modelPath=None, XPath=None, yPath=None, loadFiles=True):
+        if loadFiles == True:
+            self.model = cPickle.load(open(modelPath, "rb"))
+            if XPath is not None:
+                self.X = cPickle.load(open(XPath, "rb"))
+            if yPath is not None:
+                self.y = cPickle.load(open(yPath, "rb"))
+
+    def predict(self, image):
         returnValue = (False, "Rostro no encontrado")
-        result, img = self.__get_image__(gray)
+        result, img = self.__get_image__(image)
         if result:
-            y = self.model.predict(img)
+            y = self.model.predict(np.array(img))
             returnValue = (True, self.emociones[y[0]])
 
         return returnValue
-    
-    def __get_image__(self, gray):
-        roi_face = None
-        roi_mouth = Roi()
-        roi_nose = Roi()
-        roi_eye_left = Roi()
-        roi_eye_right = Roi()
-        roi_eyebrown_left = Roi()
-        roi_eyebrown_right = Roi()
-        parts_founded = 0
 
-        faces = self.classifier_face.detectMultiScale(gray)
-        for (x, y, w, h) in faces[:1]:
-            roi_face = gray[y:y + h, x:x + w]
+    def __get_image__(self, image): #get_landmark
+        landmarks_vectorised = []
+        result = True
+        image = cv2.resize(image, (500, 500)) #Imagenes estandarizadas a 500 pixeles
 
-            # Parte posible de la nariz, probando con 1/3 rostro
-            h_roi_face = roi_face.shape[0]
-            w_roi_face = roi_face.shape[1]
-            first_part_face = int(h_roi_face * .3)
+        detections = self.detector(image, 1)
+        for k, d in enumerate(detections):  # For all detected face instances individually
+            shape = self.predictor(image, d)  # Draw Facial Landmarks with the predictor class
+            xlist = []
+            ylist = []
+            for i in range(1, 68):  # Store X and Y coordinates in two lists
+                xlist.append(float(shape.part(i).x))
+                ylist.append(float(shape.part(i).y))
 
-            candidate_nose = roi_face[first_part_face:h_roi_face - first_part_face]
+            xmean = np.mean(xlist)  # Get the mean of both axes to determine centre of gravity
+            ymean = np.mean(ylist)
+            xcentral = [(x - xmean) for x in
+                        xlist]  # get distance between each point and the central point in both axes
+            ycentral = [(y - ymean) for y in ylist]
 
-            noses = self.classifier_nose.detectMultiScale(candidate_nose)
-            for (xNose, yNose, wNose, hNose) in noses[:1]:
-                roi_nose.x = xNose
-                roi_nose.y = first_part_face + yNose
-                roi_nose.w = wNose
-                roi_nose.h = hNose
-                roi_nose.image = candidate_nose[yNose:yNose + hNose, xNose:xNose + wNose]
+            if xlist[26] == xlist[29]:  # If x-coordinates of the set are the same, the angle is 0, catch to prevent 'divide by 0' error in function
+                anglenose = 0
+            else:
+                anglenose = int(math.atan((ylist[26] - ylist[29]) / (xlist[26] - xlist[29])) * 180 / math.pi)
 
-                parts_founded += 1
+            if anglenose < 0:
+                anglenose += 90
+            else:
+                anglenose -= 90
 
-                # A partir de donde termino la nariz, sacamos la parte restante para encontrar la boca
-                candidate_mouth = roi_face[first_part_face + yNose + hNose: h_roi_face - int(h_roi_face * .1)]
+            for x, y, w, z in zip(xcentral, ycentral, xlist, ylist):
+                landmarks_vectorised.append(x)
+                landmarks_vectorised.append(y)
+                meannp = np.asarray((ymean, xmean))
+                coornp = np.asarray((z, w))
+                dist = np.linalg.norm(coornp - meannp)
+                anglerelative = (math.atan((z - ymean) / (w - xmean)) * 180 / math.pi) - anglenose
+                landmarks_vectorised.append(dist)
+                landmarks_vectorised.append(anglerelative)
 
-                mouths = self.classifier_mouth.detectMultiScale(candidate_mouth)
-                for (xMouth, yMouth, wMouth, hMouth) in mouths[:1]:
-                    roi_mouth.x = xMouth
-                    roi_mouth.y = first_part_face + yNose + hNose + yMouth
-                    roi_mouth.w = wMouth
-                    roi_mouth.h = hMouth
-                    roi_mouth.image = candidate_mouth[yMouth:yMouth + hMouth, xMouth:xMouth + wMouth]
-
-                    parts_founded += 1
-
-                # A partir de donde comienza la nariz, sacamos la parte restante para tratar de encontrar los ojos
-                fix_forehead = int(h_roi_face * .15)
-                halfFace = int(w_roi_face / 2)
-                forehead = roi_face[fix_forehead:first_part_face + yNose]
-
-                # Dividimos la imagen en 2 para tratar de encontrar ojoz izquierdo y ojo derecho
-                candidate_eyeLeft = forehead[:, :halfFace]
-                candidate_eyeRight = forehead[:, halfFace:]
-
-                def searchEyeLeft(classifier, fix=1):
-                    result = False
-                    eyeLeft = classifier.detectMultiScale(candidate_eyeLeft)
-
-                    if len(eyeLeft) > 0:
-                        (xEyeLeft, yEyeLeft, wEyeLeft, hEyeLeft) = eyeLeft[0]
-                        roi_eye_left.x = xEyeLeft
-                        roi_eye_left.y = fix_forehead + yEyeLeft
-                        roi_eye_left.w = wEyeLeft
-                        roi_eye_left.h = hEyeLeft
-                        roi_eye_left.image = candidate_eyeLeft[yEyeLeft:yEyeLeft + hEyeLeft,
-                                             xEyeLeft:xEyeLeft + wEyeLeft]
-
-                        # A partir del ojo se cubre un area esperando que la ceja se encuentre ahí, el filtrado hará el trabajo de descubrirla despues
-                        roi_eyebrown_left.w = xEyeLeft + int(wEyeLeft * 1.6)
-                        roi_eyebrown_left.h = fix_forehead + int(yEyeLeft * fix)
-                        roi_eyebrown_left.x = int(xEyeLeft * .5)
-                        roi_eyebrown_left.y = fix_forehead + int(yEyeLeft * .3)
-
-                        roi_eyebrown_left.image = gray[
-                                                  y + fix_forehead + int(yEyeLeft * .3):y + fix_forehead + int(
-                                                      yEyeLeft * fix),
-                                                  x + int(xEyeLeft * .5):x + xEyeLeft + int(wEyeLeft * 1.6)]
-                        result = True
-                    return result
-
-                # Busqueda de ojo izquierdo con detector 1
-                resultEyeLeft = searchEyeLeft(self.classifier_eyes1)
-                if not resultEyeLeft:
-                    # Busqueda de ojo derecho con detector 2
-                    resultEyeLeft = searchEyeLeft(self.classifier_eyes2, 1.5)
-                parts_founded += resultEyeLeft
-
-                def searchEyeRight(classifier, fix=1):
-                    result = False
-                    eyeRight = classifier.detectMultiScale(candidate_eyeRight)
-
-                    if len(eyeRight) > 0:
-                        (xEyeRight, yEyeRight, wEyeRight, hEyeRight) = eyeRight[0]
-                        roi_eye_right.x = halfFace + xEyeRight
-                        roi_eye_right.y = fix_forehead + yEyeRight
-                        roi_eye_right.w = wEyeRight
-                        roi_eye_right.h = hEyeRight
-                        roi_eye_right.image = candidate_eyeRight[yEyeRight:yEyeRight + hEyeRight,
-                                              xEyeRight:xEyeRight + wEyeRight]
-
-                        roi_eyebrown_right.w = xEyeRight + int(wEyeRight * 1.6)
-                        roi_eyebrown_right.h = fix_forehead + int(yEyeRight * fix)
-                        roi_eyebrown_right.x = halfFace + int(xEyeRight * .5)
-                        roi_eyebrown_right.y = fix_forehead + int(yEyeRight * .3)
-
-                        roi_eyebrown_right.image = gray[y + fix_forehead + int(yEyeRight * .3):y + fix_forehead + int(
-                            yEyeRight * 1.5), x + halfFace + int(xEyeRight * .5):x + halfFace + xEyeRight + int(
-                            wEyeRight * fix)]
-
-                        result = True
-                    return result
-
-                # Busqueda de ojo derecho
-                resultEyeRight = searchEyeRight(self.classifier_eyes1)
-                if not resultEyeRight:
-                    resultEyeRight = searchEyeRight(self.classifier_eyes2, 1.5)
-                parts_founded += resultEyeRight
-
-        not_result = (False,[])
-        if parts_founded < 4:
-            return not_result
-
-        # Preprocesamiento y localización de puntos
-        #boca
-        roi_mouth.localizationPoints()
-        # ojos
-        roi_eye_left.localizationPointsCenter()
-        roi_eye_right.localizationPointsCenter()
-        # nariz
-        roi_nose.localizationPointsCenter()
-        # Filtrado en ceja derecha y posicion izquierda y derecha
-        roi_eyebrown_right.localizationPoints()
-        # Filtrado en ceja izquierda y posicion izquierda y derecha
-        roi_eyebrown_left.localizationPoints()
-
-        # obtenidos los puntos, aplicamos los facial patches
-        width_patch = roi_face.shape[1] / 9
-        half_patch = width_patch / 2
-        puntos = {}
-
-        # Estas areas son los puntos que ya se encontraron
-        puntos["p1"] = Roi.createROI(roi_mouth.y + roi_mouth.pointLeft[0], roi_mouth.x + roi_mouth.pointLeft[1])
-        puntos["p4"] = Roi.createROI(roi_mouth.y + roi_mouth.pointRight[0], roi_mouth.x + roi_mouth.pointRight[1])
-        puntos["p18"] = Roi.createROI((roi_eyebrown_left.y + roi_eyebrown_left.pointRight[0]),
-                                      roi_eyebrown_left.x + roi_eyebrown_left.pointRight[1])
-        puntos["p19"] = Roi.createROI((roi_eyebrown_right.y + roi_eyebrown_right.pointLeft[0]),
-                                      roi_eyebrown_right.x + roi_eyebrown_right.pointLeft[1])
-        # p16 va en la parte central de los ojos
-        puntos["p16"] = Roi.createROI(
-            int(((roi_eye_left.y + roi_eye_left.pointRight[1]) + roi_eye_right.y + roi_eye_right.pointLeft[1]) / 2),
-            int(((roi_eye_left.x + roi_eye_left.pointRight[0]) + roi_eye_right.x + roi_eye_right.pointLeft[0]) / 2))
-        # p17 va justo arriba de p16
-        puntos["p17"] = Roi.createROI(puntos["p16"].y - width_patch, puntos["p16"].x)
-        # Estos puntos estan justo debajo de p1 y p4
-        puntos["p9"] = Roi.createROI(puntos["p1"].y + width_patch, puntos["p1"].x)
-        puntos["p11"] = Roi.createROI(puntos["p4"].y + width_patch, puntos["p4"].x)
-        # Este punto va justo en medio de p9 y p11
-        puntos["p10"] = Roi.createROI((puntos["p9"].y + puntos["p11"].y) / 2, (puntos["p9"].x + puntos["p11"].x) / 2)
-        # Estos puntos van justo debajo del ojo (parte central)
-        puntos["p14"] = Roi.createROI(roi_eye_right.y + roi_eye_right.h + int(roi_eye_right.h / 2),
-                                      roi_eye_right.x + int(roi_eye_right.w / 2))
-        puntos["p15"] = Roi.createROI(roi_eye_left.y + roi_eye_left.h + int(roi_eye_left.h / 2),
-                                      roi_eye_left.x + int(roi_eye_left.w / 2))
-        # Lado izquierdo de la nariz
-        puntos["p2"] = Roi.createROI(roi_nose.y + roi_nose.pointLeft[1],
-                                     roi_nose.x + roi_nose.pointLeft[0] - half_patch)
-        puntos["p7"] = Roi.createROI(puntos["p2"].y, puntos["p2"].x - width_patch)  # justo a la izquierda de p2
-        puntos["p8"] = Roi.createROI(puntos["p7"].y + width_patch, puntos["p7"].x)  # debajo de p7
-        # Lado derecho de la nariz
-        puntos["p5"] = Roi.createROI(roi_nose.y + roi_nose.pointRight[1],
-                                     roi_nose.x + roi_nose.pointRight[0] + half_patch)
-        puntos["p13"] = Roi.createROI(puntos["p5"].y, puntos["p5"].x + width_patch)  # justo a la derecha de p5
-        puntos["p12"] = Roi.createROI(puntos["p13"].y + width_patch, puntos["p13"].x)  # debajo de p13
-        # punto central entre nariz y ojo
-        puntos["p3"] = Roi.createROI(
-            int(((roi_eye_left.y + roi_eye_left.pointRight[1]) + (roi_nose.y + roi_nose.pointLeft[1])) / 2),
-            int(((roi_eye_left.x + roi_eye_left.pointRight[0]) + (roi_nose.x + roi_nose.pointLeft[0])) / 2))  # Izquierdo
-        puntos["p6"] = Roi.createROI(
-            int(((roi_eye_right.y + roi_eye_right.pointLeft[1]) + (roi_nose.y + roi_nose.pointRight[1])) / 2),
-            int(((roi_eye_right.x + roi_eye_right.pointLeft[0]) + (roi_nose.x + roi_nose.pointRight[0])) / 2))  # Derecho
-
-        #Extraemos cada punto y lo agregamos al arreglo
-        face_array = np.asarray([], dtype=roi_face.dtype)
-        try:
-            for clavePunto in puntos:
-                punto = puntos[clavePunto]
-                squareBegin = punto.getSquareBegin(half_patch)
-                squareEnd = punto.getSquareEnd(half_patch)
-                facial_patch = roi_face[squareBegin[1]:squareEnd[1], squareBegin[0]:squareEnd[0]]
-                if not facial_patch.shape == (24, 24):
-                    return not_result
-                #Se consigue el LBP
-                lbp = local_binary_pattern(facial_patch, 8, 8, "uniform")
-                #se consiguen los histogramas
-                hist, _ = np.histogram(lbp, bins=256, range=(0, 256),normed=True)
-                face_array = np.concatenate((face_array, hist)) #Se concatenan los histogramas
-        except:
-            print "Unexpected error:", sys.exc_info()[0]
-            raise
-        return (True, face_array)
-
-    def __load_images__(self, path=None, rostrosPath=None):
-        if path is None:
-            path = "D:/Respaldo Jose Luis/proyecto RVERK/RafD_Ordenado/"
-        X, y = [], []
-        rostros = []
-        indice = -1
-        for emocion in self.emociones:
-            imagenes = glob.glob(path + emocion + "\\*.jpg")
-            imagenes.extend(glob.glob(path+emocion+"\\*.png"))
-            indice += 1
-            last_image = ""
-            try:
-                for imagen in imagenes:
-                    last_image = imagen
-                    frame = cv2.imread(imagen)
-                    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-                    result, array = self.__get_image__(gray)
-                    if result:
-                        X.append(array)
-                        y.append(indice)
-                        rostros.append({"emocion":emocion, "imagen":frame})
-            except IOError, (errno, strerror):
-                print(last_image)
-                print "I/O error({0}): {1}".format(errno, strerror)
-            except:
-                print(last_image)
-                print "Unexpected error:", sys.exc_info()[0]
-        if not rostrosPath is None:
-            cPickle.dump(rostros, open(rostrosPath,"wb"), cPickle.HIGHEST_PROTOCOL)
-        return [X, y]
+        if len(detections) < 1:
+            result = False
+        return (result, landmarks_vectorised)
 
     @staticmethod
-    def create_model_training(savePath, XPath = None, yPath=None, path=None, rostrosPath=None):
-        detector = detect_emotion()
-        X, y = detector.__load_images__(path, rostrosPath)
-        #X = cPickle.load(open("data/X.x","rb"))
-        #y = cPickle.load(open("data/y.y","rb"))
-        detector.X = X
-        detector.y = y
-        svm = LinearSVC()
-        svm.fit(X,y)
-        detector.model = svm
-        cPickle.dump(svm, open(savePath, "wb"))
-        pathSVM = os.path.dirname(os.path.abspath(savePath))
-        if XPath is None:
-            XPath = os.path.join(pathSVM, "X.x")
-        if yPath is None:
-            yPath = os.path.join(pathSVM, "y.y")
-        cPickle.dump(X, open(XPath, "wb"))
-        cPickle.dump(y, open(yPath,"wb"))
-        return detector
+    def create_model_training(savePath=None, XPath=None, yPath=None, path=None, rostrosPath=None):
+        detect = detect_emotion(loadFiles=False)
+        training_data = []
+        training_labels = []
+        prediction_data = []
+        prediction_labels = []
+        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
 
-    def crossValidation(self, cv=10, graficar=False):
-        scores = cross_validation.cross_val_score(self.model,self.X,self.y)
+        for emotion in detect.emotions:
+            training, prediction = detect_emotion.get_files(emotion)
+            # Append data to training and prediction list, and generate labels 0-7
+            for item in training:
+                image = cv2.imread(item)  # open image
+                gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # convert to grayscale
+                clahe_image = clahe.apply(gray)
+                landmarks_vectorised = detect.__get_image__(clahe_image)
+                if landmarks_vectorised == "error":
+                    pass
+                else:
+                    training_data.append(landmarks_vectorised)  # append image array to training data list
+                    training_labels.append(detect.emotions.index(emotion))
+
+            for item in prediction:
+                image = cv2.imread(item)
+                gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+                clahe_image = clahe.apply(gray)
+                landmarks_vectorised = detect.__get_image__(clahe_image)
+                if landmarks_vectorised == "error":
+                    pass
+                else:
+                    prediction_data.append(landmarks_vectorised)
+                    prediction_labels.append(detect.emotions.index(emotion))
+        svm = SVC(kernel='linear', probability=True,tol=1e-3)
+        svm.fit(training_data, training_labels)
+        detect.model = svm
+        detect.td = training_data
+        detect.tl = training_labels
+        detect.pd = prediction_data
+        detect.pl = prediction_labels
+        #Guardado
+        cPickle.dump(training_data, open("data/td.x", "wb"))
+        cPickle.dump(training_labels, open("data/tl.y", "wb"))
+        cPickle.dump(prediction_data, open("data/pd.x", "wb"))
+        cPickle.dump(prediction_labels, open("data/pl.y", "wb"))
+        cPickle.dump(svm, open("data/modelo.m","wb"))
+
+    @staticmethod
+    def get_files(emotion):  # Define function to get file list, randomly shuffle it and split 80/20
+        files = glob.glob("D:\Subcorpus\%s\*.png" % emotion)
+        random.shuffle(files)
+        # top 100
+        files = files[:120]
+        training = files[:int(len(files) * 0.9)]  # get first 80% of file list
+        prediction = files[-int(len(files) * 0.1):]  # get last 20% of file list
+        return training, prediction
+
+    def crossValidation(self, cv=10):
+        scores = cross_val_score(self.model, self.X, self.y, cv=cv)
         print("Precisión: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
-        #Matriz de confusión
+        # Matriz de confusión
         yTrue = map(lambda index: self.emociones[index], self.y)
-        yPred = self.model.predict(self.X)
-        yPred = map(lambda index: self.emociones[index], yPred)
+        yPred = map(lambda index: self.emociones[index], self.model.predict(self.X))
         cm = confusion_matrix(yTrue, yPred, self.emociones)
-        norm_conf = np.round(normalize(cm.T, "l1").T, 2)
-        self.cm = cm
-        self.norm_conf = norm_conf
-        print(cm,"\n",norm_conf)
+        print(cm)
 
-        if graficar:
-            fig = plt.figure()
-            plt.clf()
-            ax = fig.add_subplot(111)
-            ax.set_aspect(1)
-            res = ax.imshow(norm_conf, cmap=plt.cm.jet,
-                            interpolation='nearest')
-            width, height = norm_conf.shape
-            for x in xrange(width):
-                for y in xrange(height):
-                    ax.annotate(str(norm_conf[x][y]), xy=(y, x),
-                                horizontalalignment='center',
-                                verticalalignment='center')
-
-            cb = fig.colorbar(res)
-            plt.xticks(range(width), self.emociones)
-            plt.yticks(range(height), self.emociones)
-
-#detector = detect_emotion.create_model_training("data/modelo.m", "data/X.x", "data/y.y","D:/javasensei/Subcorpus/", "data/imagenes_emociones2.sav")
-#detector = detect_emotion.create_model_training("data\modelo.m")
-#detector = detect_emotion("data/modelo.m","data/X.x","data/y.y")
-#detector.crossValidation()
+# detector = detect_emotion.create_model_training()
+# detector.crossValidation()
