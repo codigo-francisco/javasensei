@@ -232,9 +232,28 @@
                     }
                 });
 
+                $("#button_opinion").click(function () {
+                    texto = $("#txtAreaOpinion").val();
+                    console.log("Opinión:" + $("#txtAreaOpinion").val());
+                    
+                    $.post("servicios/opinion/guardar_opinion_ejercicio",{
+                                idFacebook: usuario.idFacebook,
+                                idEjercicio:ejercicio_id,
+                                opinion: texto
+                            },
+                            function (response) {
+                                console.log("eval polarity exercise ok...");
+                                $("txtAreaOpinion").text = "";
+                            }
+                    );
+                }); 
+
                 enlazarBotonesCarousel();
 
                 enlazarControlesCondiciones();
+                
+                
+                
             });
 
         </script>
@@ -427,6 +446,7 @@
                             <div>
                                 <div id="calificaciones_ejercicios"></div>
                             </div>
+                            
                         </div>
                         <button class="controles_cierre_tracing" id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
                         <a href="#paginaGraficaComportamiento" class="controles_cierre_tracing ui-btn ui-btn-inline ui-btn-corner-all ui-mini ui-shadow" id="comportamiento_tracing" data-rel="dialog" data-inline="true" data-mini="true">Comportamiento</a>
@@ -451,6 +471,19 @@
                     <div id="areasolucion" class="ui-grid-a ui-responsive">
 
                     </div>
+                    
+                    <div class="controles_cierre_tracing" style="float: center;">
+                            <div>
+                                <div id="opinion_ejercicio">
+                                    <p><b>Escribe tu opinión (positiva/negativa) acerca de este ejercicio :</b><p/>
+                                    <textarea id="txtAreaOpinion" rows="10" cols="25" placeholder="Escribe tu opinión aquí..."></textarea>
+                                </div>
+                                <div  id="button_opinion">
+                                    <input type="button" value="Enviar comentario" />
+                                </div>
+                            </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -475,7 +508,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div>            
             </div>
         </div>
 
@@ -491,8 +524,7 @@
                 </div>
                 <div data-role="footer">
                     ¿Qué te ha parecido este recurso?<br>
-                    <div id="calificaciones">
-
+                    <div id="calificaciones">                        
                     </div>
                 </div>
             </div>
@@ -689,6 +721,8 @@
             </div>
         </div>
 
+        
+        
         <div data-role="page" data-dialog="true" id="paginacategorizacion" data-close-btn="none">
             <div data-role="header">
                 <h2>
@@ -725,6 +759,9 @@
                 </div>
             </div>
         </div>
+        
+        
+        
         
     </body>
 </html>

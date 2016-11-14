@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <title>TODO supply a title</title>
+        <title>Análisis de Sentimiento (Java Sensei 2016)</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" href="../img/logo.jpg">
+        <script src="prism/prism.js" data-manual></script>
+        <link href="prism/prism.css" type="text/css" rel="stylesheet" />
+        <script src="js/jquery-2.1.1.min.js"></script>
+        <script>
+            var url = "servicios/"; //Jquery infiere el dominio
+            var texto = ""
+            $(document).ready(function () {
+                $("#button").click(function () {
+                    texto = $("#txtArea").val();
+                    console.log($("#txtArea").val());
+                    $.post("servicios/sentitext/evalpolaridad",{
+                                textoEval: texto
+                            },
+                            function (response) {
+                                console.log("eval polarity ok...");
+                                $("#polaridad").text(response);
+                                $("#mensaje").show();
+                            }
+                    );
+                });
+            });
+        </script> 
+        
     </head>
     <body>
-	<form action="/obtenerPolaridad" method="post">
+        <h1>Análisis de Sentimiento</h1>
+        <h2>Escribe una frase:</h2>
+        <div id="calificaciones">
+            <textarea id="txtArea" rows="5" cols="50" placeholder="Escribe tu opinión aquí..."></textarea>
+        </div>
+        <div id="button">
+            <input type="button" value="Enviar frase" />
+        </div>
+        <div id="mensaje">
             <p>
-                Escribe algo : <input type="text" name="cadTexto" />
+                Polaridad: <span id="polaridad"></span>
             </p>
-            <input type="submit" value="Enviar info" />
-	</form>
+        </div>
     </body>
 </html>

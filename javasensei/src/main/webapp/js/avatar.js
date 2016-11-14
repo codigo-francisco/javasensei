@@ -228,6 +228,7 @@ avatar_sensei.prototype = {
         }).done(function (data) {
             console.log(data);
             menu_context.actualizarBoton(avatar_context.id, valor_paso);
+            window.ejercicio_id = avatar_context.id;
             avatar_context.id=0; //Se reinicia el id
         }).error(function (error) {
             console.error(error);
