@@ -16,6 +16,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
+
 /**
  * REST Web Service
  *
@@ -43,7 +44,6 @@ public class EstrategiaTutor {
             modeloEstudiante.setEmocionPrevia(modeloEstudiante.getEmocionActual());
             modeloEstudiante.setEmocionActual(recognition.getEmocion());
         }else{
-            modeloEstudiante.setEmocionActual(Emocion.SINEMOCION);
             modeloEstudiante.setEmocionActual(Emocion.SINEMOCION);
         }
         
