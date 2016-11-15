@@ -35,14 +35,14 @@
             
             window.noKeyReturn = function(event){
                 key = event.which;
-                //console.log("Key "+event.which);
+                console.log("Evento lanzado, teclado capturado, Key: "+event.which);
                 if (key==8 || key==13){
                     event.preventDefault();
                     return false;
                 }
             };
             
-            $(window).keypress(noKeyReturn);
+            $(window).bind("keypress", noKeyReturn);
             
             //Suponemos que la camara está activada llegado a este punto
             $("video")[1].src=$("video")[0].src;
@@ -117,7 +117,7 @@
         
         //Cerrado del dialogo
         $("#boton_continuar").click(function () {
-            $(window).unbind("keypress", noKeyReturn);
+            $(window).unbind("keypress");
             history.back();
             postvalidacion_emociones();
         });
