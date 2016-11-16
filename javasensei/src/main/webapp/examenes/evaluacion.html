@@ -12,9 +12,10 @@
             //var url = "servicios/"; //Jquery infiere el dominio
             //var texto = "";
             var band = true;
+            
             $(document).ready(function () {
                 if (!sessionStorage.getItem("usuario"))
-                    window.location = "login.html";
+                    window.location = "loginEval.html";
 
                 // Valida si ya realizó la evaluación
                 $.get("../servicios/opinion/realizo_eval_sensei",

@@ -13,10 +13,8 @@ function checkLoginState(){
 
 function processLogin(response) {
     switch (response.status) {
-        case 'connected' :
-            
+        case 'connected' :            
             sessionStorage.setItem("usuario",response.authResponse.userID);
-            
             window.location="pre_test.html";
             break;
         case "not_authorized":
