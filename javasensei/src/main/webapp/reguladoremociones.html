@@ -6,7 +6,7 @@
     </div>
     <div class="ui-content" role="main">
         <p>
-            <b>Instrucciones.</b>A continuación, el sistema necesitará verificar que te encuentras en un estado emocional optimo, por lo que necesitas tomarte una foto, si la emoción es <b>enganchado o emocionado</b> te dejará continuar.
+            <b>Instrucciones.</b> A continuación, el sistema te tomará una foto para ver tu estado emocional, si la emoción es <b>enganchado o emocionado</b> te dejará continuar. En caso de que la primera foto no funcione, toma más fotos usando el boton continuar o activando el intervalo automatico.
         </p>
         <div style="text-align: center !important;">
             <!--<img alt="" src="img/regulador_emociones/fondo.png" style="position: absolute; width: 15%; height: 15%; z-index: 1; left:42%; top:33%;" >-->
@@ -32,6 +32,10 @@
     </div>
     <script>
         function tomarFotografia() {
+            
+            //Quitamos posible foto previa y emocion previa
+            $("#image_rostro").attr("src","")
+            $("#emocion_text").text("")
             
             window.noKeyReturn = function(event){
                 key = event.which;
