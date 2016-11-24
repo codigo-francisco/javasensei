@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Login evaluación Java Sensei</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '603592966417068',
+                    xfbml: true,
+                    version: 'v2.1',
+                    status: true
+                });
+            };
+
+            function checkLoginState(){
+                FB.getLoginStatus(processLogin);
+            }
+
+            function processLogin(response) {
+                switch (response.status) {
+                    case 'connected' :            
+                        sessionStorage.setItem("usuario",response.authResponse.userID);
+                        window.location="evaluacion.html";
+                        break;
+                    case "not_authorized":
+                        alert("Por favor autorize a la aplicacion para usar facebook");
+                    default:
+                        //En caso de que no haga login
+                        $("#fullscreenlogin").show();
+                }
+            }
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/es_MX/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));;
+            
+        </script>    
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <p>Realiza tu login para evaluar el sistema Java Sensei.</p>
+            <div class="fb-login-button" 
+                data-max-rows="1" 
+                data-size="xlarge"
+                onlogin="checkLoginState();"></div>
+        </div>
+    </body>
+</html>
