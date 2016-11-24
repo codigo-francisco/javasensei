@@ -25,6 +25,11 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
     private boolean mostrarTutorialEjercicio  = false;
     private double tiempo = 0;
     private Date creado = Date.from(Instant.now());
+    private String nombre;
+    private String nombreFacebook;
+    private int edad;
+    private String fotografia;
+    private String sexo;
 
     public ModeloEstudiante() {
         
@@ -32,7 +37,7 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
 
     public ModeloEstudiante(String jsonEstudiante) {
         BasicDBObject jsonObj = BasicDBObject.parse(jsonEstudiante);
-
+        
         //Se construye el objeto del estudiante
         id = jsonObj.getLong("id");
         idFacebook = jsonObj.getString("idFacebook").replace("\"", "");
@@ -45,6 +50,11 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         aceptarCondiciones = jsonObj.getBoolean("aceptarCondiciones");
         mostrarTutorialEjercicio = jsonObj.getBoolean("mostrarTutorialEjercicio");
         mostrarTutorialPrincipal = jsonObj.getBoolean("mostrarTutorialPrincipal");
+        nombre = jsonObj.getString("nombre");
+        nombreFacebook = jsonObj.getString("nombreFacebook");
+        edad = jsonObj.getInt("edad");
+        sexo = jsonObj.getString("sexo");
+        fotografia = jsonObj.getString("fotografia");        
         tiempo = jsonObj.getDouble("tiempo");
         creado = jsonObj.getDate("creado", Date.from(Instant.now()));
     }
@@ -74,8 +84,14 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
         dbObject.put("aceptarCondiciones", getAceptarCondiciones());
         dbObject.put("mostrarTutorialPrincipal", getMostrarTutorialPrincipal());
         dbObject.put("mostrarTutorialEjercicio", getMostrarTutorialEjercicio());
+        dbObject.put("nombre", getNombre());
+        dbObject.put("nombreFacebook", getNombreFacebook());
+        dbObject.put("edad", getEdad());
+        dbObject.put("fotografia", getFotografia());
+        dbObject.put("sexo", getSexo());
         dbObject.put("tiempo", getTiempo());
         dbObject.put("creado", getCreado());
+        
 
         return dbObject;
     }
@@ -190,5 +206,45 @@ public class ModeloEstudiante implements java.io.Serializable, DBInterface {
      */
     public void setMostrarTutorialEjercicio(boolean mostrarTutorialEjercicio) {
         this.mostrarTutorialEjercicio = mostrarTutorialEjercicio;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombreFacebook() {
+        return nombreFacebook;
+    }
+
+    public void setNombreFacebook(String nombreFacebook) {
+        this.nombreFacebook = nombreFacebook;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getFotografia() {
+        return fotografia;
+    }
+
+    public void setFotografia(String fotografia) {
+        this.fotografia = fotografia;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 }
