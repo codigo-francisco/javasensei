@@ -93,20 +93,20 @@
             ;
 
             var noCamara = false;
-            var mensajeCamara=false;
-            
-            function errorCamara(err){
-                if (!mensajeCamara){
+            var mensajeCamara = false;
+
+            function errorCamara(err) {
+                if (!mensajeCamara) {
                     console.error(err);
                     alert("A ocurrido un error debido a que no cuenta con camara o no otorgo los permisos necesarios.\n\nLa detección emocional se ha deshabilitado");
                     noCamara = true;
-                    usuario.activarEmociones=false;
+                    usuario.activarEmociones = false;
                     //Opciones de la camara
                     eliminarBackgroundCamera();
                     $("#dialog_video").hide();
                     $("#botoncamara").addClass("ui-disabled");
-                    
-                    mensajeCamara=true;
+
+                    mensajeCamara = true;
                 }
             }
 
@@ -188,19 +188,19 @@
 
                 $("#activarEmociones").on("change", function () {
                     //Esta función queda invalidada para pruebas
-                    
+
                     /*usuario.activarEmociones = $("#activarEmociones").prop("checked");
-                    //Guardado en base de datos
-                    $.ajax(url + "estudiantes/activarEmociones", {
-                        data: {
-                            idAlumno: usuario.id,
-                            activarEmociones: usuario.activarEmociones
-                        }
-                    }).done(function (data) {
-                        console.log(data);
-                    }).fail(function (d, error) {
-                        console.log(error);
-                    });*/
+                     //Guardado en base de datos
+                     $.ajax(url + "estudiantes/activarEmociones", {
+                     data: {
+                     idAlumno: usuario.id,
+                     activarEmociones: usuario.activarEmociones
+                     }
+                     }).done(function (data) {
+                     console.log(data);
+                     }).fail(function (d, error) {
+                     console.log(error);
+                     });*/
                 });
 
                 $("#areatrabajo").hide();
@@ -237,18 +237,31 @@
                 $("#button_opinion").click(function () {
                     texto = $("#txtAreaOpinion").val();
                     console.log("Opinión:" + $("#txtAreaOpinion").val());
-                    
-                    $.post("servicios/opinion/guardar_opinion_ejercicio",{
-                                idFacebook: usuario.idFacebook,
-                                idEjercicio:ejercicio_id,
-                                opinion: texto
-                            },
+
+                    $.post("servicios/opinion/guardar_opinion_ejercicio", {
+                        idFacebook: usuario.idFacebook,
+                        idEjercicio: ejercicio_id,
+                        opinion: texto
+                    },
                             function (response) {
                                 console.log("eval polarity exercise ok...");
                                 $("txtAreaOpinion").val("");
                             }
                     );
-                }); 
+                });
+
+                $("#form_datos").submit(function () {
+                    //Enviar datos a webservice
+                    
+                    usuario.nombre = $("#txt_nombre").val();
+                    usuario.edad = $("#numb_edad").val();
+                    usuario.sexo = $("#type_sex").val();
+                    
+                    //Se manda a crear el usuario en base de datos
+                    checarUsuario(usuario, true);
+                    
+                    return false;
+                });
 
                 enlazarBotonesCarousel();
 
@@ -337,6 +350,16 @@
                 position: relative;
                 top: -15px;
             }
+            .fullscreenname{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 2000;
+                top:0;
+                left: 0;
+                display: none;
+                background-color: white;
+            }
 
             /*Esto es para mostrar las lineas 
             de codigo que se muestra en el documento.*/
@@ -387,7 +410,24 @@
         </div>
 
         <div id="principal" data-title="Java Sensei" data-role="page">
-
+            <div id="pantalla_nombre" class="fullscreenname">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <p>Cuentanos un poco acerca de ti</p>
+                    <form id="form_datos">
+                        <label for="txt_nombre" >Nombre</label>
+                        <input type="text" pattern="[A-Za-zÀ-ž\s]{10,}" title="incluye tus apellidos, sin usar numeros ni caracteres especiales" required id="txt_nombre">
+                        <label for="numb_edad">Edad</label>
+                        <input type="number" step="1" min="14" max="50" required title="Ingrese una edad" id="numb_edad" >
+                        <label for="type_sex">Sexo</label>
+                        <select id="type_sex" required>
+                            <option></option>
+                            <option value="hombre">Hombre</option>
+                            <option value="mujer">Mujer</option>
+                        </select>
+                        <input type="submit" id="enviar_nombre" value="Enviar Datos">
+                    </form>
+                </div>
+            </div>
             <!-- Paneles -->
             <div data-role="panel" data-display="overlay" id="panelmenu">
                 <div id="ejerciciosmenu" style="white-space: normal !important;" 
@@ -444,7 +484,7 @@
                             <div>
                                 <div id="calificaciones_ejercicios"></div>
                             </div>
-                            
+
                         </div>
                         <button class="controles_cierre_tracing" id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
                         <a href="#paginaGraficaComportamiento" class="controles_cierre_tracing ui-btn ui-btn-inline 
@@ -471,19 +511,19 @@
                     <div id="areasolucion" class="ui-grid-a ui-responsive">
 
                     </div>
-                    
+
                     <div class="controles_cierre_tracing" style="float: center;">
-                            <div>
-                                <div id="opinion_ejercicio">
-                                    <p><b>Escribe tu opinión (positiva/negativa) acerca de este ejercicio :</b><p/>
-                                    <textarea id="txtAreaOpinion" rows="10" cols="25" placeholder="Escribe tu opinión aquí..."></textarea>
-                                </div>
-                                <div  id="button_opinion">
-                                    <input type="button" value="Enviar comentario" />
-                                </div>
+                        <div>
+                            <div id="opinion_ejercicio">
+                                <p><b>Escribe tu opinión (positiva/negativa) acerca de este ejercicio :</b><p/>
+                                <textarea id="txtAreaOpinion" rows="10" cols="25" placeholder="Escribe tu opinión aquí..."></textarea>
                             </div>
+                            <div  id="button_opinion">
+                                <input type="button" value="Enviar comentario" />
+                            </div>
+                        </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -721,8 +761,8 @@
             </div>
         </div>
 
-        
-        
+
+
         <div data-role="page" data-dialog="true" id="paginacategorizacion" data-close-btn="none">
             <div data-role="header">
                 <h2>

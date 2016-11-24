@@ -293,4 +293,12 @@ public class EstudiantesManager {
         
         alumnosCollection.update(query, set);
     }
+
+    public String existeEstudiante() {
+        DBObject result = alumnosCollection.findOne(
+                new BasicDBObject("idFacebook", estudiante.getIdFacebook())
+        );
+        
+        return Boolean.toString(result != null);
+    }
 }
