@@ -30,7 +30,19 @@
                         break;
                 }
             }
+        </script>
 
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <p>Realiza tu login para ingresar al examen <span id="tipo_examen"></span>.</p>
+            <div class="fb-login-button" 
+                 data-max-rows="1" 
+                 data-size="xlarge"
+                 onlogin="checkLoginState();"></div>
+        </div>
+
+        <script>
             (function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) {
@@ -42,20 +54,8 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
             ;
-        </script>
-
-    </head>
-    <body>
-        <div style="text-align: center;">
-            <p>Realiza tu login para ingresar al examen pre-test.</p>
-            <div class="fb-login-button" 
-                 data-max-rows="1" 
-                 data-size="xlarge"
-                 onlogin="checkLoginState();"></div>
-        </div>
-        
-        <script>
-            checkLoginState();    
+            checkLoginState();
+            $("#tipo_examen").text(sessionStorage.getItem("pagina"));
         </script>
     </body>
 </html>

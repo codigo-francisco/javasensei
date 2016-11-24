@@ -22,7 +22,7 @@
                 $("#calificar").prop("disabled", false);
                 
                 if (!sessionStorage.getItem("usuario"))
-                    window.location = "loginPostTest.html";
+                    window.location = "login.html";
 
                 //Validar si el usuario realizó el cuestionario
                 $.get("../servicios/examenes/realizoExamenPostTest",
