@@ -7,9 +7,12 @@
         <link rel="shortcut icon" href="../img/logo.jpg">
         <script src="../prism/prism.js" data-manual></script>
         <link href="../prism/prism.css" type="text/css" rel="stylesheet" />
+        <link href="../css/simple.css" type="text/css" rel="stylesheet" />
         <script src="../js/jquery-2.1.1.min.js"></script>
 
         <script>
+            var band = true;
+            
             // Retorna un número aleatorio entre min (incluido) y max (excluido)
             function getRandomInt(min, max) {
               return Math.floor(Math.random() * (max - min)) + min;
@@ -27,9 +30,10 @@
                 , function (response) {
                     if (response.realizado) {
                         $("#mensaje p:eq(0)")
-                                .text("Gracias por haber realizado el examen")
+                                .text("El examen pre-test ya está contestado.   Gracias por haber realizado el examen.")
                                 .parent()
                                 .show("slow");
+                        return false;
                     } else {
                         var numAleatorio = getRandomInt(1,4);
                         
@@ -92,52 +96,43 @@
                         var o = {};
                         o.pregunta = respuesta.prop("name");
                         o.respuesta = respuesta.val();
-                        if (respuesta.val()==""){
-                            alert("Por favor responda todas las preguntas del cuestionario");
+                        if (respuesta.val()==null){
+                            alert("¡Por favor responde todas las preguntas del cuestionario!");
+                            band = false;
                             return false;
                         }
                         jsonRespuestas.push(o);
+                        band = true;
                     });
 
-                    $.post("../servicios/examenes/calificarexamenpretest",
-                            {
-                                idFacebook: sessionStorage.getItem("usuario"),
-                                json: JSON.stringify(jsonRespuestas),
-                                tipoExamen: tipoExamen
-                            }, function (response) {
-                        console.log("examen calificado");
+                    if(band) {    
+                        $.post("../servicios/examenes/calificarexamenpretest",
+                                {
+                                    idFacebook: sessionStorage.getItem("usuario"),
+                                    json: JSON.stringify(jsonRespuestas),
+                                    tipoExamen: tipoExamen
+                                }, function (response) {
+                            console.log("examen calificado");
 
-                        $("#aciertos").text(response.totalRespuestasCorrectas);
-                        $("#mensaje").show("slow");
+                            $("#aciertos").text(response.totalRespuestasCorrectas);
+                            $("#mensaje").show("slow");
+                            
+                        }
+                        );
+                        alert("¡Gracias por participar en la evaluación!");
+                        window.location = "menu.html";
                     }
-                    );
                 });
             });
 
         </script>
-        <style>
-            ol{
-                list-style-type: upper-latin;
-            }
-            #contenido p{
-                font-weight: bold;
-            }
-            #mensaje{
-                display:none;
-                position:fixed; 
-                background-color:white;
-                height: 100%;
-                width: 100%;
-                z-index: 1;
-                margin-top: -1.2em;
-            }
-        </style>
+        
     </head>
     <body>
         <div id="mensaje">
+            <h2>Resultados.</h2>
             <p>
-                Obtuviste <span id="aciertos"></span> aciertos, gracias por participar.<br>
-                Si eres parte del grupo que utilizará Java Sensei por favor regresa a la pagina de inicio.
+                Obtuviste <span id="aciertos"></span> aciertos, gracias por participar en la evaluación.
             </p>
         </div>
         <div id="contenido">
