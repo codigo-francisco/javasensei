@@ -12,7 +12,9 @@
             //var url = "servicios/"; //Jquery infiere el dominio
             //var texto = "";
             var band = true;
-            
+            sessionStorage.setItem("pagina", "evaluacion.html");
+            $("#evaluar").prop("disabled", false);
+
             $(document).ready(function () {
                 if (!sessionStorage.getItem("usuario"))
                     window.location = "loginEval.html";
@@ -30,19 +32,19 @@
                     }
                 }
                 );
-                
+
                 $("#button").click(function () {
                     var jsonRespuestas = [];
                     var preguntas = $("div").filter(function () {
                         return this.id.match(/question\d+/);
                     });
-                    
+
                     preguntas.each(function (index, obj) {
                         var respuesta = $(obj).find("input:checked");
                         var o = {};
                         o.pregunta = respuesta.prop("name");
                         o.respuesta = respuesta.val();
-                        if (respuesta.val()==null){
+                        if (respuesta.val() == null) {
                             alert("¡Por favor responde todas las preguntas de la evaluación!");
                             //window.location = "evaluacion.html";
                             band = false;
@@ -50,30 +52,36 @@
                         }
                         jsonRespuestas.push(o);
                         band = true;
-                        
+
                     });
-                    
-                    if(band) {
+
+                    if (band) {
+                        $("#evaluar").prop("disabled", true);
+
                         $.post("../servicios/opinion/guardar_eval_sensei",
-                            {
-                                idFacebook: sessionStorage.getItem("usuario"),
-                                json: JSON.stringify(jsonRespuestas)
-                            }, function (response) {
+                                {
+                                    idFacebook: sessionStorage.getItem("usuario"),
+                                    json: JSON.stringify(jsonRespuestas)
+                                }, function (response) {
                             console.log("Evaluación realizada");
-                        });
-                        alert("¡Gracias por participar en la evaluación!");
-                        window.location = "menu.html";
+
+                            alert("¡Gracias por participar en la evaluación!");
+                            window.location = "menu.html";
+                        }).fail(function (response) {
+                            $("#evaluar").prop("disabled", false);
+                        }
+                        );
                     }
                 });
             });
         </script>    
-        
+
     </head>
     <body>
         <div id="instrucciones">
             <h1>Cuestionario de usabilidad Java Sensei.</h1>
             <h2><b>Instrucciones.</b> Selecciona una opción del 1 al 7 en la escala de Likert.</h2>        
-            
+
         </div>
         <div id="cuestionario">
             <!--Pregunta 1-->
@@ -218,7 +226,7 @@
             </div>
         </div>    <!--fin evaluación-->
         <div id="button">
-            <input type="button" value="Enviar evaluación" />
+            <input type="button" value="Enviar evaluación" id="evaluar" />
         </div>
 
     </body>

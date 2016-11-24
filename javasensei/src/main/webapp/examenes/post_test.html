@@ -12,12 +12,15 @@
 
         <script>
             var band = true;
+            sessionStorage.setItem("pagina","post_test.html");
             // Retorna un número aleatorio entre min (incluido) y max (excluido)
             function getRandomInt(min, max) {
               return Math.floor(Math.random() * (max - min)) + min;
             }
             
             $(document).ready(function () {
+                $("#calificar").prop("disabled", false);
+                
                 if (!sessionStorage.getItem("usuario"))
                     window.location = "loginPostTest.html";
 
@@ -105,6 +108,8 @@
                     });
 
                     if(band) {
+                        $("#calificar").prop("disabled", true);
+                        
                         $.post("../servicios/examenes/calificarexamenposttest",
                                 {
                                     idFacebook: sessionStorage.getItem("usuario"),
@@ -113,13 +118,12 @@
                                 }, function (response) {
                             console.log("examen calificado");
 
-                            $("#aciertos").text(response.totalRespuestasCorrectas);
-                            $("#mensaje").show("slow");
+                            alert("¡Gracias por participar en la evaluación!");
+                            window.location = "menu.html";
                         }
-                        );
-                        alert("¡Gracias por participar en la evaluación!");
-                        window.location = "menu.html";
-
+                        ).fail(function(response){
+                            $("#calificar").prop("disabled", true);
+                        });
                     }
                 });
             });
@@ -137,6 +141,6 @@
 
         </div>
         <div id="button">
-            <input type="button" value="Calificar Post-test" />
+            <input type="button" value="Calificar Post-test" id="calificar" />
         </div>
 </html>
