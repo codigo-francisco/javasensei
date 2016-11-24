@@ -67,6 +67,7 @@ avatar_sensei.prototype = {
     primera_carga: function (data) {
         //Se verifica que se este validando el estado emocional
         window.postvalidacion_emociones = function(){
+            $("#mensaje_opinion").hide();
             camera_sensei.detenerFotos();
             camera_sensei.reiniciarFotos(true);
             avatar_context.bitacoras = new Array();

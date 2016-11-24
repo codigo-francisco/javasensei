@@ -40,10 +40,6 @@ public class ApplicationConfig extends Application {
         resources.add(javasensei.rest.RecomendacionRest.class);
         resources.add(javasensei.rest.RecursosRest.class);
         resources.add(javasensei.rest.SentiTextRest.class);
-        resources.add(org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider.class);
-        resources.add(org.codehaus.jackson.jaxrs.JacksonJsonProvider.class);
-        resources.add(org.codehaus.jackson.jaxrs.JsonMappingExceptionMapper.class);
-        resources.add(org.codehaus.jackson.jaxrs.JsonParseExceptionMapper.class);
     }
     
 }
