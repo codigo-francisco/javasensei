@@ -23,6 +23,10 @@ public class RecognitionEmotionalFace {
     private Gson gson = new Gson();
     private String detector;
     private Long idUsuario;
+    
+    public boolean isEmocionesSecundarias(){
+        return detector.equals("lbppython"); //Unico secundario
+    }
 
     public RecognitionEmotionalFace(String detector, long idUsuario) {
         this.detector = detector;
