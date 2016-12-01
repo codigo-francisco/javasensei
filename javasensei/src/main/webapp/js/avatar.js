@@ -65,6 +65,7 @@ avatar_sensei.prototype = {
     },
     //Notificacion de que se esta cargando el ejercicio (diferente al paso inicial)
     primera_carga: function (data) {
+        validarEmocion = true;
         camera_sensei.detenerFotos();
         camera_sensei.reiniciarFotos(true);
         avatar_context.bitacoras = new Array();
@@ -292,6 +293,7 @@ avatar_sensei.prototype = {
     mostrarAvatar: function () {
         if (validarEmocion) { //Necesita mostrarse antes del avatar
             iniciar_regulador();
+            validarEmocion = false;
         }else{
             $(":mobile-pagecontainer").pagecontainer("change", "#tutor_sensei");
         }

@@ -237,6 +237,13 @@
 
                 $("#form_opinion").submit(function () {
                     texto = $("#txtAreaOpinion").val();
+                    texto = texto.trim();
+                    result = /^[A-Za-zÀ-ž\s\d]{10,}$/.test(texto);
+                    
+                    if (!result){
+                        alert("Por favor ingrese la opinion correctamente, sin espacios en blanco y por lo menos 10 caracteres");
+                    }
+                    
                     console.log("Opinión:" + $("#txtAreaOpinion").val());
 
                     $.post("servicios/opinion/guardar_opinion_ejercicio", {
