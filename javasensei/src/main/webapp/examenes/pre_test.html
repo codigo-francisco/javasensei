@@ -7,15 +7,21 @@
         <link rel="shortcut icon" href="../img/logo.jpg">
         <script src="../prism/prism.js" data-manual></script>
         <link href="../prism/prism.css" type="text/css" rel="stylesheet" />
+        <link href="../css/simple.css" type="text/css" rel="stylesheet" />
         <script src="../js/jquery-2.1.1.min.js"></script>
 
         <script>
+            var band = true;
+            sessionStorage.setItem("pagina", "pre_test.html");
+
             // Retorna un número aleatorio entre min (incluido) y max (excluido)
             function getRandomInt(min, max) {
-              return Math.floor(Math.random() * (max - min)) + min;
+                return Math.floor(Math.random() * (max - min)) + min;
             }
-            
+
             $(document).ready(function () {
+                $("#calificar").prop("disabled", false);
+                
                 if (!sessionStorage.getItem("usuario"))
                     window.location = "login.html";
 
@@ -27,15 +33,16 @@
                 , function (response) {
                     if (response.realizado) {
                         $("#mensaje p:eq(0)")
-                                .text("Gracias por haber realizado el examen")
+                                .text("El examen pre-test ya está contestado.   Gracias por haber realizado el examen.")
                                 .parent()
                                 .show("slow");
+                        return false;
                     } else {
-                        var numAleatorio = getRandomInt(1,4);
-                        
+                        var numAleatorio = getRandomInt(1, 4);
+
                         var url = "pre_testA.html";
                         tipoExamen = "A";
-                        
+
                         switch (numAleatorio) {
                             case 1:
                                 url = "pre_testA.html";
@@ -58,24 +65,24 @@
                             });
 
                             preguntas.find("ol").each(function (index, item) {
-                                var name = "q"+(index+1);
-                                var id= name+"e";
+                                var name = "q" + (index + 1);
+                                var id = name + "e";
                                 $(item).append(
-                                    $("<li>")
-                                    .append(
-                                        $("<input>")
-                                            .prop("type", "radio")
-                                            .prop("name", name)
-                                            .prop("id", id)
-                                            .val("e")
-                                    ).append(
+                                        $("<li>")
+                                        .append(
+                                                $("<input>")
+                                                .prop("type", "radio")
+                                                .prop("name", name)
+                                                .prop("id", id)
+                                                .val("e")
+                                                ).append(
                                         $("<label>")
-                                            .prop("for",id)
-                                            .text("no sé la respuesta")
-                                    )
-                                );
+                                        .prop("for", id)
+                                        .text("no sé la respuesta")
+                                        )
+                                        );
                             });
-                            
+
                             Prism.highlightAll();
                         });
                     }
@@ -92,59 +99,51 @@
                         var o = {};
                         o.pregunta = respuesta.prop("name");
                         o.respuesta = respuesta.val();
-                        if (respuesta.val()==""){
-                            alert("Por favor responda todas las preguntas del cuestionario");
+                        if (respuesta.val() == null) {
+                            alert("¡Por favor responde todas las preguntas del cuestionario!");
+                            band = false;
                             return false;
                         }
                         jsonRespuestas.push(o);
+                        band = true;
                     });
 
-                    $.post("../servicios/examenes/calificarexamenpretest",
-                            {
-                                idFacebook: sessionStorage.getItem("usuario"),
-                                json: JSON.stringify(jsonRespuestas),
-                                tipoExamen: tipoExamen
-                            }, function (response) {
-                        console.log("examen calificado");
+                    if (band) {
+                        $("#calificar").prop("disabled", true);
+                        
+                        $.post("../servicios/examenes/calificarexamenpretest",
+                                {
+                                    idFacebook: sessionStorage.getItem("usuario"),
+                                    json: JSON.stringify(jsonRespuestas),
+                                    tipoExamen: tipoExamen
+                                }, function (response) {
+                            console.log("examen calificado");
 
-                        $("#aciertos").text(response.totalRespuestasCorrectas);
-                        $("#mensaje").show("slow");
+                            alert("¡Gracias por participar en la evaluación!");
+                            window.location = "menu.html";
+                        }
+                        ).fail(function(response){
+                            $("#calificar").prop("disabled", true);
+                        });
                     }
-                    );
                 });
             });
 
         </script>
-        <style>
-            ol{
-                list-style-type: upper-latin;
-            }
-            #contenido p{
-                font-weight: bold;
-            }
-            #mensaje{
-                display:none;
-                position:fixed; 
-                background-color:white;
-                height: 100%;
-                width: 100%;
-                z-index: 1;
-                margin-top: -1.2em;
-            }
-        </style>
+
     </head>
     <body>
         <div id="mensaje">
+            <h2>Resultados.</h2>
             <p>
-                Obtuviste <span id="aciertos"></span> aciertos, gracias por participar.<br>
-                Si eres parte del grupo que utilizará Java Sensei por favor regresa a la pagina de inicio.
+                Obtuviste <span id="aciertos"></span> aciertos, gracias por participar en la evaluación.
             </p>
         </div>
         <div id="contenido">
 
         </div>
         <div id="button">
-            <input type="button" value="Calificar Pre-test" />
+            <input type="button" value="Calificar Pre-test" id="calificar" />
         </div>
     </body>    
 </html>

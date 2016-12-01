@@ -7,17 +7,22 @@
         <link rel="shortcut icon" href="../img/logo.jpg">
         <script src="../prism/prism.js" data-manual></script>
         <link href="../prism/prism.css" type="text/css" rel="stylesheet" />
+        <link href="../css/simple.css" type="text/css" rel="stylesheet" />
         <script src="../js/jquery-2.1.1.min.js"></script>
 
         <script>
+            var band = true;
+            sessionStorage.setItem("pagina","post_test.html");
             // Retorna un número aleatorio entre min (incluido) y max (excluido)
             function getRandomInt(min, max) {
               return Math.floor(Math.random() * (max - min)) + min;
             }
             
             $(document).ready(function () {
+                $("#calificar").prop("disabled", false);
+                
                 if (!sessionStorage.getItem("usuario"))
-                    window.location = "loginPostTest.html";
+                    window.location = "login.html";
 
                 //Validar si el usuario realizó el cuestionario
                 $.get("../servicios/examenes/realizoExamenPostTest",
@@ -27,9 +32,10 @@
                 , function (response) {
                     if (response.realizado) {
                         $("#mensaje p:eq(0)")
-                                .text("Gracias por haber realizado el examen")
+                                .text("El examen post-test ya está contestado.   Gracias por haber realizado el examen.")
                                 .parent()
                                 .show("slow");
+                        return false;
                     } else {
                         var numAleatorio = getRandomInt(1,4);
                         
@@ -92,46 +98,37 @@
                         var o = {};
                         o.pregunta = respuesta.prop("name");
                         o.respuesta = respuesta.val();
-                        if (respuesta.val()==""){
-                            alert("Por favor responda todas las preguntas del cuestionario");
+                        if (respuesta.val()==null){
+                            alert("¡Por favor responde todas las preguntas del cuestionario!");
+                            band = false;
                             return false;
                         }
                         jsonRespuestas.push(o);
+                        band = true;
                     });
 
-                    $.post("../servicios/examenes/calificarexamenposttest",
-                            {
-                                idFacebook: sessionStorage.getItem("usuario"),
-                                json: JSON.stringify(jsonRespuestas),
-                                tipoExamen: tipoExamen
-                            }, function (response) {
-                        console.log("examen calificado");
+                    if(band) {
+                        $("#calificar").prop("disabled", true);
+                        
+                        $.post("../servicios/examenes/calificarexamenposttest",
+                                {
+                                    idFacebook: sessionStorage.getItem("usuario"),
+                                    json: JSON.stringify(jsonRespuestas),
+                                    tipoExamen: tipoExamen
+                                }, function (response) {
+                            console.log("examen calificado");
 
-                        $("#aciertos").text(response.totalRespuestasCorrectas);
-                        $("#mensaje").show("slow");
+                            alert("¡Gracias por participar en la evaluación!");
+                            window.location = "menu.html";
+                        }
+                        ).fail(function(response){
+                            $("#calificar").prop("disabled", true);
+                        });
                     }
-                    );
                 });
             });
 
         </script>
-        <style>
-            ol{
-                list-style-type: upper-latin;
-            }
-            #contenido p{
-                font-weight: bold;
-            }
-            #mensaje{
-                display:none;
-                position:fixed; 
-                background-color:white;
-                height: 100%;
-                width: 100%;
-                z-index: 1;
-                margin-top: -1.2em;
-            }
-        </style>
     </head>
     <body>
         <div id="mensaje">
@@ -144,6 +141,6 @@
 
         </div>
         <div id="button">
-            <input type="button" value="Calificar Post-test" />
+            <input type="button" value="Calificar Post-test" id="calificar" />
         </div>
 </html>

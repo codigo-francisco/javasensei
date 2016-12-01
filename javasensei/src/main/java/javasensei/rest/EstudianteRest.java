@@ -28,13 +28,33 @@ public class EstudianteRest {
     }
     
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("getorcreatestudent")
-    public String getOrCreateEstudiante(@QueryParam("idFacebook") String idFacebook, @QueryParam("token") String token){
-        
+    @Path("studentExists")
+    public String studentExists(@QueryParam("idFacebook") String idFacebook){
         ModeloEstudiante estudiante = new ModeloEstudiante();
         estudiante.setIdFacebook(idFacebook);
-        estudiante.setToken(token);
+        
+        EstudiantesManager estudiantes = new EstudiantesManager(estudiante);
+        return estudiantes.existeEstudiante();
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("getorcreatestudent")
+    public String getOrCreateEstudiante(@QueryParam("datos") String datos){
+        
+        ModeloEstudiante estudiante = new ModeloEstudiante();
+        BasicDBObject object = BasicDBObject.parse(datos);
+        boolean nuevo = object.getBoolean("nuevo");
+        estudiante.setIdFacebook(object.getString("idFacebook"));
+        estudiante.setToken(object.getString("token"));
+        estudiante.setNombreFacebook(object.getString("nombreFacebook"));
+        estudiante.setFotografia(object.getString("fotografia"));
+        
+        if (nuevo){
+            estudiante.setSexo(object.getString("sexo"));
+            estudiante.setEdad(Integer.parseInt(object.getString("edad")));
+            estudiante.setNombre(object.getString("nombre"));
+        }
         
         EstudiantesManager estudiantes = new EstudiantesManager(estudiante);
         String result = estudiantes.insertOrCreateStudent();
