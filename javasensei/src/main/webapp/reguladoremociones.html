@@ -6,7 +6,7 @@
     </div>
     <div class="ui-content" role="main">
         <p>
-            <b>Instrucciones.</b> A continuación, el sistema te tomará una foto para ver tu estado emocional, si la emoción es <b>enganchado o emocionado</b> te dejará continuar. En caso de que la primera foto no funcione, toma más fotos usando el boton continuar o activando el intervalo automatico.
+            <b>Instrucciones.</b> A continuación, el sistema te tomará una foto para ver tu estado emocional, si la emoción es <b>enganchado o emocionado</b> te dejará continuar. En caso de que la primera foto no funcione, toma más fotos usando el boton Tomar Fotografía o activa el intervalo automatico (3 segundos de manera predeterminada).
         </p>
         <div style="text-align: center !important;">
             <!--<img alt="" src="img/regulador_emociones/fondo.png" style="position: absolute; width: 15%; height: 15%; z-index: 1; left:42%; top:33%;" >-->
@@ -30,100 +30,4 @@
         <input name="slider_intervalos" id="slider_intervalos" min="2" max="5" value="3" type="range">
         <input type="button" disabled="disabled" id="boton_continuar" value="Continuar">
     </div>
-    <script>
-        function tomarFotografia() {
-            
-            //Quitamos posible foto previa y emocion previa
-            $("#image_rostro").attr("src","")
-            $("#emocion_text").text("")
-            
-            window.noKeyReturn = function(event){
-                key = event.which;
-                console.log("Evento lanzado, teclado capturado, Key: "+event.which);
-                if (key==8 || key==13){
-                    event.preventDefault();
-                    return false;
-                }
-            };
-            
-            $(window).bind("keypress", noKeyReturn);
-            
-            //Suponemos que la camara está activada llegado a este punto
-            $("video")[1].src=$("video")[0].src;
-            
-            Webcam.snap(function (dataUrl) {
-
-                var imageOriginal = dataUrl;
-                var image = dataUrl.replace("data:image/jpeg;base64,", "");
-
-                $.ajax({
-                    type: "POST",
-                    url: "servicios/emociones",
-                    data: {fotografia: image},
-                    success: function (response) {
-                        var emocion = response;
-                        $("#emocion_text").text(emocion);
-                        $("#image_rostro").prop("src", imageOriginal);
-                        delete image;
-                        delete imageOriginal;
-
-                        /*
-                         * Habilitar boton de continuar/cerrar,
-                         * desactivar fotografias en caso de estar activado
-                         */
-                        
-                        console.log(emocion);
-                        
-                        if (emocion == "enganchado" || emocion=="emocionado") {
-                            clearInterval(temporizador);
-                            $("#boton_tomarfoto").button("disable");
-                            $("#check_repetir").checkboxradio("option", "disabled", true);
-                            $("#boton_continuar").button("enable");
-                        }
-                    }
-                });
-
-            });
-        }
-
-        window.temporizador = -1;
-
-        $("#slider_intervalos").change(function () {
-            if (temporizador != -1) {
-                clearInterval(temporizador);
-                var tiempo = $("#slider_intervalos").val() * 1000;
-                temporizador = setInterval(tomarFotografia, tiempo);
-            }
-        });
-
-        $("#check_repetir").change(function () {
-            //Activar o desactivar
-            estado = $("#check_repetir").prop("checked");
-            if (estado) {
-                //Tiempo en milisegundos
-                var tiempo = $("#slider_intervalos").val() * 1000;
-                //Activar temporizador
-                temporizador = setInterval(tomarFotografia, tiempo);
-                //Desactivar boton de toma de fotografias
-                $("#boton_tomarfoto").button("disable");
-            } else {
-                //Desactivar temporizador
-                clearInterval(temporizador);
-                temporizador = -1;
-                //Activar boton de toma de fotografias
-                $("#boton_tomarfoto").button("enable");
-            }
-        });
-
-        $("#boton_tomarfoto").click(tomarFotografia);
-        
-        tomarFotografia();
-        
-        //Cerrado del dialogo
-        $("#boton_continuar").click(function () {
-            $(window).unbind("keypress");
-            history.back();
-            postvalidacion_emociones();
-        });
-    </script>
 </div>

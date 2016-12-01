@@ -52,13 +52,14 @@ public class OpinionRest {
     }
 
     @POST
-    @Produces(MediaType.APPLICATION_JSON)
+    
     @Path("guardar_opinion_ejercicio")
     public String guardarOpinionEjercicio(
             @FormParam("idFacebook") String idFacebook,
             @FormParam("idEjercicio") String idEjercicio,
             @FormParam("opinion") String opinion) {
         
+        //Marca un error en el log aunque no afecta al guardado
         ExtractPolarityTextPython p = new ExtractPolarityTextPython();
         return new OpinionEjercicioManager().saveOpinionEjercicio(idFacebook, idEjercicio, opinion, p.processData(opinion));
     }

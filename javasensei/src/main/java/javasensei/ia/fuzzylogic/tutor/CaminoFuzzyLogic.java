@@ -12,10 +12,15 @@ import net.sourceforge.jFuzzyLogic.FIS;
 public abstract class CaminoFuzzyLogic {
     protected ModeloEstudiante estudiante;
     protected String folderIA = "files/logicadifusa/";
+    protected boolean emocionesEducativas = false;
     
-    public CaminoFuzzyLogic(ModeloEstudiante estudiante){
+    public void setEmocionesEducativas(boolean emocionesEducativas){
+        this.emocionesEducativas = emocionesEducativas;
+    }
+    
+    public CaminoFuzzyLogic(ModeloEstudiante estudiante, boolean emocionesEducativas){
         this.estudiante = estudiante;
-        
+        this.emocionesEducativas = emocionesEducativas;
         folderIA += (estudiante.getActivarEmociones()) ? "conemociones/":"sinemociones/";
         
     }
@@ -37,8 +42,16 @@ public abstract class CaminoFuzzyLogic {
             
             if (estudiante.getActivarEmociones()){
                 fis = getFuzzySystemConEmociones();
-                fis.setVariable("emocionactual", estudiante.getEmocionActual().getValue());
-                fis.setVariable("emocionprevia", estudiante.getEmocionPrevia().getValue());
+                double emocionActual = estudiante.getEmocionActual().getValue();
+                double emocionPrevia = estudiante.getEmocionPrevia().getValue();
+                
+                if (emocionesEducativas){
+                    emocionActual -= 5;
+                    emocionPrevia -= 5;
+                }
+                
+                fis.setVariable("emocionactual", emocionActual);
+                fis.setVariable("emocionprevia", emocionPrevia);
             }else{
                 fis = getFuzzySystemSinEmociones();
                 fis.setVariable("tiempo", estudiante.getTiempo());
