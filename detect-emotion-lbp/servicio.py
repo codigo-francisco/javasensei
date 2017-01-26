@@ -31,5 +31,6 @@ class emotion_service(object):
 detector = detect_emotion("data/modelo.m")
 daemon = Pyro4.Daemon("localhost", 25312)
 uri = daemon.register(emotion_service, "emotion_service", True)
+print("Ejecutando servicio")
 print("Uri: ", uri)
 daemon.requestLoop()

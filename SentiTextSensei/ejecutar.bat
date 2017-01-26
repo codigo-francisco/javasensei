@@ -1,1 +1,1 @@
-python D:\javasensei\SentiTextSensei\servicio.py
+python .\servicio.py
