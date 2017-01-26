@@ -21,7 +21,13 @@ public class TutorEvaluacion {
     private ModeloEstudiante estudiante;
     private Gson gson = new Gson();
     private EstudiantesManager managerDb;
+    private boolean emocionesEducativas = true;
 
+    public TutorEvaluacion(ModeloEstudiante estudiante, boolean emocionesEducativas) {
+        this(estudiante);
+        this.emocionesEducativas = emocionesEducativas;
+    }
+    
     public TutorEvaluacion(ModeloEstudiante estudiante) {
         this.estudiante = estudiante;
         managerDb = new EstudiantesManager(this.estudiante);
@@ -57,7 +63,7 @@ public class TutorEvaluacion {
      * @return Emocion obtenida en formato json
      */
     public String obtenerEmocionCarga() {
-        return prepararRespuesta(new CaminoCarga(estudiante), true);
+        return prepararRespuesta(new CaminoCarga(estudiante, emocionesEducativas), true);
     }
 
     /**
@@ -67,7 +73,7 @@ public class TutorEvaluacion {
      * @return Cadena Json que se enviara al tutor del lado del cliente.
      */
     public String obtenerEvaluacionPasoErroneo() {
-        return prepararRespuesta(new CaminoErroneoFuzzyLogic(estudiante));
+        return prepararRespuesta(new CaminoErroneoFuzzyLogic(estudiante, emocionesEducativas));
     }
 
     /**
@@ -77,7 +83,7 @@ public class TutorEvaluacion {
      * @return Cadena Json que se enviara al tutor del lado del cliente.
      */
     public String obtenerEvaluacionPasoSubOptimo() {
-        return prepararRespuesta(new CaminoSubOptimoFuzzyLogic(estudiante));
+        return prepararRespuesta(new CaminoSubOptimoFuzzyLogic(estudiante, emocionesEducativas));
     }
 
     /**
@@ -88,7 +94,7 @@ public class TutorEvaluacion {
      */
     public String obtenerEvaluacionPasoFinalSubOptimo() {
         managerDb.updateDataStudent();
-        return prepararRespuesta(new CaminoFinalSubOptimoFuzzyLogic(estudiante));
+        return prepararRespuesta(new CaminoFinalSubOptimoFuzzyLogic(estudiante, emocionesEducativas));
     }
 
     /**
@@ -99,7 +105,7 @@ public class TutorEvaluacion {
      */
     public String obtenerEvaluacionPasoFinalOptimo() {
         managerDb.updateDataStudent();
-        return prepararRespuesta(new CaminoFinalOptimoFuzzyLogic(estudiante));
+        return prepararRespuesta(new CaminoFinalOptimoFuzzyLogic(estudiante, emocionesEducativas));
     }
 
     /**
@@ -109,6 +115,6 @@ public class TutorEvaluacion {
      * @return Cadena Json que se enviara al tutor del lado del cliente.
      */
     public String obtenerEvaluacionPasoOptimo() {
-        return prepararRespuesta(new CaminoOptimoFuzzyLogic(estudiante));
+        return prepararRespuesta(new CaminoOptimoFuzzyLogic(estudiante, emocionesEducativas));
     }
 }

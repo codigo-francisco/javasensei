@@ -8,6 +8,9 @@ import numpy as np
 import cv2
 from detect_emotion import detect_emotion
 import os
+import warnings
+
+#warnings.simplefilter("ignore") #Ignorar el warning DeprecationWarning: Passing 1d arrays as data is deprecated in 0.17 and will raise ValueError in 0.19. Reshape your data either using X.reshape(-1, 1) if your data has a single feature or X.reshape(1, -1) if it contains a single sample. DeprecationWarning)
 
 class emotion_service(object):
     @Pyro4.expose

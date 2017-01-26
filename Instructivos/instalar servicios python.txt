@@ -1,0 +1,4 @@
+La ruta de instalacion de servicios python es:
+C:\Users\Administrador.SERVER\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+Colocar ahí los .bat que se deseen ejecutar (debidamente configurados), yo coloque accesos directos.

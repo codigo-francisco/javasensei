@@ -9,8 +9,8 @@ import net.sourceforge.jFuzzyLogic.FIS;
  */
 public class CaminoCarga extends CaminoFuzzyLogic {
     
-    public CaminoCarga(ModeloEstudiante estudiante) {
-        super(estudiante);
+    public CaminoCarga(ModeloEstudiante estudiante, boolean emocionesEducativas) {
+        super(estudiante, emocionesEducativas);
         if (estudiante.getActivarEmociones() && fuzzySystemConEmociones==null)
             fuzzySystemConEmociones = FIS.load(getFile());
         else if (fuzzySystemSinEmociones==null)
