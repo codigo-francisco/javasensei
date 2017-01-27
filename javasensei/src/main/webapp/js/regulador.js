@@ -30,8 +30,6 @@ function tomarFotografiaRegulador() {
                 }
             }
         });
-        
-        $("#boton_continuar").button("disable");
 
     });
 }
@@ -46,6 +44,9 @@ window.noKeyReturn = function (event) {
 };
 
 function iniciar_regulador() {
+    $("#boton_continuar").button("disable");
+    $("#check_repetir").checkboxradio("option", "disabled", false);
+    $("#boton_tomarfoto").button("enable");
     //Suponemos que la camara está activada llegado a este punto
     $("video")[1].src = $("video")[0].src;
     
@@ -81,13 +82,11 @@ function configurar_regulador() {
             var tiempo = $("#slider_intervalos").val() * 1000;
             //Activar temporizador_regulador
             temporizador_regulador = setInterval(tomarFotografiaRegulador, tiempo);
-            //Desactivar boton de toma de fotografias
             $("#boton_tomarfoto").button("disable");
         } else {
             //Desactivar temporizador_regulador
             clearInterval(temporizador_regulador);
             temporizador_regulador = -1;
-            //Activar boton de toma de fotografias
             $("#boton_tomarfoto").button("enable");
         }
     });
