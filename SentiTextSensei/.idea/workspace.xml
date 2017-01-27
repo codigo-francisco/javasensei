@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd7a80fb-bb92-4405-bcdf-2ba7dc64d7e7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/twitter_streaming.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/corpus_prog.csv" afterPath="$PROJECT_DIR$/data/corpus_prog.csv" />
-    </list>
+    <list default="true" id="cd7a80fb-bb92-4405-bcdf-2ba7dc64d7e7" name="Default" comment="" />
     <ignored path="SentiTextSensei.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,63 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="twitter_streaming.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/twitter_streaming.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="46" column="54" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
-              <folding>
-                <element signature="e#71#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tweets6.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data/tweets6.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7973">
-              <caret line="648" column="63" selection-start-line="648" selection-start-column="63" selection-end-line="648" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tweets.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/tweets.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60588">
-              <caret line="2754" column="0" selection-start-line="2754" selection-start-column="0" selection-end-line="2754" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tweets2.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/tweets2.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_servicio.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_servicio.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="servicio.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="servicio.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/servicio.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+            <state relative-caret-position="340">
+              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -89,7 +33,7 @@
       <file leaf-file-name="preprocess_corpus.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preprocess_corpus.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
+            <state relative-caret-position="357">
               <caret line="22" column="63" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="63" />
               <folding />
             </state>
@@ -106,7 +50,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -148,10 +92,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="443" />
-    <option name="y" value="18" />
-    <option name="width" value="1860" />
-    <option name="height" value="1318" />
+    <option name="x" value="429" />
+    <option name="y" value="244" />
+    <option name="width" value="1025" />
+    <option name="height" value="955" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -217,7 +161,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.23212537" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -228,7 +172,7 @@
       <recent name="C:\Users\oramas\PycharmProjects\SentiTextSensei" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.twitter_streaming">
+  <component name="RunManager" selected="Python.servicio">
     <configuration default="false" name="detect_text_emotion" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -563,15 +507,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="443" y="18" width="1860" height="1318" extended-state="0" />
-    <editor active="false" />
+    <frame x="429" y="244" width="1025" height="955" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18660812" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24113475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949513" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23206751" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21097046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18004866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -642,20 +586,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/sklearn/utils/validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="676" column="21" selection-start-line="676" selection-start-column="11" selection-end-line="676" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/sklearn/naive_bayes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="777" column="0" selection-start-line="777" selection-start-column="0" selection-end-line="777" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/sklearn/utils/validation.py" />
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/sklearn/naive_bayes.py" />
     <entry file="file://$PROJECT_DIR$/ejemplitos/__init__.py" />
     <entry file="file://$PROJECT_DIR$/ejemplitos/matriz.py" />
     <entry file="file://$PROJECT_DIR$/ejemplitos/reemplazar.py" />
@@ -665,22 +597,10 @@
     <entry file="file://$PROJECT_DIR$/ejemplitos/vectorized2.py" />
     <entry file="file://$PROJECT_DIR$/data/model.m" />
     <entry file="file://$PROJECT_DIR$/simple.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/Pyro4/naming.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="504" column="0" selection-start-line="504" selection-start-column="0" selection-end-line="504" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/Pyro4/naming.py" />
     <entry file="file://$PROJECT_DIR$/data/modelo.m" />
     <entry file="file://$PROJECT_DIR$/data/model.m" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/Pyro4/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1182" column="0" selection-start-line="1182" selection-start-column="0" selection-end-line="1182" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/Pyro4/core.py" />
     <entry file="file://$PROJECT_DIR$/data/general-tweets-test-tagged.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
@@ -753,14 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_servicio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/tweets3.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -784,7 +696,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocess_corpus.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
+        <state relative-caret-position="357">
           <caret line="22" column="63" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="63" />
           <folding />
         </state>
@@ -792,9 +704,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/tweets.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60588">
+        <state relative-caret-position="46818">
           <caret line="2754" column="0" selection-start-line="2754" selection-start-column="0" selection-end-line="2754" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -802,7 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,15 +720,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
           <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servicio.py">
+    <entry file="file://$PROJECT_DIR$/data/tweets6.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="17">
+          <caret line="648" column="63" selection-start-line="648" selection-start-column="63" selection-end-line="648" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -826,16 +734,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="563">
           <caret line="46" column="54" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
-          <folding>
-            <element signature="e#71#82#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/tweets6.txt">
+    <entry file="file://$PROJECT_DIR$/test_servicio.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7973">
-          <caret line="648" column="63" selection-start-line="648" selection-start-column="63" selection-end-line="648" selection-end-column="63" />
+        <state relative-caret-position="85">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servicio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding />
         </state>
       </provider>
