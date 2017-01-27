@@ -30,16 +30,16 @@ class detect_emotion(object):
         if loadFiles == True:
             self.model = cPickle.load(open(modelPath, "rb"))
             if XPath is not None:
-                self.X = cPickle.load(open(XPath, "rb"))
+                self.td = cPickle.load(open(XPath, "rb"))
             if yPath is not None:
-                self.y = cPickle.load(open(yPath, "rb"))
+                self.tl = cPickle.load(open(yPath, "rb"))
 
     def predict(self, image):
         returnValue = (False, "Rostro no encontrado")
-        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # convert to grayscale
+        # image = cv2.resize(image, (680, 460)) #Imagenes estandarizadas a 500 pixeles
+        gray = cv2.imdecode(image, cv2.IMREAD_GRAYSCALE)
         clahe_image = self.clahe.apply(gray)
         result, img = self.__get_image__(clahe_image)
-
         if result:
             y = self.model.predict(np.array(img))
             returnValue = (True, self.emociones[y[0]])
@@ -49,7 +49,6 @@ class detect_emotion(object):
     def __get_image__(self, image): #get_landmark
         landmarks_vectorised = []
         result = True
-        image = cv2.resize(image, (500, 500)) #Imagenes estandarizadas a 500 pixeles
 
         detections = self.detector(image, 1)
         for k, d in enumerate(detections):  # For all detected face instances individually
@@ -136,6 +135,7 @@ class detect_emotion(object):
         cPickle.dump(prediction_data, open("data/pd.x", "wb"))
         cPickle.dump(prediction_labels, open("data/pl.y", "wb"))
         cPickle.dump(svm, open("data/modelo.m","wb"))
+        return detect
 
     @staticmethod
     def get_files(emotion):  # Define function to get file list, randomly shuffle it and split 80/20
@@ -148,11 +148,11 @@ class detect_emotion(object):
         return training, prediction
 
     def crossValidation(self, cv=10):
-        scores = cross_val_score(self.model, self.X, self.y, cv=cv)
+        scores = cross_val_score(self.model, self.td, self.tl, cv=cv)
         print("Precisión: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
         # Matriz de confusión
-        yTrue = map(lambda index: self.emociones[index], self.y)
-        yPred = map(lambda index: self.emociones[index], self.model.predict(self.X))
+        yTrue = map(lambda index: self.emociones[index], self.tl)
+        yPred = map(lambda index: self.emociones[index], self.model.predict(self.td))
         cm = confusion_matrix(yTrue, yPred, self.emociones)
         print(cm)
 
