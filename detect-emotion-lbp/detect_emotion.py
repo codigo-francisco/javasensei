@@ -36,13 +36,16 @@ class detect_emotion(object):
 
     def predict(self, image):
         returnValue = (False, "Rostro no encontrado")
-        # image = cv2.resize(image, (680, 460)) #Imagenes estandarizadas a 500 pixeles
-        gray = cv2.imdecode(image, cv2.IMREAD_GRAYSCALE)
-        clahe_image = self.clahe.apply(gray)
-        result, img = self.__get_image__(clahe_image)
-        if result:
-            y = self.model.predict(np.array(img))
-            returnValue = (True, self.emociones[y[0]])
+
+        try:
+            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            clahe_image = self.clahe.apply(gray)
+            result, img = self.__get_image__(clahe_image)
+            if result:
+                y = self.model.predict(np.array(img))
+                returnValue = (True, self.emociones[y[0]])
+        except:
+            print("Ha ocurrido un error en la detección de rostros")
 
         return returnValue
 

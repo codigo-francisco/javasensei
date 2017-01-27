@@ -4,7 +4,8 @@
     "tipo":"instruccionesiniciales",
     "instruccionesejercicio": [
         "El siguiente ejercicio está relacionado con los estatutos de selección.",
-        "Los programas utilizan instrucciones de selección para elegir entre los cursos alternativos de acción."       
+        "Un estatuto de selección es una instruccion que permite elegir entre 2 o más caminos. En Java contamos con los siguientes estatutos de selección",
+        "<table style='border-collapse:collapse;border-spacing:0;border-color:#999'><tr><th style='font-family:Georgia, serif !important;;font-size:small;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4'>Instrucción</th><th style='font-family:Georgia, serif !important;;font-size:small;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4'>Descripción</th><th style='font-family:Georgia, serif !important;;font-size:small;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;vertical-align:top'>Forma de Uso</th></tr><tr><td style='font-family:Georgia, serif !important;;font-size:small;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#D2E4FC;font-weight:bold'>if</td><td style='font-family:Georgia, serif !important;;font-size:small;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#D2E4FC'>Evalúa una condición,si es verdadera ejecuta<br>el código dentro de él</td><td style='font-family:Georgia, serif !important;;font-size:small;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#D2E4FC;vertical-align:top'>if (condición) {<br>  //codigo<br>}</td></tr><tr><td style='font-family:Georgia, serif !important;;font-size:small;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;font-weight:bold;vertical-align:top'>if - else</td><td style='font-family:Georgia, serif !important;;font-size:small;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;vertical-align:top'>Evalúa una condición,si es verdadera ejecuta<br>el código dentro del primer bloque en caso de<br>que sea falsa ejecuta el código del segundo bloque</td><td style='font-family:Georgia, serif !important;;font-size:small;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;vertical-align:top'>if (condición) {<br>  //primer bloque de código<br>}else{<br>  //segundo bloque de código<br>}</td></tr><tr><td style='font-family:Georgia, serif !important;;font-size:small;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#D2E4FC;font-weight:bold;vertical-align:top'>if - else if - else</td><td style='font-family:Georgia, serif !important;;font-size:small;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#D2E4FC;vertical-align:top'>Evalúa una condición, si es verdadera ejecuta el<br>código en el primer bloque, en caso de ser falsa<br>evalúa cada else if hasta encontrar uno que sea<br>verdadero si todos los else if resultan falsos<br>ejecuta el else</td><td style='font-family:Georgia, serif !important;;font-size:small;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#D2E4FC;vertical-align:top'>if (condición){<br>  //primer bloque de código<br>else  if (otra_condición){<br>  //bloque de codigo que se ejecutará<br>  //si es verdadero<br>else{<br>  //Código que se ejecutará si todas<br>  //las evaluaciones anteriores resultan<br>  //falsas<br>}</td></tr><tr><td style='font-family:Georgia, serif !important;;font-size:small;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;font-weight:bold;vertical-align:top'>switch</td><td style='font-family:Georgia, serif !important;;font-size:small;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;vertical-align:top'>Evalúa una condición y ejecuta los casos que<br>cumplan con la condición</td><td style='font-family:Georgia, serif !important;;font-size:small;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;vertical-align:top'>switch(condición){<br>   caso1:<br>      //bloque de codigo<br>      break;<br>   default:<br>      //codigo que se ejecuta si ningún<br>      //caso fue ejecutado, opcional<br>}</td></tr></table>"
     ],
     "opciones": [
         {
@@ -31,7 +32,7 @@
 						"texto": "if, if else, switch",
 						"paso": 1,
 						"tipo": "pasooptimo",
-						"instruccion": "Paso 2 de 4.  Completa la oración.",
+						"instruccion": "Paso 2 de 4.  ¿Qué palabra iría en el cuadro blanco?. Completa la oración con alguno de los botones.",
 						"presentacion": [
 							"La instrucción <input type='text' readonly> realiza (selecciona) una acción si la condición es verdadera, o evita la acción si la condición es falsa."
 						],
@@ -54,7 +55,7 @@
 						"tipo": "pasooptimo",
 						"instruccion": "Paso 3 de 4.  Completa la oración.",
 						"presentacion": [
-							"La instrucción <input type='text' readonly> realiza una acción si la condición es verdadera, o realiza una acción distinta si la condición es falsa."
+							"La instrucción <input type='text' readonly> realiza una acción si la condición es verdadera u otra acción distinta si la condición es falsa."
 						],
 						"textoEmocional": {
 							"neutral": "La respuesta es correcta.",
@@ -73,9 +74,10 @@
 								"texto": "if",
 								"paso": 3,
 								"tipo": "pasoerroneo",
-								"instruccion": "La respuesta es incorrecta. La instrucción <i>if</i> realiza una acción si la condición es verdadera, o evita la acción si la condición es falsa.",
+								"instruccion": "La respuesta es incorrecta. Lee la explicación y retrocede.",
 								"presentacion": [
-									"La instrucción <input type='text' readonly value='if' class='errorTracing'> realiza una acción si la condición es verdadera, o realiza una acción distinta si la condición es falsa."
+									"La instrucción <input type='text' readonly value='if' class='errorTracing'> realiza una acción si la condición es verdadera, o realiza una acción distinta si la condición es falsa.",
+                                                                        "La instrucción <i>if</i> realiza una acción si la condición es verdadera y no realiza algúna acción en especifico si la condición es falsa."
 								],
 								"textoEmocional": {
 									"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
@@ -118,9 +120,10 @@
 									"texto": "if",
 									"paso": 5,
 									"tipo": "pasoerroneo",
-									"instruccion": "La respuesta es incorrecta. La instrucción <i>if</i> realiza una acción si la condición es verdadera, o evita la acción si la condición es falsa.",
+									"instruccion": "La respuesta es incorrecta.",
 									"presentacion": [
-										"La instrucción <input type='text' readonly value='if' class='errorTracing'> es una estructura de selección múltiple ya que selecciona de entre diversas acciones distintas, dependiendo del valor de una expresión."
+										"La instrucción <input type='text' readonly value='if' class='errorTracing'> es una estructura de selección múltiple ya que selecciona de entre diversas acciones distintas, dependiendo del valor de una expresión.",
+                                                                                "La instrucción <i>if</i> realiza una acción si la condición es verdadera, o evita la acción si la condición es falsa."
 									],
 									"textoEmocional": {
 										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
@@ -142,12 +145,12 @@
 									"texto": "if else",
 									"paso": 6,
 									"tipo": "pasoerroneo",
-									"instruccion": "La respuesta es incorrecta. La instrucción if...else de permite especificar una acción a realizar cuando la condición es verdadera, y otra distinta cuando es falsa.",
+									"instruccion": "La respuesta es incorrecta.",
 									"presentacion": [
 										
-										"La instrucción <input type='text' readonly value='if else' class='errorTracing'> es una estructura de selección múltiple ya que selecciona de entre diversas acciones distintas, dependiendo del valor de una expresión."
-									
-									],
+										"La instrucción <input type='text' readonly value='if else' class='errorTracing'> es una estructura de selección múltiple ya que selecciona de entre diversas acciones distintas, dependiendo del valor de una expresión.",
+                                                                                "La instrucción if...else permite especificar una acción a realizar cuando la condición es verdadera, y otra distinta cuando es falsa"
+                                                                        ],
 									"textoEmocional": {
 										"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
 										"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
@@ -168,11 +171,10 @@
 									"texto": "If Then",
 									"paso": 7,
 									"tipo": "pasoerroneo",
-									"instruccion": "La respuesta es incorrecta. La instrucción <i>If Then</i> no pertenece al lenguaje Java.",
+									"instruccion": "La respuesta es incorrecta.",
 									"presentacion": [
-
-										
-										"La instrucción <input type='text' readonly value='If Then' class='errorTracing'> es una estructura de selección múltiple ya que selecciona de entre diversas acciones distintas, dependiendo del valor de una expresión."
+										"La instrucción <input type='text' readonly value='If Then' class='errorTracing'> es una estructura de selección múltiple ya que selecciona de entre diversas acciones distintas, dependiendo del valor de una expresión.",
+                                                                                "La instrucción <i>If Then</i> no existe en el lenguaje Java :("
 									
 									],
 									"textoEmocional": {
@@ -196,7 +198,7 @@
 									"texto": "switch",
 									"paso": 8,
 									"tipo": "pasofinaloptimo",
-									"instruccion": "Has finalizado el ejercicio. Selecciona otro del menú de opciones. ",
+									"instruccion": "Has finalizado el ejercicio, felicidades. Selecciona otro del menú de opciones. ",
 									"presentacion": [
 
 									],
@@ -222,9 +224,10 @@
 								"texto": "If Then",
 								"paso": 9,
 								"tipo": "pasoerroneo",
-								"instruccion": "La respuesta es incorrecta. La instrucción <i>If Then</i> no pertenece al lenguaje Java.",
+								"instruccion": "La respuesta es incorrecta.",
 								"presentacion": [
-									"La instrucción <input type='text' readonly value='If Then' class='errorTracing'> realiza una acción si la condición es verdadera, o realiza una acción distinta si la condición es falsa."
+									"La instrucción <input type='text' readonly value='If Then' class='errorTracing'> realiza una acción si la condición es verdadera, o realiza una acción distinta si la condición es falsa.",
+                                                                        "La instrucción <i>If Then</i> no pertenece al lenguaje Java."
 								],
 								"textoEmocional": {
 									"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
@@ -245,9 +248,10 @@
 								"texto": "switch",
 								"paso": 10,
 								"tipo": "pasoerroneo",
-								"instruccion": "La respuesta es incorrecta. La instrucción <i>switch</i> realiza una de entre varias acciones distintas, dependiendo del valor de una expresión",
+								"instruccion": "La respuesta es incorrecta.",
 								"presentacion": [
-									"La instrucción <input type='text' readonly value='switch' class='errorTracing'> realiza una acción si la condición es verdadera, o realiza una acción distinta si la condición es falsa."
+									"La instrucción <input type='text' readonly value='switch' class='errorTracing'> realiza una acción si la condición es verdadera, o realiza una acción distinta si la condición es falsa.",
+                                                                        "La instrucción <i>switch</i> realiza una de entre varias acciones distintas, dependiendo del valor de una expresión"
 								],
 								"textoEmocional": {
 									"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
@@ -270,9 +274,10 @@
 						"texto": "if else",
 						"paso": 11,
 						"tipo": "pasoerroneo",
-						"instruccion": "La respuesta es incorrecta. La instrucción if...else de permite especificar una acción a realizar cuando la condición es verdadera, y otra distinta cuando es falsa.",
+						"instruccion": "La respuesta es incorrecta.",
 						"presentacion": [
-							"La instrucción <input type='text' readonly value='if else' class='errorTracing'> realiza (selecciona) una acción si la condición es verdadera, o evita la acción si la condición es falsa."
+							"La instrucción <input type='text' readonly value='if else' class='errorTracing'> realiza (selecciona) una acción si la condición es verdadera, o evita la acción si la condición es falsa.",
+                                                        "La instrucción if...else de permite especificar una acción a realizar cuando la condición es verdadera, y otra distinta cuando es falsa."
 						],
 						"textoEmocional": {
 							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
@@ -294,9 +299,10 @@
 						"texto": "If Then",
 						"paso": 12,
 						"tipo": "pasoerroneo",
-						 "instruccion": "La respuesta es incorrecta. La instrucción <i>If Then</i> no pertenece al lenguaje Java.",
+						 "instruccion": "La respuesta es incorrecta.",
 						"presentacion": [
-							"La instrucción <input type='text' readonly value='If Then' class='errorTracing'> realiza (selecciona) una acción si la condición es verdadera, o evita la acción si la condición es falsa."
+							"La instrucción <input type='text' readonly value='If Then' class='errorTracing'> realiza (selecciona) una acción si la condición es verdadera, o evita la acción si la condición es falsa.",
+                                                        "La instrucción <i>If Then</i> no pertenece al lenguaje Java."
 						],
 						"textoEmocional": {
 							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
@@ -317,9 +323,10 @@
 						"texto": "switch",
 						"paso": 13,
 						"tipo": "pasoerroneo",
-						"instruccion": "La respuesta es incorrecta. La instrucción <i>switch</i> realiza una de entre varias acciones distintas, dependiendo del valor de una expresión",
+						"instruccion": "La respuesta es incorrecta.",
 						"presentacion": [
-							"La instrucción <input type='text' readonly value='switch' class='errorTracing'> realiza (selecciona) una acción si la condición es verdadera, o evita la acción si la condición es falsa."
+							"La instrucción <input type='text' readonly value='switch' class='errorTracing'> realiza (selecciona) una acción si la condición es verdadera, o evita la acción si la condición es falsa.",
+                                                        "La instrucción <i>switch</i> realiza una de entre varias acciones distintas, dependiendo del valor de una expresión"
 						],
 						"textoEmocional": {
 							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
@@ -342,9 +349,9 @@
 						"texto": "for, if, switch",
 						"paso": 14,
 						"tipo": "pasoerroneo",
-						"instruccion": "La respuesta es incorrecta. La instrucción <i>for</i> es una instrucción de repetición.",
+						"instruccion": "La respuesta es incorrecta.",
 						"presentacion": [
-							"¿Cuáles son las instrucciones de selección con las que cuenta Java?"
+							"Aunque las instrucciones <i>for</i> evalúa una condición, su proposito es repetir instrucciones, no elegir caminos posibles."
 						],
 						"textoEmocional": {
 							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
@@ -366,9 +373,9 @@
 						"texto": "if, for, while",
 						"paso": 15,
 						"tipo": "pasoerroneo",
-						 "instruccion": "La respuesta es incorrecta. Las instrucciones <i>for</i> y <i>while</i> son instrucciones de repetición.",
+						 "instruccion": "La respuesta es incorrecta.",
 						"presentacion": [
-							"¿Cuáles son las instrucciones de selección con las que cuenta Java?"
+							"Aunque las instrucciones <i>for</i> y <i>while</i> evalúan una condición, sus propositos son el de repetir instrucciones, no elegir caminos posibles."
 						],
 						"textoEmocional": {
 							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
@@ -389,9 +396,9 @@
 						"texto": "switch, for, while",
 						"paso": 16,
 						"tipo": "pasoerroneo",
-						"instruccion": "La respuesta es incorrecta. Las instrucciones <i>for</i> y <i>while</i> son instrucciones de repetición.",
+						"instruccion": "La respuesta es incorrecta.",
 						"presentacion": [
-							"¿Cuáles son las instrucciones de selección con las que cuenta Java?"
+							"Aunque las instrucciones <i>for</i> y <i>while</i> evalúan una condición, sus propositos son el de repetir instrucciones, no elegir caminos posibles."
 						],
 						"textoEmocional": {
 							"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",

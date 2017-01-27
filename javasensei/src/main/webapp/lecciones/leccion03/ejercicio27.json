@@ -4,7 +4,8 @@
     "instruccionesejercicio": 
     [
 		"Este ejercicio esta relacionado con el estatuto de selección <i>if simple</i>.", 
-		"La instrucción if simple evalúa una condición utilizando una expresión relacional. Si la  condición es verdadera se ejecuta una instrucción o un conjunto de instrucciones que estén definidas en un bloque. En caso que la condición sea falsa, se continúa con la siguiente instrucción del programa."
+		"La instrucción if simple evalúa una condición utilizando una expresión relacional. Si la  condición es verdadera se ejecuta una instrucción o un conjunto de instrucciones que estén definidas en un bloque. En caso que la condición sea falsa, se continúa con la siguiente instrucción del programa.",
+                "<center><img src='img/curso/decision.png' style='width:100%;height:50%'></center>"
     ],
     "opciones": 
     [
@@ -45,7 +46,8 @@
 						"int x = 10000;",
 						"\tif( x  >  5000 )", 
 						"\t\tx = 1000;",
-						"System.out.println(x);"
+						"System.out.println(x);",
+                                                "//Recuerda, estás el valor de x es 10000 y evaluas si x es mayor que 5000"
                     ],
                     "textoEmocional": {
                         "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
@@ -71,7 +73,8 @@
 						"int x = 10000;",
 						"\tif( x  >  5000 )", 
 						"\t\tx = 1000;",
-						"System.out.println(x);"
+						"System.out.println(x);",
+                                                "//Recuerda, estás el valor de x es 10000 y evaluas si x es mayor que 5000"
                     ],
                     "textoEmocional": {
                         "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
@@ -96,7 +99,8 @@
 						"int x = 10000;",
 						"\tif( x  >  5000 )", 
 						"\t\tx = 1000;",
-						"System.out.println(x);"
+						"System.out.println(x);",
+                                                "//Recuerda, estás el valor de x es 10000 y evaluas si x es mayor que 5000"
 
                     ],
                     "textoEmocional": {
@@ -123,7 +127,8 @@
 						"int x = 10000;",
 						"\tif( x  >  5000 )", 
 						"\t\tx = 1000;",
-						"System.out.println(x);"
+						"System.out.println(x);",
+                                                "//Recuerda, estás el valor de x es 10000 y evaluas si x es mayor que 5000"
 
                     ],
                     "textoEmocional": {

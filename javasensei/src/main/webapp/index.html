@@ -238,10 +238,11 @@
                 $("#form_opinion").submit(function () {
                     texto = $("#txtAreaOpinion").val();
                     texto = texto.trim();
-                    result = /^[A-Za-zÀ-ž\s\d]{10,}$/.test(texto);
+                    result = /^[A-Za-zÀ-ž\s\d]{5,}$/.test(texto);
                     
                     if (!result){
-                        alert("Por favor ingrese la opinion correctamente, sin espacios en blanco y por lo menos 10 caracteres");
+                        alert("Por favor ingrese una opcion con al menos 5 caracteres");
+                        return false;
                     }
                     
                     console.log("Opinión:" + $("#txtAreaOpinion").val());
@@ -567,13 +568,13 @@
                             <form id="form_opinion">
                                 <div id="opinion_ejercicio">
                                     <label for="txtAreaOpinion"><b>Escribe tu opinión acerca de este ejercicio :</b></label>
-                                    <textarea id="txtAreaOpinion" rows="10" cols="25" required title="Escribe algo por favor" placeholder="Escribe tu opinión aquí..."></textarea>
+                                    <textarea id="txtAreaOpinion" rows="10" cols="25" required title="Escribe algo que tengá más de 5 caracteres" placeholder="Escribe tu opinión aquí..."></textarea>
                                 </div>
                                 <div  id="button_opinion">
                                     <input type="submit" value="Enviar comentario" />
                                 </div>
                             </form>
-                            <p id="mensaje_opinion">Gracias por dar tu opinion.</p>
+                            <p style="display: none" id="mensaje_opinion">Gracias por dar tu opinion.</p>
                         </div>
                     </div>
 

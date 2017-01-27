@@ -127,6 +127,7 @@ example_tracing_sensei.prototype = {
         contexto.progressbar.hide();
     },
     construir_ejercicio: function (data) { //Construye todo el ejercicio junto con el example_tracing
+        $("#mensaje_opinion").hide();
         this.areatrabajo.show();
         this.controles.show();
         this.progressbar.show();

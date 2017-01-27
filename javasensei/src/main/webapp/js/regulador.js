@@ -30,6 +30,8 @@ function tomarFotografiaRegulador() {
                 }
             }
         });
+        
+        $("#boton_continuar").button("disable");
 
     });
 }
