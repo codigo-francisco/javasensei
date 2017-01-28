@@ -65,7 +65,7 @@
                     },
                     "opciones": []
                 },
-				{
+		{
                     "texto": "Eres menor de edad",
                     "paso": 2,
                     "tipo": "pasofinaloptimo",

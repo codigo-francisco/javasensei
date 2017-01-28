@@ -38,7 +38,7 @@ public class ExamenesManager {
                 .getContentFile("examenes/respuestas_pretestB.json")));
         
         examenesPreTest.put("C", (DBObject) (DBObject) JSON.parse(FileHelper.getInstance()
-                .getContentFile("examenes/respuestas_posttest.json")));
+                .getContentFile("examenes/respuestas_pretestC.json")));
         
         //Posttest
         examenesPostTest.put("A", (DBObject) JSON.parse(FileHelper.getInstance()
@@ -46,7 +46,7 @@ public class ExamenesManager {
         examenesPostTest.put("B", (DBObject) JSON.parse(FileHelper.getInstance()
                 .getContentFile("examenes/respuestas_posttestB.json")));
         examenesPostTest.put("C", (DBObject) JSON.parse(FileHelper.getInstance()
-                .getContentFile("examenes/respuestas_posttest.json")));        
+                .getContentFile("examenes/respuestas_posttestC.json")));        
     }
     
     public String calificarExamen(String idFacebook, String jsonRespuestas, String tipoCuestionario, TipoExamen tipoExamen) {

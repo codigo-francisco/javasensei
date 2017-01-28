@@ -60,13 +60,11 @@
 
                         $("#contenido").load(url, function () {
                             //Agregar radio E
-                            var preguntas = $("div").filter(function () {
-                                return this.id.match(/question\d+/);
-                            });
-
-                            preguntas.find("ol").each(function (index, item) {
-                                var name = "q" + (index + 1);
+                            $("ol").each(function (index, item) {
+                                var input = $(item).find("li input");
+                                var name = input.prop("name");
                                 var id = name + "e";
+                                
                                 $(item).append(
                                         $("<li>")
                                         .append(
@@ -76,10 +74,10 @@
                                                 .prop("", id)
                                                 .val("e")
                                                 ).append(
-                                        $("<label>")
-                                        .prop("for", id)
-                                        .text("no sé la respuesta")
-                                        )
+                                            $("<label>")
+                                                .prop("for", id)
+                                                .text("no sé la respuesta")
+                                            )
                                         );
                             });
 
@@ -98,7 +96,7 @@
                         var respuesta = $(obj).find("input:checked");
                         var o = {};
                         o.pregunta = respuesta.prop("name");
-                        o.respuesta = .val();
+                        o.respuesta = respuesta.val();
                         if (respuesta.val() == null) {
                             alert("¡Por favor responde todas las preguntas del cuestionario!");
                             band = false;
