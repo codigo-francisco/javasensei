@@ -12,6 +12,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import javasensei.db.managments.ExamenesManager.TipoExamen;
 
 /**
  * REST Web Service
@@ -38,17 +39,8 @@ public class ExamenesRest {
             @FormParam("json") String jsonRespuestas,
             @FormParam("tipoExamen") String tipoExamen){
         
-        return new ExamenesManager().calificarExamenPreTest(idFacebook, jsonRespuestas,tipoExamen);
-    }
-    
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("realizoExamenPreTest")
-    public String realizoExamenPreTest(
-            @QueryParam("idFacebook") String idFacebook){
-        return new ExamenesManager().realizoExamenPreTest(idFacebook);
-    }
-    
+        return new ExamenesManager().calificarExamen(idFacebook, jsonRespuestas,tipoExamen,TipoExamen.PRETEST);
+    }    
     
     @POST
     @Produces(MediaType.APPLICATION_JSON)
@@ -58,7 +50,15 @@ public class ExamenesRest {
             @FormParam("json") String jsonRespuestas,
             @FormParam("tipoExamen") String tipoExamen){
         
-        return new ExamenesManager().calificarExamenPostTest(idFacebook, jsonRespuestas,tipoExamen);
+        return new ExamenesManager().calificarExamen(idFacebook, jsonRespuestas,tipoExamen,TipoExamen.POSTTEST);
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("realizoExamenPreTest")
+    public String realizoExamenPreTest(
+            @QueryParam("idFacebook") String idFacebook){
+        return new ExamenesManager().realizoExamen(idFacebook, ExamenesManager.pretestCollection);
     }
     
     @GET
@@ -66,6 +66,6 @@ public class ExamenesRest {
     @Path("realizoExamenPostTest")
     public String realizoExamenPostTest(
             @QueryParam("idFacebook") String idFacebook){
-        return new ExamenesManager().realizoExamenPostTest(idFacebook);
+        return new ExamenesManager().realizoExamen(idFacebook, ExamenesManager.posttestCollection);
     }
 }

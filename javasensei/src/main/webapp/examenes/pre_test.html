@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Examen pre-test.  Java Sensei 2016.</title>
+        <title>Examen pre-test.  Java Sensei 2017.</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="shortcut icon" href="../img/logo.jpg">
@@ -73,7 +73,7 @@
                                                 $("<input>")
                                                 .prop("type", "radio")
                                                 .prop("name", name)
-                                                .prop("id", id)
+                                                .prop("", id)
                                                 .val("e")
                                                 ).append(
                                         $("<label>")
@@ -98,7 +98,7 @@
                         var respuesta = $(obj).find("input:checked");
                         var o = {};
                         o.pregunta = respuesta.prop("name");
-                        o.respuesta = respuesta.val();
+                        o.respuesta = .val();
                         if (respuesta.val() == null) {
                             alert("¡Por favor responde todas las preguntas del cuestionario!");
                             band = false;

@@ -3,209 +3,279 @@
 <h2>Instrucciones:  contesta las siguientes preguntas de opción múltiple seg&uacute;n corresponda.</h2>
 
 <!--Pregunta 1-->
-<!--Concepto: crear, compilar y ejecutar un programa-->
+<!--Concepto: Comando para compilar y ejecutar una aplicación en Java-->
 <hr/>
-<p class="question">1. ¿Cuál es el comando del JDK que compila una aplicación en Java?</p>
+<p class="question">1. ¿Con qué comandos del JDK (Kit de Desarrollo de Java) se compila y ejecuta la clase Bienvenido?</p>
+<pre><code class="language-java">
+public class Bienvenido {
+  public static void main( String[] args ){ 
+    System.out.println("¡Bienvenido!");
+  }
+}
+</code></pre>
 <div id="question1">
     <ol>
-        <li><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">javac</label></li>
-        <li><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">java</label></li>            
-        <li><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">run</label></li>            
-        <li><input type="radio" name="q1" value="d" id="q1d"><label for="q1d">execute</label></li>
+        <li><input type="radio" name="d1" value="a" id="d1a"><label for="d1a">java, javac</label></li>
+        <li><input type="radio" name="d1" value="b" id="d1b"><label for="d1b">javac, java</label></li>            
+        <li><input type="radio" name="d1" value="c" id="d1c"><label for="d1c">javac, run</label></li>            
+        <li><input type="radio" name="d1" value="d" id="d1d"><label for="d1d">java, run</label></li>
     </ol>
 </div>
 
 <!--Pregunta 2-->
-<!--Concepto: estructura del método main-->
+<!--Concepto: regla para formar un identificador-->
 <hr/>
-<p class="question">2. Dado el siguiente código, selecciona la opción que define al método main para la clase Bienvenido.</p>
-<pre><code class="language-java">
-public class Bienvenido {
-  …………(String[] args)
-}</code></pre>
+<p class="question">2. ¿Cuál de los siguientes identificadores no es válido en el lenguaje de programación Java?.</p>
 <div id="question2">
     <ol>
-        <li><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">void public main</label></li>          
-        <li><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">public void main</label></li>            
-        <li><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">public static void main</label></li>            
-        <li><input type="radio" name="q2" value="d" id="q2d"><label for="q2d">public static void Main</label></li>
+        <li><input type="radio" name="d2" value="a" id="d2a"><label for="d2a">RDD2</label></li>          
+        <li><input type="radio" name="d2" value="b" id="d2b"><label for="d2b">3CPO</label></li>            
+        <li><input type="radio" name="d2" value="c" id="d2c"><label for="d2c">Yoda</label></li>            
+        <li><input type="radio" name="d2" value="d" id="d2d"><label for="d2d">Java_Sensei</label></li>
     </ol>
 </div>
 
 <!--Pregunta 3-->
-<!--Concepto: regla sintáctica para formar un identificador-->
+<!--Concepto: declaración y asignación de un valor a una variable-->
 <hr/>
-<p class="question">3. ¿Cuál de los siguientes identificadores no es válido en el lenguaje de programación Java?</p>
+<p class="question">3. De las siguientes declaraciones de variable señala la que es correcta.</p>
 <div id="question3">
     <ol>
-        <li><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">RDD2</label></li>          
-        <li><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">3CPO</label></li>            
-        <li><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Yoda</label></li>            
-        <li><input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Java_Sensei</label></li>
+        <li><input type="radio" name="d3" value="a" id="d3a"><label for="d3a">edad = int(20);</label></li>          
+        <li><input type="radio" name="d3" value="b" id="d3b"><label for="d3b">int edad = 20.0;</label></li>            
+        <li><input type="radio" name="d3" value="c" id="d3c"><label for="d3c">int edad = 12;</label></li>            
+        <li><input type="radio" name="d3" value="d" id="d3d"><label for="d3d">int 12 = edad;</label></li>
     </ol>
 </div>
 
 <!--Pregunta 4-->
-<!--Concepto: declaración de variables-->
+<!--Concepto: instrucción de asignación-->
 <hr/>
-<p class="question">4. De las siguientes opciones, señala las declaraciones de variables que son correctas.</p>
+<p class="question">4. ¿Cuál de las siguientes sentencias de asignación es válida? (asumiendo que las variables enteras x e y están declaradas correctamente)</p>
 <div id="question4">
     <ol>
-        <li><input type="radio" name="q4" value="a" id="q4a"><label for="q4a">int i; j; k;</label></li>          
-        <li><input type="radio" name="q4" value="b" id="q4b"><label for="q4b">int i, j, k;</label></li>            
-        <li><input type="radio" name="q4" value="c" id="q4c"><label for="q4c">int i, int j, int k;</label></li>            
-        <li><input type="radio" name="q4" value="d" id="q4d"><label for="q4d">int i, j, k</label></li>
+        <li><input type="radio" name="d4" value="a" id="d4a"><label for="d4a">12 = x + y;</label></li>          
+        <li><input type="radio" name="d4" value="b" id="d4b"><label for="d4b">x + 12 = y;</label></li>            
+        <li><input type="radio" name="d4" value="c" id="d4c"><label for="d4c">y + x = 12;</label></li>            
+        <li><input type="radio" name="d4" value="d" id="d4d"><label for="d4d">y = x + 12;</label></li>
     </ol>
 </div>
 
 <!--Pregunta 5-->
-<!--Concepto: asignación de valores a una variable-->
+<!--Concepto: expresiones lógicas-->
 <hr/>
-<p class="question">5. De las siguientes declaraciones de variable, señala la que es correcta.</p>
+<p class="question">5. Dado el siguiente fragmento de código en Java, ¿qué se imprime en la consola de salida?</p>
+<pre><code class="language-java">
+boolean a = true;
+boolean b = false;
+System.out.println( a || b );
+System.out.println( a && b ); 
+</code></pre>
+
 <div id="question5">
     <ol>
-        <li><input type="radio" name="q5" value="a" id="q5a"><label for="q5a">int 18 = edad;</label></li>          
-        <li><input type="radio" name="q5" value="b" id="q5b"><label for="q5b">int edad = 20;</label></li>            
-        <li><input type="radio" name="q5" value="c" id="q5c"><label for="q5c">int precio = 84.6;</label></li>            
-        <li><input type="radio" name="q5" value="d" id="q5d"><label for="q5d">int precio = 84,6;</label></li>
+        <li><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">true true</label></li>          
+        <li><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">true false</label></li>            
+        <li><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">false true</label></li>            
+        <li><input type="radio" name="q1" value="d" id="q1d"><label for="q1d">false false</label></li>
     </ol>
 </div>
 
 <!--Pregunta 6-->
-<!--Concepto: operadores aritméticos-->
+<!--Concepto: tipos de estatutos de selección-->
 <hr/>
-<p class="question">6. ¿Qué se imprime en la consola de salida cuando se ejecuta el siguiente fragmento de código?</p>        
-<pre><code class="language-java">
-int x = 3; int y = 10;
-System.out.println( y % x );</code></pre>
+<p class="question">6. De las siguientes opciones, ¿Cuáles son las instrucciones de selección con las que cuenta Java?</p>        
 <div id="question6">
     <ol>
-        <li><input type="radio" name="q6" value="a" id="q6a"><label for="q6a">3</label></li>          
-        <li><input type="radio" name="q6" value="b" id="q6b"><label for="q6b">2</label></li>            
-        <li><input type="radio" name="q6" value="c" id="q6c"><label for="q6c">1</label></li>            
-        <li><input type="radio" name="q6" value="d" id="q6d"><label for="q6d">0</label></li>
+        <li><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">if, if else, switch</label></li>          
+        <li><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">for, if, switch</label></li>            
+        <li><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">if, for, while</label></li>            
+        <li><input type="radio" name="q2" value="d" id="q2d"><label for="q2d">switch, for, while</label></li>
     </ol>
 </div>
 
 <!--Pregunta 7-->
 <!--Concepto: estatutos de selección if simple-->
 <hr/>
-<p class="question">7. Dado el siguiente fragmento de código en Java, ¿Cuál es el valor final para la variable entera x?</p>
+<p class="question">7. Dado el siguiente fragmento de código en Java,  ¿Cuál es el valor final para la variable entera x?</p>
 <pre><code class="language-java">
-int x = 10000;
-if( x  >  5000 ) 
-     x = 1000;
-System.out.println(x);</code></pre>
+int x = 1000;
+if( x  >  5000 ) { 
+     x = 10000;
+}
+System.out.println( x );
+</code></pre>
 <div id="question7">
     <ol>
-        <li><input type="radio" name="q7" value="a" id="q7a"><label for="q7a">10000</label></li>          
-        <li><input type="radio" name="q7" value="b" id="q7b"><label for="q7b">5000</label></li>            
-        <li><input type="radio" name="q7" value="c" id="q7c"><label for="q7c">1000</label></li>            
-        <li><input type="radio" name="q7" value="d" id="q7d"><label for="q7d">500</label></li>
+        <li><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">1000</label></li>          
+        <li><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">5000</label></li>            
+        <li><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">10000</label></li>            
+        <li><input type="radio" name="q3" value="d" id="q3d"><label for="q3d">500</label></li>
     </ol>    
 </div>
 
 <!--Pregunta 8-->
-<!--Concepto: estatutos de selección if/else-->
+<!--Concepto: estatutos de selección if simple-->
 <hr/>
-<p class="question">8. Dado el siguiente fragmento de código en Java, ¿Qué se imprime en la consola de salida?</p>
+<p class="question">8. Dado el siguiente fragmento de código en Java,  ¿Cuál es el valor final para las variables enteras x e y?</p>
 <pre><code class="language-java">
-int sum = 14;
-if( sum < 20 )
-  System.out.print( "Abajo " );
-else
-  System.out.print( "Arriba " );
-System.out.println( "de los límites." );</code></pre>
+int temp;
+int x = 2, y = 3;
+if( x < y ) { 
+  temp = x;
+    y = x;
+    x = temp;
+  }
+System.out.println("x = " + x + ", y = " + y );
+</code></pre>
 <div id="question8">
     <ol>
-        <li><input type="radio" name="q8" value="a" id="q8a"><label for="q8a">Abajo</label></li>          
-        <li><input type="radio" name="q8" value="b" id="q8b"><label for="q8b">Arriba</label></li>            
-        <li><input type="radio" name="q8" value="c" id="q8c"><label for="q8c">Abajo de los límites.</label></li>            
-        <li><input type="radio" name="q8" value="d" id="q8d"><label for="q8d">Arriba de los límites.</label></li>
+        <li><input type="radio" name="q4" value="a" id="q4a"><label for="q4a">x = 2, y = 2</label></li>          
+        <li><input type="radio" name="q4" value="b" id="q4b"><label for="q4b">x = 3, y = 3</label></li>            
+        <li><input type="radio" name="q4" value="c" id="q4c"><label for="q4c">x = 2, y = 3</label></li>            
+        <li><input type="radio" name="q4" value="d" id="q4d"><label for="q4d">x = 3, y = 2</label></li>
     </ol>    
 </div>
 
 <!--Pregunta 9-->
-<!--Concepto: estatutos de selección if/else anidados-->
+<!--Concepto: estatutos de selección if simple-->
 <hr/>
-<p class="question">9. Dado el siguiente fragmento de código en Java, ¿Qué se imprime en la consola de salida?</p>
+<p class="question">9. Dado el siguiente fragmento de código en Java.  ¿Qué se imprime en la consola de salida?</p>
 <pre><code class="language-java">
-int x = 2;
-int y = 3;
-if( x < y )
-  if( x == 0 )
-    System.out.print ( "Rojo" );
-  else
-    System.out.print ( "Blanco" );
-else
-  System.out.print ( "Azul" );</code></pre>
+int profundo = 12;
+int temperatura = 16;      
+System.out.print( "El agua es: " );
+if( profundo >= 8 )
+  System.out.print( "profunda " );
+if( temperatura <= 22 )          
+  System.out.print( "fría" );
+System.out.println( " templada" );
+</code></pre>
 <div id="question9">
     <ol>
-        <li><input type="radio" name="q9" value="a" id="q9a"><label for="q9a">Rojo</label></li>          
-        <li><input type="radio" name="q9" value="b" id="q9b"><label for="q9b">Blanco</label></li>            
-        <li><input type="radio" name="q9" value="c" id="q9c"><label for="q9c">Azul</label></li>            
-        <li><input type="radio" name="q9" value="d" id="q9d"><label for="q9d">RojoAzul</label></li>
+        <li><input type="radio" name="q5" value="a" id="q5a"><label for="q5a">El agua es: profunda templada</label></li>          
+        <li><input type="radio" name="q5" value="b" id="q5b"><label for="q5b">El agua es: fría templada</label></li>            
+        <li><input type="radio" name="q5" value="c" id="q5c"><label for="q5c">El agua es: profunda fría templada</label></li>            
+        <li><input type="radio" name="q5" value="d" id="q5d"><label for="q5d">El agua es: profunda fría profunda</label></li>
     </ol>
 </div>
 
 <!--Pregunta 10-->
-<!--Concepto: estatuto switch-->
+<!--Concepto: estatuto de selección if/else-->
 <hr/>
-<p class="question">10. Dado el siguiente fragmento de código en Java, ¿Qué se imprime en la consola de salida?</p>
+<p class="question">10. Dado el siguiente fragmento de código en Java,  ¿Qué se imprime en la consola de salida?</p>
 <pre><code class="language-java">
-int i = 2;
-
-switch ( i ) {
-  case 0:  System.out.println( "cero" );break;
-  case 1:  System.out.println( "uno" ); break;
-  case 2:  System.out.println( "dos" ); break;
-  default: System.out.println( "default" );
-}</code></pre>
+int altura = 14;
+if( altura <= 20 )
+{
+  System.out.print( "Debajo " );
+}
+else
+{
+  System.out.print( "Arriba " );
+}
+System.out.println( "de los límites permitidos." );
+</code></pre>
 <div id="question10">
     <ol>
-        <li><input type="radio" name="q10" value="a" id="q10a"><label for="q10a">cero</label></li>          
-        <li><input type="radio" name="q10" value="b" id="q10b"><label for="q10b">uno</label></li>            
-        <li><input type="radio" name="q10" value="c" id="q10c"><label for="q10c">dos</label></li>            
-        <li><input type="radio" name="q10" value="d" id="q10d"><label for="q10d">default</label></li>
+        <li><input type="radio" name="q6" value="a" id="q6a"><label for="q6a">Debajo de los límites permitidos.</label></li>          
+        <li><input type="radio" name="q6" value="b" id="q6b"><label for="q6b">Arriba de los límites permitidos.</label></li>            
+        <li><input type="radio" name="q6" value="c" id="q6c"><label for="q6c">Debajo Arriba de los límites permitidos.</label></li>            
+        <li><input type="radio" name="q6" value="d" id="q6d"><label for="q6d">de los límites permitidos.</label></li>
     </ol>    
 </div>
 
 <!--Pregunta 11-->
-<!--Concepto: estatuto while-->
+<!--Concepto: estatuto de selección if/else-->
 <hr/>
-<p class="question">11. Selecciona la condición que es apropiada en el ciclo while para lograr que la impresión en la consola de salida sea: 1 2 3 4 5 6 7 8 9 10</p>
+<p class="question">11. Dado el siguiente fragmento de código en Java, ¿Qué se imprime en la consola de salida?</p>
 <pre><code class="language-java">
-int contador=1;
-while(……) {
-    System.out.print(contador + " ");
-    contador = contador + 1;
-}</code></pre>
+int x = 7, y = 6;
+if( x == 7 && y > 5 )
+  System.out.print( "¡Felicidades! " );
+if( x > 7 ) 
+  System.out.print( "Perdiste " );
+else 
+  System.out.print( "Ganaste " );
+System.out.println( "el gran premio del millón." );
+</code></pre>
 <div id="question11">
     <ol>
-        <li><input type="radio" name="q11" value="a" id="q11a"><label for="q11a">false</label></li>          
-        <li><input type="radio" name="q11" value="b" id="q11b"><label for="q11b">contador < 10</label></li>            
-        <li><input type="radio" name="q11" value="c" id="q11c"><label for="q11c">contador <= 10</label></li>            
-        <li><input type="radio" name="q11" value="d" id="q11d"><label for="q11d">true</label></li>
+        <li><input type="radio" name="q7" value="a" id="q7a"><label for="q7a">Perdiste el gran premio del millón.</label></li>          
+        <li><input type="radio" name="q7" value="b" id="q7b"><label for="q7b">Ganaste el gran premio del millón.</label></li>            
+        <li><input type="radio" name="q7" value="c" id="q7c"><label for="q7c">¡Felicidades! Ganaste el gran premio del millón.</label></li>            
+        <li><input type="radio" name="q7" value="d" id="q7d"><label for="q7d">¡Felicidades! Perdiste el gran premio del millón.</label></li>
     </ol>    
 </div>
 
 <hr/>
 <!--Pregunta 12-->
-<!--Concepto: estatuto for-->
-<p class="question">12. Completa el siguiente código.  Se desea que el ciclo recorra los números del 1 al 3.</p>
+<!--Concepto: estatuto de selección if/else anidado-->
+<p class="question">12. Dado el siguiente fragmento de código en Java,  ¿Qué se imprime en la consola de salida?</p>
 <pre><code class="language-java">
-public class ParejaValores {
-  public static void main(String[] args) {
-    for (int i =……; i……3; i++)
-    } 
-}	
+int x = 2;
+int y = 3;
+if( x <= y ) 
+{
+  if( x == 0 )
+    System.out.print( "Blanco" );
+  else 
+    System.out.print( "Rojo" );
+}
+System.out.print( "Azul" );	
 </code></pre>
 <div id="question12">
     <ol>
-        <li><input type="radio" name="q12" value="a" id="q12a"><label for="q12a">0,<=</label></li>          
-        <li><input type="radio" name="q12" value="b" id="q12b"><label for="q12b">1,==</label></li>            
-        <li><input type="radio" name="q12" value="c" id="q12c"><label for="q12c">1,>=</label></li>            
-        <li><input type="radio" name="q12" value="d" id="q12d"><label for="q12d">1,<=</label></li>
+        <li><input type="radio" name="q8" value="a" id="q8a"><label for="q8a">Rojo</label></li>          
+        <li><input type="radio" name="q8" value="b" id="q8b"><label for="q8b">Blanco</label></li>            
+        <li><input type="radio" name="q8" value="c" id="q8c"><label for="q8c">BlancoAzul</label></li>            
+        <li><input type="radio" name="q8" value="d" id="q8d"><label for="q8d">RojoAzul</label></li>
+    </ol>    
+</div>
+
+<hr/>
+<!--Pregunta 13-->
+<!--Concepto: estatuto de selección if/else anidado-->
+<p class="question">13. Dado el siguiente fragmento de código en Java, ¿Cuál es el valor final de las variables enteras x e y?</p>
+<pre><code class="language-java">
+int x = 5;
+int y = 3;
+if( x > 0 )
+{
+  if( y > 0 )
+    y = y – 1;
+  else
+    x = x + 1;
+}
+System.out.println("x = " + x + ", y = " + y );	
+</code></pre>
+<div id="question13">
+    <ol>
+        <li><input type="radio" name="q9" value="a" id="q9a"><label for="q9a">x = 5, y = 2</label></li>          
+        <li><input type="radio" name="q9" value="b" id="q9b"><label for="q9b">x = 5, y = 1</label></li>            
+        <li><input type="radio" name="q9" value="c" id="q9c"><label for="q9c">x = 6, y = 3</label></li>            
+        <li><input type="radio" name="q9" value="d" id="q9d"><label for="q9d">x = 5, y = 3</label></li>
+    </ol>    
+</div>
+
+<hr/>
+<!--Pregunta 14-->
+<!--Concepto: estatuto switch-->
+<p class="question">14. Dado el siguiente fragmento de código en Java, agrega las instrucciones faltantes para que se pueda compilar sin errores de sintaxis.</p>
+<pre><code class="language-java">
+int x = 1;
+_____(x){
+      _____ 1: System.out.println("1");break;
+      _____ 2: System.out.println("2");break;
+      _____ 3: System.out.println("3");break;
+}	
+</code></pre>
+<div id="question14">
+    <ol>
+        <li><input type="radio" name="q10" value="a" id="q10a"><label for="q10a">if, case</label></li>          
+        <li><input type="radio" name="q10" value="b" id="q10b"><label for="q10b">case, switch</label></li>            
+        <li><input type="radio" name="q10" value="c" id="q10c"><label for="q10c">select, case</label></li>            
+        <li><input type="radio" name="q10" value="d" id="q10d"><label for="q10d">switch, case</label></li>
     </ol>    
 </div>
 <hr/>
