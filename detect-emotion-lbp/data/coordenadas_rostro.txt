@@ -1,0 +1,12 @@
+﻿18 izquierda, ceja izquierda
+22 derecha, ceja izquierda
+23 izquierda, ceja derecha
+27 derecha, ceja derecha
+32 izquierda, nariz
+36 derecha, nariz
+37 izquierda, ojo izquierdo
+40 derecha, ojo izquierdo
+43 izquierda, ojo derecho
+46 derecha, ojo derecho
+49 izquierda, boca
+55 derecha, boca

@@ -16,6 +16,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
+
 /**
  * REST Web Service
  *
@@ -44,10 +45,9 @@ public class EstrategiaTutor {
             modeloEstudiante.setEmocionActual(recognition.getEmocion());
         }else{
             modeloEstudiante.setEmocionActual(Emocion.SINEMOCION);
-            modeloEstudiante.setEmocionActual(Emocion.SINEMOCION);
         }
         
-        return new TutorEvaluacion(modeloEstudiante);
+        return new TutorEvaluacion(modeloEstudiante, recognition.isEmocionesSecundarias());
     }
     
     /**
@@ -128,7 +128,7 @@ public class EstrategiaTutor {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("emociontutor")
     public String getEstrategiaEmocionTutor(@FormParam("datosestudiante") String datosEstudiante) {        
-        //datosTutor es un json que contendra datos que se necesitan del tuturo
+        //datosTutor es un json que contendra datos que se necesitan del tutor
         TutorEvaluacion evaluacion = new TutorEvaluacion(new ModeloEstudiante(datosEstudiante));        
         
         return evaluacion.obtenerEmocionCarga();

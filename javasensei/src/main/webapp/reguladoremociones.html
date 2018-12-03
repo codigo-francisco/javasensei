@@ -1,0 +1,33 @@
+<div data-role="page" id="paginacategorizacion" data-close-btn="boton_continuar">
+    <div data-role="header" data-backbtn="false">
+        <h2>
+            Regulador de Emociones
+        </h2>
+    </div>
+    <div class="ui-content" role="main">
+        <p>
+            <b>Instrucciones.</b> A continuación, el sistema te tomará una foto para ver tu estado emocional, si la emoción es <b>enganchado o emocionado</b> te dejará continuar. En caso de que la primera foto no funcione, toma más fotos usando el boton Tomar Fotografía o activa el intervalo automatico (3 segundos de manera predeterminada).
+        </p>
+        <div style="text-align: center !important;">
+            <!--<img alt="" src="img/regulador_emociones/fondo.png" style="position: absolute; width: 15%; height: 15%; z-index: 1; left:42%; top:33%;" >-->
+            <video style="height: 50% !important;width: 50% !important;transform: scaleX(-1)!important;transform-origin: center;"
+               autoplay="autoplay" id="cameraregulador"></video>
+            <p>
+                <b><span>Emoción: </span><span id="emocion_text"></span></b>
+            </p>
+            <img style="width: 20%;height: 20%;" id="image_rostro" src="">
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <input id="boton_tomarfoto" type="button" value="Tomar Fotografía">
+            </div>
+            <div class="ui-block-b">
+                <label for="check_repetir">Intervalo automatico</label>
+                <input id="check_repetir" name="check_repetir" type="checkbox">
+            </div>
+        </div>
+        <label for="slider_intervalos">Duración de intervalos en segundos:</label>
+        <input name="slider_intervalos" id="slider_intervalos" min="2" max="5" value="3" type="range">
+        <input type="button" disabled="disabled" id="boton_continuar" value="Continuar">
+    </div>
+</div>

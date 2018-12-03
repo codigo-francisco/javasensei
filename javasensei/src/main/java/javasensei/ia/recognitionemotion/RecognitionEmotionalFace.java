@@ -23,12 +23,26 @@ public class RecognitionEmotionalFace {
     private Gson gson = new Gson();
     private String detector;
     private Long idUsuario;
+    
+    public boolean isEmocionesSecundarias(){
+        return detector.equals("lbppython"); //Unico secundario
+    }
 
     public RecognitionEmotionalFace(String detector, long idUsuario) {
         this.detector = detector;
         this.idUsuario = idUsuario;
     }
-
+    
+    public RecognitionEmotionalFace(){
+        
+    }
+    
+    public String getEmocionSinProcesar(String fotografia){
+        BufferedImage image = ImageHelper.decodeToImage(fotografia);
+        
+        return new ExtractEmotionPythonLBP().processDataString(image);
+    }
+    
     public Emocion getEmocion() {
         Map<Emocion, Integer> emociones = new HashMap<>();
         //Las fotos son una lista obtenida de mongo, son las ultimas fotografias del usuario sin procesar
@@ -50,17 +64,16 @@ public class RecognitionEmotionalFace {
                     System.out.println("Se decodifico de base64 a imagebuffer");
                     switch (detector) {
                         case "indico":
-                            System.out.println("Se llama detecto indico");
+                            System.out.println("Se llama a detector indico");
                             emocion = new ExtractEmotionIndico().processData(image);
                             System.out.println("Rostro procesado, indico: "+emocion);
                             break;
                         case "oxford":
-                            System.out.println("Se llama detector de oxford");
+                            System.out.println("Se llama a detector de oxford");
                             emocion = new ExtractEmotionMicrosoft().processData(image);
                             System.out.println("Rostro procesado, oxford");
                             break;
                         case "neuroph":
-                        default:
                             RecognitionResult result = new RecognitionFace().processFace(image);
                             if (result.isHayEmocion()) { //Si hay una emocion se ejecuta la red neuronal, en caso contrario se desecha
                                 System.out.println("Se encontro un rostro, opencv");
@@ -70,6 +83,12 @@ public class RecognitionEmotionalFace {
                                 emocionEncontrada = false;
                             }
                             break;
+                        case "lbppython":
+                        default:
+                            System.out.println("Se llama a detector lbp python");
+                            emocion = new ExtractEmotionPythonLBP().processData(image);
+                            System.out.println("Rostro procesado, lbppython: "+emocion);
+                            break;                            
                     }
                 }
                 
@@ -96,7 +115,7 @@ public class RecognitionEmotionalFace {
 
         return gson.toJson(jsonObject);
     }
-
+    
     protected Emocion findEmotion(Map<Emocion, Integer> emociones) {
 
         Emocion emocion = Emocion.NEUTRAL;

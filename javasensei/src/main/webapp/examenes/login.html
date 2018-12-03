@@ -3,17 +3,59 @@
         <title>Login Examenes</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <script src="loginfacebook.js"></script>
-        
+
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '603592966417068',
+                    xfbml: true,
+                    version: 'v2.1',
+                    status: true
+                });
+            };
+
+            function checkLoginState() {
+                FB.getLoginStatus(processLogin);
+            }
+
+            function processLogin(response) {
+                switch (response.status) {
+                    case 'connected' :
+                        sessionStorage.setItem("usuario", response.authResponse.userID);
+                        window.location = sessionStorage.getItem("pagina");
+                        break;
+                    case "not_authorized":
+                    default:
+                        alert("Por favor autorize a la aplicacion para usar facebook");
+                        break;
+                }
+            }
+        </script>
+
     </head>
     <body>
         <div style="text-align: center;">
-            <p>Realiza tu login para ingresar al examen</p>
+            <p>Realiza tu login para ingresar al examen <span id="tipo_examen"></span>.</p>
             <div class="fb-login-button" 
-                data-max-rows="1" 
-                data-size="xlarge"
-                onlogin="checkLoginState();"></div>
+                 data-max-rows="1" 
+                 data-size="xlarge"
+                 onlogin="checkLoginState();"></div>
         </div>
+
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/es_MX/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            ;
+            checkLoginState();
+            $("#tipo_examen").text(sessionStorage.getItem("pagina"));
+        </script>
     </body>
 </html>

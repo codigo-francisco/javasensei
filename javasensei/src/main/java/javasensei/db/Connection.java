@@ -65,5 +65,7 @@ public class Connection {
         collections.put(CollectionsDB.BITACORA_FOTOGRAFIAS_USUARIO, db.getCollection("bitacora_fotografias_usuario"));
         collections.put(CollectionsDB.PRETEST, db.getCollection("pretest"));
         collections.put(CollectionsDB.POSTTEST, db.getCollection("posttest"));
+        collections.put(CollectionsDB.OPINION_EJERCICIO,db.getCollection("opinion_ejercicio"));
+        collections.put(CollectionsDB.OPINION_SENSEI,db.getCollection("opinion_sensei"));
     }
 }

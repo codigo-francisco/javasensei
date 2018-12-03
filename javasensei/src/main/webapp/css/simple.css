@@ -1,0 +1,64 @@
+/* 
+    Created on : 16/11/2016, 02:17:03 PM
+    Author     : oramas
+*/
+H1 {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555555;
+    letter-spacing: 1.4px;
+    /*border-bottom: solid 1px #006600;*/
+    /*text-transform: uppercase;*/
+}
+H2 {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 1.2px;
+    color: #555555;
+}
+P, BLOCKQUOTE {
+    font-family: Verdana;
+    font-size: 12px;
+    color: #555555;
+    line-height: 1.5;
+    letter-spacing: .25px;
+}
+BLOCKQUOTE {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: #444444;
+    letter-spacing: 1.25px;
+    line-height: 1.5;
+    background: #EEEEEE;
+    padding: 5px;
+    margin: auto 15px;
+}
+
+HR {
+    border-bottom: solid 1px #555555;
+}
+
+LI, OL {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+     list-style-type: upper-latin;
+}
+
+#contenido p{
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 12px;
+ }
+ #mensaje{
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 12px;
+    display:none;
+    position:fixed; 
+    background-color:white;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    margin-top: -1.2em;
+}

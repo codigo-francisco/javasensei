@@ -47,6 +47,7 @@
         <script type="text/javascript" src="js/navegador.js"></script>
         <script type="text/javascript" src="js/canvas.js"></script>
         <script src="tutoriales/tutorial.js"></script>
+        <script src="js/regulador.js"></script>
 
         <script>
             var menu = new menu_sensei();
@@ -61,7 +62,7 @@
             var estado_gui = "recomendacion"; //Recomendacion, Ejercicio
             var url = "servicios/"; //Jquery infiere el dominio
             var usuario = {};
-            var detectorEmocional = "neuroph";
+            var detectorEmocional = "lbppython";
 
             var redireccion = function (url) {
                 location.href = url;
@@ -93,20 +94,20 @@
             ;
 
             var noCamara = false;
-            var mensajeCamara=false;
-            
-            function errorCamara(err){
-                if (!mensajeCamara){
+            var mensajeCamara = false;
+
+            function errorCamara(err) {
+                if (!mensajeCamara) {
                     console.error(err);
                     alert("A ocurrido un error debido a que no cuenta con camara o no otorgo los permisos necesarios.\n\nLa detección emocional se ha deshabilitado");
                     noCamara = true;
-                    usuario.activarEmociones=false;
+                    usuario.activarEmociones = false;
                     //Opciones de la camara
                     eliminarBackgroundCamera();
                     $("#dialog_video").hide();
                     $("#botoncamara").addClass("ui-disabled");
-                    
-                    mensajeCamara=true;
+
+                    mensajeCamara = true;
                 }
             }
 
@@ -187,18 +188,20 @@
                 });
 
                 $("#activarEmociones").on("change", function () {
-                    usuario.activarEmociones = $("#activarEmociones").prop("checked");
-                    //Guardado en base de datos
-                    $.ajax(url + "estudiantes/activarEmociones", {
-                        data: {
-                            idAlumno: usuario.id,
-                            activarEmociones: usuario.activarEmociones
-                        }
-                    }).done(function (data) {
-                        console.log(data);
-                    }).fail(function (d, error) {
-                        console.log(error);
-                    });
+                    //Esta función queda invalidada para pruebas
+
+                    /*usuario.activarEmociones = $("#activarEmociones").prop("checked");
+                     //Guardado en base de datos
+                     $.ajax(url + "estudiantes/activarEmociones", {
+                     data: {
+                     idAlumno: usuario.id,
+                     activarEmociones: usuario.activarEmociones
+                     }
+                     }).done(function (data) {
+                     console.log(data);
+                     }).fail(function (d, error) {
+                     console.log(error);
+                     });*/
                 });
 
                 $("#areatrabajo").hide();
@@ -231,6 +234,49 @@
                         tutorial_ejercicios.mostrarTutorial();
                     }
                 });
+
+                $("#form_opinion").submit(function () {
+                    texto = $("#txtAreaOpinion").val();
+                    texto = texto.trim();
+                    result = /^[A-Za-zÀ-ž\s\d]{5,}$/.test(texto);
+                    
+                    if (!result){
+                        alert("Por favor ingrese una opcion con al menos 5 caracteres");
+                        return false;
+                    }
+                    
+                    console.log("Opinión:" + $("#txtAreaOpinion").val());
+
+                    $.post("servicios/opinion/guardar_opinion_ejercicio", {
+                        idFacebook: usuario.idFacebook,
+                        idEjercicio: ejercicio_id,
+                        opinion: texto
+                    },
+                            function (response) {
+                                console.log("eval polarity exercise ok...");
+                                console.log(response);
+                                $("#txtAreaOpinion").val("");
+                                $("#mensaje_opinion").show();
+                            }
+                    );
+
+                    return false;
+                });
+
+                $("#form_datos").submit(function () {
+                    //Enviar datos a webservice
+
+                    usuario.nombre = $("#txt_nombre").val();
+                    usuario.edad = $("#numb_edad").val();
+                    usuario.sexo = $("#type_sex").val();
+
+                    //Se manda a crear el usuario en base de datos
+                    checarUsuario(usuario, true);
+
+                    return false;
+                });
+                
+                configurar_regulador();
 
                 enlazarBotonesCarousel();
 
@@ -319,11 +365,28 @@
                 position: relative;
                 top: -15px;
             }
+            .fullscreenname{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 2000;
+                top:0;
+                left: 0;
+                display: none;
+                background-color: white;
+            }
+            .fullscreenregulador{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 1600;
+                background-color: white;
+                overflow-y: auto;
+            }
 
             /*Esto es para mostrar las lineas 
             de codigo que se muestra en el documento.*/
-            li.L0, li.L1, li.L2, li.L3,
-            li.L5, li.L6, li.L7, li.L8
+            li.L0, li.L1, li.L2, li.L3,li.L5, li.L6, li.L7, li.L8
             { list-style-type: decimal !important }
 
         </style>
@@ -331,9 +394,10 @@
     <body>
         <div class="fullscreenbrowser">
             <p style="font-weight: bold;text-align:center;">
-                Este sitio web solo funciona con el navegador Firefox, por favor realiza tus ejercicios desde él
+                Este sitio web solo funciona con el navegador Firefox, por favor realiza tus ejercicios desde él.
             </p>
-            <a href="https://www.mozilla.org/es-MX/firefox/new/">
+            <a style="font-weight: bold;text-align:center;" href="https://www.mozilla.org/es-MX/firefox/new/">
+                Descargar Firefox.
                 <img style="display: block; margin-left: auto; margin-right: auto;width: 100%;max-width: 45em;height: 50%;" src="img/firefox-logo-full.png" alt="Firefox">
             </a>
         </div>
@@ -369,7 +433,52 @@
         </div>
 
         <div id="principal" data-title="Java Sensei" data-role="page">
-
+            <div id="pantalla_nombre" class="fullscreenname">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <p>Cuentanos un poco acerca de ti</p>
+                    <form id="form_datos">
+                        <label for="txt_nombre" >Nombre</label>
+                        <input type="text" pattern="[A-Za-zÀ-ž\s]{10,}" title="incluye tus apellidos, sin usar numeros ni caracteres especiales" required id="txt_nombre">
+                        <label for="numb_edad">Edad</label>
+                        <input type="number" step="1" min="14" max="50" required title="Ingrese una edad" id="numb_edad" >
+                        <label for="type_sex">Sexo</label>
+                        <select id="type_sex" required>
+                            <option></option>
+                            <option value="hombre">Hombre</option>
+                            <option value="mujer">Mujer</option>
+                        </select>
+                        <input type="submit" id="enviar_nombre" value="Enviar Datos">
+                    </form>
+                </div>
+            </div>
+            <div id="paginaregulador" style="display: none" class="fullscreenregulador">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <p>
+                        <b>Instrucciones.</b> A continuación, el sistema te tomará una foto para ver tu estado emocional, si la emoción es <b>enganchado o emocionado</b> te dejará continuar. En caso de que la primera foto no funcione, toma más fotos usando el boton Tomar Fotografía o activa el intervalo automatico (3 segundos de manera predeterminada).
+                    </p>
+                    <div style="text-align: center !important;">
+                        <!--<img alt="" src="img/regulador_emociones/fondo.png" style="position: absolute; width: 15%; height: 15%; z-index: 1; left:42%; top:33%;" >-->
+                        <video style="height: 50% !important;width: 50% !important;transform: scaleX(-1)!important;transform-origin: center;"
+                               autoplay="autoplay" id="cameraregulador"></video>
+                        <p>
+                            <b><span>Emoción: </span><span id="emocion_text"></span></b>
+                        </p>
+                        <img style="width: 20%;height: 20%;" id="image_rostro" src="">
+                    </div>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <input id="boton_tomarfoto" type="button" value="Tomar Fotografía">
+                        </div>
+                        <div class="ui-block-b">
+                            <label for="check_repetir">Intervalo automatico</label>
+                            <input id="check_repetir" name="check_repetir" type="checkbox">
+                        </div>
+                    </div>
+                    <label for="slider_intervalos">Duración de intervalos en segundos:</label>
+                    <input name="slider_intervalos" id="slider_intervalos" min="2" max="5" value="3" type="range">
+                    <input type="button" disabled="disabled" id="boton_continuar" value="Continuar">
+                </div>
+            </div>
             <!-- Paneles -->
             <div data-role="panel" data-display="overlay" id="panelmenu">
                 <div id="ejerciciosmenu" style="white-space: normal !important;" 
@@ -426,9 +535,12 @@
                             <div>
                                 <div id="calificaciones_ejercicios"></div>
                             </div>
+
                         </div>
                         <button class="controles_cierre_tracing" id="cerrar_tracing" data-inline="true" data-mini="true">Cerrar</button>
-                        <a href="#paginaGraficaComportamiento" class="controles_cierre_tracing ui-btn ui-btn-inline ui-btn-corner-all ui-mini ui-shadow" id="comportamiento_tracing" data-rel="dialog" data-inline="true" data-mini="true">Comportamiento</a>
+                        <a href="#paginaGraficaComportamiento" class="controles_cierre_tracing ui-btn ui-btn-inline 
+                           ui-btn-corner-all ui-mini ui-shadow" id="comportamiento_tracing" data-rel="dialog" 
+                           data-inline="true" data-mini="true">Comportamiento</a>
                     </div>
                 </div>
                 <div class="areatracing">
@@ -450,6 +562,22 @@
                     <div id="areasolucion" class="ui-grid-a ui-responsive">
 
                     </div>
+
+                    <div class="controles_cierre_tracing" style="float: center;">
+                        <div>
+                            <form id="form_opinion">
+                                <div id="opinion_ejercicio">
+                                    <label for="txtAreaOpinion"><b>Escribe tu opinión acerca de este ejercicio :</b></label>
+                                    <textarea id="txtAreaOpinion" rows="10" cols="25" required title="Escribe algo que tengá más de 5 caracteres" placeholder="Escribe tu opinión aquí..."></textarea>
+                                </div>
+                                <div  id="button_opinion">
+                                    <input type="submit" value="Enviar comentario" />
+                                </div>
+                            </form>
+                            <p style="display: none" id="mensaje_opinion">Gracias por dar tu opinion.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -474,7 +602,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div>            
             </div>
         </div>
 
@@ -490,8 +618,7 @@
                 </div>
                 <div data-role="footer">
                     ¿Qué te ha parecido este recurso?<br>
-                    <div id="calificaciones">
-
+                    <div id="calificaciones">                        
                     </div>
                 </div>
             </div>
@@ -565,7 +692,7 @@
 
                             </div>
                         </div>
-                        <div id="tercertab" class="ui-content">
+                        <!--<div id="tercertab" class="ui-content">
                             <label for="activarEmociones">Activar Detector de Emociones</label>
                             <input id="activarEmociones" checked="checked" data-role="flipswitch" name="activarEmociones" type="checkbox">
                             <fieldset data-role="controlgroup" data-type="horizontal" id="selecciondetector">
@@ -577,7 +704,7 @@
                                 <input type="radio" name="reconocimientoemocional" id="indico" value="off">
                                 <label for="indico">Indico</label>
                             </fieldset>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
@@ -658,7 +785,7 @@
                     <div class="imagenes_tutorial">                        
                         <div>
                             <img src="tutoriales/imagenes_ejercicio/ejercicio.png">
-                            <p>Esta es el área de ejercicios, aquí aprenderás Java</p>
+                            <p>Este es el área de ejercicios, aquí aprenderás Java</p>
                         </div>
                         <div>
                             <img src="tutoriales/imagenes_ejercicio/ejercicio_problema.png">
@@ -672,10 +799,10 @@
                             <img src="tutoriales/imagenes_ejercicio/tutor.png">
                             <p>Recuerda consultar al tutor, el podrá darte la información que necesitas para resolver el ejercicio. A veces él te hablara para apoyarte.</p>
                         </div>
-                        <div>
+                        <!--<div>
                             <img src="tutoriales/imagenes_ejercicio/categorizacion.png">
                             <p>Al finalizar categoriza que emoción sentiste, esto es importante para ayudarnos a mejorar el sistema.</p>
-                        </div>
+                        </div>-->
                         <div>
                             <img src="tutoriales/imagenes_principal/camara.png">
                             <p><span style="font-weight: bolder">!IMPORTANTE!</span>, recuerda mantener tu rostro al centro de la cámara y de ser posible no utilices lentes u otros objetos que obstruyan tu rostro. Esto ayudara al sistema a reconocer tus emociones y nos ayudaras a mejorarlo.</p>
@@ -687,6 +814,8 @@
                 </div>
             </div>
         </div>
+
+
 
         <div data-role="page" data-dialog="true" id="paginacategorizacion" data-close-btn="none">
             <div data-role="header">
@@ -724,6 +853,5 @@
                 </div>
             </div>
         </div>
-        
     </body>
 </html>

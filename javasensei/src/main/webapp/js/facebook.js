@@ -5,14 +5,16 @@ var logout = function logout() {
     });
 };
 
-var processLoginJhonDoe = function(){
-    usuario.idFacebook="12345789123456789";
-    usuario.token="asdfd67as76dfas8";
+var processLoginJhonDoe = function () {
+    usuario.idFacebook = "12345789123456789";
+    usuario.token = "asdfd67as76dfas8";
     usuario.nombre = "Jhon Doe";
     usuario.foto = "";
-    usuario.activarEmociones=true;
+    usuario.activarEmociones = true;
     eliminarBackground();
 };
+
+var examenActivado = false;
 
 var processLogin = function processLogin(response) {
     //Construccion del usuario
@@ -21,41 +23,31 @@ var processLogin = function processLogin(response) {
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
 
-            $("#facebookId").text("ID: "+uid);
+            $("#facebookId").text("ID: " + uid);
             usuario.idFacebook = uid;
             usuario.token = accessToken;
-            
-            //Validamos si ya realizo el examen pretest
-            //Validar si el usuario realizó el cuestionario
-            $.get("servicios/examenes/realizoExamenPreTest",
-                    {
-                        idFacebook: usuario.idFacebook
-                    }
+
+            if (examenActivado) {
+                //Validamos si ya realizo el examen pretest
+                //Validar si el usuario realizó el cuestionario
+                $.get("servicios/examenes/realizoExamenPreTest",
+                        {
+                            idFacebook: usuario.idFacebook
+                        }
                 , function (response) {
-                    if (response.realizado){
-                        FB.api("/me", {fields: "name,picture"}, function (response) {
-                            console.log("Datos del facebook: %O", response);
-
-                            usuario.nombre = response.name;
-                            usuario.foto = response.picture.data.url;
-
-                            eliminarBackground();
-
-                            //Se manda un json para crear u obtener el usuario
-                            checarUsuario(usuario);
-
-                            $("#imagen_usuario").attr("src", usuario.foto);
-                            $("#nombre_usuario").text(usuario.nombre);
-                        });
-                        
-                    }else{
-                        alert("Aún no has realizado tu examen pretest, seras redirigido a él");
+                    if (response.realizado) {
+                        loginUsuario();
+                    } else {
+                        alert("Aún no has realizado tu examen pretest, serás redirigido a él");
                         sessionStorage.setItem("usuario", usuario.idFacebook);
-                        window.location="examenes/pre_test.html";
+                        window.location = "examenes/pre_test.html";
                     }
                 }
-            );
-    
+                );
+            } else {
+                loginUsuario();
+            }
+
             break;
         case "not_authorized":
             alert("Por favor autorize a la aplicacion para usar facebook");
@@ -65,13 +57,52 @@ var processLogin = function processLogin(response) {
     }
 };
 
-function checarUsuario(datos) {
+function loginUsuario() {
+    FB.api("/me", {fields: "name,picture"},
+            function (response) {
+                console.log("Datos del facebook: %O", response);
+
+                usuario.nombreFacebook = response.name;
+                usuario.fotografia = response.picture.data.url;
+
+                $.get(url + "estudiantes/studentExists",
+                        {idFacebook: usuario.idFacebook},
+                        function (response) {
+                            if (response == "true") {
+                                checarUsuario(usuario);
+                            } else {
+                                $("#pantalla_nombre").show(); //Solicitamos el nombre
+                            }
+
+                            eliminarBackground();
+                        });
+
+                $("#imagen_usuario").attr("src", usuario.fotografia);
+                $("#nombre_usuario").text(usuario.nombreFacebook);
+            });
+}
+
+function checarUsuario(datos, nuevo) {
     var urlChecar = url + "estudiantes/getorcreatestudent";
+    var datosAEnviar = {
+        idFacebook: datos.idFacebook,
+        nombreFacebook: datos.nombreFacebook,
+        fotografia: datos.fotografia,
+        token: datos.token,
+        nuevo: false
+    };
+
+    if (nuevo) {
+        datosAEnviar.nombre = datos.nombre;
+        datosAEnviar.edad = datos.edad;
+        datosAEnviar.sexo = datos.sexo;
+        datosAEnviar.nuevo = true;
+
+        alert("Gracias por proporcionar tus datos");
+    }
+
     $.ajax(urlChecar, {
-        data: {
-            idFacebook: datos.idFacebook,
-            token: datos.token
-        },
+        data: {datos: JSON.stringify(datosAEnviar)},
         dataType: "json"
     }).done(function (data) {
         console.log("%cLogin de facebook realizado: %O", "color: red", data);
@@ -79,12 +110,13 @@ function checarUsuario(datos) {
         configurarTutoriales();
         menu.actualizarMenu();
         //Verificamos si ya firmo las condiciones
-        if (!usuario.aceptarCondiciones){
+        if (!usuario.aceptarCondiciones) {
             mostrarCondiciones();
-        }
-        else if (usuario.mostrarTutorialPrincipal==false){ //Verificamos si ya observo el tutorial
+        } else if (usuario.mostrarTutorialPrincipal == false) { //Verificamos si ya observo el tutorial
             tutorial_principal.mostrarTutorial(true);
         }
+
+        $("#pantalla_nombre").hide();
     });
 }
 

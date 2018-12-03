@@ -3,19 +3,33 @@
     "paso":-1,
     "instruccionesejercicio": 
     [
-		"Este ejercicio esta relacionado con el operador condicional.",
-		"Java cuenta con el operador condicional (?:), que en ocasiones puede utilizarse en lugar de una instrucción if/else. Éste es el único operador ternario en Java; es decir, que utiliza tres operandos. En conjunto, los operandos y el símbolo ?: forman una expresión condicional."
+		"Este ejercicio esta relacionado con el estatuto de selección if/else/if.",
+		"Cuando en una condición existen diversas posibilidades, nos vemos obligados a programar usando if anidados, lo que complica la realización y depuración del código. Para facilitar la programación en estas situaciones se proporciona la instrucción if/else/if.",
+                "<p><span style='color: #ff0000;'><strong>Notas adicionales:</strong></span></p><hr /><p>El operador <strong><em>'!'</em></strong> sirve para negar un valor</p><p><span style='color: #3366ff;'>bool</span> x = <span style='color: #3366ff;'>true</span>;</p><p>x != x;&nbsp;<span style='color: #339966;'> //x ahora es false.</span></p><hr /><p><span style='color: #000000;'>Cuando utilizamos un solo simbolo de igual (=) tenemos una asignaci&oacute;n, no una condici&oacute;n.</span></p><p><span style='color: #000000;'><span style='color: #3366ff;'>bool</span> x = <span style='color: #3366ff;'>true</span>;</span></p><p><span style='color: #339966;'>//x obtiene el valor de false, se eval&uacute;a el false en la condici&oacute;n y jamas entra el primer bloque de codigo</span></p><p><span style='color: #000000;'><span style='color: #3366ff;'>if</span> (x=false){ </span></p><p style='padding-left: 30px;'><span style='color: #339966;'>//Este c&oacute;digo jamas se ejecutar&aacute;</span></p><p><span style='color: #000000;'>}</span></p>"
     ],
     "opciones": 
     [
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Selecciona la instrucción que es similar a:",
+            "instruccion": "¿Qué se imprime en la consola de salida cuando se ejecuta el siguiente código?",
             "presentacion": 
-            [
+            [ 
+				"public class Test {",
+				"\tpublic static void main( String[ ] args ) {",
+				"\t\tboolean b;",
+				"\t\tif ( b = false ) {",
+				"\t\t\tSystem.out.print(\"A\");",
+				"\t\telse if ( b ) {",
+				"\t\t\tSystem.out.print(\"B\");",
+				"\t\telse if ( !b ) {",
+				"\t\t\tSystem.out.print(\"C\");",
+				"\t\telse {",
+				"\t\t\tSystem.out.print(\"D\");",
+				"\t\t}",
+				"\t}",
+				"}"
 
-				"y = x >=0 ? x: -x;"
 
             ],
             "textoEmocional": {
@@ -34,13 +48,63 @@
             [
                 
                 {
-                    "texto": "if(x>=0) y = x;",
+                    "texto": "A",
                     "paso": 1,
                     "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta, el tercer operando (a la derecha de <i>:</i>) es el valor de la expresión condicional si la expresión booleana se evalúa como falsa. Intenta de nuevo",
+                    "instruccion": "La respuesta es incorrecta. Observa con atención el código e intenta de nuevo.",
                     "presentacion": 
                     [
-						"y = x >=0 ? x: -x;"
+						"public class Test {",
+						"\tpublic static void main( String[ ] args ) {",
+						"\t\tboolean b;",
+						"\t\tif ( b = false ) {",
+						"\t\t\tSystem.out.print(\"A\");",
+						"\t\telse if ( b ) {",
+						"\t\t\tSystem.out.print(\"B\");",
+						"\t\telse if ( !b ) {",
+						"\t\t\tSystem.out.print(\"C\");",
+						"\t\telse {",
+						"\t\t\tSystem.out.print(\"D\");",
+						"\t\t}",
+						"\t}",
+						"}"
+
+                    ],
+					"textoEmocional": {
+						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
+						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
+						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
+						"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
+						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
+						"retroalimentacion": {                           
+							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
+							"neutral": "La respuesta no es la correcta.",
+							"negativa": "¿Estás seguro de querer estudiar este curso?."
+						}
+                    },
+                    "opciones": []
+                },
+                {
+                    "texto": "B",
+                    "paso": 2,
+                    "tipo": "pasoerroneo",
+                    "instruccion": "La respuesta es incorrecta. Observa con atención el código e intenta de nuevo.",
+                    "presentacion": 
+                    [
+						"public class Test {",
+						"\tpublic static void main( String[ ] args ) {",
+						"\t\tboolean b;",
+						"\t\tif ( b = false ) {",
+						"\t\t\tSystem.out.print(\"A\");",
+						"\t\telse if ( b ) {",
+						"\t\t\tSystem.out.print(\"B\");",
+						"\t\telse if ( !b ) {",
+						"\t\t\tSystem.out.print(\"C\");",
+						"\t\telse {",
+						"\t\t\tSystem.out.print(\"D\");",
+						"\t\t}",
+						"\t}",
+						"}"
                     ],
 					"textoEmocional": {
 						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
@@ -56,60 +120,62 @@
                     },
                     "opciones": []
                 },{
-                    "texto": "if(x>=0) y = x; else y = -x;",
-                    "paso": 2,
+                    "texto": "C",
+                    "paso": 3,
                     "tipo": "pasofinaloptimo",
                     "instruccion": "La respuesta es correcta.  Selecciona otro ejercicio del menú de opciones.",
                     "presentacion": 
                     [
-						"y = x >=0 ? x: -x;"
-                    ],
-                    "textoEmocional": {
-                        "neutral": "Has finalizado con este ejercicio.",
-                        "encantado": "Cada logro comienza con la decisión de intentarlo.”, ¡sigue con este entusiasmo!.",              
-                        "sorprendido": "Cada logro comienza con la decisión de intentarlo, por lo pronto has finalizado con este ejercicio..",
-                        "compasivo": "¿Todavía crees que aprender Java es complicado?.  Por lo pronto has finalizado con este ejercicio..",                
-                        "esceptico": "Al menos llegaste al final del ejercicio.",
-                        "retroalimentacion": {
-                            "positiva": "¡Felicidades!.  Has finalizado con este ejercicio.",
-                            "neutral": "Has finalizado con este ejercicio.",
-                            "negativa": "Has finalizado con este ejercicio."
-                        } 
-                    },
-                    "opciones": []
-                },
-                {
-                    "texto": "if(x>=0) y = -x;",
-                    "paso": 3,
-                    "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta, el segundo operando (entre el <i>?</i> y <i>:</i>) es el valor de la expresión condicional si la expresión booleana es verdadera. Intenta de nuevo",
-                    "presentacion": 
-                    [
-						"y = x >=0 ? x: -x;"
+						"public class Test {",
+						"\tpublic static void main( String[ ] args ) {",
+						"\t\tboolean b;",
+						"\t\tif ( b = false ) {",
+						"\t\t\tSystem.out.print(\"A\");",
+						"\t\telse if ( b ) {",
+						"\t\t\tSystem.out.print(\"B\");",
+						"\t\telse if ( !b ) {",
+						"\t\t\tSystem.out.print(\"C\");",
+						"\t\telse {",
+						"\t\t\tSystem.out.print(\"D\");",
+						"\t\t}",
+						"\t}",
+						"}"
                     ],
 					"textoEmocional": {
-						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",
-						"encantado": "Aun cuando la respuesta es incorrecta, intenta encontrar la respuesta.",
-						"sorprendido": "La respuesta no es correcta pero te siento con mucha decisión.  Encuentra la respuesta",
-						"compasivo": "Qué no decaiga tu autoestima, a veces se requiere de tiempo para asimilar los conceptos de Java",
-						"esceptico": "Se que pensabas que este ejercicio ejercicio era muy fácil para ti.",
-						"retroalimentacion": {                           
-							"positiva": "La respuesta no es la correcta, ¡sigue intentándolo!",
-							"neutral": "La respuesta no es la correcta.",
-							"negativa": "¿Estás seguro de querer estudiar este curso?."
-						}
+                        "neutral": "La respuesta es correcta.  Continúa con más ejercicios.",
+                        "encantado": "Toma riesgos: si aciertas, serás feliz; si fallas, serás más sabio.  Continúa con más ejercicios.",              
+                        "sorprendido": "Perro que ladra no muerde.  ¿Al final Java no parece tan complicado verdad?  Sigue con más ejercicios.",
+                        "compasivo": "Lo que importa no es lo que tienes, sino lo que haces con lo que tienes.  Sigue con más ejercicios.",                
+                        "esceptico": "Con calma y nos amanecemos, Sigue con más ejercicios.",
+                        "retroalimentacion": {
+                            "positiva": "¡Excelente!, ¡La respuesta es correcta.",
+                            "neutral": "La respuesta es correcta. Sigue con más ejercicios.",
+                            "negativa": "Me parece que estás adivinando la respuesta.  Con tu actitud negativa no vas a llegar a ningún lado."
+                        }  
                     },
                     "opciones": []
                 },
                 {
-                    "texto": "if(x>=0) y = -x; else y = x;",
+                    "texto": "D",
                     "paso": 4,
                     "tipo": "pasoerroneo",
-                    "instruccion": ["La respuesta es incorrecta, el segundo operando (entre el <i>?</i> y <i>:</i>) es el valor de la expresión condicional si la expresión booleana es verdadera,",
-                        " y el tercer operando (a la derecha de <i>:</i>) es el valor de la expresión condicional si la expresión booleana se evalúa como falsa. Intenta de nuevo"],
+                    "instruccion": "La respuesta es incorrecta. Observa con atención el código e intenta de nuevo.",
                     "presentacion": 
                     [
-						"y = x >=0 ? x: -x;"
+						"public class Test {",
+						"\tpublic static void main( String[ ] args ) {",
+						"\t\tboolean b;",
+						"\t\tif ( b = false ) {",
+						"\t\t\tSystem.out.print(\"A\");",
+						"\t\telse if ( b ) {",
+						"\t\t\tSystem.out.print(\"B\");",
+						"\t\telse if ( !b ) {",
+						"\t\t\tSystem.out.print(\"C\");",
+						"\t\telse {",
+						"\t\t\tSystem.out.print(\"D\");",
+						"\t\t}",
+						"\t}",
+						"}"
                     ],
 					"textoEmocional": {
 						"neutral": "La respuesta es incorrecta.  Intenta de nuevo.",

@@ -3,22 +3,21 @@
     "paso":-1,
     "instruccionesejercicio": 
     [
-		"Este ejercicio esta relacionado con las expresiones booleanas es decir, condiciones que da como resultado un valor true o false."
+	"Las instrucciones de selección utilizan condiciones la cuales son <b>evaluadas</b> y dan como resultado un valor <b>verdadero</b> o <b>falso</b>.",
+        "Para realizar la evaluación utilizamos operadores relacionales entre dos valores.",
+        "La siguiente tabla contiene los operadores relaciones de Java, mira la sección de CONDICIÓN VERDADERA para que notes los ejemplos.",
+        "<center><table style='border-collapse:collapse;border-spacing:0'><tr><th style='font-family:Arial, sans-serif;font-size:medium;font-weight:bold;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;background-color:#010066;color:#ffffff' colspan='2'>Operadores relacionales<br></th><th style='font-family:Arial, sans-serif;font-size:medium;font-weight:bold;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;background-color:#010066;color:#ffffff;vertical-align:top'>Condición Verdadera<br></th></tr><tr><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;font-weight:bold;vertical-align:top'>&gt;<br></td><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top'>mayor que<br></td><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top'>6 &gt; 5<br></td></tr><tr><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;font-weight:bold;vertical-align:top'>&lt;</td><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top'>menor que<br></td><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top'>5 &lt; 6<br></td></tr><tr><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;font-weight:bold;vertical-align:top'>&gt;=</td><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top'>mayor o igual que<br></td><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top'>10 &gt;= 9 y 10&gt;=10<br></td></tr><tr><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;font-weight:bold;vertical-align:top'>&lt;=</td><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top'>menor o igual que<br></td><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top'>8&lt;=9 y 9&lt;=9<br></td></tr><tr><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;font-weight:bold;vertical-align:top'>==</td><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top'>igual que<br></td><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top'>9==9</td></tr><tr><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;font-weight:bold;vertical-align:top'>!=</td><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top'>diferente que<br></td><td style='font-family:Arial, sans-serif;font-size:medium;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;vertical-align:top'>5 != 6<br></td></tr></table></center>"
     ],
     "opciones": 
     [
         {
             "paso": 0,
             "tipo": "pasoinicial",
-            "instruccion": "Paso 1 de 4.  Dado el fragmento de código evalúa la siguiente expresión booleana:",
+            "instruccion": "Paso 1 de 4.  Evalúa el resultado que aparecía en consola del siguiente fragmento de codigo. El operador relacional usado es >",
             "presentacion": [ 
 				"int edad = 16;",
-				"int altura = 175;",
-				"int peso = 70;",
-				"char sexo ='M';",
-				"boolean estadoSalud = true;",
-				"",
-				"edad >= 16 && estadoSalud;"
+				"//¿Qué resultado da esta evaluación?",
+				"System.out.println( edad > 15 );"
 
             ],
             "textoEmocional": {
@@ -26,7 +25,7 @@
                 "encantado": "Inicia con el ejercicio. ¡Conserva siempre esas ganas y deseos de superación! ",              
                 "sorprendido": "Me sorprende tu actitud, aprender Java es un gran reto pero se que lo vas a lograr.  Inicia con el ejercicio.",
                 "compasivo": "Aprender Java parece complicado, pero tienes que intentarlo. Inicia con el ejercicio.",                
-                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de mayor dificultad.",
+                "esceptico": "¿Este ejercicio es fácil para ti?, selecciona otro ejercicio de menor dificultad.",
                 "retroalimentacion": {
                     "positiva": "¡Adelante!",
                     "neutral": "Inicia con el ejercicio",
@@ -40,16 +39,13 @@
                     "texto": "true",
                     "paso": 1,
                     "tipo": "pasooptimo",
-                    "instruccion": "Paso 2 de 4.  Dado el fragmento de código evalúa la siguiente expresión booleana:",
+                    "instruccion": "Paso 1 de 4.  Evalúa el resultado que aparecía en consola del siguiente fragmento de codigo. El operador relacional usado es <",
                     "presentacion": 
                     [
 						"int edad = 16;",
 						"int altura = 175;",
-						"int peso = 70;",
-						"char sexo = ‘M’;",
-						"boolean estadoSalud = true;",
-						"",
-						"!(peso <= 75) && altura >= 180;"
+						"//¿Qué resultado daría en consola?",
+						"System.out.println(altura < 174)"
                     ],
                     "textoEmocional": {
 						"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
@@ -69,16 +65,10 @@
 							"texto": "true",
 							"paso": 2,
 							"tipo": "pasoerroneo",
-							"instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+							"instruccion": "Obtuviste un error, mira la explicación y retrocede.",
 							"presentacion": 
 							[
-								"int edad = 16;",
-								"int altura = 175;",
-								"int peso = 70;",
-								"char sexo = ‘M’;",
-								"boolean estadoSalud = true;",
-								"",
-								"!(peso <= 75) && altura >= 180;"
+                                                                "El operador relacional < quiere decir menor que, la altura es de 175 por lo que <b>estatura < 174</b> da false."
 							],
 							"textoEmocional": {
 								"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
@@ -99,16 +89,14 @@
 							"texto": "false",
 							"paso": 3,
 							"tipo": "pasooptimo",
-							"instruccion": "Paso 3 de 4.  Dado el fragmento de código evalúa la siguiente expresión booleana:",
+							"instruccion": "Paso 3 de 4.  Evalua la siguiente expresión booleana, el operador relacional es ==",
 							"presentacion": 
 							[
 								"int edad = 16;",
 								"int altura = 175;",
 								"int peso = 70;",
-								"char sexo ='M';",
-								"boolean estadoSalud = true;",
-								"",
-								"edad>10 || (sexo==’F’ && altura<170);"
+								"//¿Qué resultado da en consola?",
+								"System.out.println(peso == 70);"
 							],
 							"textoEmocional": {
 								"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
@@ -128,16 +116,15 @@
 										"texto": "true",
 										"paso": 4,
 										"tipo": "pasooptimo",
-										"instruccion": "Paso 4 de 4.  Dado el fragmento de código evalúa la siguiente expresión booleana:",
+										"instruccion": "Paso 4 de 4. Evalua la siguiente expresión booleana, el operador relacional es !=",
 										"presentacion": 
 										[
 											"int edad = 16;",
 											"int altura = 175;",
 											"int peso = 70;",
 											"char sexo = ‘M’;",
-											"boolean estadoSalud = true;",
-											"",
-											"!(altura < 160) && (peso > 60);"
+											"//¿Qué resultado da en consola? ",
+											"System.out.println( sexo != 'F' );"
 										],
 										"textoEmocional": {
 											"neutral": "La respuesta es correcta.  Continúa con el ejercicio.",
@@ -157,16 +144,18 @@
 												"texto": "true",
 												"paso": 5,
 												"tipo": "pasofinaloptimo",
-												"instruccion": "La respuesta es correcta, continúa con más ejercicios del menú.",
+												"instruccion": "La respuesta es correcta. Puedes continuar con más ejercicios del menú.",
 												"presentacion": 
 												[
 													"int edad = 16;",
 													"int altura = 175;",
 													"int peso = 70;",
 													"char sexo = ‘M’;",
-													"boolean estadoSalud = true;",
 													"",
-													"!(altura < 160) && (peso > 60);"
+                                                                                                        "System.out.println( edad > 15 ); //true",
+                                                                                                        "System.out.println(altura < 174) //false",
+                                                                                                        "System.out.println(peso == 70); //true",
+                                                                                                        "System.out.println( sexo != 'F' ); //true"
 												],
 												"textoEmocional": {
 													"neutral": "Has finalizado con este ejercicio.",
@@ -186,16 +175,10 @@
 												"texto": "false",
 												"paso": 6,
 												"tipo": "pasoerroneo",
-												"instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+												"instruccion": "La respuesta es incorrecta. Revisa la explicación y regresa.",
 												"presentacion": 
 												[
-													"int edad = 16;",
-													"int altura = 175;",
-													"int peso = 70;",
-													"char sexo = ‘M’;",
-													"boolean estadoSalud = true;",
-													"",
-													"!(altura < 160) && (peso > 60);"
+													"El operador != significa diferente que, sexo es 'M' por lo que es diferente de 'F'"
 												],
 												"textoEmocional": {
 													"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
@@ -216,16 +199,10 @@
 										"texto": "false",
 										"paso": 7,
 										"tipo": "pasoerroneo",
-										"instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+										"instruccion": "Tuviste un error, mira la explicación y retrocede en el ejercicio.",
 										"presentacion": 
 										[
-											"int edad = 16;",
-											"int altura = 175;",
-											"int peso = 70;",
-											"char sexo ='M';",
-											"boolean estadoSalud = true;",
-											"",
-											"edad>10 || (sexo==’F’ && altura<170);"
+											"El operador == significa igual que, peso vale 70 así que es igual al valor 70"
 										],
 										"textoEmocional": {
 											"neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
@@ -252,16 +229,10 @@
                     "texto": "false",
                     "paso": 8,
                     "tipo": "pasoerroneo",
-                    "instruccion": "La respuesta es incorrecta.  Intenta de nuevo.",
+                    "instruccion": "Tienes un error, mira la eplicación sobre el operador y retrocede en los ejercicios",
                     "presentacion": 
                     [
-						"int edad = 16;",
-						"int altura = 175;",
-						"int peso = 70;",
-						"char sexo ='M';",
-						"boolean estadoSalud = true;",
-						"",
-						"edad >= 16 && estadoSalud;"
+						"El operador > significa mayor que, edad vale 16 por lo que es mayor al valor 15"
                     ],
                     "textoEmocional": {
                         "neutral": "La respuesta no es la correcta.  Intentalo de nuevo.",
