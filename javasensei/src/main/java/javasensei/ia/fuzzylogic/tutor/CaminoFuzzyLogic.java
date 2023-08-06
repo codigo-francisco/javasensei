@@ -39,9 +39,10 @@ public abstract class CaminoFuzzyLogic {
         
         try {
             FIS fis=null;
-            
+
             if (estudiante.getActivarEmociones()){
                 fis = getFuzzySystemConEmociones();
+
                 double emocionActual = estudiante.getEmocionActual().getValue();
                 double emocionPrevia = estudiante.getEmocionPrevia().getValue();
                 
@@ -50,21 +51,21 @@ public abstract class CaminoFuzzyLogic {
                     emocionPrevia -= 5;
                 }
                 
-                fis.setVariable("emocionactual", emocionActual);
-                fis.setVariable("emocionprevia", emocionPrevia);
+                fis.getFuzzyRuleSet().setVariable("emocionactual", emocionActual);
+                fis.getFuzzyRuleSet().setVariable("emocionprevia", emocionPrevia);
             }else{
                 fis = getFuzzySystemSinEmociones();
-                fis.setVariable("tiempo", estudiante.getTiempo());
+                fis.getFuzzyRuleSet().setVariable("tiempo", estudiante.getTiempo());
             }
             
-            fis.setVariable("habilidadglobal", estudiante.getHabilidadGlobal());
-            fis.setVariable("calidadrespuesta", estudiante.getCalidadRespuesta());
+            fis.getFuzzyRuleSet().setVariable("habilidadglobal", estudiante.getHabilidadGlobal());
+            fis.getFuzzyRuleSet().setVariable("calidadrespuesta", estudiante.getCalidadRespuesta());
             
-            fis.evaluate();
+            fis.getFuzzyRuleSet().evaluate();
             
-            double expresion = fis.getVariable("expresion").getValue();
-            double intervencion = fis.getVariable("intervencion").getValue();
-            double retroalimentacion = fis.getVariable("retroalimentacion").getValue();
+            double expresion = fis.getFuzzyRuleSet().getVariable("expresion").getValue();
+            double intervencion = fis.getFuzzyRuleSet().getVariable("intervencion").getValue();
+            double retroalimentacion = fis.getFuzzyRuleSet().getVariable("retroalimentacion").getValue();
             
             resultado.setExpresionValue(expresion);
             resultado.setIntervencionValue(intervencion);

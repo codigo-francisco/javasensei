@@ -20,7 +20,7 @@ public class TrainNeuralNetwork {
     public static void main(String[] args){
         String pathNeural = "E:\\javasensei\\Red Neuronal NeuroPH\\javasensei\\Neural Networks\\";
         DataSet dataSet = DataSet.createFromFile("E:\\javasensei\\dataset.csv", 10, 5, ",");
-        NeuralNetwork neural = NeuralNetwork.createFromFile(pathNeural+"NewNeuralNetwork1.nnet");
+        NeuralNetwork<BackPropagation> neural = NeuralNetwork.createFromFile(pathNeural+"NewNeuralNetwork1.nnet");
         
         BackPropagation train = new BackPropagation();        
         
