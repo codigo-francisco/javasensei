@@ -2,7 +2,6 @@
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Arrays;
@@ -22,7 +21,7 @@ public class Main {
         try {
             print = new PrintStream("E:\\javasensei\\dataset.csv");
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NuevoCorpus.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
